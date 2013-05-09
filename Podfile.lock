@@ -1,37 +1,30 @@
 PODS:
-  - AFNetworking (1.2.1)
-  - DXDAL (0.2.0):
-    - AFNetworking
-    - DXDomain
-    - EGOCache
-    - JSONKit
-    - JTObjectMapping-Fork
-    - Reachability
-  - DXDomain (0.0.5)
-  - DXFoundation (0.1.0)
-  - DXUIKit (0.0.9)
-  - EGOCache (2.0)
-  - JSONKit (1.5pre)
-  - JTObjectMapping-Fork (0.0.1)
-  - MBProgressHUD (0.6)
-  - Reachability (3.1.0)
+  - AFNetworking (1.1.0)
+  - Facebook-iOS-SDK (3.5.1)
+  - RestKit (0.20.0):
+    - RestKit/Core
+  - RestKit/Core (0.20.0):
+    - RestKit/CoreData
+    - RestKit/Network
+    - RestKit/ObjectMapping
+  - RestKit/CoreData (0.20.0)
+  - RestKit/Network (0.20.0):
+    - AFNetworking (= 1.1.0)
+    - RestKit/ObjectMapping
+    - RestKit/Support
+    - SOCKit
+  - RestKit/ObjectMapping (0.20.0)
+  - RestKit/Support (0.20.0)
+  - SOCKit (1.1)
 
 DEPENDENCIES:
-  - DXDAL
-  - DXFoundation
-  - DXUIKit
-  - MBProgressHUD
+  - Facebook-iOS-SDK
+  - RestKit
 
 SPEC CHECKSUMS:
-  AFNetworking: 616da0028916ce296f5c3cef74e5552eb4e10e13
-  DXDAL: 0665ea5acbe1c379340adf56abaf162a66159546
-  DXDomain: b9251ec916f82cac0dab4c43cef3f41260216efc
-  DXFoundation: 196bbe48153b7cb2f376b75636b50557a7950ce3
-  DXUIKit: db9da8294b5b8bb729f2e4ff1bc451d56c9c4352
-  EGOCache: c7116e8a6692eecb542f001a9c71f9b71ae9644b
-  JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
-  JTObjectMapping-Fork: e277683e93a4ac3bf92fd0fa924ef1f2dc9c9ba1
-  MBProgressHUD: 9b55a90566fb5d07df0602f6fd9fa04510ad5d52
-  Reachability: ba94ecd4eaa037be3d0588b38956672588530c5b
+  AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
+  Facebook-iOS-SDK: 0dbd897e842cefeb012ec2eb8eba659ba6b96b12
+  RestKit: 580771664a14eaaa40bf53cf83584f12fc141930
+  SOCKit: ed67aeeca4a697b63a933229e53f4670d5b9300f
 
 COCOAPODS: 0.18.1
