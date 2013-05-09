@@ -4,10 +4,10 @@ require 'zake'
 BetaBuilder::Tasks.new do |config|
 
   config.configuration = "Release"
-  config.build_dir = "DerivedData/college-connect/Build/Products"
-  config.workspace_path = "college-connect.xcworkspace"
-  config.scheme = "college-connect"
-  config.app_name = "college-connect"
+  config.build_dir = "DerivedData/CollegeConnect/Build/Products"
+  config.workspace_path = "CollegeConnect.xcworkspace"
+  config.scheme = "CollegeConnect"
+  config.app_name = "CollegeConnect"
   
 end
 
