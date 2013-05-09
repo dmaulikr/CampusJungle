@@ -1,6 +1,4 @@
-platform :ios, "5.0"
+platform :ios, "6.0"
 
-pod 'DXDAL'
-pod "DXFoundation"
-pod "DXUIKit"
-pod "MBProgressHUD"
+pod "RestKit"
+pod 'Facebook-iOS-SDK'
