@@ -12,11 +12,15 @@
 		A784C59D173A865E005E4921 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C59C173A865E005E4921 /* CoreGraphics.framework */; };
 		A784C5A3173A865E005E4921 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A784C5A1173A865E005E4921 /* InfoPlist.strings */; };
 		A784C5A5173A865E005E4921 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A784C5A4173A865E005E4921 /* main.m */; };
-		A784C5A9173A865E005E4921 /* CCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A784C5A8173A865E005E4921 /* CCAppDelegate.m */; };
 		A784C5AB173A865E005E4921 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A784C5AA173A865E005E4921 /* Default.png */; };
 		A784C5AD173A865E005E4921 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A784C5AC173A865E005E4921 /* Default@2x.png */; };
 		A784C5AF173A865E005E4921 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A784C5AE173A865E005E4921 /* Default-568h@2x.png */; };
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
+		D361863D1743ADCA00B501BC /* CCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D361863C1743ADCA00B501BC /* CCAppDelegate.m */; };
+		D36186421743AE9600B501BC /* CCRestKitConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = D36186411743AE9600B501BC /* CCRestKitConfigurator.m */; };
+		D36186461743B08A00B501BC /* CCDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = D36186451743B08A00B501BC /* CCDefines.m */; };
+		D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36186471743B13E00B501BC /* SystemConfiguration.framework */; };
+		D361864C1743B2AE00B501BC /* CCAlertDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = D361864B1743B2AE00B501BC /* CCAlertDefines.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,11 +34,18 @@
 		A784C5A2173A865E005E4921 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A784C5A4173A865E005E4921 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A784C5A6173A865E005E4921 /* CollegeConnect-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CollegeConnect-Prefix.pch"; sourceTree = "<group>"; };
-		A784C5A7173A865E005E4921 /* CCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCAppDelegate.h; sourceTree = "<group>"; };
-		A784C5A8173A865E005E4921 /* CCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCAppDelegate.m; sourceTree = "<group>"; };
 		A784C5AA173A865E005E4921 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		A784C5AC173A865E005E4921 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		A784C5AE173A865E005E4921 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D361863B1743ADCA00B501BC /* CCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAppDelegate.h; sourceTree = "<group>"; };
+		D361863C1743ADCA00B501BC /* CCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAppDelegate.m; sourceTree = "<group>"; };
+		D36186401743AE9600B501BC /* CCRestKitConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCRestKitConfigurator.h; sourceTree = "<group>"; };
+		D36186411743AE9600B501BC /* CCRestKitConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCRestKitConfigurator.m; sourceTree = "<group>"; };
+		D36186441743B08A00B501BC /* CCDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDefines.h; sourceTree = "<group>"; };
+		D36186451743B08A00B501BC /* CCDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDefines.m; sourceTree = "<group>"; };
+		D36186471743B13E00B501BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D361864A1743B2AE00B501BC /* CCAlertDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAlertDefines.h; sourceTree = "<group>"; };
+		D361864B1743B2AE00B501BC /* CCAlertDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAlertDefines.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */,
 				A784C599173A865E005E4921 /* UIKit.framework in Frameworks */,
 				A784C59B173A865E005E4921 /* Foundation.framework in Frameworks */,
 				A784C59D173A865E005E4921 /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +85,7 @@
 		A784C597173A865E005E4921 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D36186471743B13E00B501BC /* SystemConfiguration.framework */,
 				A784C598173A865E005E4921 /* UIKit.framework */,
 				A784C59A173A865E005E4921 /* Foundation.framework */,
 				A784C59C173A865E005E4921 /* CoreGraphics.framework */,
@@ -84,8 +97,6 @@
 		A784C59E173A865E005E4921 /* CollegeConnect */ = {
 			isa = PBXGroup;
 			children = (
-				A784C5A7173A865E005E4921 /* CCAppDelegate.h */,
-				A784C5A8173A865E005E4921 /* CCAppDelegate.m */,
 				A784C59F173A865E005E4921 /* Supporting Files */,
 			);
 			path = CollegeConnect;
@@ -94,6 +105,8 @@
 		A784C59F173A865E005E4921 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D361863A1743ADCA00B501BC /* AppDelegate */,
+				D361863E1743AE7E00B501BC /* Domain */,
 				A784C5A0173A865E005E4921 /* CollegeConnect-Info.plist */,
 				A784C5A1173A865E005E4921 /* InfoPlist.strings */,
 				A784C5A4173A865E005E4921 /* main.m */,
@@ -103,6 +116,52 @@
 				A784C5AE173A865E005E4921 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D361863A1743ADCA00B501BC /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D361863B1743ADCA00B501BC /* CCAppDelegate.h */,
+				D361863C1743ADCA00B501BC /* CCAppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		D361863E1743AE7E00B501BC /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D36186431743B07300B501BC /* Defines */,
+				D361863F1743AE7E00B501BC /* RestKitConfigurator */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D361863F1743AE7E00B501BC /* RestKitConfigurator */ = {
+			isa = PBXGroup;
+			children = (
+				D36186401743AE9600B501BC /* CCRestKitConfigurator.h */,
+				D36186411743AE9600B501BC /* CCRestKitConfigurator.m */,
+			);
+			path = RestKitConfigurator;
+			sourceTree = "<group>";
+		};
+		D36186431743B07300B501BC /* Defines */ = {
+			isa = PBXGroup;
+			children = (
+				D36186491743B2A400B501BC /* AlertDefines */,
+				D36186441743B08A00B501BC /* CCDefines.h */,
+				D36186451743B08A00B501BC /* CCDefines.m */,
+			);
+			path = Defines;
+			sourceTree = "<group>";
+		};
+		D36186491743B2A400B501BC /* AlertDefines */ = {
+			isa = PBXGroup;
+			children = (
+				D361864A1743B2AE00B501BC /* CCAlertDefines.h */,
+				D361864B1743B2AE00B501BC /* CCAlertDefines.m */,
+			);
+			path = AlertDefines;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,7 +264,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A784C5A5173A865E005E4921 /* main.m in Sources */,
-				A784C5A9173A865E005E4921 /* CCAppDelegate.m in Sources */,
+				D361863D1743ADCA00B501BC /* CCAppDelegate.m in Sources */,
+				D36186421743AE9600B501BC /* CCRestKitConfigurator.m in Sources */,
+				D36186461743B08A00B501BC /* CCDefines.m in Sources */,
+				D361864C1743B2AE00B501BC /* CCAlertDefines.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "CCAppDelegate.h"
+#import "CCRestKitConfigurator.h"
 
 @implementation CCAppDelegate
 
@@ -14,7 +15,8 @@
 {
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    [CCRestKitConfigurator configure];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
