@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "CCUserSessionProtocol.h"
+#import "CCUser.h"
 
 @interface CCUserSession : NSObject<CCUserSessionProtocol>
-@property (nonatomic, strong) id user;
+
+@property (nonatomic, strong) CCUser *user;
+
 @end
