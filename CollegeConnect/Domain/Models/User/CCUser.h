@@ -18,5 +18,8 @@
 @property (nonatomic, strong) NSNumber *UID; //id
 @property (nonatomic, strong) NSNumber *rank;
 @property (nonatomic, strong) NSNumber *wallet;
+@property (nonatomic, strong) NSArray *authorizations;
+
++ (CCUser *)userFromFacebookDictionary:(NSDictionary *)dictionary;
 
 @end

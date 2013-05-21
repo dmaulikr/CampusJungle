@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCUser.h"
 
 @protocol CCUserSessionProtocol<AppleGuiceInjectable,AppleGuiceSingleton>
 
-@property (nonatomic, strong) id user;
+@property (nonatomic, strong) CCUser *currentUser;
 
 @end

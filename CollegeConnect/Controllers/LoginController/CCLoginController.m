@@ -7,8 +7,11 @@
 //
 
 #import "CCLoginController.h"
+#import "CCLoginAPIProviderProtocol.h"
 
 @interface CCLoginController ()
+
+@property (nonatomic, strong) id <CCLoginAPIProviderProtocol> ioc_loginAPIProvider;
 
 @end
 
@@ -22,7 +25,11 @@
 
 - (IBAction)facebookLoginButtonDidPressed
 {
-
+    [self.ioc_loginAPIProvider performLoginOperationViaFacebookWithSuccessHandler:^{
+        
+    } errorHandler:^(NSError * error) {
+        
+    }];
 }
 
 - (IBAction)twitterLoginButtonDidPressed

@@ -22,7 +22,7 @@
 -(void)loginWithSuccessHandler:(successHandler)successBlock errorHandler:(errorHandler)errorHandler
 {
      if (![self isDeviceSessionExist]) {
-         NSArray *permissions = @[@"publish_actions"];
+         NSArray *permissions = @[@"email"];
         
          [FBSession openActiveSessionWithPublishPermissions:permissions
                                             defaultAudience:FBSessionDefaultAudienceEveryone 

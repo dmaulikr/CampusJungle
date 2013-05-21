@@ -12,6 +12,6 @@
 
 @interface CCUserSession : NSObject<CCUserSessionProtocol>
 
-@property (nonatomic, strong) CCUser *user;
+@property (nonatomic, strong) CCUser *currentUser;
 
 @end

@@ -17,6 +17,8 @@
 		A784C5AF173A865E005E4921 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A784C5AE173A865E005E4921 /* Default-568h@2x.png */; };
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
 		D32488FE174BC34400A0E452 /* CCLoginAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D32488FD174BC34400A0E452 /* CCLoginAPIProvider.m */; };
+		D3248907174BC91C00A0E452 /* CCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3248906174BC91C00A0E452 /* CCUser.m */; };
+		D324890A174BC92D00A0E452 /* CCAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = D3248909174BC92D00A0E452 /* CCAuthorization.m */; };
 		D361863D1743ADCA00B501BC /* CCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D361863C1743ADCA00B501BC /* CCAppDelegate.m */; };
 		D36186421743AE9600B501BC /* CCRestKitConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = D36186411743AE9600B501BC /* CCRestKitConfigurator.m */; };
 		D36186461743B08A00B501BC /* CCDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = D36186451743B08A00B501BC /* CCDefines.m */; };
@@ -31,7 +33,6 @@
 		D3E1ED42174B9231000D92AE /* CCMenuControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3E1ED40174B9231000D92AE /* CCMenuControllerViewController.xib */; };
 		D3E1ED49174BB14C000D92AE /* CCUserSession.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E1ED48174BB14C000D92AE /* CCUserSession.m */; };
 		D3E1ED4D174BB87A000D92AE /* CCAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E1ED4C174BB87A000D92AE /* CCAPIProvider.m */; };
-		D3E1ED52174BB980000D92AE /* CCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E1ED51174BB980000D92AE /* CCUser.m */; };
 		D3E1ED57174BBA5B000D92AE /* CCFaceBookAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E1ED55174BBA5B000D92AE /* CCFaceBookAPI.m */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,10 @@
 		D32488FD174BC34400A0E452 /* CCLoginAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLoginAPIProvider.m; sourceTree = "<group>"; };
 		D32488FF174BC35D00A0E452 /* CCLoginAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCLoginAPIProviderProtocol.h; sourceTree = "<group>"; };
 		D3248902174BC56900A0E452 /* CCTypesDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTypesDefinition.h; sourceTree = "<group>"; };
+		D3248905174BC91C00A0E452 /* CCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUser.h; sourceTree = "<group>"; };
+		D3248906174BC91C00A0E452 /* CCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUser.m; sourceTree = "<group>"; };
+		D3248908174BC92D00A0E452 /* CCAuthorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAuthorization.h; sourceTree = "<group>"; };
+		D3248909174BC92D00A0E452 /* CCAuthorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAuthorization.m; sourceTree = "<group>"; };
 		D361863B1743ADCA00B501BC /* CCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAppDelegate.h; sourceTree = "<group>"; };
 		D361863C1743ADCA00B501BC /* CCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAppDelegate.m; sourceTree = "<group>"; };
 		D36186401743AE9600B501BC /* CCRestKitConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCRestKitConfigurator.h; sourceTree = "<group>"; };
@@ -81,8 +86,6 @@
 		D3E1ED4B174BB87A000D92AE /* CCAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAPIProvider.h; sourceTree = "<group>"; };
 		D3E1ED4C174BB87A000D92AE /* CCAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAPIProvider.m; sourceTree = "<group>"; };
 		D3E1ED4E174BB8E9000D92AE /* CCAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCAPIProviderProtocol.h; sourceTree = "<group>"; };
-		D3E1ED50174BB980000D92AE /* CCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUser.h; sourceTree = "<group>"; };
-		D3E1ED51174BB980000D92AE /* CCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUser.m; sourceTree = "<group>"; };
 		D3E1ED54174BBA5B000D92AE /* CCFaceBookAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFaceBookAPI.h; sourceTree = "<group>"; };
 		D3E1ED55174BBA5B000D92AE /* CCFaceBookAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFaceBookAPI.m; sourceTree = "<group>"; };
 		D3E1ED56174BBA5B000D92AE /* CCFaceBookAPIProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFaceBookAPIProtocol.h; sourceTree = "<group>"; };
@@ -177,6 +180,24 @@
 				D3248902174BC56900A0E452 /* CCTypesDefinition.h */,
 			);
 			path = TypesDefinition;
+			sourceTree = "<group>";
+		};
+		D3248903174BC8FC00A0E452 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				D3248908174BC92D00A0E452 /* CCAuthorization.h */,
+				D3248909174BC92D00A0E452 /* CCAuthorization.m */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		D3248904174BC91C00A0E452 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D3248905174BC91C00A0E452 /* CCUser.h */,
+				D3248906174BC91C00A0E452 /* CCUser.m */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		D361863A1743ADCA00B501BC /* AppDelegate */ = {
@@ -337,8 +358,8 @@
 		D3E1ED4F174BB973000D92AE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D3E1ED50174BB980000D92AE /* CCUser.h */,
-				D3E1ED51174BB980000D92AE /* CCUser.m */,
+				D3248904174BC91C00A0E452 /* User */,
+				D3248903174BC8FC00A0E452 /* Authorization */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -466,9 +487,10 @@
 				D3E1ED41174B9231000D92AE /* CCMenuControllerViewController.m in Sources */,
 				D3E1ED49174BB14C000D92AE /* CCUserSession.m in Sources */,
 				D3E1ED4D174BB87A000D92AE /* CCAPIProvider.m in Sources */,
-				D3E1ED52174BB980000D92AE /* CCUser.m in Sources */,
 				D3E1ED57174BBA5B000D92AE /* CCFaceBookAPI.m in Sources */,
 				D32488FE174BC34400A0E452 /* CCLoginAPIProvider.m in Sources */,
+				D3248907174BC91C00A0E452 /* CCUser.m in Sources */,
+				D324890A174BC92D00A0E452 /* CCAuthorization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
