@@ -8,16 +8,20 @@
 
 #import "CCAppDelegate.h"
 #import "CCRestKitConfigurator.h"
+#import "CCMainTransaction.h"
 
 @implementation CCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [AppleGuice startServiceWithImplementationDiscoveryPolicy:AppleGuiceImplementationDiscoveryPolicyRuntime];
     [CCRestKitConfigurator configure];
-    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    CCMainTransaction *transaction = [CCMainTransaction new];
+    transaction.window = self.window;
+    [transaction perform];
     [self.window makeKeyAndVisible];
     return YES;
 }

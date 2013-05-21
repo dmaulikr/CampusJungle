@@ -21,6 +21,15 @@
 		D36186461743B08A00B501BC /* CCDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = D36186451743B08A00B501BC /* CCDefines.m */; };
 		D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36186471743B13E00B501BC /* SystemConfiguration.framework */; };
 		D361864C1743B2AE00B501BC /* CCAlertDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = D361864B1743B2AE00B501BC /* CCAlertDefines.m */; };
+		D3E1ED22174B6C29000D92AE /* CCMainTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E1ED21174B6C29000D92AE /* CCMainTransaction.m */; };
+		D3E1ED30174B6E23000D92AE /* CCLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E1ED2E174B6E23000D92AE /* CCLoginController.m */; };
+		D3E1ED31174B6E23000D92AE /* CCLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3E1ED2F174B6E23000D92AE /* CCLoginController.xib */; };
+		D3E1ED3B174B8B68000D92AE /* CCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E1ED39174B8B68000D92AE /* CCViewController.m */; };
+		D3E1ED3C174B8B68000D92AE /* CCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3E1ED3A174B8B68000D92AE /* CCViewController.xib */; };
+		D3E1ED41174B9231000D92AE /* CCMenuControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E1ED3F174B9231000D92AE /* CCMenuControllerViewController.m */; };
+		D3E1ED42174B9231000D92AE /* CCMenuControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3E1ED40174B9231000D92AE /* CCMenuControllerViewController.xib */; };
+		D3E1ED49174BB14C000D92AE /* CCUserSession.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E1ED48174BB14C000D92AE /* CCUserSession.m */; };
+		D3E1ED4D174BB87A000D92AE /* CCAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E1ED4C174BB87A000D92AE /* CCAPIProvider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +55,24 @@
 		D36186471743B13E00B501BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D361864A1743B2AE00B501BC /* CCAlertDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAlertDefines.h; sourceTree = "<group>"; };
 		D361864B1743B2AE00B501BC /* CCAlertDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAlertDefines.m; sourceTree = "<group>"; };
+		D3E1ED1D174B6BCF000D92AE /* CCTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTransaction.h; sourceTree = "<group>"; };
+		D3E1ED1E174B6BCF000D92AE /* CCTransactionWithObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTransactionWithObject.h; sourceTree = "<group>"; };
+		D3E1ED20174B6C29000D92AE /* CCMainTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMainTransaction.h; sourceTree = "<group>"; };
+		D3E1ED21174B6C29000D92AE /* CCMainTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMainTransaction.m; sourceTree = "<group>"; };
+		D3E1ED2D174B6E23000D92AE /* CCLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLoginController.h; sourceTree = "<group>"; };
+		D3E1ED2E174B6E23000D92AE /* CCLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLoginController.m; sourceTree = "<group>"; };
+		D3E1ED2F174B6E23000D92AE /* CCLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCLoginController.xib; sourceTree = "<group>"; };
+		D3E1ED38174B8B68000D92AE /* CCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCViewController.h; sourceTree = "<group>"; };
+		D3E1ED39174B8B68000D92AE /* CCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewController.m; sourceTree = "<group>"; };
+		D3E1ED3A174B8B68000D92AE /* CCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCViewController.xib; sourceTree = "<group>"; };
+		D3E1ED3E174B9231000D92AE /* CCMenuControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMenuControllerViewController.h; sourceTree = "<group>"; };
+		D3E1ED3F174B9231000D92AE /* CCMenuControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMenuControllerViewController.m; sourceTree = "<group>"; };
+		D3E1ED40174B9231000D92AE /* CCMenuControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMenuControllerViewController.xib; sourceTree = "<group>"; };
+		D3E1ED46174BB130000D92AE /* CCUserSessionProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCUserSessionProtocol.h; sourceTree = "<group>"; };
+		D3E1ED47174BB14C000D92AE /* CCUserSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUserSession.h; sourceTree = "<group>"; };
+		D3E1ED48174BB14C000D92AE /* CCUserSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUserSession.m; sourceTree = "<group>"; };
+		D3E1ED4B174BB87A000D92AE /* CCAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAPIProvider.h; sourceTree = "<group>"; };
+		D3E1ED4C174BB87A000D92AE /* CCAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAPIProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +124,11 @@
 		A784C59E173A865E005E4921 /* CollegeConnect */ = {
 			isa = PBXGroup;
 			children = (
+				D3E1ED19174B6AC5000D92AE /* Trasactions */,
+				D3E1ED43174BB106000D92AE /* Services */,
+				D361863A1743ADCA00B501BC /* AppDelegate */,
+				D3E1ED23174B6D26000D92AE /* Controllers */,
+				D361863E1743AE7E00B501BC /* Domain */,
 				A784C59F173A865E005E4921 /* Supporting Files */,
 			);
 			path = CollegeConnect;
@@ -105,8 +137,6 @@
 		A784C59F173A865E005E4921 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D361863A1743ADCA00B501BC /* AppDelegate */,
-				D361863E1743AE7E00B501BC /* Domain */,
 				A784C5A0173A865E005E4921 /* CollegeConnect-Info.plist */,
 				A784C5A1173A865E005E4921 /* InfoPlist.strings */,
 				A784C5A4173A865E005E4921 /* main.m */,
@@ -130,6 +160,7 @@
 		D361863E1743AE7E00B501BC /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D3E1ED4A174BB86B000D92AE /* APIProvider */,
 				D36186431743B07300B501BC /* Defines */,
 				D361863F1743AE7E00B501BC /* RestKitConfigurator */,
 			);
@@ -162,6 +193,109 @@
 				D361864B1743B2AE00B501BC /* CCAlertDefines.m */,
 			);
 			path = AlertDefines;
+			sourceTree = "<group>";
+		};
+		D3E1ED19174B6AC5000D92AE /* Trasactions */ = {
+			isa = PBXGroup;
+			children = (
+				D3E1ED1F174B6C17000D92AE /* MainTransaction */,
+				D3E1ED1C174B6BCF000D92AE /* TransactionProtocols */,
+			);
+			path = Trasactions;
+			sourceTree = "<group>";
+		};
+		D3E1ED1C174B6BCF000D92AE /* TransactionProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				D3E1ED1D174B6BCF000D92AE /* CCTransaction.h */,
+				D3E1ED1E174B6BCF000D92AE /* CCTransactionWithObject.h */,
+			);
+			path = TransactionProtocols;
+			sourceTree = "<group>";
+		};
+		D3E1ED1F174B6C17000D92AE /* MainTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3E1ED20174B6C29000D92AE /* CCMainTransaction.h */,
+				D3E1ED21174B6C29000D92AE /* CCMainTransaction.m */,
+			);
+			path = MainTransaction;
+			sourceTree = "<group>";
+		};
+		D3E1ED23174B6D26000D92AE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D3E1ED37174B8B2A000D92AE /* BaseController */,
+				D3E1ED2C174B6E0B000D92AE /* LoginController */,
+				D3E1ED3D174B9212000D92AE /* MenuController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D3E1ED2C174B6E0B000D92AE /* LoginController */ = {
+			isa = PBXGroup;
+			children = (
+				D3E1ED2D174B6E23000D92AE /* CCLoginController.h */,
+				D3E1ED2E174B6E23000D92AE /* CCLoginController.m */,
+				D3E1ED2F174B6E23000D92AE /* CCLoginController.xib */,
+			);
+			path = LoginController;
+			sourceTree = "<group>";
+		};
+		D3E1ED37174B8B2A000D92AE /* BaseController */ = {
+			isa = PBXGroup;
+			children = (
+				D3E1ED38174B8B68000D92AE /* CCViewController.h */,
+				D3E1ED39174B8B68000D92AE /* CCViewController.m */,
+				D3E1ED3A174B8B68000D92AE /* CCViewController.xib */,
+			);
+			name = BaseController;
+			path = LoginController/BaseController;
+			sourceTree = "<group>";
+		};
+		D3E1ED3D174B9212000D92AE /* MenuController */ = {
+			isa = PBXGroup;
+			children = (
+				D3E1ED3E174B9231000D92AE /* CCMenuControllerViewController.h */,
+				D3E1ED3F174B9231000D92AE /* CCMenuControllerViewController.m */,
+				D3E1ED40174B9231000D92AE /* CCMenuControllerViewController.xib */,
+			);
+			path = MenuController;
+			sourceTree = "<group>";
+		};
+		D3E1ED43174BB106000D92AE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D3E1ED44174BB106000D92AE /* UserSession */,
+				D3E1ED45174BB106000D92AE /* UserSessionProtocol */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D3E1ED44174BB106000D92AE /* UserSession */ = {
+			isa = PBXGroup;
+			children = (
+				D3E1ED47174BB14C000D92AE /* CCUserSession.h */,
+				D3E1ED48174BB14C000D92AE /* CCUserSession.m */,
+			);
+			path = UserSession;
+			sourceTree = "<group>";
+		};
+		D3E1ED45174BB106000D92AE /* UserSessionProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				D3E1ED46174BB130000D92AE /* CCUserSessionProtocol.h */,
+			);
+			path = UserSessionProtocol;
+			sourceTree = "<group>";
+		};
+		D3E1ED4A174BB86B000D92AE /* APIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3E1ED4B174BB87A000D92AE /* CCAPIProvider.h */,
+				D3E1ED4C174BB87A000D92AE /* CCAPIProvider.m */,
+			);
+			path = APIProvider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +356,9 @@
 				A784C5AB173A865E005E4921 /* Default.png in Resources */,
 				A784C5AD173A865E005E4921 /* Default@2x.png in Resources */,
 				A784C5AF173A865E005E4921 /* Default-568h@2x.png in Resources */,
+				D3E1ED31174B6E23000D92AE /* CCLoginController.xib in Resources */,
+				D3E1ED3C174B8B68000D92AE /* CCViewController.xib in Resources */,
+				D3E1ED42174B9231000D92AE /* CCMenuControllerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +405,12 @@
 				D36186421743AE9600B501BC /* CCRestKitConfigurator.m in Sources */,
 				D36186461743B08A00B501BC /* CCDefines.m in Sources */,
 				D361864C1743B2AE00B501BC /* CCAlertDefines.m in Sources */,
+				D3E1ED22174B6C29000D92AE /* CCMainTransaction.m in Sources */,
+				D3E1ED30174B6E23000D92AE /* CCLoginController.m in Sources */,
+				D3E1ED3B174B8B68000D92AE /* CCViewController.m in Sources */,
+				D3E1ED41174B9231000D92AE /* CCMenuControllerViewController.m in Sources */,
+				D3E1ED49174BB14C000D92AE /* CCUserSession.m in Sources */,
+				D3E1ED4D174BB87A000D92AE /* CCAPIProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +494,31 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CollegeConnect/CollegeConnect-Prefix.pch";
 				INFOPLIST_FILE = "CollegeConnect/CollegeConnect-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lsqlite3.0",
+					"-framework",
+					CFNetwork,
+					"-framework",
+					CoreData,
+					"-framework",
+					CoreLocation,
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					Security,
+					"-framework",
+					SystemConfiguration,
+					"-weak_framework",
+					Accounts,
+					"-weak_framework",
+					AdSupport,
+					"-weak_framework",
+					Security,
+					"-weak_framework",
+					Social,
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -363,6 +531,31 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CollegeConnect/CollegeConnect-Prefix.pch";
 				INFOPLIST_FILE = "CollegeConnect/CollegeConnect-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lsqlite3.0",
+					"-framework",
+					CFNetwork,
+					"-framework",
+					CoreData,
+					"-framework",
+					CoreLocation,
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					Security,
+					"-framework",
+					SystemConfiguration,
+					"-weak_framework",
+					Accounts,
+					"-weak_framework",
+					AdSupport,
+					"-weak_framework",
+					Security,
+					"-weak_framework",
+					Social,
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

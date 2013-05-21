@@ -1,5 +1,6 @@
 PODS:
   - AFNetworking (1.1.0)
+  - AppleGuice (0.0.1)
   - Facebook-iOS-SDK (3.5.1)
   - RestKit (0.20.0):
     - RestKit/Core
@@ -18,11 +19,17 @@ PODS:
   - SOCKit (1.1)
 
 DEPENDENCIES:
+  - AppleGuice (from `https://raw.github.com/korzun1993/AppleGuice/master/AppleGuice.podspec`)
   - Facebook-iOS-SDK
   - RestKit
 
+EXTERNAL SOURCES:
+  AppleGuice:
+    :podspec: https://raw.github.com/korzun1993/AppleGuice/master/AppleGuice.podspec
+
 SPEC CHECKSUMS:
   AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
+  AppleGuice: abd580ba08042c5de8f6aab168417f453a9e0100
   Facebook-iOS-SDK: 0dbd897e842cefeb012ec2eb8eba659ba6b96b12
   RestKit: 580771664a14eaaa40bf53cf83584f12fc141930
   SOCKit: ed67aeeca4a697b63a933229e53f4670d5b9300f
