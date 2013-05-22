@@ -10,6 +10,7 @@
 #import <RestKit/RestKit.h>
 #import "CCDefines.h"
 #import "CCAlertDefines.h"
+#import "CCUser.h"
 
 @implementation CCRestKitConfigurator
 
@@ -33,7 +34,38 @@
             [alert show];
         }
     }];
+    [CCRestKitConfigurator configureUser:objectManager];
 
+}
+
+
++(void)configureUser:(RKObjectManager*)objectManager
+{
+    RKObjectMapping* userMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    [userMapping addAttributeMappingsFromDictionary:@{
+     @"name" : @"user[name]",
+     @"email" : @"user[email]",
+     @"avatar" : @"user[avatar]",
+     
+     }];
+    
+    RKObjectMapping *authorizationMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    [authorizationMapping addAttributeMappingsFromDictionary:@{
+     @"uid" : @"uid",
+     @"oauthToken" : @"oauth_token",
+     @"provider" : @"provider",
+     }];
+    
+    RKRelationshipMapping* relationShipMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"authentications"
+                                                                                             toKeyPath:@"oauth"
+                                                                                           withMapping:authorizationMapping];
+    [userMapping addPropertyMapping:relationShipMapping];
+    
+    
+    RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:userMapping
+                                                                                   objectClass:[CCUser class]
+                                                                                   rootKeyPath:nil];
+    [objectManager addRequestDescriptor:requestDescriptor];
 }
 
 

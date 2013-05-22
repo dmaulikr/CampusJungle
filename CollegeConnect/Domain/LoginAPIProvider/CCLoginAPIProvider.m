@@ -9,11 +9,13 @@
 #import "CCLoginAPIProvider.h"
 #import "CCFaceBookAPIProtocol.h"
 #import "CCUserSessionProtocol.h"
+#import "CCAPIProviderProtocol.h"
 
 @interface CCLoginAPIProvider ()
 
 @property (nonatomic, strong) id <CCFaceBookAPIProtocol> ioc_facebookAPI;
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
+@property (nonatomic, strong) id <CCAPIProviderProtocol> ioc_apiProvider;
 
 @end
 
@@ -38,11 +40,22 @@
     [self.ioc_facebookAPI getUserInfoSuccessHandler:^(NSDictionary *userDictionary) {
         
         self.ioc_userSession.currentUser = [CCUser userFromFacebookDictionary:userDictionary];
-       // [self authorizeUserOnServerSuccessHandler:successHandler errorHandler:errorHandler];
+        [self authorizeUserOnServerSuccessHandler:successHandler errorHandler:errorHandler];
     } errorHandler:^(NSError *error){
         errorHandler(error);
     }];
 }
+
+-(void)authorizeUserOnServerSuccessHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
+{
+    [self.ioc_apiProvider putUser:self.ioc_userSession.currentUser successHandler:^(RKMappingResult * result) {
+       
+        // [self writeTokenAndIDToUserSessionFromDictionary:result.firstObject successHandler:successHandler];
+    } errorHandler:^(RKObjectRequestOperation *operation, NSError *error) {
+        errorHandler(error);
+    }];
+}
+
 
 
 @end

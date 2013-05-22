@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "CCViewController.h"
+#import "CCTransaction.h"
 
 @interface CCLoginController : CCViewController
+
+@property (nonatomic, strong) id <CCTransaction> loginTransaction;
+@property (nonatomic, strong) id <CCTransaction> signUpTransaction;
 
 - (IBAction)facebookLoginButtonDidPressed;
 

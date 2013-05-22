@@ -7,8 +7,29 @@
 //
 
 #import "CCUserSession.h"
+#import "CCDefines.h"
 
 
 @implementation CCUserSession
+
+- (void)clearUserInfo
+{
+    self.currentUser = nil;
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:CCUserDefines.currentUser];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)saveUser
+{
+    NSData *myEncodedUser = [NSKeyedArchiver archivedDataWithRootObject:self.currentUser];
+    [[NSUserDefaults standardUserDefaults] setObject:myEncodedUser forKey:CCUserDefines.currentUser];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (CCUser*)loadSevedUser
+{
+    NSData *serializedUser = [[NSUserDefaults standardUserDefaults] objectForKey:CCUserDefines.currentUser];
+    return (CCUser *)[NSKeyedUnarchiver unarchiveObjectWithData:serializedUser];
+}
 
 @end

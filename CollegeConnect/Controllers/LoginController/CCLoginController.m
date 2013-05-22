@@ -44,7 +44,7 @@
 
 - (IBAction)emailSignUPButtonDidPressed
 {
-
+    [self.signUpTransaction perform];
 }
 
 @end

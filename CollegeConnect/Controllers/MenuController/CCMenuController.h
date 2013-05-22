@@ -8,6 +8,10 @@
 
 #import "CCViewController.h"
 
-@interface CCMenuControllerViewController : CCViewController
+typedef void (^ViewDidLoadBlock)();
+
+@interface CCMenuController : CCViewController
+
+@property (nonatomic, copy) ViewDidLoadBlock blockOnViewDidAppear;
 
 @end

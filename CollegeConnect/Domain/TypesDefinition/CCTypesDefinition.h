@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <RestKit/RestKit.h>
 
 typedef void (^userInfoSuccessHandler)(NSDictionary *);
 typedef void (^successHandler)();
 typedef void (^errorHandler)(NSError *);
+typedef void (^successHandlerWithRKResult)(RKMappingResult *);
+typedef void (^RKErrorHandler)(RKObjectRequestOperation *operation, NSError *error);

@@ -7,7 +7,43 @@
 //
 
 #import "CCAPIProvider.h"
+#import "CCUserSessionProtocol.h"
+#import <RestKit/RestKit.h>
+#import "CCDefines.h"
+
+@interface CCAPIProvider()
+
+@property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
+
+@end
 
 @implementation CCAPIProvider
+
+- (void)setAuthorizationToken
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    NSString *valueForHeader = [NSString stringWithFormat: @"Token token=%@",self.ioc_userSession.currentUser.token];
+    [objectManager.HTTPClient setDefaultHeader:@"Authorization" value:valueForHeader];
+}
+
+- (void)putUser:(CCUser *)user successHandler:(successHandlerWithRKResult)successHandler errorHandler:(RKErrorHandler)errorHandler
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [objectManager putObject:user
+                         path:CCAPIDefines.authorization
+                   parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                       if(successHandler){
+                           successHandler(mappingResult);
+                       }
+                   }
+                      failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                          if(errorHandler){
+                              errorHandler(operation, error);
+                          }
+                      }];
+
+
+}
+
 
 @end

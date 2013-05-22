@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCAPIProviderProtocol.h"
 
-@interface CCAPIProvider : NSObject
+@interface CCAPIProvider : NSObject<CCAPIProviderProtocol>
 
 @end

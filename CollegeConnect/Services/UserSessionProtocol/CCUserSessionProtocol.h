@@ -13,4 +13,10 @@
 
 @property (nonatomic, strong) CCUser *currentUser;
 
+- (CCUser*)loadSevedUser;
+
+- (void)saveUser;
+
+- (void)clearUserInfo;
+
 @end

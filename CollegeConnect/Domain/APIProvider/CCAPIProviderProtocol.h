@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCUser.h"
+#import "CCTypesDefinition.h"
 
 @protocol CCAPIProviderProtocol <AppleGuiceInjectable,AppleGuiceSingleton>
 
-
+- (void)putUser:(CCUser *)user successHandler:(successHandlerWithRKResult)successHandler errorHandler:(RKErrorHandler)errorHandler;
 
 @end

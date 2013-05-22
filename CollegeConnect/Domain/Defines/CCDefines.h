@@ -10,4 +10,20 @@
 
 extern const struct CCAPIDefines {
     __unsafe_unretained NSString *baseURL;
+    __unsafe_unretained NSString *authorization;
 } CCAPIDefines;
+
+
+extern const struct CCUserDefines {
+    __unsafe_unretained NSString *name;
+    __unsafe_unretained NSString *email;
+    __unsafe_unretained NSString *avatar;
+    __unsafe_unretained NSString *oauthToken;
+    __unsafe_unretained NSString *uid;
+    
+    __unsafe_unretained NSString *facebookUID;
+    __unsafe_unretained NSString *facebookToken;
+    __unsafe_unretained NSString *facebook;
+    
+    __unsafe_unretained NSString *currentUser;
+} CCUserDefines;
