@@ -12,6 +12,7 @@
 #import "CCMenuController.h"
 #import "CCLoginTransaction.h"
 #import "CCSignUpTransaction.h"
+#import "CCLoginScreenTransaction.h"
 
 @interface CCMainTransaction()
 
@@ -42,22 +43,24 @@
 
 - (void)showWelcomScreenIn:(CCMenuController *)menu
 {
+    CCWelcomeController *welcomeController = [CCWelcomeController new];
+
+    UINavigationController* navigation = [[UINavigationController alloc]initWithRootViewController:welcomeController];
+    
     CCLoginTransaction *loginTransaction = [CCLoginTransaction new];
     loginTransaction.menuController = menu;
+    welcomeController.loginTransaction = loginTransaction;
     
     CCSignUpTransaction *signUpTransaction = [CCSignUpTransaction new];
     signUpTransaction.loginTransaction = loginTransaction;
-    
-    CCWelcomeController *welcomeController = [CCWelcomeController new];
-    welcomeController.loginTransaction = loginTransaction;
+    signUpTransaction.navigation = navigation;
     welcomeController.signUpTransaction = signUpTransaction;
     
-    
-    
-    UINavigationController* navigation = [[UINavigationController alloc]initWithRootViewController:welcomeController];
-    
-    signUpTransaction.navigation = navigation;
-    
+    CCLoginScreenTransaction *loginScreenTransaction = [CCLoginScreenTransaction new];
+    loginScreenTransaction.loginTransaction = loginTransaction;
+    loginScreenTransaction.navigation = navigation;
+    welcomeController.loginScreenTransaction = loginScreenTransaction;
+
     __weak CCMenuController *weakMenu = menu;
     menu.blockOnViewDidAppear = ^{
         [weakMenu presentViewController:navigation animated:NO completion:nil];

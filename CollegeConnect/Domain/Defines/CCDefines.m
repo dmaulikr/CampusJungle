@@ -11,7 +11,8 @@
 const struct CCAPIDefines CCAPIDefines = {
     .baseURL = @"http://collegeconnect.111projects.com",
     .signUp = @"api/users/sign_up",
-    .authorization = @"api/authentications"
+    .authorization = @"api/authentications",
+    .login = @"api/users/login",
 };
 
 

@@ -41,8 +41,6 @@
                               errorHandler(operation, error);
                           }
                       }];
-
-
 }
 
 - (void)putUserForSingUp:(NSDictionary *)userInfo successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler{
@@ -54,7 +52,15 @@
     }];
 }
 
-
+- (void)putUserForLogin:(NSDictionary *)userInfo successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    
+    [objectManager getObject:nil path:CCAPIDefines.login parameters:userInfo success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        successHandler(mappingResult);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        errorHandler(error);
+    }];
+}
 
 
 

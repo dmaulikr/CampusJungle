@@ -378,8 +378,8 @@
 		D3E1ED2C174B6E0B000D92AE /* WelcomController */ = {
 			isa = PBXGroup;
 			children = (
-				D31DB8D6174D23F6009814AF /* CCWelcomController.m */,
 				D31DB8D7174D23F6009814AF /* CCWelcomeController.h */,
+				D31DB8D6174D23F6009814AF /* CCWelcomController.m */,
 				D31DB8D8174D23F6009814AF /* CCWelcomeController.xib */,
 			);
 			name = WelcomController;

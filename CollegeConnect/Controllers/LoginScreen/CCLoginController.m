@@ -9,11 +9,14 @@
 #import "CCLoginController.h"
 #import "NSString+CJStringValidator.h"
 #import "CCAlertDefines.h"
+#import "CCLoginAPIProviderProtocol.h"
+#import "CCDefines.h"
 
 @interface CCLoginController ()
 
 @property (nonatomic, weak) IBOutlet UITextField *emailField;
 @property (nonatomic, weak) IBOutlet UITextField *passField;
+@property (nonatomic, strong) id <CCLoginAPIProviderProtocol> ioc_loginAPIProvider;
 
 @end
 
@@ -22,6 +25,16 @@
 - (IBAction)loginButtonDidPressed
 {
     if([self isFormValid]){
+        NSDictionary *userInfoDictionary = @{
+                                             CCUserSignUpKeys.email : self.emailField.text,
+                                             CCUserSignUpKeys.password : self.passField.text
+                                             };
+        
+        [self.ioc_loginAPIProvider performLoginOperationWithUserInfo:userInfoDictionary successHandler:^{
+            [self.loginTransaction perform];
+        } errorHandler:^(NSError *error) {
+            
+        }];
         
     } else {
         UIAlertView *alertOnNotValidFields = [[UIAlertView alloc] initWithTitle:nil message:CCAlertsMessages.formNotValid delegate:self cancelButtonTitle:CCAlertsButtons.okButton otherButtonTitles: nil];

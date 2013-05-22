@@ -7,8 +7,11 @@
 //
 
 #import "CCViewController.h"
+#import "CCTransaction.h"
 
 @interface CCLoginController : CCViewController
+
+@property (nonatomic, strong) id <CCTransaction> loginTransaction;
 
 - (IBAction)loginButtonDidPressed;
 

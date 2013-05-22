@@ -39,7 +39,7 @@
 
 - (IBAction)emailLoginButtonDidPressed
 {
-
+    [self.loginScreenTransaction perform];
 }
 
 - (IBAction)emailSignUPButtonDidPressed

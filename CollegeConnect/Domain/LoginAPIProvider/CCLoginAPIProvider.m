@@ -21,12 +21,23 @@
 
 @implementation CCLoginAPIProvider
 
--(void)performLoginOperationViaFacebookWithSuccessHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
+- (void)performLoginOperationWithUserInfo:(NSDictionary *)userInfo successHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
+{
+   [self.ioc_apiProvider putUserForLogin:userInfo successHandler:^(RKMappingResult *result) {
+       successHandler();
+   } errorHandler:^(NSError *error) {
+       errorHandler(error);
+   }];
+    
+}
+
+
+- (void)performLoginOperationViaFacebookWithSuccessHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
 {
     [self loginFacebookSuccessHandler:successHandler errorHandler:errorHandler];
 }
 
--(void)loginFacebookSuccessHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
+- (void)loginFacebookSuccessHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
 {
     [self.ioc_facebookAPI loginWithSuccessHandler:^{
         [self getUserInfoSuccessHandler:successHandler errorHandler:errorHandler];
@@ -35,7 +46,7 @@
     }];
 }
 
--(void)getUserInfoSuccessHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
+- (void)getUserInfoSuccessHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
 {
     [self.ioc_facebookAPI getUserInfoSuccessHandler:^(NSDictionary *userDictionary) {
         
@@ -46,7 +57,7 @@
     }];
 }
 
--(void)authorizeUserOnServerSuccessHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
+- (void)authorizeUserOnServerSuccessHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
 {
     [self.ioc_apiProvider putUser:self.ioc_userSession.currentUser successHandler:^(RKMappingResult * result) {
        
