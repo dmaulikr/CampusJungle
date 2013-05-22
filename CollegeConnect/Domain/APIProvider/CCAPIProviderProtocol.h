@@ -14,4 +14,6 @@
 
 - (void)putUser:(CCUser *)user successHandler:(successHandlerWithRKResult)successHandler errorHandler:(RKErrorHandler)errorHandler;
 
+- (void)putUserForSingUp:(NSDictionary *)userInfo successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
+
 @end

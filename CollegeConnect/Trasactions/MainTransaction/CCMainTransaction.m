@@ -7,7 +7,7 @@
 //
 
 #import "CCMainTransaction.h"
-#import "CCLoginController.h"
+#import "CCWelcomeController.h"
 #import "CCUserSessionProtocol.h"
 #import "CCMenuController.h"
 #import "CCLoginTransaction.h"
@@ -31,30 +31,37 @@
     self.window.rootViewController = menu;
     [self.ioc_userSession setCurrentUser: [self.ioc_userSession loadSevedUser]];
     
-    [CCLoginController new];
+    [CCWelcomeController new];
     
     if ([self.ioc_userSession currentUser]){
         
     } else {
-        CCLoginTransaction *loginTransaction = [CCLoginTransaction new];
-        loginTransaction.menuController = menu;
-        
-        CCSignUpTransaction *signUpTransaction = [CCSignUpTransaction new];
-       
-        
-        CCLoginController *loginController = [CCLoginController new];
-        loginController.loginTransaction = loginTransaction;
-        loginController.signUpTransaction = signUpTransaction;
-        
-        UINavigationController* navigation = [[UINavigationController alloc]initWithRootViewController:loginController];
-        
-        signUpTransaction.navigation = navigation;
-        
-        __weak CCMenuController *weakMenu = menu;
-        menu.blockOnViewDidAppear = ^{
-            [weakMenu presentViewController:navigation animated:NO completion:nil];
-        };
+        [self showWelcomScreenIn:menu];
     }
+}
+
+- (void)showWelcomScreenIn:(CCMenuController *)menu
+{
+    CCLoginTransaction *loginTransaction = [CCLoginTransaction new];
+    loginTransaction.menuController = menu;
+    
+    CCSignUpTransaction *signUpTransaction = [CCSignUpTransaction new];
+    signUpTransaction.loginTransaction = loginTransaction;
+    
+    CCWelcomeController *welcomeController = [CCWelcomeController new];
+    welcomeController.loginTransaction = loginTransaction;
+    welcomeController.signUpTransaction = signUpTransaction;
+    
+    
+    
+    UINavigationController* navigation = [[UINavigationController alloc]initWithRootViewController:welcomeController];
+    
+    signUpTransaction.navigation = navigation;
+    
+    __weak CCMenuController *weakMenu = menu;
+    menu.blockOnViewDidAppear = ^{
+        [weakMenu presentViewController:navigation animated:NO completion:nil];
+    };
 }
 
 @end
