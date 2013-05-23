@@ -7,12 +7,15 @@
 //
 
 #import "CCViewController.h"
+#import "CCTransaction.h"
 
 typedef void (^ViewDidLoadBlock)();
 
 @interface CCMenuController : CCViewController
 
-@property (nonatomic, strong) 
+@property (nonatomic, strong) id <CCTransaction> logoutTransaction;
 @property (nonatomic, copy) ViewDidLoadBlock blockOnViewDidAppear;
+
+-(IBAction)logoutButtonPressed;
 
 @end

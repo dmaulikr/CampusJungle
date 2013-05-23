@@ -32,4 +32,10 @@
     return (CCUser *)[NSKeyedUnarchiver unarchiveObjectWithData:serializedUser];
 }
 
+- (void)setCurrentUser:(CCUser *)currentUser
+{
+    _currentUser = currentUser;
+    [self saveUser];
+}
+
 @end

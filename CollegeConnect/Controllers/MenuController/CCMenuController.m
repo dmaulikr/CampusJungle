@@ -22,4 +22,9 @@
     }
 }
 
+-(IBAction)logoutButtonPressed
+{
+    [self.logoutTransaction perform];
+}
+
 @end

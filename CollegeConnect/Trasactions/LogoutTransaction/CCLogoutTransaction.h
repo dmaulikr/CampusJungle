@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "CCTransaction.h"
+#import "CCMenuController.h"
 
 @interface CCLogoutTransaction : NSObject<CCTransaction>
+
+@property (nonatomic, strong) CCMenuController *rootMenuController;
 
 @end

@@ -13,6 +13,7 @@
 #import "CCLoginTransaction.h"
 #import "CCSignUpTransaction.h"
 #import "CCLoginScreenTransaction.h"
+#import "CCLogoutTransaction.h"
 
 @interface CCMainTransaction()
 
@@ -32,6 +33,11 @@
     self.window.rootViewController = menu;
     [self.ioc_userSession setCurrentUser: [self.ioc_userSession loadSevedUser]];
     
+    CCLogoutTransaction *logoutTrasaction = [CCLogoutTransaction new];
+    logoutTrasaction.rootMenuController = menu;
+    menu.logoutTransaction = logoutTrasaction;
+    
+    
     [CCWelcomeController new];
     
     if ([self.ioc_userSession currentUser]){
@@ -44,7 +50,7 @@
 - (void)showWelcomScreenIn:(CCMenuController *)menu
 {
     CCWelcomeController *welcomeController = [CCWelcomeController new];
-
+    
     UINavigationController* navigation = [[UINavigationController alloc]initWithRootViewController:welcomeController];
     
     CCLoginTransaction *loginTransaction = [CCLoginTransaction new];
@@ -60,11 +66,12 @@
     loginScreenTransaction.loginTransaction = loginTransaction;
     loginScreenTransaction.navigation = navigation;
     welcomeController.loginScreenTransaction = loginScreenTransaction;
-
+    
     __weak CCMenuController *weakMenu = menu;
     menu.blockOnViewDidAppear = ^{
         [weakMenu presentViewController:navigation animated:NO completion:nil];
     };
+
 }
 
 @end
