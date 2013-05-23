@@ -12,6 +12,7 @@ extern const struct CCAlertsMessages {
     __unsafe_unretained NSString *noInternetConnection;
     __unsafe_unretained NSString *serverUnavailable;
     __unsafe_unretained NSString *connectToTheInternet;
+    __unsafe_unretained NSString *formNotValid;
 } CCAlertsMessages;
 
 extern const struct CCAlertsButtons {

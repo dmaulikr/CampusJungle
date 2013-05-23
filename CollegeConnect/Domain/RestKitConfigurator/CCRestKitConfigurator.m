@@ -10,6 +10,9 @@
 #import <RestKit/RestKit.h>
 #import "CCDefines.h"
 #import "CCAlertDefines.h"
+#import "CCUser.h"
+#import "CCAuthorization.h"
+#import "CCAuthorizationResponse.h"
 
 @implementation CCRestKitConfigurator
 
@@ -33,8 +36,55 @@
             [alert show];
         }
     }];
+    
+    [CCRestKitConfigurator configureUserResponse:objectManager];
+}
 
++ (void)configureUserResponse:(RKObjectManager *)objectManager
+{
+    RKObjectMapping* userResponseMapping = [RKObjectMapping mappingForClass:[CCUser class]];
+    
+    [userResponseMapping addAttributeMappingsFromDictionary:@{
+        @"name" : @"name",
+        @"email" : @"email",
+        @"avatar" : @"avatar",
+        @"token" : @"token",
+        @"wallet" : @"wallet",
+        @"status" : @"status",
+        @"id" : @"uid",
+        @"rank" : @"rank",
+     }];
 
+    
+    
+    
+     RKRelationshipMapping* relationShipResponseUserMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"user"
+                                                                                                         toKeyPath:@"user"
+                                                                                                       withMapping:userResponseMapping];
+     RKObjectMapping *authorizationResponseMapping = [RKObjectMapping mappingForClass:[CCAuthorizationResponse class]];
+    [authorizationResponseMapping addPropertyMapping:relationShipResponseUserMapping];
+
+    [authorizationResponseMapping addAttributeMappingsFromDictionary:
+     @{
+        @"is_new_user" : @"isFirstLaunch",
+     }];
+    
+    RKResponseDescriptor *responceAuthorizationDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:authorizationResponseMapping
+                                                                                           pathPattern:CCAPIDefines.authorization
+                                                                                               keyPath:nil
+                                                                                           statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    RKResponseDescriptor *responceSignUpDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:authorizationResponseMapping
+                                                                                                    pathPattern:CCAPIDefines.signUp
+                                                                                                        keyPath:nil
+                                                                                                    statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    RKResponseDescriptor *responceLoginDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:authorizationResponseMapping
+                                                                                             pathPattern:CCAPIDefines.login
+                                                                                                 keyPath:nil
+                                                                                             statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [objectManager addResponseDescriptor:responceAuthorizationDescriptor];
+    [objectManager addResponseDescriptor:responceSignUpDescriptor];
+    [objectManager addResponseDescriptor:responceLoginDescriptor];
 }
 
 @end
