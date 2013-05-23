@@ -9,6 +9,7 @@
 #import "CCWelcomeController.h"
 #import "CCLoginAPIProviderProtocol.h"
 #import "CCUserSessionProtocol.h"
+#import "CCAuthorizationResponse.h"
 
 @interface CCWelcomeController ()
 
@@ -27,8 +28,12 @@
 
 - (IBAction)facebookLoginButtonDidPressed
 {
-    [self.ioc_loginAPIProvider performLoginOperationViaFacebookWithSuccessHandler:^{
-        [self.loginTransaction perform];
+    [self.ioc_loginAPIProvider performLoginOperationViaFacebookWithSuccessHandler:^(id authorizationResponse){
+        if([[authorizationResponse isFirstLaunch] isEqualToString:@"true"]){
+            [self.initialUserInfoTransaction perform];
+        } else {
+            [self.loginTransaction perform];
+        }
     } errorHandler:^(NSError * error) {
         
     }];

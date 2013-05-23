@@ -14,10 +14,10 @@
 - (void)perform
 {
     NSParameterAssert(self.navigation);
-    NSParameterAssert(self.loginTransaction);
+    NSParameterAssert(self.initialUserInfoTransaction);
     
     CCSignUPController *signUpController = [CCSignUPController new];
-    signUpController.loginTransaction = self.loginTransaction;
+    signUpController.initialUserInfoTransaction = self.initialUserInfoTransaction;
     
     [self.navigation pushViewController:signUpController animated:YES];
 }

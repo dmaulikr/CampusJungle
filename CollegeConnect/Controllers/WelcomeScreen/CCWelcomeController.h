@@ -15,6 +15,7 @@
 @property (nonatomic, strong) id <CCTransaction> loginTransaction;
 @property (nonatomic, strong) id <CCTransaction> signUpTransaction;
 @property (nonatomic, strong) id <CCTransaction> loginScreenTransaction;
+@property (nonatomic, strong) id <CCTransaction> initialUserInfoTransaction;
 
 - (IBAction)facebookLoginButtonDidPressed;
 

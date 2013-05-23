@@ -32,12 +32,12 @@
    }];
 }
 
-- (void)performLoginOperationViaFacebookWithSuccessHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
+- (void)performLoginOperationViaFacebookWithSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
     [self loginFacebookSuccessHandler:successHandler errorHandler:errorHandler];
 }
 
-- (void)loginFacebookSuccessHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
+- (void)loginFacebookSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
     [self.ioc_facebookAPI loginWithSuccessHandler:^{
         [self getUserInfoSuccessHandler:successHandler errorHandler:errorHandler];
@@ -46,7 +46,7 @@
     }];
 }
 
-- (void)getUserInfoSuccessHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
+- (void)getUserInfoSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
     [self.ioc_facebookAPI getUserInfoSuccessHandler:^(NSDictionary *userDictionary) {
         
@@ -64,11 +64,11 @@
     }];
 }
 
-- (void)authorizeUserOnServerWithUserInfo:(NSDictionary *)userInfo SuccessHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
+- (void)authorizeUserOnServerWithUserInfo:(NSDictionary *)userInfo SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
     [self.ioc_apiProvider putUser:userInfo successHandler:^(RKMappingResult * result) {
         self.ioc_userSession.currentUser = [(CCAuthorizationResponse *)result.firstObject user];
-        successHandler();
+        successHandler(result.firstObject);
     } errorHandler:^(RKObjectRequestOperation *operation, NSError *error) {
         errorHandler(error);
     }];

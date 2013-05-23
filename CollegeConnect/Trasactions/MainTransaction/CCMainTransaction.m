@@ -7,13 +7,9 @@
 //
 
 #import "CCMainTransaction.h"
-#import "CCWelcomeController.h"
 #import "CCUserSessionProtocol.h"
-#import "CCMenuController.h"
-#import "CCLoginTransaction.h"
-#import "CCSignUpTransaction.h"
-#import "CCLoginScreenTransaction.h"
 #import "CCLogoutTransaction.h"
+#import "CCWelcomeScreenConfigurator.h"
 
 @interface CCMainTransaction()
 
@@ -27,7 +23,6 @@
 {
     NSParameterAssert(self.window);
     
-    
     CCMenuController *menu = [CCMenuController new];
     
     self.window.rootViewController = menu;
@@ -37,9 +32,7 @@
     logoutTrasaction.rootMenuController = menu;
     menu.logoutTransaction = logoutTrasaction;
     
-    
-    [CCWelcomeController new];
-    
+        
     if ([self.ioc_userSession currentUser]){
         
     } else {
@@ -49,25 +42,11 @@
 
 - (void)showWelcomScreenIn:(CCMenuController *)menu
 {
-    CCWelcomeController *welcomeController = [CCWelcomeController new];
-    
-    UINavigationController* navigation = [[UINavigationController alloc]initWithRootViewController:welcomeController];
-    
-    CCLoginTransaction *loginTransaction = [CCLoginTransaction new];
-    loginTransaction.menuController = menu;
-    welcomeController.loginTransaction = loginTransaction;
-    
-    CCSignUpTransaction *signUpTransaction = [CCSignUpTransaction new];
-    signUpTransaction.loginTransaction = loginTransaction;
-    signUpTransaction.navigation = navigation;
-    welcomeController.signUpTransaction = signUpTransaction;
-    
-    CCLoginScreenTransaction *loginScreenTransaction = [CCLoginScreenTransaction new];
-    loginScreenTransaction.loginTransaction = loginTransaction;
-    loginScreenTransaction.navigation = navigation;
-    welcomeController.loginScreenTransaction = loginScreenTransaction;
-    
+
     __weak CCMenuController *weakMenu = menu;
+    
+    UINavigationController *navigation = [CCWelcomeScreenConfigurator configurateWithBaseConroller:menu];
+    
     menu.blockOnViewDidAppear = ^{
         [weakMenu presentViewController:navigation animated:NO completion:nil];
     };

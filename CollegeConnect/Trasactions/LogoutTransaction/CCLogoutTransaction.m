@@ -7,12 +7,9 @@
 //
 
 #import "CCLogoutTransaction.h"
-#import "CCWelcomeController.h"
-#import "CCLoginTransaction.h"
-#import "CCLoginScreenTransaction.h"
-#import "CCSignUpTransaction.h"
 #import "CCFaceBookAPIProtocol.h"
 #import "CCUserSessionProtocol.h"
+#import "CCWelcomeScreenConfigurator.h"
 
 @interface CCLogoutTransaction ()
 
@@ -29,24 +26,8 @@
     
     [self.ioc_facebookAPI logout];
     [self.ioc_userSession clearUserInfo];
-    
-    CCWelcomeController *welcomeController = [CCWelcomeController new];
-    
-    UINavigationController* navigation = [[UINavigationController alloc]initWithRootViewController:welcomeController];
-    
-    CCLoginTransaction *loginTransaction = [CCLoginTransaction new];
-    loginTransaction.menuController = self.rootMenuController;
-    welcomeController.loginTransaction = loginTransaction;
-    
-    CCSignUpTransaction *signUpTransaction = [CCSignUpTransaction new];
-    signUpTransaction.loginTransaction = loginTransaction;
-    signUpTransaction.navigation = navigation;
-    welcomeController.signUpTransaction = signUpTransaction;
-    
-    CCLoginScreenTransaction *loginScreenTransaction = [CCLoginScreenTransaction new];
-    loginScreenTransaction.loginTransaction = loginTransaction;
-    loginScreenTransaction.navigation = navigation;
-    welcomeController.loginScreenTransaction = loginScreenTransaction;
+   
+    UINavigationController *navigation = [CCWelcomeScreenConfigurator configurateWithBaseConroller:self.rootMenuController];
     
     [self.rootMenuController presentViewController:navigation animated:YES completion:nil];
 }

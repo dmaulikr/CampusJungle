@@ -44,7 +44,7 @@
                                      };
         [self.ioc_signUpAPI signUpWithUserDictionary:userFields successHandler:^{
         
-            [self.loginTransaction perform];
+            [self.initialUserInfoTransaction perform];
             
         } errorHandler:^(NSError *error) {
             
