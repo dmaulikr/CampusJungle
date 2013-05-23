@@ -17,7 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.leftBarButtonItem = nil;
+    self.navigationItem.hidesBackButton = YES;
 }
 
 - (IBAction)continueButtonDidPressed
