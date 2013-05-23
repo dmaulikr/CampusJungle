@@ -11,6 +11,7 @@
 #import "CCAlertDefines.h"
 #import "CCLoginAPIProviderProtocol.h"
 #import "CCDefines.h"
+#import "CCUserSessionProtocol.h"
 
 @interface CCLoginController ()
 
@@ -31,6 +32,7 @@
                                              };
         
         [self.ioc_loginAPIProvider performLoginOperationWithUserInfo:userInfoDictionary successHandler:^{
+            
             [self.loginTransaction perform];
         } errorHandler:^(NSError *error) {
             
@@ -50,6 +52,16 @@
     if (![self.passField.text isMinLength:3]) isFormValid = NO;
     
     return isFormValid;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if(textField == self.passField){
+        [self loginButtonDidPressed];
+    } else {
+        [[self.view viewWithTag:textField.tag+1] becomeFirstResponder];
+        return YES;
+    }
+    return YES;
 }
 
 @end

@@ -26,8 +26,9 @@
 		D31DB8CF174D2173009814AF /* CCLoginScreenTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D31DB8CE174D2173009814AF /* CCLoginScreenTransaction.m */; };
 		D31DB8D4174D2273009814AF /* CCLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = D31DB8D2174D2273009814AF /* CCLoginController.m */; };
 		D31DB8D5174D2273009814AF /* CCLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D31DB8D3174D2273009814AF /* CCLoginController.xib */; };
-		D31DB8D9174D23F6009814AF /* CCWelcomController.m in Sources */ = {isa = PBXBuildFile; fileRef = D31DB8D6174D23F6009814AF /* CCWelcomController.m */; };
+		D31DB8D9174D23F6009814AF /* CCWelcomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D31DB8D6174D23F6009814AF /* CCWelcomeController.m */; };
 		D31DB8DA174D23F6009814AF /* CCWelcomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D31DB8D8174D23F6009814AF /* CCWelcomeController.xib */; };
+		D31DB8E0174E1E91009814AF /* CCAuthorizationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = D31DB8DF174E1E91009814AF /* CCAuthorizationResponse.m */; };
 		D32488FE174BC34400A0E452 /* CCLoginAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D32488FD174BC34400A0E452 /* CCLoginAPIProvider.m */; };
 		D3248907174BC91C00A0E452 /* CCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3248906174BC91C00A0E452 /* CCUser.m */; };
 		D324890A174BC92D00A0E452 /* CCAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = D3248909174BC92D00A0E452 /* CCAuthorization.m */; };
@@ -36,6 +37,7 @@
 		D36186461743B08A00B501BC /* CCDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = D36186451743B08A00B501BC /* CCDefines.m */; };
 		D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36186471743B13E00B501BC /* SystemConfiguration.framework */; };
 		D361864C1743B2AE00B501BC /* CCAlertDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = D361864B1743B2AE00B501BC /* CCAlertDefines.m */; };
+		D36AC7CE174E68740005BE22 /* CCLogoutTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D36AC7CD174E68740005BE22 /* CCLogoutTransaction.m */; };
 		D3E1ED22174B6C29000D92AE /* CCMainTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E1ED21174B6C29000D92AE /* CCMainTransaction.m */; };
 		D3E1ED41174B9231000D92AE /* CCMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E1ED3F174B9231000D92AE /* CCMenuController.m */; };
 		D3E1ED42174B9231000D92AE /* CCMenuController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3E1ED40174B9231000D92AE /* CCMenuController.xib */; };
@@ -76,9 +78,11 @@
 		D31DB8D1174D2273009814AF /* CCLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLoginController.h; sourceTree = "<group>"; };
 		D31DB8D2174D2273009814AF /* CCLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLoginController.m; sourceTree = "<group>"; };
 		D31DB8D3174D2273009814AF /* CCLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCLoginController.xib; sourceTree = "<group>"; };
-		D31DB8D6174D23F6009814AF /* CCWelcomController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCWelcomController.m; path = CollegeConnect/Controllers/WelcomeScreen/CCWelcomController.m; sourceTree = SOURCE_ROOT; };
+		D31DB8D6174D23F6009814AF /* CCWelcomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCWelcomeController.m; path = CollegeConnect/Controllers/WelcomeScreen/CCWelcomeController.m; sourceTree = SOURCE_ROOT; };
 		D31DB8D7174D23F6009814AF /* CCWelcomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCWelcomeController.h; path = CollegeConnect/Controllers/WelcomeScreen/CCWelcomeController.h; sourceTree = SOURCE_ROOT; };
 		D31DB8D8174D23F6009814AF /* CCWelcomeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CCWelcomeController.xib; path = CollegeConnect/Controllers/WelcomeScreen/CCWelcomeController.xib; sourceTree = SOURCE_ROOT; };
+		D31DB8DE174E1E91009814AF /* CCAuthorizationResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAuthorizationResponse.h; sourceTree = "<group>"; };
+		D31DB8DF174E1E91009814AF /* CCAuthorizationResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAuthorizationResponse.m; sourceTree = "<group>"; };
 		D32488FC174BC34400A0E452 /* CCLoginAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLoginAPIProvider.h; sourceTree = "<group>"; };
 		D32488FD174BC34400A0E452 /* CCLoginAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLoginAPIProvider.m; sourceTree = "<group>"; };
 		D32488FF174BC35D00A0E452 /* CCLoginAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCLoginAPIProviderProtocol.h; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 		D36186471743B13E00B501BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D361864A1743B2AE00B501BC /* CCAlertDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAlertDefines.h; sourceTree = "<group>"; };
 		D361864B1743B2AE00B501BC /* CCAlertDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAlertDefines.m; sourceTree = "<group>"; };
+		D36AC7CC174E68740005BE22 /* CCLogoutTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLogoutTransaction.h; sourceTree = "<group>"; };
+		D36AC7CD174E68740005BE22 /* CCLogoutTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLogoutTransaction.m; sourceTree = "<group>"; };
 		D3E1ED1D174B6BCF000D92AE /* CCTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTransaction.h; sourceTree = "<group>"; };
 		D3E1ED1E174B6BCF000D92AE /* CCTransactionWithObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTransactionWithObject.h; sourceTree = "<group>"; };
 		D3E1ED20174B6C29000D92AE /* CCMainTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMainTransaction.h; sourceTree = "<group>"; };
@@ -245,6 +251,15 @@
 			path = LoginScreen;
 			sourceTree = "<group>";
 		};
+		D31DB8DD174E1E7E009814AF /* AuthorizationResponse */ = {
+			isa = PBXGroup;
+			children = (
+				D31DB8DE174E1E91009814AF /* CCAuthorizationResponse.h */,
+				D31DB8DF174E1E91009814AF /* CCAuthorizationResponse.m */,
+			);
+			path = AuthorizationResponse;
+			sourceTree = "<group>";
+		};
 		D32488FB174BC30000A0E452 /* LoginAPIProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,9 +348,19 @@
 			path = AlertDefines;
 			sourceTree = "<group>";
 		};
+		D36AC7CB174E68650005BE22 /* LogoutTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D36AC7CC174E68740005BE22 /* CCLogoutTransaction.h */,
+				D36AC7CD174E68740005BE22 /* CCLogoutTransaction.m */,
+			);
+			path = LogoutTransaction;
+			sourceTree = "<group>";
+		};
 		D3E1ED19174B6AC5000D92AE /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
+				D36AC7CB174E68650005BE22 /* LogoutTransaction */,
 				D31DB8C3174D0356009814AF /* SignupTransaction */,
 				D31DB8CC174D215D009814AF /* LoginScreenTransaction */,
 				D31DB8BF174CFFBE009814AF /* LoginTransaction */,
@@ -379,7 +404,7 @@
 			isa = PBXGroup;
 			children = (
 				D31DB8D7174D23F6009814AF /* CCWelcomeController.h */,
-				D31DB8D6174D23F6009814AF /* CCWelcomController.m */,
+				D31DB8D6174D23F6009814AF /* CCWelcomeController.m */,
 				D31DB8D8174D23F6009814AF /* CCWelcomeController.xib */,
 			);
 			name = WelcomController;
@@ -446,6 +471,7 @@
 		D3E1ED4F174BB973000D92AE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D31DB8DD174E1E7E009814AF /* AuthorizationResponse */,
 				D3248904174BC91C00A0E452 /* User */,
 				D3248903174BC8FC00A0E452 /* Authorization */,
 			);
@@ -586,7 +612,9 @@
 				D31DB8CA174D0EB8009814AF /* CCSignUpAPIProvider.m in Sources */,
 				D31DB8CF174D2173009814AF /* CCLoginScreenTransaction.m in Sources */,
 				D31DB8D4174D2273009814AF /* CCLoginController.m in Sources */,
-				D31DB8D9174D23F6009814AF /* CCWelcomController.m in Sources */,
+				D31DB8D9174D23F6009814AF /* CCWelcomeController.m in Sources */,
+				D31DB8E0174E1E91009814AF /* CCAuthorizationResponse.m in Sources */,
+				D36AC7CE174E68740005BE22 /* CCLogoutTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

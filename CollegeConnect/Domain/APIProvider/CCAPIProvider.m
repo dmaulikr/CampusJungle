@@ -26,12 +26,12 @@
     [objectManager.HTTPClient setDefaultHeader:@"Authorization" value:valueForHeader];
 }
 
-- (void)putUser:(CCUser *)user successHandler:(successHandlerWithRKResult)successHandler errorHandler:(RKErrorHandler)errorHandler
+- (void)putUser:(NSDictionary *)userInfo successHandler:(successHandlerWithRKResult)successHandler errorHandler:(RKErrorHandler)errorHandler
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
-    [objectManager putObject:user
+    [objectManager putObject:nil
                          path:CCAPIDefines.authorization
-                   parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                   parameters:userInfo success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                        if(successHandler){
                            successHandler(mappingResult);
                        }
@@ -55,7 +55,7 @@
 - (void)putUserForLogin:(NSDictionary *)userInfo successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler{
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     
-    [objectManager getObject:nil path:CCAPIDefines.login parameters:userInfo success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    [objectManager postObject:nil path:CCAPIDefines.login parameters:userInfo success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         successHandler(mappingResult);
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         errorHandler(error);

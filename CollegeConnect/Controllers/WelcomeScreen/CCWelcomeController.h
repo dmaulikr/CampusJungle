@@ -18,12 +18,8 @@
 
 - (IBAction)facebookLoginButtonDidPressed;
 
-- (IBAction)twitterLoginButtonDidPressed;
-
 - (IBAction)emailLoginButtonDidPressed;
 
 - (IBAction)emailSignUPButtonDidPressed;
-
-
 
 @end

@@ -12,6 +12,7 @@ typedef void (^ViewDidLoadBlock)();
 
 @interface CCMenuController : CCViewController
 
+@property (nonatomic, strong) 
 @property (nonatomic, copy) ViewDidLoadBlock blockOnViewDidAppear;
 
 @end

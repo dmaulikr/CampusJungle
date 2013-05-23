@@ -15,9 +15,9 @@
 @property (nonatomic, strong) NSString *status;
 @property (nonatomic, strong) NSString *token;
 @property (nonatomic, strong) NSString *email;
-@property (nonatomic, strong) NSNumber *UID; //id
-@property (nonatomic, strong) NSNumber *rank;
-@property (nonatomic, strong) NSNumber *wallet;
+@property (nonatomic, strong) NSString *uid;
+@property (nonatomic, strong) NSString *rank;
+@property (nonatomic, strong) NSString *wallet;
 @property (nonatomic, strong) NSArray *authentications;
 
 + (CCUser *)userFromFacebookDictionary:(NSDictionary *)dictionary;

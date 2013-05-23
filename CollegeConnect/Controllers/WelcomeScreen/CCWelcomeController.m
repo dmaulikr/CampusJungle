@@ -8,10 +8,12 @@
 
 #import "CCWelcomeController.h"
 #import "CCLoginAPIProviderProtocol.h"
+#import "CCUserSessionProtocol.h"
 
 @interface CCWelcomeController ()
 
 @property (nonatomic, strong) id <CCLoginAPIProviderProtocol> ioc_loginAPIProvider;
+@property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
 
 @end
 
@@ -26,15 +28,10 @@
 - (IBAction)facebookLoginButtonDidPressed
 {
     [self.ioc_loginAPIProvider performLoginOperationViaFacebookWithSuccessHandler:^{
-        
+        [self.loginTransaction perform];
     } errorHandler:^(NSError * error) {
         
     }];
-}
-
-- (IBAction)twitterLoginButtonDidPressed
-{
-
 }
 
 - (IBAction)emailLoginButtonDidPressed

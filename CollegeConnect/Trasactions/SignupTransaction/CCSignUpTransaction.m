@@ -19,7 +19,7 @@
     CCSignUPController *signUpController = [CCSignUPController new];
     signUpController.loginTransaction = self.loginTransaction;
     
-    [self.navigation pushViewController:[CCSignUPController new] animated:YES];
+    [self.navigation pushViewController:signUpController animated:YES];
 }
 
 @end

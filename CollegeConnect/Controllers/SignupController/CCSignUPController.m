@@ -28,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleBordered target:self action:@selector(saveButtonDidPressed)];
     self.navigationItem.rightBarButtonItem = saveButton;
     
@@ -42,7 +43,9 @@
                                      CCUserSignUpKeys.password :self.passField.text
                                      };
         [self.ioc_signUpAPI signUpWithUserDictionary:userFields successHandler:^{
+        
             [self.loginTransaction perform];
+            
         } errorHandler:^(NSError *error) {
             
         }];
@@ -62,6 +65,16 @@
     if (![self.passField.text isMinLength:3]) isFormValid = NO;
 
     return isFormValid;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if(textField == self.passField){
+        [self saveButtonDidPressed];
+    } else {
+        [[self.view viewWithTag:textField.tag+1] becomeFirstResponder];
+        return YES;
+    }
+    return YES;
 }
 
 @end

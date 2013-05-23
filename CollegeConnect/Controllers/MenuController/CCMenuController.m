@@ -20,7 +20,6 @@
         self.blockOnViewDidAppear();
         self.blockOnViewDidAppear = nil;
     }
-    self.view.backgroundColor = [UIColor blackColor];
 }
 
 @end
