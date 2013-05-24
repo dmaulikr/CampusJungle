@@ -10,6 +10,8 @@
 #import "CCUserSessionProtocol.h"
 #import "CCLogoutTransaction.h"
 #import "CCWelcomeScreenConfigurator.h"
+#import "CCUserProfile.h"
+#import "CCUserProfileTransaction.h"
 
 @interface CCMainTransaction()
 
@@ -25,12 +27,14 @@
     
     CCMenuController *menu = [CCMenuController new];
     
-    self.window.rootViewController = menu;
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:menu];
+    
     [self.ioc_userSession setCurrentUser: [self.ioc_userSession loadSevedUser]];
     
-    CCLogoutTransaction *logoutTrasaction = [CCLogoutTransaction new];
-    logoutTrasaction.rootMenuController = menu;
-    menu.logoutTransaction = logoutTrasaction;
+    CCUserProfileTransaction *userProfileTransaction = [CCUserProfileTransaction new];
+    userProfileTransaction.menuController = menu;
+    
+    menu.userProfileTransaction = userProfileTransaction;
     
         
     if ([self.ioc_userSession currentUser]){

@@ -45,7 +45,8 @@
     RKObjectMapping* userResponseMapping = [RKObjectMapping mappingForClass:[CCUser class]];
     
     [userResponseMapping addAttributeMappingsFromDictionary:@{
-        @"name" : @"name",
+        @"first_name" : @"firstName",
+        @"last_name" : @"lastName",
         @"email" : @"email",
         @"avatar" : @"avatar",
         @"token" : @"token",

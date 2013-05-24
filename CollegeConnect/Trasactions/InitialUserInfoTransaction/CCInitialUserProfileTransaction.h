@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "CCTransaction.h"
+#import "CCMenuController.h"
 
-@interface CCInitialUserInfoTransaction : NSObject <CCTransaction>
+@interface CCInitialUserProfileTransaction : NSObject <CCTransaction>
 
 @property (nonatomic, strong) id<CCTransaction> loginTransaction;
-@property (nonatomic, strong) UINavigationController *navigation;
+@property (nonatomic, strong) CCMenuController *baseViewController;
+
 
 @end

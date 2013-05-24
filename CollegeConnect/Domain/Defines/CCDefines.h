@@ -17,7 +17,8 @@ extern const struct CCAPIDefines {
 
 
 extern const struct CCUserDefines {
-    __unsafe_unretained NSString *name;
+    __unsafe_unretained NSString *firstName;
+    __unsafe_unretained NSString *lastName;
     __unsafe_unretained NSString *email;
     __unsafe_unretained NSString *avatar;
     __unsafe_unretained NSString *oauthToken;
@@ -31,7 +32,8 @@ extern const struct CCUserDefines {
 } CCUserDefines;
 
 extern const struct CCUserSignUpKeys {
-    __unsafe_unretained NSString *name;
+    __unsafe_unretained NSString *firstName;
+    __unsafe_unretained NSString *lastName;
     __unsafe_unretained NSString *email;
     __unsafe_unretained NSString *password;
 } CCUserSignUpKeys;

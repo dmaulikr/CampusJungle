@@ -9,10 +9,8 @@
 #import "CCViewController.h"
 #import "CCTransaction.h"
 
-@interface CCInitialUserInfoController : CCViewController
+@interface CCUserProfile : CCViewController
 
-@property (nonatomic, strong) id <CCTransaction> loginTransaction;
-
-- (IBAction)continueButtonDidPressed;
+@property (nonatomic, strong) id <CCTransaction> logoutTransaction;
 
 @end

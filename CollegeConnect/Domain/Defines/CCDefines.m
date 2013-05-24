@@ -17,7 +17,8 @@ const struct CCAPIDefines CCAPIDefines = {
 
 
 const struct CCUserDefines CCUserDefines = {
-    .name = @"UserName",
+    .firstName = @"UserFirstName",
+    .lastName = @"UserLastName",
     .email = @"UserEmail",
     .avatar = @"UserAvatar",
     .oauthToken = @"UserOauthToken",
@@ -31,7 +32,8 @@ const struct CCUserDefines CCUserDefines = {
 };
 
 const struct CCUserSignUpKeys CCUserSignUpKeys = {
-    .name = @"name",
+    .firstName = @"first_name",
+    .lastName = @"last_name",
     .email = @"email",
     .password = @"password"
 };

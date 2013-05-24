@@ -51,7 +51,8 @@
     [self.ioc_facebookAPI getUserInfoSuccessHandler:^(NSDictionary *userDictionary) {
         
         NSDictionary *userInfo = @{
-                                   @"user[name]" : userDictionary[@"name"],
+                                   @"user[first_name]" : userDictionary[@"first_name"],
+                                   @"user[last_name]" : userDictionary[@"last_name"],
                                    @"user[email]": userDictionary[@"email"],
                                    @"user[avatar]": [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?width=200&height=200",userDictionary[@"id"]],
                                    @"oauth[][oauth_token]":[[[FBSession activeSession] accessTokenData] accessToken],

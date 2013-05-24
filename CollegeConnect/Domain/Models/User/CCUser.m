@@ -15,7 +15,8 @@
 
 - (void)encodeWithCoder:(NSCoder *)encoder {
     
-    [encoder encodeObject:self.name forKey:CCUserDefines.name];
+    [encoder encodeObject:self.firstName forKey:CCUserDefines.firstName];
+    [encoder encodeObject:self.lastName forKey:CCUserDefines.lastName];
     [encoder encodeObject:self.token forKey:CCUserDefines.oauthToken];
     [encoder encodeObject:self.uid forKey:CCUserDefines.uid];
     [encoder encodeObject:self.avatar forKey:CCUserDefines.avatar];
@@ -34,7 +35,8 @@
 
 - (id)initWithCoder:(NSCoder *)decoder {
     if((self = [super init])) {
-        self.name = [decoder decodeObjectForKey:CCUserDefines.name];
+        self.firstName = [decoder decodeObjectForKey:CCUserDefines.firstName];
+        self.lastName = [decoder decodeObjectForKey:CCUserDefines.lastName];
         self.token = [decoder decodeObjectForKey:CCUserDefines.oauthToken];
         self.uid = [decoder decodeObjectForKey:CCUserDefines.uid];
         self.avatar = [decoder decodeObjectForKey:CCUserDefines.avatar];
