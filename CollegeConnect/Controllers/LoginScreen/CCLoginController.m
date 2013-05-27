@@ -12,6 +12,7 @@
 #import "CCLoginAPIProviderProtocol.h"
 #import "CCDefines.h"
 #import "CCUserSessionProtocol.h"
+#import "MBProgressHUD.h"
 
 @interface CCLoginController ()
 
@@ -34,6 +35,7 @@
         [self.ioc_loginAPIProvider performLoginOperationWithUserInfo:userInfoDictionary successHandler:^{
             
             [self.loginTransaction perform];
+        
         } errorHandler:^(NSError *error) {
             UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:CCAlertsMessages.error message: CCAlertsMessages.wrongEmailOfPassword delegate:nil cancelButtonTitle:CCAlertsButtons.okButton otherButtonTitles: nil];
             [errorAlert show];

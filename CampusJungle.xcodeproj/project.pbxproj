@@ -54,14 +54,14 @@
 /* Begin PBXFileReference section */
 		3EA3BC22A4CB480B8934991C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		A784C595173A865E005E4921 /* CollegeConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollegeConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A784C595173A865E005E4921 /* CampusJungle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusJungle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A784C598173A865E005E4921 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A784C59A173A865E005E4921 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A784C59C173A865E005E4921 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		A784C5A0173A865E005E4921 /* CollegeConnect-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CollegeConnect-Info.plist"; sourceTree = "<group>"; };
+		A784C5A0173A865E005E4921 /* CampusJungle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CampusJungle-Info.plist"; sourceTree = "<group>"; };
 		A784C5A2173A865E005E4921 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A784C5A4173A865E005E4921 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A784C5A6173A865E005E4921 /* CollegeConnect-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CollegeConnect-Prefix.pch"; sourceTree = "<group>"; };
+		A784C5A6173A865E005E4921 /* CampusJungle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CampusJungle-Prefix.pch"; sourceTree = "<group>"; };
 		A784C5AA173A865E005E4921 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		A784C5AC173A865E005E4921 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		A784C5AE173A865E005E4921 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 		A784C596173A865E005E4921 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A784C595173A865E005E4921 /* CollegeConnect.app */,
+				A784C595173A865E005E4921 /* CampusJungle.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,10 +196,10 @@
 		A784C59F173A865E005E4921 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A784C5A0173A865E005E4921 /* CollegeConnect-Info.plist */,
+				A784C5A0173A865E005E4921 /* CampusJungle-Info.plist */,
 				A784C5A1173A865E005E4921 /* InfoPlist.strings */,
 				A784C5A4173A865E005E4921 /* main.m */,
-				A784C5A6173A865E005E4921 /* CollegeConnect-Prefix.pch */,
+				A784C5A6173A865E005E4921 /* CampusJungle-Prefix.pch */,
 				A784C5AA173A865E005E4921 /* Default.png */,
 				A784C5AC173A865E005E4921 /* Default@2x.png */,
 				A784C5AE173A865E005E4921 /* Default-568h@2x.png */,
@@ -371,13 +371,14 @@
 			path = LogoutTransaction;
 			sourceTree = "<group>";
 		};
-		D36AC7D3174E72360005BE22 /* InitialUserInfo */ = {
+		D36AC7D3174E72360005BE22 /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
 				D36AC7D4174E72570005BE22 /* CCUserProfile.h */,
 				D36AC7D5174E72570005BE22 /* CCUserProfile.m */,
 				D36AC7D6174E72570005BE22 /* CCUserProfile.xib */,
 			);
+			name = UserProfile;
 			path = InitialUserInfo;
 			sourceTree = "<group>";
 		};
@@ -454,7 +455,7 @@
 		D3E1ED23174B6D26000D92AE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D36AC7D3174E72360005BE22 /* InitialUserInfo */,
+				D36AC7D3174E72360005BE22 /* UserProfile */,
 				D31DB8D0174D2258009814AF /* LoginScreen */,
 				D31DB8B9174CFA50009814AF /* SignupController */,
 				D3E1ED37174B8B2A000D92AE /* BaseController */,
@@ -555,9 +556,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A784C594173A865E005E4921 /* CollegeConnect */ = {
+		A784C594173A865E005E4921 /* CampusJungle */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A784C5B2173A865E005E4921 /* Build configuration list for PBXNativeTarget "CollegeConnect" */;
+			buildConfigurationList = A784C5B2173A865E005E4921 /* Build configuration list for PBXNativeTarget "CampusJungle" */;
 			buildPhases = (
 				2FBE7E1872274AA59D320D6D /* Check Pods Manifest.lock */,
 				A784C591173A865E005E4921 /* Sources */,
@@ -569,9 +570,9 @@
 			);
 			dependencies = (
 			);
-			name = CollegeConnect;
+			name = CampusJungle;
 			productName = CollegeConnect;
-			productReference = A784C595173A865E005E4921 /* CollegeConnect.app */;
+			productReference = A784C595173A865E005E4921 /* CampusJungle.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -584,7 +585,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = 111minutes;
 			};
-			buildConfigurationList = A784C590173A865E005E4921 /* Build configuration list for PBXProject "CollegeConnect" */;
+			buildConfigurationList = A784C590173A865E005E4921 /* Build configuration list for PBXProject "CampusJungle" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -596,7 +597,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A784C594173A865E005E4921 /* CollegeConnect */,
+				A784C594173A865E005E4921 /* CampusJungle */,
 			);
 		};
 /* End PBXProject section */
@@ -765,8 +766,8 @@
 			baseConfigurationReference = 9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CollegeConnect/CollegeConnect-Prefix.pch";
-				INFOPLIST_FILE = "CollegeConnect/CollegeConnect-Info.plist";
+				GCC_PREFIX_HEADER = "CollegeConnect/CampusJungle-Prefix.pch";
+				INFOPLIST_FILE = "CollegeConnect/CampusJungle-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lsqlite3.0",
@@ -792,7 +793,7 @@
 					Social,
 					"-all_load",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CampusJungle;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -802,8 +803,8 @@
 			baseConfigurationReference = 9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CollegeConnect/CollegeConnect-Prefix.pch";
-				INFOPLIST_FILE = "CollegeConnect/CollegeConnect-Info.plist";
+				GCC_PREFIX_HEADER = "CollegeConnect/CampusJungle-Prefix.pch";
+				INFOPLIST_FILE = "CollegeConnect/CampusJungle-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lsqlite3.0",
@@ -829,7 +830,7 @@
 					Social,
 					"-all_load",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CampusJungle;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -837,7 +838,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A784C590173A865E005E4921 /* Build configuration list for PBXProject "CollegeConnect" */ = {
+		A784C590173A865E005E4921 /* Build configuration list for PBXProject "CampusJungle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A784C5B0173A865E005E4921 /* Debug */,
@@ -846,7 +847,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A784C5B2173A865E005E4921 /* Build configuration list for PBXNativeTarget "CollegeConnect" */ = {
+		A784C5B2173A865E005E4921 /* Build configuration list for PBXNativeTarget "CampusJungle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A784C5B3173A865E005E4921 /* Debug */,
