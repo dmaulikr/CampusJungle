@@ -31,6 +31,7 @@ extern const struct CCUserDefines {
     __unsafe_unretained NSString *currentUser;
     
     __unsafe_unretained NSString *facebookAvatarLinkTemplate;
+                        NSInteger minimumPasswordLength;
 } CCUserDefines;
 
 extern const struct CCUserSignUpKeys {

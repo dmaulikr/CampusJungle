@@ -31,6 +31,8 @@ const struct CCUserDefines CCUserDefines = {
     .facebookAvatarLinkTemplate = @"https://graph.facebook.com/%@/picture?width=200&height=200",
     
     .currentUser = @"current_user",
+    .minimumPasswordLength = 3,
+
 };
 
 const struct CCUserSignUpKeys CCUserSignUpKeys = {

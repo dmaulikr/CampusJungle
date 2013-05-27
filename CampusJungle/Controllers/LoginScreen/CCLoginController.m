@@ -51,7 +51,7 @@
     BOOL isFormValid = YES;
     
     if (![self.emailField.text isEmail]) isFormValid = NO;
-    if (![self.passField.text isMinLength:3]) isFormValid = NO;
+    if (![self.passField.text isMinLength:CCUserDefines.minimumPasswordLength]) isFormValid = NO;
     
     return isFormValid;
 }
