@@ -15,7 +15,11 @@
 
 + (void)showErrorWithTitle:(NSString *)title message:(NSString *)message
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:CCAlertsButtons.okButton otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:message
+                                                   delegate:self
+                                          cancelButtonTitle:CCAlertsButtons.okButton
+                                          otherButtonTitles:nil];
     [alert show];
 }
 
@@ -24,7 +28,8 @@
     switch (code) {
         case 401:
         {
-            [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:CCAlertsMessages.authorizationFaild];
+            [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error
+                                               message:CCAlertsMessages.authorizationFaild];
         }
             break;
             
@@ -40,7 +45,8 @@
     
     NSString *errorMessage = [responseErrorDictionary objectFromJSONString][CCErrorKeys.errorMessage];
     
-    [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:errorMessage];
+    [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error
+                                       message:errorMessage];
 }
 
 @end

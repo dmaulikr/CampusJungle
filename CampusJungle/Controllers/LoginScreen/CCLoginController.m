@@ -14,7 +14,6 @@
 #import "CCUserSessionProtocol.h"
 #import "CCStandardErrorHandler.h"
 
-
 @interface CCLoginController ()
 
 @property (nonatomic, weak) IBOutlet UITextField *emailField;
@@ -33,7 +32,8 @@
                                              CCUserSignUpKeys.password : self.passField.text
                                              };
         
-        [self.ioc_loginAPIProvider performLoginOperationWithUserInfo:userInfoDictionary successHandler:^{
+        [self.ioc_loginAPIProvider performLoginOperationWithUserInfo:userInfoDictionary
+                                                      successHandler:^{
             [self.loginTransaction perform];
         
         } errorHandler:^(NSError *error) {

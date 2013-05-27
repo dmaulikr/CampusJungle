@@ -6,3 +6,4 @@ pod 'AppleGuice', :podspec => "https://raw.github.com/korzun1993/AppleGuice/mast
 pod "CJStringValidator"
 pod "MBProgressHUD"
 pod "JSONKit"
+pod "UIAlertView-Blocks"

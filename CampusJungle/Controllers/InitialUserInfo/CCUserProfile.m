@@ -8,6 +8,8 @@
 
 #import "CCUserProfile.h"
 #import "CCUserSessionProtocol.h"
+#import "UIAlertView+Blocks.h"
+#import "CCAlertDefines.h"
 
 @interface CCUserProfile ()
 
@@ -34,12 +36,21 @@
     self.lastName.text = [[self.ioc_userSession currentUser] lastName];
     self.email.text = [[self.ioc_userSession currentUser] email];
     [self.avatar setImageWithURL:[NSURL URLWithString:[[self.ioc_userSession currentUser] avatar]]];
+   
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleBordered target:self action:@selector(logout)];
 }
 
 - (void)logout
 {
-    [self.logoutTransaction perform];
+    RIButtonItem *yesItem = [RIButtonItem itemWithLabel:CCAlertsButtons.yesButton];
+    yesItem.action = ^{
+        [self.logoutTransaction perform];
+    };
+    
+    RIButtonItem *noItem = [RIButtonItem itemWithLabel: CCAlertsButtons.noButton];
+    
+    UIAlertView *confirmAlert = [[UIAlertView alloc] initWithTitle:nil message:CCAlertsMessages.confimAlert cancelButtonItem:noItem otherButtonItems:yesItem, nil];
+    [confirmAlert show];    
 }
 
 @end
