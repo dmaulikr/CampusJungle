@@ -11,6 +11,7 @@
 #import "CCUserSessionProtocol.h"
 #import "CCAPIProviderProtocol.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import "CCDefines.h"
 #import "CCAuthorizationResponse.h"
 
 @interface CCLoginAPIProvider ()
@@ -52,13 +53,13 @@
     [self.ioc_facebookAPI getUserInfoSuccessHandler:^(NSDictionary *userDictionary) {
         
         NSDictionary *userInfo = @{
-                                   @"user[first_name]" : userDictionary[@"first_name"],
-                                   @"user[last_name]" : userDictionary[@"last_name"],
-                                   @"user[email]": userDictionary[@"email"],
-                                   @"user[avatar]": [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?width=200&height=200",userDictionary[@"id"]],
-                                   @"oauth[][oauth_token]":[[[FBSession activeSession] accessTokenData] accessToken],
-                                   @"oauth[][uid]" : userDictionary[@"id"],
-                                   @"oauth[][provider]": @"facebook"
+                                   CCUserAuthorizationKeys.firstName : userDictionary[CCFacebookKeys.firstName],
+                                   CCUserAuthorizationKeys.lastName : userDictionary[CCFacebookKeys.lastName],
+                                   CCUserAuthorizationKeys.email: userDictionary[CCFacebookKeys.email],
+                                   CCUserAuthorizationKeys.avatar: [NSString stringWithFormat:CCUserDefines.facebookAvatarLinkTemplate,userDictionary[CCFacebookKeys.uid]],
+                                   CCUserAuthorizationKeys.authToken:[[[FBSession activeSession] accessTokenData] accessToken],
+                                   CCUserAuthorizationKeys.authUID : userDictionary[CCFacebookKeys.uid],
+                                   CCUserAuthorizationKeys.authProvider: CCUserDefines.facebook
                                    };
         [self authorizeUserOnServerWithUserInfo:(NSDictionary *)userInfo SuccessHandler:successHandler errorHandler:errorHandler];
     } errorHandler:^(NSError *error){
@@ -68,7 +69,7 @@
 
 - (void)authorizeUserOnServerWithUserInfo:(NSDictionary *)userInfo SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
-    [self.ioc_apiProvider putUser:userInfo successHandler:^(RKMappingResult * result) {
+    [self.ioc_apiProvider putUser:userInfo successHandler:^(RKMappingResult *result) {
         self.ioc_userSession.currentUser = [(CCAuthorizationResponse *)result.firstObject user];
         successHandler(result.firstObject);
     } errorHandler:^(RKObjectRequestOperation *operation, NSError *error) {

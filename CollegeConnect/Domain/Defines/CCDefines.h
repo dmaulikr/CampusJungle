@@ -29,6 +29,8 @@ extern const struct CCUserDefines {
     __unsafe_unretained NSString *facebook;
     
     __unsafe_unretained NSString *currentUser;
+    
+    __unsafe_unretained NSString *facebookAvatarLinkTemplate;
 } CCUserDefines;
 
 extern const struct CCUserSignUpKeys {
@@ -37,3 +39,20 @@ extern const struct CCUserSignUpKeys {
     __unsafe_unretained NSString *email;
     __unsafe_unretained NSString *password;
 } CCUserSignUpKeys;
+
+extern const struct CCUserAuthorizationKeys {
+    __unsafe_unretained NSString *firstName;
+    __unsafe_unretained NSString *lastName;
+    __unsafe_unretained NSString *email;
+    __unsafe_unretained NSString *avatar;
+    __unsafe_unretained NSString *authToken;
+    __unsafe_unretained NSString *authProvider;
+    __unsafe_unretained NSString *authUID;
+} CCUserAuthorizationKeys;
+
+extern const struct CCFacebookKeys {
+    __unsafe_unretained NSString *uid;
+    __unsafe_unretained NSString *firstName;
+    __unsafe_unretained NSString *lastName;
+    __unsafe_unretained NSString *email;
+} CCFacebookKeys;
