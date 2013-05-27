@@ -12,9 +12,7 @@
 
 - (void)perform
 {
-    [self.menuController dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    [self.menuController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

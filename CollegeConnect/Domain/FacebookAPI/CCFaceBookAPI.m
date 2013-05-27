@@ -13,8 +13,6 @@
 
 @interface CCFaceBookAPI()
 
-@property (nonatomic, strong) NSMutableDictionary *postParams;
-
 @end
 
 @implementation CCFaceBookAPI
@@ -73,7 +71,5 @@
 {
     [FBSession.activeSession closeAndClearTokenInformation];
 }
-
-
 
 @end

@@ -32,7 +32,6 @@
                                              };
         
         [self.ioc_loginAPIProvider performLoginOperationWithUserInfo:userInfoDictionary successHandler:^{
-            
             [self.loginTransaction perform];
         } errorHandler:^(NSError *error) {
             

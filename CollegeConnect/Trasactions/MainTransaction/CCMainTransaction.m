@@ -28,24 +28,24 @@
     self.window.rootViewController = menu;
     [self.ioc_userSession setCurrentUser: [self.ioc_userSession loadSevedUser]];
     
-    CCLogoutTransaction *logoutTrasaction = [CCLogoutTransaction new];
-    logoutTrasaction.rootMenuController = menu;
-    menu.logoutTransaction = logoutTrasaction;
+    CCLogoutTransaction *logoutTransaction = [CCLogoutTransaction new];
+    logoutTransaction.rootMenuController = menu;
+    menu.logoutTransaction = logoutTransaction;
     
         
     if ([self.ioc_userSession currentUser]){
         
     } else {
-        [self showWelcomScreenIn:menu];
+        [self showWelcomeScreenIn:menu];
     }
 }
 
-- (void)showWelcomScreenIn:(CCMenuController *)menu
+- (void)showWelcomeScreenIn:(CCMenuController *)menu
 {
 
     __weak CCMenuController *weakMenu = menu;
     
-    UINavigationController *navigation = [CCWelcomeScreenConfigurator configurateWithBaseConroller:menu];
+    UINavigationController *navigation = [CCWelcomeScreenConfigurator configureWithBaseController:menu];
     
     menu.blockOnViewDidAppear = ^{
         [weakMenu presentViewController:navigation animated:NO completion:nil];

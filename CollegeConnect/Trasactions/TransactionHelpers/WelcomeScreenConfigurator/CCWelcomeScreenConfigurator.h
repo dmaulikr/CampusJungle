@@ -11,6 +11,6 @@
 
 @interface CCWelcomeScreenConfigurator : NSObject
 
-+ (UINavigationController *)configurateWithBaseConroller:(CCMenuController *)menu;
++ (UINavigationController *)configureWithBaseController:(CCMenuController *)menu;
 
 @end

@@ -8,7 +8,6 @@
 
 #import "CCAPIProvider.h"
 #import "CCUserSessionProtocol.h"
-#import <RestKit/RestKit.h>
 #import "CCDefines.h"
 
 @interface CCAPIProvider()

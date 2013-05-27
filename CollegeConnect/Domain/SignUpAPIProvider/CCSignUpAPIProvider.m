@@ -23,7 +23,7 @@
 {
     [self.ioc_api_provider putUserForSingUp:userInfo successHandler:^(RKMappingResult *result) {
     
-        self.ioc_userSession.currentUser = [result.firstObject user];
+        self.ioc_userSession.currentUser = (CCUser *)[result.firstObject user];
         success();
     } errorHandler:^(NSError * error) {
         errorHandler(error);

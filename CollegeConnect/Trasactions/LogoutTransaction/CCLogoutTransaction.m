@@ -27,7 +27,7 @@
     [self.ioc_facebookAPI logout];
     [self.ioc_userSession clearUserInfo];
    
-    UINavigationController *navigation = [CCWelcomeScreenConfigurator configurateWithBaseConroller:self.rootMenuController];
+    UINavigationController *navigation = [CCWelcomeScreenConfigurator configureWithBaseController:self.rootMenuController];
     
     [self.rootMenuController presentViewController:navigation animated:YES completion:nil];
 }

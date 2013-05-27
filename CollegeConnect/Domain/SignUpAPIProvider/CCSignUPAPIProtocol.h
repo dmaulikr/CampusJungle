@@ -11,7 +11,7 @@
 
 @protocol CCSignUPAPIProtocol <NSObject>
 
-- (void)signUpWithUserDictionary:(NSDictionary *)userInfo successHandler:(successHandler)success errorHandler:(errorHandler)error;
-
-
+- (void)signUpWithUserDictionary:(NSDictionary *)userInfo
+                  successHandler:(successHandler)success
+                    errorHandler:(errorHandler)error;
 @end

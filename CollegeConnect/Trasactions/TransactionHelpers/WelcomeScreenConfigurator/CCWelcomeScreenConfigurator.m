@@ -15,7 +15,7 @@
 
 @implementation CCWelcomeScreenConfigurator
 
-+ (UINavigationController *)configurateWithBaseConroller:(CCMenuController *)menu
++ (UINavigationController *)configureWithBaseController:(CCMenuController *)menu
 {
     CCWelcomeController *welcomeController = [CCWelcomeController new];
     
