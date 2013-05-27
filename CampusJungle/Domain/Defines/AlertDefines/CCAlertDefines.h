@@ -16,6 +16,7 @@ extern const struct CCAlertsMessages {
     __unsafe_unretained NSString *error;
     __unsafe_unretained NSString *facebookError;
     __unsafe_unretained NSString *wrongEmailOfPassword;
+    __unsafe_unretained NSString *authorizationFaild;
 } CCAlertsMessages;
 
 extern const struct CCAlertsButtons {

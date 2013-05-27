@@ -16,6 +16,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *email;
 @property (nonatomic, weak) IBOutlet UIImageView *avatar;
 @property (nonatomic, weak) IBOutlet UIView *tableFooterView;
+@property (nonatomic, weak) IBOutlet UIView *tableHeaderView;
 @property (nonatomic, weak) IBOutlet UITableView *collegeTable;
 
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
@@ -28,6 +29,7 @@
 {
     [super viewDidLoad];
     self.collegeTable.tableFooterView = self.tableFooterView;
+    self.collegeTable.tableHeaderView = self.tableHeaderView;
     self.firstName.text = [[self.ioc_userSession currentUser] firstName];
     self.lastName.text = [[self.ioc_userSession currentUser] lastName];
     self.email.text = [[self.ioc_userSession currentUser] email];

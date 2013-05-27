@@ -56,3 +56,8 @@ extern const struct CCFacebookKeys {
     __unsafe_unretained NSString *lastName;
     __unsafe_unretained NSString *email;
 } CCFacebookKeys;
+
+extern const struct CCErrorKeys {
+    __unsafe_unretained NSString *localizedRecoverySuggestion;
+    __unsafe_unretained NSString *errorMessage;
+} CCErrorKeys;

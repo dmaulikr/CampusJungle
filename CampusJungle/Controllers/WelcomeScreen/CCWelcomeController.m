@@ -11,6 +11,7 @@
 #import "CCUserSessionProtocol.h"
 #import "CCAuthorizationResponse.h"
 #import "CCAlertDefines.h"
+#import "CCStandardErrorHandler.h"
 
 @interface CCWelcomeController ()
 
@@ -36,8 +37,8 @@
             [self.loginTransaction perform];
         }
     } errorHandler:^(NSError * error) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:CCAlertsMessages.error message:CCAlertsMessages.facebookError delegate:nil cancelButtonTitle:CCAlertsButtons.okButton otherButtonTitles: nil];
-        [alertView show];
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error
+                                           message:CCAlertsMessages.facebookError];
     }];
 }
 

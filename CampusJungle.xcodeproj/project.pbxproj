@@ -50,6 +50,7 @@
 		A787C7BF17536F8400824DEA /* CCWelcomeScreenConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C79617536F8400824DEA /* CCWelcomeScreenConfigurator.m */; };
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
 		D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36186471743B13E00B501BC /* SystemConfiguration.framework */; };
+		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,6 +134,8 @@
 		A787C79817536F8400824DEA /* CCTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTransaction.h; sourceTree = "<group>"; };
 		A787C79917536F8400824DEA /* CCTransactionWithObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTransactionWithObject.h; sourceTree = "<group>"; };
 		D36186471743B13E00B501BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStandardErrorHandler.h; sourceTree = "<group>"; };
+		D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStandardErrorHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -413,6 +416,7 @@
 		A787C77717536F8400824DEA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D39F1C0E1753821D008E08A2 /* StandardErrorHandler */,
 				A787C77817536F8400824DEA /* UserSession */,
 				A787C77B17536F8400824DEA /* UserSessionProtocol */,
 			);
@@ -539,6 +543,15 @@
 				A787C79917536F8400824DEA /* CCTransactionWithObject.h */,
 			);
 			path = TransactionProtocols;
+			sourceTree = "<group>";
+		};
+		D39F1C0E1753821D008E08A2 /* StandardErrorHandler */ = {
+			isa = PBXGroup;
+			children = (
+				D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */,
+				D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */,
+			);
+			path = StandardErrorHandler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -674,6 +687,7 @@
 				A787C7BD17536F8400824DEA /* CCMainTransaction.m in Sources */,
 				A787C7BE17536F8400824DEA /* CCSignUpTransaction.m in Sources */,
 				A787C7BF17536F8400824DEA /* CCWelcomeScreenConfigurator.m in Sources */,
+				D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

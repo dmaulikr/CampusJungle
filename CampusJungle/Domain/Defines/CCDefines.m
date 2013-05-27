@@ -56,3 +56,8 @@ const struct CCFacebookKeys CCFacebookKeys = {
     .uid = @"id",
     .email = @"email"
 };
+
+const struct CCErrorKeys CCErrorKeys = {
+    .localizedRecoverySuggestion = @"NSLocalizedRecoverySuggestion",
+    .errorMessage = @"error_message",
+};

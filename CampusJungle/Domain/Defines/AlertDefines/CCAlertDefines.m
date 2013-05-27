@@ -16,6 +16,7 @@ const struct CCAlertsMessages CCAlertsMessages = {
     .error = @"Error",
     .facebookError = @"Facebook authorization faild",
     .wrongEmailOfPassword = @"Wrong email or password",
+    .authorizationFaild = @"Authorization Faild",
 };
 
 const struct CCAlertsButtons CCAlertsButtons = {
