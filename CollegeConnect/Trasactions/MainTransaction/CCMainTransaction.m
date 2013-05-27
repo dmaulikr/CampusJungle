@@ -29,7 +29,7 @@
     
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:menu];
     
-    [self.ioc_userSession setCurrentUser: [self.ioc_userSession loadSevedUser]];
+    [self.ioc_userSession setCurrentUser: [self.ioc_userSession loadSavedUser]];
     
     CCUserProfileTransaction *userProfileTransaction = [CCUserProfileTransaction new];
     userProfileTransaction.menuController = menu;

@@ -70,22 +70,22 @@
         @"is_new_user" : @"isFirstLaunch",
      }];
     
-    RKResponseDescriptor *responceAuthorizationDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:authorizationResponseMapping
+    RKResponseDescriptor *responseAuthorizationDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:authorizationResponseMapping
                                                                                            pathPattern:CCAPIDefines.authorization
                                                                                                keyPath:nil
                                                                                            statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
-    RKResponseDescriptor *responceSignUpDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:authorizationResponseMapping
+    RKResponseDescriptor *responseSignUpDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:authorizationResponseMapping
                                                                                                     pathPattern:CCAPIDefines.signUp
                                                                                                         keyPath:nil
                                                                                                     statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
-    RKResponseDescriptor *responceLoginDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:authorizationResponseMapping
+    RKResponseDescriptor *responseLoginDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:authorizationResponseMapping
                                                                                              pathPattern:CCAPIDefines.login
                                                                                                  keyPath:nil
                                                                                              statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
-    [objectManager addResponseDescriptor:responceAuthorizationDescriptor];
-    [objectManager addResponseDescriptor:responceSignUpDescriptor];
-    [objectManager addResponseDescriptor:responceLoginDescriptor];
+    [objectManager addResponseDescriptor:responseAuthorizationDescriptor];
+    [objectManager addResponseDescriptor:responseSignUpDescriptor];
+    [objectManager addResponseDescriptor:responseLoginDescriptor];
 }
 
 @end
