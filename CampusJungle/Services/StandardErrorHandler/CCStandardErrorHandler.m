@@ -45,8 +45,12 @@
     
     NSString *errorMessage = [responseErrorDictionary objectFromJSONString][CCErrorKeys.errorMessage];
     
-    [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error
-                                       message:errorMessage];
+    if (errorMessage){
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error
+                                           message:errorMessage];
+    } else {
+        [CCStandardErrorHandler showErrorWithCode:error.code];
+    }
 }
 
 @end

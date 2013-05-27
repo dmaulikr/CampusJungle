@@ -37,7 +37,10 @@
     self.email.text = [[self.ioc_userSession currentUser] email];
     [self.avatar setImageWithURL:[NSURL URLWithString:[[self.ioc_userSession currentUser] avatar]]];
    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleBordered target:self action:@selector(logout)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout"
+                                                                              style:UIBarButtonItemStyleBordered
+                                                                             target:self
+                                                                             action:@selector(logout)];
 }
 
 - (void)logout
@@ -49,7 +52,10 @@
     
     RIButtonItem *noItem = [RIButtonItem itemWithLabel: CCAlertsButtons.noButton];
     
-    UIAlertView *confirmAlert = [[UIAlertView alloc] initWithTitle:nil message:CCAlertsMessages.confimAlert cancelButtonItem:noItem otherButtonItems:yesItem, nil];
+    UIAlertView *confirmAlert = [[UIAlertView alloc] initWithTitle:nil
+                                                           message:CCAlertsMessages.confimAlert
+                                                  cancelButtonItem:noItem
+                                                  otherButtonItems:yesItem, nil];
     [confirmAlert show];    
 }
 

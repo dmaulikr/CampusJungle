@@ -26,23 +26,28 @@
 
 - (void)performLoginOperationWithUserInfo:(NSDictionary *)userInfo successHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
 {
-   [self.ioc_apiProvider putUserForLogin:userInfo successHandler:^(RKMappingResult *result) {
+   [self.ioc_apiProvider putUserForLogin:userInfo
+                          successHandler:^(RKMappingResult *result) {
        successHandler();
    } errorHandler:^(NSError *error) {
        errorHandler(error);
    }];
 }
 
-- (void)performLoginOperationViaFacebookWithSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+- (void)performLoginOperationViaFacebookWithSuccessHandler:(successWithObject)successHandler
+                                              errorHandler:(errorHandler)errorHandler
 {
-    [self loginFacebookSuccessHandler:successHandler errorHandler:errorHandler];
+    [self loginFacebookSuccessHandler:successHandler
+                         errorHandler:errorHandler];
 }
 
-- (void)loginFacebookSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+- (void)loginFacebookSuccessHandler:(successWithObject)successHandler
+                       errorHandler:(errorHandler)errorHandler
 {
     [self.ioc_facebookAPI logout];
     [self.ioc_facebookAPI loginWithSuccessHandler:^{
-        [self getUserInfoSuccessHandler:successHandler errorHandler:errorHandler];
+        [self getUserInfoSuccessHandler:successHandler
+                           errorHandler:errorHandler];
     } errorHandler:^(NSError *error) {
         errorHandler(error);
     }];
@@ -69,7 +74,8 @@
 
 - (void)authorizeUserOnServerWithUserInfo:(NSDictionary *)userInfo SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
-    [self.ioc_apiProvider putUser:userInfo successHandler:^(RKMappingResult *result) {
+    [self.ioc_apiProvider putUser:userInfo
+                   successHandler:^(RKMappingResult *result) {
         self.ioc_userSession.currentUser = [(CCAuthorizationResponse *)result.firstObject user];
         successHandler(result.firstObject);
     } errorHandler:^(RKObjectRequestOperation *operation, NSError *error) {
