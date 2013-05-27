@@ -35,7 +35,8 @@
             
             [self.loginTransaction perform];
         } errorHandler:^(NSError *error) {
-            
+            UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:CCAlertsMessages.error message: CCAlertsMessages.wrongEmailOfPassword delegate:nil cancelButtonTitle:CCAlertsButtons.okButton otherButtonTitles: nil];
+            [errorAlert show];
         }];
         
     } else {

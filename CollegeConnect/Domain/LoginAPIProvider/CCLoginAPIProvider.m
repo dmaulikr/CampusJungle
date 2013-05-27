@@ -39,6 +39,7 @@
 
 - (void)loginFacebookSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
+    [self.ioc_facebookAPI logout];
     [self.ioc_facebookAPI loginWithSuccessHandler:^{
         [self getUserInfoSuccessHandler:successHandler errorHandler:errorHandler];
     } errorHandler:^(NSError *error) {
