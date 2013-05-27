@@ -11,7 +11,7 @@
 #import "CCLoginTransaction.h"
 #import "CCLoginScreenTransaction.h"
 #import "CCSignUpTransaction.h"
-#import "CCInitialUserInfoTransaction.h"
+#import "CCInitialUserProfileTransaction.h"
 
 @implementation CCWelcomeScreenConfigurator
 
@@ -32,12 +32,14 @@
     
     CCLoginScreenTransaction *loginScreenTransaction = [CCLoginScreenTransaction new];
     
-    CCInitialUserInfoTransaction *initialUserTransaction = [CCInitialUserInfoTransaction new];
+    CCInitialUserProfileTransaction *initialUserTransaction = [CCInitialUserProfileTransaction new];
     
-    signUpTransaction.initialUserInfoTransaction = initialUserTransaction;
+    signUpTransaction.initialUserProfileTransaction = initialUserTransaction;
     
-    initialUserTransaction.navigation = navigation;
     initialUserTransaction.loginTransaction = loginTransaction;
+    
+    initialUserTransaction.baseViewController = menu;
+    welcomeController.initialUserInfoTransaction = initialUserTransaction;
     
     loginScreenTransaction.loginTransaction = loginTransaction;
     loginScreenTransaction.navigation = navigation;

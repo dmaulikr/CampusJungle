@@ -7,6 +7,7 @@
 //
 
 #import "CCMenuController.h"
+#import "CCUserProfile.h"
 
 @interface CCMenuController ()
 
@@ -24,7 +25,7 @@
 
 -(IBAction)logoutButtonPressed
 {
-    [self.logoutTransaction perform];
+    [self.userProfileTransaction perform];
 }
 
 @end

@@ -13,8 +13,9 @@ typedef void (^ViewDidLoadBlock)();
 
 @interface CCMenuController : CCViewController
 
-@property (nonatomic, strong) id <CCTransaction> logoutTransaction;
+@property (nonatomic, strong) id <CCTransaction> userProfileTransaction;
 @property (nonatomic, copy) ViewDidLoadBlock blockOnViewDidAppear;
+@property (nonatomic, strong) UINavigationController *navigation;
 
 -(IBAction)logoutButtonPressed;
 

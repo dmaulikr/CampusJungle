@@ -13,6 +13,9 @@ const struct CCAlertsMessages CCAlertsMessages = {
     .serverUnavailable = @"Server is temporarily unavailable. Please try again later.",
     .noInternetConnection = @"No network connection",
     .formNotValid = @"Form is not valid",
+    .error = @"Error",
+    .facebookError = @"Facebook authorization faild",
+    .wrongEmailOfPassword = @"Wrong email or password",
 };
 
 const struct CCAlertsButtons CCAlertsButtons = {

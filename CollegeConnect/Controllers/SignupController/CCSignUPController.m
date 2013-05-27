@@ -15,7 +15,8 @@
 
 @interface CCSignUPController ()
 
-@property (nonatomic, weak) IBOutlet UITextField *nameField;
+@property (nonatomic, weak) IBOutlet UITextField *firstNameField;
+@property (nonatomic, weak) IBOutlet UITextField *lastNameField;
 @property (nonatomic, weak) IBOutlet UITextField *emailField;
 @property (nonatomic, weak) IBOutlet UITextField *passField;
 
@@ -38,13 +39,14 @@
 {
     if([self isFormValid]){
         NSDictionary *userFields = @{
-                                     CCUserSignUpKeys.name : self.nameField.text,
+                                     CCUserSignUpKeys.firstName : self.firstNameField.text,
+                                     CCUserSignUpKeys.lastName : self.lastNameField.text,
                                      CCUserSignUpKeys.email : self.emailField.text,
                                      CCUserSignUpKeys.password :self.passField.text
                                      };
         [self.ioc_signUpAPI signUpWithUserDictionary:userFields successHandler:^{
         
-            [self.initialUserInfoTransaction perform];
+        [self.initialUserProfileTransaction perform];
             
         } errorHandler:^(NSError *error) {
             
@@ -61,7 +63,8 @@
     BOOL isFormValid = YES;
     
     if (![self.emailField.text isEmail]) isFormValid = NO;
-    if ([self.nameField.text isEmpty]) isFormValid = NO;
+    if ([self.firstNameField.text isEmpty]) isFormValid = NO;
+    if ([self.lastNameField.text isEmpty]) isFormValid = NO;
     if (![self.passField.text isMinLength:3]) isFormValid = NO;
 
     return isFormValid;

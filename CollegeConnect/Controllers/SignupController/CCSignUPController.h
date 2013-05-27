@@ -12,6 +12,6 @@
 
 @interface CCSignUPController : CCViewController
 
-@property (nonatomic, strong) id <CCTransaction> initialUserInfoTransaction;
+@property (nonatomic, strong) id <CCTransaction> initialUserProfileTransaction;
 
 @end

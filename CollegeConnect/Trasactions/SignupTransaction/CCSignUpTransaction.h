@@ -13,6 +13,6 @@
 
 @property (nonatomic, strong) UINavigationController *navigation;
 
-@property (nonatomic, strong) id <CCTransaction> initialUserInfoTransaction;
+@property (nonatomic, strong) id <CCTransaction> initialUserProfileTransaction;
 
 @end

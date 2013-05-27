@@ -10,7 +10,8 @@
 
 @interface CCUser : NSObject
 
-@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *firstName;
+@property (nonatomic, strong) NSString *lastName;
 @property (nonatomic, strong) NSString *avatar;
 @property (nonatomic, strong) NSString *status;
 @property (nonatomic, strong) NSString *token;

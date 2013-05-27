@@ -17,7 +17,8 @@ const struct CCAPIDefines CCAPIDefines = {
 
 
 const struct CCUserDefines CCUserDefines = {
-    .name = @"UserName",
+    .firstName = @"UserFirstName",
+    .lastName = @"UserLastName",
     .email = @"UserEmail",
     .avatar = @"UserAvatar",
     .oauthToken = @"UserOauthToken",
@@ -27,11 +28,31 @@ const struct CCUserDefines CCUserDefines = {
     .facebookToken = @"FacebookToken",
     .facebook = @"facebook",
     
+    .facebookAvatarLinkTemplate = @"https://graph.facebook.com/%@/picture?width=200&height=200",
+    
     .currentUser = @"current_user",
 };
 
 const struct CCUserSignUpKeys CCUserSignUpKeys = {
-    .name = @"name",
+    .firstName = @"first_name",
+    .lastName = @"last_name",
     .email = @"email",
     .password = @"password"
+};
+
+const struct CCUserAuthorizationKeys CCUserAuthorizationKeys = {
+    .firstName = @"user[first_name]",
+    .lastName  = @"user[last_name]",
+    .email = @"user[email]",
+    .avatar = @"user[avatar]",
+    .authToken = @"oauth[][oauth_token]",
+    .authProvider = @"oauth[][provider]",
+    .authUID = @"oauth[][uid]",
+};
+
+const struct CCFacebookKeys CCFacebookKeys = {
+    .firstName = @"first_name",
+    .lastName = @"last_name",
+    .uid = @"id",
+    .email = @"email"
 };

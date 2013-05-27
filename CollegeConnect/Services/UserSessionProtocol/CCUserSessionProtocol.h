@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) CCUser *currentUser;
 
-- (CCUser*)loadSevedUser;
+- (CCUser*)loadSavedUser;
 
 - (void)saveUser;
 
