@@ -1,0 +1,851 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A784C599173A865E005E4921 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C598173A865E005E4921 /* UIKit.framework */; };
+		A784C59B173A865E005E4921 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C59A173A865E005E4921 /* Foundation.framework */; };
+		A784C59D173A865E005E4921 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C59C173A865E005E4921 /* CoreGraphics.framework */; };
+		A787C79A17536F8400824DEA /* CCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C72F17536F8400824DEA /* CCAppDelegate.m */; };
+		A787C79B17536F8400824DEA /* CampusJungle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A787C73017536F8400824DEA /* CampusJungle-Info.plist */; };
+		A787C79C17536F8400824DEA /* CCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C73517536F8400824DEA /* CCViewController.m */; };
+		A787C79D17536F8400824DEA /* CCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A787C73617536F8400824DEA /* CCViewController.xib */; };
+		A787C79E17536F8400824DEA /* CCUserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C73917536F8400824DEA /* CCUserProfile.m */; };
+		A787C79F17536F8400824DEA /* CCUserProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = A787C73A17536F8400824DEA /* CCUserProfile.xib */; };
+		A787C7A017536F8400824DEA /* CCLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C73D17536F8400824DEA /* CCLoginController.m */; };
+		A787C7A117536F8400824DEA /* CCLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A787C73E17536F8400824DEA /* CCLoginController.xib */; };
+		A787C7A217536F8400824DEA /* CCMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C74117536F8400824DEA /* CCMenuController.m */; };
+		A787C7A317536F8400824DEA /* CCMenuController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A787C74217536F8400824DEA /* CCMenuController.xib */; };
+		A787C7A417536F8400824DEA /* CCSignUPController.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C74517536F8400824DEA /* CCSignUPController.m */; };
+		A787C7A517536F8400824DEA /* CCSignUPController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A787C74617536F8400824DEA /* CCSignUPController.xib */; };
+		A787C7A617536F8400824DEA /* CCWelcomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C74917536F8400824DEA /* CCWelcomeController.m */; };
+		A787C7A717536F8400824DEA /* CCWelcomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A787C74A17536F8400824DEA /* CCWelcomeController.xib */; };
+		A787C7A817536F8400824DEA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A787C74B17536F8400824DEA /* Default-568h@2x.png */; };
+		A787C7A917536F8400824DEA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A787C74C17536F8400824DEA /* Default.png */; };
+		A787C7AA17536F8400824DEA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A787C74D17536F8400824DEA /* Default@2x.png */; };
+		A787C7AB17536F8400824DEA /* CCAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C75117536F8400824DEA /* CCAPIProvider.m */; };
+		A787C7AC17536F8400824DEA /* CCAlertDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C75617536F8400824DEA /* CCAlertDefines.m */; };
+		A787C7AD17536F8400824DEA /* CCDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C75817536F8400824DEA /* CCDefines.m */; };
+		A787C7AE17536F8400824DEA /* CCFaceBookAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C75B17536F8400824DEA /* CCFaceBookAPI.m */; };
+		A787C7AF17536F8400824DEA /* CCLoginAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C75F17536F8400824DEA /* CCLoginAPIProvider.m */; };
+		A787C7B017536F8400824DEA /* CCAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C76417536F8400824DEA /* CCAuthorization.m */; };
+		A787C7B117536F8400824DEA /* CCAuthorizationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C76717536F8400824DEA /* CCAuthorizationResponse.m */; };
+		A787C7B217536F8400824DEA /* CCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C76A17536F8400824DEA /* CCUser.m */; };
+		A787C7B317536F8400824DEA /* CCRestKitConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C76D17536F8400824DEA /* CCRestKitConfigurator.m */; };
+		A787C7B417536F8400824DEA /* CCSignUpAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C77117536F8400824DEA /* CCSignUpAPIProvider.m */; };
+		A787C7B517536F8400824DEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A787C77417536F8400824DEA /* InfoPlist.strings */; };
+		A787C7B617536F8400824DEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C77617536F8400824DEA /* main.m */; };
+		A787C7B717536F8400824DEA /* CCUserSession.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C77A17536F8400824DEA /* CCUserSession.m */; };
+		A787C7B817536F8400824DEA /* CCInitialUserProfileTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C78017536F8400824DEA /* CCInitialUserProfileTransaction.m */; };
+		A787C7B917536F8400824DEA /* CCUserProfileTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C78317536F8400824DEA /* CCUserProfileTransaction.m */; };
+		A787C7BA17536F8400824DEA /* CCLoginScreenTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C78617536F8400824DEA /* CCLoginScreenTransaction.m */; };
+		A787C7BB17536F8400824DEA /* CCLoginTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C78917536F8400824DEA /* CCLoginTransaction.m */; };
+		A787C7BC17536F8400824DEA /* CCLogoutTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C78C17536F8400824DEA /* CCLogoutTransaction.m */; };
+		A787C7BD17536F8400824DEA /* CCMainTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C78F17536F8400824DEA /* CCMainTransaction.m */; };
+		A787C7BE17536F8400824DEA /* CCSignUpTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C79217536F8400824DEA /* CCSignUpTransaction.m */; };
+		A787C7BF17536F8400824DEA /* CCWelcomeScreenConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C79617536F8400824DEA /* CCWelcomeScreenConfigurator.m */; };
+		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
+		D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36186471743B13E00B501BC /* SystemConfiguration.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3EA3BC22A4CB480B8934991C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		A784C595173A865E005E4921 /* CampusJungle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusJungle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A784C598173A865E005E4921 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A784C59A173A865E005E4921 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A784C59C173A865E005E4921 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A787C72E17536F8400824DEA /* CCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAppDelegate.h; sourceTree = "<group>"; };
+		A787C72F17536F8400824DEA /* CCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAppDelegate.m; sourceTree = "<group>"; };
+		A787C73017536F8400824DEA /* CampusJungle-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CampusJungle-Info.plist"; sourceTree = "<group>"; };
+		A787C73117536F8400824DEA /* CampusJungle-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CampusJungle-Prefix.pch"; sourceTree = "<group>"; };
+		A787C73417536F8400824DEA /* CCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCViewController.h; sourceTree = "<group>"; };
+		A787C73517536F8400824DEA /* CCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewController.m; sourceTree = "<group>"; };
+		A787C73617536F8400824DEA /* CCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCViewController.xib; sourceTree = "<group>"; };
+		A787C73817536F8400824DEA /* CCUserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUserProfile.h; sourceTree = "<group>"; };
+		A787C73917536F8400824DEA /* CCUserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUserProfile.m; sourceTree = "<group>"; };
+		A787C73A17536F8400824DEA /* CCUserProfile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCUserProfile.xib; sourceTree = "<group>"; };
+		A787C73C17536F8400824DEA /* CCLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLoginController.h; sourceTree = "<group>"; };
+		A787C73D17536F8400824DEA /* CCLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLoginController.m; sourceTree = "<group>"; };
+		A787C73E17536F8400824DEA /* CCLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCLoginController.xib; sourceTree = "<group>"; };
+		A787C74017536F8400824DEA /* CCMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMenuController.h; sourceTree = "<group>"; };
+		A787C74117536F8400824DEA /* CCMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMenuController.m; sourceTree = "<group>"; };
+		A787C74217536F8400824DEA /* CCMenuController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMenuController.xib; sourceTree = "<group>"; };
+		A787C74417536F8400824DEA /* CCSignUPController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSignUPController.h; sourceTree = "<group>"; };
+		A787C74517536F8400824DEA /* CCSignUPController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSignUPController.m; sourceTree = "<group>"; };
+		A787C74617536F8400824DEA /* CCSignUPController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCSignUPController.xib; sourceTree = "<group>"; };
+		A787C74817536F8400824DEA /* CCWelcomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWelcomeController.h; sourceTree = "<group>"; };
+		A787C74917536F8400824DEA /* CCWelcomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWelcomeController.m; sourceTree = "<group>"; };
+		A787C74A17536F8400824DEA /* CCWelcomeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCWelcomeController.xib; sourceTree = "<group>"; };
+		A787C74B17536F8400824DEA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A787C74C17536F8400824DEA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		A787C74D17536F8400824DEA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		A787C75017536F8400824DEA /* CCAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAPIProvider.h; sourceTree = "<group>"; };
+		A787C75117536F8400824DEA /* CCAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAPIProvider.m; sourceTree = "<group>"; };
+		A787C75217536F8400824DEA /* CCAPIProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAPIProviderProtocol.h; sourceTree = "<group>"; };
+		A787C75517536F8400824DEA /* CCAlertDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAlertDefines.h; sourceTree = "<group>"; };
+		A787C75617536F8400824DEA /* CCAlertDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAlertDefines.m; sourceTree = "<group>"; };
+		A787C75717536F8400824DEA /* CCDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDefines.h; sourceTree = "<group>"; };
+		A787C75817536F8400824DEA /* CCDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDefines.m; sourceTree = "<group>"; };
+		A787C75A17536F8400824DEA /* CCFaceBookAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFaceBookAPI.h; sourceTree = "<group>"; };
+		A787C75B17536F8400824DEA /* CCFaceBookAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFaceBookAPI.m; sourceTree = "<group>"; };
+		A787C75C17536F8400824DEA /* CCFaceBookAPIProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFaceBookAPIProtocol.h; sourceTree = "<group>"; };
+		A787C75E17536F8400824DEA /* CCLoginAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLoginAPIProvider.h; sourceTree = "<group>"; };
+		A787C75F17536F8400824DEA /* CCLoginAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLoginAPIProvider.m; sourceTree = "<group>"; };
+		A787C76017536F8400824DEA /* CCLoginAPIProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLoginAPIProviderProtocol.h; sourceTree = "<group>"; };
+		A787C76317536F8400824DEA /* CCAuthorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAuthorization.h; sourceTree = "<group>"; };
+		A787C76417536F8400824DEA /* CCAuthorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAuthorization.m; sourceTree = "<group>"; };
+		A787C76617536F8400824DEA /* CCAuthorizationResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAuthorizationResponse.h; sourceTree = "<group>"; };
+		A787C76717536F8400824DEA /* CCAuthorizationResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAuthorizationResponse.m; sourceTree = "<group>"; };
+		A787C76917536F8400824DEA /* CCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUser.h; sourceTree = "<group>"; };
+		A787C76A17536F8400824DEA /* CCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUser.m; sourceTree = "<group>"; };
+		A787C76C17536F8400824DEA /* CCRestKitConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCRestKitConfigurator.h; sourceTree = "<group>"; };
+		A787C76D17536F8400824DEA /* CCRestKitConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCRestKitConfigurator.m; sourceTree = "<group>"; };
+		A787C76F17536F8400824DEA /* CCSignUPAPIProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSignUPAPIProtocol.h; sourceTree = "<group>"; };
+		A787C77017536F8400824DEA /* CCSignUpAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSignUpAPIProvider.h; sourceTree = "<group>"; };
+		A787C77117536F8400824DEA /* CCSignUpAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSignUpAPIProvider.m; sourceTree = "<group>"; };
+		A787C77317536F8400824DEA /* CCTypesDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTypesDefinition.h; sourceTree = "<group>"; };
+		A787C77517536F8400824DEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A787C77617536F8400824DEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A787C77917536F8400824DEA /* CCUserSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUserSession.h; sourceTree = "<group>"; };
+		A787C77A17536F8400824DEA /* CCUserSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUserSession.m; sourceTree = "<group>"; };
+		A787C77C17536F8400824DEA /* CCUserSessionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUserSessionProtocol.h; sourceTree = "<group>"; };
+		A787C77F17536F8400824DEA /* CCInitialUserProfileTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCInitialUserProfileTransaction.h; sourceTree = "<group>"; };
+		A787C78017536F8400824DEA /* CCInitialUserProfileTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCInitialUserProfileTransaction.m; sourceTree = "<group>"; };
+		A787C78217536F8400824DEA /* CCUserProfileTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUserProfileTransaction.h; sourceTree = "<group>"; };
+		A787C78317536F8400824DEA /* CCUserProfileTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUserProfileTransaction.m; sourceTree = "<group>"; };
+		A787C78517536F8400824DEA /* CCLoginScreenTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLoginScreenTransaction.h; sourceTree = "<group>"; };
+		A787C78617536F8400824DEA /* CCLoginScreenTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLoginScreenTransaction.m; sourceTree = "<group>"; };
+		A787C78817536F8400824DEA /* CCLoginTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLoginTransaction.h; sourceTree = "<group>"; };
+		A787C78917536F8400824DEA /* CCLoginTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLoginTransaction.m; sourceTree = "<group>"; };
+		A787C78B17536F8400824DEA /* CCLogoutTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLogoutTransaction.h; sourceTree = "<group>"; };
+		A787C78C17536F8400824DEA /* CCLogoutTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLogoutTransaction.m; sourceTree = "<group>"; };
+		A787C78E17536F8400824DEA /* CCMainTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMainTransaction.h; sourceTree = "<group>"; };
+		A787C78F17536F8400824DEA /* CCMainTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMainTransaction.m; sourceTree = "<group>"; };
+		A787C79117536F8400824DEA /* CCSignUpTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSignUpTransaction.h; sourceTree = "<group>"; };
+		A787C79217536F8400824DEA /* CCSignUpTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSignUpTransaction.m; sourceTree = "<group>"; };
+		A787C79517536F8400824DEA /* CCWelcomeScreenConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWelcomeScreenConfigurator.h; sourceTree = "<group>"; };
+		A787C79617536F8400824DEA /* CCWelcomeScreenConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWelcomeScreenConfigurator.m; sourceTree = "<group>"; };
+		A787C79817536F8400824DEA /* CCTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTransaction.h; sourceTree = "<group>"; };
+		A787C79917536F8400824DEA /* CCTransactionWithObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTransactionWithObject.h; sourceTree = "<group>"; };
+		D36186471743B13E00B501BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A784C592173A865E005E4921 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */,
+				A784C599173A865E005E4921 /* UIKit.framework in Frameworks */,
+				A784C59B173A865E005E4921 /* Foundation.framework in Frameworks */,
+				A784C59D173A865E005E4921 /* CoreGraphics.framework in Frameworks */,
+				AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A784C58C173A865E005E4921 = {
+			isa = PBXGroup;
+			children = (
+				A787C72C17536F8400824DEA /* CampusJungle */,
+				A784C597173A865E005E4921 /* Frameworks */,
+				A784C596173A865E005E4921 /* Products */,
+				9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		A784C596173A865E005E4921 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A784C595173A865E005E4921 /* CampusJungle.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A784C597173A865E005E4921 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D36186471743B13E00B501BC /* SystemConfiguration.framework */,
+				A784C598173A865E005E4921 /* UIKit.framework */,
+				A784C59A173A865E005E4921 /* Foundation.framework */,
+				A784C59C173A865E005E4921 /* CoreGraphics.framework */,
+				3EA3BC22A4CB480B8934991C /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A787C72C17536F8400824DEA /* CampusJungle */ = {
+			isa = PBXGroup;
+			children = (
+				A787C72D17536F8400824DEA /* AppDelegate */,
+				A787C73017536F8400824DEA /* CampusJungle-Info.plist */,
+				A787C73117536F8400824DEA /* CampusJungle-Prefix.pch */,
+				A787C73217536F8400824DEA /* Controllers */,
+				A787C74B17536F8400824DEA /* Default-568h@2x.png */,
+				A787C74C17536F8400824DEA /* Default.png */,
+				A787C74D17536F8400824DEA /* Default@2x.png */,
+				A787C74E17536F8400824DEA /* Domain */,
+				A787C77417536F8400824DEA /* InfoPlist.strings */,
+				A787C77617536F8400824DEA /* main.m */,
+				A787C77717536F8400824DEA /* Services */,
+				A787C77D17536F8400824DEA /* Trasactions */,
+			);
+			path = CampusJungle;
+			sourceTree = "<group>";
+		};
+		A787C72D17536F8400824DEA /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A787C72E17536F8400824DEA /* CCAppDelegate.h */,
+				A787C72F17536F8400824DEA /* CCAppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		A787C73217536F8400824DEA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A787C73317536F8400824DEA /* BaseController */,
+				A787C73717536F8400824DEA /* InitialUserInfo */,
+				A787C73B17536F8400824DEA /* LoginScreen */,
+				A787C73F17536F8400824DEA /* MenuController */,
+				A787C74317536F8400824DEA /* SignupController */,
+				A787C74717536F8400824DEA /* WelcomeScreen */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A787C73317536F8400824DEA /* BaseController */ = {
+			isa = PBXGroup;
+			children = (
+				A787C73417536F8400824DEA /* CCViewController.h */,
+				A787C73517536F8400824DEA /* CCViewController.m */,
+				A787C73617536F8400824DEA /* CCViewController.xib */,
+			);
+			path = BaseController;
+			sourceTree = "<group>";
+		};
+		A787C73717536F8400824DEA /* InitialUserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				A787C73817536F8400824DEA /* CCUserProfile.h */,
+				A787C73917536F8400824DEA /* CCUserProfile.m */,
+				A787C73A17536F8400824DEA /* CCUserProfile.xib */,
+			);
+			path = InitialUserInfo;
+			sourceTree = "<group>";
+		};
+		A787C73B17536F8400824DEA /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A787C73C17536F8400824DEA /* CCLoginController.h */,
+				A787C73D17536F8400824DEA /* CCLoginController.m */,
+				A787C73E17536F8400824DEA /* CCLoginController.xib */,
+			);
+			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		A787C73F17536F8400824DEA /* MenuController */ = {
+			isa = PBXGroup;
+			children = (
+				A787C74017536F8400824DEA /* CCMenuController.h */,
+				A787C74117536F8400824DEA /* CCMenuController.m */,
+				A787C74217536F8400824DEA /* CCMenuController.xib */,
+			);
+			path = MenuController;
+			sourceTree = "<group>";
+		};
+		A787C74317536F8400824DEA /* SignupController */ = {
+			isa = PBXGroup;
+			children = (
+				A787C74417536F8400824DEA /* CCSignUPController.h */,
+				A787C74517536F8400824DEA /* CCSignUPController.m */,
+				A787C74617536F8400824DEA /* CCSignUPController.xib */,
+			);
+			path = SignupController;
+			sourceTree = "<group>";
+		};
+		A787C74717536F8400824DEA /* WelcomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A787C74817536F8400824DEA /* CCWelcomeController.h */,
+				A787C74917536F8400824DEA /* CCWelcomeController.m */,
+				A787C74A17536F8400824DEA /* CCWelcomeController.xib */,
+			);
+			path = WelcomeScreen;
+			sourceTree = "<group>";
+		};
+		A787C74E17536F8400824DEA /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A787C74F17536F8400824DEA /* APIProvider */,
+				A787C75317536F8400824DEA /* Defines */,
+				A787C75917536F8400824DEA /* FacebookAPI */,
+				A787C75D17536F8400824DEA /* LoginAPIProvider */,
+				A787C76117536F8400824DEA /* Models */,
+				A787C76B17536F8400824DEA /* RestKitConfigurator */,
+				A787C76E17536F8400824DEA /* SignUpAPIProvider */,
+				A787C77217536F8400824DEA /* TypesDefinition */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		A787C74F17536F8400824DEA /* APIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				A787C75017536F8400824DEA /* CCAPIProvider.h */,
+				A787C75117536F8400824DEA /* CCAPIProvider.m */,
+				A787C75217536F8400824DEA /* CCAPIProviderProtocol.h */,
+			);
+			path = APIProvider;
+			sourceTree = "<group>";
+		};
+		A787C75317536F8400824DEA /* Defines */ = {
+			isa = PBXGroup;
+			children = (
+				A787C75417536F8400824DEA /* AlertDefines */,
+				A787C75717536F8400824DEA /* CCDefines.h */,
+				A787C75817536F8400824DEA /* CCDefines.m */,
+			);
+			path = Defines;
+			sourceTree = "<group>";
+		};
+		A787C75417536F8400824DEA /* AlertDefines */ = {
+			isa = PBXGroup;
+			children = (
+				A787C75517536F8400824DEA /* CCAlertDefines.h */,
+				A787C75617536F8400824DEA /* CCAlertDefines.m */,
+			);
+			path = AlertDefines;
+			sourceTree = "<group>";
+		};
+		A787C75917536F8400824DEA /* FacebookAPI */ = {
+			isa = PBXGroup;
+			children = (
+				A787C75A17536F8400824DEA /* CCFaceBookAPI.h */,
+				A787C75B17536F8400824DEA /* CCFaceBookAPI.m */,
+				A787C75C17536F8400824DEA /* CCFaceBookAPIProtocol.h */,
+			);
+			path = FacebookAPI;
+			sourceTree = "<group>";
+		};
+		A787C75D17536F8400824DEA /* LoginAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				A787C75E17536F8400824DEA /* CCLoginAPIProvider.h */,
+				A787C75F17536F8400824DEA /* CCLoginAPIProvider.m */,
+				A787C76017536F8400824DEA /* CCLoginAPIProviderProtocol.h */,
+			);
+			path = LoginAPIProvider;
+			sourceTree = "<group>";
+		};
+		A787C76117536F8400824DEA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A787C76217536F8400824DEA /* Authorization */,
+				A787C76517536F8400824DEA /* AuthorizationResponse */,
+				A787C76817536F8400824DEA /* User */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A787C76217536F8400824DEA /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				A787C76317536F8400824DEA /* CCAuthorization.h */,
+				A787C76417536F8400824DEA /* CCAuthorization.m */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		A787C76517536F8400824DEA /* AuthorizationResponse */ = {
+			isa = PBXGroup;
+			children = (
+				A787C76617536F8400824DEA /* CCAuthorizationResponse.h */,
+				A787C76717536F8400824DEA /* CCAuthorizationResponse.m */,
+			);
+			path = AuthorizationResponse;
+			sourceTree = "<group>";
+		};
+		A787C76817536F8400824DEA /* User */ = {
+			isa = PBXGroup;
+			children = (
+				A787C76917536F8400824DEA /* CCUser.h */,
+				A787C76A17536F8400824DEA /* CCUser.m */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		A787C76B17536F8400824DEA /* RestKitConfigurator */ = {
+			isa = PBXGroup;
+			children = (
+				A787C76C17536F8400824DEA /* CCRestKitConfigurator.h */,
+				A787C76D17536F8400824DEA /* CCRestKitConfigurator.m */,
+			);
+			path = RestKitConfigurator;
+			sourceTree = "<group>";
+		};
+		A787C76E17536F8400824DEA /* SignUpAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				A787C76F17536F8400824DEA /* CCSignUPAPIProtocol.h */,
+				A787C77017536F8400824DEA /* CCSignUpAPIProvider.h */,
+				A787C77117536F8400824DEA /* CCSignUpAPIProvider.m */,
+			);
+			path = SignUpAPIProvider;
+			sourceTree = "<group>";
+		};
+		A787C77217536F8400824DEA /* TypesDefinition */ = {
+			isa = PBXGroup;
+			children = (
+				A787C77317536F8400824DEA /* CCTypesDefinition.h */,
+			);
+			path = TypesDefinition;
+			sourceTree = "<group>";
+		};
+		A787C77717536F8400824DEA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A787C77817536F8400824DEA /* UserSession */,
+				A787C77B17536F8400824DEA /* UserSessionProtocol */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A787C77817536F8400824DEA /* UserSession */ = {
+			isa = PBXGroup;
+			children = (
+				A787C77917536F8400824DEA /* CCUserSession.h */,
+				A787C77A17536F8400824DEA /* CCUserSession.m */,
+			);
+			path = UserSession;
+			sourceTree = "<group>";
+		};
+		A787C77B17536F8400824DEA /* UserSessionProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				A787C77C17536F8400824DEA /* CCUserSessionProtocol.h */,
+			);
+			path = UserSessionProtocol;
+			sourceTree = "<group>";
+		};
+		A787C77D17536F8400824DEA /* Trasactions */ = {
+			isa = PBXGroup;
+			children = (
+				A787C77E17536F8400824DEA /* InitialUserInfoTransaction */,
+				A787C78417536F8400824DEA /* LoginScreenTransaction */,
+				A787C78717536F8400824DEA /* LoginTransaction */,
+				A787C78A17536F8400824DEA /* LogoutTransaction */,
+				A787C78D17536F8400824DEA /* MainTransaction */,
+				A787C79017536F8400824DEA /* SignupTransaction */,
+				A787C79317536F8400824DEA /* TransactionHelpers */,
+				A787C79717536F8400824DEA /* TransactionProtocols */,
+			);
+			path = Trasactions;
+			sourceTree = "<group>";
+		};
+		A787C77E17536F8400824DEA /* InitialUserInfoTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				A787C77F17536F8400824DEA /* CCInitialUserProfileTransaction.h */,
+				A787C78017536F8400824DEA /* CCInitialUserProfileTransaction.m */,
+				A787C78117536F8400824DEA /* UserProfileTransaction */,
+			);
+			path = InitialUserInfoTransaction;
+			sourceTree = "<group>";
+		};
+		A787C78117536F8400824DEA /* UserProfileTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				A787C78217536F8400824DEA /* CCUserProfileTransaction.h */,
+				A787C78317536F8400824DEA /* CCUserProfileTransaction.m */,
+			);
+			path = UserProfileTransaction;
+			sourceTree = "<group>";
+		};
+		A787C78417536F8400824DEA /* LoginScreenTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				A787C78517536F8400824DEA /* CCLoginScreenTransaction.h */,
+				A787C78617536F8400824DEA /* CCLoginScreenTransaction.m */,
+			);
+			path = LoginScreenTransaction;
+			sourceTree = "<group>";
+		};
+		A787C78717536F8400824DEA /* LoginTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				A787C78817536F8400824DEA /* CCLoginTransaction.h */,
+				A787C78917536F8400824DEA /* CCLoginTransaction.m */,
+			);
+			path = LoginTransaction;
+			sourceTree = "<group>";
+		};
+		A787C78A17536F8400824DEA /* LogoutTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				A787C78B17536F8400824DEA /* CCLogoutTransaction.h */,
+				A787C78C17536F8400824DEA /* CCLogoutTransaction.m */,
+			);
+			path = LogoutTransaction;
+			sourceTree = "<group>";
+		};
+		A787C78D17536F8400824DEA /* MainTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				A787C78E17536F8400824DEA /* CCMainTransaction.h */,
+				A787C78F17536F8400824DEA /* CCMainTransaction.m */,
+			);
+			path = MainTransaction;
+			sourceTree = "<group>";
+		};
+		A787C79017536F8400824DEA /* SignupTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				A787C79117536F8400824DEA /* CCSignUpTransaction.h */,
+				A787C79217536F8400824DEA /* CCSignUpTransaction.m */,
+			);
+			path = SignupTransaction;
+			sourceTree = "<group>";
+		};
+		A787C79317536F8400824DEA /* TransactionHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				A787C79417536F8400824DEA /* WelcomeScreenConfigurator */,
+			);
+			path = TransactionHelpers;
+			sourceTree = "<group>";
+		};
+		A787C79417536F8400824DEA /* WelcomeScreenConfigurator */ = {
+			isa = PBXGroup;
+			children = (
+				A787C79517536F8400824DEA /* CCWelcomeScreenConfigurator.h */,
+				A787C79617536F8400824DEA /* CCWelcomeScreenConfigurator.m */,
+			);
+			path = WelcomeScreenConfigurator;
+			sourceTree = "<group>";
+		};
+		A787C79717536F8400824DEA /* TransactionProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				A787C79817536F8400824DEA /* CCTransaction.h */,
+				A787C79917536F8400824DEA /* CCTransactionWithObject.h */,
+			);
+			path = TransactionProtocols;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A784C594173A865E005E4921 /* CampusJungle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A784C5B2173A865E005E4921 /* Build configuration list for PBXNativeTarget "CampusJungle" */;
+			buildPhases = (
+				2FBE7E1872274AA59D320D6D /* Check Pods Manifest.lock */,
+				A784C591173A865E005E4921 /* Sources */,
+				A784C592173A865E005E4921 /* Frameworks */,
+				A784C593173A865E005E4921 /* Resources */,
+				9EF85DBD3B174EB2ADB731B5 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CampusJungle;
+			productName = CollegeConnect;
+			productReference = A784C595173A865E005E4921 /* CampusJungle.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A784C58D173A865E005E4921 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CC;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = 111minutes;
+			};
+			buildConfigurationList = A784C590173A865E005E4921 /* Build configuration list for PBXProject "CampusJungle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A784C58C173A865E005E4921;
+			productRefGroup = A784C596173A865E005E4921 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A784C594173A865E005E4921 /* CampusJungle */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A784C593173A865E005E4921 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A787C79B17536F8400824DEA /* CampusJungle-Info.plist in Resources */,
+				A787C79D17536F8400824DEA /* CCViewController.xib in Resources */,
+				A787C79F17536F8400824DEA /* CCUserProfile.xib in Resources */,
+				A787C7A117536F8400824DEA /* CCLoginController.xib in Resources */,
+				A787C7A317536F8400824DEA /* CCMenuController.xib in Resources */,
+				A787C7A517536F8400824DEA /* CCSignUPController.xib in Resources */,
+				A787C7A717536F8400824DEA /* CCWelcomeController.xib in Resources */,
+				A787C7A817536F8400824DEA /* Default-568h@2x.png in Resources */,
+				A787C7A917536F8400824DEA /* Default.png in Resources */,
+				A787C7AA17536F8400824DEA /* Default@2x.png in Resources */,
+				A787C7B517536F8400824DEA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2FBE7E1872274AA59D320D6D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sanbox is not in sync with the Podfile.lock. Run 'pod install'.\nEOM\n    exit 1\nfi\n";
+		};
+		9EF85DBD3B174EB2ADB731B5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A784C591173A865E005E4921 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A787C79A17536F8400824DEA /* CCAppDelegate.m in Sources */,
+				A787C79C17536F8400824DEA /* CCViewController.m in Sources */,
+				A787C79E17536F8400824DEA /* CCUserProfile.m in Sources */,
+				A787C7A017536F8400824DEA /* CCLoginController.m in Sources */,
+				A787C7A217536F8400824DEA /* CCMenuController.m in Sources */,
+				A787C7A417536F8400824DEA /* CCSignUPController.m in Sources */,
+				A787C7A617536F8400824DEA /* CCWelcomeController.m in Sources */,
+				A787C7AB17536F8400824DEA /* CCAPIProvider.m in Sources */,
+				A787C7AC17536F8400824DEA /* CCAlertDefines.m in Sources */,
+				A787C7AD17536F8400824DEA /* CCDefines.m in Sources */,
+				A787C7AE17536F8400824DEA /* CCFaceBookAPI.m in Sources */,
+				A787C7AF17536F8400824DEA /* CCLoginAPIProvider.m in Sources */,
+				A787C7B017536F8400824DEA /* CCAuthorization.m in Sources */,
+				A787C7B117536F8400824DEA /* CCAuthorizationResponse.m in Sources */,
+				A787C7B217536F8400824DEA /* CCUser.m in Sources */,
+				A787C7B317536F8400824DEA /* CCRestKitConfigurator.m in Sources */,
+				A787C7B417536F8400824DEA /* CCSignUpAPIProvider.m in Sources */,
+				A787C7B617536F8400824DEA /* main.m in Sources */,
+				A787C7B717536F8400824DEA /* CCUserSession.m in Sources */,
+				A787C7B817536F8400824DEA /* CCInitialUserProfileTransaction.m in Sources */,
+				A787C7B917536F8400824DEA /* CCUserProfileTransaction.m in Sources */,
+				A787C7BA17536F8400824DEA /* CCLoginScreenTransaction.m in Sources */,
+				A787C7BB17536F8400824DEA /* CCLoginTransaction.m in Sources */,
+				A787C7BC17536F8400824DEA /* CCLogoutTransaction.m in Sources */,
+				A787C7BD17536F8400824DEA /* CCMainTransaction.m in Sources */,
+				A787C7BE17536F8400824DEA /* CCSignUpTransaction.m in Sources */,
+				A787C7BF17536F8400824DEA /* CCWelcomeScreenConfigurator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A787C77417536F8400824DEA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A787C77517536F8400824DEA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A784C5B0173A865E005E4921 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A784C5B1173A865E005E4921 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A784C5B3173A865E005E4921 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CampusJungle/CampusJungle-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/CampusJungle/CampusJungle-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lsqlite3.0",
+					"-framework",
+					CFNetwork,
+					"-framework",
+					CoreData,
+					"-framework",
+					CoreLocation,
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					Security,
+					"-framework",
+					SystemConfiguration,
+					"-weak_framework",
+					Accounts,
+					"-weak_framework",
+					AdSupport,
+					"-weak_framework",
+					Security,
+					"-weak_framework",
+					Social,
+					"-all_load",
+				);
+				PRODUCT_NAME = CampusJungle;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A784C5B4173A865E005E4921 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CampusJungle/CampusJungle-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/CampusJungle/CampusJungle-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lsqlite3.0",
+					"-framework",
+					CFNetwork,
+					"-framework",
+					CoreData,
+					"-framework",
+					CoreLocation,
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					Security,
+					"-framework",
+					SystemConfiguration,
+					"-weak_framework",
+					Accounts,
+					"-weak_framework",
+					AdSupport,
+					"-weak_framework",
+					Security,
+					"-weak_framework",
+					Social,
+					"-all_load",
+				);
+				PRODUCT_NAME = CampusJungle;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A784C590173A865E005E4921 /* Build configuration list for PBXProject "CampusJungle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A784C5B0173A865E005E4921 /* Debug */,
+				A784C5B1173A865E005E4921 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A784C5B2173A865E005E4921 /* Build configuration list for PBXNativeTarget "CampusJungle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A784C5B3173A865E005E4921 /* Debug */,
+				A784C5B4173A865E005E4921 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A784C58D173A865E005E4921 /* Project object */;
+}
