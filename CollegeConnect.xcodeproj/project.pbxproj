@@ -458,20 +458,20 @@
 				D31DB8D0174D2258009814AF /* LoginScreen */,
 				D31DB8B9174CFA50009814AF /* SignupController */,
 				D3E1ED37174B8B2A000D92AE /* BaseController */,
-				D3E1ED2C174B6E0B000D92AE /* WelcomController */,
+				D3E1ED2C174B6E0B000D92AE /* WelcomeController */,
 				D3E1ED3D174B9212000D92AE /* MenuController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		D3E1ED2C174B6E0B000D92AE /* WelcomController */ = {
+		D3E1ED2C174B6E0B000D92AE /* WelcomeController */ = {
 			isa = PBXGroup;
 			children = (
 				D31DB8D7174D23F6009814AF /* CCWelcomeController.h */,
 				D31DB8D6174D23F6009814AF /* CCWelcomeController.m */,
 				D31DB8D8174D23F6009814AF /* CCWelcomeController.xib */,
 			);
-			name = WelcomController;
+			name = WelcomeController;
 			path = LoginController;
 			sourceTree = "<group>";
 		};
