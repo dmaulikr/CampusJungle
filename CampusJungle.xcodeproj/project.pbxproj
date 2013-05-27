@@ -48,6 +48,8 @@
 		A787C7BD17536F8400824DEA /* CCMainTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C78F17536F8400824DEA /* CCMainTransaction.m */; };
 		A787C7BE17536F8400824DEA /* CCSignUpTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C79217536F8400824DEA /* CCSignUpTransaction.m */; };
 		A787C7BF17536F8400824DEA /* CCWelcomeScreenConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C79617536F8400824DEA /* CCWelcomeScreenConfigurator.m */; };
+		A787C7C117538BCF00824DEA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A787C7C017538BCF00824DEA /* QuartzCore.framework */; };
+		A787C7CA1753904200824DEA /* CCSideMenuTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C7C91753904200824DEA /* CCSideMenuTransaction.m */; };
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
 		D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36186471743B13E00B501BC /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
@@ -132,6 +134,9 @@
 		A787C79617536F8400824DEA /* CCWelcomeScreenConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWelcomeScreenConfigurator.m; sourceTree = "<group>"; };
 		A787C79817536F8400824DEA /* CCTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTransaction.h; sourceTree = "<group>"; };
 		A787C79917536F8400824DEA /* CCTransactionWithObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTransactionWithObject.h; sourceTree = "<group>"; };
+		A787C7C017538BCF00824DEA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A787C7C81753904200824DEA /* CCSideMenuTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCSideMenuTransaction.h; path = SideMenuTransaction/CCSideMenuTransaction.h; sourceTree = "<group>"; };
+		A787C7C91753904200824DEA /* CCSideMenuTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCSideMenuTransaction.m; path = SideMenuTransaction/CCSideMenuTransaction.m; sourceTree = "<group>"; };
 		D36186471743B13E00B501BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -140,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A787C7C117538BCF00824DEA /* QuartzCore.framework in Frameworks */,
 				D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */,
 				A784C599173A865E005E4921 /* UIKit.framework in Frameworks */,
 				A784C59B173A865E005E4921 /* Foundation.framework in Frameworks */,
@@ -172,6 +178,7 @@
 		A784C597173A865E005E4921 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A787C7C017538BCF00824DEA /* QuartzCore.framework */,
 				D36186471743B13E00B501BC /* SystemConfiguration.framework */,
 				A784C598173A865E005E4921 /* UIKit.framework */,
 				A784C59A173A865E005E4921 /* Foundation.framework */,
@@ -447,6 +454,8 @@
 				A787C79017536F8400824DEA /* SignupTransaction */,
 				A787C79317536F8400824DEA /* TransactionHelpers */,
 				A787C79717536F8400824DEA /* TransactionProtocols */,
+				A787C7C81753904200824DEA /* CCSideMenuTransaction.h */,
+				A787C7C91753904200824DEA /* CCSideMenuTransaction.m */,
 			);
 			path = Trasactions;
 			sourceTree = "<group>";
@@ -674,6 +683,7 @@
 				A787C7BD17536F8400824DEA /* CCMainTransaction.m in Sources */,
 				A787C7BE17536F8400824DEA /* CCSignUpTransaction.m in Sources */,
 				A787C7BF17536F8400824DEA /* CCWelcomeScreenConfigurator.m in Sources */,
+				A787C7CA1753904200824DEA /* CCSideMenuTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
