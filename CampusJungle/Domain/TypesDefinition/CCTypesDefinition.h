@@ -10,6 +10,7 @@
 
 typedef void (^userInfoSuccessHandler)(NSDictionary *);
 typedef void (^successHandler)();
+typedef void (^action)();
 typedef void (^successWithObject)(id);
 typedef void (^errorHandler)(NSError *);
 typedef void (^successHandlerWithRKResult)(RKMappingResult *);

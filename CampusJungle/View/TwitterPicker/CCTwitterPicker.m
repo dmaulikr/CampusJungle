@@ -14,6 +14,7 @@
 @implementation CCTwitterPicker
 
 + (void)showTwitterAccountSelectionInView:(UIView *)view
+                        startLoadingBlock:(action)startLaoding
                   fetchInfoSuccessHandler:(successWithObject)successHandler
                              errorHandler:(errorHandler)errorHandler
 {
@@ -23,6 +24,7 @@
         [accounts each:^(id<account> account) {
             [actionSheet addButtonWithTitle:account.username handler:^{
                 pickAccountBlock(account);
+                startLaoding();
             }];
         }];
         NSString * buttonTitle = nil;
@@ -33,6 +35,11 @@
         
         [actionSheet addButtonWithTitle:buttonTitle handler:^{
             pickAccountBlock(nil);
+            startLaoding();
+        }];
+        
+        [actionSheet setDestructiveButtonWithTitle:@"Cancel" handler:^{
+           [actionSheet cancelBlock];
         }];
         
         [actionSheet showInView:view];
