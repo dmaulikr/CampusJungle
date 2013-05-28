@@ -11,6 +11,7 @@
 #import "UIAlertView+Blocks.h"
 #import "CCAlertDefines.h"
 #import "CCUserCollegesTableDataSource.h"
+#import "CCDefines.h"
 
 @interface CCUserProfile ()
 
@@ -38,7 +39,8 @@
     self.firstName.text = [[self.ioc_userSession currentUser] firstName];
     self.lastName.text = [[self.ioc_userSession currentUser] lastName];
     self.email.text = [[self.ioc_userSession currentUser] email];
-    [self.avatar setImageWithURL:[NSURL URLWithString:[[self.ioc_userSession currentUser] avatar]]];
+    NSString *avatarURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,[[self.ioc_userSession currentUser] avatar]];
+    [self.avatar setImageWithURL:[NSURL URLWithString:avatarURL]];
     self.tableDataSource = [CCUserCollegesTableDataSource new];
     self.collegeTable.dataSource = self.tableDataSource;
     
