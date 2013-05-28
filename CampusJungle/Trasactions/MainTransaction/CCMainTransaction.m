@@ -55,12 +55,12 @@
 - (void)showWelcomeScreenIn:(CCSideBarController *)sidePanel
 {
 
-    __weak CCSideBarController *weakMenu = sidePanel;
+    __weak CCSideBarController *__sidePanel = sidePanel;
         
     UINavigationController *navigation = [CCWelcomeScreenConfigurator configureWithBaseController:sidePanel];
     
     sidePanel.blockOnViewDidAppear = ^{
-        [weakMenu presentViewController:navigation animated:NO completion:nil];
+        [__sidePanel presentViewController:navigation animated:NO completion:nil];
     };
 
 }

@@ -13,5 +13,4 @@ typedef void (^ViewDidLoadBlock)();
 
 @property (nonatomic, copy) ViewDidLoadBlock blockOnViewDidAppear;
 
-
 @end

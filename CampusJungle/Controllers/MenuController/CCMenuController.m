@@ -7,7 +7,6 @@
 //
 
 #import "CCMenuController.h"
-#import "CCUserProfile.h"
 
 @interface CCMenuController ()
 

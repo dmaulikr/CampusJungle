@@ -12,6 +12,8 @@
 @interface CCLoginController : CCViewController
 
 @property (nonatomic, strong) id <CCTransaction> loginTransaction;
+@property (nonatomic, strong) id <CCTransaction> userProfileTransaction;
+
 
 - (IBAction)loginButtonDidPressed;
 
