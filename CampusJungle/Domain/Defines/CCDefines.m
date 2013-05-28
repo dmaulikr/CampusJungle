@@ -60,6 +60,20 @@ const struct CCFacebookKeys CCFacebookKeys = {
     .email = @"email"
 };
 
+const struct CCTwitterUserKeys CCTwitterUserKeys = {
+    .auth = @"auth",
+    .firstName = @"first_name",
+    .lastName = @"last_name",
+    .avatar = @"image",
+    .token = @"token",
+    .secret = @"secret",
+    .twitter = @"twitter",
+    .uid = @"uid",
+    .credentials = @"credentials",
+    .info = @"info"
+    
+};
+
 const struct CCErrorKeys CCErrorKeys = {
     .localizedRecoverySuggestion = @"NSLocalizedRecoverySuggestion",
     .errorMessage = @"error_message",
