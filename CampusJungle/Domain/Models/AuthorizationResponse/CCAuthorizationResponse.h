@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "CCUser.h"
 
 @interface CCAuthorizationResponse : NSObject

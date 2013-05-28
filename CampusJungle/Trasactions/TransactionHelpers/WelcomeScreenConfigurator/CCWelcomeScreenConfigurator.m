@@ -15,14 +15,14 @@
 
 @implementation CCWelcomeScreenConfigurator
 
-+ (UINavigationController *)configureWithBaseController:(CCMenuController *)menu
++ (UINavigationController *)configureWithBaseController:(JASidePanelController *)sidePanel
 {
     CCWelcomeController *welcomeController = [CCWelcomeController new];
     
     UINavigationController* navigation = [[UINavigationController alloc]initWithRootViewController:welcomeController];
     
     CCLoginTransaction *loginTransaction = [CCLoginTransaction new];
-    loginTransaction.menuController = menu;
+    loginTransaction.menuController = sidePanel;
     welcomeController.loginTransaction = loginTransaction;
     
     CCSignUpTransaction *signUpTransaction = [CCSignUpTransaction new];
@@ -38,7 +38,7 @@
     
     initialUserTransaction.loginTransaction = loginTransaction;
     
-    initialUserTransaction.baseViewController = menu;
+    initialUserTransaction.baseViewController = sidePanel;
     welcomeController.initialUserInfoTransaction = initialUserTransaction;
     
     loginScreenTransaction.loginTransaction = loginTransaction;

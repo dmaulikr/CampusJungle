@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "CCMenuController.h"
+#import "JASidePanelController.h"
 
 @interface CCWelcomeScreenConfigurator : NSObject
 
-+ (UINavigationController *)configureWithBaseController:(CCMenuController *)menu;
++ (UINavigationController *)configureWithBaseController:(JASidePanelController *)sidePanel;
 
 @end

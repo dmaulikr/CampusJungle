@@ -48,6 +48,8 @@
 		A787C7BD17536F8400824DEA /* CCMainTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C78F17536F8400824DEA /* CCMainTransaction.m */; };
 		A787C7BE17536F8400824DEA /* CCSignUpTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C79217536F8400824DEA /* CCSignUpTransaction.m */; };
 		A787C7BF17536F8400824DEA /* CCWelcomeScreenConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C79617536F8400824DEA /* CCWelcomeScreenConfigurator.m */; };
+		A787C7C117538BCF00824DEA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A787C7C017538BCF00824DEA /* QuartzCore.framework */; };
+		A787C7D21754E9CE00824DEA /* CCSideBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C7D11754E9CE00824DEA /* CCSideBarController.m */; };
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
 		D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36186471743B13E00B501BC /* SystemConfiguration.framework */; };
 		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
@@ -137,6 +139,9 @@
 		A787C79617536F8400824DEA /* CCWelcomeScreenConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWelcomeScreenConfigurator.m; sourceTree = "<group>"; };
 		A787C79817536F8400824DEA /* CCTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTransaction.h; sourceTree = "<group>"; };
 		A787C79917536F8400824DEA /* CCTransactionWithObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTransactionWithObject.h; sourceTree = "<group>"; };
+		A787C7C017538BCF00824DEA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A787C7D01754E9CE00824DEA /* CCSideBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCSideBarController.h; path = SideBarController/CCSideBarController.h; sourceTree = "<group>"; };
+		A787C7D11754E9CE00824DEA /* CCSideBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCSideBarController.m; path = SideBarController/CCSideBarController.m; sourceTree = "<group>"; };
 		D36186471743B13E00B501BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStandardErrorHandler.h; sourceTree = "<group>"; };
 		D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStandardErrorHandler.m; sourceTree = "<group>"; };
@@ -153,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A787C7C117538BCF00824DEA /* QuartzCore.framework in Frameworks */,
 				D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */,
 				D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */,
 				D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */,
@@ -187,6 +193,7 @@
 		A784C597173A865E005E4921 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A787C7C017538BCF00824DEA /* QuartzCore.framework */,
 				D3A2C3241754C95700989831 /* MessageUI.framework */,
 				D39F1C161753C0E8008E08A2 /* Accounts.framework */,
 				D36186471743B13E00B501BC /* SystemConfiguration.framework */,
@@ -231,6 +238,7 @@
 		A787C73217536F8400824DEA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A787C7CF1754E9AD00824DEA /* SideBarController */,
 				A787C73317536F8400824DEA /* BaseController */,
 				A787C73717536F8400824DEA /* UserProfile */,
 				A787C73B17536F8400824DEA /* LoginScreen */,
@@ -562,6 +570,15 @@
 			path = TransactionProtocols;
 			sourceTree = "<group>";
 		};
+		A787C7CF1754E9AD00824DEA /* SideBarController */ = {
+			isa = PBXGroup;
+			children = (
+				A787C7D01754E9CE00824DEA /* CCSideBarController.h */,
+				A787C7D11754E9CE00824DEA /* CCSideBarController.m */,
+			);
+			name = SideBarController;
+			sourceTree = "<group>";
+		};
 		D39F1C0E1753821D008E08A2 /* StandardErrorHandler */ = {
 			isa = PBXGroup;
 			children = (
@@ -739,9 +756,11 @@
 				A787C7BD17536F8400824DEA /* CCMainTransaction.m in Sources */,
 				A787C7BE17536F8400824DEA /* CCSignUpTransaction.m in Sources */,
 				A787C7BF17536F8400824DEA /* CCWelcomeScreenConfigurator.m in Sources */,
+				A787C7CA1753904200824DEA,
 				D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */,
 				D3A2C3231754ADE100989831 /* CCUserCollegesTableDataSource.m in Sources */,
 				D3A2C32A1754D6BB00989831 /* CCTwitterPicker.m in Sources */,
+				A787C7D21754E9CE00824DEA /* CCSideBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

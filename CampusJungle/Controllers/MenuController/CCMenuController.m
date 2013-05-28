@@ -7,21 +7,12 @@
 //
 
 #import "CCMenuController.h"
-#import "CCUserProfile.h"
 
 @interface CCMenuController ()
 
 @end
 
 @implementation CCMenuController
-
--(void)viewDidAppear:(BOOL)animated
-{
-    if(self.blockOnViewDidAppear){
-        self.blockOnViewDidAppear();
-        self.blockOnViewDidAppear = nil;
-    }
-}
 
 -(IBAction)logoutButtonPressed
 {
