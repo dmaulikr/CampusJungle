@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @interface CCUser : NSObject
 
 @property (nonatomic, strong) NSString *firstName;

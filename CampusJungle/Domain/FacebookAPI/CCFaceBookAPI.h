@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Julia Petryshena. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "CCFaceBookAPIProtocol.h"
 
 @interface CCFaceBookAPI : NSObject<CCFaceBookAPIProtocol>

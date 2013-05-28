@@ -6,14 +6,13 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "CCTransaction.h"
-#import "CCMenuController.h"
+#import "JASidePanelController.h"
 
 @interface CCInitialUserProfileTransaction : NSObject <CCTransaction>
 
 @property (nonatomic, strong) id<CCTransaction> loginTransaction;
-@property (nonatomic, strong) CCMenuController *baseViewController;
+@property (nonatomic, strong) JASidePanelController *baseViewController;
 
 
 @end

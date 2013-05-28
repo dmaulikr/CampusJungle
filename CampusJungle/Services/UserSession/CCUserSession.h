@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "CCUserSessionProtocol.h"
 #import "CCUser.h"
 

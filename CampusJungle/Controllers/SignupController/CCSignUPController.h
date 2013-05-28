@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "CCViewController.h"
 #import "CCTransaction.h"
 

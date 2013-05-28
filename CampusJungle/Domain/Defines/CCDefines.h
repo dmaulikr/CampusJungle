@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 extern const struct CCAPIDefines {
     __unsafe_unretained NSString *baseURL;
     __unsafe_unretained NSString *authorization;
