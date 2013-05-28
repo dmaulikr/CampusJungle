@@ -21,8 +21,7 @@
     logoutTransaction.rootMenuController = self.menuController;
     userProfileController.logoutTransaction = logoutTransaction;
     
-    [self.menuController.navigationController pushViewController:userProfileController animated:YES];
-    
+    self.menuController.centerPanel = [[UINavigationController alloc] initWithRootViewController:userProfileController];
 }
 
 @end

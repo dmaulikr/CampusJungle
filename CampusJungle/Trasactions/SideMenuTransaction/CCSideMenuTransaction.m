@@ -17,7 +17,7 @@
     JASidePanelController *rootController = [[JASidePanelController alloc] init];
     rootController.shouldDelegateAutorotateToVisiblePanel = NO;
     
-    JASidePanelController *leftController = [[CCMenuController alloc] init];
+    CCMenuController *leftController = [[CCMenuController alloc] init];
 	rootController.leftPanel = leftController;
 	rootController.centerPanel = [[UINavigationController alloc] initWithRootViewController:self.centralPanel];
 	

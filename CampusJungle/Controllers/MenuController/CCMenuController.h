@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "JASidePanelController.h"
+#import "CCViewController.h"
 #import "CCTransaction.h"
 
 typedef void (^ViewDidLoadBlock)();
 
-@interface CCMenuController : JASidePanelController
+@interface CCMenuController : CCViewController
 
 @property (nonatomic, strong) id <CCTransaction> userProfileTransaction;
 @property (nonatomic, copy) ViewDidLoadBlock blockOnViewDidAppear;

@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "CCTransaction.h"
-#import "CCMenuController.h"
+#import "JASidePanelController.h"
 
 @interface CCLoginTransaction : NSObject <CCTransaction>
 
-@property (nonatomic, strong) CCMenuController *menuController;
+@property (nonatomic, strong) JASidePanelController *menuController;
 
 @end
