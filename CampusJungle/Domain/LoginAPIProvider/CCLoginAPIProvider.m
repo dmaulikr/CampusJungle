@@ -24,6 +24,21 @@
 
 @implementation CCLoginAPIProvider
 
+- (void)performLoginOperationViaTwitterWithUserInfo:(NSDictionary *)userDictionary SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    
+    NSDictionary *userInfo = @{
+                               CCUserAuthorizationKeys.firstName : userDictionary[@"auth"][@"info"][@"first_name"],
+                               CCUserAuthorizationKeys.lastName : userDictionary[@"auth"][@"info"][@"last_name"],
+                               CCUserAuthorizationKeys.avatar: userDictionary[@"auth"][@"info"][@"image"],
+                               CCUserAuthorizationKeys.authToken:userDictionary[@"auth"][@"credentials"][@"token"],
+                               CCUserAuthorizationKeys.authSecretToken : userDictionary[@"auth"][@"credentials"][@"secret"],
+                               CCUserAuthorizationKeys.authUID : userDictionary[@"auth"][@"uid"],
+                               CCUserAuthorizationKeys.authProvider: @"twitter"
+                               };
+    [self authorizeUserOnServerWithUserInfo:(NSDictionary *)userInfo SuccessHandler:successHandler errorHandler:errorHandler];
+}
+
 - (void)performLoginOperationWithUserInfo:(NSDictionary *)userInfo successHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
 {
    [self.ioc_apiProvider putUserForLogin:userInfo

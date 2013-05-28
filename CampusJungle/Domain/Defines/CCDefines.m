@@ -50,6 +50,7 @@ const struct CCUserAuthorizationKeys CCUserAuthorizationKeys = {
     .authToken = @"oauth[][oauth_token]",
     .authProvider = @"oauth[][provider]",
     .authUID = @"oauth[][uid]",
+    .authSecretToken = @"oauth[][oauth_token_secret]",
 };
 
 const struct CCFacebookKeys CCFacebookKeys = {

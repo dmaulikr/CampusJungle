@@ -12,6 +12,7 @@
 #import "CCAuthorizationResponse.h"
 #import "CCAlertDefines.h"
 #import "CCStandardErrorHandler.h"
+#import "CCTwitterPicker.h"
 
 @interface CCWelcomeController ()
 
@@ -31,11 +32,7 @@
 - (IBAction)facebookLoginButtonDidPressed
 {
     [self.ioc_loginAPIProvider performLoginOperationViaFacebookWithSuccessHandler:^(id authorizationResponse){
-        if([[authorizationResponse isFirstLaunch] isEqualToString:@"true"]){
-            [self.initialUserInfoTransaction perform];
-        } else {
-            [self.loginTransaction perform];
-        }
+        [self processResponse:authorizationResponse];
     } errorHandler:^(NSError * error) {
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error
                                            message:CCAlertsMessages.facebookError];
@@ -50,6 +47,28 @@
 - (IBAction)emailSignUPButtonDidPressed
 {
     [self.signUpTransaction perform];
+}
+
+- (IBAction)twitterLoginButtonPressed
+{
+    [CCTwitterPicker showTwitterAccountSelectionInView:self.view fetchInfoSuccessHandler:^(id response) {
+        [self.ioc_loginAPIProvider performLoginOperationViaTwitterWithUserInfo:response SuccessHandler:^(id authorizationResponse) {
+           [self processResponse:authorizationResponse];
+        } errorHandler:^(NSError *error) {
+            
+        }];
+    } errorHandler:^(NSError *error) {
+        
+    }];
+}
+
+- (void)processResponse:(CCAuthorizationResponse *)response
+{
+    if([[response isFirstLaunch] isEqualToString:@"true"]){
+        [self.initialUserInfoTransaction perform];
+    } else {
+        [self.loginTransaction perform];
+    }
 }
 
 @end

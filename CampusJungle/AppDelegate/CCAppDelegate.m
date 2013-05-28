@@ -10,11 +10,20 @@
 #import "CCRestKitConfigurator.h"
 #import "CCMainTransaction.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import "SHOmniAuth.h"
+#import "SHOmniAuthTWitter.h"
+#import "AFOAuth1Client.h"
 
 @implementation CCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [SHOmniAuth registerProvidersWith:^(SHOmniAuthProviderBlock provider) {
+        provider(SHOmniAuthTwitter.provider, @"5PArGIFtG4ZxIm5tm02g",
+                 @"CdvGtu0kuTvezy4jnJOx6HVRU3PaMkC9ZlmiPLc",
+                 nil, @"CampusJungle://success");
+    }];
+    
     [AppleGuice startServiceWithImplementationDiscoveryPolicy:AppleGuiceImplementationDiscoveryPolicyRuntime];
     [CCRestKitConfigurator configure];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

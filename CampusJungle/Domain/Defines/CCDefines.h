@@ -49,6 +49,7 @@ extern const struct CCUserAuthorizationKeys {
     __unsafe_unretained NSString *authToken;
     __unsafe_unretained NSString *authProvider;
     __unsafe_unretained NSString *authUID;
+    __unsafe_unretained NSString *authSecretToken;
 } CCUserAuthorizationKeys;
 
 extern const struct CCFacebookKeys {

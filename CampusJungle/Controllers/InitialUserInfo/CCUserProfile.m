@@ -10,6 +10,7 @@
 #import "CCUserSessionProtocol.h"
 #import "UIAlertView+Blocks.h"
 #import "CCAlertDefines.h"
+#import "CCUserCollegesTableDataSource.h"
 
 @interface CCUserProfile ()
 
@@ -20,6 +21,8 @@
 @property (nonatomic, weak) IBOutlet UIView *tableFooterView;
 @property (nonatomic, weak) IBOutlet UIView *tableHeaderView;
 @property (nonatomic, weak) IBOutlet UITableView *collegeTable;
+
+@property (nonatomic, strong) CCUserCollegesTableDataSource *tableDataSource;
 
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
 
@@ -36,7 +39,9 @@
     self.lastName.text = [[self.ioc_userSession currentUser] lastName];
     self.email.text = [[self.ioc_userSession currentUser] email];
     [self.avatar setImageWithURL:[NSURL URLWithString:[[self.ioc_userSession currentUser] avatar]]];
-   
+    self.tableDataSource = [CCUserCollegesTableDataSource new];
+    self.collegeTable.dataSource = self.tableDataSource;
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout"
                                                                               style:UIBarButtonItemStyleBordered
                                                                              target:self
@@ -58,5 +63,6 @@
                                                   otherButtonItems:yesItem, nil];
     [confirmAlert show];    
 }
+
 
 @end

@@ -7,3 +7,5 @@ pod "CJStringValidator"
 pod "MBProgressHUD"
 pod "JSONKit"
 pod "UIAlertView-Blocks"
+pod "SHOmniAuthTwitter"
+pod 'BlocksKit'
