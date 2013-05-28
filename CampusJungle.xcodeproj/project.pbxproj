@@ -50,6 +50,11 @@
 		A787C7BF17536F8400824DEA /* CCWelcomeScreenConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C79617536F8400824DEA /* CCWelcomeScreenConfigurator.m */; };
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
 		D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36186471743B13E00B501BC /* SystemConfiguration.framework */; };
+		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
+		D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39F1C161753C0E8008E08A2 /* Accounts.framework */; };
+		D3A2C3231754ADE100989831 /* CCUserCollegesTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A2C3221754ADE100989831 /* CCUserCollegesTableDataSource.m */; };
+		D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A2C3241754C95700989831 /* MessageUI.framework */; };
+		D3A2C32A1754D6BB00989831 /* CCTwitterPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A2C3291754D6BB00989831 /* CCTwitterPicker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,6 +138,14 @@
 		A787C79817536F8400824DEA /* CCTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTransaction.h; sourceTree = "<group>"; };
 		A787C79917536F8400824DEA /* CCTransactionWithObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTransactionWithObject.h; sourceTree = "<group>"; };
 		D36186471743B13E00B501BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStandardErrorHandler.h; sourceTree = "<group>"; };
+		D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStandardErrorHandler.m; sourceTree = "<group>"; };
+		D39F1C161753C0E8008E08A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		D3A2C3211754ADE100989831 /* CCUserCollegesTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUserCollegesTableDataSource.h; sourceTree = "<group>"; };
+		D3A2C3221754ADE100989831 /* CCUserCollegesTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUserCollegesTableDataSource.m; sourceTree = "<group>"; };
+		D3A2C3241754C95700989831 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		D3A2C3281754D6BB00989831 /* CCTwitterPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTwitterPicker.h; sourceTree = "<group>"; };
+		D3A2C3291754D6BB00989831 /* CCTwitterPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTwitterPicker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +153,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */,
+				D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */,
 				D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */,
 				A784C599173A865E005E4921 /* UIKit.framework in Frameworks */,
 				A784C59B173A865E005E4921 /* Foundation.framework in Frameworks */,
@@ -172,6 +187,8 @@
 		A784C597173A865E005E4921 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3A2C3241754C95700989831 /* MessageUI.framework */,
+				D39F1C161753C0E8008E08A2 /* Accounts.framework */,
 				D36186471743B13E00B501BC /* SystemConfiguration.framework */,
 				A784C598173A865E005E4921 /* UIKit.framework */,
 				A784C59A173A865E005E4921 /* Foundation.framework */,
@@ -194,6 +211,8 @@
 				A787C74E17536F8400824DEA /* Domain */,
 				A787C77417536F8400824DEA /* InfoPlist.strings */,
 				A787C77617536F8400824DEA /* main.m */,
+				D3A2C3261754D53900989831 /* View */,
+				D3A2C31F1754AD9400989831 /* DataSources */,
 				A787C77717536F8400824DEA /* Services */,
 				A787C77D17536F8400824DEA /* Trasactions */,
 			);
@@ -213,7 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				A787C73317536F8400824DEA /* BaseController */,
-				A787C73717536F8400824DEA /* InitialUserInfo */,
+				A787C73717536F8400824DEA /* UserProfile */,
 				A787C73B17536F8400824DEA /* LoginScreen */,
 				A787C73F17536F8400824DEA /* MenuController */,
 				A787C74317536F8400824DEA /* SignupController */,
@@ -232,13 +251,14 @@
 			path = BaseController;
 			sourceTree = "<group>";
 		};
-		A787C73717536F8400824DEA /* InitialUserInfo */ = {
+		A787C73717536F8400824DEA /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
 				A787C73817536F8400824DEA /* CCUserProfile.h */,
 				A787C73917536F8400824DEA /* CCUserProfile.m */,
 				A787C73A17536F8400824DEA /* CCUserProfile.xib */,
 			);
+			name = UserProfile;
 			path = InitialUserInfo;
 			sourceTree = "<group>";
 		};
@@ -413,6 +433,7 @@
 		A787C77717536F8400824DEA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D39F1C0E1753821D008E08A2 /* StandardErrorHandler */,
 				A787C77817536F8400824DEA /* UserSession */,
 				A787C77B17536F8400824DEA /* UserSessionProtocol */,
 			);
@@ -539,6 +560,50 @@
 				A787C79917536F8400824DEA /* CCTransactionWithObject.h */,
 			);
 			path = TransactionProtocols;
+			sourceTree = "<group>";
+		};
+		D39F1C0E1753821D008E08A2 /* StandardErrorHandler */ = {
+			isa = PBXGroup;
+			children = (
+				D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */,
+				D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */,
+			);
+			path = StandardErrorHandler;
+			sourceTree = "<group>";
+		};
+		D3A2C31F1754AD9400989831 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				D3A2C3201754ADC100989831 /* UserCollegesTableDataSource */,
+			);
+			name = DataSources;
+			path = Controllers/DataSources;
+			sourceTree = "<group>";
+		};
+		D3A2C3201754ADC100989831 /* UserCollegesTableDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				D3A2C3211754ADE100989831 /* CCUserCollegesTableDataSource.h */,
+				D3A2C3221754ADE100989831 /* CCUserCollegesTableDataSource.m */,
+			);
+			path = UserCollegesTableDataSource;
+			sourceTree = "<group>";
+		};
+		D3A2C3261754D53900989831 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3A2C3271754D54F00989831 /* TwitterPicker */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D3A2C3271754D54F00989831 /* TwitterPicker */ = {
+			isa = PBXGroup;
+			children = (
+				D3A2C3281754D6BB00989831 /* CCTwitterPicker.h */,
+				D3A2C3291754D6BB00989831 /* CCTwitterPicker.m */,
+			);
+			path = TwitterPicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -674,6 +739,9 @@
 				A787C7BD17536F8400824DEA /* CCMainTransaction.m in Sources */,
 				A787C7BE17536F8400824DEA /* CCSignUpTransaction.m in Sources */,
 				A787C7BF17536F8400824DEA /* CCWelcomeScreenConfigurator.m in Sources */,
+				D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */,
+				D3A2C3231754ADE100989831 /* CCUserCollegesTableDataSource.m in Sources */,
+				D3A2C32A1754D6BB00989831 /* CCTwitterPicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

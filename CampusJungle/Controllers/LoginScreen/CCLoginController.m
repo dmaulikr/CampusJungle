@@ -12,7 +12,7 @@
 #import "CCLoginAPIProviderProtocol.h"
 #import "CCDefines.h"
 #import "CCUserSessionProtocol.h"
-#import "MBProgressHUD.h"
+#import "CCStandardErrorHandler.h"
 
 @interface CCLoginController ()
 
@@ -32,17 +32,17 @@
                                              CCUserSignUpKeys.password : self.passField.text
                                              };
         
-        [self.ioc_loginAPIProvider performLoginOperationWithUserInfo:userInfoDictionary successHandler:^{
+        [self.ioc_loginAPIProvider performLoginOperationWithUserInfo:userInfoDictionary
+                                                      successHandler:^{
             [self.loginTransaction perform];
         
         } errorHandler:^(NSError *error) {
-            UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:CCAlertsMessages.error message: CCAlertsMessages.wrongEmailOfPassword delegate:nil cancelButtonTitle:CCAlertsButtons.okButton otherButtonTitles: nil];
-            [errorAlert show];
+            [CCStandardErrorHandler showErrorWithError:error];
         }];
         
     } else {
-        UIAlertView *alertOnNotValidFields = [[UIAlertView alloc] initWithTitle:nil message:CCAlertsMessages.formNotValid delegate:self cancelButtonTitle:CCAlertsButtons.okButton otherButtonTitles: nil];
-        [alertOnNotValidFields show];
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error
+                                           message:CCAlertsMessages.formNotValid];
     }
 }
 
@@ -51,7 +51,7 @@
     BOOL isFormValid = YES;
     
     if (![self.emailField.text isEmail]) isFormValid = NO;
-    if (![self.passField.text isMinLength:3]) isFormValid = NO;
+    if (![self.passField.text isMinLength:CCUserDefines.minimumPasswordLength]) isFormValid = NO;
     
     return isFormValid;
 }

@@ -1,9 +1,19 @@
 PODS:
   - AFNetworking (1.1.0)
+  - AFOAuth1Client (0.2.0):
+    - AFNetworking (>= 1.0)
   - AppleGuice (0.0.1)
+  - BlocksKit (1.8.2):
+    - libffi
   - CJStringValidator (1.0.1)
   - Facebook-iOS-SDK (3.5.1)
+  - JSONKit (1.5pre)
+  - libffi (3.0.11)
+  - LUKeychainAccess (1.0.1)
   - MBProgressHUD (0.6)
+  - NSData+Base64 (1.0.0)
+  - OAuthCore (0.0.1):
+    - NSData+Base64
   - RestKit (0.20.0):
     - RestKit/Core
   - RestKit/Core (0.20.0):
@@ -18,14 +28,28 @@ PODS:
     - SOCKit
   - RestKit/ObjectMapping (0.20.0)
   - RestKit/Support (0.20.0)
+  - SHOmniAuth (0.1.1):
+    - LUKeychainAccess
+  - SHOmniAuthTwitter (0.2.3):
+    - AFOAuth1Client (~> 0.2.0)
+    - SHOmniAuth (~> 0.1.0)
+    - TWReverseAuth (~> 0.1.0)
   - SOCKit (1.1)
+  - TWReverseAuth (0.1.0):
+    - LUKeychainAccess (~> 1.0.1)
+    - OAuthCore (~> 0.0.1)
+  - UIAlertView-Blocks (0.0.1)
 
 DEPENDENCIES:
   - AppleGuice (from `https://raw.github.com/korzun1993/AppleGuice/master/AppleGuice.podspec`)
+  - BlocksKit
   - CJStringValidator
   - Facebook-iOS-SDK
+  - JSONKit
   - MBProgressHUD
   - RestKit
+  - SHOmniAuthTwitter
+  - UIAlertView-Blocks
 
 EXTERNAL SOURCES:
   AppleGuice:
@@ -33,11 +57,22 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
+  AFOAuth1Client: 3e01e6e4218116c2e279671c8ab086133514a350
   AppleGuice: abd580ba08042c5de8f6aab168417f453a9e0100
+  BlocksKit: 7396526b0816734103f6133fbb1a520c8b04e80c
   CJStringValidator: f6b1226a0d995dd36af145595ba7c2c18437a9b9
   Facebook-iOS-SDK: 0dbd897e842cefeb012ec2eb8eba659ba6b96b12
+  JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
+  libffi: 8a1d9ba43c0c84b546b42c6f742714e73aa07ae1
+  LUKeychainAccess: 6ba22b2e1eec24f9f2fc9c6a9087d5524a58b1a2
   MBProgressHUD: 9b55a90566fb5d07df0602f6fd9fa04510ad5d52
+  NSData+Base64: 36c4e5b6479259c1a68866ccd2a8dd385c9744f7
+  OAuthCore: 4164eec5e28c68f794953446e68f91054ffe570c
   RestKit: 580771664a14eaaa40bf53cf83584f12fc141930
+  SHOmniAuth: afd6278ea528acc0569bdee94c2185b03457b357
+  SHOmniAuthTwitter: f9966ce5804386453618102e610d0fbf940db660
   SOCKit: ed67aeeca4a697b63a933229e53f4670d5b9300f
+  TWReverseAuth: d0e6e2d534377f1832c2553ff4e9d677d549e45a
+  UIAlertView-Blocks: 7689ad7dd941417e7a7da81507482bc6f4f15bcd
 
 COCOAPODS: 0.18.1

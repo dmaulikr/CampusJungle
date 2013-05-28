@@ -12,6 +12,7 @@
 #import "CCDefines.h"
 #import "CCAlertDefines.h"
 #import "CCTransaction.h"
+#import "CCStandardErrorHandler.h"
 
 @interface CCSignUPController ()
 
@@ -48,16 +49,14 @@
                                      CCUserSignUpKeys.password :self.passField.text
                                      };
         [self.ioc_signUpAPI signUpWithUserDictionary:userFields successHandler:^{
-        
-        [self.initialUserProfileTransaction perform];
-            
+            [self.initialUserProfileTransaction perform];
         } errorHandler:^(NSError *error) {
-            
+            [CCStandardErrorHandler showErrorWithError:error];
         }];
         
     } else {
-        UIAlertView *alertOnNotValidFields = [[UIAlertView alloc] initWithTitle:nil message:CCAlertsMessages.formNotValid delegate:self cancelButtonTitle:CCAlertsButtons.okButton otherButtonTitles: nil];
-        [alertOnNotValidFields show];
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error
+                                           message:CCAlertsMessages.formNotValid];
     }
 }
 
@@ -68,7 +67,7 @@
     if (![self.emailField.text isEmail]) isFormValid = NO;
     if ([self.firstNameField.text isEmpty]) isFormValid = NO;
     if ([self.lastNameField.text isEmpty]) isFormValid = NO;
-    if (![self.passField.text isMinLength:3]) isFormValid = NO;
+    if (![self.passField.text isMinLength:CCUserDefines.minimumPasswordLength]) isFormValid = NO;
 
     return isFormValid;
 }
