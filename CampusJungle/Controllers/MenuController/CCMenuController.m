@@ -15,14 +15,6 @@
 
 @implementation CCMenuController
 
--(void)viewDidAppear:(BOOL)animated
-{
-    if(self.blockOnViewDidAppear){
-        self.blockOnViewDidAppear();
-        self.blockOnViewDidAppear = nil;
-    }
-}
-
 -(IBAction)logoutButtonPressed
 {
     [self.userProfileTransaction perform];

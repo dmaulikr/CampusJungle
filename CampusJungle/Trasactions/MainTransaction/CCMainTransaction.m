@@ -12,6 +12,7 @@
 #import "CCWelcomeScreenConfigurator.h"
 #import "CCUserProfile.h"
 #import "CCUserProfileTransaction.h"
+#import "CCSideBarController.h"
 
 @interface CCMainTransaction()
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
@@ -24,7 +25,7 @@
 {
     NSParameterAssert(self.window);
     
-    JASidePanelController *rootController = [[JASidePanelController alloc] init];
+    CCSideBarController *rootController = [[CCSideBarController alloc] init];
     rootController.shouldDelegateAutorotateToVisiblePanel = NO;
     
     CCMenuController *leftController = [[CCMenuController alloc] init];
@@ -51,17 +52,14 @@
     }
 }
 
-- (void)showWelcomeScreenIn:(JASidePanelController *)sidePanel
+- (void)showWelcomeScreenIn:(CCSideBarController *)sidePanel
 {
 
-    __weak JASidePanelController *weakMenu = sidePanel;
-    
-    //????????
-    
+    __weak CCSideBarController *weakMenu = sidePanel;
+        
     UINavigationController *navigation = [CCWelcomeScreenConfigurator configureWithBaseController:sidePanel];
-    CCMenuController *menu = (CCMenuController *)[sidePanel leftPanel];
     
-    menu.blockOnViewDidAppear = ^{
+    sidePanel.blockOnViewDidAppear = ^{
         [weakMenu presentViewController:navigation animated:NO completion:nil];
     };
 
