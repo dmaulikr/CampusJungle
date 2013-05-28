@@ -38,6 +38,7 @@
         [actionSheet showInView:view];
         
     } onComplete:^(id<account> account, id response, NSError *error, BOOL isSuccess) {
+        
         if (isSuccess){
             successHandler(response);
         } else {

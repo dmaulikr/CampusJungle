@@ -21,7 +21,7 @@
     [SHOmniAuth registerProvidersWith:^(SHOmniAuthProviderBlock provider) {
         provider(SHOmniAuthTwitter.provider, @"5PArGIFtG4ZxIm5tm02g",
                  @"CdvGtu0kuTvezy4jnJOx6HVRU3PaMkC9ZlmiPLc",
-                 nil, @"CumpusJungle://success");
+                 nil, @"campusjungle://success");
     }];
     
     [AppleGuice startServiceWithImplementationDiscoveryPolicy:AppleGuiceImplementationDiscoveryPolicyRuntime];
@@ -45,7 +45,6 @@
     [[NSNotificationCenter defaultCenter] postNotification:notification];
     
     return [FBSession.activeSession handleOpenURL:url];
-    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

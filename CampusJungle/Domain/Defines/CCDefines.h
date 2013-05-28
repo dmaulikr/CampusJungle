@@ -52,6 +52,8 @@ extern const struct CCUserAuthorizationKeys {
     __unsafe_unretained NSString *authSecretToken;
 } CCUserAuthorizationKeys;
 
+//extern const struct CCTwitterUser
+
 extern const struct CCFacebookKeys {
     __unsafe_unretained NSString *uid;
     __unsafe_unretained NSString *firstName;
