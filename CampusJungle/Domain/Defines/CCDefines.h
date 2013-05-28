@@ -31,6 +31,7 @@ extern const struct CCUserDefines {
     __unsafe_unretained NSString *currentUser;
     
     __unsafe_unretained NSString *facebookAvatarLinkTemplate;
+                        NSInteger minimumPasswordLength;
 } CCUserDefines;
 
 extern const struct CCUserSignUpKeys {
@@ -48,6 +49,7 @@ extern const struct CCUserAuthorizationKeys {
     __unsafe_unretained NSString *authToken;
     __unsafe_unretained NSString *authProvider;
     __unsafe_unretained NSString *authUID;
+    __unsafe_unretained NSString *authSecretToken;
 } CCUserAuthorizationKeys;
 
 extern const struct CCFacebookKeys {
@@ -56,3 +58,8 @@ extern const struct CCFacebookKeys {
     __unsafe_unretained NSString *lastName;
     __unsafe_unretained NSString *email;
 } CCFacebookKeys;
+
+extern const struct CCErrorKeys {
+    __unsafe_unretained NSString *localizedRecoverySuggestion;
+    __unsafe_unretained NSString *errorMessage;
+} CCErrorKeys;

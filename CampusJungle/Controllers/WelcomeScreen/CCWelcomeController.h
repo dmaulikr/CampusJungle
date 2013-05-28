@@ -23,4 +23,5 @@
 
 - (IBAction)emailSignUPButtonDidPressed;
 
+- (IBAction)twitterLoginButtonPressed;
 @end

@@ -25,7 +25,9 @@
     [objectManager.HTTPClient setDefaultHeader:@"Authorization" value:valueForHeader];
 }
 
-- (void)putUser:(NSDictionary *)userInfo successHandler:(successHandlerWithRKResult)successHandler errorHandler:(RKErrorHandler)errorHandler
+- (void)putUser:(NSDictionary *)userInfo
+ successHandler:(successHandlerWithRKResult)successHandler
+   errorHandler:(RKErrorHandler)errorHandler
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [objectManager putObject:nil
@@ -42,7 +44,9 @@
                       }];
 }
 
-- (void)putUserForSingUp:(NSDictionary *)userInfo successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler{
+- (void)putUserForSingUp:(NSDictionary *)userInfo
+          successHandler:(successHandlerWithRKResult)successHandler
+            errorHandler:(errorHandler)errorHandler{
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [objectManager putObject:nil path:CCAPIDefines.signUp parameters:userInfo success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         successHandler(mappingResult);
@@ -51,10 +55,15 @@
     }];
 }
 
-- (void)putUserForLogin:(NSDictionary *)userInfo successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler{
+- (void)putUserForLogin:(NSDictionary *)userInfo
+         successHandler:(successHandlerWithRKResult)successHandler
+           errorHandler:(errorHandler)errorHandler{
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     
-    [objectManager postObject:nil path:CCAPIDefines.login parameters:userInfo success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    [objectManager postObject:nil
+                         path:CCAPIDefines.login
+                   parameters:userInfo
+                      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         successHandler(mappingResult);
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         errorHandler(error);

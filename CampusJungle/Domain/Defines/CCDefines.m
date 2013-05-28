@@ -31,6 +31,8 @@ const struct CCUserDefines CCUserDefines = {
     .facebookAvatarLinkTemplate = @"https://graph.facebook.com/%@/picture?width=200&height=200",
     
     .currentUser = @"current_user",
+    .minimumPasswordLength = 3,
+
 };
 
 const struct CCUserSignUpKeys CCUserSignUpKeys = {
@@ -48,6 +50,7 @@ const struct CCUserAuthorizationKeys CCUserAuthorizationKeys = {
     .authToken = @"oauth[][oauth_token]",
     .authProvider = @"oauth[][provider]",
     .authUID = @"oauth[][uid]",
+    .authSecretToken = @"oauth[][oauth_token_secret]",
 };
 
 const struct CCFacebookKeys CCFacebookKeys = {
@@ -55,4 +58,9 @@ const struct CCFacebookKeys CCFacebookKeys = {
     .lastName = @"last_name",
     .uid = @"id",
     .email = @"email"
+};
+
+const struct CCErrorKeys CCErrorKeys = {
+    .localizedRecoverySuggestion = @"NSLocalizedRecoverySuggestion",
+    .errorMessage = @"error_message",
 };
