@@ -53,12 +53,12 @@
 {
     [CCTwitterPicker showTwitterAccountSelectionInView:self.view fetchInfoSuccessHandler:^(id response) {
         [self.ioc_loginAPIProvider performLoginOperationViaTwitterWithUserInfo:response SuccessHandler:^(id authorizationResponse) {
-           [self processResponse:authorizationResponse];
+            [self processResponse:authorizationResponse];
         } errorHandler:^(NSError *error) {
-            
+            [CCStandardErrorHandler showErrorWithError:error];
         }];
     } errorHandler:^(NSError *error) {
-        
+        [CCStandardErrorHandler showErrorWithError:error];
     }];
 }
 

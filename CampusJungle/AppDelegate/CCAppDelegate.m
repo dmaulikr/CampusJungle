@@ -21,7 +21,7 @@
     [SHOmniAuth registerProvidersWith:^(SHOmniAuthProviderBlock provider) {
         provider(SHOmniAuthTwitter.provider, @"5PArGIFtG4ZxIm5tm02g",
                  @"CdvGtu0kuTvezy4jnJOx6HVRU3PaMkC9ZlmiPLc",
-                 nil, @"CampusJungle://success");
+                 nil, @"CumpusJungle://success");
     }];
     
     [AppleGuice startServiceWithImplementationDiscoveryPolicy:AppleGuiceImplementationDiscoveryPolicyRuntime];
@@ -40,7 +40,12 @@
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
+    
+    NSNotification *notification = [NSNotification notificationWithName:kAFApplicationLaunchedWithURLNotification object:nil userInfo:[NSDictionary dictionaryWithObject:url forKey:kAFApplicationLaunchOptionsURLKey]];
+    [[NSNotificationCenter defaultCenter] postNotification:notification];
+    
     return [FBSession.activeSession handleOpenURL:url];
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
