@@ -13,11 +13,17 @@
 #import "CCAlertDefines.h"
 #import "CCStandardErrorHandler.h"
 #import "CCTwitterPicker.h"
+#import "MBProgressHUD.h"
 
 @interface CCWelcomeController ()
 
 @property (nonatomic, strong) id <CCLoginAPIProviderProtocol> ioc_loginAPIProvider;
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
+
+@property (nonatomic, strong) IBOutlet UIButton *loginButton;
+@property (nonatomic, strong) IBOutlet UIButton *signupButton;
+@property (nonatomic, strong) IBOutlet UIButton *facebookButton;
+@property (nonatomic, strong) IBOutlet UIButton *twitterButton;
 
 @end
 
@@ -31,11 +37,14 @@
 
 - (IBAction)facebookLoginButtonDidPressed
 {
+    [self loading:YES];
     [self.ioc_loginAPIProvider performLoginOperationViaFacebookWithSuccessHandler:^(id authorizationResponse){
         [self processResponse:authorizationResponse];
+        [self loading:NO];
     } errorHandler:^(NSError * error) {
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error
                                            message:CCAlertsMessages.facebookError];
+        [self loading:NO];
     }];
 }
 
@@ -51,14 +60,20 @@
 
 - (IBAction)twitterLoginButtonPressed
 {
-    [CCTwitterPicker showTwitterAccountSelectionInView:self.view fetchInfoSuccessHandler:^(id response) {
+    [CCTwitterPicker showTwitterAccountSelectionInView:self.view
+                                     startLoadingBlock:^{
+                               [self loading:YES];
+                             } fetchInfoSuccessHandler:^(id response) {
         [self.ioc_loginAPIProvider performLoginOperationViaTwitterWithUserInfo:response SuccessHandler:^(id authorizationResponse) {
             [self processResponse:authorizationResponse];
+            [self loading:NO];
         } errorHandler:^(NSError *error) {
             [CCStandardErrorHandler showErrorWithError:error];
+            [self loading:NO];
         }];
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
+        [self loading:NO];
     }];
 }
 
@@ -69,6 +84,25 @@
     } else {
         [self.loginTransaction perform];
     }
+}
+
+- (void)loading:(BOOL)loading
+{
+    [self setAllButtonsEnabled:!loading];
+    if(loading){
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    } else {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    }
+
+}
+
+- (void)setAllButtonsEnabled:(BOOL)enabled
+{
+    self.loginButton.enabled = enabled;
+    self.signupButton.enabled = enabled;
+    self.facebookButton.enabled = enabled;
+    self.twitterButton.enabled = enabled;
 }
 
 @end

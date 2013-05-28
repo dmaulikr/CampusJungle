@@ -12,6 +12,7 @@
 @interface CCTwitterPicker : NSObject
 
 + (void)showTwitterAccountSelectionInView:(UIView *)view
+                        startLoadingBlock:(action)startLaoding
                   fetchInfoSuccessHandler:(successWithObject)successHandler
                              errorHandler:(errorHandler)errorHandler;
 
