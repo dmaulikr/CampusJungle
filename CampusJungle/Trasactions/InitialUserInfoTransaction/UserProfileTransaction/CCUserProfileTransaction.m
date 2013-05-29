@@ -9,6 +9,7 @@
 #import "CCUserProfileTransaction.h"
 #import "CCUserProfile.h"
 #import "CCLogoutTransaction.h"
+#import "CCStateSelectionScreenTransaction.h"
 
 @implementation CCUserProfileTransaction
 
@@ -21,7 +22,13 @@
     logoutTransaction.rootMenuController = self.menuController;
     userProfileController.logoutTransaction = logoutTransaction;
     
-    self.menuController.centerPanel = [[UINavigationController alloc] initWithRootViewController:userProfileController];
+    UINavigationController *centralNavigation = [[UINavigationController alloc] initWithRootViewController:userProfileController];
+    
+    self.menuController.centerPanel = centralNavigation;
+    
+    CCStateSelectionScreenTransaction *stateSelectionTransaction = [CCStateSelectionScreenTransaction new];
+    stateSelectionTransaction.navigation = centralNavigation;
+    userProfileController.addColegeTransaction = stateSelectionTransaction;
 }
 
 @end

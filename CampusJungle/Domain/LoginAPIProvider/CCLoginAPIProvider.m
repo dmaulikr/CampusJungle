@@ -26,17 +26,17 @@
 
 - (void)performLoginOperationViaTwitterWithUserInfo:(NSDictionary *)userDictionary SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
-    NSString *avatarURL = [(NSString *)userDictionary[@"auth"][@"info"][@"image"] componentsSeparatedByString:@"_normal"][0];
+    NSString *avatarURL = [(NSString *)userDictionary[CCTwitterUserKeys.auth][CCTwitterUserKeys.info][CCTwitterUserKeys.avatar] componentsSeparatedByString:@"_normal"][0];
     avatarURL = [NSString stringWithFormat:@"%@.jpg",avatarURL];
     
     NSDictionary *userInfo = @{
-                               CCUserAuthorizationKeys.firstName : userDictionary[@"auth"][@"info"][@"first_name"],
-                               CCUserAuthorizationKeys.lastName : userDictionary[@"auth"][@"info"][@"last_name"],
+                               CCUserAuthorizationKeys.firstName : userDictionary[CCTwitterUserKeys.auth][CCTwitterUserKeys.info][CCTwitterUserKeys.firstName],
+                               CCUserAuthorizationKeys.lastName : userDictionary[CCTwitterUserKeys.auth][CCTwitterUserKeys.info][CCTwitterUserKeys.lastName],
                                CCUserAuthorizationKeys.avatar: avatarURL,
-                               CCUserAuthorizationKeys.authToken:userDictionary[@"auth"][@"credentials"][@"token"],
-                               CCUserAuthorizationKeys.authSecretToken : userDictionary[@"auth"][@"credentials"][@"secret"],
-                               CCUserAuthorizationKeys.authUID : userDictionary[@"auth"][@"uid"],
-                               CCUserAuthorizationKeys.authProvider: @"twitter"
+                               CCUserAuthorizationKeys.authToken:userDictionary[CCTwitterUserKeys.auth][CCTwitterUserKeys.credentials][CCTwitterUserKeys.token],
+                               CCUserAuthorizationKeys.authSecretToken : userDictionary[CCTwitterUserKeys.auth][CCTwitterUserKeys.credentials][CCTwitterUserKeys.secret],
+                               CCUserAuthorizationKeys.authUID : userDictionary[CCTwitterUserKeys.auth][CCTwitterUserKeys.uid],
+                               CCUserAuthorizationKeys.authProvider: CCTwitterUserKeys.twitter
                                };
     [self authorizeUserOnServerWithUserInfo:(NSDictionary *)userInfo SuccessHandler:successHandler errorHandler:errorHandler];
 }

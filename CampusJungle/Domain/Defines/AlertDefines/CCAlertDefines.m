@@ -26,3 +26,7 @@ const struct CCAlertsButtons CCAlertsButtons = {
     .yesButton = @"Yes",
     .noButton = @"No"
 };
+
+const struct CCAlertsTitles CCAlertsTitles = {
+    .requestError = @"Request failed",
+};
