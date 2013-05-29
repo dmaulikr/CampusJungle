@@ -14,7 +14,8 @@ const struct CCAPIDefines CCAPIDefines = {
     .authorization = @"/api/authentications",
     .login = @"/api/users/login",
     .states = @"/api/states",
-    .cities = @"/api/states/%@/cities"
+    .cities = @"/api/states/%@/cities",
+    .colleges = @"/api/cities/%@/colleges"
 };
 
 

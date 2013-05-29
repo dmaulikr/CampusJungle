@@ -13,6 +13,6 @@
 @interface CCCitySelectionController : CCTableBasedController
 
 @property (nonatomic, strong) NSNumber *stateID;
-@property (nonatomic, strong) id <CCTransactionWithObject> colegeScreenTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> collegeScreenTransaction;
 
 @end

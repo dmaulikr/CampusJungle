@@ -9,6 +9,7 @@
 #import "CCCitySelectionController.h"
 #import "CCCityCell.h"
 #import "CCCitiesDataProvider.h"
+#import "CCCity.h"
 
 @interface CCCitySelectionController ()
 
@@ -34,7 +35,7 @@
 
 - (void)didSelectedCellWithObject:(id)cellObject
 {
-    //[self.citySelectionTransaction performWithObject:[cellObject stateID]];
+    [self.collegeScreenTransaction performWithObject:[(CCCity *)cellObject cityID]];
 }
 
 @end

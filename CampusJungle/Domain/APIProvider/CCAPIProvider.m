@@ -95,6 +95,20 @@
     [self loadItemsWithParams:params path:path successHandler:successHandler errorHandler:errorHandler];
 }
 
+- (void)loadCollegesInCity:(NSNumber *)cityID NumberOfPage:(NSNumber *)pageNumber query:(NSString *)query successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    
+    [params setObject:pageNumber.stringValue forKey:@"page_number"];
+    if (query) {
+        [params setObject:query forKey:@"name"];
+    }
+    
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.colleges, cityID];
+    
+    [self loadItemsWithParams:params path:path successHandler:successHandler errorHandler:errorHandler];
+}
+
 - (void)loadItemsWithParams:(NSDictionary *)params path:(NSString *)path successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];

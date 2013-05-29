@@ -13,6 +13,7 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *login;
     __unsafe_unretained NSString *states;
     __unsafe_unretained NSString *cities;
+    __unsafe_unretained NSString *colleges;
 } CCAPIDefines;
 
 

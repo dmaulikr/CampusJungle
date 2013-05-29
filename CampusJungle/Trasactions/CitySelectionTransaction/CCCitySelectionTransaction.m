@@ -8,6 +8,7 @@
 
 #import "CCCitySelectionTransaction.h"
 #import "CCCitySelectionController.h"
+#import "CCCollegeSelectionTransaction.h"
 
 @implementation CCCitySelectionTransaction
 
@@ -16,7 +17,12 @@
     NSParameterAssert(self.navigation);
     CCCitySelectionController *citySelection = [CCCitySelectionController new];
     citySelection.stateID = object;
+    CCCollegeSelectionTransaction *collegeTransaction = [CCCollegeSelectionTransaction new];
+    collegeTransaction.navigation = self.navigation;
+    citySelection.collegeScreenTransaction = collegeTransaction;
     [self.navigation pushViewController:citySelection animated:YES];
+    
+    
 }
 
 @end

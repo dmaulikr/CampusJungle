@@ -16,6 +16,7 @@
 #import "CCPaginationResponse.h"
 #import "CCState.h"
 #import "CCCity.h"
+#import "CCCollege.h"
 
 @implementation CCRestKitConfigurator
 
@@ -110,6 +111,15 @@
         @"name" : @"name"
      }];
     
+    RKObjectMapping *collegesMapping = [RKObjectMapping mappingForClass:[CCCollege class]];
+    
+    [collegesMapping addAttributeMappingsFromDictionary:@{
+        @"id" : @"collegeID",
+        @"name" : @"name",
+        @"address" : @"address"
+     }];
+    
+    
     RKRelationshipMapping* relationShipResponseStatesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"states"
                                                                                                            toKeyPath:@"items"
                                                                                                          withMapping:statesMapping];
@@ -118,9 +128,15 @@
     RKRelationshipMapping* relationShipResponseCitiesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"cities"
                                                                                                          toKeyPath:@"items"
                                                                                                        withMapping:citiesMapping];
+    RKRelationshipMapping* relationShipResponseCollegesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"colleges"
+                                                                                                           toKeyPath:@"items"
+                                                                                                           withMapping:collegesMapping];
+    
     
     RKObjectMapping *paginationCitiesResponseMapping = [paginationStatesResponseMapping copy];
+    RKObjectMapping *paginationCollegesResponseMapping = [paginationStatesResponseMapping copy];
     
+    [paginationCollegesResponseMapping addPropertyMapping:relationShipResponseCollegesMapping];
     [paginationCitiesResponseMapping addPropertyMapping:relationShipResponseCitiesMapping];
     [paginationStatesResponseMapping addPropertyMapping:relationShipResponseStatesMapping];
     
@@ -129,6 +145,10 @@
     NSString *cityPathPatern = [NSString stringWithFormat:CCAPIDefines.cities,@":stateID"];
     RKResponseDescriptor *responsePaginationCity = [RKResponseDescriptor responseDescriptorWithMapping:paginationCitiesResponseMapping pathPattern:cityPathPatern keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
+    NSString *collegePathPatern = [NSString stringWithFormat:CCAPIDefines.colleges,@":colleges"];
+    RKResponseDescriptor *responsePaginationCollege = [RKResponseDescriptor responseDescriptorWithMapping:paginationCollegesResponseMapping pathPattern:collegePathPatern keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    [objectManager addResponseDescriptor:responsePaginationCollege];
     [objectManager addResponseDescriptor:responsePaginationCity];
     [objectManager addResponseDescriptor:responsePaginationState];
     
