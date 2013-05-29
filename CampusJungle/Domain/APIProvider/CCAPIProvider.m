@@ -48,7 +48,7 @@
           successHandler:(successHandlerWithRKResult)successHandler
             errorHandler:(errorHandler)errorHandler{
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
-    [objectManager putObject:nil path:CCAPIDefines.signUp parameters:userInfo success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    [objectManager postObject:nil path:CCAPIDefines.signUp parameters:userInfo success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         successHandler(mappingResult);
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         errorHandler(error);
@@ -68,6 +68,19 @@
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         errorHandler(error);
     }];
+}
+
+- (void)loadStatesNumberOfPage:(NSNumber *)pageNumber query:(NSString *)query successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    
+    [objectManager getObjectsAtPath:@"/api/states" parameters:@{@"name" : query} success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        successHandler(mappingResult);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        errorHandler(error);
+    }];
+
+
 }
 
 

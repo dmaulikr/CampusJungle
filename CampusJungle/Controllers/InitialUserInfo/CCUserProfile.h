@@ -12,5 +12,6 @@
 @interface CCUserProfile : CCViewController
 
 @property (nonatomic, strong) id <CCTransaction> logoutTransaction;
+@property (nonatomic, strong) id <CCTransaction> addColegeTransaction;
 
 @end
