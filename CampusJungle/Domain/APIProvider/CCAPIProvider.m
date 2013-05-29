@@ -81,11 +81,25 @@
     [self loadItemsWithParams:params path:CCAPIDefines.states successHandler:successHandler errorHandler:errorHandler];
 }
 
+- (void)loadCitiesInState:(NSNumber *)stateID NumberOfPage:(NSNumber *)pageNumber query:(NSString *)query successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    
+    [params setObject:pageNumber.stringValue forKey:@"page_number"];
+    if (query) {
+        [params setObject:query forKey:@"name"];
+    }
+    
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.cities, stateID];
+    
+    [self loadItemsWithParams:params path:path successHandler:successHandler errorHandler:errorHandler];
+}
+
 - (void)loadItemsWithParams:(NSDictionary *)params path:(NSString *)path successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [self setAuthorizationToken];
-    [objectManager getObjectsAtPath:CCAPIDefines.states parameters:params success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    [objectManager getObjectsAtPath:path parameters:params success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         successHandler(mappingResult);
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         errorHandler(error);

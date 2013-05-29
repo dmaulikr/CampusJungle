@@ -8,6 +8,7 @@
 
 #import "CCStateSelectionScreenTransaction.h"
 #import "CCStateSelectionConroller.h"
+#import "CCCitySelectionTransaction.h"
 
 @implementation CCStateSelectionScreenTransaction
 
@@ -16,7 +17,9 @@
     NSParameterAssert(self.navigation);
     
     CCStateSelectionConroller *stateSelectionController = [CCStateSelectionConroller new];
-
+    CCCitySelectionTransaction *citySelectionTransaction = [CCCitySelectionTransaction new];
+    citySelectionTransaction.navigation = self.navigation;
+    stateSelectionController.citySelectionTransaction = citySelectionTransaction;
     [self.navigation pushViewController:stateSelectionController animated:YES];
 }
 

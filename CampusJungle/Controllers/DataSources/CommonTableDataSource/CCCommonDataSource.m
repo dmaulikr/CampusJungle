@@ -33,4 +33,9 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.delegate didSelectedCellWithObject:self.dataProvider.arrayOfItems[indexPath.row]];
+}
+
 @end

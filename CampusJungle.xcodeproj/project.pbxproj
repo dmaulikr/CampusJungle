@@ -69,6 +69,11 @@
 		D3EFD249175627F300B7D710 /* CCCommonDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD248175627F300B7D710 /* CCCommonDataSource.m */; };
 		D3EFD24D1756302A00B7D710 /* CCState.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD24C1756302A00B7D710 /* CCState.m */; };
 		D3EFD25417563DF800B7D710 /* CCStateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD25317563DF800B7D710 /* CCStateCell.m */; };
+		D3EFD25A17564FD000B7D710 /* CCCitySelectionTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD25917564FD000B7D710 /* CCCitySelectionTransaction.m */; };
+		D3EFD25E175653BB00B7D710 /* CCTableBasedController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD25D175653BB00B7D710 /* CCTableBasedController.m */; };
+		D3EFD266175657A900B7D710 /* CCCityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD265175657A900B7D710 /* CCCityCell.m */; };
+		D3EFD26A1756587700B7D710 /* CCCity.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD2691756587700B7D710 /* CCCity.m */; };
+		D3EFD26E1756596F00B7D710 /* CCCitiesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD26D1756596F00B7D710 /* CCCitiesDataProvider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -186,6 +191,16 @@
 		D3EFD250175638D800B7D710 /* CCTableCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCTableCellProtocol.h; sourceTree = "<group>"; };
 		D3EFD25217563DF800B7D710 /* CCStateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStateCell.h; sourceTree = "<group>"; };
 		D3EFD25317563DF800B7D710 /* CCStateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStateCell.m; sourceTree = "<group>"; };
+		D3EFD25817564FD000B7D710 /* CCCitySelectionTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCitySelectionTransaction.h; sourceTree = "<group>"; };
+		D3EFD25917564FD000B7D710 /* CCCitySelectionTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCitySelectionTransaction.m; sourceTree = "<group>"; };
+		D3EFD25C175653BB00B7D710 /* CCTableBasedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableBasedController.h; sourceTree = "<group>"; };
+		D3EFD25D175653BB00B7D710 /* CCTableBasedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableBasedController.m; sourceTree = "<group>"; };
+		D3EFD264175657A900B7D710 /* CCCityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCityCell.h; sourceTree = "<group>"; };
+		D3EFD265175657A900B7D710 /* CCCityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCityCell.m; sourceTree = "<group>"; };
+		D3EFD2681756587700B7D710 /* CCCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCity.h; sourceTree = "<group>"; };
+		D3EFD2691756587700B7D710 /* CCCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCity.m; sourceTree = "<group>"; };
+		D3EFD26C1756596F00B7D710 /* CCCitiesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCitiesDataProvider.h; sourceTree = "<group>"; };
+		D3EFD26D1756596F00B7D710 /* CCCitiesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCitiesDataProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +296,7 @@
 				A787C73F17536F8400824DEA /* MenuController */,
 				A787C74317536F8400824DEA /* SignupController */,
 				A787C74717536F8400824DEA /* WelcomeScreen */,
+				D3EFD25B1756539E00B7D710 /* TableBasedController */,
 				D3EFD2251755FC6200B7D710 /* CitySelectionScreen */,
 				D3EFD2261755FC6200B7D710 /* StateSelectionScreen */,
 			);
@@ -415,6 +431,7 @@
 		A787C76117536F8400824DEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D3EFD2671756586200B7D710 /* City */,
 				D3EFD24A1756300400B7D710 /* State */,
 				D3EFD242175611F200B7D710 /* PaginationResponse */,
 				A787C76217536F8400824DEA /* Authorization */,
@@ -508,6 +525,7 @@
 		A787C77D17536F8400824DEA /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
+				D3EFD25717564FB300B7D710 /* CitySelectionTransaction */,
 				D3EFD2311755FDE800B7D710 /* StateSelectionScreenTransaction */,
 				A787C77E17536F8400824DEA /* InitialUserInfoTransaction */,
 				A787C78117536F8400824DEA /* UserProfileTransaction */,
@@ -652,6 +670,7 @@
 		D3A2C3261754D53900989831 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D3EFD2631756578D00B7D710 /* CityCell */,
 				D3EFD25117563DDC00B7D710 /* StateCell */,
 				D3EFD24F175638C600B7D710 /* CCTableCellProtocol */,
 				D3A2C3271754D54F00989831 /* TwitterPicker */,
@@ -700,6 +719,7 @@
 		D3EFD2351756080700B7D710 /* DataProviders */ = {
 			isa = PBXGroup;
 			children = (
+				D3EFD26B1756594C00B7D710 /* CitiesDataProvider */,
 				D3EFD23617560A4D00B7D710 /* BaseDataProvider */,
 				D3EFD23717560A4D00B7D710 /* PaginationDataProvider */,
 				D3EFD23817560A4D00B7D710 /* StatesDataProvider */,
@@ -777,6 +797,52 @@
 				D3EFD25317563DF800B7D710 /* CCStateCell.m */,
 			);
 			path = StateCell;
+			sourceTree = "<group>";
+		};
+		D3EFD25717564FB300B7D710 /* CitySelectionTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD25817564FD000B7D710 /* CCCitySelectionTransaction.h */,
+				D3EFD25917564FD000B7D710 /* CCCitySelectionTransaction.m */,
+			);
+			path = CitySelectionTransaction;
+			sourceTree = "<group>";
+		};
+		D3EFD25B1756539E00B7D710 /* TableBasedController */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD25C175653BB00B7D710 /* CCTableBasedController.h */,
+				D3EFD25D175653BB00B7D710 /* CCTableBasedController.m */,
+			);
+			name = TableBasedController;
+			path = StateSelectionScreen/TableBasedController;
+			sourceTree = "<group>";
+		};
+		D3EFD2631756578D00B7D710 /* CityCell */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD264175657A900B7D710 /* CCCityCell.h */,
+				D3EFD265175657A900B7D710 /* CCCityCell.m */,
+			);
+			path = CityCell;
+			sourceTree = "<group>";
+		};
+		D3EFD2671756586200B7D710 /* City */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD2681756587700B7D710 /* CCCity.h */,
+				D3EFD2691756587700B7D710 /* CCCity.m */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
+		D3EFD26B1756594C00B7D710 /* CitiesDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD26C1756596F00B7D710 /* CCCitiesDataProvider.h */,
+				D3EFD26D1756596F00B7D710 /* CCCitiesDataProvider.m */,
+			);
+			path = CitiesDataProvider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -928,6 +994,11 @@
 				D3EFD249175627F300B7D710 /* CCCommonDataSource.m in Sources */,
 				D3EFD24D1756302A00B7D710 /* CCState.m in Sources */,
 				D3EFD25417563DF800B7D710 /* CCStateCell.m in Sources */,
+				D3EFD25A17564FD000B7D710 /* CCCitySelectionTransaction.m in Sources */,
+				D3EFD25E175653BB00B7D710 /* CCTableBasedController.m in Sources */,
+				D3EFD266175657A900B7D710 /* CCCityCell.m in Sources */,
+				D3EFD26A1756587700B7D710 /* CCCity.m in Sources */,
+				D3EFD26E1756596F00B7D710 /* CCCitiesDataProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

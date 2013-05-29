@@ -15,6 +15,7 @@
 #import "CCAuthorizationResponse.h"
 #import "CCPaginationResponse.h"
 #import "CCState.h"
+#import "CCCity.h"
 
 @implementation CCRestKitConfigurator
 
@@ -93,22 +94,45 @@
 
 + (void)configurePaginationResponse:(RKObjectManager *)objectManager
 {
-    RKObjectMapping *paginationResponseMapping  = [RKObjectMapping mappingForClass:[CCPaginationResponse class]];
-    [paginationResponseMapping addAttributeMappingsFromDictionary:@{@"count": @"count"}];
+    RKObjectMapping *paginationStatesResponseMapping  = [RKObjectMapping mappingForClass:[CCPaginationResponse class]];
+    [paginationStatesResponseMapping addAttributeMappingsFromDictionary:@{@"count": @"count"}];
     
     RKObjectMapping *statesMapping = [RKObjectMapping mappingForClass:[CCState class]];
     [statesMapping addAttributeMappingsFromDictionary:@{
         @"id" : @"stateID",
         @"name" : @"name"
      }];
+    
+    RKObjectMapping *citiesMapping = [RKObjectMapping mappingForClass:[CCCity class]];
+    
+    [citiesMapping addAttributeMappingsFromDictionary:@{
+        @"id" : @"cityID",
+        @"name" : @"name"
+     }];
+    
     RKRelationshipMapping* relationShipResponseStatesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"states"
+                                                                                                           toKeyPath:@"items"
+                                                                                                         withMapping:statesMapping];
+    
+    
+    RKRelationshipMapping* relationShipResponseCitiesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"cities"
                                                                                                          toKeyPath:@"items"
-                                                                                                       withMapping:statesMapping];
-    [paginationResponseMapping addPropertyMapping:relationShipResponseStatesMapping];
+                                                                                                       withMapping:citiesMapping];
     
-    RKResponseDescriptor *responsePagination = [RKResponseDescriptor responseDescriptorWithMapping:paginationResponseMapping pathPattern:CCAPIDefines.states keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    RKObjectMapping *paginationCitiesResponseMapping = [paginationStatesResponseMapping copy];
     
-    [objectManager addResponseDescriptor:responsePagination];
+    [paginationCitiesResponseMapping addPropertyMapping:relationShipResponseCitiesMapping];
+    [paginationStatesResponseMapping addPropertyMapping:relationShipResponseStatesMapping];
+    
+    RKResponseDescriptor *responsePaginationState = [RKResponseDescriptor responseDescriptorWithMapping:paginationStatesResponseMapping pathPattern:CCAPIDefines.states keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    NSString *cityPathPatern = [NSString stringWithFormat:CCAPIDefines.cities,@":stateID"];
+    RKResponseDescriptor *responsePaginationCity = [RKResponseDescriptor responseDescriptorWithMapping:paginationCitiesResponseMapping pathPattern:cityPathPatern keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    [objectManager addResponseDescriptor:responsePaginationCity];
+    [objectManager addResponseDescriptor:responsePaginationState];
+    
+    
 
 }
 

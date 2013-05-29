@@ -9,8 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "CCBaseDataProvider.h"
 
+@protocol CellSelectionProtocol <NSObject>
+
+- (void)didSelectedCellWithObject:(id)cellObject;
+
+@end
+
 @interface CCCommonDataSource : NSObject<UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic, weak) id <CellSelectionProtocol> delegate;
 @property (nonatomic, strong) CCBaseDataProvider *dataProvider;
 
 @end

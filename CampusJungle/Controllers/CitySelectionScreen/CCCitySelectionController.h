@@ -7,7 +7,12 @@
 //
 
 #import "CCViewController.h"
+#import "CCTableBasedController.h"
+#import "CCTransactionWithObject.h"
 
-@interface CCCitySelectionController : CCViewController
+@interface CCCitySelectionController : CCTableBasedController
+
+@property (nonatomic, strong) NSNumber *stateID;
+@property (nonatomic, strong) id <CCTransactionWithObject> colegeScreenTransaction;
 
 @end
