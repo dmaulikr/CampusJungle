@@ -28,7 +28,7 @@
 
 - (NSIndexPath *)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.userProfileTransaction perform];
+    [self.classTransaction perform];
     return indexPath;
 }
 

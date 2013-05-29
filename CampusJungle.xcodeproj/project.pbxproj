@@ -51,7 +51,10 @@
 		A787C7C117538BCF00824DEA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A787C7C017538BCF00824DEA /* QuartzCore.framework */; };
 		A787C7D21754E9CE00824DEA /* CCSideBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C7D11754E9CE00824DEA /* CCSideBarController.m */; };
 		A7D539CD175615A300FE9FCD /* CCSideMenuDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D539CC175615A300FE9FCD /* CCSideMenuDataSource.m */; };
-		A7D539D11756237F00FE9FCD /* CCClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D539D01756237F00FE9FCD /* CCClassController.m */; };
+		A7D539D617563D6D00FE9FCD /* CCClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D539D417563D6D00FE9FCD /* CCClassViewController.m */; };
+		A7D539D717563D6D00FE9FCD /* CCClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7D539D517563D6D00FE9FCD /* CCClassViewController.xib */; };
+		A7D539DB17563FEC00FE9FCD /* CCClassTableDataSorce.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D539DA17563FEC00FE9FCD /* CCClassTableDataSorce.m */; };
+		A7D53A0B1756447900FE9FCD /* CCClassTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D53A0A1756447900FE9FCD /* CCClassTransaction.m */; };
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
 		D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36186471743B13E00B501BC /* SystemConfiguration.framework */; };
 		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
@@ -155,8 +158,13 @@
 		A787C7D11754E9CE00824DEA /* CCSideBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCSideBarController.m; path = SideBarController/CCSideBarController.m; sourceTree = "<group>"; };
 		A7D539CB175615A300FE9FCD /* CCSideMenuDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCSideMenuDataSource.h; path = SideMenuDataSource/CCSideMenuDataSource.h; sourceTree = "<group>"; };
 		A7D539CC175615A300FE9FCD /* CCSideMenuDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCSideMenuDataSource.m; path = SideMenuDataSource/CCSideMenuDataSource.m; sourceTree = "<group>"; };
-		A7D539CF1756237F00FE9FCD /* CCClassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCClassController.h; path = ClassController/CCClassController.h; sourceTree = "<group>"; };
-		A7D539D01756237F00FE9FCD /* CCClassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCClassController.m; path = ClassController/CCClassController.m; sourceTree = "<group>"; };
+		A7D539D317563D6D00FE9FCD /* CCClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCClassViewController.h; path = ClassController/CCClassViewController.h; sourceTree = "<group>"; };
+		A7D539D417563D6D00FE9FCD /* CCClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCClassViewController.m; path = ClassController/CCClassViewController.m; sourceTree = "<group>"; };
+		A7D539D517563D6D00FE9FCD /* CCClassViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CCClassViewController.xib; path = ClassController/CCClassViewController.xib; sourceTree = "<group>"; };
+		A7D539D917563FEC00FE9FCD /* CCClassTableDataSorce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCClassTableDataSorce.h; path = ClassTableDataSorce/CCClassTableDataSorce.h; sourceTree = "<group>"; };
+		A7D539DA17563FEC00FE9FCD /* CCClassTableDataSorce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCClassTableDataSorce.m; path = ClassTableDataSorce/CCClassTableDataSorce.m; sourceTree = "<group>"; };
+		A7D53A091756447900FE9FCD /* CCClassTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCClassTransaction.h; path = ClassTransactions/CCClassTransaction.h; sourceTree = "<group>"; };
+		A7D53A0A1756447900FE9FCD /* CCClassTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCClassTransaction.m; path = ClassTransactions/CCClassTransaction.m; sourceTree = "<group>"; };
 		D36186471743B13E00B501BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStandardErrorHandler.h; sourceTree = "<group>"; };
 		D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStandardErrorHandler.m; sourceTree = "<group>"; };
@@ -504,6 +512,7 @@
 		A787C77D17536F8400824DEA /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
+				A7D53A081756444900FE9FCD /* ClassTransaction */,
 				D3EFD2311755FDE800B7D710 /* StateSelectionScreenTransaction */,
 				A787C77E17536F8400824DEA /* InitialUserInfoTransaction */,
 				A787C78117536F8400824DEA /* UserProfileTransaction */,
@@ -629,10 +638,29 @@
 		A7D539CE1756236000FE9FCD /* ClassController */ = {
 			isa = PBXGroup;
 			children = (
-				A7D539CF1756237F00FE9FCD /* CCClassController.h */,
-				A7D539D01756237F00FE9FCD /* CCClassController.m */,
+				A7D539D317563D6D00FE9FCD /* CCClassViewController.h */,
+				A7D539D417563D6D00FE9FCD /* CCClassViewController.m */,
+				A7D539D517563D6D00FE9FCD /* CCClassViewController.xib */,
 			);
 			name = ClassController;
+			sourceTree = "<group>";
+		};
+		A7D539D817563FB200FE9FCD /* ClassTableDataSorce */ = {
+			isa = PBXGroup;
+			children = (
+				A7D539D917563FEC00FE9FCD /* CCClassTableDataSorce.h */,
+				A7D539DA17563FEC00FE9FCD /* CCClassTableDataSorce.m */,
+			);
+			name = ClassTableDataSorce;
+			sourceTree = "<group>";
+		};
+		A7D53A081756444900FE9FCD /* ClassTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				A7D53A091756447900FE9FCD /* CCClassTransaction.h */,
+				A7D53A0A1756447900FE9FCD /* CCClassTransaction.m */,
+			);
+			name = ClassTransaction;
 			sourceTree = "<group>";
 		};
 		D39F1C0E1753821D008E08A2 /* StandardErrorHandler */ = {
@@ -647,6 +675,7 @@
 		D3A2C31F1754AD9400989831 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				A7D539D817563FB200FE9FCD /* ClassTableDataSorce */,
 				A7D539CA1756157900FE9FCD /* SideMenuDataSource */,
 				D3A2C3201754ADC100989831 /* UserCollegesTableDataSource */,
 			);
@@ -822,6 +851,7 @@
 				A787C7B517536F8400824DEA /* InfoPlist.strings in Resources */,
 				D3EFD22B1755FC9500B7D710 /* CCCitySelectionController.xib in Resources */,
 				D3EFD2301755FCE200B7D710 /* CCStateSelectionConroller.xib in Resources */,
+				A7D539D717563D6D00FE9FCD /* CCClassViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,7 +932,9 @@
 				D3EFD23E17560A9D00B7D710 /* CCPaginationDataProvider.m in Sources */,
 				D3EFD24117560AB300B7D710 /* CCStatesDataProvider.m in Sources */,
 				D3EFD2451756121C00B7D710 /* CCPaginationResponse.m in Sources */,
-				A7D539D11756237F00FE9FCD /* CCClassController.m in Sources */,
+				A7D539D617563D6D00FE9FCD /* CCClassViewController.m in Sources */,
+				A7D539DB17563FEC00FE9FCD /* CCClassTableDataSorce.m in Sources */,
+				A7D53A0B1756447900FE9FCD /* CCClassTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

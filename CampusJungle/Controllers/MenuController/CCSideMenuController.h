@@ -12,6 +12,8 @@
 @interface CCSideMenuController : CCViewController
 
 @property (nonatomic, strong) id <CCTransaction> userProfileTransaction;
+@property (nonatomic, strong) id <CCTransaction> classTransaction;
+
 @property (nonatomic, strong) UINavigationController *navigation;
 
 -(IBAction)logoutButtonPressed;

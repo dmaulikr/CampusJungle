@@ -13,6 +13,7 @@
 #import "CCUserProfile.h"
 #import "CCUserProfileTransaction.h"
 #import "CCSideBarController.h"
+#import "CCClassTransaction.h"
 
 @interface CCMainTransaction()
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
@@ -42,9 +43,11 @@
     
     CCUserProfileTransaction *userProfileTransaction = [CCUserProfileTransaction new];
     userProfileTransaction.menuController = rootController;
-    
     leftController.userProfileTransaction = userProfileTransaction;
     
+    CCClassTransaction *classTransaction = [CCClassTransaction new];
+    classTransaction.menuController = rootController;
+    leftController.classTransaction = classTransaction;
         
     if ([self.ioc_userSession currentUser]){
         
@@ -55,7 +58,6 @@
 
 - (void)showWelcomeScreenIn:(CCSideBarController *)sidePanel
 {
-
     __weak CCSideBarController *__sidePanel = sidePanel;
         
     UINavigationController *navigation = [CCWelcomeScreenConfigurator configureWithBaseController:sidePanel];

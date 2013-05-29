@@ -18,4 +18,8 @@
     }
 }
 
+- (UIBarButtonItem *)leftButtonForCenterPanel {
+    return [[UIBarButtonItem alloc] initWithImage:[[self class] defaultImage] style:UIBarButtonItemStylePlain target:self action:@selector(toggleLeftPanel:)];
+}
+
 @end
