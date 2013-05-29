@@ -13,6 +13,7 @@
 #import "CCUserProfile.h"
 #import "CCUserProfileTransaction.h"
 #import "CCSideBarController.h"
+#import "CCClassTransaction.h"
 
 @interface CCMainTransaction()
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
@@ -28,8 +29,9 @@
     CCSideBarController *rootController = [[CCSideBarController alloc] init];
     rootController.shouldDelegateAutorotateToVisiblePanel = NO;
     
-    CCMenuController *leftController = [[CCMenuController alloc] init];
+    CCSideMenuController *leftController = [[CCSideMenuController alloc] init];
 	rootController.leftPanel = leftController;
+    rootController.panningLimitedToTopViewController = NO;
     
     UIViewController *centralPanel = [UIViewController new];
     centralPanel.view.backgroundColor = [UIColor redColor];	
@@ -41,9 +43,11 @@
     
     CCUserProfileTransaction *userProfileTransaction = [CCUserProfileTransaction new];
     userProfileTransaction.menuController = rootController;
-    
     leftController.userProfileTransaction = userProfileTransaction;
     
+    CCClassTransaction *classTransaction = [CCClassTransaction new];
+    classTransaction.menuController = rootController;
+    leftController.classTransaction = classTransaction;
         
     if ([self.ioc_userSession currentUser]){
         
@@ -54,7 +58,6 @@
 
 - (void)showWelcomeScreenIn:(CCSideBarController *)sidePanel
 {
-
     __weak CCSideBarController *__sidePanel = sidePanel;
         
     UINavigationController *navigation = [CCWelcomeScreenConfigurator configureWithBaseController:sidePanel];

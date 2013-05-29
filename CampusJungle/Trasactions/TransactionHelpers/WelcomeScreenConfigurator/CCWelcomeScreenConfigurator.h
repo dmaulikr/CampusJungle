@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CCMenuController.h"
+#import "CCSideMenuController.h"
 #import "JASidePanelController.h"
 
 @interface CCWelcomeScreenConfigurator : NSObject
