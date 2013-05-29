@@ -66,6 +66,9 @@
 		D3EFD23E17560A9D00B7D710 /* CCPaginationDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD23D17560A9D00B7D710 /* CCPaginationDataProvider.m */; };
 		D3EFD24117560AB300B7D710 /* CCStatesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD24017560AB300B7D710 /* CCStatesDataProvider.m */; };
 		D3EFD2451756121C00B7D710 /* CCPaginationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD2441756121C00B7D710 /* CCPaginationResponse.m */; };
+		D3EFD249175627F300B7D710 /* CCCommonDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD248175627F300B7D710 /* CCCommonDataSource.m */; };
+		D3EFD24D1756302A00B7D710 /* CCState.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD24C1756302A00B7D710 /* CCState.m */; };
+		D3EFD25417563DF800B7D710 /* CCStateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD25317563DF800B7D710 /* CCStateCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -176,6 +179,13 @@
 		D3EFD24017560AB300B7D710 /* CCStatesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStatesDataProvider.m; sourceTree = "<group>"; };
 		D3EFD2431756121C00B7D710 /* CCPaginationResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPaginationResponse.h; sourceTree = "<group>"; };
 		D3EFD2441756121C00B7D710 /* CCPaginationResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPaginationResponse.m; sourceTree = "<group>"; };
+		D3EFD247175627F300B7D710 /* CCCommonDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCommonDataSource.h; sourceTree = "<group>"; };
+		D3EFD248175627F300B7D710 /* CCCommonDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCommonDataSource.m; sourceTree = "<group>"; };
+		D3EFD24B1756302A00B7D710 /* CCState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCState.h; sourceTree = "<group>"; };
+		D3EFD24C1756302A00B7D710 /* CCState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCState.m; sourceTree = "<group>"; };
+		D3EFD250175638D800B7D710 /* CCTableCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCTableCellProtocol.h; sourceTree = "<group>"; };
+		D3EFD25217563DF800B7D710 /* CCStateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStateCell.h; sourceTree = "<group>"; };
+		D3EFD25317563DF800B7D710 /* CCStateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStateCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,6 +415,7 @@
 		A787C76117536F8400824DEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D3EFD24A1756300400B7D710 /* State */,
 				D3EFD242175611F200B7D710 /* PaginationResponse */,
 				A787C76217536F8400824DEA /* Authorization */,
 				A787C76517536F8400824DEA /* AuthorizationResponse */,
@@ -622,6 +633,7 @@
 		D3A2C31F1754AD9400989831 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				D3EFD246175627DD00B7D710 /* CommonTableDataSource */,
 				D3A2C3201754ADC100989831 /* UserCollegesTableDataSource */,
 			);
 			name = DataSources;
@@ -640,6 +652,8 @@
 		D3A2C3261754D53900989831 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D3EFD25117563DDC00B7D710 /* StateCell */,
+				D3EFD24F175638C600B7D710 /* CCTableCellProtocol */,
 				D3A2C3271754D54F00989831 /* TwitterPicker */,
 			);
 			path = View;
@@ -727,6 +741,42 @@
 				D3EFD2441756121C00B7D710 /* CCPaginationResponse.m */,
 			);
 			path = PaginationResponse;
+			sourceTree = "<group>";
+		};
+		D3EFD246175627DD00B7D710 /* CommonTableDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD247175627F300B7D710 /* CCCommonDataSource.h */,
+				D3EFD248175627F300B7D710 /* CCCommonDataSource.m */,
+			);
+			path = CommonTableDataSource;
+			sourceTree = "<group>";
+		};
+		D3EFD24A1756300400B7D710 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD24B1756302A00B7D710 /* CCState.h */,
+				D3EFD24C1756302A00B7D710 /* CCState.m */,
+			);
+			name = State;
+			path = ../States;
+			sourceTree = "<group>";
+		};
+		D3EFD24F175638C600B7D710 /* CCTableCellProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD250175638D800B7D710 /* CCTableCellProtocol.h */,
+			);
+			path = CCTableCellProtocol;
+			sourceTree = "<group>";
+		};
+		D3EFD25117563DDC00B7D710 /* StateCell */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD25217563DF800B7D710 /* CCStateCell.h */,
+				D3EFD25317563DF800B7D710 /* CCStateCell.m */,
+			);
+			path = StateCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -875,6 +925,9 @@
 				D3EFD23E17560A9D00B7D710 /* CCPaginationDataProvider.m in Sources */,
 				D3EFD24117560AB300B7D710 /* CCStatesDataProvider.m in Sources */,
 				D3EFD2451756121C00B7D710 /* CCPaginationResponse.m in Sources */,
+				D3EFD249175627F300B7D710 /* CCCommonDataSource.m in Sources */,
+				D3EFD24D1756302A00B7D710 /* CCState.m in Sources */,
+				D3EFD25417563DF800B7D710 /* CCStateCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

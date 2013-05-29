@@ -60,7 +60,7 @@
            errorHandler:(errorHandler)errorHandler{
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     
-    [objectManager postObject:nil
+    [objectManager putObject:nil
                          path:CCAPIDefines.login
                    parameters:userInfo
                       success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
@@ -72,17 +72,24 @@
 
 - (void)loadStatesNumberOfPage:(NSNumber *)pageNumber query:(NSString *)query successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
 {
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    NSMutableDictionary *params = [NSMutableDictionary new];
     
-    [objectManager getObjectsAtPath:@"/api/states" parameters:@{@"name" : query} success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    [params setObject:pageNumber.stringValue forKey:@"page_number"];
+    if (query) {
+       [params setObject:query forKey:@"name"];
+    }
+    [self loadItemsWithParams:params path:CCAPIDefines.states successHandler:successHandler errorHandler:errorHandler];
+}
+
+- (void)loadItemsWithParams:(NSDictionary *)params path:(NSString *)path successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [self setAuthorizationToken];
+    [objectManager getObjectsAtPath:CCAPIDefines.states parameters:params success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         successHandler(mappingResult);
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         errorHandler(error);
     }];
-
-
 }
-
-
 
 @end

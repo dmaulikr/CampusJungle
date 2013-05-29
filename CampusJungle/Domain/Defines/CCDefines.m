@@ -13,6 +13,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .signUp = @"/api/users/sign_up",
     .authorization = @"/api/authentications",
     .login = @"/api/users/login",
+    .states = @"/api/states",
 };
 
 
@@ -39,7 +40,7 @@ const struct CCUserSignUpKeys CCUserSignUpKeys = {
     .firstName = @"first_name",
     .lastName = @"last_name",
     .email = @"email",
-    .password = @"password"
+    .password = @"password",
 };
 
 const struct CCUserAuthorizationKeys CCUserAuthorizationKeys = {
@@ -77,4 +78,8 @@ const struct CCTwitterUserKeys CCTwitterUserKeys = {
 const struct CCErrorKeys CCErrorKeys = {
     .localizedRecoverySuggestion = @"NSLocalizedRecoverySuggestion",
     .errorMessage = @"error_message",
+};
+
+const struct CCTableDefines CCTableDefines = {
+    .tableCellIdentifier = @"CellIdentifier"
 };

@@ -11,6 +11,7 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *authorization;
     __unsafe_unretained NSString *signUp;
     __unsafe_unretained NSString *login;
+    __unsafe_unretained NSString *states;
 } CCAPIDefines;
 
 
@@ -74,3 +75,7 @@ extern const struct CCErrorKeys {
     __unsafe_unretained NSString *localizedRecoverySuggestion;
     __unsafe_unretained NSString *errorMessage;
 } CCErrorKeys;
+
+extern const struct CCTableDefines {
+    __unsafe_unretained NSString *tableCellIdentifier;
+} CCTableDefines;

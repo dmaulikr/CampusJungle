@@ -45,6 +45,7 @@
 {
    [self.ioc_apiProvider putUserForLogin:userInfo
                           successHandler:^(RKMappingResult *result) {
+                              self.ioc_userSession.currentUser = [result.firstObject user];
        successHandler();
    } errorHandler:^(NSError *error) {
        errorHandler(error);

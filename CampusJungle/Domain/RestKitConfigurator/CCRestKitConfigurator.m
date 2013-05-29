@@ -13,6 +13,8 @@
 #import "CCUser.h"
 #import "CCAuthorization.h"
 #import "CCAuthorizationResponse.h"
+#import "CCPaginationResponse.h"
+#import "CCState.h"
 
 @implementation CCRestKitConfigurator
 
@@ -38,6 +40,7 @@
     }];
     
     [CCRestKitConfigurator configureUserResponse:objectManager];
+    [CCRestKitConfigurator configurePaginationResponse:objectManager];
 }
 
 + (void)configureUserResponse:(RKObjectManager *)objectManager
@@ -86,6 +89,27 @@
     [objectManager addResponseDescriptor:responseAuthorizationDescriptor];
     [objectManager addResponseDescriptor:responseSignUpDescriptor];
     [objectManager addResponseDescriptor:responseLoginDescriptor];
+}
+
++ (void)configurePaginationResponse:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *paginationResponseMapping  = [RKObjectMapping mappingForClass:[CCPaginationResponse class]];
+    [paginationResponseMapping addAttributeMappingsFromDictionary:@{@"count": @"count"}];
+    
+    RKObjectMapping *statesMapping = [RKObjectMapping mappingForClass:[CCState class]];
+    [statesMapping addAttributeMappingsFromDictionary:@{
+        @"id" : @"stateID",
+        @"name" : @"name"
+     }];
+    RKRelationshipMapping* relationShipResponseStatesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"states"
+                                                                                                         toKeyPath:@"items"
+                                                                                                       withMapping:statesMapping];
+    [paginationResponseMapping addPropertyMapping:relationShipResponseStatesMapping];
+    
+    RKResponseDescriptor *responsePagination = [RKResponseDescriptor responseDescriptorWithMapping:paginationResponseMapping pathPattern:CCAPIDefines.states keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    [objectManager addResponseDescriptor:responsePagination];
+
 }
 
 @end

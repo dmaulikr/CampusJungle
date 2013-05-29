@@ -11,5 +11,6 @@
 @interface CCUserCollegesTableDataSource : NSObject<UITableViewDataSource>
 
 @property (nonatomic, strong) NSArray* colleges;
+@property (nonatomic, strong) id delegate;
 
 @end

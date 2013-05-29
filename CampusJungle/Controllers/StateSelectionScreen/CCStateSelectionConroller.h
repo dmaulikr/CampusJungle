@@ -8,6 +8,6 @@
 
 #import "CCViewController.h"
 
-@interface CCStateSelectionConroller : CCViewController
+@interface CCStateSelectionConroller : CCViewController <UISearchBarDelegate>
 
 @end

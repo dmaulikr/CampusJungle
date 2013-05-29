@@ -12,12 +12,13 @@
 
 - (void)loadItemsForPageNumber:(long)numberOfPage successHandler:(successWithObject)successHandler
 {
-//    [self.ioc_apiProvider loadPhotosPage:[NSNumber numberWithLong: numberOfPage] successHandler:^(RKMappingResult *result) {
-//        successHandler(result.firstObject);
-//    } errorHandler:^(RKObjectRequestOperation *operation, NSError *error) {
-//        [self showErrorWhileLoading:error];
-//    }];
-    //self.ioc_apiProvider
+    [self.ioc_apiProvider loadStatesNumberOfPage:[NSNumber numberWithLong:numberOfPage] query:self.searchQuery successHandler:^(RKMappingResult *result) {
+        
+        successHandler(result.firstObject);
+        
+    } errorHandler:^(NSError *error) {
+        [self showErrorWhileLoading:error];
+    }];
 }
 
 @end
