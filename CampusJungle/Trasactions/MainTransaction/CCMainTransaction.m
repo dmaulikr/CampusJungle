@@ -28,7 +28,7 @@
     CCSideBarController *rootController = [[CCSideBarController alloc] init];
     rootController.shouldDelegateAutorotateToVisiblePanel = NO;
     
-    CCMenuController *leftController = [[CCMenuController alloc] init];
+    CCSideMenuController *leftController = [[CCSideMenuController alloc] init];
 	rootController.leftPanel = leftController;
     
     UIViewController *centralPanel = [UIViewController new];

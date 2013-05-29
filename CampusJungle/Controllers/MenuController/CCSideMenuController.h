@@ -9,7 +9,7 @@
 #import "CCViewController.h"
 #import "CCTransaction.h"
 
-@interface CCMenuController : CCViewController
+@interface CCSideMenuController : CCViewController
 
 @property (nonatomic, strong) id <CCTransaction> userProfileTransaction;
 @property (nonatomic, strong) UINavigationController *navigation;

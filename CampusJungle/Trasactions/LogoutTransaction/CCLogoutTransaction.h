@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CCTransaction.h"
-#import "CCMenuController.h"
+#import "CCSideMenuController.h"
 #import "JASidePanelController.h"
 
 
