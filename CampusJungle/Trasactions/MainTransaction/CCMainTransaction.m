@@ -30,6 +30,7 @@
     
     CCSideMenuController *leftController = [[CCSideMenuController alloc] init];
 	rootController.leftPanel = leftController;
+    rootController.panningLimitedToTopViewController = NO;
     
     UIViewController *centralPanel = [UIViewController new];
     centralPanel.view.backgroundColor = [UIColor redColor];	
