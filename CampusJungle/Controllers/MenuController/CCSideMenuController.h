@@ -6,16 +6,12 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCViewController.h"
+#import "CCTableBasedController.h"
 #import "CCTransaction.h"
 
-@interface CCSideMenuController : CCViewController
+@interface CCSideMenuController : CCTableBasedController
 
 @property (nonatomic, strong) id <CCTransaction> userProfileTransaction;
 @property (nonatomic, strong) id <CCTransaction> classTransaction;
-
-@property (nonatomic, strong) UINavigationController *navigation;
-
--(IBAction)logoutButtonPressed;
 
 @end

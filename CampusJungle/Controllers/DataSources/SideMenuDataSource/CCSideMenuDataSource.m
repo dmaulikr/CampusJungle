@@ -10,14 +10,5 @@
 
 @implementation CCSideMenuDataSource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 2;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-     return [UITableViewCell new];
-}
 
 @end

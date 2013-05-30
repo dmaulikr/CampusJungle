@@ -8,11 +8,14 @@
 
 #import "CCSideMenuController.h"
 #import "CCSideMenuDataSource.h"
+#import "CCSideMenuDataProvider.h"
+#import "CCOrdinaryCell.h"
+#import "CCMenuDefines.h"
 
-@interface CCSideMenuController () <UITableViewDelegate>
+@interface CCSideMenuController () <CellSelectionProtocol>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableMenu;
 @property (nonatomic, strong) CCSideMenuDataSource *dataSource;
+@property (nonatomic, strong) CCSideMenuDataProvider *dataProvider;
 
 @end
 
@@ -21,15 +24,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableMenu.delegate = self;
     self.dataSource = [CCSideMenuDataSource new];
-    self.tableMenu.dataSource = self.dataSource;
+    [self configTable];
 }
 
-- (NSIndexPath *)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)configTable
 {
-    [self.classTransaction perform];
-    return indexPath;
+    self.dataProvider = [CCSideMenuDataProvider new];
+    self.dataProvider.arrayOfMenuItems = @[CCSideMenuTitles.profile,CCSideMenuTitles.classScreen];
+    [self configTableWithProvider:self.dataProvider cellClass:[CCOrdinaryCell class]];
+}
+
+- (void)didSelectedCellWithObject:(id)cellObject
+{
+    if ([(NSString*)cellObject isEqualToString:CCSideMenuTitles.profile]) {
+        [self.userProfileTransaction perform];
+    } else {
+        [self.classTransaction perform];
+    }
 }
 
 @end

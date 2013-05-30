@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-
-@interface CCSideMenuDataSource : NSObject<UITableViewDataSource>
+#import "CCCommonDataSource.h"
+@interface CCSideMenuDataSource : CCCommonDataSource
 
 @end
