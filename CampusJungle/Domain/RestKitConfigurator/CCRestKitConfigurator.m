@@ -59,6 +59,7 @@
         @"status" : @"status",
         @"id" : @"uid",
         @"rank" : @"rank",
+        @"is_fb_linked" :@"isFacebookLinked"
      }];
 
     
@@ -88,9 +89,37 @@
                                                                                              pathPattern:CCAPIDefines.login
                                                                                                  keyPath:nil
                                                                                              statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    RKResponseDescriptor *responseUserDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userResponseMapping
+                                                                                            pathPattern:CCAPIDefines.updateUser
+                                                                                                keyPath:@"user"
+                                                                                            statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [objectManager addResponseDescriptor:responseUserDescriptor];
     [objectManager addResponseDescriptor:responseAuthorizationDescriptor];
     [objectManager addResponseDescriptor:responseSignUpDescriptor];
     [objectManager addResponseDescriptor:responseLoginDescriptor];
+
+
+    RKObjectMapping *userRequestMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    [userRequestMapping addAttributeMappingsFromDictionary:@{
+                                                            @"firstName" : @"user[first_name]",
+                                                            @"lastName" : @"user[last_name]",
+                                                            @"email" :@"user[email]",
+     }];
+    RKObjectMapping *educationRequestMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    [educationRequestMapping addAttributeMappingsFromDictionary:@{
+                                                            @"graduationDate" : @"graduation_date",
+                                                            @"collegeID" : @"college_id",
+                                                            @"status" : @"user_status",
+     }];
+
+    RKRelationshipMapping* relationShipRequestEducationMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"educations"
+                                                                                                         toKeyPath:@"educations"
+                                                                                                       withMapping:educationRequestMapping];
+    [userRequestMapping addPropertyMapping:relationShipRequestEducationMapping];
+    
+    RKRequestDescriptor *userRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:userRequestMapping objectClass:[CCUser class] rootKeyPath:nil];
+    [objectManager addRequestDescriptor:userRequestDescriptor];
+    
 }
 
 + (void)configurePaginationResponse:(RKObjectManager *)objectManager
@@ -151,9 +180,6 @@
     [objectManager addResponseDescriptor:responsePaginationCollege];
     [objectManager addResponseDescriptor:responsePaginationCity];
     [objectManager addResponseDescriptor:responsePaginationState];
-    
-    
-
 }
 
 @end

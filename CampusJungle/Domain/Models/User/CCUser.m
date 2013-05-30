@@ -21,6 +21,7 @@
     [encoder encodeObject:self.uid forKey:CCUserDefines.uid];
     [encoder encodeObject:self.avatar forKey:CCUserDefines.avatar];
     [encoder encodeObject:self.email forKey:CCUserDefines.email];
+    [encoder encodeObject:self.isFacebookLinked forKey:CCUserDefines.isFacebookLinked];
     
     CCAuthorization *facebookOAUTH;
     
@@ -41,7 +42,7 @@
         self.uid = [decoder decodeObjectForKey:CCUserDefines.uid];
         self.avatar = [decoder decodeObjectForKey:CCUserDefines.avatar];
         self.email = [decoder decodeObjectForKey:CCUserDefines.email];
-        
+        self.isFacebookLinked = [decoder decodeObjectForKey:CCUserDefines.isFacebookLinked];
         CCAuthorization *facebookOAUTH = [CCAuthorization new];
         if([decoder decodeObjectForKey:CCUserDefines.facebookUID]){
             facebookOAUTH.uid = [decoder decodeObjectForKey:CCUserDefines.facebookUID];

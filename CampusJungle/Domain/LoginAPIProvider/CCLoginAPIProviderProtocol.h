@@ -16,4 +16,6 @@
 
 - (void)performLoginOperationWithUserInfo:(NSDictionary *)userInfo successHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler;
 
+- (void)linkWithFacebookSuccessHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler;
+
 @end

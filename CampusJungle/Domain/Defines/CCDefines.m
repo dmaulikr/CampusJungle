@@ -15,7 +15,9 @@ const struct CCAPIDefines CCAPIDefines = {
     .login = @"/api/users/login",
     .states = @"/api/states",
     .cities = @"/api/states/%@/cities",
-    .colleges = @"/api/cities/%@/colleges"
+    .colleges = @"/api/cities/%@/colleges",
+    .linkFacebook = @"/api/users/me/authentications",
+    .updateUser = @"/api/users/me",
 };
 
 
@@ -35,6 +37,7 @@ const struct CCUserDefines CCUserDefines = {
     
     .currentUser = @"current_user",
     .minimumPasswordLength = 3,
+    .isFacebookLinked = @"is_facebook_linked"
 
 };
 
@@ -54,6 +57,12 @@ const struct CCUserAuthorizationKeys CCUserAuthorizationKeys = {
     .authProvider = @"oauth[][provider]",
     .authUID = @"oauth[][uid]",
     .authSecretToken = @"oauth[][oauth_token_secret]",
+};
+
+const struct CCLinkUserKeys CCLinkUserKeys = {
+    .oauth_token = @"oauth_token",
+    .uid = @"uid",
+    .provider = @"provider"
 };
 
 const struct CCFacebookKeys CCFacebookKeys = {

@@ -34,7 +34,7 @@
 
 - (void)didSelectedCellWithObject:(id)cellObject
 {
-    [self.educationTransaction performWithObject:[(CCCollege *)cellObject collegeID]];
+    [self.educationTransaction performWithObject:(CCCollege *)cellObject];
 }
 
 @end

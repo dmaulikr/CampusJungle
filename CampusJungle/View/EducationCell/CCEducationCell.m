@@ -1,22 +1,21 @@
 //
-//  CCCollegeSellectionCell.m
+//  CCEducationCell.m
 //  CampusJungle
 //
-//  Created by Vlad Korzun on 29.05.13.
+//  Created by Vlad Korzun on 30.05.13.
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCCollegeSelectionCell.h"
-#import "CCCollege.h"
+#import "CCEducationCell.h"
+#import "CCEducation.h"
 
-@interface CCCollegeSelectionCell()
+@interface CCEducationCell()
 
 @property (nonatomic, strong) UILabel *label;
 
 @end
 
-
-@implementation CCCollegeSelectionCell
+@implementation CCEducationCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -31,7 +30,7 @@
 - (void)setCellObject:(id)cellObject
 {
     _cellObject = cellObject;
-    self.label.text = [(CCCollege *)cellObject name];
+    self.label.text = [(CCEducation *)cellObject collegeName];
 }
 
 @end

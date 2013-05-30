@@ -8,10 +8,16 @@
 
 #import "CCViewController.h"
 #import "CCTransaction.h"
+#import "CCTableBasedController.h"
 
-@interface CCUserProfile : CCViewController
+@interface CCUserProfile : CCTableBasedController
 
 @property (nonatomic, strong) id <CCTransaction> logoutTransaction;
 @property (nonatomic, strong) id <CCTransaction> addColegeTransaction;
+
+@property (nonatomic, strong) NSMutableArray *arrayOfColleges;
+
+- (IBAction)logout;
+
 
 @end

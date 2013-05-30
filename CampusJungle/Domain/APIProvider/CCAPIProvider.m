@@ -120,4 +120,34 @@
     }];
 }
 
+- (void)linkUserWithUserInfo:(NSDictionary *)userInfo SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [self setAuthorizationToken];
+    
+    [objectManager putObject:nil
+                        path:CCAPIDefines.linkFacebook
+                  parameters:userInfo
+                     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                         successHandler(mappingResult);
+                     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                         errorHandler(error);
+                     }];
+}
+
+- (void)updateUser:(CCUser *)user SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [self setAuthorizationToken];
+    
+    [objectManager putObject:user
+                        path:CCAPIDefines.updateUser
+                  parameters:nil
+                     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                         successHandler(mappingResult.firstObject);
+                     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                         errorHandler(error);
+                }];
+}
+
 @end

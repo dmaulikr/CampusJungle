@@ -11,6 +11,6 @@
 @interface CCAuthorizationResponse : NSObject
 
 @property (nonatomic, strong) CCUser *user;
-@property (nonatomic) NSString *isFirstLaunch;
+@property (nonatomic, strong) NSString *isFirstLaunch;
 
 @end

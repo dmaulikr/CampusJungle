@@ -15,9 +15,11 @@
 - (void)perform
 {
     NSParameterAssert(self.navigation);
+    NSParameterAssert(self.arrayOfColleges);
     
     CCStateSelectionConroller *stateSelectionController = [CCStateSelectionConroller new];
     CCCitySelectionTransaction *citySelectionTransaction = [CCCitySelectionTransaction new];
+    citySelectionTransaction.arrayOfColleges = self.arrayOfColleges;
     citySelectionTransaction.navigation = self.navigation;
     stateSelectionController.citySelectionTransaction = citySelectionTransaction;
     [self.navigation pushViewController:stateSelectionController animated:YES];
