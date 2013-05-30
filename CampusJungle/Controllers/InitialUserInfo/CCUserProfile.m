@@ -115,11 +115,13 @@
     updatedUser.lastName = self.lastNameField.text;
     updatedUser.email = self.emailField.text;
     updatedUser.educations = self.arrayOfColleges;
-    [self.ioc_apiProvider updateUser:updatedUser SuccessHandler:^(id user) {
+    [self.ioc_apiProvider updateUser:updatedUser SuccessHandler:^(CCUser *user) {
 
         [self setupUserInfo];
+        user.token = [self.ioc_userSession.currentUser token];
+        user.isFacebookLinked = [self.ioc_userSession.currentUser token];
         self.ioc_userSession.currentUser = user;
-        
+        [self setupUserInfo];
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
     }];
@@ -194,6 +196,8 @@
         self.ioc_userSession.currentUser.isFacebookLinked = @"true";
         [self.ioc_userSession saveUser];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        //[self.facebookButton setHidden:YES];
+        self.facebookButton.alpha = 0;
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];

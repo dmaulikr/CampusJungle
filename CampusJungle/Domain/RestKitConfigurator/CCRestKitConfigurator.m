@@ -43,6 +43,7 @@
     
     [CCRestKitConfigurator configureUserResponse:objectManager];
     [CCRestKitConfigurator configurePaginationResponse:objectManager];
+    [CCRestKitConfigurator configureFacebookLinking:objectManager];
 }
 
 + (void)configureUserResponse:(RKObjectManager *)objectManager
@@ -180,6 +181,19 @@
     [objectManager addResponseDescriptor:responsePaginationCollege];
     [objectManager addResponseDescriptor:responsePaginationCity];
     [objectManager addResponseDescriptor:responsePaginationState];
+}
+
++ (void)configureFacebookLinking:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *facebookLingingMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    [facebookLingingMapping addAttributeMappingsFromDictionary:@{
+                                                                @"success" : @"success"
+     }];
+    RKResponseDescriptor *responseUserDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:facebookLingingMapping
+                                                                                           pathPattern:CCAPIDefines.linkFacebook
+                                                                                               keyPath:nil
+                                                                                           statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [objectManager addResponseDescriptor:responseUserDescriptor];
 }
 
 @end
