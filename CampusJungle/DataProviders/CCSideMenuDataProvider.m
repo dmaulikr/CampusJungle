@@ -16,5 +16,9 @@
     self.totalNumber = self.arrayOfItems.count;
 }
 
+- (void)loadMoreItems
+{
+    
+}
 
 @end
