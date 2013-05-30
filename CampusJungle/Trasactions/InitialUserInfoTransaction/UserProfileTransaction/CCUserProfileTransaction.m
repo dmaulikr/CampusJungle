@@ -22,11 +22,14 @@
     logoutTransaction.rootMenuController = self.menuController;
     userProfileController.logoutTransaction = logoutTransaction;
     
+    userProfileController.arrayOfColleges = [NSMutableArray new];
+    
     UINavigationController *centralNavigation = [[UINavigationController alloc] initWithRootViewController:userProfileController];
     
     self.menuController.centerPanel = centralNavigation;
     
     CCStateSelectionScreenTransaction *stateSelectionTransaction = [CCStateSelectionScreenTransaction new];
+    stateSelectionTransaction.arrayOfColleges = userProfileController.arrayOfColleges;
     stateSelectionTransaction.navigation = centralNavigation;
     userProfileController.addColegeTransaction = stateSelectionTransaction;
 }

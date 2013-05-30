@@ -11,6 +11,11 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *authorization;
     __unsafe_unretained NSString *signUp;
     __unsafe_unretained NSString *login;
+    __unsafe_unretained NSString *states;
+    __unsafe_unretained NSString *cities;
+    __unsafe_unretained NSString *colleges;
+    __unsafe_unretained NSString *linkFacebook;
+    __unsafe_unretained NSString *updateUser;
 } CCAPIDefines;
 
 
@@ -29,6 +34,7 @@ extern const struct CCUserDefines {
     __unsafe_unretained NSString *currentUser;
     
     __unsafe_unretained NSString *facebookAvatarLinkTemplate;
+    __unsafe_unretained NSString *isFacebookLinked;
                         NSInteger minimumPasswordLength;
 } CCUserDefines;
 
@@ -74,3 +80,14 @@ extern const struct CCErrorKeys {
     __unsafe_unretained NSString *localizedRecoverySuggestion;
     __unsafe_unretained NSString *errorMessage;
 } CCErrorKeys;
+
+extern const struct CCTableDefines {
+    __unsafe_unretained NSString *tableCellIdentifier;
+} CCTableDefines;
+
+extern const struct CCLinkUserKeys {
+    __unsafe_unretained NSString *oauth_token;
+    __unsafe_unretained NSString *uid;
+    __unsafe_unretained NSString *provider;
+
+} CCLinkUserKeys;

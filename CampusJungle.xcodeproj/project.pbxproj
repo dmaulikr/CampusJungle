@@ -57,9 +57,11 @@
 		A7D53A0B1756447900FE9FCD /* CCClassTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D53A0A1756447900FE9FCD /* CCClassTransaction.m */; };
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
 		D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36186471743B13E00B501BC /* SystemConfiguration.framework */; };
+		D37A475617577D5100E91850 /* CCEducation.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A475517577D5100E91850 /* CCEducation.m */; };
+		D37A475A175786D200E91850 /* CCEducationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A4759175786D200E91850 /* CCEducationCell.m */; };
+		D37A475E1757891600E91850 /* CCEducationsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A475D1757891600E91850 /* CCEducationsDataProvider.m */; };
 		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
 		D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39F1C161753C0E8008E08A2 /* Accounts.framework */; };
-		D3A2C3231754ADE100989831 /* CCUserCollegesTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A2C3221754ADE100989831 /* CCUserCollegesTableDataSource.m */; };
 		D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A2C3241754C95700989831 /* MessageUI.framework */; };
 		D3A2C32A1754D6BB00989831 /* CCTwitterPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A2C3291754D6BB00989831 /* CCTwitterPicker.m */; };
 		D3EFD22A1755FC9500B7D710 /* CCCitySelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD2281755FC9500B7D710 /* CCCitySelectionController.m */; };
@@ -71,6 +73,24 @@
 		D3EFD23E17560A9D00B7D710 /* CCPaginationDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD23D17560A9D00B7D710 /* CCPaginationDataProvider.m */; };
 		D3EFD24117560AB300B7D710 /* CCStatesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD24017560AB300B7D710 /* CCStatesDataProvider.m */; };
 		D3EFD2451756121C00B7D710 /* CCPaginationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD2441756121C00B7D710 /* CCPaginationResponse.m */; };
+		D3EFD249175627F300B7D710 /* CCCommonDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD248175627F300B7D710 /* CCCommonDataSource.m */; };
+		D3EFD24D1756302A00B7D710 /* CCState.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD24C1756302A00B7D710 /* CCState.m */; };
+		D3EFD25417563DF800B7D710 /* CCStateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD25317563DF800B7D710 /* CCStateCell.m */; };
+		D3EFD25A17564FD000B7D710 /* CCCitySelectionTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD25917564FD000B7D710 /* CCCitySelectionTransaction.m */; };
+		D3EFD25E175653BB00B7D710 /* CCTableBasedController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD25D175653BB00B7D710 /* CCTableBasedController.m */; };
+		D3EFD266175657A900B7D710 /* CCCityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD265175657A900B7D710 /* CCCityCell.m */; };
+		D3EFD26A1756587700B7D710 /* CCCity.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD2691756587700B7D710 /* CCCity.m */; };
+		D3EFD26E1756596F00B7D710 /* CCCitiesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD26D1756596F00B7D710 /* CCCitiesDataProvider.m */; };
+		D3EFD27617567ECA00B7D710 /* CCCollegeSelectionTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD27517567ECA00B7D710 /* CCCollegeSelectionTransaction.m */; };
+		D3EFD27B17567F7D00B7D710 /* CCCollegeSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD27917567F7D00B7D710 /* CCCollegeSelectionController.m */; };
+		D3EFD27C17567F7D00B7D710 /* CCCollegeSelectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3EFD27A17567F7D00B7D710 /* CCCollegeSelectionController.xib */; };
+		D3EFD280175684F000B7D710 /* CCCollege.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD27F175684F000B7D710 /* CCCollege.m */; };
+		D3EFD2841756857C00B7D710 /* CCCollegeSelectionDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD2831756857C00B7D710 /* CCCollegeSelectionDataProvider.m */; };
+		D3EFD2881756879900B7D710 /* CCCollegeSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD2871756879900B7D710 /* CCCollegeSelectionCell.m */; };
+		D3EFD28D1756975200B7D710 /* CCEducationCreationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD28B1756975200B7D710 /* CCEducationCreationController.m */; };
+		D3EFD28E1756975200B7D710 /* CCEducationCreationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3EFD28C1756975200B7D710 /* CCEducationCreationController.xib */; };
+		D3EFD2931757432E00B7D710 /* CCEducationCreationTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD2921757432E00B7D710 /* CCEducationCreationTransaction.m */; };
+		D3EFD2971757461800B7D710 /* CCBackToUserProfileTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD2961757461800B7D710 /* CCBackToUserProfileTransaction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -166,11 +186,15 @@
 		A7D53A091756447900FE9FCD /* CCClassTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCClassTransaction.h; path = ClassTransactions/CCClassTransaction.h; sourceTree = "<group>"; };
 		A7D53A0A1756447900FE9FCD /* CCClassTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCClassTransaction.m; path = ClassTransactions/CCClassTransaction.m; sourceTree = "<group>"; };
 		D36186471743B13E00B501BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D37A475417577D5100E91850 /* CCEducation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEducation.h; sourceTree = "<group>"; };
+		D37A475517577D5100E91850 /* CCEducation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEducation.m; sourceTree = "<group>"; };
+		D37A4758175786D200E91850 /* CCEducationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEducationCell.h; sourceTree = "<group>"; };
+		D37A4759175786D200E91850 /* CCEducationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEducationCell.m; sourceTree = "<group>"; };
+		D37A475C1757891600E91850 /* CCEducationsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEducationsDataProvider.h; sourceTree = "<group>"; };
+		D37A475D1757891600E91850 /* CCEducationsDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEducationsDataProvider.m; sourceTree = "<group>"; };
 		D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStandardErrorHandler.h; sourceTree = "<group>"; };
 		D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStandardErrorHandler.m; sourceTree = "<group>"; };
 		D39F1C161753C0E8008E08A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
-		D3A2C3211754ADE100989831 /* CCUserCollegesTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUserCollegesTableDataSource.h; sourceTree = "<group>"; };
-		D3A2C3221754ADE100989831 /* CCUserCollegesTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUserCollegesTableDataSource.m; sourceTree = "<group>"; };
 		D3A2C3241754C95700989831 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D3A2C3281754D6BB00989831 /* CCTwitterPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTwitterPicker.h; sourceTree = "<group>"; };
 		D3A2C3291754D6BB00989831 /* CCTwitterPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTwitterPicker.m; sourceTree = "<group>"; };
@@ -190,6 +214,41 @@
 		D3EFD24017560AB300B7D710 /* CCStatesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStatesDataProvider.m; sourceTree = "<group>"; };
 		D3EFD2431756121C00B7D710 /* CCPaginationResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPaginationResponse.h; sourceTree = "<group>"; };
 		D3EFD2441756121C00B7D710 /* CCPaginationResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPaginationResponse.m; sourceTree = "<group>"; };
+		D3EFD247175627F300B7D710 /* CCCommonDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCommonDataSource.h; sourceTree = "<group>"; };
+		D3EFD248175627F300B7D710 /* CCCommonDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCommonDataSource.m; sourceTree = "<group>"; };
+		D3EFD24B1756302A00B7D710 /* CCState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCState.h; sourceTree = "<group>"; };
+		D3EFD24C1756302A00B7D710 /* CCState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCState.m; sourceTree = "<group>"; };
+		D3EFD250175638D800B7D710 /* CCTableCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCTableCellProtocol.h; sourceTree = "<group>"; };
+		D3EFD25217563DF800B7D710 /* CCStateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStateCell.h; sourceTree = "<group>"; };
+		D3EFD25317563DF800B7D710 /* CCStateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStateCell.m; sourceTree = "<group>"; };
+		D3EFD25817564FD000B7D710 /* CCCitySelectionTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCitySelectionTransaction.h; sourceTree = "<group>"; };
+		D3EFD25917564FD000B7D710 /* CCCitySelectionTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCitySelectionTransaction.m; sourceTree = "<group>"; };
+		D3EFD25C175653BB00B7D710 /* CCTableBasedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableBasedController.h; sourceTree = "<group>"; };
+		D3EFD25D175653BB00B7D710 /* CCTableBasedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableBasedController.m; sourceTree = "<group>"; };
+		D3EFD264175657A900B7D710 /* CCCityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCityCell.h; sourceTree = "<group>"; };
+		D3EFD265175657A900B7D710 /* CCCityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCityCell.m; sourceTree = "<group>"; };
+		D3EFD2681756587700B7D710 /* CCCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCity.h; sourceTree = "<group>"; };
+		D3EFD2691756587700B7D710 /* CCCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCity.m; sourceTree = "<group>"; };
+		D3EFD26C1756596F00B7D710 /* CCCitiesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCitiesDataProvider.h; sourceTree = "<group>"; };
+		D3EFD26D1756596F00B7D710 /* CCCitiesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCitiesDataProvider.m; sourceTree = "<group>"; };
+		D3EFD27417567ECA00B7D710 /* CCCollegeSelectionTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCollegeSelectionTransaction.h; sourceTree = "<group>"; };
+		D3EFD27517567ECA00B7D710 /* CCCollegeSelectionTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCollegeSelectionTransaction.m; sourceTree = "<group>"; };
+		D3EFD27817567F7D00B7D710 /* CCCollegeSelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCollegeSelectionController.h; sourceTree = "<group>"; };
+		D3EFD27917567F7D00B7D710 /* CCCollegeSelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCollegeSelectionController.m; sourceTree = "<group>"; };
+		D3EFD27A17567F7D00B7D710 /* CCCollegeSelectionController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCCollegeSelectionController.xib; sourceTree = "<group>"; };
+		D3EFD27E175684F000B7D710 /* CCCollege.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCollege.h; sourceTree = "<group>"; };
+		D3EFD27F175684F000B7D710 /* CCCollege.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCollege.m; sourceTree = "<group>"; };
+		D3EFD2821756857C00B7D710 /* CCCollegeSelectionDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCollegeSelectionDataProvider.h; sourceTree = "<group>"; };
+		D3EFD2831756857C00B7D710 /* CCCollegeSelectionDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCollegeSelectionDataProvider.m; sourceTree = "<group>"; };
+		D3EFD2861756879900B7D710 /* CCCollegeSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCollegeSelectionCell.h; sourceTree = "<group>"; };
+		D3EFD2871756879900B7D710 /* CCCollegeSelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCollegeSelectionCell.m; sourceTree = "<group>"; };
+		D3EFD28A1756975200B7D710 /* CCEducationCreationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEducationCreationController.h; sourceTree = "<group>"; };
+		D3EFD28B1756975200B7D710 /* CCEducationCreationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEducationCreationController.m; sourceTree = "<group>"; };
+		D3EFD28C1756975200B7D710 /* CCEducationCreationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCEducationCreationController.xib; sourceTree = "<group>"; };
+		D3EFD2911757432E00B7D710 /* CCEducationCreationTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEducationCreationTransaction.h; sourceTree = "<group>"; };
+		D3EFD2921757432E00B7D710 /* CCEducationCreationTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEducationCreationTransaction.m; sourceTree = "<group>"; };
+		D3EFD2951757461800B7D710 /* CCBackToUserProfileTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBackToUserProfileTransaction.h; sourceTree = "<group>"; };
+		D3EFD2961757461800B7D710 /* CCBackToUserProfileTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBackToUserProfileTransaction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				A7D539CE1756236000FE9FCD /* ClassController */,
+				D3EFD2891756971F00B7D710 /* EducationCreationController */,
 				A787C7CF1754E9AD00824DEA /* SideBarController */,
 				A787C73317536F8400824DEA /* BaseController */,
 				A787C73717536F8400824DEA /* UserProfile */,
@@ -286,6 +346,8 @@
 				A787C73F17536F8400824DEA /* MenuController */,
 				A787C74317536F8400824DEA /* SignupController */,
 				A787C74717536F8400824DEA /* WelcomeScreen */,
+				D3EFD27717567F5200B7D710 /* CollegeSelectionScreen */,
+				D3EFD25B1756539E00B7D710 /* TableBasedController */,
 				D3EFD2251755FC6200B7D710 /* CitySelectionScreen */,
 				D3EFD2261755FC6200B7D710 /* StateSelectionScreen */,
 			);
@@ -356,6 +418,7 @@
 		A787C74E17536F8400824DEA /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D37A475317577CD700E91850 /* Education */,
 				A787C74F17536F8400824DEA /* APIProvider */,
 				A787C75317536F8400824DEA /* Defines */,
 				A787C75917536F8400824DEA /* FacebookAPI */,
@@ -420,6 +483,9 @@
 		A787C76117536F8400824DEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D3EFD27D175684DA00B7D710 /* College */,
+				D3EFD2671756586200B7D710 /* City */,
+				D3EFD24A1756300400B7D710 /* State */,
 				D3EFD242175611F200B7D710 /* PaginationResponse */,
 				A787C76217536F8400824DEA /* Authorization */,
 				A787C76517536F8400824DEA /* AuthorizationResponse */,
@@ -513,6 +579,10 @@
 			isa = PBXGroup;
 			children = (
 				A7D53A081756444900FE9FCD /* ClassTransaction */,
+				D3EFD294175745E600B7D710 /* BackToUserProfileTransaction */,
+				D3EFD2901757430E00B7D710 /* EducationCreationTransaction */,
+				D3EFD27317567EB500B7D710 /* CollegeSelectionTransaction */,
+				D3EFD25717564FB300B7D710 /* CitySelectionTransaction */,
 				D3EFD2311755FDE800B7D710 /* StateSelectionScreenTransaction */,
 				A787C77E17536F8400824DEA /* InitialUserInfoTransaction */,
 				A787C78117536F8400824DEA /* UserProfileTransaction */,
@@ -661,6 +731,33 @@
 				A7D53A0A1756447900FE9FCD /* CCClassTransaction.m */,
 			);
 			name = ClassTransaction;
+            sourceTree = "<group>";
+		};
+		D37A475317577CD700E91850 /* Education */ = {
+			isa = PBXGroup;
+			children = (
+				D37A475417577D5100E91850 /* CCEducation.h */,
+				D37A475517577D5100E91850 /* CCEducation.m */,
+			);
+			path = Education;
+			sourceTree = "<group>";
+		};
+		D37A47571757864200E91850 /* EducationCell */ = {
+			isa = PBXGroup;
+			children = (
+				D37A4758175786D200E91850 /* CCEducationCell.h */,
+				D37A4759175786D200E91850 /* CCEducationCell.m */,
+			);
+			path = EducationCell;
+			sourceTree = "<group>";
+		};
+		D37A475B175788FF00E91850 /* EducationsDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D37A475C1757891600E91850 /* CCEducationsDataProvider.h */,
+				D37A475D1757891600E91850 /* CCEducationsDataProvider.m */,
+			);
+			path = EducationsDataProvider;
 			sourceTree = "<group>";
 		};
 		D39F1C0E1753821D008E08A2 /* StandardErrorHandler */ = {
@@ -678,23 +775,20 @@
 				A7D539D817563FB200FE9FCD /* ClassTableDataSorce */,
 				A7D539CA1756157900FE9FCD /* SideMenuDataSource */,
 				D3A2C3201754ADC100989831 /* UserCollegesTableDataSource */,
+				D3EFD246175627DD00B7D710 /* CommonTableDataSource */,
 			);
 			name = DataSources;
 			path = Controllers/DataSources;
 			sourceTree = "<group>";
 		};
-		D3A2C3201754ADC100989831 /* UserCollegesTableDataSource */ = {
-			isa = PBXGroup;
-			children = (
-				D3A2C3211754ADE100989831 /* CCUserCollegesTableDataSource.h */,
-				D3A2C3221754ADE100989831 /* CCUserCollegesTableDataSource.m */,
-			);
-			path = UserCollegesTableDataSource;
-			sourceTree = "<group>";
-		};
 		D3A2C3261754D53900989831 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D37A47571757864200E91850 /* EducationCell */,
+				D3EFD2851756876B00B7D710 /* CollegeSelectionCell */,
+				D3EFD2631756578D00B7D710 /* CityCell */,
+				D3EFD25117563DDC00B7D710 /* StateCell */,
+				D3EFD24F175638C600B7D710 /* CCTableCellProtocol */,
 				D3A2C3271754D54F00989831 /* TwitterPicker */,
 			);
 			path = View;
@@ -741,6 +835,9 @@
 		D3EFD2351756080700B7D710 /* DataProviders */ = {
 			isa = PBXGroup;
 			children = (
+				D37A475B175788FF00E91850 /* EducationsDataProvider */,
+				D3EFD2811756856100B7D710 /* CollegeSellectionDataProvider */,
+				D3EFD26B1756594C00B7D710 /* CitiesDataProvider */,
 				D3EFD23617560A4D00B7D710 /* BaseDataProvider */,
 				D3EFD23717560A4D00B7D710 /* PaginationDataProvider */,
 				D3EFD23817560A4D00B7D710 /* StatesDataProvider */,
@@ -782,6 +879,163 @@
 				D3EFD2441756121C00B7D710 /* CCPaginationResponse.m */,
 			);
 			path = PaginationResponse;
+			sourceTree = "<group>";
+		};
+		D3EFD246175627DD00B7D710 /* CommonTableDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD247175627F300B7D710 /* CCCommonDataSource.h */,
+				D3EFD248175627F300B7D710 /* CCCommonDataSource.m */,
+			);
+			path = CommonTableDataSource;
+			sourceTree = "<group>";
+		};
+		D3EFD24A1756300400B7D710 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD24B1756302A00B7D710 /* CCState.h */,
+				D3EFD24C1756302A00B7D710 /* CCState.m */,
+			);
+			name = State;
+			path = ../States;
+			sourceTree = "<group>";
+		};
+		D3EFD24F175638C600B7D710 /* CCTableCellProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD250175638D800B7D710 /* CCTableCellProtocol.h */,
+			);
+			path = CCTableCellProtocol;
+			sourceTree = "<group>";
+		};
+		D3EFD25117563DDC00B7D710 /* StateCell */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD25217563DF800B7D710 /* CCStateCell.h */,
+				D3EFD25317563DF800B7D710 /* CCStateCell.m */,
+			);
+			path = StateCell;
+			sourceTree = "<group>";
+		};
+		D3EFD25717564FB300B7D710 /* CitySelectionTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD25817564FD000B7D710 /* CCCitySelectionTransaction.h */,
+				D3EFD25917564FD000B7D710 /* CCCitySelectionTransaction.m */,
+			);
+			path = CitySelectionTransaction;
+			sourceTree = "<group>";
+		};
+		D3EFD25B1756539E00B7D710 /* TableBasedController */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD25C175653BB00B7D710 /* CCTableBasedController.h */,
+				D3EFD25D175653BB00B7D710 /* CCTableBasedController.m */,
+			);
+			name = TableBasedController;
+			path = StateSelectionScreen/TableBasedController;
+			sourceTree = "<group>";
+		};
+		D3EFD2631756578D00B7D710 /* CityCell */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD264175657A900B7D710 /* CCCityCell.h */,
+				D3EFD265175657A900B7D710 /* CCCityCell.m */,
+			);
+			path = CityCell;
+			sourceTree = "<group>";
+		};
+		D3EFD2671756586200B7D710 /* City */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD2681756587700B7D710 /* CCCity.h */,
+				D3EFD2691756587700B7D710 /* CCCity.m */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
+		D3EFD26B1756594C00B7D710 /* CitiesDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD26C1756596F00B7D710 /* CCCitiesDataProvider.h */,
+				D3EFD26D1756596F00B7D710 /* CCCitiesDataProvider.m */,
+			);
+			path = CitiesDataProvider;
+			sourceTree = "<group>";
+		};
+		D3EFD27317567EB500B7D710 /* CollegeSelectionTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD27417567ECA00B7D710 /* CCCollegeSelectionTransaction.h */,
+				D3EFD27517567ECA00B7D710 /* CCCollegeSelectionTransaction.m */,
+			);
+			path = CollegeSelectionTransaction;
+			sourceTree = "<group>";
+		};
+		D3EFD27717567F5200B7D710 /* CollegeSelectionScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD27817567F7D00B7D710 /* CCCollegeSelectionController.h */,
+				D3EFD27917567F7D00B7D710 /* CCCollegeSelectionController.m */,
+				D3EFD27A17567F7D00B7D710 /* CCCollegeSelectionController.xib */,
+			);
+			path = CollegeSelectionScreen;
+			sourceTree = "<group>";
+		};
+		D3EFD27D175684DA00B7D710 /* College */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD27E175684F000B7D710 /* CCCollege.h */,
+				D3EFD27F175684F000B7D710 /* CCCollege.m */,
+			);
+			path = College;
+			sourceTree = "<group>";
+		};
+		D3EFD2811756856100B7D710 /* CollegeSellectionDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD2821756857C00B7D710 /* CCCollegeSelectionDataProvider.h */,
+				D3EFD2831756857C00B7D710 /* CCCollegeSelectionDataProvider.m */,
+			);
+			path = CollegeSellectionDataProvider;
+			sourceTree = "<group>";
+		};
+		D3EFD2851756876B00B7D710 /* CollegeSelectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD2861756879900B7D710 /* CCCollegeSelectionCell.h */,
+				D3EFD2871756879900B7D710 /* CCCollegeSelectionCell.m */,
+			);
+			path = CollegeSelectionCell;
+			sourceTree = "<group>";
+		};
+		D3EFD2891756971F00B7D710 /* EducationCreationController */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD28A1756975200B7D710 /* CCEducationCreationController.h */,
+				D3EFD28B1756975200B7D710 /* CCEducationCreationController.m */,
+				D3EFD28C1756975200B7D710 /* CCEducationCreationController.xib */,
+			);
+			path = EducationCreationController;
+			sourceTree = "<group>";
+		};
+		D3EFD2901757430E00B7D710 /* EducationCreationTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD2911757432E00B7D710 /* CCEducationCreationTransaction.h */,
+				D3EFD2921757432E00B7D710 /* CCEducationCreationTransaction.m */,
+			);
+			name = EducationCreationTransaction;
+			path = EducationSettingSettingUpTransaction;
+			sourceTree = "<group>";
+		};
+		D3EFD294175745E600B7D710 /* BackToUserProfileTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFD2951757461800B7D710 /* CCBackToUserProfileTransaction.h */,
+				D3EFD2961757461800B7D710 /* CCBackToUserProfileTransaction.m */,
+			);
+			path = BackToUserProfileTransaction;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -852,6 +1106,8 @@
 				D3EFD22B1755FC9500B7D710 /* CCCitySelectionController.xib in Resources */,
 				D3EFD2301755FCE200B7D710 /* CCStateSelectionConroller.xib in Resources */,
 				A7D539D717563D6D00FE9FCD /* CCClassViewController.xib in Resources */,
+				D3EFD27C17567F7D00B7D710 /* CCCollegeSelectionController.xib in Resources */,
+				D3EFD28E1756975200B7D710 /* CCEducationCreationController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -921,7 +1177,6 @@
 				A787C7BE17536F8400824DEA /* CCSignUpTransaction.m in Sources */,
 				A787C7BF17536F8400824DEA /* CCWelcomeScreenConfigurator.m in Sources */,
 				D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */,
-				D3A2C3231754ADE100989831 /* CCUserCollegesTableDataSource.m in Sources */,
 				D3A2C32A1754D6BB00989831 /* CCTwitterPicker.m in Sources */,
 				A787C7D21754E9CE00824DEA /* CCSideBarController.m in Sources */,
 				A7D539CD175615A300FE9FCD /* CCSideMenuDataSource.m in Sources */,
@@ -935,6 +1190,25 @@
 				A7D539D617563D6D00FE9FCD /* CCClassViewController.m in Sources */,
 				A7D539DB17563FEC00FE9FCD /* CCClassTableDataSorce.m in Sources */,
 				A7D53A0B1756447900FE9FCD /* CCClassTransaction.m in Sources */,
+				D3EFD249175627F300B7D710 /* CCCommonDataSource.m in Sources */,
+				D3EFD24D1756302A00B7D710 /* CCState.m in Sources */,
+				D3EFD25417563DF800B7D710 /* CCStateCell.m in Sources */,
+				D3EFD25A17564FD000B7D710 /* CCCitySelectionTransaction.m in Sources */,
+				D3EFD25E175653BB00B7D710 /* CCTableBasedController.m in Sources */,
+				D3EFD266175657A900B7D710 /* CCCityCell.m in Sources */,
+				D3EFD26A1756587700B7D710 /* CCCity.m in Sources */,
+				D3EFD26E1756596F00B7D710 /* CCCitiesDataProvider.m in Sources */,
+				D3EFD27617567ECA00B7D710 /* CCCollegeSelectionTransaction.m in Sources */,
+				D3EFD27B17567F7D00B7D710 /* CCCollegeSelectionController.m in Sources */,
+				D3EFD280175684F000B7D710 /* CCCollege.m in Sources */,
+				D3EFD2841756857C00B7D710 /* CCCollegeSelectionDataProvider.m in Sources */,
+				D3EFD2881756879900B7D710 /* CCCollegeSelectionCell.m in Sources */,
+				D3EFD28D1756975200B7D710 /* CCEducationCreationController.m in Sources */,
+				D3EFD2931757432E00B7D710 /* CCEducationCreationTransaction.m in Sources */,
+				D3EFD2971757461800B7D710 /* CCBackToUserProfileTransaction.m in Sources */,
+				D37A475617577D5100E91850 /* CCEducation.m in Sources */,
+				D37A475A175786D200E91850 /* CCEducationCell.m in Sources */,
+				D37A475E1757891600E91850 /* CCEducationsDataProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

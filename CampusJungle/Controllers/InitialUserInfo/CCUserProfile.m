@@ -10,8 +10,12 @@
 #import "CCUserSessionProtocol.h"
 #import "UIAlertView+Blocks.h"
 #import "CCAlertDefines.h"
-#import "CCUserCollegesTableDataSource.h"
 #import "CCDefines.h"
+#import "CCEducationCell.h"
+#import "CCEducationsDataProvider.h"
+#import "CCLoginAPIProvider.h"
+#import "CCStandardErrorHandler.h"
+#import "MBProgressHUD.h"
 
 #define animationDuration 0.4
 
@@ -23,17 +27,19 @@
 @property (nonatomic, weak) IBOutlet UIImageView *avatar;
 @property (nonatomic, weak) IBOutlet UIView *tableFooterView;
 @property (nonatomic, weak) IBOutlet UIView *tableHeaderView;
-@property (nonatomic, weak) IBOutlet UITableView *collegeTable;
 
 @property (nonatomic, weak) IBOutlet UIButton *addCollegeButton;
 
 @property (nonatomic, weak) IBOutlet UITextField *firstNameField;
 @property (nonatomic, weak) IBOutlet UITextField *lastNameField;
 @property (nonatomic, weak) IBOutlet UITextField *emailField;
+@property (nonatomic, weak) IBOutlet UIButton *facebookButton;
 
-@property (nonatomic, strong) CCUserCollegesTableDataSource *tableDataSource;
+@property (nonatomic, strong) CCEducationsDataProvider *dataProvider;
 
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
+@property (nonatomic, strong) id <CCLoginAPIProviderProtocol> ioc_loginAPIProvider;
+@property (nonatomic, strong) id <CCAPIProviderProtocol> ioc_apiProvider;
 
 @end
 
@@ -42,21 +48,42 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.collegeTable.tableFooterView = self.tableFooterView;
-    self.collegeTable.tableHeaderView = self.tableHeaderView;
+    self.mainTable.tableFooterView = self.tableFooterView;
+    self.mainTable.tableHeaderView = self.tableHeaderView;
+    [self setupUserInfo];
+    if([[[self.ioc_userSession currentUser] isFacebookLinked] isEqualToString:@"true"]){
+        [self.facebookButton setHidden:YES];
+    }
+    
+    [self configTable];
+
+    [self setRightNavigationItemWithTitle:@"Edit" selector:@selector(edit)];
+    
+}
+
+- (void)setupUserInfo
+{
     self.firstName.text = [[self.ioc_userSession currentUser] firstName];
     self.lastName.text = [[self.ioc_userSession currentUser] lastName];
     self.email.text = [[self.ioc_userSession currentUser] email];
     NSString *avatarURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,[[self.ioc_userSession currentUser] avatar]];
     [self.avatar setImageWithURL:[NSURL URLWithString:avatarURL]];
-    self.tableDataSource = [CCUserCollegesTableDataSource new];
-    self.collegeTable.dataSource = self.tableDataSource;
-    
-    //[self setRightNavigationItemWithTitle:@"Logout" selector:@selector(logout)];
-    [self setRightNavigationItemWithTitle:@"Edit" selector:@selector(edit)];
 }
 
-- (void)logout
+- (void)configTable
+{
+    self.dataProvider = [CCEducationsDataProvider new];
+    self.dataProvider.arrayOfEducations = self.arrayOfColleges;
+    [self configTableWithProvider:self.dataProvider cellClass:[CCEducationCell class]];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.mainTable reloadData];
+}
+
+- (IBAction)logout
 {
     RIButtonItem *yesItem = [RIButtonItem itemWithLabel:CCAlertsButtons.yesButton];
     yesItem.action = ^{
@@ -82,7 +109,23 @@
 {
     [self setEditing:NO animated:YES];
     [self setRightNavigationItemWithTitle:@"Edit" selector:@selector(edit)];
+    self.ioc_userSession.currentUser.educations = self.arrayOfColleges;
+    CCUser *updatedUser = [CCUser new];
+    updatedUser.firstName = self.firstNameField.text;
+    updatedUser.lastName = self.lastNameField.text;
+    updatedUser.email = self.emailField.text;
+    updatedUser.educations = self.arrayOfColleges;
+    [self.ioc_apiProvider updateUser:updatedUser SuccessHandler:^(CCUser *user) {
 
+        [self setupUserInfo];
+        user.token = [self.ioc_userSession.currentUser token];
+        user.isFacebookLinked = [self.ioc_userSession.currentUser token];
+        self.ioc_userSession.currentUser = user;
+        [self setupUserInfo];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
+    
 }
 
 - (void)setRightNavigationItemWithTitle:(NSString*)title selector:(SEL)selector
@@ -91,7 +134,6 @@
                                                                               style:UIBarButtonItemStyleBordered
                                                                              target:self
                                                                              action:selector];
-
 }
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated
@@ -145,6 +187,21 @@
 - (IBAction)addCollegeButtonDidPressed
 {
     [self.addColegeTransaction perform];
+}
+
+- (IBAction)facebookButtonDidPressed
+{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self.ioc_loginAPIProvider linkWithFacebookSuccessHandler:^{
+        self.ioc_userSession.currentUser.isFacebookLinked = @"true";
+        [self.ioc_userSession saveUser];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        //[self.facebookButton setHidden:YES];
+        self.facebookButton.alpha = 0;
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    }];
 }
 
 @end

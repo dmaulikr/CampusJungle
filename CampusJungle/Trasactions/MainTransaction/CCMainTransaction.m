@@ -14,6 +14,7 @@
 #import "CCUserProfileTransaction.h"
 #import "CCSideBarController.h"
 #import "CCClassTransaction.h"
+#import "CCClassViewController.h"
 
 @interface CCMainTransaction()
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
@@ -33,8 +34,7 @@
 	rootController.leftPanel = leftController;
     rootController.panningLimitedToTopViewController = NO;
     
-    UIViewController *centralPanel = [UIViewController new];
-    centralPanel.view.backgroundColor = [UIColor redColor];	
+    CCClassViewController *centralPanel = [CCClassViewController new];
     rootController.centerPanel = [[UINavigationController alloc] initWithRootViewController:centralPanel];
 
     self.window.rootViewController = rootController;

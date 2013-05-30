@@ -7,7 +7,12 @@
 //
 
 #import "CCViewController.h"
+#import "CCCommonDataSource.h"
+#import "CCTransactionWithObject.h"
+#import "CCTableBasedController.h"
 
-@interface CCStateSelectionConroller : CCViewController
+@interface CCStateSelectionConroller : CCTableBasedController <UISearchBarDelegate, CellSelectionProtocol>
+
+@property (nonatomic, strong) id <CCTransactionWithObject> citySelectionTransaction;
 
 @end

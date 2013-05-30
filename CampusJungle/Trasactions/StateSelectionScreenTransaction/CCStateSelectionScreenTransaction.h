@@ -12,5 +12,6 @@
 @interface CCStateSelectionScreenTransaction : NSObject <CCTransaction>
 
 @property (nonatomic, strong)UINavigationController *navigation;
+@property (nonatomic, strong)NSMutableArray *arrayOfColleges;
 
 @end

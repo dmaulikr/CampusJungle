@@ -45,6 +45,7 @@
 {
    [self.ioc_apiProvider putUserForLogin:userInfo
                           successHandler:^(RKMappingResult *result) {
+                              self.ioc_userSession.currentUser = [(CCAuthorizationResponse *)result.firstObject user];
        successHandler();
    } errorHandler:^(NSError *error) {
        errorHandler(error);
@@ -98,6 +99,37 @@
     } errorHandler:^(RKObjectRequestOperation *operation, NSError *error) {
         errorHandler(error);
     }];
+}
+
+- (void)linkWithFacebookSuccessHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
+{
+    
+    [self.ioc_facebookAPI logout];
+    [self.ioc_facebookAPI loginWithSuccessHandler:^{
+        [self fetchUserInfoForLinkingFromFacebookSuccessHandler:successHandler errorHandler:errorHandler];
+    } errorHandler:^(NSError *error) {
+        errorHandler(error);
+    }];
+}
+
+- (void)fetchUserInfoForLinkingFromFacebookSuccessHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
+{
+    [self.ioc_facebookAPI getUserInfoSuccessHandler:^(NSDictionary *userDictionary) {
+        
+        NSDictionary *userInfo = @{
+                                   CCLinkUserKeys.oauth_token:[[[FBSession activeSession] accessTokenData] accessToken],
+                                   CCLinkUserKeys.uid : userDictionary[CCFacebookKeys.uid],
+                                   CCLinkUserKeys.provider: CCUserDefines.facebook
+                                   };
+        [self linkUserWithUserInfo:(NSDictionary *)userInfo SuccessHandler:successHandler errorHandler:errorHandler];
+    } errorHandler:^(NSError *error){
+        errorHandler(error);
+    }];
+}
+
+- (void)linkUserWithUserInfo:(NSDictionary *)userInfo SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    [self.ioc_apiProvider linkUserWithUserInfo:userInfo SuccessHandler:successHandler errorHandler:errorHandler];
 }
 
 @end

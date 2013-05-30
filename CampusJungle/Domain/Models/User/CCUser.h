@@ -18,6 +18,8 @@
 @property (nonatomic, strong) NSString *rank;
 @property (nonatomic, strong) NSString *wallet;
 @property (nonatomic, strong) NSArray *authentications;
+@property (nonatomic, strong) NSString *isFacebookLinked;
+@property (nonatomic, strong) NSArray *educations;
 
 + (CCUser *)userFromFacebookDictionary:(NSDictionary *)dictionary;
 

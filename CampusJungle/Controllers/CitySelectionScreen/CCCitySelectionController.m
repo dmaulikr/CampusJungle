@@ -7,6 +7,9 @@
 //
 
 #import "CCCitySelectionController.h"
+#import "CCCityCell.h"
+#import "CCCitiesDataProvider.h"
+#import "CCCity.h"
 
 @interface CCCitySelectionController ()
 
@@ -17,7 +20,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    CCCitiesDataProvider *citiesProvider = [CCCitiesDataProvider new];
+    citiesProvider.stateID = self.stateID;
+
+    [self configTableWithProvider:citiesProvider cellClass:[CCCityCell class]];
 }
 
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    self.dataSource.dataProvider.searchQuery = searchText;
+    [self.dataSource.dataProvider loadItems];
+}
+
+- (void)didSelectedCellWithObject:(id)cellObject
+{
+    [self.collegeScreenTransaction performWithObject:[(CCCity *)cellObject cityID]];
+}
 
 @end
