@@ -129,7 +129,7 @@
                         path:CCAPIDefines.linkFacebook
                   parameters:userInfo
                      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                         successHandler(mappingResult);
+                         successHandler(userInfo);
                      } failure:^(RKObjectRequestOperation *operation, NSError *error) {
                          errorHandler(error);
                      }];
@@ -148,6 +148,42 @@
                      } failure:^(RKObjectRequestOperation *operation, NSError *error) {
                          errorHandler(error);
                 }];
+}
+
+- (void)createCity:(NSString *)cityName stateID:(NSNumber *)stateID SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [self setAuthorizationToken];
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.cities,stateID];
+    [objectManager postObject:nil
+                        path:path
+                   parameters:@{@"name" :  cityName}
+                     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                         successHandler(mappingResult.firstObject);
+                     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                         errorHandler(error);
+                     }];
+
+}
+
+- (void)createCollege:(NSString *)collegeName cityID:(NSNumber *)cityID address:(NSString *)addess SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [self setAuthorizationToken];
+    NSMutableDictionary *params = [@{@"name" :  collegeName} mutableCopy];
+    if(addess) {
+        [params setObject:addess forKey:@"address"];
+    }
+    
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.colleges,cityID];
+    [objectManager postObject:nil
+                         path:path
+                   parameters:params
+                      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                          successHandler(mappingResult.firstObject);
+                      } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                          errorHandler(error);
+                      }];
 }
 
 @end

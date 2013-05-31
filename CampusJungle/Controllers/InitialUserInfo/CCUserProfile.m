@@ -16,6 +16,7 @@
 #import "CCLoginAPIProvider.h"
 #import "CCStandardErrorHandler.h"
 #import "MBProgressHUD.h"
+#import "NSString+CJStringValidator.h"
 
 #define animationDuration 0.4
 
@@ -41,6 +42,8 @@
 @property (nonatomic, strong) id <CCLoginAPIProviderProtocol> ioc_loginAPIProvider;
 @property (nonatomic, strong) id <CCAPIProviderProtocol> ioc_apiProvider;
 
+@property (nonatomic, strong) NSString *facebookAvatarPath;
+
 @end
 
 @implementation CCUserProfile
@@ -58,7 +61,7 @@
     [self configTable];
 
     [self setRightNavigationItemWithTitle:@"Edit" selector:@selector(edit)];
-    
+    self.facebookButton.alpha = 0;
 }
 
 - (void)setupUserInfo
@@ -66,8 +69,11 @@
     self.firstName.text = [[self.ioc_userSession currentUser] firstName];
     self.lastName.text = [[self.ioc_userSession currentUser] lastName];
     self.email.text = [[self.ioc_userSession currentUser] email];
-    NSString *avatarURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,[[self.ioc_userSession currentUser] avatar]];
-    [self.avatar setImageWithURL:[NSURL URLWithString:avatarURL]];
+    if(![[[self.ioc_userSession currentUser] avatar] isEqualToString:CCAPIDefines.emptyAvatarPath]){
+        NSString *avatarURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,[[self.ioc_userSession currentUser] avatar]];
+        [self.avatar setImageWithURL:[NSURL URLWithString:avatarURL]];
+    }
+
 }
 
 - (void)configTable
@@ -107,25 +113,49 @@
 
 - (void)save
 {
-    [self setEditing:NO animated:YES];
-    [self setRightNavigationItemWithTitle:@"Edit" selector:@selector(edit)];
-    self.ioc_userSession.currentUser.educations = self.arrayOfColleges;
+    if([self isFieldsValid]){
+        [self setEditing:NO animated:YES];
+        [self setRightNavigationItemWithTitle:@"Edit" selector:@selector(edit)];
+        [self sendUpdatedUser];
+    }
+}
+
+- (BOOL)isFieldsValid
+{
+    if (![self.firstNameField.text isMinLength:1]){
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:CCAlertsMessages.firstNameNotValid];
+        return NO;
+    }
+    if (![self.lastNameField.text isMinLength:1]){
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:CCAlertsMessages.lastNameNotValid];
+        return NO;
+    }
+    if (![self.emailField.text isEmail]){
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:CCAlertsMessages.emailNotValid];
+        return NO;
+    }
+    return YES;
+}
+
+- (void)sendUpdatedUser
+{
     CCUser *updatedUser = [CCUser new];
     updatedUser.firstName = self.firstNameField.text;
     updatedUser.lastName = self.lastNameField.text;
     updatedUser.email = self.emailField.text;
     updatedUser.educations = self.arrayOfColleges;
+    
     [self.ioc_apiProvider updateUser:updatedUser SuccessHandler:^(CCUser *user) {
-
+        
         [self setupUserInfo];
         user.token = [self.ioc_userSession.currentUser token];
-        user.isFacebookLinked = [self.ioc_userSession.currentUser token];
+        user.isFacebookLinked = [self.ioc_userSession.currentUser isFacebookLinked];
+        user.educations = self.arrayOfColleges;
         self.ioc_userSession.currentUser = user;
         [self setupUserInfo];
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
     }];
-    
 }
 
 - (void)setRightNavigationItemWithTitle:(NSString*)title selector:(SEL)selector
@@ -166,6 +196,7 @@
     self.lastNameField.alpha = 1;
     self.emailField.alpha = 1;
     
+    self.facebookButton.alpha = 1;
     self.addCollegeButton.alpha = 1;
 }
 
@@ -180,7 +211,7 @@
     self.firstNameField.alpha = 0;
     self.lastNameField.alpha = 0;
     self.emailField.alpha = 0;
-    
+    self.facebookButton.alpha = 0;
     self.addCollegeButton.alpha = 0;
 }
 
@@ -192,12 +223,27 @@
 - (IBAction)facebookButtonDidPressed
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [self.ioc_loginAPIProvider linkWithFacebookSuccessHandler:^{
+    [self.ioc_loginAPIProvider linkWithFacebookSuccessHandler:^(id object){
+        NSDictionary *facebookUserInfo = object;
         self.ioc_userSession.currentUser.isFacebookLinked = @"true";
+        
+        if(![self.emailField.text isMinLength:1]){
+            self.emailField.text = facebookUserInfo[CCFacebookKeys.email];
+        }
+        if(![self.firstName.text isMinLength:1]){
+            self.firstNameField.text = facebookUserInfo[CCFacebookKeys.firstName];
+        }
+        if(![self.lastName.text isMaxLength:1]){
+            self.lastNameField.text = facebookUserInfo[CCFacebookKeys.lastName];
+        }
+        if([self.ioc_userSession.currentUser.avatar isEqualToString:CCAPIDefines.emptyAvatarPath]){
+            self.facebookAvatarPath = [NSString stringWithFormat:CCUserDefines.facebookAvatarLinkTemplate,facebookUserInfo[CCLinkUserKeys.uid]];
+            [self.avatar setImageWithURL:[NSURL URLWithString:self.facebookAvatarPath]];
+        }
+        
         [self.ioc_userSession saveUser];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        //[self.facebookButton setHidden:YES];
-        self.facebookButton.alpha = 0;
+        [self.facebookButton setHidden:YES];
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];

@@ -43,8 +43,6 @@
 {
     if([self isFormValid]){
         NSDictionary *userFields = @{
-                                     CCUserSignUpKeys.firstName : self.firstNameField.text,
-                                     CCUserSignUpKeys.lastName : self.lastNameField.text,
                                      CCUserSignUpKeys.email : self.emailField.text,
                                      CCUserSignUpKeys.password :self.passField.text
                                      };
@@ -65,8 +63,6 @@
     BOOL isFormValid = YES;
     
     if (![self.emailField.text isEmail]) isFormValid = NO;
-    if ([self.firstNameField.text isEmpty]) isFormValid = NO;
-    if ([self.lastNameField.text isEmpty]) isFormValid = NO;
     if (![self.passField.text isMinLength:CCUserDefines.minimumPasswordLength]) isFormValid = NO;
 
     return isFormValid;

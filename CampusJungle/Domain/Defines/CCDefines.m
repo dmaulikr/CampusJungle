@@ -18,6 +18,8 @@ const struct CCAPIDefines CCAPIDefines = {
     .colleges = @"/api/cities/%@/colleges",
     .linkFacebook = @"/api/users/me/authentications",
     .updateUser = @"/api/users/me",
+    .emptyAvatarPath = @"/public",
+    
 };
 
 
@@ -93,4 +95,10 @@ const struct CCErrorKeys CCErrorKeys = {
 
 const struct CCTableDefines CCTableDefines = {
     .tableCellIdentifier = @"CellIdentifier"
+};
+
+const struct CCResponseKeys CCResponseKeys = {
+    .item = @"item",
+    .items = @"items",
+    .count = @"count",
 };

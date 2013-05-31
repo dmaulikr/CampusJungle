@@ -101,9 +101,8 @@
     }];
 }
 
-- (void)linkWithFacebookSuccessHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
+- (void)linkWithFacebookSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
-    
     [self.ioc_facebookAPI logout];
     [self.ioc_facebookAPI loginWithSuccessHandler:^{
         [self fetchUserInfoForLinkingFromFacebookSuccessHandler:successHandler errorHandler:errorHandler];
@@ -112,11 +111,14 @@
     }];
 }
 
-- (void)fetchUserInfoForLinkingFromFacebookSuccessHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
+- (void)fetchUserInfoForLinkingFromFacebookSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
     [self.ioc_facebookAPI getUserInfoSuccessHandler:^(NSDictionary *userDictionary) {
         
         NSDictionary *userInfo = @{
+                                   CCFacebookKeys.firstName : userDictionary[CCFacebookKeys.firstName],
+                                   CCFacebookKeys.lastName : userDictionary[CCFacebookKeys.lastName],
+                                   CCFacebookKeys.email : userDictionary[CCFacebookKeys.email],
                                    CCLinkUserKeys.oauth_token:[[[FBSession activeSession] accessTokenData] accessToken],
                                    CCLinkUserKeys.uid : userDictionary[CCFacebookKeys.uid],
                                    CCLinkUserKeys.provider: CCUserDefines.facebook

@@ -44,6 +44,7 @@
     [CCRestKitConfigurator configureUserResponse:objectManager];
     [CCRestKitConfigurator configurePaginationResponse:objectManager];
     [CCRestKitConfigurator configureFacebookLinking:objectManager];
+
 }
 
 + (void)configureUserResponse:(RKObjectManager *)objectManager
@@ -125,8 +126,9 @@
 
 + (void)configurePaginationResponse:(RKObjectManager *)objectManager
 {
-    RKObjectMapping *paginationStatesResponseMapping  = [RKObjectMapping mappingForClass:[CCPaginationResponse class]];
-    [paginationStatesResponseMapping addAttributeMappingsFromDictionary:@{@"count": @"count"}];
+    RKObjectMapping *paginationStatesResponseMapping  = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    
+    [paginationStatesResponseMapping addAttributeMappingsFromDictionary:@{@"count": CCResponseKeys.count}];
     
     RKObjectMapping *statesMapping = [RKObjectMapping mappingForClass:[CCState class]];
     [statesMapping addAttributeMappingsFromDictionary:@{
@@ -151,22 +153,30 @@
     
     
     RKRelationshipMapping* relationShipResponseStatesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"states"
-                                                                                                           toKeyPath:@"items"
+                                                                                                           toKeyPath:CCResponseKeys.items
                                                                                                          withMapping:statesMapping];
     
     
     RKRelationshipMapping* relationShipResponseCitiesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"cities"
-                                                                                                         toKeyPath:@"items"
+                                                                                                         toKeyPath:CCResponseKeys.items
                                                                                                        withMapping:citiesMapping];
+    RKRelationshipMapping* relationShipResponseCityMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"city"
+                                                                                                           toKeyPath:CCResponseKeys.item
+                                                                                                         withMapping:citiesMapping];
     RKRelationshipMapping* relationShipResponseCollegesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"colleges"
-                                                                                                           toKeyPath:@"items"
+                                                                                                           toKeyPath:CCResponseKeys.items
+                                                                                                           withMapping:collegesMapping];
+    RKRelationshipMapping* relationShipResponseCollegeMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"college"
+                                                                                                             toKeyPath:CCResponseKeys.item
                                                                                                            withMapping:collegesMapping];
     
     
     RKObjectMapping *paginationCitiesResponseMapping = [paginationStatesResponseMapping copy];
     RKObjectMapping *paginationCollegesResponseMapping = [paginationStatesResponseMapping copy];
     
+    [paginationCollegesResponseMapping addPropertyMapping:relationShipResponseCollegeMapping];
     [paginationCollegesResponseMapping addPropertyMapping:relationShipResponseCollegesMapping];
+    [paginationCitiesResponseMapping addPropertyMapping:relationShipResponseCityMapping];
     [paginationCitiesResponseMapping addPropertyMapping:relationShipResponseCitiesMapping];
     [paginationStatesResponseMapping addPropertyMapping:relationShipResponseStatesMapping];
     
@@ -181,6 +191,7 @@
     [objectManager addResponseDescriptor:responsePaginationCollege];
     [objectManager addResponseDescriptor:responsePaginationCity];
     [objectManager addResponseDescriptor:responsePaginationState];
+
 }
 
 + (void)configureFacebookLinking:(RKObjectManager *)objectManager
@@ -195,5 +206,7 @@
                                                                                            statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     [objectManager addResponseDescriptor:responseUserDescriptor];
 }
+
+
 
 @end
