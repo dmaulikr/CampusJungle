@@ -58,6 +58,17 @@
 		A7D53A131757F2BD00FE9FCD /* CCOrdinaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D53A121757F2BD00FE9FCD /* CCOrdinaryCell.m */; };
 		A7D53A151757F70700FE9FCD /* CCSideMenuController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7D53A141757F70600FE9FCD /* CCSideMenuController.xib */; };
 		A7D53A191757F8D500FE9FCD /* CCMenuDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D53A181757F8D500FE9FCD /* CCMenuDefines.m */; };
+		A7D53A311758A7CA00FE9FCD /* MHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D53A2A1758A7CA00FE9FCD /* MHTabBarController.m */; };
+		A7D53A3E1758A85700FE9FCD /* MHTabBarActiveTab.png in Resources */ = {isa = PBXBuildFile; fileRef = A7D53A381758A85700FE9FCD /* MHTabBarActiveTab.png */; };
+		A7D53A3F1758A85700FE9FCD /* MHTabBarActiveTab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7D53A391758A85700FE9FCD /* MHTabBarActiveTab@2x.png */; };
+		A7D53A401758A85700FE9FCD /* MHTabBarInactiveTab.png in Resources */ = {isa = PBXBuildFile; fileRef = A7D53A3A1758A85700FE9FCD /* MHTabBarInactiveTab.png */; };
+		A7D53A411758A85700FE9FCD /* MHTabBarInactiveTab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7D53A3B1758A85700FE9FCD /* MHTabBarInactiveTab@2x.png */; };
+		A7D53A421758A85700FE9FCD /* MHTabBarIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = A7D53A3C1758A85700FE9FCD /* MHTabBarIndicator.png */; };
+		A7D53A431758A85700FE9FCD /* MHTabBarIndicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7D53A3D1758A85700FE9FCD /* MHTabBarIndicator@2x.png */; };
+		A7D53A4B1758CBD300FE9FCD /* CCClassesController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D53A491758CBD300FE9FCD /* CCClassesController.m */; };
+		A7D53A4C1758CBD300FE9FCD /* CCClassesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7D53A4A1758CBD300FE9FCD /* CCClassesController.xib */; };
+		A7D53A511758CD2600FE9FCD /* CCAllClassesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D53A501758CD2600FE9FCD /* CCAllClassesTransaction.m */; };
+		A7D53A551758D6A700FE9FCD /* CCClassesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D53A541758D6A700FE9FCD /* CCClassesDataProvider.m */; };
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
 		D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36186471743B13E00B501BC /* SystemConfiguration.framework */; };
 		D37A475617577D5100E91850 /* CCEducation.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A475517577D5100E91850 /* CCEducation.m */; };
@@ -194,6 +205,21 @@
 		A7D53A141757F70600FE9FCD /* CCSideMenuController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCSideMenuController.xib; sourceTree = "<group>"; };
 		A7D53A171757F8D500FE9FCD /* CCMenuDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCMenuDefines.h; path = MenuDefines/CCMenuDefines.h; sourceTree = "<group>"; };
 		A7D53A181757F8D500FE9FCD /* CCMenuDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCMenuDefines.m; path = MenuDefines/CCMenuDefines.m; sourceTree = "<group>"; };
+		A7D53A291758A7CA00FE9FCD /* MHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHTabBarController.h; sourceTree = "<group>"; };
+		A7D53A2A1758A7CA00FE9FCD /* MHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHTabBarController.m; sourceTree = "<group>"; };
+		A7D53A381758A85700FE9FCD /* MHTabBarActiveTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MHTabBarActiveTab.png; sourceTree = "<group>"; };
+		A7D53A391758A85700FE9FCD /* MHTabBarActiveTab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MHTabBarActiveTab@2x.png"; sourceTree = "<group>"; };
+		A7D53A3A1758A85700FE9FCD /* MHTabBarInactiveTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MHTabBarInactiveTab.png; sourceTree = "<group>"; };
+		A7D53A3B1758A85700FE9FCD /* MHTabBarInactiveTab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MHTabBarInactiveTab@2x.png"; sourceTree = "<group>"; };
+		A7D53A3C1758A85700FE9FCD /* MHTabBarIndicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MHTabBarIndicator.png; sourceTree = "<group>"; };
+		A7D53A3D1758A85700FE9FCD /* MHTabBarIndicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MHTabBarIndicator@2x.png"; sourceTree = "<group>"; };
+		A7D53A481758CBD300FE9FCD /* CCClassesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCClassesController.h; path = ClassesController/CCClassesController.h; sourceTree = "<group>"; };
+		A7D53A491758CBD300FE9FCD /* CCClassesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCClassesController.m; path = ClassesController/CCClassesController.m; sourceTree = "<group>"; };
+		A7D53A4A1758CBD300FE9FCD /* CCClassesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CCClassesController.xib; path = ClassesController/CCClassesController.xib; sourceTree = "<group>"; };
+		A7D53A4F1758CD2600FE9FCD /* CCAllClassesTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCAllClassesTransaction.h; path = AllClassesTransaction/CCAllClassesTransaction.h; sourceTree = "<group>"; };
+		A7D53A501758CD2600FE9FCD /* CCAllClassesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCAllClassesTransaction.m; path = AllClassesTransaction/CCAllClassesTransaction.m; sourceTree = "<group>"; };
+		A7D53A531758D6A700FE9FCD /* CCClassesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCClassesDataProvider.h; path = ClassesDataProvider/CCClassesDataProvider.h; sourceTree = "<group>"; };
+		A7D53A541758D6A700FE9FCD /* CCClassesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCClassesDataProvider.m; path = ClassesDataProvider/CCClassesDataProvider.m; sourceTree = "<group>"; };
 		D36186471743B13E00B501BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D37A475417577D5100E91850 /* CCEducation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEducation.h; sourceTree = "<group>"; };
 		D37A475517577D5100E91850 /* CCEducation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEducation.m; sourceTree = "<group>"; };
@@ -292,6 +318,7 @@
 				A787C77617536F8400824DEA /* main.m */,
 				A784C597173A865E005E4921 /* Frameworks */,
 				A784C596173A865E005E4921 /* Products */,
+				A7D53A361758A85700FE9FCD /* Resources */,
 				9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
@@ -346,6 +373,7 @@
 		A787C73217536F8400824DEA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A7D53A441758CB5600FE9FCD /* ClassesController */,
 				A7D539CE1756236000FE9FCD /* ClassController */,
 				D3EFD2891756971F00B7D710 /* EducationCreationController */,
 				A787C7CF1754E9AD00824DEA /* SideBarController */,
@@ -588,6 +616,7 @@
 		A787C77D17536F8400824DEA /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
+				A7D53A4D1758CCE700FE9FCD /* AllClassesTransaction */,
 				A7D53A081756444900FE9FCD /* ClassTransaction */,
 				D3EFD294175745E600B7D710 /* BackToUserProfileTransaction */,
 				D3EFD2901757430E00B7D710 /* EducationCreationTransaction */,
@@ -770,6 +799,65 @@
 			name = MenuDefines;
 			sourceTree = "<group>";
 		};
+		A7D53A261758A7CA00FE9FCD /* MHTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				A7D53A291758A7CA00FE9FCD /* MHTabBarController.h */,
+				A7D53A2A1758A7CA00FE9FCD /* MHTabBarController.m */,
+			);
+			path = MHTabBarController;
+			sourceTree = "<group>";
+		};
+		A7D53A361758A85700FE9FCD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A7D53A371758A85700FE9FCD /* MHTabBarController */,
+			);
+			name = Resources;
+			path = CampusJungle/Resources;
+			sourceTree = "<group>";
+		};
+		A7D53A371758A85700FE9FCD /* MHTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				A7D53A381758A85700FE9FCD /* MHTabBarActiveTab.png */,
+				A7D53A391758A85700FE9FCD /* MHTabBarActiveTab@2x.png */,
+				A7D53A3A1758A85700FE9FCD /* MHTabBarInactiveTab.png */,
+				A7D53A3B1758A85700FE9FCD /* MHTabBarInactiveTab@2x.png */,
+				A7D53A3C1758A85700FE9FCD /* MHTabBarIndicator.png */,
+				A7D53A3D1758A85700FE9FCD /* MHTabBarIndicator@2x.png */,
+			);
+			path = MHTabBarController;
+			sourceTree = "<group>";
+		};
+		A7D53A441758CB5600FE9FCD /* ClassesController */ = {
+			isa = PBXGroup;
+			children = (
+				A7D53A481758CBD300FE9FCD /* CCClassesController.h */,
+				A7D53A491758CBD300FE9FCD /* CCClassesController.m */,
+				A7D53A4A1758CBD300FE9FCD /* CCClassesController.xib */,
+			);
+			name = ClassesController;
+			sourceTree = "<group>";
+		};
+		A7D53A4D1758CCE700FE9FCD /* AllClassesTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				A7D53A4F1758CD2600FE9FCD /* CCAllClassesTransaction.h */,
+				A7D53A501758CD2600FE9FCD /* CCAllClassesTransaction.m */,
+			);
+			name = AllClassesTransaction;
+			sourceTree = "<group>";
+		};
+		A7D53A521758D67500FE9FCD /* ClassesDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				A7D53A531758D6A700FE9FCD /* CCClassesDataProvider.h */,
+				A7D53A541758D6A700FE9FCD /* CCClassesDataProvider.m */,
+			);
+			name = ClassesDataProvider;
+			sourceTree = "<group>";
+		};
 		D37A475317577CD700E91850 /* Education */ = {
 			isa = PBXGroup;
 			children = (
@@ -820,6 +908,7 @@
 		D3A2C3261754D53900989831 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A7D53A261758A7CA00FE9FCD /* MHTabBarController */,
 				A7D53A101757F29F00FE9FCD /* OrdinaryCell */,
 				D37A47571757864200E91850 /* EducationCell */,
 				D3EFD2851756876B00B7D710 /* CollegeSelectionCell */,
@@ -872,6 +961,7 @@
 		D3EFD2351756080700B7D710 /* DataProviders */ = {
 			isa = PBXGroup;
 			children = (
+				A7D53A521758D67500FE9FCD /* ClassesDataProvider */,
 				A7D53A0C1757F0E400FE9FCD /* SideMenuDataProvider */,
 				D37A475B175788FF00E91850 /* EducationsDataProvider */,
 				D3EFD2811756856100B7D710 /* CollegeSellectionDataProvider */,
@@ -1146,6 +1236,13 @@
 				D3EFD27C17567F7D00B7D710 /* CCCollegeSelectionController.xib in Resources */,
 				D3EFD28E1756975200B7D710 /* CCEducationCreationController.xib in Resources */,
 				A7D53A151757F70700FE9FCD /* CCSideMenuController.xib in Resources */,
+				A7D53A3E1758A85700FE9FCD /* MHTabBarActiveTab.png in Resources */,
+				A7D53A3F1758A85700FE9FCD /* MHTabBarActiveTab@2x.png in Resources */,
+				A7D53A401758A85700FE9FCD /* MHTabBarInactiveTab.png in Resources */,
+				A7D53A411758A85700FE9FCD /* MHTabBarInactiveTab@2x.png in Resources */,
+				A7D53A421758A85700FE9FCD /* MHTabBarIndicator.png in Resources */,
+				A7D53A431758A85700FE9FCD /* MHTabBarIndicator@2x.png in Resources */,
+				A7D53A4C1758CBD300FE9FCD /* CCClassesController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1250,6 +1347,10 @@
 				A7D53A0F1757F10700FE9FCD /* CCSideMenuDataProvider.m in Sources */,
 				A7D53A131757F2BD00FE9FCD /* CCOrdinaryCell.m in Sources */,
 				A7D53A191757F8D500FE9FCD /* CCMenuDefines.m in Sources */,
+				A7D53A311758A7CA00FE9FCD /* MHTabBarController.m in Sources */,
+				A7D53A4B1758CBD300FE9FCD /* CCClassesController.m in Sources */,
+				A7D53A511758CD2600FE9FCD /* CCAllClassesTransaction.m in Sources */,
+				A7D53A551758D6A700FE9FCD /* CCClassesDataProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

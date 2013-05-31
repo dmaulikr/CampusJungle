@@ -15,6 +15,7 @@
 #import "CCSideBarController.h"
 #import "CCClassTransaction.h"
 #import "CCClassViewController.h"
+#import "CCClassTransaction.h"
 
 @interface CCMainTransaction()
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;

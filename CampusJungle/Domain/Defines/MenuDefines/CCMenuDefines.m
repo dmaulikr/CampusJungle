@@ -12,7 +12,7 @@
 
 const struct CCSideMenuTitles CCSideMenuTitles = {
     .profile = @"Profile",
-    .classScreen = @"Class",
+    .classesScreen = @"Classes",
 };
 
 @end

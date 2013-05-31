@@ -12,7 +12,7 @@
 
 extern const struct CCSideMenuTitles {
     __unsafe_unretained NSString *profile;
-    __unsafe_unretained NSString *classScreen;
+    __unsafe_unretained NSString *classesScreen;
 } CCSideMenuTitles;
 
 @end

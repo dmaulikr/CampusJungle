@@ -11,7 +11,7 @@
 
 @implementation CCClassTransaction
 
-- (void)perform
+- (void)performWithObject:(id)object
 {
     NSParameterAssert(self.menuController);
     CCClassViewController *classController = [CCClassViewController new];
