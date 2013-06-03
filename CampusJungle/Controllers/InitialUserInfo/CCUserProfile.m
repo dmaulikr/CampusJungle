@@ -8,7 +8,6 @@
 
 #import "CCUserProfile.h"
 #import "CCUserSessionProtocol.h"
-#import "UIAlertView+Blocks.h"
 #import "CCAlertDefines.h"
 #import "CCDefines.h"
 #import "CCEducationCell.h"
@@ -20,6 +19,7 @@
 #import "UIActionSheet+BlocksKit.h"
 #import "UIAlertView+BlocksKit.h"
 #import "CCEducation.h"
+#import "CCUserEducationsDataSource.h"
 
 #define animationDuration 0.4
 
@@ -113,9 +113,11 @@
 
 - (void)configTable
 {
+    self.dataSourceClass = [CCUserEducationsDataSource class];
     self.dataProvider = [CCEducationsDataProvider new];
     self.dataProvider.arrayOfEducations = self.arrayOfEducations;
     [self configTableWithProvider:self.dataProvider cellClass:[CCEducationCell class]];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -127,10 +129,11 @@
 - (IBAction)logout
 {
     UIAlertView *testView = [UIAlertView alertViewWithTitle:nil message:CCAlertsMessages.confimAlert];
+    [testView addButtonWithTitle:CCAlertsButtons.noButton handler:nil];
     [testView addButtonWithTitle:CCAlertsButtons.yesButton handler:^{
         [self.logoutTransaction perform];
     }];
-	[testView addButtonWithTitle:CCAlertsButtons.noButton handler:nil];
+	
 	[testView show];
 }
 
@@ -230,6 +233,8 @@
 
 - (void)becomeEditable
 {
+    [self.mainTable setEditing:YES animated:NO];
+    
     self.isEditable = YES;
     self.firstNameField.text = self.firstName.text;
     self.lastNameField.text = self.lastName.text;
@@ -249,6 +254,7 @@
 
 - (void)becomeNotEditable
 {
+    [self.mainTable setEditing:NO animated:NO];
     self.isEditable = NO;
     [self.view endEditing:YES];
     

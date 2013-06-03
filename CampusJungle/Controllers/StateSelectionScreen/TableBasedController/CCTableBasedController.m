@@ -11,8 +11,6 @@
 
 @interface CCTableBasedController ()
 
-@property (nonatomic, strong) Class dataSourceClass;
-
 @end
 
 @implementation CCTableBasedController
@@ -20,8 +18,12 @@
 - (void)configTableWithProvider:(CCBaseDataProvider *)provider cellClass:(Class)cellCass
 {
     [self.mainTable registerClass:cellCass forCellReuseIdentifier:CCTableDefines.tableCellIdentifier];
-    
-    CCCommonDataSource *dataSource = [CCCommonDataSource new];
+    CCCommonDataSource *dataSource;
+    if(self.dataSourceClass){
+        dataSource = [self.dataSourceClass new];
+    } else {
+        dataSource = [CCCommonDataSource new];
+    }
     dataSource.dataProvider = provider;
     dataSource.dataProvider.targetTable = self.mainTable;
     self.mainTable.dataSource = dataSource;

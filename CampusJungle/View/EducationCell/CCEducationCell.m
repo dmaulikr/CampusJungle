@@ -11,7 +11,9 @@
 
 @interface CCEducationCell()
 
-@property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) IBOutlet UILabel *collegeName;
+@property (nonatomic, strong) IBOutlet UILabel *graduationDate;
+@property (nonatomic, strong) IBOutlet UILabel *status;
 
 @end
 
@@ -21,8 +23,9 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.label = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 300, 30)];
-        [self addSubview:self.label];
+        self = [[[NSBundle mainBundle] loadNibNamed:@"CCEducationCell"
+                                              owner:self
+                                            options:nil] objectAtIndex:0];
     }
     return self;
 }
@@ -30,7 +33,9 @@
 - (void)setCellObject:(id)cellObject
 {
     _cellObject = cellObject;
-    self.label.text = [(CCEducation *)cellObject collegeName];
+    self.collegeName.text = [(CCEducation *)cellObject collegeName];
+    self.graduationDate.text = [(CCEducation *)cellObject graduationDate];
+    self.status.text = [(CCEducation *)cellObject status];
 }
 
 @end
