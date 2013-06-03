@@ -17,10 +17,12 @@
 #import "CCStandardErrorHandler.h"
 #import "MBProgressHUD.h"
 #import "NSString+CJStringValidator.h"
+#import "UIActionSheet+BlocksKit.h"
+#import "UIAlertView+BlocksKit.h"
 
 #define animationDuration 0.4
 
-@interface CCUserProfile ()
+@interface CCUserProfile () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet UILabel *firstName;
 @property (nonatomic, weak) IBOutlet UILabel *lastName;
@@ -41,6 +43,8 @@
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
 @property (nonatomic, strong) id <CCLoginAPIProviderProtocol> ioc_loginAPIProvider;
 @property (nonatomic, strong) id <CCAPIProviderProtocol> ioc_apiProvider;
+@property (nonatomic) BOOL isEditable;
+@property (nonatomic) BOOL isNeedToUploadAvatar;
 
 @property (nonatomic, strong) NSString *facebookAvatarPath;
 
@@ -84,7 +88,6 @@
         NSString *avatarURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,[[self.ioc_userSession currentUser] avatar]];
         [self.avatar setImageWithURL:[NSURL URLWithString:avatarURL]];
     }
-
 }
 
 - (void)configTable
@@ -102,18 +105,12 @@
 
 - (IBAction)logout
 {
-    RIButtonItem *yesItem = [RIButtonItem itemWithLabel:CCAlertsButtons.yesButton];
-    yesItem.action = ^{
+    UIAlertView *testView = [UIAlertView alertViewWithTitle:nil message:CCAlertsMessages.confimAlert];
+    [testView addButtonWithTitle:CCAlertsButtons.yesButton handler:^{
         [self.logoutTransaction perform];
-    };
-    
-    RIButtonItem *noItem = [RIButtonItem itemWithLabel: CCAlertsButtons.noButton];
-    
-    UIAlertView *confirmAlert = [[UIAlertView alloc] initWithTitle:nil
-                                                           message:CCAlertsMessages.confimAlert
-                                                  cancelButtonItem:noItem
-                                                  otherButtonItems:yesItem, nil];
-    [confirmAlert show];    
+    }];
+	[testView addButtonWithTitle:CCAlertsButtons.noButton handler:nil];
+	[testView show];
 }
 
 - (void)edit
@@ -156,9 +153,16 @@
     updatedUser.email = self.emailField.text;
     updatedUser.educations = self.arrayOfColleges;
     
-    [self.ioc_apiProvider updateUser:updatedUser SuccessHandler:^(CCUser *user) {
-        
-        [self setupUserInfo];
+    UIImage *avatarImage = nil;
+    
+    if (self.isNeedToUploadAvatar){
+        avatarImage = self.avatar.image;
+    } else {
+        updatedUser.avatar = self.facebookAvatarPath;
+    }
+    
+    [self.ioc_apiProvider updateUser:updatedUser withAvatarImage:avatarImage SuccessHandler:^(CCUser *user) {
+        self.isNeedToUploadAvatar = NO;
         user.token = [self.ioc_userSession.currentUser token];
         user.isFacebookLinked = [self.ioc_userSession.currentUser isFacebookLinked];
         user.educations = self.arrayOfColleges;
@@ -181,6 +185,7 @@
 {
     [super setEditing:editing animated:animated];
     float duration = 0;
+    
     if(animated){
         duration = animationDuration;
     }
@@ -195,6 +200,7 @@
 
 - (void)becomeEditable
 {
+    self.isEditable = YES;
     self.firstNameField.text = self.firstName.text;
     self.lastNameField.text = self.lastName.text;
     self.emailField.text = self.email.text;
@@ -213,6 +219,7 @@
 
 - (void)becomeNotEditable
 {
+    self.isEditable = NO;
     [self.view endEditing:YES];
     
     self.firstName.alpha = 1;
@@ -261,6 +268,45 @@
     } facebookSessionCreate:^{
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     }];
+}
+
+- (IBAction)avatarDidPressed
+{
+    if(self.isEditable){
+        UIActionSheet *testSheet = [UIActionSheet actionSheetWithTitle:@"Select Avatar"];
+        [testSheet addButtonWithTitle:@"Select from gallery" handler:^{
+            [self selectAvatarFromGallery];
+        }];
+        [testSheet addButtonWithTitle:@"Make photo" handler:^{
+            [self makePhotoForAvatar];
+        }];
+        [testSheet setCancelButtonWithTitle:nil handler:nil];
+        [testSheet showInView:self.view];
+    }
+}
+
+- (void)selectAvatarFromGallery
+{
+    UIImagePickerController * picker = [UIImagePickerController new];
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.delegate = self;
+
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+- (void)makePhotoForAvatar
+{
+    UIImagePickerController * picker = [UIImagePickerController new];
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    picker.delegate = self;
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    self.avatar.image = info[UIImagePickerControllerOriginalImage];
+    self.isNeedToUploadAvatar = YES;
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

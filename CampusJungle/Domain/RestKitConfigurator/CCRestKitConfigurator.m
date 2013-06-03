@@ -106,6 +106,7 @@
                                                             @"firstName" : @"user[first_name]",
                                                             @"lastName" : @"user[last_name]",
                                                             @"email" :@"user[email]",
+                                                            @"avatar" : @"user[avatar]",
      }];
     RKObjectMapping *educationRequestMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
     [educationRequestMapping addAttributeMappingsFromDictionary:@{

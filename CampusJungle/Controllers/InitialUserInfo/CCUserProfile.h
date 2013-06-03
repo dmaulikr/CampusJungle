@@ -18,6 +18,6 @@
 @property (nonatomic, strong) NSMutableArray *arrayOfColleges;
 
 - (IBAction)logout;
-
+- (IBAction)avatarDidPressed;
 
 @end

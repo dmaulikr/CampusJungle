@@ -135,19 +135,43 @@
                      }];
 }
 
-- (void)updateUser:(CCUser *)user SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+- (void)updateUser:(CCUser *)user withAvatarImage:(UIImage *)avatarImage SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [self setAuthorizationToken];
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
     
-    [objectManager putObject:user
-                        path:CCAPIDefines.updateUser
-                  parameters:nil
-                     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                         successHandler(mappingResult.firstObject);
-                     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                         errorHandler(error);
-                }];
+    NSMutableURLRequest *request =
+    [objectManager multipartFormRequestWithObject:user
+                                           method:RKRequestMethodPUT
+                                             path:CCAPIDefines.updateUser parameters:nil
+                        constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
+     {
+         if(avatarImage){
+             [formData appendPartWithFileData:UIImagePNGRepresentation(avatarImage)
+                                     name:@"user[avatar]"
+                                     fileName:@"avatar.png"
+                                     mimeType:@"image/png"];
+         }
+     }];
+    RKObjectRequestOperation *operation =
+    [objectManager objectRequestOperationWithRequest:request
+                                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
+     {
+         if(successHandler){
+             successHandler(mappingResult.firstObject);
+         }
+     }
+                                             failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                                 if(successHandler){
+                                                     errorHandler(error);
+                                                 }
+                                             }];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [operation start];
+    });
+
+    
 }
 
 - (void)createCity:(NSString *)cityName stateID:(NSNumber *)stateID SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
