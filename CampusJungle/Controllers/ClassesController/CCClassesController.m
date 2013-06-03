@@ -19,10 +19,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:nil
-                                                                              style:UIBarButtonSystemItemAdd
-                                                                             target:self
-                                                                             action:@selector(addNewClass)];
+    
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                                 target:self
+                                                                                 action:@selector(addNewClass)];
+    self.navigationItem.rightBarButtonItem = rightButton;
     [self configTable];
 }
 

@@ -15,7 +15,7 @@
 #import "CCSideBarController.h"
 #import "CCClassTransaction.h"
 #import "CCClassViewController.h"
-#import "CCClassTransaction.h"
+#import "CCAllClassesTransaction.h"
 
 @interface CCMainTransaction()
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
@@ -46,6 +46,12 @@
     userProfileTransaction.menuController = rootController;
     leftController.userProfileTransaction = userProfileTransaction;
     
+    
+    CCAllClassesTransaction *allClassesTransaction = [CCAllClassesTransaction new];
+    allClassesTransaction.menuController = rootController;
+    leftController.classesTransaction = allClassesTransaction;
+    
+
     CCClassTransaction *classTransaction = [CCClassTransaction new];
     classTransaction.menuController = rootController;
     leftController.classTransaction = classTransaction;

@@ -8,6 +8,8 @@
 
 #import "CCAllClassesTransaction.h"
 #import "CCClassesController.h"
+#import "CCClassTransaction.h"
+#import "CCAddClassTransaction.h"
 
 @implementation CCAllClassesTransaction
 
@@ -15,6 +17,9 @@
 {
     NSParameterAssert(self.menuController);
     CCClassesController *classesController = [CCClassesController new];
+    
+    classesController.addClassTransaction = [CCAddClassTransaction new];
+    classesController.classTransaction = [CCClassTransaction new];
     
     UINavigationController *centralNavigation = [[UINavigationController alloc] initWithRootViewController:classesController];
     
