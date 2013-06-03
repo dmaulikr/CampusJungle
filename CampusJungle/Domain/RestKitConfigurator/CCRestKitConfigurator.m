@@ -17,6 +17,7 @@
 #import "CCState.h"
 #import "CCCity.h"
 #import "CCCollege.h"
+#import "CCEducation.h"
 
 @implementation CCRestKitConfigurator
 
@@ -49,7 +50,7 @@
 
 + (void)configureUserResponse:(RKObjectManager *)objectManager
 {
-    RKObjectMapping* userResponseMapping = [RKObjectMapping mappingForClass:[CCUser class]];
+    RKObjectMapping *userResponseMapping = [RKObjectMapping mappingForClass:[CCUser class]];
     
     [userResponseMapping addAttributeMappingsFromDictionary:@{
         @"first_name" : @"firstName",
@@ -63,9 +64,21 @@
         @"rank" : @"rank",
         @"is_fb_linked" :@"isFacebookLinked"
      }];
-
     
     
+    RKObjectMapping *userEducationResponseMapping = [RKObjectMapping mappingForClass:[CCEducation class]];
+    [userEducationResponseMapping addAttributeMappingsFromDictionary:@{
+        @"graduation_date" : @"graduationDate",
+        @"college_name" : @"collegeName",
+        @"user_status" : @"status",
+        @"college_id" : @"collegeID",
+     }];
+    
+    RKRelationshipMapping* relationShipResponseEducationsMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"educations"
+                                                                                                         toKeyPath:@"educations"
+                                                                                                       withMapping:userEducationResponseMapping];
+    
+    [userResponseMapping addPropertyMapping:relationShipResponseEducationsMapping];
     
      RKRelationshipMapping* relationShipResponseUserMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"user"
                                                                                                          toKeyPath:@"user"

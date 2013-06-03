@@ -19,6 +19,7 @@
 #import "NSString+CJStringValidator.h"
 #import "UIActionSheet+BlocksKit.h"
 #import "UIAlertView+BlocksKit.h"
+#import "CCEducation.h"
 
 #define animationDuration 0.4
 
@@ -57,6 +58,7 @@
     [super viewDidLoad];
     self.mainTable.tableFooterView = self.tableFooterView;
     self.mainTable.tableHeaderView = self.tableHeaderView;
+    
     [self setupUserInfo];
     if([[[self.ioc_userSession currentUser] isFacebookLinked] isEqualToString:@"true"]){
         [self.facebookButton setHidden:YES];
@@ -84,6 +86,12 @@
     self.firstName.text = [[self.ioc_userSession currentUser] firstName];
     self.lastName.text = [[self.ioc_userSession currentUser] lastName];
     self.email.text = [[self.ioc_userSession currentUser] email];
+    
+    [self.arrayOfEducations removeAllObjects];
+    for (CCEducation * education in self.ioc_userSession.currentUser.educations){
+        [self.arrayOfEducations addObject:education];
+    }
+    [self.dataProvider loadItems];
     if(![[[self.ioc_userSession currentUser] avatar] isEqualToString:CCAPIDefines.emptyAvatarPath]){
         NSString *avatarURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,[[self.ioc_userSession currentUser] avatar]];
         [self.avatar setImageWithURL:[NSURL URLWithString:avatarURL]];
@@ -93,7 +101,7 @@
 - (void)configTable
 {
     self.dataProvider = [CCEducationsDataProvider new];
-    self.dataProvider.arrayOfEducations = self.arrayOfColleges;
+    self.dataProvider.arrayOfEducations = self.arrayOfEducations;
     [self configTableWithProvider:self.dataProvider cellClass:[CCEducationCell class]];
 }
 
@@ -151,7 +159,7 @@
     updatedUser.firstName = self.firstNameField.text;
     updatedUser.lastName = self.lastNameField.text;
     updatedUser.email = self.emailField.text;
-    updatedUser.educations = self.arrayOfColleges;
+    updatedUser.educations = self.arrayOfEducations.copy;
     
     UIImage *avatarImage = nil;
     
@@ -165,7 +173,6 @@
         self.isNeedToUploadAvatar = NO;
         user.token = [self.ioc_userSession.currentUser token];
         user.isFacebookLinked = [self.ioc_userSession.currentUser isFacebookLinked];
-        user.educations = self.arrayOfColleges;
         self.ioc_userSession.currentUser = user;
         [self setupUserInfo];
     } errorHandler:^(NSError *error) {

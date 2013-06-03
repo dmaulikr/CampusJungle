@@ -427,7 +427,6 @@
 		A787C74E17536F8400824DEA /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				D37A475317577CD700E91850 /* Education */,
 				A787C74F17536F8400824DEA /* APIProvider */,
 				A787C75317536F8400824DEA /* Defines */,
 				A787C75917536F8400824DEA /* FacebookAPI */,
@@ -493,6 +492,7 @@
 		A787C76117536F8400824DEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D37A475317577CD700E91850 /* Education */,
 				D3EFD27D175684DA00B7D710 /* College */,
 				D3EFD2671756586200B7D710 /* City */,
 				D3EFD24A1756300400B7D710 /* State */,
@@ -776,7 +776,8 @@
 				D37A475417577D5100E91850 /* CCEducation.h */,
 				D37A475517577D5100E91850 /* CCEducation.m */,
 			);
-			path = Education;
+			name = Education;
+			path = ../Education;
 			sourceTree = "<group>";
 		};
 		D37A47571757864200E91850 /* EducationCell */ = {
