@@ -13,6 +13,7 @@
 #import "SHOmniAuth.h"
 #import "SHOmniAuthTWitter.h"
 #import "AFOAuth1Client.h"
+#import "CCDefines.h"
 
 @implementation CCAppDelegate
 
@@ -50,6 +51,11 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     [FBSession.activeSession close];
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:CCAppDelegateDefines.notificationOnBackToForeground object:nil ];
 }
 
 

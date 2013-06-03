@@ -99,3 +99,9 @@ extern const struct CCResponseKeys
     __unsafe_unretained NSString *items;
     __unsafe_unretained NSString *count;
 } CCResponseKeys;
+
+extern const struct CCAppDelegateDefines
+{
+    __unsafe_unretained NSString *notificationOnBackToForeground;
+
+} CCAppDelegateDefines;

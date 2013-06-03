@@ -102,3 +102,7 @@ const struct CCResponseKeys CCResponseKeys = {
     .items = @"items",
     .count = @"count",
 };
+
+const struct CCAppDelegateDefines CCAppDelegateDefines = {
+    .notificationOnBackToForeground = @"ApplicationDidReturnToForeground",
+};

@@ -14,6 +14,7 @@
 #import "CCStandardErrorHandler.h"
 #import "CCTwitterPicker.h"
 #import "MBProgressHUD.h"
+#import "CCDefines.h"
 
 @interface CCWelcomeController ()
 
@@ -33,6 +34,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(applicationDidEnterForeground)
+     name:CCAppDelegateDefines.notificationOnBackToForeground
+     object:nil ];
+}
+
+- (void)applicationDidEnterForeground
+{
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 }
 
 - (IBAction)facebookLoginButtonDidPressed
@@ -45,6 +56,8 @@
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error
                                            message:CCAlertsMessages.facebookError];
         [self loading:NO];
+    } facebookSessionCreate:^{
+        [self loading:YES]; 
     }];
 }
 
@@ -88,23 +101,11 @@
 
 - (void)loading:(BOOL)loading
 {
-    [self setAllButtonsEnabled:!loading];
     if(loading){
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     } else {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     }
-
 }
-
-- (void)setAllButtonsEnabled:(BOOL)enabled
-{
-    self.loginButton.enabled = enabled;
-    self.signupButton.enabled = enabled;
-    self.facebookButton.enabled = enabled;
-    self.twitterButton.enabled = enabled;
-}
-
-
 
 @end

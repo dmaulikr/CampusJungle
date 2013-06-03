@@ -62,6 +62,17 @@
 
     [self setRightNavigationItemWithTitle:@"Edit" selector:@selector(edit)];
     self.facebookButton.alpha = 0;
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(applicationDidEnterForeground)
+     name:CCAppDelegateDefines.notificationOnBackToForeground
+     object:nil];
+}
+
+- (void)applicationDidEnterForeground
+{
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 }
 
 - (void)setupUserInfo
@@ -247,6 +258,8 @@
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    } facebookSessionCreate:^{
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     }];
 }
 

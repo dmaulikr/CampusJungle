@@ -52,18 +52,21 @@
    }];
 }
 
-- (void)performLoginOperationViaFacebookWithSuccessHandler:(successWithObject)successHandler
-                                              errorHandler:(errorHandler)errorHandler
+- (void)performLoginOperationViaFacebookWithSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler facebookSessionCreate:(successHandler)reactionOnFacebookSessionCreate
 {
     [self loginFacebookSuccessHandler:successHandler
-                         errorHandler:errorHandler];
+                         errorHandler:errorHandler
+                facebookSessionCreate:reactionOnFacebookSessionCreate];
 }
 
 - (void)loginFacebookSuccessHandler:(successWithObject)successHandler
                        errorHandler:(errorHandler)errorHandler
+              facebookSessionCreate:(successHandler)reactionOnFacebookSessionCreate
+                       
 {
     [self.ioc_facebookAPI logout];
     [self.ioc_facebookAPI loginWithSuccessHandler:^{
+        reactionOnFacebookSessionCreate();
         [self getUserInfoSuccessHandler:successHandler
                            errorHandler:errorHandler];
     } errorHandler:^(NSError *error) {
@@ -101,10 +104,11 @@
     }];
 }
 
-- (void)linkWithFacebookSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+- (void)linkWithFacebookSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler facebookSessionCreate:(successHandler)reactionOnFacebookSessionCreate
 {
     [self.ioc_facebookAPI logout];
     [self.ioc_facebookAPI loginWithSuccessHandler:^{
+        reactionOnFacebookSessionCreate();
         [self fetchUserInfoForLinkingFromFacebookSuccessHandler:successHandler errorHandler:errorHandler];
     } errorHandler:^(NSError *error) {
         errorHandler(error);
