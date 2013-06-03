@@ -129,25 +129,98 @@
                         path:CCAPIDefines.linkFacebook
                   parameters:userInfo
                      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                         successHandler(mappingResult);
+                         successHandler(userInfo);
                      } failure:^(RKObjectRequestOperation *operation, NSError *error) {
                          errorHandler(error);
                      }];
 }
 
-- (void)updateUser:(CCUser *)user SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+- (void)updateUser:(CCUser *)user withAvatarImage:(UIImage *)avatarImage SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    [self setAuthorizationToken];
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    
+    NSMutableURLRequest *request =
+    [objectManager multipartFormRequestWithObject:user
+                                           method:RKRequestMethodPUT
+                                             path:CCAPIDefines.updateUser parameters:nil
+                        constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
+     {
+         if(avatarImage){
+             [formData appendPartWithFileData:UIImagePNGRepresentation(avatarImage)
+                                     name:@"user[avatar]"
+                                     fileName:@"avatar.png"
+                                     mimeType:@"image/png"];
+         }
+     }];
+    RKObjectRequestOperation *operation =
+    [objectManager objectRequestOperationWithRequest:request
+                                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
+     {
+         if(successHandler){
+             successHandler(mappingResult.firstObject);
+         }
+     }
+                                             failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                                 if(successHandler){
+                                                     errorHandler(error);
+                                                 }
+                                             }];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [operation start];
+    });
+}
+
+- (void)createCity:(NSString *)cityName stateID:(NSNumber *)stateID SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [self setAuthorizationToken];
-    
-    [objectManager putObject:user
-                        path:CCAPIDefines.updateUser
-                  parameters:nil
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.cities,stateID];
+    [objectManager postObject:nil
+                        path:path
+                   parameters:@{@"name" :  cityName}
                      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                          successHandler(mappingResult.firstObject);
                      } failure:^(RKObjectRequestOperation *operation, NSError *error) {
                          errorHandler(error);
-                }];
+                     }];
+
+}
+
+- (void)createCollege:(NSString *)collegeName cityID:(NSNumber *)cityID address:(NSString *)addess SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [self setAuthorizationToken];
+    NSMutableDictionary *params = [@{@"name" :  collegeName} mutableCopy];
+    if(addess) {
+        [params setObject:addess forKey:@"address"];
+    }
+    
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.colleges,cityID];
+    [objectManager postObject:nil
+                         path:path
+                   parameters:params
+                      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                          successHandler(mappingResult.firstObject);
+                      } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                          errorHandler(error);
+                      }];
+}
+
+- (void)loadUserInfoSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [self setAuthorizationToken];
+    [objectManager getObject:nil
+                         path:CCAPIDefines.currentUserInfo
+                   parameters:nil
+                      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                          successHandler(mappingResult.firstObject);
+                      } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                          errorHandler(error);
+                      }];
+
 }
 
 @end

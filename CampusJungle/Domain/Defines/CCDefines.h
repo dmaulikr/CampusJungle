@@ -16,6 +16,8 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *colleges;
     __unsafe_unretained NSString *linkFacebook;
     __unsafe_unretained NSString *updateUser;
+    __unsafe_unretained NSString *emptyAvatarPath;
+    __unsafe_unretained NSString *currentUserInfo;
 } CCAPIDefines;
 
 
@@ -91,3 +93,16 @@ extern const struct CCLinkUserKeys {
     __unsafe_unretained NSString *provider;
 
 } CCLinkUserKeys;
+
+extern const struct CCResponseKeys
+{
+    __unsafe_unretained NSString *item;
+    __unsafe_unretained NSString *items;
+    __unsafe_unretained NSString *count;
+} CCResponseKeys;
+
+extern const struct CCAppDelegateDefines
+{
+    __unsafe_unretained NSString *notificationOnBackToForeground;
+
+} CCAppDelegateDefines;

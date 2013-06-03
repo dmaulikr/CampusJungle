@@ -18,7 +18,7 @@
     NSParameterAssert(self.arrayOfColleges);
     
     CCCollegeSelectionController *collegeSelectionController = [CCCollegeSelectionController new];
-    collegeSelectionController.cityID = object;
+    collegeSelectionController.cityID = [object cityID];
     CCEducationCreationTransaction *educationTransaction = [CCEducationCreationTransaction new];
     educationTransaction.arrayOfColleges = self.arrayOfColleges;
     educationTransaction.navigation = self.navigation;

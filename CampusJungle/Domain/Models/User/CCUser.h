@@ -21,6 +21,4 @@
 @property (nonatomic, strong) NSString *isFacebookLinked;
 @property (nonatomic, strong) NSArray *educations;
 
-+ (CCUser *)userFromFacebookDictionary:(NSDictionary *)dictionary;
-
 @end
