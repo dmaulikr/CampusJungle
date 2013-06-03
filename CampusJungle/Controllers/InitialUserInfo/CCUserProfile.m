@@ -289,8 +289,8 @@
 {
     UIImagePickerController * picker = [UIImagePickerController new];
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.allowsEditing = YES;
     picker.delegate = self;
-
     [self presentViewController:picker animated:YES completion:nil];
 }
 
@@ -298,13 +298,14 @@
 {
     UIImagePickerController * picker = [UIImagePickerController new];
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    picker.allowsEditing = YES;
     picker.delegate = self;
     [self presentViewController:picker animated:YES completion:nil];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    self.avatar.image = info[UIImagePickerControllerOriginalImage];
+    self.avatar.image = info[UIImagePickerControllerEditedImage];
     self.isNeedToUploadAvatar = YES;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
