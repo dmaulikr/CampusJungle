@@ -26,5 +26,4 @@
 - (void)showErrorWhileLoading:(NSError *)error;
 - (BOOL)isEmpty;
 
-
 @end
