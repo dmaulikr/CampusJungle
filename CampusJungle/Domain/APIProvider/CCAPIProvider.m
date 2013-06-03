@@ -208,4 +208,19 @@
                       }];
 }
 
+- (void)loadUserInfoSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [self setAuthorizationToken];
+    [objectManager getObject:nil
+                         path:CCAPIDefines.currentUserInfo
+                   parameters:nil
+                      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                          successHandler(mappingResult.firstObject);
+                      } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                          errorHandler(error);
+                      }];
+
+}
+
 @end

@@ -59,7 +59,8 @@
     self.mainTable.tableFooterView = self.tableFooterView;
     self.mainTable.tableHeaderView = self.tableHeaderView;
     
-    [self setupUserInfo];
+    [self loadUser];
+    
     if([[[self.ioc_userSession currentUser] isFacebookLinked] isEqualToString:@"true"]){
         [self.facebookButton setHidden:YES];
     }
@@ -74,6 +75,18 @@
      selector:@selector(applicationDidEnterForeground)
      name:CCAppDelegateDefines.notificationOnBackToForeground
      object:nil];
+}
+
+- (void)loadUser
+{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self.ioc_apiProvider loadUserInfoSuccessHandler:^(id result) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        [self saveUser:result];
+        [self setupUserInfo];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
 }
 
 - (void)applicationDidEnterForeground
@@ -130,9 +143,10 @@
 - (void)save
 {
     if([self isFieldsValid]){
-        [self setEditing:NO animated:YES];
-        [self setRightNavigationItemWithTitle:@"Edit" selector:@selector(edit)];
-        [self sendUpdatedUser];
+        [self sendUpdatedUserWithSuccess:^{
+            [self setEditing:NO animated:YES];
+            [self setRightNavigationItemWithTitle:@"Edit" selector:@selector(edit)];
+        }];
     }
 }
 
@@ -153,7 +167,7 @@
     return YES;
 }
 
-- (void)sendUpdatedUser
+- (void)sendUpdatedUserWithSuccess:(successHandler)successHandler
 {
     CCUser *updatedUser = [CCUser new];
     updatedUser.firstName = self.firstNameField.text;
@@ -168,17 +182,26 @@
     } else {
         updatedUser.avatar = self.facebookAvatarPath;
     }
-    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self.ioc_apiProvider updateUser:updatedUser withAvatarImage:avatarImage SuccessHandler:^(CCUser *user) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        successHandler();
         self.isNeedToUploadAvatar = NO;
-        user.token = [self.ioc_userSession.currentUser token];
-        user.isFacebookLinked = [self.ioc_userSession.currentUser isFacebookLinked];
-        self.ioc_userSession.currentUser = user;
+        [self saveUser:user];
         [self setupUserInfo];
     } errorHandler:^(NSError *error) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [CCStandardErrorHandler showErrorWithError:error];
     }];
 }
+
+- (void)saveUser:(CCUser *)user
+{
+    user.token = [self.ioc_userSession.currentUser token];
+    user.isFacebookLinked = [self.ioc_userSession.currentUser isFacebookLinked];
+    self.ioc_userSession.currentUser = user;
+}
+
 
 - (void)setRightNavigationItemWithTitle:(NSString*)title selector:(SEL)selector
 {
@@ -315,6 +338,16 @@
     self.avatar.image = info[UIImagePickerControllerEditedImage];
     self.isNeedToUploadAvatar = YES;
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if(textField == self.emailField){
+        [self save];
+    } else {
+        [[self.view viewWithTag:textField.tag+1] becomeFirstResponder];
+        return YES;
+    }
+    return YES;
 }
 
 @end
