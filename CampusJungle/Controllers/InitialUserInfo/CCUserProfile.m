@@ -100,15 +100,40 @@
     self.lastName.text = [[self.ioc_userSession currentUser] lastName];
     self.email.text = [[self.ioc_userSession currentUser] email];
     
-    [self.arrayOfEducations removeAllObjects];
-    for (CCEducation * education in self.ioc_userSession.currentUser.educations){
-        [self.arrayOfEducations addObject:education];
+
+    if(![self isEducations:self.arrayOfEducations equalTo:self.ioc_userSession.currentUser.educations]){
+        [self.arrayOfEducations removeAllObjects];
+        [self.arrayOfEducations addObjectsFromArray:self.ioc_userSession.currentUser.educations];
+        [self.dataProvider loadItems];
     }
-    [self.dataProvider loadItems];
+    
     if(![[[self.ioc_userSession currentUser] avatar] isEqualToString:CCAPIDefines.emptyAvatarPath]){
         NSString *avatarURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,[[self.ioc_userSession currentUser] avatar]];
         [self.avatar setImageWithURL:[NSURL URLWithString:avatarURL]];
     }
+}
+
+- (BOOL)isEducations:(NSArray *)firstArray equalTo:(NSArray *)secondArray
+{
+
+    if (firstArray.count != secondArray.count){
+        return NO;
+    }
+    for(int i = 0; i < firstArray.count; i++){
+        CCEducation *objectFromFirstArray = firstArray[i];
+        CCEducation *objectFromSecondArray = secondArray[i];
+        if(![objectFromFirstArray.graduationDate isEqualToString:objectFromSecondArray.graduationDate]){
+            return NO;
+        }
+        if(![objectFromFirstArray.collegeName isEqualToString:objectFromSecondArray.collegeName]){
+            return NO;
+        }
+        if(![objectFromFirstArray.collegeID.stringValue isEqualToString:objectFromSecondArray.collegeID.stringValue]){
+            return NO;
+        }
+    }
+    
+    return YES;
 }
 
 - (void)configTable
@@ -233,7 +258,7 @@
 
 - (void)becomeEditable
 {
-    [self.mainTable setEditing:YES animated:NO];
+    [self.mainTable setEditing:YES animated:YES];
     
     self.isEditable = YES;
     self.firstNameField.text = self.firstName.text;
@@ -254,7 +279,7 @@
 
 - (void)becomeNotEditable
 {
-    [self.mainTable setEditing:NO animated:NO];
+    [self.mainTable setEditing:NO animated:YES];
     self.isEditable = NO;
     [self.view endEditing:YES];
     
