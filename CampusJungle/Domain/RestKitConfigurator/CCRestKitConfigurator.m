@@ -160,16 +160,25 @@
      @"semester" : @"semester",
      }];
     
-    RKRelationshipMapping* relationShipResponseClassMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"class"
-                                                                                                         toKeyPath:@"class"
-                                                                                                       withMapping:classResponseMapping];
     
     RKRequestDescriptor *classRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:classRequestMapping objectClass:[CCClass class] rootKeyPath:nil];
     
     NSString *classPathPatern = [NSString stringWithFormat:CCAPIDefines.createClass,@":college_id"];
-    RKResponseDescriptor *responseClasses = [RKResponseDescriptor responseDescriptorWithMapping:classResponseMapping pathPattern:classPathPatern keyPath:@"class" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
-    [objectManager addResponseDescriptor:responseClasses];
+    
+    RKResponseDescriptor *responseNewClassDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:classResponseMapping
+                                                                                     pathPattern:classPathPatern
+                                                                                         keyPath:nil
+                                                                                     statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    
+    RKResponseDescriptor *responseAllClassesDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:classResponseMapping
+                                                                                                    pathPattern:CCAPIDefines.allClasses
+                                                                                                        keyPath:@"classes"
+                                                                                                    statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    [objectManager addResponseDescriptor:responseNewClassDescriptor];
+    [objectManager addResponseDescriptor:responseAllClassesDescriptor];
     [objectManager addRequestDescriptor:classRequestDescriptor];
     
 }

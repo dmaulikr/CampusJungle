@@ -22,11 +22,24 @@
                          path:[NSString stringWithFormat:CCAPIDefines.createClass,class.collegeID]
                    parameters:parametersArray
                       success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                          successHandler(mappingResult);
+                          successHandler(mappingResult.firstObject);
                       }
                       failure:^(RKObjectRequestOperation *operation, NSError *error) {
                           errorHandler(error);
                       }];
 }
+
+- (void)getAllClasesSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [self setAuthorizationToken];
+    
+    [objectManager getObjectsAtPath:CCAPIDefines.allClasses
+                         parameters:nil
+                            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                successHandler([mappingResult array]);
+                            } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                errorHandler(error);
+                            }];}
 
 @end

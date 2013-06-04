@@ -12,4 +12,5 @@
 @protocol CCClassesApiProviderProtocol <AppleGuiceInjectable,AppleGuiceSingleton>
 
 - (void)createClass:(CCClass *)class successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)getAllClasesSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 @end

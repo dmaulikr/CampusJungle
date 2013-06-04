@@ -8,13 +8,14 @@
 
 #import "CCClassesController.h"
 #import "CCClassesDataProvider.h"
-#import "CCOrdinaryCell.h"
+#import "CCClassCell.h"
 #import "CCClassesApiProviderProtocol.h"
 
 
 @interface CCClassesController ()<CellSelectionProtocol>
 @property (nonatomic, strong) CCClassesDataProvider *dataProvider;
 @property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_apiClassesProvider;
+@property (weak, nonatomic) IBOutlet UITableView *table;
 
 @end
 
@@ -28,14 +29,25 @@
                                                                                  target:self
                                                                                  action:@selector(addNewClass)];
     self.navigationItem.rightBarButtonItem = rightButton;
+    
+    
+    
+
     [self configTable];
 }
 
 - (void)configTable
 {
-    self.dataProvider = [CCClassesDataProvider new];
-    self.dataProvider.arrayOfClasses = nil;
-    [self configTableWithProvider:self.dataProvider cellClass:[CCOrdinaryCell class]];
+    
+    [self.ioc_apiClassesProvider getAllClasesSuccessHandler:^(NSArray *arrayOfClasses) {
+        self.dataProvider.targetTable = self.table;
+        self.dataProvider = [CCClassesDataProvider new];
+        self.dataProvider.arrayOfClasses = arrayOfClasses;
+        [self configTableWithProvider:self.dataProvider cellClass:[CCClassCell class]];
+    } errorHandler:^(NSError *error) {
+        NSLog(@"error %@", [error description]);
+    } ];
+    
 }
 
 - (void)didSelectedCellWithObject:(id)cellObject

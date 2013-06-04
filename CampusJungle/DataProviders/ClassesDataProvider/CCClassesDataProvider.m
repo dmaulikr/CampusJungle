@@ -14,6 +14,8 @@
 {
     self.arrayOfItems = self.arrayOfClasses;
     self.totalNumber = self.arrayOfItems.count;
+    [self.targetTable reloadData];
+    self.isEverythingLoaded = YES;
 }
 
 - (void)loadMoreItems

@@ -19,6 +19,8 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *createClass;
     __unsafe_unretained NSString *emptyAvatarPath;
     __unsafe_unretained NSString *currentUserInfo;
+    __unsafe_unretained NSString *allClasses;
+    __unsafe_unretained NSString *addClass;
 } CCAPIDefines;
 
 
