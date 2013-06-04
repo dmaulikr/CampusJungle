@@ -106,3 +106,7 @@ extern const struct CCAppDelegateDefines
     __unsafe_unretained NSString *notificationOnBackToForeground;
 
 } CCAppDelegateDefines;
+
+extern const struct CCScreenTitles {
+    __unsafe_unretained NSString *stateScreenTitle;
+} CCScreenTitles;

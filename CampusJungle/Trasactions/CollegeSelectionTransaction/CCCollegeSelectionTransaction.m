@@ -19,6 +19,7 @@
     
     CCCollegeSelectionController *collegeSelectionController = [CCCollegeSelectionController new];
     collegeSelectionController.cityID = [object cityID];
+    collegeSelectionController.title = [object name];
     CCEducationCreationTransaction *educationTransaction = [CCEducationCreationTransaction new];
     educationTransaction.arrayOfColleges = self.arrayOfColleges;
     educationTransaction.navigation = self.navigation;

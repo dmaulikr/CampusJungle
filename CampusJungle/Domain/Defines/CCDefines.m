@@ -107,3 +107,7 @@ const struct CCResponseKeys CCResponseKeys = {
 const struct CCAppDelegateDefines CCAppDelegateDefines = {
     .notificationOnBackToForeground = @"ApplicationDidReturnToForeground",
 };
+
+const struct CCScreenTitles CCScreenTitles = {
+    .stateScreenTitle = @"Select State",
+};
