@@ -230,8 +230,9 @@
     [self setAuthorizationToken];
     
     NSDictionary *parametersArray =  @{@"professor":class.professor,@"subject":class.subject,@"timetable":class.timetable,@"semester":@"2"};
+    
     [objectManager postObject:nil
-                         path:[NSString stringWithFormat:@"/api/colleges/%@/classes",class.collegeID]
+                         path:[NSString stringWithFormat:CCAPIDefines.createClass,class.collegeID]
                    parameters:parametersArray
                       success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                           successHandler(mappingResult);

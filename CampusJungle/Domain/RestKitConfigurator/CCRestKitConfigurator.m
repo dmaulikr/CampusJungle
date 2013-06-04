@@ -44,6 +44,7 @@
     }];
     
     [CCRestKitConfigurator configureUserResponse:objectManager];
+    [CCRestKitConfigurator configureClassResponce:objectManager];
     [CCRestKitConfigurator configurePaginationResponse:objectManager];
     [CCRestKitConfigurator configureFacebookLinking:objectManager];
 
@@ -141,9 +142,9 @@
 
 +(void)configureClassResponce:(RKObjectManager *)objectManager
 {
-    RKObjectMapping* userResponseMapping = [RKObjectMapping mappingForClass:[CCClass class]];
+    RKObjectMapping* classResponseMapping = [RKObjectMapping mappingForClass:[CCClass class]];
     
-    [userResponseMapping addAttributeMappingsFromDictionary:@{
+    [classResponseMapping addAttributeMappingsFromDictionary:@{
      @"professor" : @"professor",
      @"timetable" : @"timetable",
      @"subject" : @"subject",
@@ -151,17 +152,25 @@
      }];
         
     
-    RKObjectMapping *userRequestMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
-    [userRequestMapping addAttributeMappingsFromDictionary:@{
+    RKObjectMapping *classRequestMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    [classRequestMapping addAttributeMappingsFromDictionary:@{
      @"professor" : @"professor",
      @"timetable" : @"timetable",
      @"subject" : @"subject",
      @"semester" : @"semester",
      }];
-   
     
-    RKRequestDescriptor *userRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:userRequestMapping objectClass:[CCUser class] rootKeyPath:nil];
-    [objectManager addRequestDescriptor:userRequestDescriptor];
+    RKRelationshipMapping* relationShipResponseClassMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"class"
+                                                                                                         toKeyPath:@"class"
+                                                                                                       withMapping:classResponseMapping];
+    
+    RKRequestDescriptor *classRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:classRequestMapping objectClass:[CCClass class] rootKeyPath:nil];
+    
+    NSString *classPathPatern = [NSString stringWithFormat:CCAPIDefines.createClass,@":college_id"];
+    RKResponseDescriptor *responseClasses = [RKResponseDescriptor responseDescriptorWithMapping:classResponseMapping pathPattern:classPathPatern keyPath:@"class" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    [objectManager addResponseDescriptor:responseClasses];
+    [objectManager addRequestDescriptor:classRequestDescriptor];
     
 }
 

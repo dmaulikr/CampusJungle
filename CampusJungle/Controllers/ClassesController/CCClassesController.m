@@ -52,7 +52,8 @@
     class.semester = @"2";
     class.timetable = @[@{@"day":@"Tue", @"time":@"23:00"}];
     
-    [self.ioc_apiProvider createClass:class successHandler:^(CCUser *user) {
+    [self.ioc_apiProvider createClass:class successHandler:^(CCClass *newClass) {
+        NSLog(@"newClass %@", newClass);
         
     } errorHandler:^(NSError *error) {
 

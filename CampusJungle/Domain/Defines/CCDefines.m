@@ -18,7 +18,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .colleges = @"/api/cities/%@/colleges",
     .linkFacebook = @"/api/users/me/authentications",
     .updateUser = @"/api/users/me",
-    .createClass = @"/api/colleges/",
+    .createClass = @"/api/colleges/%@/classes",
     .emptyAvatarPath = @"/public",
     .currentUserInfo = @"/api/users/me",
 };
