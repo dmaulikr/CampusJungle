@@ -14,6 +14,7 @@
 
 @property (nonatomic, weak) IBOutlet UITableView *mainTable;
 @property (nonatomic, strong) CCCommonDataSource *dataSource;
+@property (nonatomic, strong) Class dataSourceClass;
 
 - (void)configTableWithProvider:(CCBaseDataProvider *)provider cellClass:(Class)cellCass;
 

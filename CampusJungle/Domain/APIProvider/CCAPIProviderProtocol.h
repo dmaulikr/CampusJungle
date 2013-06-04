@@ -29,13 +29,11 @@
 
 
 - (void)createClass:(CCClass *)class successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
-- (void)updateUser:(CCUser *)user avatarImage:(UIImage *)avatar successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)updateUser:(CCUser *)user withAvatarImage:(UIImage *)avatar successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 
 - (void)createCity:(NSString *)cityName stateID:(NSNumber *)stateID SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 
 - (void)createCollege:(NSString *)collegeName cityID:(NSNumber *)cityID address:(NSString *)addess SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
-
-- (void)updateUser:(CCUser *)user withAvatarImage:(UIImage *)avatarImage SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 
 - (void)loadUserInfoSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 
