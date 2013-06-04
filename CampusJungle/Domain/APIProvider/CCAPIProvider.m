@@ -120,7 +120,7 @@
     }];
 }
 
-- (void)linkUserWithUserInfo:(NSDictionary *)userInfo SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+- (void)linkUserWithUserInfo:(NSDictionary *)userInfo successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [self setAuthorizationToken];
@@ -135,7 +135,7 @@
                      }];
 }
 
-- (void)updateUser:(CCUser *)user SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+- (void)updateUser:(CCUser *)user successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [self setAuthorizationToken];
@@ -148,6 +148,23 @@
                      } failure:^(RKObjectRequestOperation *operation, NSError *error) {
                          errorHandler(error);
                 }];
+}
+
+- (void)createClass:(CCClass *)class successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [self setAuthorizationToken];
+    
+    NSDictionary *parametersArray =  @{@"professor":class.professor,@"subject":class.subject,@"timetable":class.timetable,@"semester":@"2"};
+    [objectManager postObject:nil
+                         path:[NSString stringWithFormat:@"/api/colleges/%@/classes",class.collegeID]
+                   parameters:parametersArray
+                      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                          successHandler(mappingResult);
+                      }
+                      failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                           errorHandler(error);
+                      }];
 }
 
 @end

@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CCClassTableDataSorce : NSObject
+@interface CCClassTableDataSource : NSObject
 
 @end

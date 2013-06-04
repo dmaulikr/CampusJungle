@@ -16,6 +16,7 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *colleges;
     __unsafe_unretained NSString *linkFacebook;
     __unsafe_unretained NSString *updateUser;
+    __unsafe_unretained NSString *createClass;
 } CCAPIDefines;
 
 

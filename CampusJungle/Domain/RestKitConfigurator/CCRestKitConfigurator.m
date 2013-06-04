@@ -17,6 +17,7 @@
 #import "CCState.h"
 #import "CCCity.h"
 #import "CCCollege.h"
+#import "CCClass.h"
 
 @implementation CCRestKitConfigurator
 
@@ -117,6 +118,32 @@
                                                                                                          toKeyPath:@"educations"
                                                                                                        withMapping:educationRequestMapping];
     [userRequestMapping addPropertyMapping:relationShipRequestEducationMapping];
+    
+    RKRequestDescriptor *userRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:userRequestMapping objectClass:[CCUser class] rootKeyPath:nil];
+    [objectManager addRequestDescriptor:userRequestDescriptor];
+    
+}
+
++(void)configureClassResponce:(RKObjectManager *)objectManager
+{
+    RKObjectMapping* userResponseMapping = [RKObjectMapping mappingForClass:[CCClass class]];
+    
+    [userResponseMapping addAttributeMappingsFromDictionary:@{
+     @"professor" : @"professor",
+     @"timetable" : @"timetable",
+     @"subject" : @"subject",
+     @"semester" : @"semester",
+     }];
+        
+    
+    RKObjectMapping *userRequestMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    [userRequestMapping addAttributeMappingsFromDictionary:@{
+     @"professor" : @"professor",
+     @"timetable" : @"timetable",
+     @"subject" : @"subject",
+     @"semester" : @"semester",
+     }];
+   
     
     RKRequestDescriptor *userRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:userRequestMapping objectClass:[CCUser class] rootKeyPath:nil];
     [objectManager addRequestDescriptor:userRequestDescriptor];

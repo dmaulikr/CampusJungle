@@ -115,7 +115,7 @@
     updatedUser.lastName = self.lastNameField.text;
     updatedUser.email = self.emailField.text;
     updatedUser.educations = self.arrayOfColleges;
-    [self.ioc_apiProvider updateUser:updatedUser SuccessHandler:^(CCUser *user) {
+    [self.ioc_apiProvider updateUser:updatedUser successHandler:^(CCUser *user) {
 
         [self setupUserInfo];
         user.token = [self.ioc_userSession.currentUser token];
