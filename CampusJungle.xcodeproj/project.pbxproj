@@ -53,6 +53,7 @@
 		A7A618AF175CD7B30047C5B2 /* CCClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A618AE175CD7B30047C5B2 /* CCClass.m */; };
 		A7A618B5175DD0B60047C5B2 /* CCCreateClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A618B3175DD0B60047C5B2 /* CCCreateClassController.m */; };
 		A7A618B6175DD0B60047C5B2 /* CCCreateClassController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A618B4175DD0B60047C5B2 /* CCCreateClassController.xib */; };
+		A7A618BA175E047F0047C5B2 /* CCClassesApiProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A618B9175E047F0047C5B2 /* CCClassesApiProvider.m */; };
 		A7D539CD175615A300FE9FCD /* CCSideMenuDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D539CC175615A300FE9FCD /* CCSideMenuDataSource.m */; };
 		A7D539D617563D6D00FE9FCD /* CCClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D539D417563D6D00FE9FCD /* CCClassViewController.m */; };
 		A7D539D717563D6D00FE9FCD /* CCClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7D539D517563D6D00FE9FCD /* CCClassViewController.xib */; };
@@ -202,6 +203,9 @@
 		A7A618B2175DD0B60047C5B2 /* CCCreateClassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCCreateClassController.h; path = CreateClassController/CCCreateClassController.h; sourceTree = "<group>"; };
 		A7A618B3175DD0B60047C5B2 /* CCCreateClassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCCreateClassController.m; path = CreateClassController/CCCreateClassController.m; sourceTree = "<group>"; };
 		A7A618B4175DD0B60047C5B2 /* CCCreateClassController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CCCreateClassController.xib; path = CreateClassController/CCCreateClassController.xib; sourceTree = "<group>"; };
+		A7A618B8175E047F0047C5B2 /* CCClassesApiProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCClassesApiProvider.h; path = ClassesApiProvider/CCClassesApiProvider.h; sourceTree = "<group>"; };
+		A7A618B9175E047F0047C5B2 /* CCClassesApiProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCClassesApiProvider.m; path = ClassesApiProvider/CCClassesApiProvider.m; sourceTree = "<group>"; };
+		A7A618BB175E04BF0047C5B2 /* CCClassesApiProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCClassesApiProviderProtocol.h; path = ClassesApiProvider/CCClassesApiProviderProtocol.h; sourceTree = "<group>"; };
 		A7D539CB175615A300FE9FCD /* CCSideMenuDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCSideMenuDataSource.h; path = SideMenuDataSource/CCSideMenuDataSource.h; sourceTree = "<group>"; };
 		A7D539CC175615A300FE9FCD /* CCSideMenuDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCSideMenuDataSource.m; path = SideMenuDataSource/CCSideMenuDataSource.m; sourceTree = "<group>"; };
 		A7D539D317563D6D00FE9FCD /* CCClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCClassViewController.h; path = ClassController/CCClassViewController.h; sourceTree = "<group>"; };
@@ -487,6 +491,7 @@
 		A787C74F17536F8400824DEA /* APIProvider */ = {
 			isa = PBXGroup;
 			children = (
+				A7A618B7175E04490047C5B2 /* ClassesApiProvider */,
 				A787C75017536F8400824DEA /* CCAPIProvider.h */,
 				A787C75117536F8400824DEA /* CCAPIProvider.m */,
 				A787C75217536F8400824DEA /* CCAPIProviderProtocol.h */,
@@ -780,6 +785,16 @@
 				A7A618B4175DD0B60047C5B2 /* CCCreateClassController.xib */,
 			);
 			name = CreateClassController;
+			sourceTree = "<group>";
+		};
+		A7A618B7175E04490047C5B2 /* ClassesApiProvider */ = {
+			isa = PBXGroup;
+			children = (
+				A7A618B8175E047F0047C5B2 /* CCClassesApiProvider.h */,
+				A7A618B9175E047F0047C5B2 /* CCClassesApiProvider.m */,
+				A7A618BB175E04BF0047C5B2 /* CCClassesApiProviderProtocol.h */,
+			);
+			name = ClassesApiProvider;
 			sourceTree = "<group>";
 		};
 		A7D539CA1756157900FE9FCD /* SideMenuDataSource */ = {
@@ -1416,6 +1431,7 @@
 				A7A618AF175CD7B30047C5B2 /* CCClass.m in Sources */,
 				D3AB6B5F175CEE0400097E21 /* CCUserEducationsDataSource.m in Sources */,
 				A7A618B5175DD0B60047C5B2 /* CCCreateClassController.m in Sources */,
+				A7A618BA175E047F0047C5B2 /* CCClassesApiProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,11 +9,12 @@
 #import "CCClassesController.h"
 #import "CCClassesDataProvider.h"
 #import "CCOrdinaryCell.h"
+#import "CCClassesApiProviderProtocol.h"
 
 
 @interface CCClassesController ()<CellSelectionProtocol>
 @property (nonatomic, strong) CCClassesDataProvider *dataProvider;
-@property (nonatomic, strong) id <CCAPIProviderProtocol> ioc_apiProvider;
+@property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_apiClassesProvider;
 
 @end
 
@@ -52,9 +53,8 @@
     class.semester = @"2";
     class.timetable = @[@{@"day":@"Tue", @"time":@"23:00"}];
     
-    [self.ioc_apiProvider createClass:class successHandler:^(CCClass *newClass) {
+    [self.ioc_apiClassesProvider createClass:class successHandler:^(CCClass *newClass) {
         NSLog(@"newClass %@", newClass);
-        
     } errorHandler:^(NSError *error) {
 
     }];

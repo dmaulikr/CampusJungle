@@ -10,4 +10,6 @@
 
 @interface CCAPIProvider : NSObject<CCAPIProviderProtocol>
 
+- (void)setAuthorizationToken;
+
 @end

@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "CCUser.h"
-#import "CCClass.h"
 #import "CCTypesDefinition.h"
 
 @protocol CCAPIProviderProtocol <AppleGuiceInjectable,AppleGuiceSingleton>
@@ -27,8 +26,6 @@
 
 - (void)linkUserWithUserInfo:(NSDictionary *)userInfo successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 
-
-- (void)createClass:(CCClass *)class successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 - (void)updateUser:(CCUser *)user withAvatarImage:(UIImage *)avatar successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 
 - (void)createCity:(NSString *)cityName stateID:(NSNumber *)stateID SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
