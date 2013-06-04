@@ -15,9 +15,9 @@
 @property (nonatomic, strong) id <CCTransaction> logoutTransaction;
 @property (nonatomic, strong) id <CCTransaction> addColegeTransaction;
 
-@property (nonatomic, strong) NSMutableArray *arrayOfColleges;
+@property (nonatomic, strong) NSMutableArray *arrayOfEducations;
 
 - (IBAction)logout;
-
+- (IBAction)avatarDidPressed;
 
 @end

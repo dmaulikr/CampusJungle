@@ -10,12 +10,12 @@
 
 @protocol CCLoginAPIProviderProtocol <AppleGuiceInjectable>
 
-- (void)performLoginOperationViaFacebookWithSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)performLoginOperationViaFacebookWithSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler facebookSessionCreate:(successHandler)reactionOnFacebookSessionCreate;
 
 - (void)performLoginOperationViaTwitterWithUserInfo:(NSDictionary *)userDictionary SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 
 - (void)performLoginOperationWithUserInfo:(NSDictionary *)userInfo successHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler;
 
-- (void)linkWithFacebookSuccessHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)linkWithFacebookSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler facebookSessionCreate:(successHandler)reactionOnFacebookSessionCreate;
 
 @end

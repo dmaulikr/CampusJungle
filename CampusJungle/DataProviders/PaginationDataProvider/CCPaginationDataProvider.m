@@ -8,6 +8,7 @@
 
 #import "CCPaginationDataProvider.h"
 #import "CCPaginationResponse.h"
+#import "CCDefines.h"
 
 #define firstPage 1
 
@@ -18,9 +19,9 @@
     self.currentPage = firstPage;
     self.isCurrentlyLoad = YES;
     [self loadItemsForPageNumber:self.currentPage successHandler:^(id responseObject) {
-        CCPaginationResponse *response = responseObject;
-        self.totalNumber = response.count.longValue;
-        self.arrayOfItems = response.items;
+        NSDictionary *response = responseObject;
+        self.totalNumber = [response[CCResponseKeys.count] longValue];
+        self.arrayOfItems = response[CCResponseKeys.items];
         self.isEverythingLoaded = [self checkIsComplete];
         [self.targetTable reloadData];
  
@@ -34,8 +35,8 @@
     if(!self.isCurrentlyLoad && !self.isEverythingLoaded){
         self.isCurrentlyLoad = YES;
         [self loadItemsForPageNumber:self.currentPage successHandler:^(id responseObject) {
-            CCPaginationResponse *response = responseObject;
-            self.arrayOfItems = [self.arrayOfItems arrayByAddingObjectsFromArray: response.items];
+            NSDictionary *response = responseObject;
+            self.arrayOfItems = [self.arrayOfItems arrayByAddingObjectsFromArray: response[CCResponseKeys.items]];
             self.isEverythingLoaded = [self checkIsComplete];
             
             [self.targetTable reloadData];

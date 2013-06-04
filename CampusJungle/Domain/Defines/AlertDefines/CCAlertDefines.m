@@ -18,6 +18,9 @@ const struct CCAlertsMessages CCAlertsMessages = {
     .wrongEmailOfPassword = @"Wrong email or password",
     .authorizationFaild = @"Authorization Faild",
     .confimAlert = @"Are you sure?",
+    .emailNotValid = @"Email not valid",
+    .firstNameNotValid = @"First name can not be empty",
+    .lastNameNotValid = @"Last name can not be empty",
 };
 
 const struct CCAlertsButtons CCAlertsButtons = {

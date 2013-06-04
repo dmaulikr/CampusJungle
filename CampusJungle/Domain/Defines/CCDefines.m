@@ -19,6 +19,8 @@ const struct CCAPIDefines CCAPIDefines = {
     .linkFacebook = @"/api/users/me/authentications",
     .updateUser = @"/api/users/me",
     .createClass = @"/api/colleges/",
+    .emptyAvatarPath = @"/public",
+    .currentUserInfo = @"/api/users/me",
 };
 
 
@@ -94,4 +96,14 @@ const struct CCErrorKeys CCErrorKeys = {
 
 const struct CCTableDefines CCTableDefines = {
     .tableCellIdentifier = @"CellIdentifier"
+};
+
+const struct CCResponseKeys CCResponseKeys = {
+    .item = @"item",
+    .items = @"items",
+    .count = @"count",
+};
+
+const struct CCAppDelegateDefines CCAppDelegateDefines = {
+    .notificationOnBackToForeground = @"ApplicationDidReturnToForeground",
 };
