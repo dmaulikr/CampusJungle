@@ -10,3 +10,4 @@ pod "JSONKit"
 pod "UIAlertView-Blocks"
 pod "SHOmniAuthTwitter"
 pod 'BlocksKit'
+pod 'TPKeyboardAvoiding'

@@ -9,8 +9,7 @@
 #import "CCEducationCreationController.h"
 #import "CCEducation.h"
 #define animationDuration 0.3
-#define beginDate 2010
-#define numberOfYears 20
+#define numberOfYears 10
 
 @interface CCEducationCreationController ()<UIPickerViewDataSource, UIPickerViewDelegate>
 
@@ -18,6 +17,7 @@
 @property (nonatomic, weak) IBOutlet UISegmentedControl *segmentedControl;
 @property (nonatomic, weak) IBOutlet UIView *pickerController;
 @property (nonatomic, weak) IBOutlet UIPickerView *picker;
+@property (nonatomic) NSInteger currentYear;
 
 @end
 
@@ -36,6 +36,13 @@
                                                                             action:@selector(done)];
     self.pickerController.frame = CGRectMake(0, self.view.frame.size.height - self.pickerController.frame.size.height, self.view.frame.size.width, self.pickerController.frame.size.height);
     self.collegeLabel.text = self.collegeName;
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy"];
+    NSString *yearString = [formatter stringFromDate:[NSDate date]];
+    int year;
+    [[[NSScanner alloc] initWithString:yearString] scanInteger:&year];
+    self.currentYear = year;
     [self.view addSubview: self.pickerController];
     [self showPicker];
 }
@@ -72,7 +79,7 @@
     education.collegeName = self.collegeName;
     if(self.segmentedControl.selectedSegmentIndex == 0){
         education.status = @"student";
-        education.graduationDate = [NSString stringWithFormat:@"%d",[self.picker selectedRowInComponent:0] + beginDate];
+        education.graduationDate = [NSString stringWithFormat:@"%d",[self.picker selectedRowInComponent:0] + self.currentYear];
     } else {
         education.status = @"professor";
     }
@@ -94,7 +101,7 @@
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     
-    return [NSString stringWithFormat:@"%d",(beginDate + row)];
+    return [NSString stringWithFormat:@"%d",(self.currentYear + row)];
 }
 
 

@@ -37,6 +37,7 @@ PODS:
     - SHOmniAuth (~> 0.1.0)
     - TWReverseAuth (~> 0.1.0)
   - SOCKit (1.1)
+  - TPKeyboardAvoiding (0.0.1)
   - TransitionKit (1.1.0)
   - TWReverseAuth (0.1.0):
     - LUKeychainAccess (~> 1.0.1)
@@ -53,6 +54,7 @@ DEPENDENCIES:
   - MBProgressHUD
   - RestKit
   - SHOmniAuthTwitter
+  - TPKeyboardAvoiding
   - UIAlertView-Blocks
 
 EXTERNAL SOURCES:
@@ -77,6 +79,7 @@ SPEC CHECKSUMS:
   SHOmniAuth: afd6278ea528acc0569bdee94c2185b03457b357
   SHOmniAuthTwitter: f9966ce5804386453618102e610d0fbf940db660
   SOCKit: ed67aeeca4a697b63a933229e53f4670d5b9300f
+  TPKeyboardAvoiding: 7289409b17dc2193a3f324672283c542f17c1bb1
   TransitionKit: 1624e84f252d5cd26900be28ccb73c69fbe63f8a
   TWReverseAuth: d0e6e2d534377f1832c2553ff4e9d677d549e45a
   UIAlertView-Blocks: 7689ad7dd941417e7a7da81507482bc6f4f15bcd

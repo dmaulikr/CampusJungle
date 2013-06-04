@@ -115,24 +115,14 @@
 
 - (BOOL)isEducations:(NSArray *)firstArray equalTo:(NSArray *)secondArray
 {
-
     if (firstArray.count != secondArray.count){
         return NO;
     }
     for(int i = 0; i < firstArray.count; i++){
-        CCEducation *objectFromFirstArray = firstArray[i];
-        CCEducation *objectFromSecondArray = secondArray[i];
-        if(![objectFromFirstArray.graduationDate isEqualToString:objectFromSecondArray.graduationDate] && (objectFromFirstArray.graduationDate || objectFromSecondArray.graduationDate) ){
-            return NO;
-        }
-        if(![objectFromFirstArray.collegeName isEqualToString:objectFromSecondArray.collegeName]){
-            return NO;
-        }
-        if(![objectFromFirstArray.collegeID.stringValue isEqualToString:objectFromSecondArray.collegeID.stringValue]){
+        if (![(CCEducation *)firstArray[i] isEqualToEducation:secondArray[i]]){
             return NO;
         }
     }
-    
     return YES;
 }
 
