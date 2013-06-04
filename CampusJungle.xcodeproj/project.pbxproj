@@ -67,6 +67,8 @@
 		D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39F1C161753C0E8008E08A2 /* Accounts.framework */; };
 		D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A2C3241754C95700989831 /* MessageUI.framework */; };
 		D3A2C32A1754D6BB00989831 /* CCTwitterPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A2C3291754D6BB00989831 /* CCTwitterPicker.m */; };
+		D3AB6B5F175CEE0400097E21 /* CCUserEducationsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D3AB6B5E175CEE0400097E21 /* CCUserEducationsDataSource.m */; };
+		D3AB6B61175CFA8100097E21 /* CCEducationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3AB6B60175CFA8100097E21 /* CCEducationCell.xib */; };
 		D3EFD22A1755FC9500B7D710 /* CCCitySelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD2281755FC9500B7D710 /* CCCitySelectionController.m */; };
 		D3EFD22B1755FC9500B7D710 /* CCCitySelectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3EFD2291755FC9500B7D710 /* CCCitySelectionController.xib */; };
 		D3EFD22F1755FCE200B7D710 /* CCStateSelectionConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD22D1755FCE200B7D710 /* CCStateSelectionConroller.m */; };
@@ -207,6 +209,9 @@
 		D3A2C3241754C95700989831 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D3A2C3281754D6BB00989831 /* CCTwitterPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTwitterPicker.h; sourceTree = "<group>"; };
 		D3A2C3291754D6BB00989831 /* CCTwitterPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTwitterPicker.m; sourceTree = "<group>"; };
+		D3AB6B5D175CEE0400097E21 /* CCUserEducationsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUserEducationsDataSource.h; sourceTree = "<group>"; };
+		D3AB6B5E175CEE0400097E21 /* CCUserEducationsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUserEducationsDataSource.m; sourceTree = "<group>"; };
+		D3AB6B60175CFA8100097E21 /* CCEducationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCEducationCell.xib; sourceTree = "<group>"; };
 		D3EFD2271755FC9500B7D710 /* CCCitySelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCitySelectionController.h; sourceTree = "<group>"; };
 		D3EFD2281755FC9500B7D710 /* CCCitySelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCitySelectionController.m; sourceTree = "<group>"; };
 		D3EFD2291755FC9500B7D710 /* CCCitySelectionController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCCitySelectionController.xib; sourceTree = "<group>"; };
@@ -783,6 +788,7 @@
 		D37A47571757864200E91850 /* EducationCell */ = {
 			isa = PBXGroup;
 			children = (
+				D3AB6B60175CFA8100097E21 /* CCEducationCell.xib */,
 				D37A4758175786D200E91850 /* CCEducationCell.h */,
 				D37A4759175786D200E91850 /* CCEducationCell.m */,
 			);
@@ -810,6 +816,7 @@
 		D3A2C31F1754AD9400989831 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				D3AB6B5C175CEDD300097E21 /* UserEducationsTableDataSource */,
 				A7D539D817563FB200FE9FCD /* ClassTableDataSorce */,
 				A7D539CA1756157900FE9FCD /* SideMenuDataSource */,
 				D3EFD246175627DD00B7D710 /* CommonTableDataSource */,
@@ -839,6 +846,15 @@
 				D3A2C3291754D6BB00989831 /* CCTwitterPicker.m */,
 			);
 			path = TwitterPicker;
+			sourceTree = "<group>";
+		};
+		D3AB6B5C175CEDD300097E21 /* UserEducationsTableDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				D3AB6B5D175CEE0400097E21 /* CCUserEducationsDataSource.h */,
+				D3AB6B5E175CEE0400097E21 /* CCUserEducationsDataSource.m */,
+			);
+			path = UserEducationsTableDataSource;
 			sourceTree = "<group>";
 		};
 		D3EFD2251755FC6200B7D710 /* CitySelectionScreen */ = {
@@ -1147,6 +1163,7 @@
 				D3EFD27C17567F7D00B7D710 /* CCCollegeSelectionController.xib in Resources */,
 				D3EFD28E1756975200B7D710 /* CCEducationCreationController.xib in Resources */,
 				A7D53A151757F70700FE9FCD /* CCSideMenuController.xib in Resources */,
+				D3AB6B61175CFA8100097E21 /* CCEducationCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1251,6 +1268,7 @@
 				A7D53A0F1757F10700FE9FCD /* CCSideMenuDataProvider.m in Sources */,
 				A7D53A131757F2BD00FE9FCD /* CCOrdinaryCell.m in Sources */,
 				A7D53A191757F8D500FE9FCD /* CCMenuDefines.m in Sources */,
+				D3AB6B5F175CEE0400097E21 /* CCUserEducationsDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

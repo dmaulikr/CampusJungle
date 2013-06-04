@@ -8,7 +8,6 @@
 
 #import "CCUserProfile.h"
 #import "CCUserSessionProtocol.h"
-#import "UIAlertView+Blocks.h"
 #import "CCAlertDefines.h"
 #import "CCDefines.h"
 #import "CCEducationCell.h"
@@ -20,6 +19,7 @@
 #import "UIActionSheet+BlocksKit.h"
 #import "UIAlertView+BlocksKit.h"
 #import "CCEducation.h"
+#import "CCUserEducationsDataSource.h"
 
 #define animationDuration 0.4
 
@@ -100,22 +100,49 @@
     self.lastName.text = [[self.ioc_userSession currentUser] lastName];
     self.email.text = [[self.ioc_userSession currentUser] email];
     
-    [self.arrayOfEducations removeAllObjects];
-    for (CCEducation * education in self.ioc_userSession.currentUser.educations){
-        [self.arrayOfEducations addObject:education];
+
+    if(![self isEducations:self.arrayOfEducations equalTo:self.ioc_userSession.currentUser.educations]){
+        [self.arrayOfEducations removeAllObjects];
+        [self.arrayOfEducations addObjectsFromArray:self.ioc_userSession.currentUser.educations];
+        [self.dataProvider loadItems];
     }
-    [self.dataProvider loadItems];
+    
     if(![[[self.ioc_userSession currentUser] avatar] isEqualToString:CCAPIDefines.emptyAvatarPath]){
         NSString *avatarURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,[[self.ioc_userSession currentUser] avatar]];
         [self.avatar setImageWithURL:[NSURL URLWithString:avatarURL]];
     }
 }
 
+- (BOOL)isEducations:(NSArray *)firstArray equalTo:(NSArray *)secondArray
+{
+
+    if (firstArray.count != secondArray.count){
+        return NO;
+    }
+    for(int i = 0; i < firstArray.count; i++){
+        CCEducation *objectFromFirstArray = firstArray[i];
+        CCEducation *objectFromSecondArray = secondArray[i];
+        if(![objectFromFirstArray.graduationDate isEqualToString:objectFromSecondArray.graduationDate]){
+            return NO;
+        }
+        if(![objectFromFirstArray.collegeName isEqualToString:objectFromSecondArray.collegeName]){
+            return NO;
+        }
+        if(![objectFromFirstArray.collegeID.stringValue isEqualToString:objectFromSecondArray.collegeID.stringValue]){
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
 - (void)configTable
 {
+    self.dataSourceClass = [CCUserEducationsDataSource class];
     self.dataProvider = [CCEducationsDataProvider new];
     self.dataProvider.arrayOfEducations = self.arrayOfEducations;
     [self configTableWithProvider:self.dataProvider cellClass:[CCEducationCell class]];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -127,10 +154,11 @@
 - (IBAction)logout
 {
     UIAlertView *testView = [UIAlertView alertViewWithTitle:nil message:CCAlertsMessages.confimAlert];
+    [testView addButtonWithTitle:CCAlertsButtons.noButton handler:nil];
     [testView addButtonWithTitle:CCAlertsButtons.yesButton handler:^{
         [self.logoutTransaction perform];
     }];
-	[testView addButtonWithTitle:CCAlertsButtons.noButton handler:nil];
+	
 	[testView show];
 }
 
@@ -230,6 +258,8 @@
 
 - (void)becomeEditable
 {
+    [self.mainTable setEditing:YES animated:YES];
+    
     self.isEditable = YES;
     self.firstNameField.text = self.firstName.text;
     self.lastNameField.text = self.lastName.text;
@@ -249,6 +279,7 @@
 
 - (void)becomeNotEditable
 {
+    [self.mainTable setEditing:NO animated:YES];
     self.isEditable = NO;
     [self.view endEditing:YES];
     
