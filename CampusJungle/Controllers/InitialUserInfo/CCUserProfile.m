@@ -122,7 +122,7 @@
     for(int i = 0; i < firstArray.count; i++){
         CCEducation *objectFromFirstArray = firstArray[i];
         CCEducation *objectFromSecondArray = secondArray[i];
-        if(![objectFromFirstArray.graduationDate isEqualToString:objectFromSecondArray.graduationDate]){
+        if(![objectFromFirstArray.graduationDate isEqualToString:objectFromSecondArray.graduationDate] && (objectFromFirstArray.graduationDate || objectFromSecondArray.graduationDate) ){
             return NO;
         }
         if(![objectFromFirstArray.collegeName isEqualToString:objectFromSecondArray.collegeName]){

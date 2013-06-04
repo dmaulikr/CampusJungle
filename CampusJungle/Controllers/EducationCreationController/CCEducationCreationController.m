@@ -71,12 +71,13 @@
     education.collegeID = self.collegeID;
     education.collegeName = self.collegeName;
     if(self.segmentedControl.selectedSegmentIndex == 0){
-       education.status = @"student";
+        education.status = @"student";
+        education.graduationDate = [NSString stringWithFormat:@"%d",[self.picker selectedRowInComponent:0] + beginDate];
     } else {
-       education.status = @"professor";
+        education.status = @"professor";
     }
     
-    education.graduationDate = [NSString stringWithFormat:@"%d",[self.picker selectedRowInComponent:0] + beginDate];
+
     [self.backToUserTransaction performWithObject:education];
 }
 
