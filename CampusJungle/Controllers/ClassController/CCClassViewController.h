@@ -6,8 +6,13 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CCClass.h"
+#import "CCViewController.h"
 
-@interface CCClassViewController : UIViewController
+@interface CCClassViewController : CCViewController
+
+@property (nonatomic, strong) CCClass *class;
+
+
 
 @end

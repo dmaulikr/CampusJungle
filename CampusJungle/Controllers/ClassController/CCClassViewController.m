@@ -10,6 +10,7 @@
 
 @interface CCClassViewController ()
 
+
 @end
 
 @implementation CCClassViewController

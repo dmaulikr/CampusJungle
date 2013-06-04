@@ -10,6 +10,7 @@
 #import "CCClassesDataProvider.h"
 #import "CCClassCell.h"
 #import "CCClassesApiProviderProtocol.h"
+#import "CCClass.h"
 
 
 @interface CCClassesController ()<CellSelectionProtocol>
@@ -52,7 +53,7 @@
 
 - (void)didSelectedCellWithObject:(id)cellObject
 {
-    [self.classTransaction performWithObject:nil];
+    [self.classTransaction performWithObject:(CCClass*)cellObject];
 }
 
 - (void)addNewClass
