@@ -463,7 +463,7 @@
 		A787C74E17536F8400824DEA /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				D361462E175E17AD00907414 /* DropboxDelegate */,
+				D361462E175E17AD00907414 /* CCDropboxAPIProvider */,
 				A787C74F17536F8400824DEA /* APIProvider */,
 				A787C75317536F8400824DEA /* Defines */,
 				A787C75917536F8400824DEA /* FacebookAPI */,
@@ -810,13 +810,14 @@
 			name = MenuDefines;
 			sourceTree = "<group>";
 		};
-		D361462E175E17AD00907414 /* DropboxDelegate */ = {
+		D361462E175E17AD00907414 /* CCDropboxAPIProvider */ = {
 			isa = PBXGroup;
 			children = (
 				D361462F175E17BE00907414 /* CCDropboxAPIProvider.h */,
 				D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */,
 				D3614632175E18A200907414 /* CCDropboxAPIProviderProtocol.h */,
 			);
+			name = CCDropboxAPIProvider;
 			path = DropboxDelegate;
 			sourceTree = "<group>";
 		};
