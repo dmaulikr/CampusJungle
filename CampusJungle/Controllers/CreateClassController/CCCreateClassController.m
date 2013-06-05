@@ -49,8 +49,8 @@ return self;
     class.callNumber = self.classID.text;
     class.timetable = @[@{@"day":@"Tue", @"time":@"23:00"}];
     
-    [self.ioc_apiClassesProvider createClass:class successHandler:^(CCClass *newClass) {
-        [self joinClass:class];
+    [self.ioc_apiClassesProvider createClass:class successHandler:^(id newClass) {
+        [self joinClass:(CCClass*)newClass];
         
     } errorHandler:^(NSError *error) {
         

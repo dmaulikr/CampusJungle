@@ -30,8 +30,7 @@
 - (void)configTable
 {
     self.dataProvider = [CCSideMenuDataProvider new];
-    self.dataProvider.arrayOfMenuItems = @[CCSideMenuTitles.profile,CCSideMenuTitles.classesScreen];
-
+    self.dataProvider.arrayOfMenuItems = @[CCSideMenuTitles.profile,CCSideMenuTitles.classesScreen,CCSideMenuTitles.dropbox];
     [self configTableWithProvider:self.dataProvider cellClass:[CCOrdinaryCell class]];
 }
 

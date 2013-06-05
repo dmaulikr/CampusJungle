@@ -22,8 +22,8 @@ const struct CCAPIDefines CCAPIDefines = {
     .emptyAvatarPath = @"/public",
     .currentUserInfo = @"/api/users/me",
     .allClasses = @"/api/users/me/classes",
-    .addClass = @"/api/users/me/classes/:class_id",
-    .classesOfCollege = @"/api/colleges/:college_id/classes",
+    .addClass = @"/api/users/me/classes/%@",
+    .classesOfCollege = @"/api/colleges/%@/classes",
 };
 
 const struct CCUserDefines CCUserDefines = {

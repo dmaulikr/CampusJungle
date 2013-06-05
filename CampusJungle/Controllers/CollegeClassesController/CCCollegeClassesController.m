@@ -59,4 +59,9 @@
     
 }
 
+- (void)didSelectedCellWithObject:(id)cellObject
+{
+    
+}
+
 @end

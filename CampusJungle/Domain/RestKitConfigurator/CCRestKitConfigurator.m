@@ -167,11 +167,14 @@
     RKRequestDescriptor *classRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:classRequestMapping objectClass:[CCClass class] rootKeyPath:nil];
     
     NSString *classPathPatern = [NSString stringWithFormat:CCAPIDefines.createClass,@":college_id"];
+    NSString *classesCollegePathPatern = [NSString stringWithFormat:CCAPIDefines.classesOfCollege,@":college_id"];
+    NSString *joinClass = [NSString stringWithFormat:CCAPIDefines.addClass,@":class_id"];
+
     
     
     RKResponseDescriptor *responseNewClassDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:classResponseMapping
                                                                                      pathPattern:classPathPatern
-                                                                                         keyPath:nil
+                                                                                         keyPath:@"class"
                                                                                      statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
     
@@ -180,6 +183,17 @@
                                                                                                         keyPath:@"classes"
                                                                                                     statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
+    RKResponseDescriptor *responseClassesOfCollegeDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:classResponseMapping
+                                                                                                 pathPattern:classesCollegePathPatern
+                                                                                                     keyPath:@"classes"
+                                                                                                 statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    RKResponseDescriptor *responseAddClassDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:classResponseMapping
+                                                                                                       pathPattern:joinClass
+                                                                                                           keyPath:@"classes"
+                                                                                                       statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    [objectManager addResponseDescriptor:responseAddClassDescriptor];
+    [objectManager addResponseDescriptor:responseClassesOfCollegeDescriptor];
     [objectManager addResponseDescriptor:responseNewClassDescriptor];
     [objectManager addResponseDescriptor:responseAllClassesDescriptor];
     [objectManager addRequestDescriptor:classRequestDescriptor];
