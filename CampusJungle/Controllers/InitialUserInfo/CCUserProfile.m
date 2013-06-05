@@ -8,7 +8,6 @@
 
 #import "CCUserProfile.h"
 #import "CCUserSessionProtocol.h"
-#import "CCAlertDefines.h"
 #import "CCDefines.h"
 #import "CCEducationCell.h"
 #import "CCEducationsDataProvider.h"
@@ -18,6 +17,7 @@
 #import "NSString+CJStringValidator.h"
 #import "UIActionSheet+BlocksKit.h"
 #import "UIAlertView+BlocksKit.h"
+#import "CCAlertDefines.h"
 #import "CCEducation.h"
 #import "CCUserEducationsDataSource.h"
 
@@ -205,7 +205,7 @@
         updatedUser.avatar = self.facebookAvatarPath;
     }
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [self.ioc_apiProvider updateUser:updatedUser withAvatarImage:avatarImage SuccessHandler:^(CCUser *user) {
+    [self.ioc_apiProvider updateUser:updatedUser withAvatarImage:avatarImage successHandler:^(CCUser *user) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         successHandler();
         self.isNeedToUploadAvatar = NO;

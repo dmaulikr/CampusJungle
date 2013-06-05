@@ -8,11 +8,13 @@
 
 #import "CCTableBasedController.h"
 #import "CCTransaction.h"
+#import "CCTransactionWithObject.h"
 
 @interface CCSideMenuController : CCTableBasedController
 
 @property (nonatomic, strong) id <CCTransaction> userProfileTransaction;
-@property (nonatomic, strong) id <CCTransaction> classTransaction;
+@property (nonatomic, strong) id <CCTransaction> classesTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> classTransaction;
 @property (nonatomic, strong) id <CCTransaction> dropboxTransaction;
 
 @end

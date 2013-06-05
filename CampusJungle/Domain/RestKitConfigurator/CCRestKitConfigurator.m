@@ -17,6 +17,7 @@
 #import "CCState.h"
 #import "CCCity.h"
 #import "CCCollege.h"
+#import "CCClass.h"
 #import "CCEducation.h"
 
 @implementation CCRestKitConfigurator
@@ -43,6 +44,7 @@
     }];
     
     [CCRestKitConfigurator configureUserResponse:objectManager];
+    [CCRestKitConfigurator configureClassResponce:objectManager];
     [CCRestKitConfigurator configurePaginationResponse:objectManager];
     [CCRestKitConfigurator configureFacebookLinking:objectManager];
 
@@ -135,6 +137,66 @@
     
     RKRequestDescriptor *userRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:userRequestMapping objectClass:[CCUser class] rootKeyPath:nil];
     [objectManager addRequestDescriptor:userRequestDescriptor];
+    
+}
+
++(void)configureClassResponce:(RKObjectManager *)objectManager
+{
+    RKObjectMapping* classResponseMapping = [RKObjectMapping mappingForClass:[CCClass class]];
+    
+    [classResponseMapping addAttributeMappingsFromDictionary:@{
+     @"professor" : @"professor",
+     @"timetable" : @"timetable",
+     @"subject" : @"subject",
+     @"semester" : @"semester",
+     @"call_number":@"callNumber",
+     @"id":@"classID",
+     }];
+        
+    RKObjectMapping *classRequestMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    [classRequestMapping addAttributeMappingsFromDictionary:@{
+     @"professor" : @"professor",
+     @"timetable" : @"timetable",
+     @"subject" : @"subject",
+     @"semester" : @"semester",
+     @"call_number":@"callNumber",
+     @"id":@"classID",
+     }];
+    
+    
+    RKRequestDescriptor *classRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:classRequestMapping objectClass:[CCClass class] rootKeyPath:nil];
+    
+    NSString *classPathPatern = [NSString stringWithFormat:CCAPIDefines.createClass,@":college_id"];
+    NSString *classesCollegePathPatern = [NSString stringWithFormat:CCAPIDefines.classesOfCollege,@":college_id"];
+    NSString *joinClass = [NSString stringWithFormat:CCAPIDefines.addClass,@":class_id"];
+
+    
+    
+    RKResponseDescriptor *responseNewClassDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:classResponseMapping
+                                                                                     pathPattern:classPathPatern
+                                                                                         keyPath:@"class"
+                                                                                     statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    
+    RKResponseDescriptor *responseAllClassesDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:classResponseMapping
+                                                                                                    pathPattern:CCAPIDefines.allClasses
+                                                                                                        keyPath:@"classes"
+                                                                                                    statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    RKResponseDescriptor *responseClassesOfCollegeDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:classResponseMapping
+                                                                                                 pathPattern:classesCollegePathPatern
+                                                                                                     keyPath:@"classes"
+                                                                                                 statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    RKResponseDescriptor *responseAddClassDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:classResponseMapping
+                                                                                                       pathPattern:joinClass
+                                                                                                           keyPath:@"classes"
+                                                                                                       statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    [objectManager addResponseDescriptor:responseAddClassDescriptor];
+    [objectManager addResponseDescriptor:responseClassesOfCollegeDescriptor];
+    [objectManager addResponseDescriptor:responseNewClassDescriptor];
+    [objectManager addResponseDescriptor:responseAllClassesDescriptor];
+    [objectManager addRequestDescriptor:classRequestDescriptor];
     
 }
 

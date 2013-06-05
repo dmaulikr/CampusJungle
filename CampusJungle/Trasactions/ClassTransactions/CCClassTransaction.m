@@ -7,18 +7,17 @@
 //
 
 #import "CCClassTransaction.h"
-#import "CCClassViewController.h"
+#import "CCClassController.h"
 
 @implementation CCClassTransaction
 
-- (void)perform
+- (void)performWithObject:(id)object
 {
-    NSParameterAssert(self.menuController);
-    CCClassViewController *classController = [CCClassViewController new];
+    NSParameterAssert(self.navigation);
+    NSParameterAssert(object);
     
-    UINavigationController *centralNavigation = [[UINavigationController alloc] initWithRootViewController:classController];
-    
-    self.menuController.centerPanel = centralNavigation;
+    CCClassController *classController = [[CCClassController alloc] initWitchClass:object];
+    [self.navigation pushViewController:classController animated:YES];
 }
 
 @end

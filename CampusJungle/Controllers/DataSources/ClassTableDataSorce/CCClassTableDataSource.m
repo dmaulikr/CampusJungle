@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCClassTableDataSorce.h"
+#import "CCClassTableDataSource.h"
 
-@implementation CCClassTableDataSorce
+@implementation CCClassTableDataSource
 
 @end

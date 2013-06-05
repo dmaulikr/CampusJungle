@@ -14,7 +14,8 @@
 #import "CCUserProfileTransaction.h"
 #import "CCSideBarController.h"
 #import "CCClassTransaction.h"
-#import "CCClassViewController.h"
+#import "CCClassController.h"
+#import "CCAllClassesTransaction.h"
 #import "CCDropboxAPIProviderProtocol.h"
 #import "CCDropboxFileSelectionTransaction.h"
 
@@ -40,7 +41,7 @@
 	rootController.leftPanel = leftController;
     rootController.panningLimitedToTopViewController = NO;
     
-    CCClassViewController *centralPanel = [CCClassViewController new];
+    CCClassController *centralPanel = [CCClassController new];
     rootController.centerPanel = [[UINavigationController alloc] initWithRootViewController:centralPanel];
     
     
@@ -52,8 +53,13 @@
     userProfileTransaction.menuController = rootController;
     leftController.userProfileTransaction = userProfileTransaction;
     
+    
+    CCAllClassesTransaction *allClassesTransaction = [CCAllClassesTransaction new];
+    allClassesTransaction.menuController = rootController;
+    leftController.classesTransaction = allClassesTransaction;
+    
+
     CCClassTransaction *classTransaction = [CCClassTransaction new];
-    classTransaction.menuController = rootController;
     leftController.classTransaction = classTransaction;
     
     CCDropboxFileSelectionTransaction *dropboxTranasaction = [CCDropboxFileSelectionTransaction new];

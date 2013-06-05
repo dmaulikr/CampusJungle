@@ -120,7 +120,7 @@
     }];
 }
 
-- (void)linkUserWithUserInfo:(NSDictionary *)userInfo SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+- (void)linkUserWithUserInfo:(NSDictionary *)userInfo successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [self setAuthorizationToken];
@@ -135,7 +135,8 @@
                      }];
 }
 
-- (void)updateUser:(CCUser *)user withAvatarImage:(UIImage *)avatarImage SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+
+- (void)updateUser:(CCUser *)user withAvatarImage:(UIImage *)avatarImage successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
     [self setAuthorizationToken];
     RKObjectManager *objectManager = [RKObjectManager sharedManager];

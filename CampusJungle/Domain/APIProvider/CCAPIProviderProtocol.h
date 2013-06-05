@@ -24,15 +24,13 @@
 
 - (void)loadCollegesInCity:(NSNumber *)cityID NumberOfPage:(NSNumber *)pageNumber query:(NSString *)query successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 
-- (void)linkUserWithUserInfo:(NSDictionary *)userInfo SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)linkUserWithUserInfo:(NSDictionary *)userInfo successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 
-- (void)updateUser:(CCUser *)user avatarImage:(UIImage *)avatar SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)updateUser:(CCUser *)user withAvatarImage:(UIImage *)avatar successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 
 - (void)createCity:(NSString *)cityName stateID:(NSNumber *)stateID SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 
 - (void)createCollege:(NSString *)collegeName cityID:(NSNumber *)cityID address:(NSString *)addess SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
-
-- (void)updateUser:(CCUser *)user withAvatarImage:(UIImage *)avatarImage SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 
 - (void)loadUserInfoSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 

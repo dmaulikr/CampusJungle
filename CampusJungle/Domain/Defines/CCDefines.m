@@ -18,11 +18,13 @@ const struct CCAPIDefines CCAPIDefines = {
     .colleges = @"/api/cities/%@/colleges",
     .linkFacebook = @"/api/users/me/authentications",
     .updateUser = @"/api/users/me",
+    .createClass = @"/api/colleges/%@/classes",
     .emptyAvatarPath = @"/public",
     .currentUserInfo = @"/api/users/me",
-    
+    .allClasses = @"/api/users/me/classes",
+    .addClass = @"/api/users/me/classes/%@",
+    .classesOfCollege = @"/api/colleges/%@/classes",
 };
-
 
 const struct CCUserDefines CCUserDefines = {
     .firstName = @"UserFirstName",

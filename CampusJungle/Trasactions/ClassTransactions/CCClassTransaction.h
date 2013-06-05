@@ -7,10 +7,10 @@
 //
 
 #import "JASidePanelController.h"
-#import "CCTransaction.h"
+#import "CCTransactionWithObject.h"
 
-@interface CCClassTransaction : NSObject<CCTransaction>
+@interface CCClassTransaction : NSObject<CCTransactionWithObject>
 
-@property (nonatomic, strong) JASidePanelController *menuController;
+@property (nonatomic, strong) UINavigationController *navigation;
 
 @end

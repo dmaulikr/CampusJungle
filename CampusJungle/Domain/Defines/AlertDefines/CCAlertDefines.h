@@ -19,8 +19,8 @@ extern const struct CCAlertsMessages {
     __unsafe_unretained NSString *emailNotValid;
     __unsafe_unretained NSString *firstNameNotValid;
     __unsafe_unretained NSString *lastNameNotValid;
+    __unsafe_unretained NSString *createCollege;
     __unsafe_unretained NSString *dropboxLinkingFaild;
-    
 } CCAlertsMessages;
 
 extern const struct CCAlertsButtons {

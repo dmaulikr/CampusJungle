@@ -135,7 +135,7 @@
 
 - (void)linkUserWithUserInfo:(NSDictionary *)userInfo SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
-    [self.ioc_apiProvider linkUserWithUserInfo:userInfo SuccessHandler:successHandler errorHandler:errorHandler];
+    [self.ioc_apiProvider linkUserWithUserInfo:userInfo successHandler:successHandler errorHandler:errorHandler];
 }
 
 @end
