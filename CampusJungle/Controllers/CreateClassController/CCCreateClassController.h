@@ -6,8 +6,11 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CCViewController.h"
 
-@interface CCCreateClassController : UIViewController
+@interface CCCreateClassController : CCViewController
+
+- (id)initWithCollegeID:(NSString*)collegeID;
+
 
 @end

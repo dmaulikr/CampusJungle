@@ -150,6 +150,7 @@
      @"subject" : @"subject",
      @"semester" : @"semester",
      @"call_number":@"callNumber",
+     @"id":@"classID",
      }];
         
     RKObjectMapping *classRequestMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
@@ -159,6 +160,7 @@
      @"subject" : @"subject",
      @"semester" : @"semester",
      @"call_number":@"callNumber",
+     @"id":@"classID",
      }];
     
     

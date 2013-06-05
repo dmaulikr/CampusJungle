@@ -7,25 +7,16 @@
 //
 
 #import "CCDropboxDataProvider.h"
-#import <DropboxSDK/DropboxSDK.h>
 #import "CCDropboxFileInfo.h"
+#import "CCDropboxAPIProviderProtocol.h"
 
-@interface CCDropboxDataProvider()<DBRestClientDelegate>
+@interface CCDropboxDataProvider()
 
-@property (nonatomic, strong) DBRestClient *restClient;
+@property (nonatomic, strong) id <CCDropboxAPIProviderProtocol> ioc_dropboxProvider;
 
 @end
 
 @implementation CCDropboxDataProvider
-
-- (id)init
-{
-    if(self = [super init]){
-        self.restClient = [[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
-        self.restClient.delegate = self;
-    }
-    return self;
-}
 
 - (void)setDropboxPath:(NSString *)dropboxPath
 {
@@ -36,11 +27,16 @@
 - (void)loadItems
 {
     if(self.dropboxPath){
-        [[self restClient] loadMetadata:self.dropboxPath];
+        [self.ioc_dropboxProvider loadMetadataForPath:self.dropboxPath successHandler:^(id response) {
+            [self loadItemsFromMetadata:response];
+        } errorHanler:^(NSError *error) {
+            
+        }];
     }
 }
 
-- (void)restClient:(DBRestClient *)client loadedMetadata:(DBMetadata *)metadata {
+- (void)loadItemsFromMetadata:(DBMetadata *)metadata
+{
     if (metadata.isDirectory) {
         NSMutableArray *arrayOfFiles = [NSMutableArray new];
         for (DBMetadata *file in metadata.contents) {

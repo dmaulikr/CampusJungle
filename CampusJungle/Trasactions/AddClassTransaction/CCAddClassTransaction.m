@@ -7,12 +7,17 @@
 //
 
 #import "CCAddClassTransaction.h"
+#import "CCCreateClassController.h"
 
 @implementation CCAddClassTransaction
 
-- (void)perform
+- (void)performWithObject:(id)object
 {
+    NSParameterAssert(self.navigation);
+    NSParameterAssert(object);
     
+    CCCreateClassController *classesController = [[CCCreateClassController alloc] initWithCollegeID:object];
+    [self.navigation pushViewController:classesController animated:YES];    
 }
 
 @end

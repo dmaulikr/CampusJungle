@@ -17,6 +17,7 @@
 #import "CCAPIProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
 #import "MBProgressHUD.h"
+#import "CCEducation.h"
 
 
 @interface CCClassesController ()<CellSelectionProtocol>
@@ -69,19 +70,7 @@
             [CCStandardErrorHandler showErrorWithError:error];
         }];
 
-//    CCClass *class = [CCClass new];
-//    class.collegeID = @"26556";
-//    class.professor = @"Brad Larson";
-//    class.subject = @"GPUImage";
-//    class.semester = @"2";
-//    class.callNumber = @"CS193p";
-//    class.timetable = @[@{@"day":@"Tue", @"time":@"23:00"}];
-//    
-//    [self.ioc_apiClassesProvider createClass:class successHandler:^(CCClass *newClass) {
-//        NSLog(@"newClass %@", newClass);
-//    } errorHandler:^(NSError *error) {
-//
-//    }];
+
 
 }
 
@@ -90,10 +79,13 @@
     NSArray *colleges = [[self.ioc_userSession currentUser] educations];
     
     switch ([colleges count]) {
-        case 1:
-            [self.selectCollege performWithObject:[[self.ioc_userSession currentUser] educations]];
+        case 1: {
+            NSArray *educations = [[self.ioc_userSession currentUser] educations];
+            CCEducation *education = [educations objectAtIndex:0];
+            [self.selectClass performWithObject:education.collegeID];
+        }
             break;
-        case 0:{
+        case 0: {
             UIAlertView *testView = [UIAlertView alertViewWithTitle:nil message:CCAlertsMessages.createCollege];
             [testView addButtonWithTitle:CCAlertsButtons.noButton handler:nil];
             [testView addButtonWithTitle:CCAlertsButtons.yesButton handler:^{

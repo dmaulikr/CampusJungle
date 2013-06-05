@@ -9,12 +9,13 @@
 #import "CCDropboxCell.h"
 #import <DropboxSDK/DropboxSDK.h>
 #import "CCDropboxFileInfo.h"
+#import "CCDropboxAPIProviderProtocol.h"
 
 @interface CCDropboxCell()<DBRestClientDelegate>
 
 @property (nonatomic, weak) IBOutlet UILabel *fileName;
 @property (nonatomic, weak) IBOutlet UIImageView *fileIcon;
-@property (nonatomic, strong) DBRestClient *restClient;
+@property (nonatomic, strong) id <CCDropboxAPIProviderProtocol> ioc_dropboxAPIProvider;
 
 @end
 
@@ -27,8 +28,6 @@
         self = [[[NSBundle mainBundle] loadNibNamed:@"CCDropboxCell"
                                               owner:self
                                             options:nil] objectAtIndex:0];
-        self.restClient = [[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
-        self.restClient.delegate = self;
     }
     return self;
 }
@@ -41,31 +40,24 @@
     self.fileIcon.image = fileInfo.thumb;
     
     if(!fileInfo.fileData.isDirectory && !fileInfo.directLink){
-        [self.restClient loadStreamableURLForFile:fileInfo.fileData.path];
+       [self.ioc_dropboxAPIProvider loadDirectURLforPath:fileInfo.fileData.path successHandler:^(id result) {
+           fileInfo.directLink = result;
+       } errorHanler:^(NSError *error) {
+           
+       }];
+        
     }
     
     if(fileInfo.fileData.thumbnailExists && !fileInfo.thumb){
-            [self.restClient loadThumbnail:fileInfo.fileData.path ofSize:@"s" intoPath:[NSTemporaryDirectory() stringByAppendingPathComponent:fileInfo.fileData.filename]];
+        [self.ioc_dropboxAPIProvider loadThumbnailForPath:fileInfo.fileData.path successHandler:^(NSDictionary *result) {
+            if ([[[(CCDropboxFileInfo *)self.cellObject fileData] path] isEqual:result[@"path"]]){
+                self.fileIcon.image = result[@"image"];
+            }
+            fileInfo.thumb = result[@"image"];
+        } errorHanler:^(NSError *error) {
+            
+        }];
     }
-}
-
-- (void)restClient:(DBRestClient*)restClient loadedStreamableURL:(NSURL*)url forFile:(NSString*)path
-{
-    CCDropboxFileInfo *fileInfo = (CCDropboxFileInfo *)self.cellObject;
-    if([fileInfo.fileData.path isEqualToString:path]){
-        [self.cellObject setDirectLink: url.absoluteString];
-    }
-}
-
-
-- (void)restClient:(DBRestClient*)restClient loadedThumbnail:(NSString *)destPath metadata:(DBMetadata *)metadata
-{
-    CCDropboxFileInfo *fileInfo = (CCDropboxFileInfo *)self.cellObject;
-    if([fileInfo.fileData.path isEqualToString:metadata.path]){
-        [self.cellObject setThumb: [UIImage imageWithContentsOfFile:destPath]];
-        self.fileIcon.image = fileInfo.thumb;
-    }
- 
 }
 
 

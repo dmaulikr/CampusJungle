@@ -14,6 +14,6 @@
 @property (nonatomic, strong) id <CCTransactionWithObject> classTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> selectCollege;
 @property (nonatomic, strong) id <CCTransaction> userProfileTransaction;
-@property (nonatomic, strong) id <CCTransaction> selectClass;
+@property (nonatomic, strong) id <CCTransactionWithObject> selectClass;
 
 @end

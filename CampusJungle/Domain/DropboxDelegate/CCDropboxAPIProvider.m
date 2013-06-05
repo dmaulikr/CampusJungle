@@ -11,12 +11,15 @@
 #import "CCDefines.h"
 #import "CCDropboxFileInfo.h"
 
-@interface CCDropboxAPIProvider()
+@interface CCDropboxAPIProvider()<DBRestClientDelegate>
 
 @property (nonatomic, strong) NSMutableDictionary *metadataRequests;
 @property (nonatomic, strong) NSMutableDictionary *thumbnailRequests;
 @property (nonatomic, strong) NSMutableDictionary *directURLRequest;
 @property (nonatomic, strong) DBRestClient *restClient;
+
+#define successConsatnt @"success"
+#define errorConsatnt @"error"
 
 @end
 
@@ -28,6 +31,10 @@ static int outstandingRequests;
 {
     if (self = [super init]){
         self.restClient = [[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
+        self.restClient.delegate = self;
+        self.metadataRequests = [NSMutableDictionary new];
+        self.thumbnailRequests = [NSMutableDictionary new];
+        self.directURLRequest = [NSMutableDictionary new];
     }
     return self;
 }
@@ -63,7 +70,8 @@ static int outstandingRequests;
 	session.delegate = self;
 	[DBSession setSharedSession:session];
     [DBRequest setNetworkRequestDelegate:self];
-    //self.restClient = [DB]
+    self.restClient = [[DBRestClient alloc] initWithSession:session];
+    self.restClient.delegate = self;
 }
 
 - (void)linkWithController:(UIViewController *)controller
@@ -83,29 +91,50 @@ static int outstandingRequests;
 
 - (void)loadMetadataForPath:(NSString *)path successHandler:(successWithObject)successHandler errorHanler:(errorHandler)errorHanler
 {
-    [self.metadataRequests setValue:[successHandler copy] forKey:[path stringByAppendingString:@"success"]];
-    [self.metadataRequests setValue:[errorHanler copy] forKey:[path stringByAppendingString:@"error"]];
+    [self.metadataRequests setValue:[successHandler copy] forKey:[path stringByAppendingString:successConsatnt]];
+    [self.metadataRequests setValue:[errorHanler copy] forKey:[path stringByAppendingString:errorConsatnt]];
+    [self.restClient loadMetadata:path];
 }
 
 - (void)loadThumbnailForPath:(NSString *)path successHandler:(successWithObject)successHandler errorHanler:(errorHandler)errorHanler
 {
-    [self.thumbnailRequests setValue:[successHandler copy] forKey:[path stringByAppendingString:@"success"]];
-    [self.thumbnailRequests setValue:[errorHanler copy] forKey:[path stringByAppendingString:@"error"]];
+    [self.thumbnailRequests setValue:[successHandler copy] forKey:[path stringByAppendingString:successConsatnt]];
+    [self.thumbnailRequests setValue:[errorHanler copy] forKey:[path stringByAppendingString:errorConsatnt]];
+    NSString *localFileName = [path stringByReplacingOccurrencesOfString:@"/" withString:@""];
+    [self.restClient loadThumbnail:path ofSize:@"s" intoPath:[NSTemporaryDirectory() stringByAppendingPathComponent:localFileName]];
 }
 
 - (void)loadDirectURLforPath:(NSString *)path successHandler:(successWithObject)successHandler errorHanler:(errorHandler)errorHanler
 {
-    [self.directURLRequest setValue:[successHandler copy] forKey:[path stringByAppendingString:@"success"]];
-    [self.directURLRequest setValue:[errorHanler copy] forKey:[path stringByAppendingString:@"error"]];
+    [self.directURLRequest setValue:[successHandler copy] forKey:[path stringByAppendingString:successConsatnt]];
+    [self.directURLRequest setValue:[errorHanler copy] forKey:[path stringByAppendingString:errorConsatnt]];
+    [self.restClient loadStreamableURLForFile:path];
 }
 
 - (void)restClient:(DBRestClient *)client loadedMetadata:(DBMetadata *)metadata {
-    successWithObject block = self.metadataRequests[[metadata.path stringByAppendingString:@"success"]];
+    successWithObject block = self.metadataRequests[[metadata.path stringByAppendingString:successConsatnt]];
+    
     if(block){
-        
+        block(metadata);
     }
 }
 
+- (void)restClient:(DBRestClient *)client loadedThumbnail:(NSString *)destPath metadata:(DBMetadata *)metadata {
+    successWithObject block = self.thumbnailRequests[[metadata.path stringByAppendingString:successConsatnt]];
+    if(block){
+        block(@{
+              @"image" : [UIImage imageWithContentsOfFile:destPath],
+              @"path" : metadata.path
+              });
+    }
+}
 
+- (void)restClient:(DBRestClient *)client loadedStreamableURL:(NSURL *)url forFile:(NSString *)path
+{
+    successWithObject block = self.directURLRequest[[path stringByAppendingString:successConsatnt]];
+    if(block){
+        block(url);
+    }
+}
 
 @end

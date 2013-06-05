@@ -7,12 +7,14 @@
 //
 
 #import "CCCollegesListController.h"
-#import "CCSideMenuDataProvider.h"
+#import "CCEducationsDataProvider.h"
+#import "CCEducationCell.h"
+#import "CCEducation.h"
 
 @interface CCCollegesListController ()
 
 @property (nonatomic, strong) NSArray *collegesArray;
-@property (nonatomic, strong) CCSideMenuDataProvider *dataProvider;
+@property (nonatomic, strong) CCEducationsDataProvider *dataProvider;
 
 @end
 
@@ -36,10 +38,15 @@
 
 - (void)configTable
 {
-    self.dataProvider = [CCSideMenuDataProvider new];
-    self.dataProvider.arrayOfItems = self.collegesArray;
+    self.dataProvider = [CCEducationsDataProvider new];
+    self.dataProvider.arrayOfEducations = self.collegesArray;
     
-//    [self configTableWithProvider:self.dataProvider cellClass:[CCOrdinaryCell class]];
+    [self configTableWithProvider:self.dataProvider cellClass:[CCEducationCell class]];
+}
+
+- (void)didSelectedCellWithObject:(id)cellObject
+{
+   [self.classesOfcurrentCollegeTransaction performWithObject:[(CCEducation *)cellObject collegeID]];
 }
 
 @end

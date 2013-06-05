@@ -49,8 +49,6 @@
 		A787C7BF17536F8400824DEA /* CCWelcomeScreenConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C79617536F8400824DEA /* CCWelcomeScreenConfigurator.m */; };
 		A787C7C117538BCF00824DEA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A787C7C017538BCF00824DEA /* QuartzCore.framework */; };
 		A787C7D21754E9CE00824DEA /* CCSideBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C7D11754E9CE00824DEA /* CCSideBarController.m */; };
-		A79E225C175F45BE000A1582 /* CCExistingClassesController.m in Sources */ = {isa = PBXBuildFile; fileRef = A79E225A175F45BE000A1582 /* CCExistingClassesController.m */; };
-		A79E225D175F45BE000A1582 /* CCExistingClassesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A79E225B175F45BE000A1582 /* CCExistingClassesController.xib */; };
 		A79E2267175F83DB000A1582 /* CCClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = A79E2265175F83DB000A1582 /* CCClassController.m */; };
 		A79E2268175F83DB000A1582 /* CCClassController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A79E2266175F83DB000A1582 /* CCClassController.xib */; };
 		A79E226C175F844A000A1582 /* CCSideMenuDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A79E226B175F844A000A1582 /* CCSideMenuDataProvider.m */; };
@@ -59,6 +57,9 @@
 		A79E2274175F8A75000A1582 /* monkey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A79E2273175F8A75000A1582 /* monkey.jpg */; };
 		A79E2278175F8CC6000A1582 /* CCSelectCollegeClassesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A79E2277175F8CC6000A1582 /* CCSelectCollegeClassesTransaction.m */; };
 		A79E227D175FA8AF000A1582 /* CCMyClassesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A79E227C175FA8AF000A1582 /* CCMyClassesDataProvider.m */; };
+		A79E2281175FD3D2000A1582 /* CCClassesOfcurrentCollegeTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A79E2280175FD3D2000A1582 /* CCClassesOfcurrentCollegeTransaction.m */; };
+		A79E2285175FD4B8000A1582 /* CCCollegeClassesController.m in Sources */ = {isa = PBXBuildFile; fileRef = A79E2284175FD4B8000A1582 /* CCCollegeClassesController.m */; };
+		A79E2287175FD509000A1582 /* CCCollegeClassesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A79E2286175FD509000A1582 /* CCCollegeClassesController.xib */; };
 		A7A618AA175CA9E50047C5B2 /* CCAddClassTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A618A9175CA9E50047C5B2 /* CCAddClassTransaction.m */; };
 		A7A618AF175CD7B30047C5B2 /* CCClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A618AE175CD7B30047C5B2 /* CCClass.m */; };
 		A7A618B5175DD0B60047C5B2 /* CCCreateClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A618B3175DD0B60047C5B2 /* CCCreateClassController.m */; };
@@ -214,9 +215,6 @@
 		A787C7C017538BCF00824DEA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A787C7D01754E9CE00824DEA /* CCSideBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCSideBarController.h; path = SideBarController/CCSideBarController.h; sourceTree = "<group>"; };
 		A787C7D11754E9CE00824DEA /* CCSideBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCSideBarController.m; path = SideBarController/CCSideBarController.m; sourceTree = "<group>"; };
-		A79E2259175F45BE000A1582 /* CCExistingClassesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCExistingClassesController.h; path = ExistingClassesController/CCExistingClassesController.h; sourceTree = "<group>"; };
-		A79E225A175F45BE000A1582 /* CCExistingClassesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCExistingClassesController.m; path = ExistingClassesController/CCExistingClassesController.m; sourceTree = "<group>"; };
-		A79E225B175F45BE000A1582 /* CCExistingClassesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CCExistingClassesController.xib; path = ExistingClassesController/CCExistingClassesController.xib; sourceTree = "<group>"; };
 		A79E2264175F83DB000A1582 /* CCClassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCClassController.h; path = ClassController/CCClassController.h; sourceTree = "<group>"; };
 		A79E2265175F83DB000A1582 /* CCClassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCClassController.m; path = ClassController/CCClassController.m; sourceTree = "<group>"; };
 		A79E2266175F83DB000A1582 /* CCClassController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CCClassController.xib; path = ClassController/CCClassController.xib; sourceTree = "<group>"; };
@@ -230,6 +228,11 @@
 		A79E2277175F8CC6000A1582 /* CCSelectCollegeClassesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCSelectCollegeClassesTransaction.m; path = SelectCollegeClassesTransaction/CCSelectCollegeClassesTransaction.m; sourceTree = "<group>"; };
 		A79E227B175FA8AF000A1582 /* CCMyClassesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCMyClassesDataProvider.h; path = MyClassesDataProvider/CCMyClassesDataProvider.h; sourceTree = "<group>"; };
 		A79E227C175FA8AF000A1582 /* CCMyClassesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCMyClassesDataProvider.m; path = MyClassesDataProvider/CCMyClassesDataProvider.m; sourceTree = "<group>"; };
+		A79E227F175FD3D2000A1582 /* CCClassesOfcurrentCollegeTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCClassesOfcurrentCollegeTransaction.h; path = ClassesOfCurrentCollegeTransaction/CCClassesOfcurrentCollegeTransaction.h; sourceTree = "<group>"; };
+		A79E2280175FD3D2000A1582 /* CCClassesOfcurrentCollegeTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCClassesOfcurrentCollegeTransaction.m; path = ClassesOfCurrentCollegeTransaction/CCClassesOfcurrentCollegeTransaction.m; sourceTree = "<group>"; };
+		A79E2283175FD4B8000A1582 /* CCCollegeClassesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCCollegeClassesController.h; path = CollegeClassesController/CCCollegeClassesController.h; sourceTree = "<group>"; };
+		A79E2284175FD4B8000A1582 /* CCCollegeClassesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCCollegeClassesController.m; path = CollegeClassesController/CCCollegeClassesController.m; sourceTree = "<group>"; };
+		A79E2286175FD509000A1582 /* CCCollegeClassesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCCollegeClassesController.xib; sourceTree = "<group>"; };
 		A7A618A8175CA9E50047C5B2 /* CCAddClassTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCAddClassTransaction.h; path = AddClassTransaction/CCAddClassTransaction.h; sourceTree = "<group>"; };
 		A7A618A9175CA9E50047C5B2 /* CCAddClassTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCAddClassTransaction.m; path = AddClassTransaction/CCAddClassTransaction.m; sourceTree = "<group>"; };
 		A7A618AD175CD7B30047C5B2 /* CCClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCClass.h; path = Class/CCClass.h; sourceTree = "<group>"; };
@@ -444,8 +447,8 @@
 		A787C73217536F8400824DEA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A79E2282175FD485000A1582 /* CCCollegeClassesController */,
 				A79E226D175F846A000A1582 /* CollegesListController */,
-				A79E2255175F4545000A1582 /* ExistingClassesController */,
 				A7A618B0175DCED40047C5B2 /* CreateClassController */,
 				A7D53A441758CB5600FE9FCD /* ClassesController */,
 				D3614637175E352200907414 /* DropboxSelectionViewController */,
@@ -530,7 +533,7 @@
 		A787C74E17536F8400824DEA /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				D361462E175E17AD00907414 /* DropboxDelegate */,
+				D361462E175E17AD00907414 /* CCDropboxAPIProvider */,
 				A787C74F17536F8400824DEA /* APIProvider */,
 				A787C75317536F8400824DEA /* Defines */,
 				A787C75917536F8400824DEA /* FacebookAPI */,
@@ -695,6 +698,7 @@
 		A787C77D17536F8400824DEA /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
+				A79E227E175FD3A8000A1582 /* ClassesOfCurrentCollegeTransaction */,
 				A79E2275175F8C84000A1582 /* SelectCollegeClassesTransaction */,
 				A7A618A6175CA9B20047C5B2 /* AddClassTransaction */,
 				A7D53A4D1758CCE700FE9FCD /* AllClassesTransaction */,
@@ -818,16 +822,6 @@
 			name = SideBarController;
 			sourceTree = "<group>";
 		};
-		A79E2255175F4545000A1582 /* ExistingClassesController */ = {
-			isa = PBXGroup;
-			children = (
-				A79E2259175F45BE000A1582 /* CCExistingClassesController.h */,
-				A79E225A175F45BE000A1582 /* CCExistingClassesController.m */,
-				A79E225B175F45BE000A1582 /* CCExistingClassesController.xib */,
-			);
-			name = ExistingClassesController;
-			sourceTree = "<group>";
-		};
 		A79E2269175F844A000A1582 /* SideMenuDataProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -863,6 +857,25 @@
 				A79E227C175FA8AF000A1582 /* CCMyClassesDataProvider.m */,
 			);
 			name = MyClassesDataProvider;
+			sourceTree = "<group>";
+		};
+		A79E227E175FD3A8000A1582 /* ClassesOfCurrentCollegeTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				A79E227F175FD3D2000A1582 /* CCClassesOfcurrentCollegeTransaction.h */,
+				A79E2280175FD3D2000A1582 /* CCClassesOfcurrentCollegeTransaction.m */,
+			);
+			name = ClassesOfCurrentCollegeTransaction;
+			sourceTree = "<group>";
+		};
+		A79E2282175FD485000A1582 /* CCCollegeClassesController */ = {
+			isa = PBXGroup;
+			children = (
+				A79E2283175FD4B8000A1582 /* CCCollegeClassesController.h */,
+				A79E2284175FD4B8000A1582 /* CCCollegeClassesController.m */,
+				A79E2286175FD509000A1582 /* CCCollegeClassesController.xib */,
+			);
+			name = CCCollegeClassesController;
 			sourceTree = "<group>";
 		};
 		A7A618A6175CA9B20047C5B2 /* AddClassTransaction */ = {
@@ -1027,13 +1040,14 @@
 			name = ClassesDataProvider;
 			sourceTree = "<group>";
 		};
-		D361462E175E17AD00907414 /* DropboxDelegate */ = {
+		D361462E175E17AD00907414 /* CCDropboxAPIProvider */ = {
 			isa = PBXGroup;
 			children = (
 				D361462F175E17BE00907414 /* CCDropboxAPIProvider.h */,
 				D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */,
 				D3614632175E18A200907414 /* CCDropboxAPIProviderProtocol.h */,
 			);
+			name = CCDropboxAPIProvider;
 			path = DropboxDelegate;
 			sourceTree = "<group>";
 		};
@@ -1495,12 +1509,12 @@
 				A7D53A4C1758CBD300FE9FCD /* CCClassesController.xib in Resources */,
 				D3AB6B61175CFA8100097E21 /* CCEducationCell.xib in Resources */,
 				A7A618B6175DD0B60047C5B2 /* CCCreateClassController.xib in Resources */,
-				A79E225D175F45BE000A1582 /* CCExistingClassesController.xib in Resources */,
 				A79E2268175F83DB000A1582 /* CCClassController.xib in Resources */,
 				A79E2272175F846B000A1582 /* CCCollegesListController.xib in Resources */,
 				A79E2274175F8A75000A1582 /* monkey.jpg in Resources */,
 				D361463C175E355500907414 /* CCDropboxSelectionViewController.xib in Resources */,
 				D361464A175F141900907414 /* CCDropboxCell.xib in Resources */,
+				A79E2287175FD509000A1582 /* CCCollegeClassesController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1613,7 +1627,6 @@
 				A7A618B5175DD0B60047C5B2 /* CCCreateClassController.m in Sources */,
 				A7A618BA175E047F0047C5B2 /* CCClassesApiProvider.m in Sources */,
 				A7A618BF175E26760047C5B2 /* CCClassCell.m in Sources */,
-				A79E225C175F45BE000A1582 /* CCExistingClassesController.m in Sources */,
 				A79E2267175F83DB000A1582 /* CCClassController.m in Sources */,
 				A79E226C175F844A000A1582 /* CCSideMenuDataProvider.m in Sources */,
 				A79E2271175F846B000A1582 /* CCCollegesListController.m in Sources */,
@@ -1626,6 +1639,8 @@
 				D361464E175F18C700907414 /* CCDropboxFileSystemTransaction.m in Sources */,
 				D3614652175F65F600907414 /* CCDropboxFileInfo.m in Sources */,
 				A79E227D175FA8AF000A1582 /* CCMyClassesDataProvider.m in Sources */,
+				A79E2281175FD3D2000A1582 /* CCClassesOfcurrentCollegeTransaction.m in Sources */,
+				A79E2285175FD4B8000A1582 /* CCCollegeClassesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

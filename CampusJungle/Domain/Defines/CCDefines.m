@@ -23,6 +23,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .currentUserInfo = @"/api/users/me",
     .allClasses = @"/api/users/me/classes",
     .addClass = @"/api/users/me/classes/:class_id",
+    .classesOfCollege = @"/api/colleges/:college_id/classes",
 };
 
 const struct CCUserDefines CCUserDefines = {

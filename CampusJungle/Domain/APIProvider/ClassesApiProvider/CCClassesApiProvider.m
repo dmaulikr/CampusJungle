@@ -16,7 +16,7 @@
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [self setAuthorizationToken];
     
-    NSDictionary *parametersArray =  @{@"professor":class.professor,@"subject":class.subject,@"timetable":class.timetable,@"semester":@"2", @"call_number":class.callNumber,};
+    NSDictionary *parametersArray =  @{@"professor":class.professor,@"subject":class.subject,@"timetable":class.timetable,@"semester":@"summer", @"call_number":class.callNumber,};
 
     [objectManager postObject:nil
                          path:[NSString stringWithFormat:CCAPIDefines.createClass,class.collegeID]
@@ -29,6 +29,21 @@
                       }];
 }
 
+- (void)getClassesOfCollege:(NSString*)collegeID successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [self setAuthorizationToken];
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.classesOfCollege,collegeID];
+    [objectManager getObjectsAtPath:path
+                         parameters:nil
+                            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                successHandler([mappingResult array]);
+                            } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                errorHandler(error);
+                            }];
+}
+
+
 - (void)getAllClasesSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
@@ -40,6 +55,24 @@
                                 successHandler([mappingResult array]);
                             } failure:^(RKObjectRequestOperation *operation, NSError *error) {
                                 errorHandler(error);
-                            }];}
+                            }];
+}
+
+- (void)joinClass:(NSString*)classID SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [self setAuthorizationToken];
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.addClass,classID];
+    [objectManager putObject:nil
+                        path:path
+                  parameters:nil
+                     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                          successHandler([mappingResult array]);
+                     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                             errorHandler(error);
+                     }];
+}
+
+
 
 @end
