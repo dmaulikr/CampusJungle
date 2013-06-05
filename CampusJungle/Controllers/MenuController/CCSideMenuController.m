@@ -31,7 +31,7 @@
 - (void)configTable
 {
     self.dataProvider = [CCSideMenuDataProvider new];
-    self.dataProvider.arrayOfMenuItems = @[CCSideMenuTitles.profile,CCSideMenuTitles.classScreen];
+    self.dataProvider.arrayOfMenuItems = @[CCSideMenuTitles.profile,CCSideMenuTitles.classScreen,CCSideMenuTitles.dropbox];
     [self configTableWithProvider:self.dataProvider cellClass:[CCOrdinaryCell class]];
 }
 
@@ -39,8 +39,10 @@
 {
     if ([(NSString*)cellObject isEqualToString:CCSideMenuTitles.profile]) {
         [self.userProfileTransaction perform];
-    } else {
+    } else if([(NSString*)cellObject isEqualToString:CCSideMenuTitles.classScreen]) {
         [self.classTransaction perform];
+    } else {
+        [self.dropboxTransaction perform];
     }
 }
 

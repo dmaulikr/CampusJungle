@@ -15,4 +15,6 @@
 @property (nonatomic, strong) NSNumber *collegeID;
 @property (nonatomic, strong) NSString *status;
 
+- (BOOL)isEqualToEducation:(CCEducation *)education;
+
 @end

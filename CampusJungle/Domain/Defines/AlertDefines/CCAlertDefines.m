@@ -21,6 +21,7 @@ const struct CCAlertsMessages CCAlertsMessages = {
     .emailNotValid = @"Email not valid",
     .firstNameNotValid = @"First name can not be empty",
     .lastNameNotValid = @"Last name can not be empty",
+    .dropboxLinkingFaild = @"Dropbox linking faild",
 };
 
 const struct CCAlertsButtons CCAlertsButtons = {

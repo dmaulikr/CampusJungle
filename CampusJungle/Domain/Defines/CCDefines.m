@@ -106,4 +106,21 @@ const struct CCResponseKeys CCResponseKeys = {
 
 const struct CCAppDelegateDefines CCAppDelegateDefines = {
     .notificationOnBackToForeground = @"ApplicationDidReturnToForeground",
+    .dropboxLinked = @"ApplicationLinkedWithDropBox",
+};
+
+const struct CCScreenTitles CCScreenTitles = {
+    .stateScreenTitle = @"Select State",
+    .dropboxTitle = @"Dropbox",
+};
+
+const struct CCDropboxDefines CCDropboxDefines = {
+    .appKey = @"1xmjfk2bja9m6gg",
+    .appSecret = @"v84udobka9mo7k5",
+};
+
+const struct CCTwitterDefines CCTwitterDefines = {
+    .appKey = @"5PArGIFtG4ZxIm5tm02g",
+    .appSecret = @"CdvGtu0kuTvezy4jnJOx6HVRU3PaMkC9ZlmiPLc",
+    .appURLSchema = @"campusjungle://success",
 };

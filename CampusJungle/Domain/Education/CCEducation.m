@@ -10,4 +10,18 @@
 
 @implementation CCEducation
 
+- (BOOL)isEqualToEducation:(CCEducation *)education
+{
+    if(![self.graduationDate isEqualToString:education.graduationDate] && (self.graduationDate || education.graduationDate) ){
+        return NO;
+    }
+    if(![self.collegeName isEqualToString:education.collegeName]){
+        return NO;
+    }
+    if(![self.collegeID.stringValue isEqualToString:education.collegeID.stringValue]){
+        return NO;
+    }
+    return YES;
+}
+
 @end

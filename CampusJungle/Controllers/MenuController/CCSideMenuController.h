@@ -13,5 +13,6 @@
 
 @property (nonatomic, strong) id <CCTransaction> userProfileTransaction;
 @property (nonatomic, strong) id <CCTransaction> classTransaction;
+@property (nonatomic, strong) id <CCTransaction> dropboxTransaction;
 
 @end

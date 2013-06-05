@@ -14,18 +14,20 @@
 #import "SHOmniAuthTWitter.h"
 #import "AFOAuth1Client.h"
 #import "CCDefines.h"
+#import <DropboxSDK/DropboxSDK.h>
+
 
 @implementation CCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [SHOmniAuth registerProvidersWith:^(SHOmniAuthProviderBlock provider) {
-        provider(SHOmniAuthTwitter.provider, @"5PArGIFtG4ZxIm5tm02g",
-                 @"CdvGtu0kuTvezy4jnJOx6HVRU3PaMkC9ZlmiPLc",
-                 nil, @"campusjungle://success");
+        provider(SHOmniAuthTwitter.provider, CCTwitterDefines.appKey,CCTwitterDefines.appSecret,
+                 nil, CCTwitterDefines.appURLSchema);
     }];
-    
+
     [AppleGuice startServiceWithImplementationDiscoveryPolicy:AppleGuiceImplementationDiscoveryPolicyRuntime];
+    
     [CCRestKitConfigurator configure];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -41,6 +43,10 @@
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
+    if ([[DBSession sharedSession] handleOpenURL:url]) {
+       [[NSNotificationCenter defaultCenter] postNotificationName:CCAppDelegateDefines.dropboxLinked object:nil];
+        return YES;
+    }
     
     NSNotification *notification = [NSNotification notificationWithName:kAFApplicationLaunchedWithURLNotification object:nil userInfo:[NSDictionary dictionaryWithObject:url forKey:kAFApplicationLaunchOptionsURLKey]];
     [[NSNotificationCenter defaultCenter] postNotification:notification];
@@ -57,6 +63,5 @@
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:CCAppDelegateDefines.notificationOnBackToForeground object:nil ];
 }
-
 
 @end

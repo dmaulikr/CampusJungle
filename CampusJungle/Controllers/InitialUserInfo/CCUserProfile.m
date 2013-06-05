@@ -37,6 +37,7 @@
 @property (nonatomic, weak) IBOutlet UITextField *firstNameField;
 @property (nonatomic, weak) IBOutlet UITextField *lastNameField;
 @property (nonatomic, weak) IBOutlet UITextField *emailField;
+
 @property (nonatomic, weak) IBOutlet UIButton *facebookButton;
 
 @property (nonatomic, strong) CCEducationsDataProvider *dataProvider;
@@ -44,6 +45,7 @@
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
 @property (nonatomic, strong) id <CCLoginAPIProviderProtocol> ioc_loginAPIProvider;
 @property (nonatomic, strong) id <CCAPIProviderProtocol> ioc_apiProvider;
+
 @property (nonatomic) BOOL isEditable;
 @property (nonatomic) BOOL isNeedToUploadAvatar;
 
@@ -75,6 +77,8 @@
      selector:@selector(applicationDidEnterForeground)
      name:CCAppDelegateDefines.notificationOnBackToForeground
      object:nil];
+
+    self.avatar.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (void)loadUser
@@ -115,24 +119,14 @@
 
 - (BOOL)isEducations:(NSArray *)firstArray equalTo:(NSArray *)secondArray
 {
-
     if (firstArray.count != secondArray.count){
         return NO;
     }
     for(int i = 0; i < firstArray.count; i++){
-        CCEducation *objectFromFirstArray = firstArray[i];
-        CCEducation *objectFromSecondArray = secondArray[i];
-        if(![objectFromFirstArray.graduationDate isEqualToString:objectFromSecondArray.graduationDate]){
-            return NO;
-        }
-        if(![objectFromFirstArray.collegeName isEqualToString:objectFromSecondArray.collegeName]){
-            return NO;
-        }
-        if(![objectFromFirstArray.collegeID.stringValue isEqualToString:objectFromSecondArray.collegeID.stringValue]){
+        if (![(CCEducation *)firstArray[i] isEqualToEducation:secondArray[i]]){
             return NO;
         }
     }
-    
     return YES;
 }
 
