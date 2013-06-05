@@ -37,6 +37,7 @@
 @property (nonatomic, weak) IBOutlet UITextField *firstNameField;
 @property (nonatomic, weak) IBOutlet UITextField *lastNameField;
 @property (nonatomic, weak) IBOutlet UITextField *emailField;
+
 @property (nonatomic, weak) IBOutlet UIButton *facebookButton;
 
 @property (nonatomic, strong) CCEducationsDataProvider *dataProvider;
@@ -44,6 +45,7 @@
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
 @property (nonatomic, strong) id <CCLoginAPIProviderProtocol> ioc_loginAPIProvider;
 @property (nonatomic, strong) id <CCAPIProviderProtocol> ioc_apiProvider;
+
 @property (nonatomic) BOOL isEditable;
 @property (nonatomic) BOOL isNeedToUploadAvatar;
 
@@ -75,6 +77,8 @@
      selector:@selector(applicationDidEnterForeground)
      name:CCAppDelegateDefines.notificationOnBackToForeground
      object:nil];
+
+    self.avatar.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (void)loadUser

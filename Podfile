@@ -11,3 +11,4 @@ pod "UIAlertView-Blocks"
 pod "SHOmniAuthTwitter"
 pod 'BlocksKit'
 pod 'TPKeyboardAvoiding'
+pod 'Dropbox-iOS-SDK'

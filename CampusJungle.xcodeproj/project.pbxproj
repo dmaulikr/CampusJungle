@@ -59,6 +59,12 @@
 		A7D53A151757F70700FE9FCD /* CCSideMenuController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7D53A141757F70600FE9FCD /* CCSideMenuController.xib */; };
 		A7D53A191757F8D500FE9FCD /* CCMenuDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D53A181757F8D500FE9FCD /* CCMenuDefines.m */; };
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
+		D3614631175E17BE00907414 /* CCDropboxAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */; };
+		D3614636175E1D3000907414 /* DropboxSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = D3614635175E1D3000907414 /* DropboxSDK */; };
+		D361463B175E355500907414 /* CCDropboxSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614639175E355500907414 /* CCDropboxSelectionViewController.m */; };
+		D361463C175E355500907414 /* CCDropboxSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D361463A175E355500907414 /* CCDropboxSelectionViewController.xib */; };
+		D3614640175E362600907414 /* CCDropboxFileSelectionTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D361463F175E362600907414 /* CCDropboxFileSelectionTransaction.m */; };
+		D3614644175E43A400907414 /* CCDropboxDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614643175E43A400907414 /* CCDropboxDataProvider.m */; };
 		D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36186471743B13E00B501BC /* SystemConfiguration.framework */; };
 		D37A475617577D5100E91850 /* CCEducation.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A475517577D5100E91850 /* CCEducation.m */; };
 		D37A475A175786D200E91850 /* CCEducationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A4759175786D200E91850 /* CCEducationCell.m */; };
@@ -196,6 +202,17 @@
 		A7D53A141757F70600FE9FCD /* CCSideMenuController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCSideMenuController.xib; sourceTree = "<group>"; };
 		A7D53A171757F8D500FE9FCD /* CCMenuDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCMenuDefines.h; path = MenuDefines/CCMenuDefines.h; sourceTree = "<group>"; };
 		A7D53A181757F8D500FE9FCD /* CCMenuDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCMenuDefines.m; path = MenuDefines/CCMenuDefines.m; sourceTree = "<group>"; };
+		D361462F175E17BE00907414 /* CCDropboxAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProvider.h; sourceTree = "<group>"; };
+		D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxAPIProvider.m; sourceTree = "<group>"; };
+		D3614632175E18A200907414 /* CCDropboxAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProviderProtocol.h; sourceTree = "<group>"; };
+		D3614635175E1D3000907414 /* DropboxSDK */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = DropboxSDK; path = "Pods/Dropbox-iOS-SDK/dropbox-ios-sdk-1.3.4/DropboxSDK.framework/DropboxSDK"; sourceTree = "<group>"; };
+		D3614638175E355500907414 /* CCDropboxSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxSelectionViewController.h; sourceTree = "<group>"; };
+		D3614639175E355500907414 /* CCDropboxSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxSelectionViewController.m; sourceTree = "<group>"; };
+		D361463A175E355500907414 /* CCDropboxSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCDropboxSelectionViewController.xib; sourceTree = "<group>"; };
+		D361463E175E362600907414 /* CCDropboxFileSelectionTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxFileSelectionTransaction.h; sourceTree = "<group>"; };
+		D361463F175E362600907414 /* CCDropboxFileSelectionTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxFileSelectionTransaction.m; sourceTree = "<group>"; };
+		D3614642175E43A400907414 /* CCDropboxDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxDataProvider.h; sourceTree = "<group>"; };
+		D3614643175E43A400907414 /* CCDropboxDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxDataProvider.m; sourceTree = "<group>"; };
 		D36186471743B13E00B501BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D37A475417577D5100E91850 /* CCEducation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEducation.h; sourceTree = "<group>"; };
 		D37A475517577D5100E91850 /* CCEducation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEducation.m; sourceTree = "<group>"; };
@@ -270,6 +287,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3614636175E1D3000907414 /* DropboxSDK in Frameworks */,
 				A787C7C117538BCF00824DEA /* QuartzCore.framework in Frameworks */,
 				D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */,
 				D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */,
@@ -312,6 +330,7 @@
 		A784C597173A865E005E4921 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3614635175E1D3000907414 /* DropboxSDK */,
 				A787C7C017538BCF00824DEA /* QuartzCore.framework */,
 				D3A2C3241754C95700989831 /* MessageUI.framework */,
 				D39F1C161753C0E8008E08A2 /* Accounts.framework */,
@@ -351,6 +370,7 @@
 		A787C73217536F8400824DEA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D3614637175E352200907414 /* DropboxSelectionViewController */,
 				A7D539CE1756236000FE9FCD /* ClassController */,
 				D3EFD2891756971F00B7D710 /* EducationCreationController */,
 				A787C7CF1754E9AD00824DEA /* SideBarController */,
@@ -432,6 +452,7 @@
 		A787C74E17536F8400824DEA /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D361462E175E17AD00907414 /* DropboxDelegate */,
 				A787C74F17536F8400824DEA /* APIProvider */,
 				A787C75317536F8400824DEA /* Defines */,
 				A787C75917536F8400824DEA /* FacebookAPI */,
@@ -593,6 +614,7 @@
 		A787C77D17536F8400824DEA /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
+				D361463D175E360600907414 /* DropboxFileSelectionTransaction */,
 				A7D53A081756444900FE9FCD /* ClassTransaction */,
 				D3EFD294175745E600B7D710 /* BackToUserProfileTransaction */,
 				D3EFD2901757430E00B7D710 /* EducationCreationTransaction */,
@@ -775,6 +797,44 @@
 			name = MenuDefines;
 			sourceTree = "<group>";
 		};
+		D361462E175E17AD00907414 /* DropboxDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D361462F175E17BE00907414 /* CCDropboxAPIProvider.h */,
+				D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */,
+				D3614632175E18A200907414 /* CCDropboxAPIProviderProtocol.h */,
+			);
+			path = DropboxDelegate;
+			sourceTree = "<group>";
+		};
+		D3614637175E352200907414 /* DropboxSelectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D3614638175E355500907414 /* CCDropboxSelectionViewController.h */,
+				D3614639175E355500907414 /* CCDropboxSelectionViewController.m */,
+				D361463A175E355500907414 /* CCDropboxSelectionViewController.xib */,
+			);
+			path = DropboxSelectionViewController;
+			sourceTree = "<group>";
+		};
+		D361463D175E360600907414 /* DropboxFileSelectionTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D361463E175E362600907414 /* CCDropboxFileSelectionTransaction.h */,
+				D361463F175E362600907414 /* CCDropboxFileSelectionTransaction.m */,
+			);
+			path = DropboxFileSelectionTransaction;
+			sourceTree = "<group>";
+		};
+		D3614641175E438100907414 /* DropboxDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3614642175E43A400907414 /* CCDropboxDataProvider.h */,
+				D3614643175E43A400907414 /* CCDropboxDataProvider.m */,
+			);
+			path = DropboxDataProvider;
+			sourceTree = "<group>";
+		};
 		D37A475317577CD700E91850 /* Education */ = {
 			isa = PBXGroup;
 			children = (
@@ -889,6 +949,7 @@
 		D3EFD2351756080700B7D710 /* DataProviders */ = {
 			isa = PBXGroup;
 			children = (
+				D3614641175E438100907414 /* DropboxDataProvider */,
 				A7D53A0C1757F0E400FE9FCD /* SideMenuDataProvider */,
 				D37A475B175788FF00E91850 /* EducationsDataProvider */,
 				D3EFD2811756856100B7D710 /* CollegeSellectionDataProvider */,
@@ -1164,6 +1225,7 @@
 				D3EFD28E1756975200B7D710 /* CCEducationCreationController.xib in Resources */,
 				A7D53A151757F70700FE9FCD /* CCSideMenuController.xib in Resources */,
 				D3AB6B61175CFA8100097E21 /* CCEducationCell.xib in Resources */,
+				D361463C175E355500907414 /* CCDropboxSelectionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1269,6 +1331,10 @@
 				A7D53A131757F2BD00FE9FCD /* CCOrdinaryCell.m in Sources */,
 				A7D53A191757F8D500FE9FCD /* CCMenuDefines.m in Sources */,
 				D3AB6B5F175CEE0400097E21 /* CCUserEducationsDataSource.m in Sources */,
+				D3614631175E17BE00907414 /* CCDropboxAPIProvider.m in Sources */,
+				D361463B175E355500907414 /* CCDropboxSelectionViewController.m in Sources */,
+				D3614640175E362600907414 /* CCDropboxFileSelectionTransaction.m in Sources */,
+				D3614644175E43A400907414 /* CCDropboxDataProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
