@@ -13,7 +13,6 @@
 #import "CCAlertDefines.h"
 #import "CCDropboxCell.h"
 #import "CCDropboxDataProvider.h"
-#import <DropboxSDK/DropboxSDK.h>
 #import "CCDropboxFileInfo.h"
 
 @interface CCDropboxSelectionViewController ()

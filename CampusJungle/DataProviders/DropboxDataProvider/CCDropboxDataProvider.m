@@ -7,7 +7,6 @@
 //
 
 #import "CCDropboxDataProvider.h"
-#import <DropboxSDK/DropboxSDK.h>
 #import "CCDropboxFileInfo.h"
 #import "CCDropboxAPIProviderProtocol.h"
 
