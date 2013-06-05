@@ -46,7 +46,6 @@
 
 - (void)didSelectedCellWithObject:(id)cellObject
 {
-    NSLog(@"[(CCEducation *)cellObject collegeID]%@",[(CCEducation *)cellObject collegeID]);
    [self.classesOfcurrentCollegeTransaction performWithObject:[(CCEducation *)cellObject collegeID]];
 }
 

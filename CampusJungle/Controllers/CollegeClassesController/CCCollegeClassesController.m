@@ -11,6 +11,7 @@
 #import "CCClassesDataProvider.h"
 #import "CCClassCell.h"
 #import "CCStandardErrorHandler.h"
+#import "CCClass.h"
 
 @interface CCCollegeClassesController ()
 
@@ -61,6 +62,11 @@
 
 - (void)didSelectedCellWithObject:(id)cellObject
 {
+    self.ioc_apiClassesProvider joinClass:(CCClass *)cellObject.classID SuccessHandler:^(id response) {
+        <#code#>
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }
     
 }
 

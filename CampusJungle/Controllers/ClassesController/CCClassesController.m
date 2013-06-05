@@ -51,7 +51,7 @@
         self.dataProvider.arrayOfClasses = arrayOfClasses;
         [self configTableWithProvider:self.dataProvider cellClass:[CCClassCell class]];
     } errorHandler:^(NSError *error) {
-        NSLog(@"error %@", [error description]);
+        [CCStandardErrorHandler showErrorWithError:error];
     } ];
     
 }

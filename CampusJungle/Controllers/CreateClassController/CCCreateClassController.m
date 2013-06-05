@@ -9,6 +9,7 @@
 #import "CCCreateClassController.h"
 #import "CCClass.h"
 #import "CCClassesApiProviderProtocol.h"
+#import "CCStandardErrorHandler.h"
 
 
 @interface CCCreateClassController ()
@@ -62,7 +63,7 @@ return self;
    [self.ioc_apiClassesProvider joinClass:class.classID SuccessHandler:^(id response) {
        
    } errorHandler:^(NSError *error) {
-       
+      [CCStandardErrorHandler showErrorWithError:error]; 
    }];
 }
 
