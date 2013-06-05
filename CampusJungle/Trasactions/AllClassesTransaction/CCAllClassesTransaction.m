@@ -18,17 +18,15 @@
     NSParameterAssert(self.menuController);
     CCClassesController *classesController = [CCClassesController new];
     
-    
     classesController.addClassTransaction = [CCAddClassTransaction new];
-    
-    
-    
+        
     UINavigationController *centralNavigation = [[UINavigationController alloc] initWithRootViewController:classesController];
+    self.menuController.centerPanel = centralNavigation;
+    
     CCClassTransaction *classTransaction = [CCClassTransaction new];
     classTransaction.navigation = centralNavigation;
     classesController.classTransaction = classTransaction;
     
-    self.menuController.centerPanel = centralNavigation;
 }
 
 @end

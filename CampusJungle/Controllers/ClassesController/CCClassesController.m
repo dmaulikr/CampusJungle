@@ -11,10 +11,12 @@
 #import "CCClassCell.h"
 #import "CCClassesApiProviderProtocol.h"
 #import "CCClass.h"
+#import "CCUserSessionProtocol.h"
 
 
 @interface CCClassesController ()<CellSelectionProtocol>
 @property (nonatomic, strong) CCClassesDataProvider *dataProvider;
+@property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
 @property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_apiClassesProvider;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 
@@ -30,16 +32,12 @@
                                                                                  target:self
                                                                                  action:@selector(addNewClass)];
     self.navigationItem.rightBarButtonItem = rightButton;
-    
-    
-    
 
     [self configTable];
 }
 
 - (void)configTable
 {
-    
     [self.ioc_apiClassesProvider getAllClasesSuccessHandler:^(NSArray *arrayOfClasses) {
         self.dataProvider.targetTable = self.table;
         self.dataProvider = [CCClassesDataProvider new];
@@ -58,12 +56,14 @@
 
 - (void)addNewClass
 {
-   // [self.addClassTransaction perform];
+    NSLog(@"%@", [[self.ioc_userSession currentUser] educations]); 
+   //[self.addClassTransaction perform];
     CCClass *class = [CCClass new];
     class.collegeID = @"26556";
-    class.professor = @"Ostapec";
-    class.subject = @"Delphi";
+    class.professor = @"Brad Larson";
+    class.subject = @"GPUImage";
     class.semester = @"2";
+    class.callNumber = @"CS193p";
     class.timetable = @[@{@"day":@"Tue", @"time":@"23:00"}];
     
     [self.ioc_apiClassesProvider createClass:class successHandler:^(CCClass *newClass) {

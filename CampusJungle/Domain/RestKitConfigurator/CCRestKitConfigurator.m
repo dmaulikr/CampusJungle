@@ -149,6 +149,7 @@
      @"timetable" : @"timetable",
      @"subject" : @"subject",
      @"semester" : @"semester",
+     @"call_number":@"callNumber",
      }];
         
     
@@ -158,6 +159,7 @@
      @"timetable" : @"timetable",
      @"subject" : @"subject",
      @"semester" : @"semester",
+     @"call_number":@"callNumber",
      }];
     
     

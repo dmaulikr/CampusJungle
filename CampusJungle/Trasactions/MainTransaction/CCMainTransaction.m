@@ -14,7 +14,7 @@
 #import "CCUserProfileTransaction.h"
 #import "CCSideBarController.h"
 #import "CCClassTransaction.h"
-#import "CCClassViewController.h"
+#import "CCClassController.h"
 #import "CCAllClassesTransaction.h"
 
 @interface CCMainTransaction()
@@ -35,7 +35,7 @@
 	rootController.leftPanel = leftController;
     rootController.panningLimitedToTopViewController = NO;
     
-    CCClassViewController *centralPanel = [CCClassViewController new];
+    CCClassController *centralPanel = [CCClassController new];
     rootController.centerPanel = [[UINavigationController alloc] initWithRootViewController:centralPanel];
 
     self.window.rootViewController = rootController;

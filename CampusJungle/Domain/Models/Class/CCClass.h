@@ -16,5 +16,6 @@
 @property (nonatomic, strong) NSString *subject;
 @property (nonatomic, strong) NSArray *timetable;
 @property (nonatomic, strong) NSDictionary *timeClassesAreTaken;
+@property (nonatomic, strong) NSString *callNumber;
 
 @end

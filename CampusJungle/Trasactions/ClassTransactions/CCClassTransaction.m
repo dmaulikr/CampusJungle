@@ -7,16 +7,16 @@
 //
 
 #import "CCClassTransaction.h"
-#import "CCClassViewController.h"
+#import "CCClassController.h"
 
 @implementation CCClassTransaction
 
 - (void)performWithObject:(id)object
 {
     NSParameterAssert(self.navigation);
-    CCClassViewController *classController = [CCClassViewController new];
-   // classController.class = object;
+    NSParameterAssert(object);
     
+    CCClassController *classController = [[CCClassController alloc] initWitchClass:object];
     [self.navigation pushViewController:classController animated:YES];
 }
 
