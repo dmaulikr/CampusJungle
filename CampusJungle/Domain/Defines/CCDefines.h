@@ -107,5 +107,22 @@ extern const struct CCResponseKeys
 extern const struct CCAppDelegateDefines
 {
     __unsafe_unretained NSString *notificationOnBackToForeground;
+    __unsafe_unretained NSString *dropboxLinked;
 
 } CCAppDelegateDefines;
+
+extern const struct CCScreenTitles {
+    __unsafe_unretained NSString *stateScreenTitle;
+    __unsafe_unretained NSString *dropboxTitle;
+} CCScreenTitles;
+
+extern const struct CCDropboxDefines {
+    __unsafe_unretained NSString *appKey;
+    __unsafe_unretained NSString *appSecret;
+} CCDropboxDefines;
+
+extern const struct CCTwitterDefines {
+    __unsafe_unretained NSString *appKey;
+    __unsafe_unretained NSString *appSecret;
+    __unsafe_unretained NSString *appURLSchema;
+} CCTwitterDefines;

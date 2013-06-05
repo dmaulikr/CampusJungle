@@ -27,6 +27,7 @@
     [super viewDidLoad];
 
     [self configTableWithProvider:[CCStatesDataProvider new] cellClass:[CCStateCell class]];
+    self.title = CCScreenTitles.stateScreenTitle;
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
@@ -37,7 +38,7 @@
 
 - (void)didSelectedCellWithObject:(id)cellObject
 {
-    [self.citySelectionTransaction performWithObject:[cellObject stateID]];
+    [self.citySelectionTransaction performWithObject:cellObject];
 }
 
 @end

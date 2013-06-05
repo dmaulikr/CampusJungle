@@ -26,8 +26,8 @@
 
 - (void)performLoginOperationViaTwitterWithUserInfo:(NSDictionary *)userDictionary SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
-    NSString *avatarURL = [(NSString *)userDictionary[CCTwitterUserKeys.auth][CCTwitterUserKeys.info][CCTwitterUserKeys.avatar] componentsSeparatedByString:@"_normal"][0];
-    avatarURL = [NSString stringWithFormat:@"%@.jpg",avatarURL];
+    NSArray *avatarNameParts = [(NSString *)userDictionary[CCTwitterUserKeys.auth][CCTwitterUserKeys.info][CCTwitterUserKeys.avatar] componentsSeparatedByString:@"_normal"];
+    NSString *avatarURL = [NSString stringWithFormat:@"%@%@",avatarNameParts[0],avatarNameParts[1]];
     
     NSDictionary *userInfo = @{
                                CCUserAuthorizationKeys.firstName : userDictionary[CCTwitterUserKeys.auth][CCTwitterUserKeys.info][CCTwitterUserKeys.firstName],

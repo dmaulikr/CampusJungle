@@ -16,9 +16,13 @@
 #import "CCClassTransaction.h"
 #import "CCClassController.h"
 #import "CCAllClassesTransaction.h"
+#import "CCDropboxAPIProviderProtocol.h"
+#import "CCDropboxFileSelectionTransaction.h"
 
 @interface CCMainTransaction()
+
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
+@property (nonatomic, strong) id <CCDropboxAPIProviderProtocol> ioc_dropboxAPIProvider;
 
 @end
 
@@ -27,6 +31,8 @@
 - (void)perform
 {
     NSParameterAssert(self.window);
+    
+    [self.ioc_dropboxAPIProvider createSession];
     
     CCSideBarController *rootController = [[CCSideBarController alloc] init];
     rootController.shouldDelegateAutorotateToVisiblePanel = NO;
@@ -37,7 +43,8 @@
     
     CCClassController *centralPanel = [CCClassController new];
     rootController.centerPanel = [[UINavigationController alloc] initWithRootViewController:centralPanel];
-
+    
+    
     self.window.rootViewController = rootController;
     
     [self.ioc_userSession setCurrentUser: [self.ioc_userSession loadSavedUser]];
@@ -54,7 +61,11 @@
 
     CCClassTransaction *classTransaction = [CCClassTransaction new];
     leftController.classTransaction = classTransaction;
-        
+    
+    CCDropboxFileSelectionTransaction *dropboxTranasaction = [CCDropboxFileSelectionTransaction new];
+    dropboxTranasaction.menuController = rootController;
+    leftController.dropboxTransaction = dropboxTranasaction;
+    
     if ([self.ioc_userSession currentUser]){
         
     } else {

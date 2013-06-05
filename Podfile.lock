@@ -6,6 +6,7 @@ PODS:
   - BlocksKit (1.8.2):
     - libffi
   - CJStringValidator (1.0.1)
+  - Dropbox-iOS-SDK (1.3.4)
   - Facebook-iOS-SDK (3.5.1)
   - JASidePanels (1.3.1)
   - JSONKit (1.5pre)
@@ -37,6 +38,7 @@ PODS:
     - SHOmniAuth (~> 0.1.0)
     - TWReverseAuth (~> 0.1.0)
   - SOCKit (1.1)
+  - TPKeyboardAvoiding (0.0.1)
   - TransitionKit (1.1.0)
   - TWReverseAuth (0.1.0):
     - LUKeychainAccess (~> 1.0.1)
@@ -47,12 +49,14 @@ DEPENDENCIES:
   - AppleGuice (from `https://raw.github.com/korzun1993/AppleGuice/master/AppleGuice.podspec`)
   - BlocksKit
   - CJStringValidator
+  - Dropbox-iOS-SDK
   - Facebook-iOS-SDK
   - JASidePanels
   - JSONKit
   - MBProgressHUD
   - RestKit
   - SHOmniAuthTwitter
+  - TPKeyboardAvoiding
   - UIAlertView-Blocks
 
 EXTERNAL SOURCES:
@@ -65,6 +69,7 @@ SPEC CHECKSUMS:
   AppleGuice: abd580ba08042c5de8f6aab168417f453a9e0100
   BlocksKit: 7396526b0816734103f6133fbb1a520c8b04e80c
   CJStringValidator: f6b1226a0d995dd36af145595ba7c2c18437a9b9
+  Dropbox-iOS-SDK: 0531d0061c45b662f1748a1cbe59e2f358bdcaba
   Facebook-iOS-SDK: 0dbd897e842cefeb012ec2eb8eba659ba6b96b12
   JASidePanels: bdc86395baee77fef838f5c7f3637300a7ff8c1f
   JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
@@ -77,6 +82,7 @@ SPEC CHECKSUMS:
   SHOmniAuth: afd6278ea528acc0569bdee94c2185b03457b357
   SHOmniAuthTwitter: f9966ce5804386453618102e610d0fbf940db660
   SOCKit: ed67aeeca4a697b63a933229e53f4670d5b9300f
+  TPKeyboardAvoiding: 7289409b17dc2193a3f324672283c542f17c1bb1
   TransitionKit: 1624e84f252d5cd26900be28ccb73c69fbe63f8a
   TWReverseAuth: d0e6e2d534377f1832c2553ff4e9d677d549e45a
   UIAlertView-Blocks: 7689ad7dd941417e7a7da81507482bc6f4f15bcd

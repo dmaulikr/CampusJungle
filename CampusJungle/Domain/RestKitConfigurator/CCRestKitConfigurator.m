@@ -152,7 +152,6 @@
      @"call_number":@"callNumber",
      }];
         
-    
     RKObjectMapping *classRequestMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
     [classRequestMapping addAttributeMappingsFromDictionary:@{
      @"professor" : @"professor",

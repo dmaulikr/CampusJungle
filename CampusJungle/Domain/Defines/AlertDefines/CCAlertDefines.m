@@ -21,7 +21,8 @@ const struct CCAlertsMessages CCAlertsMessages = {
     .emailNotValid = @"Email not valid",
     .firstNameNotValid = @"First name can not be empty",
     .lastNameNotValid = @"Last name can not be empty",
-    .createCollege = @"In order to join class you should select your college first."
+    .createCollege = @"In order to join class you should select your college first.",
+    .dropboxLinkingFaild = @"Dropbox linking faild",
 };
 
 const struct CCAlertsButtons CCAlertsButtons = {

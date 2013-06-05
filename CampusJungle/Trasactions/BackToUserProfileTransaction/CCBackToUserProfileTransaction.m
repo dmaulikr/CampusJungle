@@ -7,6 +7,7 @@
 //
 
 #import "CCBackToUserProfileTransaction.h"
+#import "CCEducation.h"
 
 @implementation CCBackToUserProfileTransaction
 
@@ -14,9 +15,22 @@
 {
     NSParameterAssert(self.navigation);
     NSParameterAssert(self.arrayOfColleges);
-    [self.arrayOfColleges addObject:object];
-    [self.navigation popToRootViewControllerAnimated:YES];
     
+    if(![self isExistEducation:object]){
+        [self.arrayOfColleges addObject:object];
+    }
+    [self.navigation popToRootViewControllerAnimated:YES];
+}
+
+- (BOOL)isExistEducation:(CCEducation *)education
+{
+    BOOL isAlreadyExist = NO;
+    for (CCEducation *existingEducation in self.arrayOfColleges){
+        if([existingEducation isEqualToEducation:education]){
+            isAlreadyExist = YES;
+        }
+    }
+    return isAlreadyExist;
 }
 
 @end

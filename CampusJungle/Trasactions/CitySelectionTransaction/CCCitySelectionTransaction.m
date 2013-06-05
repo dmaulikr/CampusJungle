@@ -18,14 +18,13 @@
     NSParameterAssert(self.arrayOfColleges);
     
     CCCitySelectionController *citySelection = [CCCitySelectionController new];
-    citySelection.stateID = object;
+    citySelection.stateID = [object stateID];
+    citySelection.title = [object name];
     CCCollegeSelectionTransaction *collegeTransaction = [CCCollegeSelectionTransaction new];
     collegeTransaction.arrayOfColleges = self.arrayOfColleges;
     collegeTransaction.navigation = self.navigation;
     citySelection.collegeScreenTransaction = collegeTransaction;
     [self.navigation pushViewController:citySelection animated:YES];
-    
-    
 }
 
 @end

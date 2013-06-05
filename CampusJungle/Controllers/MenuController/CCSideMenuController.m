@@ -32,6 +32,7 @@
 {
     self.dataProvider = [CCSideMenuDataProvider new];
     self.dataProvider.arrayOfMenuItems = @[CCSideMenuTitles.profile,CCSideMenuTitles.classesScreen];
+
     [self configTableWithProvider:self.dataProvider cellClass:[CCOrdinaryCell class]];
 }
 
@@ -39,8 +40,11 @@
 {
     if ([(NSString*)cellObject isEqualToString:CCSideMenuTitles.profile]) {
         [self.userProfileTransaction perform];
-    } else {
+
+    } else if([(NSString*)cellObject isEqualToString:CCSideMenuTitles.classesScreen]) {
         [self.classesTransaction perform];
+    } else {
+        [self.dropboxTransaction perform];
     }
 }
 

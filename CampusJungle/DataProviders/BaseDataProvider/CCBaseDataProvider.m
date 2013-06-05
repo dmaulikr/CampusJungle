@@ -29,4 +29,6 @@
     return !self.arrayOfItems.count;
 }
 
+- (void)loadMoreItems{}
+
 @end
