@@ -8,16 +8,20 @@
 
 #import "CCDropboxFileSelectionTransaction.h"
 #import "CCDropboxSelectionViewController.h"
+#import "CCDropboxFileSystemTransaction.h"
 
 @implementation CCDropboxFileSelectionTransaction
 
 - (void)perform
 {
     NSParameterAssert(self.menuController);
+    CCDropboxFileSystemTransaction *fileSystemTransaction = [CCDropboxFileSystemTransaction new];
+
     CCDropboxSelectionViewController *dropboxController = [CCDropboxSelectionViewController new];
-    
+    dropboxController.dropboxPath = @"/";
+    dropboxController.dropboxFileSystemTransaction = fileSystemTransaction;
     UINavigationController *centralNavigation = [[UINavigationController alloc] initWithRootViewController:dropboxController];
-    
+    fileSystemTransaction.navigation = centralNavigation;
     self.menuController.centerPanel = centralNavigation;
 }
 

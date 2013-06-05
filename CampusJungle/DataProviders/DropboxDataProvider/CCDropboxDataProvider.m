@@ -26,16 +26,25 @@
     return self;
 }
 
+- (void)setDropboxPath:(NSString *)dropboxPath
+{
+    _dropboxPath = dropboxPath;
+    [self loadItems];
+}
+
 - (void)loadItems
 {
-    [[self restClient] loadMetadata:@"/"];
+    if(self.dropboxPath){
+        [[self restClient] loadMetadata:self.dropboxPath];
+    }
 }
 
 - (void)restClient:(DBRestClient *)client loadedMetadata:(DBMetadata *)metadata {
     if (metadata.isDirectory) {
         NSMutableArray *arrayOfFiles = [NSMutableArray new];
         for (DBMetadata *file in metadata.contents) {
-            [arrayOfFiles addObject:file.filename];
+            [arrayOfFiles addObject:file];
+            NSLog(@"%@",file.icon);
         }
         self.arrayOfItems = arrayOfFiles;
         [self.targetTable reloadData];

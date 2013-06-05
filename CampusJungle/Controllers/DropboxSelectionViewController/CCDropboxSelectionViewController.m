@@ -11,13 +11,14 @@
 #import "CCDefines.h"
 #import "CCStandardErrorHandler.h"
 #import "CCAlertDefines.h"
-#import "CCOrdinaryCell.h"
+#import "CCDropboxCell.h"
 #import "CCDropboxDataProvider.h"
+#import <DropboxSDK/DropboxSDK.h>
 
 @interface CCDropboxSelectionViewController ()
 
 @property (nonatomic, strong) id <CCDropboxAPIProviderProtocol> ioc_dropboxAPI;
-
+@property (nonatomic, strong) CCDropboxDataProvider *dropboxDataProvider;
 
 @end
 
@@ -36,8 +37,10 @@
      object:nil];
     
     self.title = CCScreenTitles.dropboxTitle;
+    self.dropboxDataProvider = [CCDropboxDataProvider new];
+    self.dropboxDataProvider.dropboxPath = self.dropboxPath;
     if([self.ioc_dropboxAPI isLinked]){
-        [self configTableWithProvider:[CCDropboxDataProvider new] cellClass:[CCOrdinaryCell class]];
+        [self configTableWithProvider:self.dropboxDataProvider cellClass:[CCDropboxCell class]];
     }
 }
 
@@ -46,9 +49,18 @@
     if(![self.ioc_dropboxAPI isLinked]){
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:CCAlertsMessages.dropboxLinkingFaild];
     } else {
-        [self configTableWithProvider:[CCDropboxDataProvider new] cellClass:[CCOrdinaryCell class]];
+        [self configTableWithProvider:[CCDropboxDataProvider new] cellClass:[CCDropboxCell class]];
     }
 }
 
+- (void)didSelectedCellWithObject:(id)cellObject
+{
+    DBMetadata *metadata = (DBMetadata *)cellObject;
+    if(metadata.isDirectory){
+        [self.dropboxFileSystemTransaction performWithObject:[self.dropboxDataProvider.dropboxPath stringByAppendingFormat:@"%@/",metadata.filename]];
+//        self.dropboxDataProvider.dropboxPath = [self.dropboxDataProvider.dropboxPath stringByAppendingFormat:@"%@/",metadata.filename];
+    }
+
+}
 
 @end
