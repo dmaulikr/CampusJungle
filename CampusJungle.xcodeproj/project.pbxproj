@@ -58,6 +58,7 @@
 		A79E2272175F846B000A1582 /* CCCollegesListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A79E2270175F846B000A1582 /* CCCollegesListController.xib */; };
 		A79E2274175F8A75000A1582 /* monkey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A79E2273175F8A75000A1582 /* monkey.jpg */; };
 		A79E2278175F8CC6000A1582 /* CCSelectCollegeClassesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A79E2277175F8CC6000A1582 /* CCSelectCollegeClassesTransaction.m */; };
+		A79E227D175FA8AF000A1582 /* CCMyClassesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A79E227C175FA8AF000A1582 /* CCMyClassesDataProvider.m */; };
 		A7A618AA175CA9E50047C5B2 /* CCAddClassTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A618A9175CA9E50047C5B2 /* CCAddClassTransaction.m */; };
 		A7A618AF175CD7B30047C5B2 /* CCClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A618AE175CD7B30047C5B2 /* CCClass.m */; };
 		A7A618B5175DD0B60047C5B2 /* CCCreateClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A618B3175DD0B60047C5B2 /* CCCreateClassController.m */; };
@@ -227,6 +228,8 @@
 		A79E2273175F8A75000A1582 /* monkey.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = monkey.jpg; sourceTree = "<group>"; };
 		A79E2276175F8CC6000A1582 /* CCSelectCollegeClassesTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCSelectCollegeClassesTransaction.h; path = SelectCollegeClassesTransaction/CCSelectCollegeClassesTransaction.h; sourceTree = "<group>"; };
 		A79E2277175F8CC6000A1582 /* CCSelectCollegeClassesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCSelectCollegeClassesTransaction.m; path = SelectCollegeClassesTransaction/CCSelectCollegeClassesTransaction.m; sourceTree = "<group>"; };
+		A79E227B175FA8AF000A1582 /* CCMyClassesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCMyClassesDataProvider.h; path = MyClassesDataProvider/CCMyClassesDataProvider.h; sourceTree = "<group>"; };
+		A79E227C175FA8AF000A1582 /* CCMyClassesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCMyClassesDataProvider.m; path = MyClassesDataProvider/CCMyClassesDataProvider.m; sourceTree = "<group>"; };
 		A7A618A8175CA9E50047C5B2 /* CCAddClassTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCAddClassTransaction.h; path = AddClassTransaction/CCAddClassTransaction.h; sourceTree = "<group>"; };
 		A7A618A9175CA9E50047C5B2 /* CCAddClassTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCAddClassTransaction.m; path = AddClassTransaction/CCAddClassTransaction.m; sourceTree = "<group>"; };
 		A7A618AD175CD7B30047C5B2 /* CCClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCClass.h; path = Class/CCClass.h; sourceTree = "<group>"; };
@@ -853,6 +856,15 @@
 			name = SelectCollegeClassesTransaction;
 			sourceTree = "<group>";
 		};
+		A79E227A175FA863000A1582 /* MyClassesDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				A79E227B175FA8AF000A1582 /* CCMyClassesDataProvider.h */,
+				A79E227C175FA8AF000A1582 /* CCMyClassesDataProvider.m */,
+			);
+			name = MyClassesDataProvider;
+			sourceTree = "<group>";
+		};
 		A7A618A6175CA9B20047C5B2 /* AddClassTransaction */ = {
 			isa = PBXGroup;
 			children = (
@@ -1013,10 +1025,9 @@
 				A7D53A541758D6A700FE9FCD /* CCClassesDataProvider.m */,
 			);
 			name = ClassesDataProvider;
-            sourceTree = "<group>";
+			sourceTree = "<group>";
 		};
-            
-        D361462E175E17AD00907414 /* DropboxDelegate */ = {
+		D361462E175E17AD00907414 /* DropboxDelegate */ = {
 			isa = PBXGroup;
 			children = (
 				D361462F175E17BE00907414 /* CCDropboxAPIProvider.h */,
@@ -1199,10 +1210,10 @@
 		D3EFD2351756080700B7D710 /* DataProviders */ = {
 			isa = PBXGroup;
 			children = (
+				A79E227A175FA863000A1582 /* MyClassesDataProvider */,
 				A79E2269175F844A000A1582 /* SideMenuDataProvider */,
 				A7D53A521758D67500FE9FCD /* ClassesDataProvider */,
 				D3614641175E438100907414 /* DropboxDataProvider */,
-				A7D53A0C1757F0E400FE9FCD /* SideMenuDataProvider */,
 				D37A475B175788FF00E91850 /* EducationsDataProvider */,
 				D3EFD2811756856100B7D710 /* CollegeSellectionDataProvider */,
 				D3EFD26B1756594C00B7D710 /* CitiesDataProvider */,
@@ -1614,6 +1625,7 @@
 				D3614648175F133700907414 /* CCDropboxCell.m in Sources */,
 				D361464E175F18C700907414 /* CCDropboxFileSystemTransaction.m in Sources */,
 				D3614652175F65F600907414 /* CCDropboxFileInfo.m in Sources */,
+				A79E227D175FA8AF000A1582 /* CCMyClassesDataProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

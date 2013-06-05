@@ -24,7 +24,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.dataSource = [CCSideMenuDataSource new];
     [self configTable];
 }
 

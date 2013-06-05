@@ -7,10 +7,12 @@
 //
 
 #import "CCCollegesListController.h"
+#import "CCSideMenuDataProvider.h"
 
 @interface CCCollegesListController ()
 
 @property (nonatomic, strong) NSArray *collegesArray;
+@property (nonatomic, strong) CCSideMenuDataProvider *dataProvider;
 
 @end
 
@@ -29,6 +31,15 @@
 {
     [super viewDidLoad];
     [self.navigationItem setTitle:@"Select College"];
+    [self configTable];
+}
+
+- (void)configTable
+{
+    self.dataProvider = [CCSideMenuDataProvider new];
+    self.dataProvider.arrayOfItems = self.collegesArray;
+    
+//    [self configTableWithProvider:self.dataProvider cellClass:[CCOrdinaryCell class]];
 }
 
 @end
