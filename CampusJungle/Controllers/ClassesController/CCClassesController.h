@@ -7,11 +7,13 @@
 //
 
 #import "CCTableBasedController.h"
-#import "CCTransaction.h"
 #import "CCTransactionWithObject.h"
-
+#import "CCTransaction.h"
 
 @interface CCClassesController : CCTableBasedController
 @property (nonatomic, strong) id <CCTransactionWithObject> classTransaction;
-@property (nonatomic, strong) id <CCTransaction> addClassTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> selectCollege;
+@property (nonatomic, strong) id <CCTransaction> userProfileTransaction;
+@property (nonatomic, strong) id <CCTransaction> selectClass;
+
 @end

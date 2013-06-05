@@ -13,7 +13,6 @@
 @property (nonatomic, strong) CCClass *currentClass;
 @property (weak, nonatomic) IBOutlet UILabel *classNumber;
 @property (weak, nonatomic) IBOutlet UILabel *professor;
-@property (weak, nonatomic) IBOutlet UITextView *timeTable;
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImage;
 
 @end

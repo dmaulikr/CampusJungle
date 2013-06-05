@@ -57,6 +57,7 @@
 		A79E2271175F846B000A1582 /* CCCollegesListController.m in Sources */ = {isa = PBXBuildFile; fileRef = A79E226F175F846B000A1582 /* CCCollegesListController.m */; };
 		A79E2272175F846B000A1582 /* CCCollegesListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A79E2270175F846B000A1582 /* CCCollegesListController.xib */; };
 		A79E2274175F8A75000A1582 /* monkey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A79E2273175F8A75000A1582 /* monkey.jpg */; };
+		A79E2278175F8CC6000A1582 /* CCSelectCollegeClassesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A79E2277175F8CC6000A1582 /* CCSelectCollegeClassesTransaction.m */; };
 		A7A618AA175CA9E50047C5B2 /* CCAddClassTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A618A9175CA9E50047C5B2 /* CCAddClassTransaction.m */; };
 		A7A618AF175CD7B30047C5B2 /* CCClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A618AE175CD7B30047C5B2 /* CCClass.m */; };
 		A7A618B5175DD0B60047C5B2 /* CCCreateClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A618B3175DD0B60047C5B2 /* CCCreateClassController.m */; };
@@ -214,6 +215,8 @@
 		A79E226F175F846B000A1582 /* CCCollegesListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCollegesListController.m; sourceTree = "<group>"; };
 		A79E2270175F846B000A1582 /* CCCollegesListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCCollegesListController.xib; sourceTree = "<group>"; };
 		A79E2273175F8A75000A1582 /* monkey.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = monkey.jpg; sourceTree = "<group>"; };
+		A79E2276175F8CC6000A1582 /* CCSelectCollegeClassesTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCSelectCollegeClassesTransaction.h; path = SelectCollegeClassesTransaction/CCSelectCollegeClassesTransaction.h; sourceTree = "<group>"; };
+		A79E2277175F8CC6000A1582 /* CCSelectCollegeClassesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCSelectCollegeClassesTransaction.m; path = SelectCollegeClassesTransaction/CCSelectCollegeClassesTransaction.m; sourceTree = "<group>"; };
 		A7A618A8175CA9E50047C5B2 /* CCAddClassTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCAddClassTransaction.h; path = AddClassTransaction/CCAddClassTransaction.h; sourceTree = "<group>"; };
 		A7A618A9175CA9E50047C5B2 /* CCAddClassTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCAddClassTransaction.m; path = AddClassTransaction/CCAddClassTransaction.m; sourceTree = "<group>"; };
 		A7A618AD175CD7B30047C5B2 /* CCClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCClass.h; path = Class/CCClass.h; sourceTree = "<group>"; };
@@ -656,6 +659,7 @@
 		A787C77D17536F8400824DEA /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
+				A79E2275175F8C84000A1582 /* SelectCollegeClassesTransaction */,
 				A7A618A6175CA9B20047C5B2 /* AddClassTransaction */,
 				A7D53A4D1758CCE700FE9FCD /* AllClassesTransaction */,
 				A7D53A081756444900FE9FCD /* ClassTransaction */,
@@ -803,6 +807,15 @@
 				A79E2270175F846B000A1582 /* CCCollegesListController.xib */,
 			);
 			path = CollegesListController;
+			sourceTree = "<group>";
+		};
+		A79E2275175F8C84000A1582 /* SelectCollegeClassesTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				A79E2276175F8CC6000A1582 /* CCSelectCollegeClassesTransaction.h */,
+				A79E2277175F8CC6000A1582 /* CCSelectCollegeClassesTransaction.m */,
+			);
+			name = SelectCollegeClassesTransaction;
 			sourceTree = "<group>";
 		};
 		A7A618A6175CA9B20047C5B2 /* AddClassTransaction */ = {
@@ -1486,6 +1499,7 @@
 				A79E2267175F83DB000A1582 /* CCClassController.m in Sources */,
 				A79E226C175F844A000A1582 /* CCSideMenuDataProvider.m in Sources */,
 				A79E2271175F846B000A1582 /* CCCollegesListController.m in Sources */,
+				A79E2278175F8CC6000A1582 /* CCSelectCollegeClassesTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

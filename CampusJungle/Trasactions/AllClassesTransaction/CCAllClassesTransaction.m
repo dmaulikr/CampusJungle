@@ -9,7 +9,8 @@
 #import "CCAllClassesTransaction.h"
 #import "CCClassesController.h"
 #import "CCClassTransaction.h"
-#import "CCAddClassTransaction.h"
+#import "CCSelectCollegeClassesTransaction.h"
+#import "CCUserProfileTransaction.h"
 
 @implementation CCAllClassesTransaction
 
@@ -18,15 +19,20 @@
     NSParameterAssert(self.menuController);
     CCClassesController *classesController = [CCClassesController new];
     
-    classesController.addClassTransaction = [CCAddClassTransaction new];
-        
     UINavigationController *centralNavigation = [[UINavigationController alloc] initWithRootViewController:classesController];
     self.menuController.centerPanel = centralNavigation;
+    
+    CCSelectCollegeClassesTransaction *selectCollege = [CCSelectCollegeClassesTransaction new];
+    selectCollege.navigation = centralNavigation;
+    classesController.selectCollege = selectCollege;
     
     CCClassTransaction *classTransaction = [CCClassTransaction new];
     classTransaction.navigation = centralNavigation;
     classesController.classTransaction = classTransaction;
     
+    CCUserProfileTransaction *userProfileTransaction = [CCUserProfileTransaction new];
+    userProfileTransaction.menuController = self.menuController;
+    classesController.userProfileTransaction = userProfileTransaction;
 }
 
 @end

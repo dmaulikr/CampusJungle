@@ -10,15 +10,17 @@
 
 @interface CCCollegesListController ()
 
+@property (nonatomic, strong) NSArray *collegesArray;
+
 @end
 
 @implementation CCCollegesListController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+-(id)initWithArray:(NSArray*)educations
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super init];
     if (self) {
-        // Custom initialization
+        self.collegesArray = educations;
     }
     return self;
 }
@@ -26,13 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.navigationItem setTitle:@"Select College"];
 }
 
 @end

@@ -53,7 +53,6 @@
     
 
     CCClassTransaction *classTransaction = [CCClassTransaction new];
-    classTransaction.menuController = rootController;
     leftController.classTransaction = classTransaction;
         
     if ([self.ioc_userSession currentUser]){

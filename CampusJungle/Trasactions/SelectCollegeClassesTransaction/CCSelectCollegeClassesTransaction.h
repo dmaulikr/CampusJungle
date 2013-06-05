@@ -1,15 +1,14 @@
 //
-//  CCClassTransaction.h
+//  CCSelectCollegeClassesTransaction.h
 //  CampusJungle
 //
-//  Created by Yulia Petryshena on 5/29/13.
+//  Created by Yulia Petryshena on 6/5/13.
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "JASidePanelController.h"
 #import "CCTransactionWithObject.h"
 
-@interface CCClassTransaction : NSObject<CCTransactionWithObject>
+@interface CCSelectCollegeClassesTransaction : NSObject <CCTransactionWithObject>
 
 @property (nonatomic, strong) UINavigationController *navigation;
 

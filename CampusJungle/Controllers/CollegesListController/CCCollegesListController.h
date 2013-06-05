@@ -6,8 +6,13 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CCTableBasedController.h"
+#import "CCTransactionWithObject.h"
 
-@interface CCCollegesListController : UIViewController
+
+@interface CCCollegesListController : CCTableBasedController
+
+- initWithArray:(NSArray*)educations;
+@property (nonatomic, strong) id <CCTransactionWithObject> classesOfcurrentCollegeTransaction;
 
 @end

@@ -10,4 +10,6 @@
 
 @interface CCAddClassTransaction : NSObject <CCTransaction>
 
+@property (nonatomic, strong) UINavigationController *navigation;
+
 @end

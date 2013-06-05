@@ -12,11 +12,17 @@
 #import "CCClassesApiProviderProtocol.h"
 #import "CCClass.h"
 #import "CCUserSessionProtocol.h"
+#import "UIAlertView+BlocksKit.h"
+#import "CCAlertDefines.h"
+#import "CCAPIProviderProtocol.h"
+#import "CCStandardErrorHandler.h"
+#import "MBProgressHUD.h"
 
 
 @interface CCClassesController ()<CellSelectionProtocol>
 @property (nonatomic, strong) CCClassesDataProvider *dataProvider;
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
+@property (nonatomic, strong) id <CCAPIProviderProtocol> ioc_apiProvider;
 @property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_apiClassesProvider;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 
@@ -56,22 +62,51 @@
 
 - (void)addNewClass
 {
-    NSLog(@"%@", [[self.ioc_userSession currentUser] educations]); 
-   //[self.addClassTransaction perform];
-    CCClass *class = [CCClass new];
-    class.collegeID = @"26556";
-    class.professor = @"Brad Larson";
-    class.subject = @"GPUImage";
-    class.semester = @"2";
-    class.callNumber = @"CS193p";
-    class.timetable = @[@{@"day":@"Tue", @"time":@"23:00"}];
+    [[self ioc_apiProvider] loadUserInfoSuccessHandler:^(id result) {
+            [[self ioc_userSession] setCurrentUser:result];
+            [self performAction];
+        } errorHandler:^(NSError *error) {
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
+
+//    CCClass *class = [CCClass new];
+//    class.collegeID = @"26556";
+//    class.professor = @"Brad Larson";
+//    class.subject = @"GPUImage";
+//    class.semester = @"2";
+//    class.callNumber = @"CS193p";
+//    class.timetable = @[@{@"day":@"Tue", @"time":@"23:00"}];
+//    
+//    [self.ioc_apiClassesProvider createClass:class successHandler:^(CCClass *newClass) {
+//        NSLog(@"newClass %@", newClass);
+//    } errorHandler:^(NSError *error) {
+//
+//    }];
+
+}
+
+- (void)performAction
+{
+    NSArray *colleges = [[self.ioc_userSession currentUser] educations];
     
-    [self.ioc_apiClassesProvider createClass:class successHandler:^(CCClass *newClass) {
-        NSLog(@"newClass %@", newClass);
-    } errorHandler:^(NSError *error) {
-
-    }];
-
+    switch ([colleges count]) {
+        case 1:
+            [self.selectCollege performWithObject:[[self.ioc_userSession currentUser] educations]];
+            break;
+        case 0:{
+            UIAlertView *testView = [UIAlertView alertViewWithTitle:nil message:CCAlertsMessages.createCollege];
+            [testView addButtonWithTitle:CCAlertsButtons.noButton handler:nil];
+            [testView addButtonWithTitle:CCAlertsButtons.yesButton handler:^{
+                [self.userProfileTransaction perform];
+            }];
+            [testView show];
+        }            
+            break;
+        default:
+            [self.selectCollege performWithObject:[[self.ioc_userSession currentUser] educations]];
+            break;
+    }
+    
 }
 
 @end
