@@ -58,9 +58,8 @@
 {
     CCDropboxFileInfo *fileInfo = (CCDropboxFileInfo *)cellObject;
     if(fileInfo.fileData.isDirectory){
-        [self.dropboxFileSystemTransaction performWithObject:[self.dropboxDataProvider.dropboxPath stringByAppendingFormat:@"%@/",fileInfo.fileData.filename]];
+        [self.dropboxFileSystemTransaction performWithObject:[self.dropboxDataProvider.dropboxPath stringByAppendingPathComponent:fileInfo.fileData.filename]];
     }
-
 }
 
 @end
