@@ -8,6 +8,7 @@
 
 #import "CCDropboxDataProvider.h"
 #import <DropboxSDK/DropboxSDK.h>
+#import "CCDropboxFileInfo.h"
 
 @interface CCDropboxDataProvider()<DBRestClientDelegate>
 
@@ -43,18 +44,13 @@
     if (metadata.isDirectory) {
         NSMutableArray *arrayOfFiles = [NSMutableArray new];
         for (DBMetadata *file in metadata.contents) {
-            [arrayOfFiles addObject:file];
-            NSLog(@"%@",file.icon);
+            CCDropboxFileInfo *newInfo = [CCDropboxFileInfo new];
+            newInfo.fileData = file;
+            [arrayOfFiles addObject:newInfo];
         }
         self.arrayOfItems = arrayOfFiles;
         [self.targetTable reloadData];
     }
-}
-
-- (void)restClient:(DBRestClient *)client
-loadMetadataFailedWithError:(NSError *)error {
-    
-    NSLog(@"Error loading metadata: %@", error);
 }
 
 @end

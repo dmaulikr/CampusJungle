@@ -68,6 +68,7 @@
 		D3614648175F133700907414 /* CCDropboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614647175F133700907414 /* CCDropboxCell.m */; };
 		D361464A175F141900907414 /* CCDropboxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3614649175F141900907414 /* CCDropboxCell.xib */; };
 		D361464E175F18C700907414 /* CCDropboxFileSystemTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D361464D175F18C700907414 /* CCDropboxFileSystemTransaction.m */; };
+		D3614652175F65F600907414 /* CCDropboxFileInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614651175F65F600907414 /* CCDropboxFileInfo.m */; };
 		D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36186471743B13E00B501BC /* SystemConfiguration.framework */; };
 		D37A475617577D5100E91850 /* CCEducation.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A475517577D5100E91850 /* CCEducation.m */; };
 		D37A475A175786D200E91850 /* CCEducationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A4759175786D200E91850 /* CCEducationCell.m */; };
@@ -221,6 +222,8 @@
 		D3614649175F141900907414 /* CCDropboxCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCDropboxCell.xib; sourceTree = "<group>"; };
 		D361464C175F18C700907414 /* CCDropboxFileSystemTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxFileSystemTransaction.h; sourceTree = "<group>"; };
 		D361464D175F18C700907414 /* CCDropboxFileSystemTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxFileSystemTransaction.m; sourceTree = "<group>"; };
+		D3614650175F65F600907414 /* CCDropboxFileInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxFileInfo.h; sourceTree = "<group>"; };
+		D3614651175F65F600907414 /* CCDropboxFileInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxFileInfo.m; sourceTree = "<group>"; };
 		D36186471743B13E00B501BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D37A475417577D5100E91850 /* CCEducation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEducation.h; sourceTree = "<group>"; };
 		D37A475517577D5100E91850 /* CCEducation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEducation.m; sourceTree = "<group>"; };
@@ -526,6 +529,7 @@
 		A787C76117536F8400824DEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D361464F175F65E700907414 /* DropboxFileData */,
 				D37A475317577CD700E91850 /* Education */,
 				D3EFD27D175684DA00B7D710 /* College */,
 				D3EFD2671756586200B7D710 /* City */,
@@ -861,6 +865,15 @@
 				D361464D175F18C700907414 /* CCDropboxFileSystemTransaction.m */,
 			);
 			path = DropboxFileSystemTransaction;
+			sourceTree = "<group>";
+		};
+		D361464F175F65E700907414 /* DropboxFileData */ = {
+			isa = PBXGroup;
+			children = (
+				D3614650175F65F600907414 /* CCDropboxFileInfo.h */,
+				D3614651175F65F600907414 /* CCDropboxFileInfo.m */,
+			);
+			path = DropboxFileData;
 			sourceTree = "<group>";
 		};
 		D37A475317577CD700E91850 /* Education */ = {
@@ -1367,6 +1380,7 @@
 				D3614644175E43A400907414 /* CCDropboxDataProvider.m in Sources */,
 				D3614648175F133700907414 /* CCDropboxCell.m in Sources */,
 				D361464E175F18C700907414 /* CCDropboxFileSystemTransaction.m in Sources */,
+				D3614652175F65F600907414 /* CCDropboxFileInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
