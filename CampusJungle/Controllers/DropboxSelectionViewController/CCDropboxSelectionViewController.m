@@ -14,6 +14,7 @@
 #import "CCDropboxCell.h"
 #import "CCDropboxDataProvider.h"
 #import <DropboxSDK/DropboxSDK.h>
+#import "CCDropboxFileInfo.h"
 
 @interface CCDropboxSelectionViewController ()
 
@@ -55,10 +56,9 @@
 
 - (void)didSelectedCellWithObject:(id)cellObject
 {
-    DBMetadata *metadata = (DBMetadata *)cellObject;
-    if(metadata.isDirectory){
-        [self.dropboxFileSystemTransaction performWithObject:[self.dropboxDataProvider.dropboxPath stringByAppendingFormat:@"%@/",metadata.filename]];
-//        self.dropboxDataProvider.dropboxPath = [self.dropboxDataProvider.dropboxPath stringByAppendingFormat:@"%@/",metadata.filename];
+    CCDropboxFileInfo *fileInfo = (CCDropboxFileInfo *)cellObject;
+    if(fileInfo.fileData.isDirectory){
+        [self.dropboxFileSystemTransaction performWithObject:[self.dropboxDataProvider.dropboxPath stringByAppendingFormat:@"%@/",fileInfo.fileData.filename]];
     }
 
 }

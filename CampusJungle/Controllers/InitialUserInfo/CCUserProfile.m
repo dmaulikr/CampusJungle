@@ -219,8 +219,7 @@
 
 - (void)saveUser:(CCUser *)user
 {
-    user.token = [self.ioc_userSession.currentUser token];
-    user.isFacebookLinked = [self.ioc_userSession.currentUser isFacebookLinked];
+
     self.ioc_userSession.currentUser = user;
 }
 

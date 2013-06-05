@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCTypesDefinition.h"
 
 @protocol CCDropboxAPIProviderProtocol <AppleGuiceSingleton,AppleGuiceInjectable>
 
@@ -17,5 +18,11 @@
 - (void)unlink;
 
 - (BOOL)isLinked;
+
+- (void)loadMetadataForPath:(NSString *)path successHandler:(successWithObject)successHandler errorHanler:(errorHandler)errorHanler;
+
+- (void)loadThumbnailForPath:(NSString *)path successHandler:(successWithObject)successHandler errorHanler:(errorHandler)errorHanler;
+
+- (void)loadDirectURLforPath:(NSString *)path successHandler:(successWithObject)successHandler errorHanler:(errorHandler)errorHanler;
 
 @end

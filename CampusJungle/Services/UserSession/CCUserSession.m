@@ -34,6 +34,13 @@
 
 - (void)setCurrentUser:(CCUser *)currentUser
 {
+    if(!currentUser.token){
+        currentUser.token = _currentUser.token;
+        currentUser.isFacebookLinked = currentUser.isFacebookLinked;
+    }
+    if(!currentUser.token){
+        currentUser.token = _currentUser.token;
+    }
     _currentUser = currentUser;
     [self saveUser];
 }

@@ -9,10 +9,28 @@
 #import "CCDropboxAPIProvider.h"
 #import <DropboxSDK/DropboxSDK.h>
 #import "CCDefines.h"
+#import "CCDropboxFileInfo.h"
+
+@interface CCDropboxAPIProvider()
+
+@property (nonatomic, strong) NSMutableDictionary *metadataRequests;
+@property (nonatomic, strong) NSMutableDictionary *thumbnailRequests;
+@property (nonatomic, strong) NSMutableDictionary *directURLRequest;
+@property (nonatomic, strong) DBRestClient *restClient;
+
+@end
 
 @implementation CCDropboxAPIProvider
 
 static int outstandingRequests;
+
+- (id)init
+{
+    if (self = [super init]){
+        self.restClient = [[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
+    }
+    return self;
+}
 
 - (void)networkRequestStarted {
 	outstandingRequests++;
@@ -45,6 +63,7 @@ static int outstandingRequests;
 	session.delegate = self;
 	[DBSession setSharedSession:session];
     [DBRequest setNetworkRequestDelegate:self];
+    //self.restClient = [DB]
 }
 
 - (void)linkWithController:(UIViewController *)controller
@@ -61,5 +80,32 @@ static int outstandingRequests;
 {
     return [[DBSession sharedSession] isLinked];
 }
+
+- (void)loadMetadataForPath:(NSString *)path successHandler:(successWithObject)successHandler errorHanler:(errorHandler)errorHanler
+{
+    [self.metadataRequests setValue:[successHandler copy] forKey:[path stringByAppendingString:@"success"]];
+    [self.metadataRequests setValue:[errorHanler copy] forKey:[path stringByAppendingString:@"error"]];
+}
+
+- (void)loadThumbnailForPath:(NSString *)path successHandler:(successWithObject)successHandler errorHanler:(errorHandler)errorHanler
+{
+    [self.thumbnailRequests setValue:[successHandler copy] forKey:[path stringByAppendingString:@"success"]];
+    [self.thumbnailRequests setValue:[errorHanler copy] forKey:[path stringByAppendingString:@"error"]];
+}
+
+- (void)loadDirectURLforPath:(NSString *)path successHandler:(successWithObject)successHandler errorHanler:(errorHandler)errorHanler
+{
+    [self.directURLRequest setValue:[successHandler copy] forKey:[path stringByAppendingString:@"success"]];
+    [self.directURLRequest setValue:[errorHanler copy] forKey:[path stringByAppendingString:@"error"]];
+}
+
+- (void)restClient:(DBRestClient *)client loadedMetadata:(DBMetadata *)metadata {
+    successWithObject block = self.metadataRequests[[metadata.path stringByAppendingString:@"success"]];
+    if(block){
+        
+    }
+}
+
+
 
 @end
