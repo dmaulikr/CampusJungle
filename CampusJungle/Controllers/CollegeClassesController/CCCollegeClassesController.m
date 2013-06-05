@@ -62,11 +62,11 @@
 
 - (void)didSelectedCellWithObject:(id)cellObject
 {
-    self.ioc_apiClassesProvider joinClass:(CCClass *)cellObject.classID SuccessHandler:^(id response) {
-        <#code#>
+    [self.ioc_apiClassesProvider joinClass:[(CCClass *)cellObject classID] SuccessHandler:^(id response) {
+        [self.classAddedTransaction perform];
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
-    }
+    }];
     
 }
 

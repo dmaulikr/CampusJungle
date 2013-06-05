@@ -60,6 +60,7 @@
 		A79E2281175FD3D2000A1582 /* CCClassesOfcurrentCollegeTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A79E2280175FD3D2000A1582 /* CCClassesOfcurrentCollegeTransaction.m */; };
 		A79E2285175FD4B8000A1582 /* CCCollegeClassesController.m in Sources */ = {isa = PBXBuildFile; fileRef = A79E2284175FD4B8000A1582 /* CCCollegeClassesController.m */; };
 		A79E2287175FD509000A1582 /* CCCollegeClassesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A79E2286175FD509000A1582 /* CCCollegeClassesController.xib */; };
+		A79E228D17600143000A1582 /* CCClassAddedTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A79E228C17600143000A1582 /* CCClassAddedTransaction.m */; };
 		A7A618AA175CA9E50047C5B2 /* CCAddClassTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A618A9175CA9E50047C5B2 /* CCAddClassTransaction.m */; };
 		A7A618AF175CD7B30047C5B2 /* CCClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A618AE175CD7B30047C5B2 /* CCClass.m */; };
 		A7A618B5175DD0B60047C5B2 /* CCCreateClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A618B3175DD0B60047C5B2 /* CCCreateClassController.m */; };
@@ -233,6 +234,8 @@
 		A79E2283175FD4B8000A1582 /* CCCollegeClassesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCCollegeClassesController.h; path = CollegeClassesController/CCCollegeClassesController.h; sourceTree = "<group>"; };
 		A79E2284175FD4B8000A1582 /* CCCollegeClassesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCCollegeClassesController.m; path = CollegeClassesController/CCCollegeClassesController.m; sourceTree = "<group>"; };
 		A79E2286175FD509000A1582 /* CCCollegeClassesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCCollegeClassesController.xib; sourceTree = "<group>"; };
+		A79E228B17600143000A1582 /* CCClassAddedTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCClassAddedTransaction.h; path = ClassAddedTransaction/CCClassAddedTransaction.h; sourceTree = "<group>"; };
+		A79E228C17600143000A1582 /* CCClassAddedTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCClassAddedTransaction.m; path = ClassAddedTransaction/CCClassAddedTransaction.m; sourceTree = "<group>"; };
 		A7A618A8175CA9E50047C5B2 /* CCAddClassTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCAddClassTransaction.h; path = AddClassTransaction/CCAddClassTransaction.h; sourceTree = "<group>"; };
 		A7A618A9175CA9E50047C5B2 /* CCAddClassTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCAddClassTransaction.m; path = AddClassTransaction/CCAddClassTransaction.m; sourceTree = "<group>"; };
 		A7A618AD175CD7B30047C5B2 /* CCClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCClass.h; path = Class/CCClass.h; sourceTree = "<group>"; };
@@ -698,6 +701,7 @@
 		A787C77D17536F8400824DEA /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
+				A79E228A1760010E000A1582 /* ClassAddedTransaction */,
 				A79E227E175FD3A8000A1582 /* ClassesOfCurrentCollegeTransaction */,
 				A79E2275175F8C84000A1582 /* SelectCollegeClassesTransaction */,
 				A7A618A6175CA9B20047C5B2 /* AddClassTransaction */,
@@ -876,6 +880,15 @@
 				A79E2286175FD509000A1582 /* CCCollegeClassesController.xib */,
 			);
 			name = CCCollegeClassesController;
+			sourceTree = "<group>";
+		};
+		A79E228A1760010E000A1582 /* ClassAddedTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				A79E228B17600143000A1582 /* CCClassAddedTransaction.h */,
+				A79E228C17600143000A1582 /* CCClassAddedTransaction.m */,
+			);
+			name = ClassAddedTransaction;
 			sourceTree = "<group>";
 		};
 		A7A618A6175CA9B20047C5B2 /* AddClassTransaction */ = {
@@ -1641,6 +1654,7 @@
 				A79E227D175FA8AF000A1582 /* CCMyClassesDataProvider.m in Sources */,
 				A79E2281175FD3D2000A1582 /* CCClassesOfcurrentCollegeTransaction.m in Sources */,
 				A79E2285175FD4B8000A1582 /* CCCollegeClassesController.m in Sources */,
+				A79E228D17600143000A1582 /* CCClassAddedTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

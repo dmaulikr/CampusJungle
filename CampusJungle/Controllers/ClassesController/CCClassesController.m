@@ -43,6 +43,12 @@
     [self configTable];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self configTable];
+}
+
 - (void)configTable
 {
     [self.ioc_apiClassesProvider getAllClasesSuccessHandler:^(NSArray *arrayOfClasses) {

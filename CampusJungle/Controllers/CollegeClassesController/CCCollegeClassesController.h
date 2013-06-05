@@ -8,12 +8,14 @@
 
 #import "CCTableBasedController.h"
 #import "CCTransactionWithObject.h"
+#import "CCTransaction.h"
 
 @interface CCCollegeClassesController : CCTableBasedController
 
 - (id)initWithCollegeID:(NSString*)collegeID;
 
 @property (nonatomic, strong) id <CCTransactionWithObject> addNewClassTransaction;
+@property (nonatomic, strong) id <CCTransaction> classAddedTransaction;
 
 
 @end

@@ -9,6 +9,7 @@
 #import "CCClassesOfcurrentCollegeTransaction.h"
 #import "CCCollegeClassesController.h"
 #import "CCAddClassTransaction.h"
+#import "CCClassAddedTransaction.h"
 
 @implementation CCClassesOfcurrentCollegeTransaction
 
@@ -21,6 +22,11 @@
     CCAddClassTransaction *addClassTransaction = [CCAddClassTransaction new];
     addClassTransaction.navigation = self.navigation;
     classesController.addNewClassTransaction = addClassTransaction;
+    
+    CCClassAddedTransaction *classAddedTransaction = [CCClassAddedTransaction new];
+    classAddedTransaction.navigation = self.navigation;
+    classesController.classAddedTransaction = classAddedTransaction;
+    
     [self.navigation pushViewController:classesController animated:YES];
 }
 

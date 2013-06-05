@@ -61,7 +61,7 @@ return self;
 - (void)joinClass:(CCClass*)class
 {
    [self.ioc_apiClassesProvider joinClass:class.classID SuccessHandler:^(id response) {
-       
+       [self.classAddedTransaction perform];
    } errorHandler:^(NSError *error) {
       [CCStandardErrorHandler showErrorWithError:error]; 
    }];

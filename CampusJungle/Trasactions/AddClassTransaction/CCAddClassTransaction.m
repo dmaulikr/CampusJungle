@@ -8,6 +8,7 @@
 
 #import "CCAddClassTransaction.h"
 #import "CCCreateClassController.h"
+#import "CCClassAddedTransaction.h"
 
 @implementation CCAddClassTransaction
 
@@ -17,6 +18,10 @@
     NSParameterAssert(object);
     
     CCCreateClassController *classesController = [[CCCreateClassController alloc] initWithCollegeID:object];
+    
+    CCClassAddedTransaction *classAddedTransaction = [CCClassAddedTransaction new];
+    classAddedTransaction.navigation = self.navigation;
+    classesController.classAddedTransaction = classAddedTransaction;
     [self.navigation pushViewController:classesController animated:YES];    
 }
 
