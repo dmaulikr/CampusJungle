@@ -24,6 +24,7 @@
     self = [super init];
     if (self) {
         self.currentClass = class;
+        [self.navigationItem setTitle:class.subject];
     }
     return self;
 }

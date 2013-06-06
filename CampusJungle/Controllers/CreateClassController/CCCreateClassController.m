@@ -33,6 +33,8 @@
 self = [super init];
 if (self) {
     self.collegeID = collegeID;
+    [self.navigationItem setTitle:@"Create new class"];
+
 }
 return self;
 }
