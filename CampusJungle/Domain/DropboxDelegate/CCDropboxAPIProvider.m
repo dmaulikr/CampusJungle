@@ -64,10 +64,10 @@ static int outstandingRequests;
 
 - (void)createRestCliet
 {
-//    if(!self.restClient){
-//        self.restClient = [[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
-//        self.restClient.delegate = self;
-//    }
+    if(!self.restClient){
+        self.restClient = [[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
+        self.restClient.delegate = self;
+    }
 }
 
 - (void)createSession
@@ -103,7 +103,6 @@ static int outstandingRequests;
 
 - (void)loadMetadataForPath:(NSString *)path successHandler:(successWithObject)successHandler errorHanler:(errorHandler)errorHanler
 {
-
     [self.metadataRequests setValue:[successHandler copy] forKey:[self successKeyForPath:path]];
     [self.metadataRequests setValue:[errorHanler copy] forKey:[self errorKeyForPath:path]];
     [self.restClient loadMetadata:path];
@@ -125,6 +124,7 @@ static int outstandingRequests;
               @"path" : path
               });
     }
+    
 }
 
 - (UIImage *)loadImageFromCachePath:(NSString *)path
@@ -141,6 +141,7 @@ static int outstandingRequests;
 
 - (void)restClient:(DBRestClient *)client loadedMetadata:(DBMetadata *)metadata {
     successWithObject block = self.metadataRequests[[self successKeyForPath:metadata.path]];
+    
     if(block){
         block(metadata);
     }

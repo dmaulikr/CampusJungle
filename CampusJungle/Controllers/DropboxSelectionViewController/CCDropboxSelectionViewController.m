@@ -16,6 +16,7 @@
 #import "CCDropboxFileInfo.h"
 #import "CCDropboxPDFDataProvider.h"
 #import "CCDropboxImageDataProvider.h"
+#import "MBProgressHUD.h"
 
 @interface CCDropboxSelectionViewController ()
 
@@ -50,19 +51,24 @@
     self.dropboxDataProvider = [CCDropboxImageDataProvider new];
     
     self.dropboxDataProvider.dropboxPath = self.dropboxPath;
+    __weak id weakSelf = self;
+    self.dropboxDataProvider.providerDidFinishLoading = ^{
+        [MBProgressHUD hideAllHUDsForView:[weakSelf view] animated:YES];
+    };
     if (![self.dropboxPath isEqualToString:@"/"]){
         NSArray *arrayOfPathComponents = [self.dropboxPath componentsSeparatedByString:@"/"];
         self.title = arrayOfPathComponents.lastObject;
     }
     [self configTableWithProvider:self.dropboxDataProvider cellClass:[CCDropboxCell class]];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 }
 
 - (void)dropboxLinked
 {
-    NSLog(@"Auth");
     if(![self.ioc_dropboxAPI isLinked]){
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:CCAlertsMessages.dropboxLinkingFaild];
     } else {
+        [self.ioc_dropboxAPI createRestCliet];
         [self loadTable];
     }
 }

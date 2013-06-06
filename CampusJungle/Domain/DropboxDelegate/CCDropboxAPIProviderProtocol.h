@@ -25,6 +25,6 @@
 
 - (void)loadDirectURLforPath:(NSString *)path successHandler:(successWithObject)successHandler errorHanler:(errorHandler)errorHanler;
 
-
+- (void)createRestCliet;
 
 @end

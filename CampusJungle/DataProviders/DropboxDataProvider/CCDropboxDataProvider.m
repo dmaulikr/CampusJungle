@@ -45,6 +45,9 @@
             [arrayOfFiles addObject:newInfo];
         }
         self.arrayOfItems = [self filterArrayOfItems:arrayOfFiles];
+        if(self.providerDidFinishLoading){
+            self.providerDidFinishLoading();
+        }
         [self.targetTable reloadData];
     }
 }
