@@ -19,5 +19,4 @@
 @property (nonatomic, strong) NSString *callNumber;
 @property (nonatomic, strong) NSString *classID;
 
-
 @end
