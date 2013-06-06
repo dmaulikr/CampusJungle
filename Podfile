@@ -12,3 +12,4 @@ pod "SHOmniAuthTwitter"
 pod 'BlocksKit'
 pod 'TPKeyboardAvoiding'
 pod 'Dropbox-iOS-SDK'
+pod 'TestFlightSDK'

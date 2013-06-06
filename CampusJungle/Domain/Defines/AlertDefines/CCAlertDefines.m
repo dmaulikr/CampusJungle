@@ -23,6 +23,7 @@ const struct CCAlertsMessages CCAlertsMessages = {
     .lastNameNotValid = @"Last name can not be empty",
     .createCollege = @"In order to join class you should select your college first.",
     .dropboxLinkingFaild = @"Dropbox linking faild",
+    .emptyField = @"Please, fill in all fields"
 };
 
 const struct CCAlertsButtons CCAlertsButtons = {

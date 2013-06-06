@@ -11,16 +11,19 @@
 #import "CCClassesApiProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
 #import "TPKeyboardAvoidingScrollView.h"
+#import "CCStandardErrorHandler.h"
+#import "CCAlertDefines.h"
 
 @interface CCCreateClassController ()<UITextFieldDelegate>
 
 @property (nonatomic, strong) NSString *collegeID;
 @property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_apiClassesProvider;
-@property (weak, nonatomic) IBOutlet UITextField *subjectLabel;
-@property (weak, nonatomic) IBOutlet UITextField *semesterLabel;
-@property (weak, nonatomic) IBOutlet UITextField *professorLabel;
-@property (weak, nonatomic) IBOutlet UITextField *classID;
+@property (weak, nonatomic) IBOutlet UITextField *subjectField;
+@property (weak, nonatomic) IBOutlet UITextField *semesterField;
+@property (weak, nonatomic) IBOutlet UITextField *professorField;
+@property (weak, nonatomic) IBOutlet UITextField *classIDFiled;
 @property (nonatomic, retain) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
+@property (nonatomic, strong) NSArray *textFieldsArray;
 
 
 
@@ -43,16 +46,27 @@ return self;
 {
 
     [super viewDidLoad];
+    
+    self.textFieldsArray = @[self.subjectField, self.semesterField, self.professorField, self.classIDFiled];
+    
+    for (UITextField *tf in self.textFieldsArray) {
+        tf.delegate = self;
+    }
         
 }
 
 - (IBAction)createClass:(id)sender {
+    
+    if (![self isFormValid]) {
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:CCAlertsMessages.emptyField];
+        return;
+    }
     CCClass *class = [CCClass new];
     class.collegeID = self.collegeID;
-    class.professor = self.professorLabel.text;
-    class.subject = self.subjectLabel.text;
-    class.semester = self.semesterLabel.text;
-    class.callNumber = self.classID.text;
+    class.professor = self.professorField.text;
+    class.subject = self.subjectField.text;
+    class.semester = self.semesterField.text;
+    class.callNumber = self.classIDFiled.text;
     class.timetable = @[@{@"day":@"Tue", @"time":@"23:00"}];
     
     [self.ioc_apiClassesProvider createClass:class successHandler:^(id newClass) {
@@ -72,8 +86,27 @@ return self;
    }];
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField
+- (BOOL)isFormValid
 {
+    BOOL isFormValid = YES;
+    
+    for (UITextField *tf in self.textFieldsArray) {
+        if ([tf.text isEqualToString:@""]){
+            isFormValid = NO;
+        }
+    }
+    
+    return isFormValid;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if(textField == self.semesterField){
+        [self createClass:nil];
+    } else {
+        [[self.view viewWithTag:textField.tag+1] becomeFirstResponder];
+        return YES;
+    }
+    return YES;
 }
 
 @end

@@ -52,6 +52,7 @@
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
+								<int key="IBUITag">1</int>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentVerticalAlignment">0</int>
 								<string key="IBUIText"/>
@@ -67,6 +68,7 @@
 								<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 								<float key="IBUIMinimumFontSize">17</float>
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
+									<int key="IBUIReturnKeyType">4</int>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
 								<object class="IBUIFontDescription" key="IBUIFontDescription" id="625931044">
@@ -89,6 +91,7 @@
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
+								<int key="IBUITag">3</int>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentVerticalAlignment">0</int>
 								<string key="IBUIText"/>
@@ -102,6 +105,7 @@
 								<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 								<float key="IBUIMinimumFontSize">17</float>
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
+									<int key="IBUIReturnKeyType">9</int>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
 								<reference key="IBUIFontDescription" ref="625931044"/>
@@ -117,6 +121,7 @@
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
+								<int key="IBUITag">2</int>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentVerticalAlignment">0</int>
 								<string key="IBUIText"/>
@@ -130,6 +135,7 @@
 								<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 								<float key="IBUIMinimumFontSize">17</float>
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
+									<int key="IBUIReturnKeyType">4</int>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
 								<reference key="IBUIFontDescription" ref="625931044"/>
@@ -158,6 +164,7 @@
 								<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 								<float key="IBUIMinimumFontSize">17</float>
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
+									<int key="IBUIReturnKeyType">4</int>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
 								<reference key="IBUIFontDescription" ref="625931044"/>
@@ -169,6 +176,7 @@
 								<string key="NSFrame">{{111, 231}, {123, 44}}</string>
 								<reference key="NSSuperview" ref="95214794"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -251,43 +259,43 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">subjectLabel</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="122568301"/>
-					</object>
-					<int key="connectionID">120</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">semesterLabel</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="588323901"/>
-					</object>
-					<int key="connectionID">121</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">professorLabel</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="313823179"/>
-					</object>
-					<int key="connectionID">122</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">classID</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="689611480"/>
-					</object>
-					<int key="connectionID">123</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">scrollView</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="95214794"/>
 					</object>
 					<int key="connectionID">221</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">subjectField</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="122568301"/>
+					</object>
+					<int key="connectionID">222</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">semesterField</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="588323901"/>
+					</object>
+					<int key="connectionID">223</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">professorField</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="313823179"/>
+					</object>
+					<int key="connectionID">224</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">classIDFiled</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="689611480"/>
+					</object>
+					<int key="connectionID">225</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -700,9 +708,9 @@
 							</object>
 							<reference ref="689611480"/>
 							<reference ref="122568301"/>
-							<reference ref="313823179"/>
 							<reference ref="588323901"/>
 							<reference ref="259844521"/>
+							<reference ref="313823179"/>
 						</array>
 						<reference key="parent" ref="191373211"/>
 					</object>
@@ -1080,7 +1088,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">221</int>
+			<int key="maxID">225</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1099,31 +1107,31 @@
 						</object>
 					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="classID">UITextField</string>
-						<string key="professorLabel">UITextField</string>
+						<string key="classIDFiled">UITextField</string>
+						<string key="professorField">UITextField</string>
 						<string key="scrollView">TPKeyboardAvoidingScrollView</string>
-						<string key="semesterLabel">UITextField</string>
-						<string key="subjectLabel">UITextField</string>
+						<string key="semesterField">UITextField</string>
+						<string key="subjectField">UITextField</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="classID">
-							<string key="name">classID</string>
+						<object class="IBToOneOutletInfo" key="classIDFiled">
+							<string key="name">classIDFiled</string>
 							<string key="candidateClassName">UITextField</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="professorLabel">
-							<string key="name">professorLabel</string>
+						<object class="IBToOneOutletInfo" key="professorField">
+							<string key="name">professorField</string>
 							<string key="candidateClassName">UITextField</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="scrollView">
 							<string key="name">scrollView</string>
 							<string key="candidateClassName">TPKeyboardAvoidingScrollView</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="semesterLabel">
-							<string key="name">semesterLabel</string>
+						<object class="IBToOneOutletInfo" key="semesterField">
+							<string key="name">semesterField</string>
 							<string key="candidateClassName">UITextField</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="subjectLabel">
-							<string key="name">subjectLabel</string>
+						<object class="IBToOneOutletInfo" key="subjectField">
+							<string key="name">subjectField</string>
 							<string key="candidateClassName">UITextField</string>
 						</object>
 					</dictionary>
