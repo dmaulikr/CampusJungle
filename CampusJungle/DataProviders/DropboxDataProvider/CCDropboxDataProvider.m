@@ -44,9 +44,14 @@
             newInfo.fileData = file;
             [arrayOfFiles addObject:newInfo];
         }
-        self.arrayOfItems = arrayOfFiles;
+        self.arrayOfItems = [self filterArrayOfItems:arrayOfFiles];
         [self.targetTable reloadData];
     }
+}
+
+- (NSMutableArray *)filterArrayOfItems:(NSMutableArray *)items
+{
+    return items;
 }
 
 @end

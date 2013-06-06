@@ -28,6 +28,7 @@
         self = [[[NSBundle mainBundle] loadNibNamed:@"CCDropboxCell"
                                               owner:self
                                             options:nil] objectAtIndex:0];
+
     }
     return self;
 }
@@ -58,7 +59,30 @@
             
         }];
     }
+    
+    if(!fileInfo.fileData.thumbnailExists){
+        fileInfo.thumb = [UIImage imageNamed:fileInfo.fileData.icon];
+        self.fileIcon.image = fileInfo.thumb;
+    }
 }
 
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
+    [super setSelected:selected animated:animated];
+    CCDropboxFileInfo *fileInfo = (CCDropboxFileInfo *)self.cellObject;
+    if(!fileInfo.fileData.isDirectory){
+        fileInfo.isSelected = self.selected;
+    }
+    [self becomeSelected:fileInfo.isSelected];
+}
+
+- (void)becomeSelected:(BOOL)selected
+{
+    if(selected){
+        [self setAccessoryType:UITableViewCellAccessoryCheckmark];
+    } else {
+        [self setAccessoryType:UITableViewCellAccessoryNone];
+    }
+}
 
 @end

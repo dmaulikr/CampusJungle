@@ -95,6 +95,15 @@
 		D361464A175F141900907414 /* CCDropboxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3614649175F141900907414 /* CCDropboxCell.xib */; };
 		D361464E175F18C700907414 /* CCDropboxFileSystemTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D361464D175F18C700907414 /* CCDropboxFileSystemTransaction.m */; };
 		D3614652175F65F600907414 /* CCDropboxFileInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614651175F65F600907414 /* CCDropboxFileInfo.m */; };
+		D361465B1760A02500907414 /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146541760A02500907414 /* folder.png */; };
+		D361465C1760A02500907414 /* folder_app.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146551760A02500907414 /* folder_app.png */; };
+		D361465D1760A02500907414 /* folder_photos.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146561760A02500907414 /* folder_photos.png */; };
+		D361465E1760A02500907414 /* folder_public.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146571760A02500907414 /* folder_public.png */; };
+		D361465F1760A02500907414 /* folder_star.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146581760A02500907414 /* folder_star.png */; };
+		D36146601760A02500907414 /* folder_user.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146591760A02500907414 /* folder_user.png */; };
+		D36146611760A02500907414 /* page_white_acrobat.png in Resources */ = {isa = PBXBuildFile; fileRef = D361465A1760A02500907414 /* page_white_acrobat.png */; };
+		D36146691760C4FF00907414 /* CCDropboxPDFDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D36146681760C4FF00907414 /* CCDropboxPDFDataProvider.m */; };
+		D361466F1760C5F200907414 /* CCDropboxImageDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D361466E1760C5F200907414 /* CCDropboxImageDataProvider.m */; };
 		D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36186471743B13E00B501BC /* SystemConfiguration.framework */; };
 		D37A475617577D5100E91850 /* CCEducation.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A475517577D5100E91850 /* CCEducation.m */; };
 		D37A475A175786D200E91850 /* CCEducationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A4759175786D200E91850 /* CCEducationCell.m */; };
@@ -292,6 +301,17 @@
 		D361464D175F18C700907414 /* CCDropboxFileSystemTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxFileSystemTransaction.m; sourceTree = "<group>"; };
 		D3614650175F65F600907414 /* CCDropboxFileInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxFileInfo.h; sourceTree = "<group>"; };
 		D3614651175F65F600907414 /* CCDropboxFileInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxFileInfo.m; sourceTree = "<group>"; };
+		D36146541760A02500907414 /* folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder.png; sourceTree = "<group>"; };
+		D36146551760A02500907414 /* folder_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_app.png; sourceTree = "<group>"; };
+		D36146561760A02500907414 /* folder_photos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_photos.png; sourceTree = "<group>"; };
+		D36146571760A02500907414 /* folder_public.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_public.png; sourceTree = "<group>"; };
+		D36146581760A02500907414 /* folder_star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_star.png; sourceTree = "<group>"; };
+		D36146591760A02500907414 /* folder_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_user.png; sourceTree = "<group>"; };
+		D361465A1760A02500907414 /* page_white_acrobat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_white_acrobat.png; sourceTree = "<group>"; };
+		D36146671760C4FF00907414 /* CCDropboxPDFDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxPDFDataProvider.h; sourceTree = "<group>"; };
+		D36146681760C4FF00907414 /* CCDropboxPDFDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxPDFDataProvider.m; sourceTree = "<group>"; };
+		D361466D1760C5F200907414 /* CCDropboxImageDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxImageDataProvider.h; sourceTree = "<group>"; };
+		D361466E1760C5F200907414 /* CCDropboxImageDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxImageDataProvider.m; sourceTree = "<group>"; };
 		D36186471743B13E00B501BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D37A475417577D5100E91850 /* CCEducation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEducation.h; sourceTree = "<group>"; };
 		D37A475517577D5100E91850 /* CCEducation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEducation.m; sourceTree = "<group>"; };
@@ -1005,6 +1025,7 @@
 		A7D53A361758A85700FE9FCD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D36146531760A02500907414 /* DropboxIcons */,
 				A79E2273175F8A75000A1582 /* monkey.jpg */,
 				A7D53A371758A85700FE9FCD /* MHTabBarController */,
 			);
@@ -1118,6 +1139,39 @@
 				D3614651175F65F600907414 /* CCDropboxFileInfo.m */,
 			);
 			path = DropboxFileData;
+			sourceTree = "<group>";
+		};
+		D36146531760A02500907414 /* DropboxIcons */ = {
+			isa = PBXGroup;
+			children = (
+				D36146541760A02500907414 /* folder.png */,
+				D36146551760A02500907414 /* folder_app.png */,
+				D36146561760A02500907414 /* folder_photos.png */,
+				D36146571760A02500907414 /* folder_public.png */,
+				D36146581760A02500907414 /* folder_star.png */,
+				D36146591760A02500907414 /* folder_user.png */,
+				D361465A1760A02500907414 /* page_white_acrobat.png */,
+			);
+			name = DropboxIcons;
+			path = ../../../../Desktop/DropboxIcons;
+			sourceTree = "<group>";
+		};
+		D36146621760BFA500907414 /* DropboxImageDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D361466D1760C5F200907414 /* CCDropboxImageDataProvider.h */,
+				D361466E1760C5F200907414 /* CCDropboxImageDataProvider.m */,
+			);
+			path = DropboxImageDataProvider;
+			sourceTree = "<group>";
+		};
+		D36146631760BFA500907414 /* DropboxPDFDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D36146671760C4FF00907414 /* CCDropboxPDFDataProvider.h */,
+				D36146681760C4FF00907414 /* CCDropboxPDFDataProvider.m */,
+			);
+			path = DropboxPDFDataProvider;
 			sourceTree = "<group>";
 		};
 		D37A475317577CD700E91850 /* Education */ = {
@@ -1237,10 +1291,12 @@
 		D3EFD2351756080700B7D710 /* DataProviders */ = {
 			isa = PBXGroup;
 			children = (
+				D36146621760BFA500907414 /* DropboxImageDataProvider */,
+				D36146631760BFA500907414 /* DropboxPDFDataProvider */,
+				D3614641175E438100907414 /* DropboxDataProvider */,
 				A79E227A175FA863000A1582 /* MyClassesDataProvider */,
 				A79E2269175F844A000A1582 /* SideMenuDataProvider */,
 				A7D53A521758D67500FE9FCD /* ClassesDataProvider */,
-				D3614641175E438100907414 /* DropboxDataProvider */,
 				D37A475B175788FF00E91850 /* EducationsDataProvider */,
 				D3EFD2811756856100B7D710 /* CollegeSellectionDataProvider */,
 				D3EFD26B1756594C00B7D710 /* CitiesDataProvider */,
@@ -1528,6 +1584,13 @@
 				D361463C175E355500907414 /* CCDropboxSelectionViewController.xib in Resources */,
 				D361464A175F141900907414 /* CCDropboxCell.xib in Resources */,
 				A79E2287175FD509000A1582 /* CCCollegeClassesController.xib in Resources */,
+				D361465B1760A02500907414 /* folder.png in Resources */,
+				D361465C1760A02500907414 /* folder_app.png in Resources */,
+				D361465D1760A02500907414 /* folder_photos.png in Resources */,
+				D361465E1760A02500907414 /* folder_public.png in Resources */,
+				D361465F1760A02500907414 /* folder_star.png in Resources */,
+				D36146601760A02500907414 /* folder_user.png in Resources */,
+				D36146611760A02500907414 /* page_white_acrobat.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1655,6 +1718,8 @@
 				A79E2281175FD3D2000A1582 /* CCClassesOfcurrentCollegeTransaction.m in Sources */,
 				A79E2285175FD4B8000A1582 /* CCCollegeClassesController.m in Sources */,
 				A79E228D17600143000A1582 /* CCClassAddedTransaction.m in Sources */,
+				D36146691760C4FF00907414 /* CCDropboxPDFDataProvider.m in Sources */,
+				D361466F1760C5F200907414 /* CCDropboxImageDataProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

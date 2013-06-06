@@ -14,6 +14,8 @@
 #import "CCDropboxCell.h"
 #import "CCDropboxDataProvider.h"
 #import "CCDropboxFileInfo.h"
+#import "CCDropboxPDFDataProvider.h"
+#import "CCDropboxImageDataProvider.h"
 
 @interface CCDropboxSelectionViewController ()
 
@@ -27,29 +29,41 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = CCScreenTitles.dropboxTitle;
+    
     if(![self.ioc_dropboxAPI isLinked]){
         [self.ioc_dropboxAPI linkWithController:self];
-    }
+    
     [[NSNotificationCenter defaultCenter]
      addObserver:self
      selector:@selector(dropboxLinked)
      name:CCAppDelegateDefines.dropboxLinked
      object:nil];
     
-    self.title = CCScreenTitles.dropboxTitle;
-    self.dropboxDataProvider = [CCDropboxDataProvider new];
-    self.dropboxDataProvider.dropboxPath = self.dropboxPath;
-    if([self.ioc_dropboxAPI isLinked]){
-        [self configTableWithProvider:self.dropboxDataProvider cellClass:[CCDropboxCell class]];
+    } else {
+        [self loadTable];
     }
+}
+
+- (void)loadTable
+{
+    self.dropboxDataProvider = [CCDropboxImageDataProvider new];
+    
+    self.dropboxDataProvider.dropboxPath = self.dropboxPath;
+    if (![self.dropboxPath isEqualToString:@"/"]){
+        NSArray *arrayOfPathComponents = [self.dropboxPath componentsSeparatedByString:@"/"];
+        self.title = arrayOfPathComponents.lastObject;
+    }
+    [self configTableWithProvider:self.dropboxDataProvider cellClass:[CCDropboxCell class]];
 }
 
 - (void)dropboxLinked
 {
+    NSLog(@"Auth");
     if(![self.ioc_dropboxAPI isLinked]){
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:CCAlertsMessages.dropboxLinkingFaild];
     } else {
-        [self configTableWithProvider:[CCDropboxDataProvider new] cellClass:[CCDropboxCell class]];
+        [self loadTable];
     }
 }
 
