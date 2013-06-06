@@ -10,9 +10,9 @@
 #import "CCClass.h"
 #import "CCClassesApiProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
+#import "TPKeyboardAvoidingScrollView.h"
 
-
-@interface CCCreateClassController ()
+@interface CCCreateClassController ()<UITextFieldDelegate>
 
 @property (nonatomic, strong) NSString *collegeID;
 @property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_apiClassesProvider;
@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *semesterLabel;
 @property (weak, nonatomic) IBOutlet UITextField *professorLabel;
 @property (weak, nonatomic) IBOutlet UITextField *classID;
+@property (nonatomic, retain) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
+
 
 
 @end
@@ -37,6 +39,7 @@ return self;
 
 - (void)viewDidLoad
 {
+
     [super viewDidLoad];
         
 }
@@ -54,7 +57,7 @@ return self;
         [self joinClass:(CCClass*)newClass];
         
     } errorHandler:^(NSError *error) {
-        
+        [CCStandardErrorHandler showErrorWithError:error];
     }];
 }
 
@@ -65,6 +68,10 @@ return self;
    } errorHandler:^(NSError *error) {
       [CCStandardErrorHandler showErrorWithError:error]; 
    }];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
 }
 
 @end
