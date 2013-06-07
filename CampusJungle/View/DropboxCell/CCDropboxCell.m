@@ -1,8 +1,8 @@
 //
-//  CCOrdinaryCell.m
+//  CCDropboxCell.m
 //  CampusJungle
 //
-//  Created by Yulia Petryshena on 5/30/13.
+//  Created by Vlad Korzun on 5/30/13.
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
@@ -40,6 +40,7 @@
     self.fileName.text = fileInfo.fileData.filename;
     self.fileIcon.image = fileInfo.thumb;
     
+    [self becomeSelected:fileInfo.isSelected];
     if(!fileInfo.fileData.isDirectory && !fileInfo.directLink){
        [self.ioc_dropboxAPIProvider loadDirectURLforPath:fileInfo.fileData.path successHandler:^(id result) {
            fileInfo.directLink = result;
@@ -66,23 +67,39 @@
     }
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+//- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+//{
+//
+//}
+//
+//- (void)setSelected:(BOOL)selected
+//{
+//
+//}
+
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
 {
-    [super setSelected:selected animated:animated];
-    CCDropboxFileInfo *fileInfo = (CCDropboxFileInfo *)self.cellObject;
-    if(!fileInfo.fileData.isDirectory){
-        fileInfo.isSelected = self.selected;
+
+    if(highlighted){
+        CCDropboxFileInfo *fileInfo = (CCDropboxFileInfo *)self.cellObject;
+        if(!fileInfo.fileData.isDirectory){
+            fileInfo.isSelected = !fileInfo.isSelected;
+        }
+        [self becomeSelected:fileInfo.isSelected];
     }
-    [self becomeSelected:fileInfo.isSelected];
+    [super setHighlighted:highlighted animated:animated];
 }
 
 - (void)becomeSelected:(BOOL)selected
 {
     if(selected){
         [self setAccessoryType:UITableViewCellAccessoryCheckmark];
+    
     } else {
         [self setAccessoryType:UITableViewCellAccessoryNone];
     }
 }
+
+
 
 @end

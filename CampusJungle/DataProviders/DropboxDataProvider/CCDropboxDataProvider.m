@@ -45,6 +45,14 @@
             [arrayOfFiles addObject:newInfo];
         }
         self.arrayOfItems = [self filterArrayOfItems:arrayOfFiles];
+        for(CCDropboxFileInfo *info in self.arrayOfItems){
+            for(CCDropboxFileInfo *selectedItem in self.arrayOfSelectedItems){
+                if ([info.fileData.path isEqualToString:selectedItem.fileData.path]){
+                    info.isSelected = YES;
+                    break;
+                }
+            }
+        }
         if(self.providerDidFinishLoading){
             self.providerDidFinishLoading();
         }

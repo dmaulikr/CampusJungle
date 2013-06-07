@@ -14,12 +14,13 @@
 - (void)performWithObject:(id)object
 {
     NSParameterAssert(self.navigation);
-
+    NSDictionary *sendedObject = object;
     CCDropboxFileSystemTransaction *fileSystemTransaction = [CCDropboxFileSystemTransaction new];
     fileSystemTransaction.navigation = self.navigation;
     
     CCDropboxSelectionViewController *dropboxController = [CCDropboxSelectionViewController new];
-    dropboxController.dropboxPath = object;
+    dropboxController.dropboxPath = sendedObject[@"path"];
+    dropboxController.arrayOfSelectedUser = sendedObject[@"sellected"];
     dropboxController.dropboxFileSystemTransaction = fileSystemTransaction;
     [self.navigation pushViewController:dropboxController animated:YES];
 }

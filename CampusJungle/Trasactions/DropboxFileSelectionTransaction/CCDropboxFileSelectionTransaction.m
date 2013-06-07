@@ -18,6 +18,7 @@
     CCDropboxFileSystemTransaction *fileSystemTransaction = [CCDropboxFileSystemTransaction new];
 
     CCDropboxSelectionViewController *dropboxController = [CCDropboxSelectionViewController new];
+    dropboxController.arrayOfSelectedUser = [NSMutableArray new];
     dropboxController.dropboxPath = @"/";
     dropboxController.dropboxFileSystemTransaction = fileSystemTransaction;
     UINavigationController *centralNavigation = [[UINavigationController alloc] initWithRootViewController:dropboxController];

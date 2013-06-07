@@ -33,7 +33,7 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.delegate didSelectedCellWithObject:self.dataProvider.arrayOfItems[indexPath.row]];
 }

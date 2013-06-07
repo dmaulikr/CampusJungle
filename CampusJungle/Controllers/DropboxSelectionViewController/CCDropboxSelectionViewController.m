@@ -49,7 +49,7 @@
 - (void)loadTable
 {
     self.dropboxDataProvider = [CCDropboxImageDataProvider new];
-    
+    self.dropboxDataProvider.arrayOfSelectedItems = self.arrayOfSelectedUser;
     self.dropboxDataProvider.dropboxPath = self.dropboxPath;
     __weak id weakSelf = self;
     self.dropboxDataProvider.providerDidFinishLoading = ^{
@@ -77,8 +77,40 @@
 {
     CCDropboxFileInfo *fileInfo = (CCDropboxFileInfo *)cellObject;
     if(fileInfo.fileData.isDirectory){
-        [self.dropboxFileSystemTransaction performWithObject:[self.dropboxDataProvider.dropboxPath stringByAppendingPathComponent:fileInfo.fileData.filename]];
+        NSDictionary *objectForTransaction = @{
+                                               @"path" : [self.dropboxDataProvider.dropboxPath stringByAppendingPathComponent:fileInfo.fileData.filename],
+                                               @"sellected" : self.arrayOfSelectedUser
+                                               };
+        [self.dropboxFileSystemTransaction performWithObject:objectForTransaction];
+    } else {
+        if([self is:self.arrayOfSelectedUser containPath:fileInfo.fileData.path]){
+            [self removeFrom:self.arrayOfSelectedUser infoWithPath:fileInfo.fileData.path];
+        } else {
+            [self.arrayOfSelectedUser addObject:fileInfo];
+        }
     }
+    
+}
+
+- (BOOL)is:(NSArray *)array containPath:(NSString *)path
+{
+    for(CCDropboxFileInfo *info in array){
+        if([info.fileData.path isEqualToString:path]){
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (void)removeFrom:(NSMutableArray *)array infoWithPath:(NSString *)path
+{
+    for(CCDropboxFileInfo *info in array){
+        if([info.fileData.path isEqualToString:path]){
+            [array removeObject:info];
+            return;
+        }
+    }
+
 }
 
 @end
