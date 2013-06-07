@@ -374,4 +374,9 @@
     return YES;
 }
 
+- (IBAction)myNotesButtonDidPressed
+{
+    [self.myNotesTransaction perform];
+}
+
 @end

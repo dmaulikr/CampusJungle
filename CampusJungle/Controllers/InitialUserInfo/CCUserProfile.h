@@ -14,11 +14,11 @@
 
 @property (nonatomic, strong) id <CCTransaction> logoutTransaction;
 @property (nonatomic, strong) id <CCTransaction> addColegeTransaction;
-
+@property (nonatomic, strong) id <CCTransaction> myNotesTransaction;
 @property (nonatomic, strong) NSMutableArray *arrayOfEducations;
 
 - (IBAction)logout;
 - (IBAction)avatarDidPressed;
-
+- (IBAction)myNotesButtonDidPressed;
 
 @end

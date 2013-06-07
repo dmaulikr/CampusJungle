@@ -180,7 +180,12 @@ static int outstandingRequests;
 
 - (void)restClient:(DBRestClient *)client loadStreamableURLFailedWithError:(NSError *)error
 {
-
+    NSString *path = error.userInfo[@"path"];
+    errorHandler block =  self.directURLRequest[[self successKeyForPath:path]];
+    if(block){
+        block(error);
+    }
+    [self cleanDictionary:self.directURLRequest forPath:path];
 }
 
 - (void)cleanDictionary:(NSMutableDictionary *)dictionary forPath:(NSString *)path
@@ -197,6 +202,37 @@ static int outstandingRequests;
 - (NSString *)errorKeyForPath:(NSString *)path
 {
     return [path stringByAppendingString:errorConsatnt];
+}
+
+- (void)checkAllDirectURLForArray:(NSArray *)arrayOfMetadata successHandler:(successWithObject)successHandler
+{
+    [self.restClient cancelAllRequests];
+    NSMutableArray *arrayReadyForUpload = [NSMutableArray new];
+    NSMutableArray *arrayNotReadyForUpload = [NSMutableArray new];
+    for(CCDropboxFileInfo *info in arrayOfMetadata){
+        if(info.directLink){
+            [arrayReadyForUpload addObject:info];
+        } else {
+            [arrayNotReadyForUpload addObject:info];
+        }
+    }
+    if(!arrayNotReadyForUpload.count){
+        successHandler(arrayReadyForUpload);
+    } else {
+        for(CCDropboxFileInfo *info in arrayNotReadyForUpload){
+            [self loadDirectURLforPath:info.fileData.path successHandler:^(id result) {
+                info.directLink = result;
+                if(self.restClient.requestCount == 1){
+                    [self checkAllDirectURLForArray:arrayOfMetadata successHandler:successHandler];
+                }
+            } errorHanler:^(NSError *error) {
+                if(self.restClient.requestCount == 1){
+                    [self checkAllDirectURLForArray:arrayOfMetadata successHandler:successHandler];
+                }
+            }];
+        }
+    }
+    
 }
 
 @end

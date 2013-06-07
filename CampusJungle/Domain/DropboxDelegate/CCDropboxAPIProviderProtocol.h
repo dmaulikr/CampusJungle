@@ -27,4 +27,6 @@
 
 - (void)createRestCliet;
 
+- (void)checkAllDirectURLForArray:(NSArray *)arrayOfMetadata successHandler:(successWithObject)successHandler;
+
 @end

@@ -12,7 +12,8 @@
 
 @interface CCCollegesListController : CCTableBasedController
 
-- initWithArray:(NSArray*)educations;
 @property (nonatomic, strong) id <CCTransactionWithObject> classesOfcurrentCollegeTransaction;
+
+- initWithArray:(NSArray*)educations;
 
 @end

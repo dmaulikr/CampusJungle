@@ -49,6 +49,7 @@
             for(CCDropboxFileInfo *selectedItem in self.arrayOfSelectedItems){
                 if ([info.fileData.path isEqualToString:selectedItem.fileData.path]){
                     info.isSelected = YES;
+                    info.directLink = selectedItem.directLink;
                     break;
                 }
             }

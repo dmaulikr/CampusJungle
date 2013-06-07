@@ -17,11 +17,13 @@
 #import "CCDropboxPDFDataProvider.h"
 #import "CCDropboxImageDataProvider.h"
 #import "MBProgressHUD.h"
+#import "CCNotesAPIProviderProtolcol.h"
 
 @interface CCDropboxSelectionViewController ()
 
 @property (nonatomic, strong) id <CCDropboxAPIProviderProtocol> ioc_dropboxAPI;
 @property (nonatomic, strong) CCDropboxDataProvider *dropboxDataProvider;
+@property (nonatomic, strong) id <CCNotesAPIProviderProtolcol> ioc_notesAPIProvider;
 
 @end
 
@@ -46,10 +48,16 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self setDoneButtonIfNeeded];
+}
+
 - (void)loadTable
 {
     self.dropboxDataProvider = [CCDropboxImageDataProvider new];
-    self.dropboxDataProvider.arrayOfSelectedItems = self.arrayOfSelectedUser;
+    self.dropboxDataProvider.arrayOfSelectedItems = self.arrayOfSelectedFiles;
     self.dropboxDataProvider.dropboxPath = self.dropboxPath;
     __weak id weakSelf = self;
     self.dropboxDataProvider.providerDidFinishLoading = ^{
@@ -79,17 +87,17 @@
     if(fileInfo.fileData.isDirectory){
         NSDictionary *objectForTransaction = @{
                                                @"path" : [self.dropboxDataProvider.dropboxPath stringByAppendingPathComponent:fileInfo.fileData.filename],
-                                               @"sellected" : self.arrayOfSelectedUser
+                                               @"sellected" : self.arrayOfSelectedFiles
                                                };
         [self.dropboxFileSystemTransaction performWithObject:objectForTransaction];
     } else {
-        if([self is:self.arrayOfSelectedUser containPath:fileInfo.fileData.path]){
-            [self removeFrom:self.arrayOfSelectedUser infoWithPath:fileInfo.fileData.path];
+        if([self is:self.arrayOfSelectedFiles containPath:fileInfo.fileData.path]){
+            [self removeFrom:self.arrayOfSelectedFiles infoWithPath:fileInfo.fileData.path];
         } else {
-            [self.arrayOfSelectedUser addObject:fileInfo];
+            [self.arrayOfSelectedFiles addObject:fileInfo];
         }
     }
-    
+    [self setDoneButtonIfNeeded];
 }
 
 - (BOOL)is:(NSArray *)array containPath:(NSString *)path
@@ -111,6 +119,31 @@
         }
     }
 
+}
+
+- (void)setDoneButtonIfNeeded
+{
+    if(self.arrayOfSelectedFiles.count){
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+                                                                                  style:UIBarButtonItemStyleBordered
+                                                                                 target:self
+                                                                                 action:@selector(sendFiles)];
+    } else {
+        self.navigationItem.rightBarButtonItem = nil;
+    }
+}
+
+- (void)sendFiles
+{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self.ioc_dropboxAPI checkAllDirectURLForArray:self.arrayOfSelectedFiles successHandler:^(NSArray *selectedFiles) {
+        [self.ioc_notesAPIProvider postDropboxImagesMetadata:selectedFiles noteInfo:self.noteInfo successHandler:^(id result) {
+            
+        } errorHandler:^(NSError *error) {
+            
+        }];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    }];
 }
 
 @end

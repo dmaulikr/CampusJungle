@@ -20,7 +20,7 @@
     
     CCDropboxSelectionViewController *dropboxController = [CCDropboxSelectionViewController new];
     dropboxController.dropboxPath = sendedObject[@"path"];
-    dropboxController.arrayOfSelectedUser = sendedObject[@"sellected"];
+    dropboxController.arrayOfSelectedFiles = sendedObject[@"sellected"];
     dropboxController.dropboxFileSystemTransaction = fileSystemTransaction;
     [self.navigation pushViewController:dropboxController animated:YES];
 }

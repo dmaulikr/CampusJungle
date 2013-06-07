@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CCTransaction.h"
+#import "CCTransactionWithObject.h"
 #import "JASidePanelController.h"
 
-@interface CCDropboxFileSelectionTransaction : NSObject <CCTransaction>
+@interface CCDropboxFileSelectionTransaction : NSObject <CCTransactionWithObject>
 
 @property (nonatomic, strong) JASidePanelController *menuController;
 

@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) NSString *dropboxPath;
 @property (nonatomic, strong) id <CCTransactionWithObject> dropboxFileSystemTransaction;
-@property (strong) NSMutableArray *arrayOfSelectedUser;
+@property (nonatomic, strong) NSMutableArray *arrayOfSelectedFiles;
+@property (nonatomic, strong) NSDictionary *noteInfo;
 
 @end

@@ -104,6 +104,15 @@
 		D36146611760A02500907414 /* page_white_acrobat.png in Resources */ = {isa = PBXBuildFile; fileRef = D361465A1760A02500907414 /* page_white_acrobat.png */; };
 		D36146691760C4FF00907414 /* CCDropboxPDFDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D36146681760C4FF00907414 /* CCDropboxPDFDataProvider.m */; };
 		D361466F1760C5F200907414 /* CCDropboxImageDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D361466E1760C5F200907414 /* CCDropboxImageDataProvider.m */; };
+		D36146771762284800907414 /* CCNotesAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D36146761762284800907414 /* CCNotesAPIProvider.m */; };
+		D361467C1762387F00907414 /* CCNoteUploadInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D361467B1762387F00907414 /* CCNoteUploadInfo.m */; };
+		D36146881762426200907414 /* CCMyNotesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D36146871762426200907414 /* CCMyNotesTransaction.m */; };
+		D36146921762436D00907414 /* CCMyNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D36146901762436D00907414 /* CCMyNotesViewController.m */; };
+		D36146931762436D00907414 /* CCMyNotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36146911762436D00907414 /* CCMyNotesViewController.xib */; };
+		D361469A1762454A00907414 /* CCMyNotesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D36146991762454A00907414 /* CCMyNotesDataProvider.m */; };
+		D36146A4176249FA00907414 /* CCCreateNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D36146A2176249FA00907414 /* CCCreateNoteViewController.m */; };
+		D36146A5176249FA00907414 /* CCCreateNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36146A3176249FA00907414 /* CCCreateNoteViewController.xib */; };
+		D36146AC17624AB700907414 /* CCCreateNotesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D36146AB17624AB700907414 /* CCCreateNotesTransaction.m */; };
 		D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36186471743B13E00B501BC /* SystemConfiguration.framework */; };
 		D37A475617577D5100E91850 /* CCEducation.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A475517577D5100E91850 /* CCEducation.m */; };
 		D37A475A175786D200E91850 /* CCEducationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A4759175786D200E91850 /* CCEducationCell.m */; };
@@ -312,6 +321,23 @@
 		D36146681760C4FF00907414 /* CCDropboxPDFDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxPDFDataProvider.m; sourceTree = "<group>"; };
 		D361466D1760C5F200907414 /* CCDropboxImageDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxImageDataProvider.h; sourceTree = "<group>"; };
 		D361466E1760C5F200907414 /* CCDropboxImageDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxImageDataProvider.m; sourceTree = "<group>"; };
+		D36146751762284800907414 /* CCNotesAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNotesAPIProvider.h; sourceTree = "<group>"; };
+		D36146761762284800907414 /* CCNotesAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNotesAPIProvider.m; sourceTree = "<group>"; };
+		D36146781762286A00907414 /* CCNotesAPIProviderProtolcol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCNotesAPIProviderProtolcol.h; sourceTree = "<group>"; };
+		D361467A1762387F00907414 /* CCNoteUploadInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNoteUploadInfo.h; sourceTree = "<group>"; };
+		D361467B1762387F00907414 /* CCNoteUploadInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNoteUploadInfo.m; sourceTree = "<group>"; };
+		D36146861762426200907414 /* CCMyNotesTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMyNotesTransaction.h; sourceTree = "<group>"; };
+		D36146871762426200907414 /* CCMyNotesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMyNotesTransaction.m; sourceTree = "<group>"; };
+		D361468F1762436D00907414 /* CCMyNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMyNotesViewController.h; sourceTree = "<group>"; };
+		D36146901762436D00907414 /* CCMyNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMyNotesViewController.m; sourceTree = "<group>"; };
+		D36146911762436D00907414 /* CCMyNotesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMyNotesViewController.xib; sourceTree = "<group>"; };
+		D36146981762454A00907414 /* CCMyNotesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMyNotesDataProvider.h; sourceTree = "<group>"; };
+		D36146991762454A00907414 /* CCMyNotesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMyNotesDataProvider.m; sourceTree = "<group>"; };
+		D36146A1176249FA00907414 /* CCCreateNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCreateNoteViewController.h; sourceTree = "<group>"; };
+		D36146A2176249FA00907414 /* CCCreateNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCreateNoteViewController.m; sourceTree = "<group>"; };
+		D36146A3176249FA00907414 /* CCCreateNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCCreateNoteViewController.xib; sourceTree = "<group>"; };
+		D36146AA17624AB700907414 /* CCCreateNotesTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCreateNotesTransaction.h; sourceTree = "<group>"; };
+		D36146AB17624AB700907414 /* CCCreateNotesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCreateNotesTransaction.m; sourceTree = "<group>"; };
 		D36186471743B13E00B501BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D37A475417577D5100E91850 /* CCEducation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEducation.h; sourceTree = "<group>"; };
 		D37A475517577D5100E91850 /* CCEducation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEducation.m; sourceTree = "<group>"; };
@@ -470,6 +496,8 @@
 		A787C73217536F8400824DEA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D361469B1762499F00907414 /* CreateNoteScreen */,
+				D36146891762431C00907414 /* MyNotesController */,
 				A79E2282175FD485000A1582 /* CCCollegeClassesController */,
 				A79E226D175F846A000A1582 /* CollegesListController */,
 				A7A618B0175DCED40047C5B2 /* CreateClassController */,
@@ -572,6 +600,7 @@
 		A787C74F17536F8400824DEA /* APIProvider */ = {
 			isa = PBXGroup;
 			children = (
+				D36146741762281F00907414 /* NotesAPIProvider */,
 				A7A618B7175E04490047C5B2 /* ClassesApiProvider */,
 				A787C75017536F8400824DEA /* CCAPIProvider.h */,
 				A787C75117536F8400824DEA /* CCAPIProvider.m */,
@@ -623,6 +652,7 @@
 		A787C76117536F8400824DEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D36146791762382100907414 /* NoteforUploadInfo */,
 				A7A618AC175CD79B0047C5B2 /* Class */,
 				D361464F175F65E700907414 /* DropboxFileData */,
 				D37A475317577CD700E91850 /* Education */,
@@ -721,6 +751,8 @@
 		A787C77D17536F8400824DEA /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
+				D36146A617624A7500907414 /* CreateNotesTransaction */,
+				D36146851762424C00907414 /* MyNotes */,
 				A79E228A1760010E000A1582 /* ClassAddedTransaction */,
 				A79E227E175FD3A8000A1582 /* ClassesOfCurrentCollegeTransaction */,
 				A79E2275175F8C84000A1582 /* SelectCollegeClassesTransaction */,
@@ -1174,6 +1206,73 @@
 			path = DropboxPDFDataProvider;
 			sourceTree = "<group>";
 		};
+		D36146741762281F00907414 /* NotesAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D36146781762286A00907414 /* CCNotesAPIProviderProtolcol.h */,
+				D36146751762284800907414 /* CCNotesAPIProvider.h */,
+				D36146761762284800907414 /* CCNotesAPIProvider.m */,
+			);
+			path = NotesAPIProvider;
+			sourceTree = "<group>";
+		};
+		D36146791762382100907414 /* NoteforUploadInfo */ = {
+			isa = PBXGroup;
+			children = (
+				D361467A1762387F00907414 /* CCNoteUploadInfo.h */,
+				D361467B1762387F00907414 /* CCNoteUploadInfo.m */,
+			);
+			name = NoteforUploadInfo;
+			path = CampusJungle/Domain/NoteforUploadInfo;
+			sourceTree = SOURCE_ROOT;
+		};
+		D36146851762424C00907414 /* MyNotes */ = {
+			isa = PBXGroup;
+			children = (
+				D36146861762426200907414 /* CCMyNotesTransaction.h */,
+				D36146871762426200907414 /* CCMyNotesTransaction.m */,
+			);
+			path = MyNotes;
+			sourceTree = "<group>";
+		};
+		D36146891762431C00907414 /* MyNotesController */ = {
+			isa = PBXGroup;
+			children = (
+				D361468F1762436D00907414 /* CCMyNotesViewController.h */,
+				D36146901762436D00907414 /* CCMyNotesViewController.m */,
+				D36146911762436D00907414 /* CCMyNotesViewController.xib */,
+			);
+			path = MyNotesController;
+			sourceTree = "<group>";
+		};
+		D3614694176244E500907414 /* MyNotesDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D36146981762454A00907414 /* CCMyNotesDataProvider.h */,
+				D36146991762454A00907414 /* CCMyNotesDataProvider.m */,
+			);
+			path = MyNotesDataProvider;
+			sourceTree = "<group>";
+		};
+		D361469B1762499F00907414 /* CreateNoteScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D36146A1176249FA00907414 /* CCCreateNoteViewController.h */,
+				D36146A2176249FA00907414 /* CCCreateNoteViewController.m */,
+				D36146A3176249FA00907414 /* CCCreateNoteViewController.xib */,
+			);
+			path = CreateNoteScreen;
+			sourceTree = "<group>";
+		};
+		D36146A617624A7500907414 /* CreateNotesTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D36146AA17624AB700907414 /* CCCreateNotesTransaction.h */,
+				D36146AB17624AB700907414 /* CCCreateNotesTransaction.m */,
+			);
+			path = CreateNotesTransaction;
+			sourceTree = "<group>";
+		};
 		D37A475317577CD700E91850 /* Education */ = {
 			isa = PBXGroup;
 			children = (
@@ -1291,6 +1390,7 @@
 		D3EFD2351756080700B7D710 /* DataProviders */ = {
 			isa = PBXGroup;
 			children = (
+				D3614694176244E500907414 /* MyNotesDataProvider */,
 				D36146621760BFA500907414 /* DropboxImageDataProvider */,
 				D36146631760BFA500907414 /* DropboxPDFDataProvider */,
 				D3614641175E438100907414 /* DropboxDataProvider */,
@@ -1591,6 +1691,8 @@
 				D361465F1760A02500907414 /* folder_star.png in Resources */,
 				D36146601760A02500907414 /* folder_user.png in Resources */,
 				D36146611760A02500907414 /* page_white_acrobat.png in Resources */,
+				D36146931762436D00907414 /* CCMyNotesViewController.xib in Resources */,
+				D36146A5176249FA00907414 /* CCCreateNoteViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1720,6 +1822,13 @@
 				A79E228D17600143000A1582 /* CCClassAddedTransaction.m in Sources */,
 				D36146691760C4FF00907414 /* CCDropboxPDFDataProvider.m in Sources */,
 				D361466F1760C5F200907414 /* CCDropboxImageDataProvider.m in Sources */,
+				D36146771762284800907414 /* CCNotesAPIProvider.m in Sources */,
+				D361467C1762387F00907414 /* CCNoteUploadInfo.m in Sources */,
+				D36146881762426200907414 /* CCMyNotesTransaction.m in Sources */,
+				D36146921762436D00907414 /* CCMyNotesViewController.m in Sources */,
+				D361469A1762454A00907414 /* CCMyNotesDataProvider.m in Sources */,
+				D36146A4176249FA00907414 /* CCCreateNoteViewController.m in Sources */,
+				D36146AC17624AB700907414 /* CCCreateNotesTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
