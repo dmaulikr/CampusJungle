@@ -7,7 +7,7 @@
 //
 
 #import "CCDropboxFileSystemTransaction.h"
-#import "CCDropboxSelectionViewController.h"
+#import "CCDropboxImagesSelectionViewController.h"
 
 @implementation CCDropboxFileSystemTransaction
 
@@ -18,7 +18,7 @@
     CCDropboxFileSystemTransaction *fileSystemTransaction = [CCDropboxFileSystemTransaction new];
     fileSystemTransaction.navigation = self.navigation;
     
-    CCDropboxSelectionViewController *dropboxController = [CCDropboxSelectionViewController new];
+    CCDropboxImagesSelectionViewController *dropboxController = [CCDropboxImagesSelectionViewController new];
     dropboxController.dropboxPath = sendedObject[@"path"];
     dropboxController.arrayOfSelectedFiles = sendedObject[@"sellected"];
     dropboxController.dropboxFileSystemTransaction = fileSystemTransaction;

@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCDropboxSelectionViewController.h"
+#import "CCDropboxImagesSelectionViewController.h"
 #import "CCDropboxAPIProviderProtocol.h"
 #import "CCDefines.h"
 #import "CCStandardErrorHandler.h"
@@ -19,7 +19,7 @@
 #import "MBProgressHUD.h"
 #import "CCNotesAPIProviderProtolcol.h"
 
-@interface CCDropboxSelectionViewController ()
+@interface CCDropboxImagesSelectionViewController ()
 
 @property (nonatomic, strong) id <CCDropboxAPIProviderProtocol> ioc_dropboxAPI;
 @property (nonatomic, strong) CCDropboxDataProvider *dropboxDataProvider;
@@ -27,7 +27,7 @@
 
 @end
 
-@implementation CCDropboxSelectionViewController
+@implementation CCDropboxImagesSelectionViewController
 
 - (void)viewDidLoad
 {
@@ -56,7 +56,7 @@
 
 - (void)loadTable
 {
-    self.dropboxDataProvider = [CCDropboxImageDataProvider new];
+    self.dropboxDataProvider = [self createDataProvider];
     self.dropboxDataProvider.arrayOfSelectedItems = self.arrayOfSelectedFiles;
     self.dropboxDataProvider.dropboxPath = self.dropboxPath;
     __weak id weakSelf = self;
@@ -69,6 +69,11 @@
     }
     [self configTableWithProvider:self.dropboxDataProvider cellClass:[CCDropboxCell class]];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+}
+
+- (CCDropboxDataProvider *)createDataProvider
+{
+    return [CCDropboxImageDataProvider new];
 }
 
 - (void)dropboxLinked

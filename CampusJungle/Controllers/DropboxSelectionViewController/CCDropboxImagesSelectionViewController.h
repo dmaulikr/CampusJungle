@@ -9,7 +9,7 @@
 #import "CCTableBasedController.h"
 #import "CCTransactionWithObject.h"
 
-@interface CCDropboxSelectionViewController : CCTableBasedController
+@interface CCDropboxImagesSelectionViewController : CCTableBasedController
 
 @property (nonatomic, strong) NSString *dropboxPath;
 @property (nonatomic, strong) id <CCTransactionWithObject> dropboxFileSystemTransaction;

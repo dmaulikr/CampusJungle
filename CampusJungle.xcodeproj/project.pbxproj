@@ -87,8 +87,8 @@
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
 		D3614631175E17BE00907414 /* CCDropboxAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */; };
 		D3614636175E1D3000907414 /* DropboxSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = D3614635175E1D3000907414 /* DropboxSDK */; };
-		D361463B175E355500907414 /* CCDropboxSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614639175E355500907414 /* CCDropboxSelectionViewController.m */; };
-		D361463C175E355500907414 /* CCDropboxSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D361463A175E355500907414 /* CCDropboxSelectionViewController.xib */; };
+		D361463B175E355500907414 /* CCDropboxImagesSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614639175E355500907414 /* CCDropboxImagesSelectionViewController.m */; };
+		D361463C175E355500907414 /* CCDropboxImagesSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D361463A175E355500907414 /* CCDropboxImagesSelectionViewController.xib */; };
 		D3614640175E362600907414 /* CCDropboxImagesSelectionTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D361463F175E362600907414 /* CCDropboxImagesSelectionTransaction.m */; };
 		D3614644175E43A400907414 /* CCDropboxDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614643175E43A400907414 /* CCDropboxDataProvider.m */; };
 		D3614648175F133700907414 /* CCDropboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614647175F133700907414 /* CCDropboxCell.m */; };
@@ -310,9 +310,9 @@
 		D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxAPIProvider.m; sourceTree = "<group>"; };
 		D3614632175E18A200907414 /* CCDropboxAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProviderProtocol.h; sourceTree = "<group>"; };
 		D3614635175E1D3000907414 /* DropboxSDK */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = DropboxSDK; path = "Pods/Dropbox-iOS-SDK/dropbox-ios-sdk-1.3.4/DropboxSDK.framework/DropboxSDK"; sourceTree = "<group>"; };
-		D3614638175E355500907414 /* CCDropboxSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxSelectionViewController.h; sourceTree = "<group>"; };
-		D3614639175E355500907414 /* CCDropboxSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxSelectionViewController.m; sourceTree = "<group>"; };
-		D361463A175E355500907414 /* CCDropboxSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCDropboxSelectionViewController.xib; sourceTree = "<group>"; };
+		D3614638175E355500907414 /* CCDropboxImagesSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxImagesSelectionViewController.h; sourceTree = "<group>"; };
+		D3614639175E355500907414 /* CCDropboxImagesSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxImagesSelectionViewController.m; sourceTree = "<group>"; };
+		D361463A175E355500907414 /* CCDropboxImagesSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCDropboxImagesSelectionViewController.xib; sourceTree = "<group>"; };
 		D361463E175E362600907414 /* CCDropboxImagesSelectionTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxImagesSelectionTransaction.h; sourceTree = "<group>"; };
 		D361463F175E362600907414 /* CCDropboxImagesSelectionTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxImagesSelectionTransaction.m; sourceTree = "<group>"; };
 		D3614642175E43A400907414 /* CCDropboxDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxDataProvider.h; sourceTree = "<group>"; };
@@ -1150,9 +1150,9 @@
 		D3614637175E352200907414 /* DropboxSelectionViewController */ = {
 			isa = PBXGroup;
 			children = (
-				D3614638175E355500907414 /* CCDropboxSelectionViewController.h */,
-				D3614639175E355500907414 /* CCDropboxSelectionViewController.m */,
-				D361463A175E355500907414 /* CCDropboxSelectionViewController.xib */,
+				D3614638175E355500907414 /* CCDropboxImagesSelectionViewController.h */,
+				D3614639175E355500907414 /* CCDropboxImagesSelectionViewController.m */,
+				D361463A175E355500907414 /* CCDropboxImagesSelectionViewController.xib */,
 			);
 			path = DropboxSelectionViewController;
 			sourceTree = "<group>";
@@ -1732,7 +1732,7 @@
 				A79E2268175F83DB000A1582 /* CCClassController.xib in Resources */,
 				A79E2272175F846B000A1582 /* CCCollegesListController.xib in Resources */,
 				A79E2274175F8A75000A1582 /* monkey.jpg in Resources */,
-				D361463C175E355500907414 /* CCDropboxSelectionViewController.xib in Resources */,
+				D361463C175E355500907414 /* CCDropboxImagesSelectionViewController.xib in Resources */,
 				D361464A175F141900907414 /* CCDropboxCell.xib in Resources */,
 				A79E2287175FD509000A1582 /* CCCollegeClassesController.xib in Resources */,
 				D36146931762436D00907414 /* CCMyNotesViewController.xib in Resources */,
@@ -1874,7 +1874,7 @@
 				A79E2271175F846B000A1582 /* CCCollegesListController.m in Sources */,
 				A79E2278175F8CC6000A1582 /* CCSelectCollegeClassesTransaction.m in Sources */,
 				D3614631175E17BE00907414 /* CCDropboxAPIProvider.m in Sources */,
-				D361463B175E355500907414 /* CCDropboxSelectionViewController.m in Sources */,
+				D361463B175E355500907414 /* CCDropboxImagesSelectionViewController.m in Sources */,
 				D3614640175E362600907414 /* CCDropboxImagesSelectionTransaction.m in Sources */,
 				D3614644175E43A400907414 /* CCDropboxDataProvider.m in Sources */,
 				D3614648175F133700907414 /* CCDropboxCell.m in Sources */,
