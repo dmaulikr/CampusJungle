@@ -17,4 +17,6 @@
 @property (nonatomic, strong) NSString *localPath;
 @property (nonatomic) BOOL isSelected;
 
++ (NSArray *)arrayOfDirectLinksFromArrayOfInfo:(NSArray *)arrayOfInfo;
+
 @end

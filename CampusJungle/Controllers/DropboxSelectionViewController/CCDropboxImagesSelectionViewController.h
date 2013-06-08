@@ -8,12 +8,13 @@
 
 #import "CCTableBasedController.h"
 #import "CCTransactionWithObject.h"
+#import "CCNoteUploadInfo.h"
 
 @interface CCDropboxImagesSelectionViewController : CCTableBasedController
 
 @property (nonatomic, strong) NSString *dropboxPath;
 @property (nonatomic, strong) id <CCTransactionWithObject> dropboxFileSystemTransaction;
 @property (nonatomic, strong) NSMutableArray *arrayOfSelectedFiles;
-@property (nonatomic, strong) NSDictionary *noteInfo;
+@property (nonatomic, strong) CCNoteUploadInfo *noteUploadInfo;
 
 @end

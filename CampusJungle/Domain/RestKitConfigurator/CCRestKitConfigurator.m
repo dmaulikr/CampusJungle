@@ -202,9 +202,7 @@
 
 + (void)configurePaginationResponse:(RKObjectManager *)objectManager
 {
-    RKObjectMapping *paginationStatesResponseMapping  = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
-    
-    [paginationStatesResponseMapping addAttributeMappingsFromDictionary:@{@"count": CCResponseKeys.count}];
+    RKObjectMapping *paginationStatesResponseMapping  = [CCRestKitConfigurator paginationMapping];
     
     RKObjectMapping *statesMapping = [RKObjectMapping mappingForClass:[CCState class]];
     [statesMapping addAttributeMappingsFromDictionary:@{
@@ -283,6 +281,14 @@
     [objectManager addResponseDescriptor:responseUserDescriptor];
 }
 
+//+ (void)configure
 
++ (RKObjectMapping *)paginationMapping
+{
+    RKObjectMapping *paginationResponseMapping  = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    
+    [paginationResponseMapping addAttributeMappingsFromDictionary:@{@"count": CCResponseKeys.count}];
+    return paginationResponseMapping;
+}
 
 @end

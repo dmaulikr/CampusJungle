@@ -10,4 +10,13 @@
 
 @implementation CCDropboxFileInfo
 
++ (NSArray *)arrayOfDirectLinksFromArrayOfInfo:(NSArray *)arrayOfInfo
+{
+    NSMutableArray *arrayOfUrls = [NSMutableArray new];
+    for(CCDropboxFileInfo *info in arrayOfInfo){
+        [arrayOfUrls addObject:info.directLink];
+    }
+    return arrayOfUrls;
+}
+
 @end

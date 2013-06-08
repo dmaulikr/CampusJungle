@@ -127,6 +127,7 @@
 		D36146D7176314A100907414 /* page_white_acrobat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146C3176314A100907414 /* page_white_acrobat@2x.png */; };
 		D36146D8176314A100907414 /* page_white_acrobat_import.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146C4176314A100907414 /* page_white_acrobat_import.png */; };
 		D36146D9176314A100907414 /* page_white_acrobat_import@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146C5176314A100907414 /* page_white_acrobat_import@2x.png */; };
+		D36146DD176352FD00907414 /* CCNote.m in Sources */ = {isa = PBXBuildFile; fileRef = D36146DC176352FD00907414 /* CCNote.m */; };
 		D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36186471743B13E00B501BC /* SystemConfiguration.framework */; };
 		D37A475617577D5100E91850 /* CCEducation.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A475517577D5100E91850 /* CCEducation.m */; };
 		D37A475A175786D200E91850 /* CCEducationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A4759175786D200E91850 /* CCEducationCell.m */; };
@@ -367,6 +368,8 @@
 		D36146C3176314A100907414 /* page_white_acrobat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "page_white_acrobat@2x.png"; sourceTree = "<group>"; };
 		D36146C4176314A100907414 /* page_white_acrobat_import.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_white_acrobat_import.png; sourceTree = "<group>"; };
 		D36146C5176314A100907414 /* page_white_acrobat_import@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "page_white_acrobat_import@2x.png"; sourceTree = "<group>"; };
+		D36146DB176352FD00907414 /* CCNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNote.h; sourceTree = "<group>"; };
+		D36146DC176352FD00907414 /* CCNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNote.m; sourceTree = "<group>"; };
 		D36186471743B13E00B501BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D37A475417577D5100E91850 /* CCEducation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEducation.h; sourceTree = "<group>"; };
 		D37A475517577D5100E91850 /* CCEducation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEducation.m; sourceTree = "<group>"; };
@@ -681,6 +684,7 @@
 		A787C76117536F8400824DEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D36146DA176352F200907414 /* Note */,
 				D36146791762382100907414 /* NoteforUploadInfo */,
 				A7A618AC175CD79B0047C5B2 /* Class */,
 				D361464F175F65E700907414 /* DropboxFileData */,
@@ -1324,6 +1328,15 @@
 			path = DropboxIcons;
 			sourceTree = "<group>";
 		};
+		D36146DA176352F200907414 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				D36146DB176352FD00907414 /* CCNote.h */,
+				D36146DC176352FD00907414 /* CCNote.m */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
 		D37A475317577CD700E91850 /* Education */ = {
 			isa = PBXGroup;
 			children = (
@@ -1894,6 +1907,7 @@
 				D36146A4176249FA00907414 /* CCCreateNoteViewController.m in Sources */,
 				D36146AC17624AB700907414 /* CCCreateNotesTransaction.m in Sources */,
 				D36146B01763121B00907414 /* CCSelectPdfFromDropboxTransaction.m in Sources */,
+				D36146DD176352FD00907414 /* CCNote.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
