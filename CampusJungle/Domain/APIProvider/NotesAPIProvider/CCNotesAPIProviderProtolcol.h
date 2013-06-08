@@ -12,7 +12,6 @@
 
 @protocol CCNotesAPIProviderProtolcol  <AppleGuiceInjectable,AppleGuiceSingleton>
 
-- (void)postDropboxImagesMetadata:(NSArray *)arrayOfMetadata noteInfo:(NSDictionary *)noteInfo successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 
 - (void)postDropboxPdfMetadata:(CCDropboxFileInfo *)metadata noteInfo:(NSDictionary *)noteInfo successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 

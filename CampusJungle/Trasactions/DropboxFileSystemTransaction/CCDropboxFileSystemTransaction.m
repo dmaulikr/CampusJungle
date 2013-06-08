@@ -21,6 +21,7 @@
     CCDropboxImagesSelectionViewController *dropboxController = [CCDropboxImagesSelectionViewController new];
     dropboxController.dropboxPath = sendedObject[@"path"];
     dropboxController.arrayOfSelectedFiles = sendedObject[@"sellected"];
+    dropboxController.noteUploadInfo = sendedObject[@"noteInfo"];
     dropboxController.dropboxFileSystemTransaction = fileSystemTransaction;
     [self.navigation pushViewController:dropboxController animated:YES];
 }

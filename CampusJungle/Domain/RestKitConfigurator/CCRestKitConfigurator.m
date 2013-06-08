@@ -19,6 +19,8 @@
 #import "CCCollege.h"
 #import "CCClass.h"
 #import "CCEducation.h"
+#import "CCNote.h"
+#import "CCNoteUploadInfo.h"
 
 @implementation CCRestKitConfigurator
 
@@ -49,6 +51,8 @@
     [CCRestKitConfigurator configureCityResponse:objectManager];
     [CCRestKitConfigurator configureStateResponse:objectManager];
     [CCRestKitConfigurator configureFacebookLinking:objectManager];
+    [CCRestKitConfigurator configureNotesResponse:objectManager];
+    [CCRestKitConfigurator configureNotesUploadRequest:objectManager];
 
 }
 
@@ -283,6 +287,48 @@
     NSString *cityPathPatern = [NSString stringWithFormat:CCAPIDefines.cities,@":stateID"];
     RKResponseDescriptor *responsePaginationCity = [RKResponseDescriptor responseDescriptorWithMapping:paginationCitiesResponseMapping pathPattern:cityPathPatern keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     [objectManager addResponseDescriptor:responsePaginationCity];
+}
+
++ (void)configureNotesResponse:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *paginationNotesResponseMapping = [CCRestKitConfigurator paginationMapping];
+    RKObjectMapping *notesMapping = [RKObjectMapping mappingForClass:[CCNote class]];
+    [notesMapping addAttributeMappingsFromDictionary:@{
+     @"id" : @"noteID",
+     @"owner_id" : @"ownerID",
+     @"college_id" : @"collegeID",
+     @"class_id" : @"classID",
+     @"description" : @"noteDescription",
+     @"price" : @"price",
+     @"tags" : @"tags",
+     @"thumbnail" : @"thumbnail",
+     @"thumbnail_retina" : @"thumbnailRetina",
+     @"attachment" : @"link",
+     }];
+    
+    RKRelationshipMapping* relationShipResponseCitiesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"notes"
+                                                                                                           toKeyPath:CCResponseKeys.items
+                                                                                                         withMapping:notesMapping];
+    [paginationNotesResponseMapping addPropertyMapping:relationShipResponseCitiesMapping];
+    RKResponseDescriptor *responsePaginationNote = [RKResponseDescriptor responseDescriptorWithMapping:paginationNotesResponseMapping pathPattern:CCAPIDefines.listOfMyNotes keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [objectManager addResponseDescriptor:responsePaginationNote];
+}
+
++ (void)configureNotesUploadRequest:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *notesMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    [notesMapping addAttributeMappingsFromDictionary:@{
+     @"classID" : @"class_id",
+     @"noteDescription" : @"description",
+     @"price" : @"price",
+     @"tags" : @"tags",
+     @"pdfUrl" : @"pdf_url",
+     @"arrayOfURLs" :@"images_urls",
+     @"thumbnail" : @"thumbnail",
+     }];
+    RKRequestDescriptor *noteRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:notesMapping objectClass:[CCNoteUploadInfo class] rootKeyPath:nil];
+    [objectManager addRequestDescriptor:noteRequestDescriptor];
+
 }
 
 + (RKObjectMapping *)paginationMapping

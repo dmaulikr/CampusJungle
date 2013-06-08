@@ -25,6 +25,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .addClass = @"/api/users/me/classes/%@",
     .classesOfCollege = @"/api/colleges/%@/classes",
     .uploadNotesPath = @"/api/colleges/%@/notes",
+    .listOfMyNotes = @"/api/users/me/notes",
 };
 
 const struct CCUserDefines CCUserDefines = {

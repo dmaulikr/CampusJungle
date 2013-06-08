@@ -22,7 +22,7 @@
     dropboxController.arrayOfSelectedFiles = [NSMutableArray new];
     dropboxController.dropboxPath = @"/";
     dropboxController.dropboxFileSystemTransaction = fileSystemTransaction;
-
+    dropboxController.noteUploadInfo = object;
     [self.navigation pushViewController:dropboxController animated:YES];
 }
 

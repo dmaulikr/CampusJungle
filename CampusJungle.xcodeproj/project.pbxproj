@@ -128,6 +128,8 @@
 		D36146D8176314A100907414 /* page_white_acrobat_import.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146C4176314A100907414 /* page_white_acrobat_import.png */; };
 		D36146D9176314A100907414 /* page_white_acrobat_import@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146C5176314A100907414 /* page_white_acrobat_import@2x.png */; };
 		D36146DD176352FD00907414 /* CCNote.m in Sources */ = {isa = PBXBuildFile; fileRef = D36146DC176352FD00907414 /* CCNote.m */; };
+		D36146E11763629700907414 /* CCNoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D36146E01763629700907414 /* CCNoteCell.m */; };
+		D36146E31763638C00907414 /* CCNoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36146E21763638C00907414 /* CCNoteCell.xib */; };
 		D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36186471743B13E00B501BC /* SystemConfiguration.framework */; };
 		D37A475617577D5100E91850 /* CCEducation.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A475517577D5100E91850 /* CCEducation.m */; };
 		D37A475A175786D200E91850 /* CCEducationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A4759175786D200E91850 /* CCEducationCell.m */; };
@@ -370,6 +372,9 @@
 		D36146C5176314A100907414 /* page_white_acrobat_import@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "page_white_acrobat_import@2x.png"; sourceTree = "<group>"; };
 		D36146DB176352FD00907414 /* CCNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNote.h; sourceTree = "<group>"; };
 		D36146DC176352FD00907414 /* CCNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNote.m; sourceTree = "<group>"; };
+		D36146DF1763629700907414 /* CCNoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNoteCell.h; sourceTree = "<group>"; };
+		D36146E01763629700907414 /* CCNoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNoteCell.m; sourceTree = "<group>"; };
+		D36146E21763638C00907414 /* CCNoteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCNoteCell.xib; sourceTree = "<group>"; };
 		D36186471743B13E00B501BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D37A475417577D5100E91850 /* CCEducation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEducation.h; sourceTree = "<group>"; };
 		D37A475517577D5100E91850 /* CCEducation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEducation.m; sourceTree = "<group>"; };
@@ -784,6 +789,7 @@
 		A787C77D17536F8400824DEA /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
+				D35C1B481763706500C2AEB4 /* BackToListOfNotesTransaction */,
 				D36146AD176311FA00907414 /* SelectPdfFromDropbox */,
 				D36146A617624A7500907414 /* CreateNotesTransaction */,
 				D36146851762424C00907414 /* MyNotes */,
@@ -1140,6 +1146,13 @@
 			name = ClassesDataProvider;
 			sourceTree = "<group>";
 		};
+		D35C1B481763706500C2AEB4 /* BackToListOfNotesTransaction */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BackToListOfNotesTransaction;
+			sourceTree = "<group>";
+		};
 		D361462E175E17AD00907414 /* CCDropboxAPIProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -1337,6 +1350,16 @@
 			path = Note;
 			sourceTree = "<group>";
 		};
+		D36146DE1763629700907414 /* NoteCell */ = {
+			isa = PBXGroup;
+			children = (
+				D36146DF1763629700907414 /* CCNoteCell.h */,
+				D36146E01763629700907414 /* CCNoteCell.m */,
+				D36146E21763638C00907414 /* CCNoteCell.xib */,
+			);
+			path = NoteCell;
+			sourceTree = "<group>";
+		};
 		D37A475317577CD700E91850 /* Education */ = {
 			isa = PBXGroup;
 			children = (
@@ -1390,6 +1413,7 @@
 		D3A2C3261754D53900989831 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D36146DE1763629700907414 /* NoteCell */,
 				A7A618BC175E26590047C5B2 /* CCClassCell */,
 				A7D53A261758A7CA00FE9FCD /* MHTabBarController */,
 				A7D53A101757F29F00FE9FCD /* OrdinaryCell */,
@@ -1770,6 +1794,7 @@
 				D36146D7176314A100907414 /* page_white_acrobat@2x.png in Resources */,
 				D36146D8176314A100907414 /* page_white_acrobat_import.png in Resources */,
 				D36146D9176314A100907414 /* page_white_acrobat_import@2x.png in Resources */,
+				D36146E31763638C00907414 /* CCNoteCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1908,6 +1933,7 @@
 				D36146AC17624AB700907414 /* CCCreateNotesTransaction.m in Sources */,
 				D36146B01763121B00907414 /* CCSelectPdfFromDropboxTransaction.m in Sources */,
 				D36146DD176352FD00907414 /* CCNote.m in Sources */,
+				D36146E11763629700907414 /* CCNoteCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

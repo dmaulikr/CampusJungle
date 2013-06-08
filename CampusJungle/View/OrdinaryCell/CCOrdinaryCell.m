@@ -29,7 +29,7 @@
 - (void)setCellObject:(id)cellObject
 {
     _cellObject = cellObject;
-    self.label.text = (NSString *)cellObject;
+    self.label.text = [(NSString *)cellObject description];
 }
 
 @end

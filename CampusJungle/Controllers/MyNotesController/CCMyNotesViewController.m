@@ -7,7 +7,7 @@
 //
 
 #import "CCMyNotesViewController.h"
-#import "CCOrdinaryCell.h"
+#import "CCNoteCell.h"
 #import "CCMyNotesDataProvider.h"
 
 @interface CCMyNotesViewController ()
@@ -19,7 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self configTableWithProvider:[CCMyNotesDataProvider new] cellClass:[CCOrdinaryCell class]];
+    [self configTableWithProvider:[CCMyNotesDataProvider new] cellClass:[CCNoteCell class]];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createNewNote)];
 }
 

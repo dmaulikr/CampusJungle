@@ -224,4 +224,10 @@
 
 }
 
+- (void)loadMyNotesNumberOfPage:(NSNumber *)pageNumber successHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
+{
+    
+    [self loadItemsWithParams:@{@"page_number" : pageNumber.stringValue} path:CCAPIDefines.listOfMyNotes successHandler:successHandler errorHandler:errorHandler];
+}
+
 @end

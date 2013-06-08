@@ -59,6 +59,7 @@
     noteInfo.noteDescription = self.descriptionField.text;
     noteInfo.price = [NSNumber numberWithInteger:self.priceField.text.integerValue];
     noteInfo.collegeID = @20429;
+    noteInfo.thumbnail = [UIImage imageNamed:@"folder.png"];
     return noteInfo;
 }
 

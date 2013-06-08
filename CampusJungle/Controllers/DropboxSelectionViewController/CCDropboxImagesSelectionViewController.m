@@ -92,7 +92,8 @@
     if(fileInfo.fileData.isDirectory){
         NSDictionary *objectForTransaction = @{
                                                @"path" : [self.dropboxDataProvider.dropboxPath stringByAppendingPathComponent:fileInfo.fileData.filename],
-                                               @"sellected" : self.arrayOfSelectedFiles
+                                               @"sellected" : self.arrayOfSelectedFiles,
+                                               @"noteInfo" : self.noteUploadInfo
                                                };
         [self.dropboxFileSystemTransaction performWithObject:objectForTransaction];
     } else {

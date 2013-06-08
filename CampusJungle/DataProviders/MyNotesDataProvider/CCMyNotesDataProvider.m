@@ -12,8 +12,13 @@
 
 - (void)loadItemsForPageNumber:(long)numberOfPage successHandler:(successWithObject)successHandler
 {
-    
-
+    [self.ioc_apiProvider loadMyNotesNumberOfPage:[NSNumber numberWithLong:numberOfPage] successHandler:^(RKMappingResult *result) {
+        
+        successHandler(result.firstObject);
+        
+    } errorHandler:^(NSError *error) {
+        [self showErrorWhileLoading:error];
+    }];
 }
 
 @end
