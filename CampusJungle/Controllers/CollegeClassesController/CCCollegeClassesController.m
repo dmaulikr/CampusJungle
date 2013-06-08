@@ -28,6 +28,8 @@
     self = [super init];
     if (self) {
         self.collegeID = collegeID;
+        [self.navigationItem setTitle:@"Join Class"];
+
     }
     return self;
 }
