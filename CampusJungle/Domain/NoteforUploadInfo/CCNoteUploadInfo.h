@@ -11,7 +11,7 @@
 @interface CCNoteUploadInfo : NSObject
 
 @property (nonatomic, strong) NSNumber *collegeID;
-@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *noteDescription;
 @property (nonatomic, strong) NSNumber *classID;
 @property (nonatomic, strong) NSString *tagsString;
 @property (nonatomic, strong) NSNumber *price;
