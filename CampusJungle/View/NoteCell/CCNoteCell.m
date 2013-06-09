@@ -43,9 +43,13 @@
     } else {
         self.notReadyLabel.hidden = NO;
     }
-    
-    NSString *thumbURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,note.thumbnailRetina];
-    [self.thumbImage setImageWithURL:[NSURL URLWithString:thumbURL]];
+    if(note.thumbnailRetina.length){
+        NSString *thumbURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,note.thumbnailRetina];
+        [self.thumbImage setImageWithURL:[NSURL URLWithString:thumbURL]];
+    } else {
+        self.thumbImage.image = nil;
+    }
+
 }
 
 @end

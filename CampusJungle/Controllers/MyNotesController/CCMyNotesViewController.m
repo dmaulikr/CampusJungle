@@ -9,6 +9,8 @@
 #import "CCMyNotesViewController.h"
 #import "CCNoteCell.h"
 #import "CCMyNotesDataProvider.h"
+#import "CCNote.h"
+#import "CCStandardErrorHandler.h"
 
 @interface CCMyNotesViewController ()
 
@@ -38,7 +40,12 @@
 
 - (void)didSelectedCellWithObject:(id)cellObject
 {
-    [self.viewNoteTransaction performWithObject:cellObject];
+    CCNote *note = cellObject;
+    if(note.link.length){
+        [self.viewNoteTransaction performWithObject:cellObject];
+    } else {
+        [CCStandardErrorHandler showErrorWithTitle:nil message:@"Note not ready for review at the moment."];
+    }
 }
 
 @end
