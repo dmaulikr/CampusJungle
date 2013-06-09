@@ -12,6 +12,8 @@
 
 @interface CCMyNotesViewController ()
 
+@property (nonatomic, strong) CCBaseDataProvider *dataProvider;
+
 @end
 
 @implementation CCMyNotesViewController
@@ -19,13 +21,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self configTableWithProvider:[CCMyNotesDataProvider new] cellClass:[CCNoteCell class]];
+    self.dataProvider = [CCMyNotesDataProvider new];
+    [self configTableWithProvider:self.dataProvider cellClass:[CCNoteCell class]];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createNewNote)];
 }
 
 - (void)createNewNote
 {
     [self.addNewNoteTransaction perform];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.dataProvider loadItems];
+}
+
+- (void)didSelectedCellWithObject:(id)cellObject
+{
+    [self.viewNoteTransaction performWithObject:cellObject];
 }
 
 @end

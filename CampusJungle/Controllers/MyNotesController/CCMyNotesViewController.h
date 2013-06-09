@@ -8,9 +8,11 @@
 
 #import "CCTableBasedController.h"
 #import "CCTransaction.h"
+#import "CCTransactionWithObject.h"
 
 @interface CCMyNotesViewController : CCTableBasedController
 
 @property (nonatomic, strong) id <CCTransaction> addNewNoteTransaction;
+@property (nonatomic ,strong) id <CCTransactionWithObject> viewNoteTransaction;
 
 @end

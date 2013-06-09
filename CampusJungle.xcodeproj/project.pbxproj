@@ -142,6 +142,9 @@
 		D3B3D7DA17648439000D3FAB /* CCDropboxImagesSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B3D7D817648439000D3FAB /* CCDropboxImagesSelectionViewController.xib */; };
 		D3B3D7DE176484A8000D3FAB /* CCDropboxPDFSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7DD176484A8000D3FAB /* CCDropboxPDFSelectionViewController.m */; };
 		D3B3D7E217648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7E117648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.m */; };
+		D3B3D7E617649185000D3FAB /* CCViewNotesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7E517649185000D3FAB /* CCViewNotesTransaction.m */; };
+		D3B3D7EB17649263000D3FAB /* CCNotesViewerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7E917649263000D3FAB /* CCNotesViewerController.m */; };
+		D3B3D7EC17649263000D3FAB /* CCNotesViewerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B3D7EA17649263000D3FAB /* CCNotesViewerController.xib */; };
 		D3EFD22A1755FC9500B7D710 /* CCCitySelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD2281755FC9500B7D710 /* CCCitySelectionController.m */; };
 		D3EFD22B1755FC9500B7D710 /* CCCitySelectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3EFD2291755FC9500B7D710 /* CCCitySelectionController.xib */; };
 		D3EFD22F1755FCE200B7D710 /* CCStateSelectionConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD22D1755FCE200B7D710 /* CCStateSelectionConroller.m */; };
@@ -397,6 +400,11 @@
 		D3B3D7DD176484A8000D3FAB /* CCDropboxPDFSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxPDFSelectionViewController.m; sourceTree = "<group>"; };
 		D3B3D7E017648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxPDFFileSystemTransaction.h; sourceTree = "<group>"; };
 		D3B3D7E117648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxPDFFileSystemTransaction.m; sourceTree = "<group>"; };
+		D3B3D7E417649185000D3FAB /* CCViewNotesTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCViewNotesTransaction.h; sourceTree = "<group>"; };
+		D3B3D7E517649185000D3FAB /* CCViewNotesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewNotesTransaction.m; sourceTree = "<group>"; };
+		D3B3D7E817649263000D3FAB /* CCNotesViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNotesViewerController.h; sourceTree = "<group>"; };
+		D3B3D7E917649263000D3FAB /* CCNotesViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNotesViewerController.m; sourceTree = "<group>"; };
+		D3B3D7EA17649263000D3FAB /* CCNotesViewerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCNotesViewerController.xib; sourceTree = "<group>"; };
 		D3EFD2271755FC9500B7D710 /* CCCitySelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCitySelectionController.h; sourceTree = "<group>"; };
 		D3EFD2281755FC9500B7D710 /* CCCitySelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCitySelectionController.m; sourceTree = "<group>"; };
 		D3EFD2291755FC9500B7D710 /* CCCitySelectionController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCCitySelectionController.xib; sourceTree = "<group>"; };
@@ -539,6 +547,7 @@
 		A787C73217536F8400824DEA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D3B3D7E717649246000D3FAB /* CCNotesViewerController */,
 				D361469B1762499F00907414 /* CreateNoteScreen */,
 				D36146891762431C00907414 /* MyNotesController */,
 				A79E2282175FD485000A1582 /* CCCollegeClassesController */,
@@ -796,6 +805,7 @@
 		A787C77D17536F8400824DEA /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
+				D3B3D7E317649171000D3FAB /* ViewNotesTransaction */,
 				D36146A617624A7500907414 /* CreateNotesTransaction */,
 				D36146851762424C00907414 /* MyNotes */,
 				A79E228A1760010E000A1582 /* ClassAddedTransaction */,
@@ -1475,6 +1485,25 @@
 			path = DropboxPDFFileSystemTransaction;
 			sourceTree = "<group>";
 		};
+		D3B3D7E317649171000D3FAB /* ViewNotesTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D7E417649185000D3FAB /* CCViewNotesTransaction.h */,
+				D3B3D7E517649185000D3FAB /* CCViewNotesTransaction.m */,
+			);
+			path = ViewNotesTransaction;
+			sourceTree = "<group>";
+		};
+		D3B3D7E717649246000D3FAB /* CCNotesViewerController */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D7E817649263000D3FAB /* CCNotesViewerController.h */,
+				D3B3D7E917649263000D3FAB /* CCNotesViewerController.m */,
+				D3B3D7EA17649263000D3FAB /* CCNotesViewerController.xib */,
+			);
+			path = CCNotesViewerController;
+			sourceTree = "<group>";
+		};
 		D3EFD2251755FC6200B7D710 /* CitySelectionScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -1824,6 +1853,7 @@
 				D36146D9176314A100907414 /* page_white_acrobat_import@2x.png in Resources */,
 				D36146E31763638C00907414 /* CCNoteCell.xib in Resources */,
 				D3B3D7DA17648439000D3FAB /* CCDropboxImagesSelectionViewController.xib in Resources */,
+				D3B3D7EC17649263000D3FAB /* CCNotesViewerController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1965,6 +1995,8 @@
 				D3B3D7D917648439000D3FAB /* CCDropboxImagesSelectionViewController.m in Sources */,
 				D3B3D7DE176484A8000D3FAB /* CCDropboxPDFSelectionViewController.m in Sources */,
 				D3B3D7E217648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.m in Sources */,
+				D3B3D7E617649185000D3FAB /* CCViewNotesTransaction.m in Sources */,
+				D3B3D7EB17649263000D3FAB /* CCNotesViewerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
