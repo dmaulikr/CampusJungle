@@ -6,24 +6,34 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCDropboxFileSystemTransaction.h"
+#import "CCDropboxImagesFileSystemTransaction.h"
 #import "CCDropboxImagesSelectionViewController.h"
 
-@implementation CCDropboxFileSystemTransaction
+@implementation CCDropboxImagesFileSystemTransaction
 
 - (void)performWithObject:(id)object
 {
     NSParameterAssert(self.navigation);
     NSDictionary *sendedObject = object;
-    CCDropboxFileSystemTransaction *fileSystemTransaction = [CCDropboxFileSystemTransaction new];
+    CCDropboxImagesFileSystemTransaction *fileSystemTransaction = [self fileSystemTransaction];
     fileSystemTransaction.navigation = self.navigation;
     
-    CCDropboxImagesSelectionViewController *dropboxController = [CCDropboxImagesSelectionViewController new];
+    CCDropboxImagesSelectionViewController *dropboxController = [self viewController];
     dropboxController.dropboxPath = sendedObject[@"path"];
     dropboxController.arrayOfSelectedFiles = sendedObject[@"sellected"];
     dropboxController.noteUploadInfo = sendedObject[@"noteInfo"];
     dropboxController.dropboxFileSystemTransaction = fileSystemTransaction;
     [self.navigation pushViewController:dropboxController animated:YES];
+}
+
+- (CCDropboxImagesSelectionViewController *)viewController
+{
+    return [CCDropboxImagesSelectionViewController new];
+}
+
+- (CCDropboxImagesFileSystemTransaction *)fileSystemTransaction
+{
+    return [CCDropboxImagesFileSystemTransaction new];
 }
 
 @end

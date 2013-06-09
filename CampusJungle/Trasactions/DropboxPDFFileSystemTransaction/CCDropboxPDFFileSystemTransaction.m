@@ -1,16 +1,15 @@
 //
-//  CCSelectPdfFromDropboxTransaction.m
+//  CCDropboxPDFFileSystemTransaction.m
 //  CampusJungle
 //
-//  Created by Vlad Korzun on 08.06.13.
+//  Created by Vlad Korzun on 09.06.13.
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCSelectPdfFromDropboxTransaction.h"
-#import "CCDropboxPDFSelectionViewController.h"
 #import "CCDropboxPDFFileSystemTransaction.h"
+#import "CCDropboxPDFSelectionViewController.h"
 
-@implementation CCSelectPdfFromDropboxTransaction
+@implementation CCDropboxPDFFileSystemTransaction
 
 - (CCDropboxImagesSelectionViewController *)viewController
 {

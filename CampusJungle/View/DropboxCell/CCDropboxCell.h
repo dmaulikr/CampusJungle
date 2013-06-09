@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) id cellObject;
 
+- (void)becomeSelected:(BOOL)selected;
+
 @end

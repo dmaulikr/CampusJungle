@@ -9,6 +9,7 @@
 #import "CCCreateNotesTransaction.h"
 #import "CCCreateNoteViewController.h"
 #import "CCDropboxImagesSelectionTransaction.h"
+#import "CCSelectPdfFromDropboxTransaction.h"
 
 @implementation CCCreateNotesTransaction
 
@@ -20,6 +21,10 @@
     CCDropboxImagesSelectionTransaction *dropboxImagesTransaction = [CCDropboxImagesSelectionTransaction new];
     dropboxImagesTransaction.navigation = self.navigation;
     createNotesController.imagesDropboxUploadTransaction = dropboxImagesTransaction;
+    
+    CCSelectPdfFromDropboxTransaction *dropboxPDFTransaction = [CCSelectPdfFromDropboxTransaction new];
+    dropboxPDFTransaction.navigation = self.navigation;
+    createNotesController.pdfDropboxUploadTransaction = dropboxPDFTransaction;
     
     [self.navigation pushViewController:createNotesController animated:YES];
 

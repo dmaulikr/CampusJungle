@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CCTransactionWithObject.h"
 
-@interface CCDropboxFileSystemTransaction : NSObject<CCTransactionWithObject>
+@interface CCDropboxImagesFileSystemTransaction : NSObject<CCTransactionWithObject>
 
 @property (nonatomic, strong) UINavigationController *navigation;
 

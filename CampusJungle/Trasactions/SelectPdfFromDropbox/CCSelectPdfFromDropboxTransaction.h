@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCDropboxImagesSelectionTransaction.h"
 #import "CCTransactionWithObject.h"
 
-@interface CCSelectPdfFromDropboxTransaction : NSObject<CCTransactionWithObject>
+@interface CCSelectPdfFromDropboxTransaction : CCDropboxImagesSelectionTransaction
 
 @property (nonatomic, strong) UINavigationController *navigation;
 

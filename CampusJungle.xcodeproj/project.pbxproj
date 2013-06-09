@@ -87,13 +87,11 @@
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
 		D3614631175E17BE00907414 /* CCDropboxAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */; };
 		D3614636175E1D3000907414 /* DropboxSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = D3614635175E1D3000907414 /* DropboxSDK */; };
-		D361463B175E355500907414 /* CCDropboxImagesSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614639175E355500907414 /* CCDropboxImagesSelectionViewController.m */; };
-		D361463C175E355500907414 /* CCDropboxImagesSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D361463A175E355500907414 /* CCDropboxImagesSelectionViewController.xib */; };
 		D3614640175E362600907414 /* CCDropboxImagesSelectionTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D361463F175E362600907414 /* CCDropboxImagesSelectionTransaction.m */; };
 		D3614644175E43A400907414 /* CCDropboxDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614643175E43A400907414 /* CCDropboxDataProvider.m */; };
 		D3614648175F133700907414 /* CCDropboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614647175F133700907414 /* CCDropboxCell.m */; };
 		D361464A175F141900907414 /* CCDropboxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3614649175F141900907414 /* CCDropboxCell.xib */; };
-		D361464E175F18C700907414 /* CCDropboxFileSystemTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D361464D175F18C700907414 /* CCDropboxFileSystemTransaction.m */; };
+		D361464E175F18C700907414 /* CCDropboxImagesFileSystemTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D361464D175F18C700907414 /* CCDropboxImagesFileSystemTransaction.m */; };
 		D3614652175F65F600907414 /* CCDropboxFileInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614651175F65F600907414 /* CCDropboxFileInfo.m */; };
 		D36146691760C4FF00907414 /* CCDropboxPDFDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D36146681760C4FF00907414 /* CCDropboxPDFDataProvider.m */; };
 		D361466F1760C5F200907414 /* CCDropboxImageDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D361466E1760C5F200907414 /* CCDropboxImageDataProvider.m */; };
@@ -140,6 +138,10 @@
 		D3A2C32A1754D6BB00989831 /* CCTwitterPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A2C3291754D6BB00989831 /* CCTwitterPicker.m */; };
 		D3AB6B5F175CEE0400097E21 /* CCUserEducationsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D3AB6B5E175CEE0400097E21 /* CCUserEducationsDataSource.m */; };
 		D3AB6B61175CFA8100097E21 /* CCEducationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3AB6B60175CFA8100097E21 /* CCEducationCell.xib */; };
+		D3B3D7D917648439000D3FAB /* CCDropboxImagesSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7D717648439000D3FAB /* CCDropboxImagesSelectionViewController.m */; };
+		D3B3D7DA17648439000D3FAB /* CCDropboxImagesSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B3D7D817648439000D3FAB /* CCDropboxImagesSelectionViewController.xib */; };
+		D3B3D7DE176484A8000D3FAB /* CCDropboxPDFSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7DD176484A8000D3FAB /* CCDropboxPDFSelectionViewController.m */; };
+		D3B3D7E217648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7E117648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.m */; };
 		D3EFD22A1755FC9500B7D710 /* CCCitySelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD2281755FC9500B7D710 /* CCCitySelectionController.m */; };
 		D3EFD22B1755FC9500B7D710 /* CCCitySelectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3EFD2291755FC9500B7D710 /* CCCitySelectionController.xib */; };
 		D3EFD22F1755FCE200B7D710 /* CCStateSelectionConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD22D1755FCE200B7D710 /* CCStateSelectionConroller.m */; };
@@ -313,9 +315,6 @@
 		D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxAPIProvider.m; sourceTree = "<group>"; };
 		D3614632175E18A200907414 /* CCDropboxAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProviderProtocol.h; sourceTree = "<group>"; };
 		D3614635175E1D3000907414 /* DropboxSDK */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = DropboxSDK; path = "Pods/Dropbox-iOS-SDK/dropbox-ios-sdk-1.3.4/DropboxSDK.framework/DropboxSDK"; sourceTree = "<group>"; };
-		D3614638175E355500907414 /* CCDropboxImagesSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxImagesSelectionViewController.h; sourceTree = "<group>"; };
-		D3614639175E355500907414 /* CCDropboxImagesSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxImagesSelectionViewController.m; sourceTree = "<group>"; };
-		D361463A175E355500907414 /* CCDropboxImagesSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCDropboxImagesSelectionViewController.xib; sourceTree = "<group>"; };
 		D361463E175E362600907414 /* CCDropboxImagesSelectionTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxImagesSelectionTransaction.h; sourceTree = "<group>"; };
 		D361463F175E362600907414 /* CCDropboxImagesSelectionTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxImagesSelectionTransaction.m; sourceTree = "<group>"; };
 		D3614642175E43A400907414 /* CCDropboxDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxDataProvider.h; sourceTree = "<group>"; };
@@ -323,8 +322,8 @@
 		D3614646175F133700907414 /* CCDropboxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxCell.h; sourceTree = "<group>"; };
 		D3614647175F133700907414 /* CCDropboxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxCell.m; sourceTree = "<group>"; };
 		D3614649175F141900907414 /* CCDropboxCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCDropboxCell.xib; sourceTree = "<group>"; };
-		D361464C175F18C700907414 /* CCDropboxFileSystemTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxFileSystemTransaction.h; sourceTree = "<group>"; };
-		D361464D175F18C700907414 /* CCDropboxFileSystemTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxFileSystemTransaction.m; sourceTree = "<group>"; };
+		D361464C175F18C700907414 /* CCDropboxImagesFileSystemTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxImagesFileSystemTransaction.h; sourceTree = "<group>"; };
+		D361464D175F18C700907414 /* CCDropboxImagesFileSystemTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxImagesFileSystemTransaction.m; sourceTree = "<group>"; };
 		D3614650175F65F600907414 /* CCDropboxFileInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxFileInfo.h; sourceTree = "<group>"; };
 		D3614651175F65F600907414 /* CCDropboxFileInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxFileInfo.m; sourceTree = "<group>"; };
 		D36146671760C4FF00907414 /* CCDropboxPDFDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxPDFDataProvider.h; sourceTree = "<group>"; };
@@ -391,6 +390,13 @@
 		D3AB6B5D175CEE0400097E21 /* CCUserEducationsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUserEducationsDataSource.h; sourceTree = "<group>"; };
 		D3AB6B5E175CEE0400097E21 /* CCUserEducationsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUserEducationsDataSource.m; sourceTree = "<group>"; };
 		D3AB6B60175CFA8100097E21 /* CCEducationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCEducationCell.xib; sourceTree = "<group>"; };
+		D3B3D7D617648439000D3FAB /* CCDropboxImagesSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCDropboxImagesSelectionViewController.h; path = CampusJungle/Controllers/DropboxImagesSelectionViewController/CCDropboxImagesSelectionViewController.h; sourceTree = SOURCE_ROOT; };
+		D3B3D7D717648439000D3FAB /* CCDropboxImagesSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCDropboxImagesSelectionViewController.m; path = CampusJungle/Controllers/DropboxImagesSelectionViewController/CCDropboxImagesSelectionViewController.m; sourceTree = SOURCE_ROOT; };
+		D3B3D7D817648439000D3FAB /* CCDropboxImagesSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CCDropboxImagesSelectionViewController.xib; path = CampusJungle/Controllers/DropboxImagesSelectionViewController/CCDropboxImagesSelectionViewController.xib; sourceTree = SOURCE_ROOT; };
+		D3B3D7DC176484A8000D3FAB /* CCDropboxPDFSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxPDFSelectionViewController.h; sourceTree = "<group>"; };
+		D3B3D7DD176484A8000D3FAB /* CCDropboxPDFSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxPDFSelectionViewController.m; sourceTree = "<group>"; };
+		D3B3D7E017648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxPDFFileSystemTransaction.h; sourceTree = "<group>"; };
+		D3B3D7E117648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxPDFFileSystemTransaction.m; sourceTree = "<group>"; };
 		D3EFD2271755FC9500B7D710 /* CCCitySelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCitySelectionController.h; sourceTree = "<group>"; };
 		D3EFD2281755FC9500B7D710 /* CCCitySelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCitySelectionController.m; sourceTree = "<group>"; };
 		D3EFD2291755FC9500B7D710 /* CCCitySelectionController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCCitySelectionController.xib; sourceTree = "<group>"; };
@@ -539,7 +545,8 @@
 				A79E226D175F846A000A1582 /* CollegesListController */,
 				A7A618B0175DCED40047C5B2 /* CreateClassController */,
 				A7D53A441758CB5600FE9FCD /* ClassesController */,
-				D3614637175E352200907414 /* DropboxSelectionViewController */,
+				D3B3D7DB17648456000D3FAB /* DropboxPdfSelectionViewController */,
+				D3614637175E352200907414 /* DropboxImagesSelectionViewController */,
 				A7D539CE1756236000FE9FCD /* ClassController */,
 				D3EFD2891756971F00B7D710 /* EducationCreationController */,
 				A787C7CF1754E9AD00824DEA /* SideBarController */,
@@ -789,8 +796,6 @@
 		A787C77D17536F8400824DEA /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
-				D35C1B481763706500C2AEB4 /* BackToListOfNotesTransaction */,
-				D36146AD176311FA00907414 /* SelectPdfFromDropbox */,
 				D36146A617624A7500907414 /* CreateNotesTransaction */,
 				D36146851762424C00907414 /* MyNotes */,
 				A79E228A1760010E000A1582 /* ClassAddedTransaction */,
@@ -798,8 +803,11 @@
 				A79E2275175F8C84000A1582 /* SelectCollegeClassesTransaction */,
 				A7A618A6175CA9B20047C5B2 /* AddClassTransaction */,
 				A7D53A4D1758CCE700FE9FCD /* AllClassesTransaction */,
-				D361464B175F18A500907414 /* DropboxFileSystemTransaction */,
-				D361463D175E360600907414 /* DropboxFileSelectionTransaction */,
+				D3B3D7DF17648BED000D3FAB /* DropboxPDFFileSystemTransaction */,
+				D361464B175F18A500907414 /* DropboxImagesFileSystemTransaction */,
+				D361463D175E360600907414 /* DropboxImagesFileSelectionTransaction */,
+				D36146AD176311FA00907414 /* SelectPdfFromDropbox */,
+				D35C1B481763706500C2AEB4 /* BackToListOfNotesTransaction */,
 				A7D53A081756444900FE9FCD /* ClassTransaction */,
 				D3EFD294175745E600B7D710 /* BackToUserProfileTransaction */,
 				D3EFD2901757430E00B7D710 /* EducationCreationTransaction */,
@@ -1164,22 +1172,24 @@
 			path = DropboxDelegate;
 			sourceTree = "<group>";
 		};
-		D3614637175E352200907414 /* DropboxSelectionViewController */ = {
+		D3614637175E352200907414 /* DropboxImagesSelectionViewController */ = {
 			isa = PBXGroup;
 			children = (
-				D3614638175E355500907414 /* CCDropboxImagesSelectionViewController.h */,
-				D3614639175E355500907414 /* CCDropboxImagesSelectionViewController.m */,
-				D361463A175E355500907414 /* CCDropboxImagesSelectionViewController.xib */,
+				D3B3D7D617648439000D3FAB /* CCDropboxImagesSelectionViewController.h */,
+				D3B3D7D717648439000D3FAB /* CCDropboxImagesSelectionViewController.m */,
+				D3B3D7D817648439000D3FAB /* CCDropboxImagesSelectionViewController.xib */,
 			);
+			name = DropboxImagesSelectionViewController;
 			path = DropboxSelectionViewController;
 			sourceTree = "<group>";
 		};
-		D361463D175E360600907414 /* DropboxFileSelectionTransaction */ = {
+		D361463D175E360600907414 /* DropboxImagesFileSelectionTransaction */ = {
 			isa = PBXGroup;
 			children = (
 				D361463E175E362600907414 /* CCDropboxImagesSelectionTransaction.h */,
 				D361463F175E362600907414 /* CCDropboxImagesSelectionTransaction.m */,
 			);
+			name = DropboxImagesFileSelectionTransaction;
 			path = DropboxFileSelectionTransaction;
 			sourceTree = "<group>";
 		};
@@ -1202,12 +1212,13 @@
 			path = DropboxCell;
 			sourceTree = "<group>";
 		};
-		D361464B175F18A500907414 /* DropboxFileSystemTransaction */ = {
+		D361464B175F18A500907414 /* DropboxImagesFileSystemTransaction */ = {
 			isa = PBXGroup;
 			children = (
-				D361464C175F18C700907414 /* CCDropboxFileSystemTransaction.h */,
-				D361464D175F18C700907414 /* CCDropboxFileSystemTransaction.m */,
+				D361464C175F18C700907414 /* CCDropboxImagesFileSystemTransaction.h */,
+				D361464D175F18C700907414 /* CCDropboxImagesFileSystemTransaction.m */,
 			);
+			name = DropboxImagesFileSystemTransaction;
 			path = DropboxFileSystemTransaction;
 			sourceTree = "<group>";
 		};
@@ -1444,6 +1455,24 @@
 				D3AB6B5E175CEE0400097E21 /* CCUserEducationsDataSource.m */,
 			);
 			path = UserEducationsTableDataSource;
+			sourceTree = "<group>";
+		};
+		D3B3D7DB17648456000D3FAB /* DropboxPdfSelectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D7DC176484A8000D3FAB /* CCDropboxPDFSelectionViewController.h */,
+				D3B3D7DD176484A8000D3FAB /* CCDropboxPDFSelectionViewController.m */,
+			);
+			path = DropboxPdfSelectionViewController;
+			sourceTree = "<group>";
+		};
+		D3B3D7DF17648BED000D3FAB /* DropboxPDFFileSystemTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D7E017648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.h */,
+				D3B3D7E117648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.m */,
+			);
+			path = DropboxPDFFileSystemTransaction;
 			sourceTree = "<group>";
 		};
 		D3EFD2251755FC6200B7D710 /* CitySelectionScreen */ = {
@@ -1769,7 +1798,6 @@
 				A79E2268175F83DB000A1582 /* CCClassController.xib in Resources */,
 				A79E2272175F846B000A1582 /* CCCollegesListController.xib in Resources */,
 				A79E2274175F8A75000A1582 /* monkey.jpg in Resources */,
-				D361463C175E355500907414 /* CCDropboxImagesSelectionViewController.xib in Resources */,
 				D361464A175F141900907414 /* CCDropboxCell.xib in Resources */,
 				A79E2287175FD509000A1582 /* CCCollegeClassesController.xib in Resources */,
 				D36146931762436D00907414 /* CCMyNotesViewController.xib in Resources */,
@@ -1795,6 +1823,7 @@
 				D36146D8176314A100907414 /* page_white_acrobat_import.png in Resources */,
 				D36146D9176314A100907414 /* page_white_acrobat_import@2x.png in Resources */,
 				D36146E31763638C00907414 /* CCNoteCell.xib in Resources */,
+				D3B3D7DA17648439000D3FAB /* CCDropboxImagesSelectionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1912,11 +1941,10 @@
 				A79E2271175F846B000A1582 /* CCCollegesListController.m in Sources */,
 				A79E2278175F8CC6000A1582 /* CCSelectCollegeClassesTransaction.m in Sources */,
 				D3614631175E17BE00907414 /* CCDropboxAPIProvider.m in Sources */,
-				D361463B175E355500907414 /* CCDropboxImagesSelectionViewController.m in Sources */,
 				D3614640175E362600907414 /* CCDropboxImagesSelectionTransaction.m in Sources */,
 				D3614644175E43A400907414 /* CCDropboxDataProvider.m in Sources */,
 				D3614648175F133700907414 /* CCDropboxCell.m in Sources */,
-				D361464E175F18C700907414 /* CCDropboxFileSystemTransaction.m in Sources */,
+				D361464E175F18C700907414 /* CCDropboxImagesFileSystemTransaction.m in Sources */,
 				D3614652175F65F600907414 /* CCDropboxFileInfo.m in Sources */,
 				A79E227D175FA8AF000A1582 /* CCMyClassesDataProvider.m in Sources */,
 				A79E2281175FD3D2000A1582 /* CCClassesOfcurrentCollegeTransaction.m in Sources */,
@@ -1934,6 +1962,9 @@
 				D36146B01763121B00907414 /* CCSelectPdfFromDropboxTransaction.m in Sources */,
 				D36146DD176352FD00907414 /* CCNote.m in Sources */,
 				D36146E11763629700907414 /* CCNoteCell.m in Sources */,
+				D3B3D7D917648439000D3FAB /* CCDropboxImagesSelectionViewController.m in Sources */,
+				D3B3D7DE176484A8000D3FAB /* CCDropboxPDFSelectionViewController.m in Sources */,
+				D3B3D7E217648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
