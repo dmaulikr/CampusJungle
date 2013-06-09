@@ -10,11 +10,13 @@
 #import "CCNoteUploadInfo.h"
 #import "NSString+CJStringValidator.h"
 #import "CCStandardErrorHandler.h"
+#import "UIActionSheet+BlocksKit.h"
 
-@interface CCCreateNoteViewController ()
+@interface CCCreateNoteViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet UITextField *priceField;
 @property (nonatomic, weak) IBOutlet UITextField *descriptionField;
+@property (nonatomic, weak) IBOutlet UIImageView *thumbView;
 
 @end
 
@@ -59,8 +61,47 @@
     noteInfo.noteDescription = self.descriptionField.text;
     noteInfo.price = [NSNumber numberWithInteger:self.priceField.text.integerValue];
     noteInfo.collegeID = @20429;
-    noteInfo.thumbnail = [UIImage imageNamed:@"folder.png"];
+    noteInfo.thumbnail = self.thumbView.image;
     return noteInfo;
 }
+
+- (IBAction)thumbDidPressed
+{
+    
+        UIActionSheet *testSheet = [UIActionSheet actionSheetWithTitle:@"Select Avatar"];
+        [testSheet addButtonWithTitle:@"Select from gallery" handler:^{
+            [self selectAvatarFromGallery];
+        }];
+        [testSheet addButtonWithTitle:@"Make photo" handler:^{
+            [self makePhotoForAvatar];
+        }];
+        [testSheet setCancelButtonWithTitle:nil handler:nil];
+        [testSheet showInView:self.view];
+}
+
+- (void)selectAvatarFromGallery
+{
+    UIImagePickerController * picker = [UIImagePickerController new];
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.allowsEditing = YES;
+    picker.delegate = self;
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+- (void)makePhotoForAvatar
+{
+    UIImagePickerController * picker = [UIImagePickerController new];
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    picker.allowsEditing = YES;
+    picker.delegate = self;
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    self.thumbView.image = info[UIImagePickerControllerEditedImage];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 @end

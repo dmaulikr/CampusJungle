@@ -8,10 +8,12 @@
 
 #import "CCNoteCell.h"
 #import "CCNote.h"
+#import "CCDefines.h"
 
 @interface CCNoteCell()
 
 @property (nonatomic, weak) IBOutlet UILabel *noteDescription;
+@property (nonatomic, weak) IBOutlet UIImageView *thumbImage;
 
 @end
 
@@ -33,8 +35,10 @@
 {
     _cellObject = cellObject;
     CCNote *note = (CCNote *)cellObject;
-    
+   
     self.noteDescription.text = note.noteDescription;
+    NSString *thumbURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,note.thumbnailRetina];
+    [self.thumbImage setImageWithURL:[NSURL URLWithString:thumbURL]];
 }
 
 @end

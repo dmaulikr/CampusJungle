@@ -67,16 +67,6 @@
     }
 }
 
-//- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-//{
-//
-//}
-//
-//- (void)setSelected:(BOOL)selected
-//{
-//
-//}
-
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
 {
 
