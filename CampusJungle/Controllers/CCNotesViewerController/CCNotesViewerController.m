@@ -36,6 +36,17 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    [self turnOffSelectionInWebView:webView];
+}
+
+- (void)turnOffSelectionInWebView:(UIWebView *)webView
+{
+    for (UIView *view in webView.subviews){
+        if([view.subviews.lastObject isKindOfClass:NSClassFromString(@"UIWebPDFView")]){
+            UIView *pdfViewer = view.subviews.lastObject;
+            pdfViewer.userInteractionEnabled = NO;
+        }
+    }
 }
 
 @end
