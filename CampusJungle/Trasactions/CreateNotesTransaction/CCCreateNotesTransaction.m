@@ -16,9 +16,12 @@
 - (void)perform
 {
     NSParameterAssert(self.navigation);
+    NSParameterAssert(self.backToListTransaction);
+    
     CCCreateNoteViewController *createNotesController = [CCCreateNoteViewController new];
     
     CCDropboxImagesSelectionTransaction *dropboxImagesTransaction = [CCDropboxImagesSelectionTransaction new];
+    dropboxImagesTransaction.backToListTransaction = self.backToListTransaction;
     dropboxImagesTransaction.navigation = self.navigation;
     createNotesController.imagesDropboxUploadTransaction = dropboxImagesTransaction;
     

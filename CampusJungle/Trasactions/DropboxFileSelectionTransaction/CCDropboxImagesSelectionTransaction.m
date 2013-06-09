@@ -15,10 +15,14 @@
 - (void)performWithObject:(id)object
 {
     NSParameterAssert(self.navigation);
+    NSParameterAssert(self.backToListTransaction);
+    
     CCDropboxImagesFileSystemTransaction *fileSystemTransaction = [self fileSystemTransaction];
+    fileSystemTransaction.backToListTransaction = self.backToListTransaction;
     fileSystemTransaction.navigation = self.navigation;
     
     CCDropboxImagesSelectionViewController *dropboxController = [self viewController];
+    dropboxController.backToListTransaction = self.backToListTransaction;
     dropboxController.arrayOfSelectedFiles = [NSMutableArray new];
     dropboxController.dropboxPath = @"/";
     dropboxController.dropboxFileSystemTransaction = fileSystemTransaction;

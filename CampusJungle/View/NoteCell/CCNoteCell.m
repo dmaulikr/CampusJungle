@@ -14,6 +14,7 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *noteDescription;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbImage;
+@property (nonatomic, weak) IBOutlet UILabel *notReadyLabel;
 
 @end
 
@@ -37,6 +38,12 @@
     CCNote *note = (CCNote *)cellObject;
    
     self.noteDescription.text = note.noteDescription;
+    if(note.link.length){
+        self.notReadyLabel.hidden = YES;
+    } else {
+        self.notReadyLabel.hidden = NO;
+    }
+    
     NSString *thumbURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,note.thumbnailRetina];
     [self.thumbImage setImageWithURL:[NSURL URLWithString:thumbURL]];
 }

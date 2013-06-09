@@ -12,5 +12,6 @@
 @interface CCCreateNotesTransaction : NSObject<CCTransaction>
 
 @property (nonatomic, strong) UINavigationController *navigation;
+@property (nonatomic, strong) id <CCTransaction> backToListTransaction;
 
 @end

@@ -143,15 +143,13 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self.ioc_dropboxAPI checkAllDirectURLForArray:self.arrayOfSelectedFiles successHandler:^(NSArray *selectedFiles) {
         
-        
         [self saveResultToUploadInfo:selectedFiles];
         
         [self.ioc_notesAPIProvider postDropboxUploadInfo:self.noteUploadInfo successHandler:^(id result) {
-            
+            [self.backToListTransaction perform];
         } errorHandler:^(NSError *error) {
-            
+            [CCStandardErrorHandler showErrorWithError:error];
         }];
-        
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     }];
 }

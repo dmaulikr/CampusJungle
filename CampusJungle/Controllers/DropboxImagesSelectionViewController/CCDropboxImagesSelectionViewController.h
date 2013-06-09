@@ -10,15 +10,16 @@
 #import "CCTransactionWithObject.h"
 #import "CCNoteUploadInfo.h"
 #import "CCDropboxDataProvider.h"
+#import "CCTransaction.h"
 
 @interface CCDropboxImagesSelectionViewController : CCTableBasedController
 
 @property (nonatomic, strong) CCDropboxDataProvider *dropboxDataProvider;
 @property (nonatomic, strong) NSString *dropboxPath;
 @property (nonatomic, strong) id <CCTransactionWithObject> dropboxFileSystemTransaction;
+@property (nonatomic, strong) id <CCTransaction> backToListTransaction;
 @property (nonatomic, strong) NSMutableArray *arrayOfSelectedFiles;
 @property (nonatomic, strong) CCNoteUploadInfo *noteUploadInfo;
-
 
 - (void)removeFrom:(NSMutableArray *)array infoWithPath:(NSString *)path;
 - (BOOL)is:(NSArray *)array containPath:(NSString *)path;
