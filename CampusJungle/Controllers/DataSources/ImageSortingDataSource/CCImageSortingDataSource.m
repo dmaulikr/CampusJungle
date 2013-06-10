@@ -20,7 +20,9 @@
     
     NSMutableArray *arrayOfItems = (NSMutableArray *)self.dataProvider.arrayOfItems;
     CCDropboxFileInfo *fileInfo = self.dataProvider.arrayOfItems[indexPath.row];
-    fileInfo.isSelected = NO;
+    if([fileInfo respondsToSelector:@selector(setIsSelected:)]){
+        fileInfo.isSelected = NO;
+    }
     [arrayOfItems removeObjectAtIndex:[indexPath row]];
     [tableView beginUpdates];
     [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];

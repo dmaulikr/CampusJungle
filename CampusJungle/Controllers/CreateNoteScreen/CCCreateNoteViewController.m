@@ -57,7 +57,9 @@
 
 - (IBAction)UploadPhotosDidPressed
 {
-
+    if([self isFieldsValid]){
+        [self.imagesUploadTransaction performWithObject:[self createUploadInfo]];
+    }
 }
 
 - (CCNoteUploadInfo *)createUploadInfo

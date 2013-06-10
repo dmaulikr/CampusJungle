@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) id <CCTransactionWithObject> imagesDropboxUploadTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> pdfDropboxUploadTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> imagesUploadTransaction;
 
 - (IBAction)thumbDidPressed;
 
