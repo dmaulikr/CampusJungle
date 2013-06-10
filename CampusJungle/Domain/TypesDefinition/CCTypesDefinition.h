@@ -15,3 +15,4 @@ typedef void (^successWithObject)(id);
 typedef void (^errorHandler)(NSError *);
 typedef void (^successHandlerWithRKResult)(RKMappingResult *);
 typedef void (^RKErrorHandler)(RKObjectRequestOperation *operation, NSError *error);
+typedef void (^progressBlock)(double finished);

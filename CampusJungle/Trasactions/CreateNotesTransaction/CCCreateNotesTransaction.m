@@ -23,6 +23,7 @@
     
     CCImagesForNotesUploadingScreenTransaction *imagesUploadTransaction = [CCImagesForNotesUploadingScreenTransaction new];
     imagesUploadTransaction.naviation = self.navigation;
+    imagesUploadTransaction.backToListTransaction = self.backToListTransaction;
     createNotesController.imagesUploadTransaction = imagesUploadTransaction;
     
     CCDropboxImagesSelectionTransaction *dropboxImagesTransaction = [CCDropboxImagesSelectionTransaction new];

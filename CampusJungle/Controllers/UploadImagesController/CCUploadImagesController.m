@@ -12,12 +12,19 @@
 #import "CCImageCell.h"
 #import "CCImageSortingDataSource.h"
 #import "CCNotesAPIProviderProtolcol.h"
+#import "CCUIImageHelper.h"
+#import "CCStandardErrorHandler.h"
+#import "MBProgressHUD.h"
+
+#define animationDuration 0.3
+#define maxNumberOfImages 6
 
 @interface CCUploadImagesController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-@property (nonatomic, strong) IBOutlet UIView *tableFooterView;
+@property (nonatomic, weak) IBOutlet UIView *tableFooterView;
 @property (nonatomic, strong) id <CCNotesAPIProviderProtolcol> ioc_notesAPIProvider;
 @property (nonatomic, strong) CCUploadingImagesDataProvider *dataProvider;
+@property (nonatomic, weak) IBOutlet UIButton *addButton;
 
 @end
 
@@ -66,7 +73,8 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    [self.dataProvider.arrayOfImages addObject:info[UIImagePickerControllerOriginalImage]];
+    UIImage *fixedImage = [CCUIImageHelper fixOrientationOfImage:info[UIImagePickerControllerOriginalImage]];
+    [self.dataProvider.arrayOfImages addObject:fixedImage];
     [self.dataProvider loadItems];
     [self dismissViewControllerAnimated:YES completion:nil];
     [self didUpdate];
@@ -82,15 +90,27 @@
     } else {
         self.navigationItem.rightBarButtonItem = nil;
     }
+    [UIView animateWithDuration:animationDuration animations:^{
+        if(self.dataProvider.arrayOfImages.count >= maxNumberOfImages) {
+            self.addButton.alpha = 0;
+        } else {
+            self.addButton.alpha = 1;
+        }
+    }];
 }
 
 - (void)sendFiles
 {
     self.noteInfo.arrayOfImages = self.dataProvider.arrayOfImages;
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"Preparing for upload";
     [self.ioc_notesAPIProvider postDropboxUploadInfoWithImages:self.noteInfo successHandler:^(id result) {
         
     } errorHandler:^(NSError *error) {
-        
+        [CCStandardErrorHandler showErrorWithError:error];
+    } progress:^(double finished) {
+        [self.backToListTransaction perform];
+        NSLog(@"%0.0lf",finished * 100);
     }];
 
 }

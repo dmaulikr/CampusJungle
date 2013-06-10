@@ -157,6 +157,7 @@
 		D3B3D81017661DB7000D3FAB /* CCImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D80F17661DB7000D3FAB /* CCImageCell.m */; };
 		D3B3D81217661DE2000D3FAB /* CCImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B3D81117661DE1000D3FAB /* CCImageCell.xib */; };
 		D3B3D81617661F5F000D3FAB /* CCUploadingImagesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D81517661F5F000D3FAB /* CCUploadingImagesDataProvider.m */; };
+		D3B3D81A17662D16000D3FAB /* CCUIImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D81917662D16000D3FAB /* CCUIImageHelper.m */; };
 		D3EFD22A1755FC9500B7D710 /* CCCitySelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD2281755FC9500B7D710 /* CCCitySelectionController.m */; };
 		D3EFD22B1755FC9500B7D710 /* CCCitySelectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3EFD2291755FC9500B7D710 /* CCCitySelectionController.xib */; };
 		D3EFD22F1755FCE200B7D710 /* CCStateSelectionConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD22D1755FCE200B7D710 /* CCStateSelectionConroller.m */; };
@@ -438,6 +439,8 @@
 		D3B3D81117661DE1000D3FAB /* CCImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CCImageCell.xib; path = CampusJungle/View/ImageCell/CCImageCell.xib; sourceTree = SOURCE_ROOT; };
 		D3B3D81417661F5F000D3FAB /* CCUploadingImagesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUploadingImagesDataProvider.h; sourceTree = "<group>"; };
 		D3B3D81517661F5F000D3FAB /* CCUploadingImagesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUploadingImagesDataProvider.m; sourceTree = "<group>"; };
+		D3B3D81817662D16000D3FAB /* CCUIImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUIImageHelper.h; sourceTree = "<group>"; };
+		D3B3D81917662D16000D3FAB /* CCUIImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUIImageHelper.m; sourceTree = "<group>"; };
 		D3EFD2271755FC9500B7D710 /* CCCitySelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCitySelectionController.h; sourceTree = "<group>"; };
 		D3EFD2281755FC9500B7D710 /* CCCitySelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCitySelectionController.m; sourceTree = "<group>"; };
 		D3EFD2291755FC9500B7D710 /* CCCitySelectionController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCCitySelectionController.xib; sourceTree = "<group>"; };
@@ -813,6 +816,7 @@
 		A787C77717536F8400824DEA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D3B3D81717662D04000D3FAB /* UIImageViewHelper */,
 				D39F1C0E1753821D008E08A2 /* StandardErrorHandler */,
 				A787C77817536F8400824DEA /* UserSession */,
 				A787C77B17536F8400824DEA /* UserSessionProtocol */,
@@ -1628,6 +1632,15 @@
 			path = UploadImagesDataProvider;
 			sourceTree = "<group>";
 		};
+		D3B3D81717662D04000D3FAB /* UIImageViewHelper */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D81817662D16000D3FAB /* CCUIImageHelper.h */,
+				D3B3D81917662D16000D3FAB /* CCUIImageHelper.m */,
+			);
+			path = UIImageViewHelper;
+			sourceTree = "<group>";
+		};
 		D3EFD2251755FC6200B7D710 /* CitySelectionScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -2135,6 +2148,7 @@
 				D3B3D80B176618DE000D3FAB /* CCUploadImagesController.m in Sources */,
 				D3B3D81017661DB7000D3FAB /* CCImageCell.m in Sources */,
 				D3B3D81617661F5F000D3FAB /* CCUploadingImagesDataProvider.m in Sources */,
+				D3B3D81A17662D16000D3FAB /* CCUIImageHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

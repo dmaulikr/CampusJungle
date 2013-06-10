@@ -14,8 +14,12 @@
 - (void)performWithObject:(id)object
 {
     NSParameterAssert(self.naviation);
+    NSParameterAssert(self.backToListTransaction);
+    
     CCUploadImagesController *uploadImagesController = [CCUploadImagesController new];
     uploadImagesController.noteInfo = object;
+    uploadImagesController.backToListTransaction = self.backToListTransaction;
+    
     [self.naviation pushViewController:uploadImagesController animated:YES];
 }
 

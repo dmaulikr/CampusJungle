@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "CCTransactionWithObject.h"
+#import "CCTransaction.h"
 
 @interface CCImagesForNotesUploadingScreenTransaction : NSObject <CCTransactionWithObject>
 
 @property (nonatomic, strong) UINavigationController *naviation;
+@property (nonatomic, strong) id <CCTransaction> backToListTransaction;
 
 @end

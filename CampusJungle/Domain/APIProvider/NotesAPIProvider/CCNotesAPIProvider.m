@@ -64,17 +64,20 @@
     });
 }
 
-- (void)postDropboxUploadInfoWithImages:(CCNoteUploadInfo *)uploadInfo successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+- (void)postDropboxUploadInfoWithImages:(CCNoteUploadInfo *)uploadInfo successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler progress:(progressBlock)progressBlock;
 {
     [self setAuthorizationToken];
     NSString *path = [NSString stringWithFormat:CCAPIDefines.uploadNotesPath,uploadInfo.collegeID];
     
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     
+
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
     UIImage *thumb = uploadInfo.thumbnail;
     uploadInfo.thumbnail = nil;
-    
-    
+        
     NSMutableURLRequest *request =
     [objectManager multipartFormRequestWithObject:uploadInfo
                                            method:RKRequestMethodPOST
@@ -113,8 +116,11 @@
                                                  }
                                              }];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [operation.HTTPRequestOperation setUploadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
+            progressBlock((double)totalBytesWritten/totalBytesExpectedToWrite);
+        }];
         [operation start];
+        
     });
 
 
