@@ -7,7 +7,7 @@
 //
 
 #import "CCDropboxImagesSelectionTransaction.h"
-
+#import "CCImagesSortingTransaction.h"
 #import "CCDropboxImagesFileSystemTransaction.h"
 
 @implementation CCDropboxImagesSelectionTransaction
@@ -18,10 +18,16 @@
     NSParameterAssert(self.backToListTransaction);
     
     CCDropboxImagesFileSystemTransaction *fileSystemTransaction = [self fileSystemTransaction];
+    CCImagesSortingTransaction *sortingTransaction = [CCImagesSortingTransaction new];
+    fileSystemTransaction.imagesSortingTransaction = sortingTransaction;
+    sortingTransaction.navigation = self.navigation;
+    sortingTransaction.backToListTransaction = self.backToListTransaction;
+    
     fileSystemTransaction.backToListTransaction = self.backToListTransaction;
     fileSystemTransaction.navigation = self.navigation;
     
     CCDropboxImagesSelectionViewController *dropboxController = [self viewController];
+    dropboxController.imageSortingTransaction = sortingTransaction;
     dropboxController.backToListTransaction = self.backToListTransaction;
     dropboxController.arrayOfSelectedFiles = [NSMutableArray new];
     dropboxController.dropboxPath = @"/";

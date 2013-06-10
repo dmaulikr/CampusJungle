@@ -15,12 +15,16 @@
 {
     NSParameterAssert(self.navigation);
     NSParameterAssert(self.backToListTransaction);
+    NSParameterAssert(self.imagesSortingTransaction);
+    
     NSDictionary *sendedObject = object;
     CCDropboxImagesFileSystemTransaction *fileSystemTransaction = [self fileSystemTransaction];
     fileSystemTransaction.navigation = self.navigation;
     fileSystemTransaction.backToListTransaction = self.backToListTransaction;
+    fileSystemTransaction.imagesSortingTransaction = self.imagesSortingTransaction;
     
     CCDropboxImagesSelectionViewController *dropboxController = [self viewController];
+    dropboxController.imageSortingTransaction = self.imagesSortingTransaction;
     dropboxController.backToListTransaction = self.backToListTransaction;
     dropboxController.dropboxPath = sendedObject[@"path"];
     dropboxController.arrayOfSelectedFiles = sendedObject[@"sellected"];

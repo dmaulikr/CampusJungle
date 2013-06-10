@@ -14,5 +14,6 @@
 
 @property (nonatomic, strong) UINavigationController *navigation;
 @property (nonatomic, strong) id <CCTransaction> backToListTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> imagesSortingTransaction;
 
 @end

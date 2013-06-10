@@ -22,6 +22,7 @@
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     NSString *valueForHeader = [NSString stringWithFormat: @"Token token=%@",self.ioc_userSession.currentUser.token];
+    
     [objectManager.HTTPClient setDefaultHeader:@"Authorization" value:valueForHeader];
 }
 

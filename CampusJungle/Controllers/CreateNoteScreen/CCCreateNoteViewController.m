@@ -55,6 +55,11 @@
     }
 }
 
+- (IBAction)UploadPhotosDidPressed
+{
+
+}
+
 - (CCNoteUploadInfo *)createUploadInfo
 {
     CCNoteUploadInfo *noteInfo = [CCNoteUploadInfo new];

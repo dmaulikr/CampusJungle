@@ -146,6 +146,11 @@
 		D3B3D7EB17649263000D3FAB /* CCNotesViewerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7E917649263000D3FAB /* CCNotesViewerController.m */; };
 		D3B3D7EC17649263000D3FAB /* CCNotesViewerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B3D7EA17649263000D3FAB /* CCNotesViewerController.xib */; };
 		D3B3D7F01764AE11000D3FAB /* CCBackToListOfNotesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7EF1764AE11000D3FAB /* CCBackToListOfNotesTransaction.m */; };
+		D3B3D7F41765D6F1000D3FAB /* CCImagesSortingTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7F31765D6F1000D3FAB /* CCImagesSortingTransaction.m */; };
+		D3B3D7F91765DF15000D3FAB /* CCImageSortingController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7F71765DF15000D3FAB /* CCImageSortingController.m */; };
+		D3B3D7FA1765DF15000D3FAB /* CCImageSortingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B3D7F81765DF15000D3FAB /* CCImageSortingController.xib */; };
+		D3B3D7FE1765E15E000D3FAB /* CCImageSortingDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7FD1765E15E000D3FAB /* CCImageSortingDataSource.m */; };
+		D3B3D8021765E1F3000D3FAB /* CCImageSortingDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D8011765E1F3000D3FAB /* CCImageSortingDataProvider.m */; };
 		D3EFD22A1755FC9500B7D710 /* CCCitySelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD2281755FC9500B7D710 /* CCCitySelectionController.m */; };
 		D3EFD22B1755FC9500B7D710 /* CCCitySelectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3EFD2291755FC9500B7D710 /* CCCitySelectionController.xib */; };
 		D3EFD22F1755FCE200B7D710 /* CCStateSelectionConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD22D1755FCE200B7D710 /* CCStateSelectionConroller.m */; };
@@ -408,6 +413,15 @@
 		D3B3D7EA17649263000D3FAB /* CCNotesViewerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCNotesViewerController.xib; sourceTree = "<group>"; };
 		D3B3D7EE1764AE11000D3FAB /* CCBackToListOfNotesTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBackToListOfNotesTransaction.h; sourceTree = "<group>"; };
 		D3B3D7EF1764AE11000D3FAB /* CCBackToListOfNotesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBackToListOfNotesTransaction.m; sourceTree = "<group>"; };
+		D3B3D7F21765D6F1000D3FAB /* CCImagesSortingTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCImagesSortingTransaction.h; sourceTree = "<group>"; };
+		D3B3D7F31765D6F1000D3FAB /* CCImagesSortingTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCImagesSortingTransaction.m; sourceTree = "<group>"; };
+		D3B3D7F61765DF15000D3FAB /* CCImageSortingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCImageSortingController.h; sourceTree = "<group>"; };
+		D3B3D7F71765DF15000D3FAB /* CCImageSortingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCImageSortingController.m; sourceTree = "<group>"; };
+		D3B3D7F81765DF15000D3FAB /* CCImageSortingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCImageSortingController.xib; sourceTree = "<group>"; };
+		D3B3D7FC1765E15E000D3FAB /* CCImageSortingDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCImageSortingDataSource.h; sourceTree = "<group>"; };
+		D3B3D7FD1765E15E000D3FAB /* CCImageSortingDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCImageSortingDataSource.m; sourceTree = "<group>"; };
+		D3B3D8001765E1F3000D3FAB /* CCImageSortingDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCImageSortingDataProvider.h; sourceTree = "<group>"; };
+		D3B3D8011765E1F3000D3FAB /* CCImageSortingDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCImageSortingDataProvider.m; sourceTree = "<group>"; };
 		D3EFD2271755FC9500B7D710 /* CCCitySelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCitySelectionController.h; sourceTree = "<group>"; };
 		D3EFD2281755FC9500B7D710 /* CCCitySelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCitySelectionController.m; sourceTree = "<group>"; };
 		D3EFD2291755FC9500B7D710 /* CCCitySelectionController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCCitySelectionController.xib; sourceTree = "<group>"; };
@@ -530,9 +544,9 @@
 				A787C73217536F8400824DEA /* Controllers */,
 				A787C74E17536F8400824DEA /* Domain */,
 				D3A2C3261754D53900989831 /* View */,
-				D3A2C31F1754AD9400989831 /* DataSources */,
 				A787C77717536F8400824DEA /* Services */,
 				A787C77D17536F8400824DEA /* Trasactions */,
+				D3A2C31F1754AD9400989831 /* DataSources */,
 				D3EFD2351756080700B7D710 /* DataProviders */,
 			);
 			path = CampusJungle;
@@ -550,6 +564,7 @@
 		A787C73217536F8400824DEA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D3B3D7F51765DEF8000D3FAB /* CCImageSortingController */,
 				D3B3D7E717649246000D3FAB /* CCNotesViewerController */,
 				D361469B1762499F00907414 /* CreateNoteScreen */,
 				D36146891762431C00907414 /* MyNotesController */,
@@ -808,6 +823,7 @@
 		A787C77D17536F8400824DEA /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
+				D3B3D7F11765D6DE000D3FAB /* ImagesSortingTransaction */,
 				D3B3D7ED1764ADFC000D3FAB /* BackToListOfNotesTransaction */,
 				D3B3D7E317649171000D3FAB /* ViewNotesTransaction */,
 				D36146A617624A7500907414 /* CreateNotesTransaction */,
@@ -1426,6 +1442,7 @@
 		D3A2C31F1754AD9400989831 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				D3B3D7FB1765E141000D3FAB /* ImageSortingDataSource */,
 				D3AB6B5C175CEDD300097E21 /* UserEducationsTableDataSource */,
 				A7D539D817563FB200FE9FCD /* ClassTableDataSorce */,
 				A7D539CA1756157900FE9FCD /* SideMenuDataSource */,
@@ -1517,6 +1534,43 @@
 			path = BackToListOfNotesTransaction;
 			sourceTree = "<group>";
 		};
+		D3B3D7F11765D6DE000D3FAB /* ImagesSortingTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D7F21765D6F1000D3FAB /* CCImagesSortingTransaction.h */,
+				D3B3D7F31765D6F1000D3FAB /* CCImagesSortingTransaction.m */,
+			);
+			path = ImagesSortingTransaction;
+			sourceTree = "<group>";
+		};
+		D3B3D7F51765DEF8000D3FAB /* CCImageSortingController */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D7F61765DF15000D3FAB /* CCImageSortingController.h */,
+				D3B3D7F71765DF15000D3FAB /* CCImageSortingController.m */,
+				D3B3D7F81765DF15000D3FAB /* CCImageSortingController.xib */,
+			);
+			path = CCImageSortingController;
+			sourceTree = "<group>";
+		};
+		D3B3D7FB1765E141000D3FAB /* ImageSortingDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D7FC1765E15E000D3FAB /* CCImageSortingDataSource.h */,
+				D3B3D7FD1765E15E000D3FAB /* CCImageSortingDataSource.m */,
+			);
+			path = ImageSortingDataSource;
+			sourceTree = "<group>";
+		};
+		D3B3D7FF1765E1D9000D3FAB /* ImageSortingDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D8001765E1F3000D3FAB /* CCImageSortingDataProvider.h */,
+				D3B3D8011765E1F3000D3FAB /* CCImageSortingDataProvider.m */,
+			);
+			path = ImageSortingDataProvider;
+			sourceTree = "<group>";
+		};
 		D3EFD2251755FC6200B7D710 /* CitySelectionScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -1549,6 +1603,7 @@
 		D3EFD2351756080700B7D710 /* DataProviders */ = {
 			isa = PBXGroup;
 			children = (
+				D3B3D7FF1765E1D9000D3FAB /* ImageSortingDataProvider */,
 				D3614694176244E500907414 /* MyNotesDataProvider */,
 				D36146621760BFA500907414 /* DropboxImageDataProvider */,
 				D36146631760BFA500907414 /* DropboxPDFDataProvider */,
@@ -1867,6 +1922,7 @@
 				D36146E31763638C00907414 /* CCNoteCell.xib in Resources */,
 				D3B3D7DA17648439000D3FAB /* CCDropboxImagesSelectionViewController.xib in Resources */,
 				D3B3D7EC17649263000D3FAB /* CCNotesViewerController.xib in Resources */,
+				D3B3D7FA1765DF15000D3FAB /* CCImageSortingController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2011,6 +2067,10 @@
 				D3B3D7E617649185000D3FAB /* CCViewNotesTransaction.m in Sources */,
 				D3B3D7EB17649263000D3FAB /* CCNotesViewerController.m in Sources */,
 				D3B3D7F01764AE11000D3FAB /* CCBackToListOfNotesTransaction.m in Sources */,
+				D3B3D7F41765D6F1000D3FAB /* CCImagesSortingTransaction.m in Sources */,
+				D3B3D7F91765DF15000D3FAB /* CCImageSortingController.m in Sources */,
+				D3B3D7FE1765E15E000D3FAB /* CCImageSortingDataSource.m in Sources */,
+				D3B3D8021765E1F3000D3FAB /* CCImageSortingDataProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

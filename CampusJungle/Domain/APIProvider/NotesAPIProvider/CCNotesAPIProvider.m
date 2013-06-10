@@ -12,11 +12,6 @@
 
 @implementation CCNotesAPIProvider
 
-- (void)postDropboxPdfMetadata:(id)metadata noteInfo:(NSDictionary *)noteInfo successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
-{
-    
-}
-
 - (void)postDropboxUploadInfo:(CCNoteUploadInfo *)noteInfo successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
 
@@ -28,11 +23,18 @@
     UIImage *thumb = noteInfo.thumbnail;
     noteInfo.thumbnail = nil;
     
+    NSDictionary *params;
+    if(noteInfo.arrayOfURLs){
+        params = @{@"images_urls" : noteInfo.arrayOfURLs};
+    } else {
+        params = @{@"pdf_url" : noteInfo.pdfUrl};
+    }
+    
     NSMutableURLRequest *request =
     [objectManager multipartFormRequestWithObject:noteInfo
                                            method:RKRequestMethodPOST
                                              path:path
-                                       parameters:nil
+                                       parameters:params
                         constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
      {
          if(thumb){
@@ -42,6 +44,7 @@
                                      mimeType:@"image/png"];
          }
      }];
+    
     RKObjectRequestOperation *operation =
     [objectManager objectRequestOperationWithRequest:request
                                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
@@ -59,6 +62,12 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [operation start];
     });
+}
+
+- (void)postDropboxUploadInfoWithImages:(CCNoteUploadInfo *)uploadInfo successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+
+
 }
 
 @end

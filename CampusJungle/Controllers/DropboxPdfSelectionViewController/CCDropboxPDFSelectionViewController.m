@@ -68,11 +68,6 @@
     [self.mainTable reloadData];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self.mainTable reloadData];
-}
 
 - (void)saveResultToUploadInfo:(NSArray *)selectedFiles
 {

@@ -10,6 +10,7 @@
 
 const struct CCAPIDefines CCAPIDefines = {
     .baseURL = @"http://collegeconnect.111projects.com",
+//    .baseURL = @"http://172.17.18.27:3000",
     .signUp = @"/api/users/sign_up",
     .authorization = @"/api/authentications",
     .login = @"/api/users/login",

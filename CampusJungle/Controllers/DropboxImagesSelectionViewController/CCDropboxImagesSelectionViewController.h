@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSString *dropboxPath;
 @property (nonatomic, strong) id <CCTransactionWithObject> dropboxFileSystemTransaction;
 @property (nonatomic, strong) id <CCTransaction> backToListTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> imageSortingTransaction;
 @property (nonatomic, strong) NSMutableArray *arrayOfSelectedFiles;
 @property (nonatomic, strong) CCNoteUploadInfo *noteUploadInfo;
 
