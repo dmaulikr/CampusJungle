@@ -90,6 +90,7 @@
     } else {
         self.navigationItem.rightBarButtonItem = nil;
     }
+    
     [UIView animateWithDuration:animationDuration animations:^{
         if(self.dataProvider.arrayOfImages.count >= maxNumberOfImages) {
             self.addButton.alpha = 0;
@@ -112,7 +113,6 @@
         [self.backToListTransaction perform];
         NSLog(@"%0.0lf",finished * 100);
     }];
-
 }
 
 @end

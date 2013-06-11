@@ -14,6 +14,7 @@
 #import "CCUserSessionProtocol.h"
 #import "CCCollege.h"
 #import "CCEducation.h"
+#import "CCAlertDefines.h"
 
 @interface CCCreateNoteViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
@@ -79,20 +80,20 @@
 - (BOOL)isFieldsValid
 {
     if ([self.descriptionField.text isEmpty]){
-        [CCStandardErrorHandler showErrorWithTitle:nil message:@"Description can not be blank"];
+        [CCStandardErrorHandler showErrorWithTitle:nil message:CCValidationMessages.descriptionCantBeBlank];
         return NO;
     }
     if ([self.priceField.text isEmpty]){
-        [CCStandardErrorHandler showErrorWithTitle:nil message:@"Price can not be blank"];
+        [CCStandardErrorHandler showErrorWithTitle:nil message:CCValidationMessages.priceCantBeBlank];
         return NO;
     }
     if ([self.fullAccessPriceField.text isEmpty]){
-        [CCStandardErrorHandler showErrorWithTitle:nil message:@"Full access price can not be blank"];
+        [CCStandardErrorHandler showErrorWithTitle:nil message:CCValidationMessages.fullPriceCantBeBlank];
         return NO;
     }
     
     if (self.fullAccessPriceField.text.integerValue < self.priceField.text.integerValue){
-        [CCStandardErrorHandler showErrorWithTitle:nil message:@"Full access price can not lower then price for review"];
+        [CCStandardErrorHandler showErrorWithTitle:nil message:CCValidationMessages.fullPriceCantBeLowerThenPriceForReview];
         return NO;
     }
     

@@ -35,3 +35,16 @@ extern const struct CCAlertsTitles {
     __unsafe_unretained NSString *requestError;
 } CCAlertsTitles;
 
+extern const struct CCValidationMessages {
+    
+    __unsafe_unretained NSString *emailNotValid;
+    __unsafe_unretained NSString *passNotValid;
+    __unsafe_unretained NSString *firstNameCantBeBlank;
+    __unsafe_unretained NSString *lastNameCantBeBlank;
+    __unsafe_unretained NSString *priceCantBeBlank;
+    __unsafe_unretained NSString *fullPriceCantBeBlank;
+    __unsafe_unretained NSString *fullPriceCantBeLowerThenPriceForReview;
+    __unsafe_unretained NSString *descriptionCantBeBlank;
+    
+} CCValidationMessages;
+
