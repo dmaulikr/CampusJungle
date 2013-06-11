@@ -15,6 +15,7 @@
 @interface CCCreateNoteViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet UITextField *priceField;
+@property (nonatomic, weak) IBOutlet UITextField *fullAccessPriceField;
 @property (nonatomic, weak) IBOutlet UITextField *descriptionField;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbView;
 
@@ -37,6 +38,16 @@
         [CCStandardErrorHandler showErrorWithTitle:nil message:@"Price can not be blank"];
         return NO;
     }
+    if ([self.fullAccessPriceField.text isEmpty]){
+        [CCStandardErrorHandler showErrorWithTitle:nil message:@"Full access price can not be blank"];
+        return NO;
+    }
+    
+    if (self.fullAccessPriceField.text.integerValue < self.priceField.text.integerValue){
+        [CCStandardErrorHandler showErrorWithTitle:nil message:@"Full access price can not lower then price for review"];
+        return NO;
+    }
+    
     return YES;
 }
 
@@ -67,6 +78,7 @@
     CCNoteUploadInfo *noteInfo = [CCNoteUploadInfo new];
     noteInfo.noteDescription = self.descriptionField.text;
     noteInfo.price = [NSNumber numberWithInteger:self.priceField.text.integerValue];
+    noteInfo.fullPrice = [NSNumber numberWithInteger:self.fullAccessPriceField.text.integerValue];
     noteInfo.collegeID = @20429;
     noteInfo.thumbnail = self.thumbView.image;
     return noteInfo;

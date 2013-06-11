@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSNumber *classID;
 @property (nonatomic, strong) NSArray *tags;
 @property (nonatomic, strong) NSNumber *price;
+@property (nonatomic, strong) NSNumber *fullPrice;
 @property (nonatomic, strong) UIImage *thumbnail;
 
 @property (nonatomic, strong) NSArray *arrayOfURLs;
