@@ -16,6 +16,6 @@
 @property (nonatomic, strong) id <CCTransactionWithObject> imagesUploadTransaction;
 
 - (IBAction)thumbDidPressed;
-
+- (IBAction)collegeSelectionButtonDidPressed;
 
 @end
