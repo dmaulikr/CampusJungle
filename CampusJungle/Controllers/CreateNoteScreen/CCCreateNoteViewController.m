@@ -202,12 +202,21 @@
 - (IBAction)collegeSelectionButtonDidPressed
 {
     [self showPicker];
+    self.view.userInteractionEnabled = NO;
+
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     self.selectedCollege = self.arrayOfColleges[row];
     [self hidePicker];
+    self.view.userInteractionEnabled = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self hidePicker];
+    self.view.userInteractionEnabled = YES;
 }
 
 @end
