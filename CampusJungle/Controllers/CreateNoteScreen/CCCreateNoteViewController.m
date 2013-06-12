@@ -37,6 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"New Note";
     CCUser *currentUser = [self.ioc_userSession currentUser];
     self.arrayOfColleges = [self arrayOfCollegesFromUser:currentUser];
     if(self.arrayOfColleges.count){

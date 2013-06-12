@@ -21,6 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"PDF Viewer";
     [self loadPDF];
 }
 

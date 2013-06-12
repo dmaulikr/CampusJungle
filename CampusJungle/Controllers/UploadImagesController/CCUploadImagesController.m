@@ -33,6 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Select Images";
     self.dataSourceClass = [CCImageSortingDataSource class];
     self.mainTable.editing = YES;
     self.mainTable.tableFooterView = self.tableFooterView;

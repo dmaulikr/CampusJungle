@@ -25,6 +25,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"My Notes";
     self.dataProvider = [CCMyNotesDataProvider new];
     [self configTableWithProvider:self.dataProvider cellClass:[CCNoteCell class]];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createNewNote)];
