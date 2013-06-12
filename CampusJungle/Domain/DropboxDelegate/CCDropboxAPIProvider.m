@@ -64,6 +64,7 @@ static int outstandingRequests;
 
 - (void)createRestCliet
 {
+    [self createSession];
     if(!self.restClient){
         self.restClient = [[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
         self.restClient.delegate = self;
