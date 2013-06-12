@@ -157,7 +157,7 @@
             } errorHandler:^(NSError *error) {
                 [CCStandardErrorHandler showErrorWithError:error];
             }];
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         }
     }];
 }

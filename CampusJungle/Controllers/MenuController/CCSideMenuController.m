@@ -30,7 +30,7 @@
 - (void)configTable
 {
     self.dataProvider = [CCSideMenuDataProvider new];
-    self.dataProvider.arrayOfMenuItems = @[CCSideMenuTitles.profile,CCSideMenuTitles.classesScreen];
+    self.dataProvider.arrayOfMenuItems = @[CCSideMenuTitles.profile,CCSideMenuTitles.classesScreen,CCSideMenuTitles.market];
     [self configTableWithProvider:self.dataProvider cellClass:[CCOrdinaryCell class]];
 }
 
@@ -41,8 +41,8 @@
 
     } else if([(NSString*)cellObject isEqualToString:CCSideMenuTitles.classesScreen]) {
         [self.classesTransaction perform];
-    } else {
-        
+    } else if([(NSString*)cellObject isEqualToString:CCSideMenuTitles.market]){
+        [self.marketTransaction perform];
     }
 }
 

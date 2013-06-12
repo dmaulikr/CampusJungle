@@ -17,6 +17,7 @@
 #import "CCClassController.h"
 #import "CCAllClassesTransaction.h"
 #import "CCDropboxAPIProviderProtocol.h"
+#import "CCMarketTranasction.h"
 
 @interface CCMainTransaction()
 
@@ -60,6 +61,10 @@
 
     CCClassTransaction *classTransaction = [CCClassTransaction new];
     leftController.classTransaction = classTransaction;
+    
+    CCMarketTranasction *marketTransaction = [CCMarketTranasction new];
+    marketTransaction.menuController = rootController;
+    leftController.marketTransaction = marketTransaction;
     
     if ([self.ioc_userSession currentUser]){
         

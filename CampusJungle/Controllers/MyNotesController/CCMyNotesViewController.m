@@ -51,7 +51,7 @@
     if(note.link.length){
         [self.viewNoteTransaction performWithObject:cellObject];
     } else {
-        [CCStandardErrorHandler showErrorWithTitle:nil message:@"Note not ready for review at the moment."];
+        [CCStandardErrorHandler showErrorWithTitle:nil message:@"Note is not ready for review at the moment."];
     }
 }
 

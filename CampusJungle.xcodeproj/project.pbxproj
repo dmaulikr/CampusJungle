@@ -138,6 +138,9 @@
 		D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39F1C161753C0E8008E08A2 /* Accounts.framework */; };
 		D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A2C3241754C95700989831 /* MessageUI.framework */; };
 		D3A2C32A1754D6BB00989831 /* CCTwitterPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A2C3291754D6BB00989831 /* CCTwitterPicker.m */; };
+		D3A5ECF51768A35000300399 /* CCMarketPlaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A5ECF31768A35000300399 /* CCMarketPlaceController.m */; };
+		D3A5ECF61768A35000300399 /* CCMarketPlaceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A5ECF41768A35000300399 /* CCMarketPlaceController.xib */; };
+		D3A5ECFA1768ACF900300399 /* CCMarketTranasction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A5ECF91768ACF900300399 /* CCMarketTranasction.m */; };
 		D3AB6B5F175CEE0400097E21 /* CCUserEducationsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D3AB6B5E175CEE0400097E21 /* CCUserEducationsDataSource.m */; };
 		D3AB6B61175CFA8100097E21 /* CCEducationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3AB6B60175CFA8100097E21 /* CCEducationCell.xib */; };
 		D3B3D7D917648439000D3FAB /* CCDropboxImagesSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7D717648439000D3FAB /* CCDropboxImagesSelectionViewController.m */; };
@@ -407,6 +410,11 @@
 		D3A2C3241754C95700989831 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D3A2C3281754D6BB00989831 /* CCTwitterPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTwitterPicker.h; sourceTree = "<group>"; };
 		D3A2C3291754D6BB00989831 /* CCTwitterPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTwitterPicker.m; sourceTree = "<group>"; };
+		D3A5ECF21768A35000300399 /* CCMarketPlaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMarketPlaceController.h; sourceTree = "<group>"; };
+		D3A5ECF31768A35000300399 /* CCMarketPlaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMarketPlaceController.m; sourceTree = "<group>"; };
+		D3A5ECF41768A35000300399 /* CCMarketPlaceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMarketPlaceController.xib; sourceTree = "<group>"; };
+		D3A5ECF81768ACF900300399 /* CCMarketTranasction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMarketTranasction.h; sourceTree = "<group>"; };
+		D3A5ECF91768ACF900300399 /* CCMarketTranasction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMarketTranasction.m; sourceTree = "<group>"; };
 		D3AB6B5D175CEE0400097E21 /* CCUserEducationsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUserEducationsDataSource.h; sourceTree = "<group>"; };
 		D3AB6B5E175CEE0400097E21 /* CCUserEducationsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUserEducationsDataSource.m; sourceTree = "<group>"; };
 		D3AB6B60175CFA8100097E21 /* CCEducationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCEducationCell.xib; sourceTree = "<group>"; };
@@ -587,6 +595,7 @@
 		A787C73217536F8400824DEA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D3A5ECF11768A32E00300399 /* MarketPlace */,
 				D3B3D807176618C4000D3FAB /* UploadImagesController */,
 				D3B3D7F51765DEF8000D3FAB /* CCImageSortingController */,
 				D3B3D7E717649246000D3FAB /* CCNotesViewerController */,
@@ -848,6 +857,7 @@
 		A787C77D17536F8400824DEA /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
+				D3A5ECF71768ACCD00300399 /* MarketTransaction */,
 				D3B3D80317661208000D3FAB /* ImagesForNotesUploadingScreenTransaction */,
 				D3B3D7F11765D6DE000D3FAB /* ImagesSortingTransaction */,
 				D3B3D7ED1764ADFC000D3FAB /* BackToListOfNotesTransaction */,
@@ -1516,6 +1526,25 @@
 			path = TwitterPicker;
 			sourceTree = "<group>";
 		};
+		D3A5ECF11768A32E00300399 /* MarketPlace */ = {
+			isa = PBXGroup;
+			children = (
+				D3A5ECF21768A35000300399 /* CCMarketPlaceController.h */,
+				D3A5ECF31768A35000300399 /* CCMarketPlaceController.m */,
+				D3A5ECF41768A35000300399 /* CCMarketPlaceController.xib */,
+			);
+			path = MarketPlace;
+			sourceTree = "<group>";
+		};
+		D3A5ECF71768ACCD00300399 /* MarketTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3A5ECF81768ACF900300399 /* CCMarketTranasction.h */,
+				D3A5ECF91768ACF900300399 /* CCMarketTranasction.m */,
+			);
+			path = MarketTransaction;
+			sourceTree = "<group>";
+		};
 		D3AB6B5C175CEDD300097E21 /* UserEducationsTableDataSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -2012,6 +2041,7 @@
 				D3B3D81217661DE2000D3FAB /* CCImageCell.xib in Resources */,
 				D3039B78176880F800621CAC /* pending.png in Resources */,
 				D3039B79176880F800621CAC /* pending@2x.png in Resources */,
+				D3A5ECF61768A35000300399 /* CCMarketPlaceController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2165,6 +2195,8 @@
 				D3B3D81017661DB7000D3FAB /* CCImageCell.m in Sources */,
 				D3B3D81617661F5F000D3FAB /* CCUploadingImagesDataProvider.m in Sources */,
 				D3B3D81A17662D16000D3FAB /* CCUIImageHelper.m in Sources */,
+				D3A5ECF51768A35000300399 /* CCMarketPlaceController.m in Sources */,
+				D3A5ECFA1768ACF900300399 /* CCMarketTranasction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

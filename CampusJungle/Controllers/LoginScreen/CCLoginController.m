@@ -40,10 +40,7 @@
             [CCStandardErrorHandler showErrorWithError:error];
         }];
         
-    } else {
-        [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error
-                                           message:CCAlertsMessages.formNotValid];
-    }
+    } 
 }
 
 - (BOOL)isFormValid
