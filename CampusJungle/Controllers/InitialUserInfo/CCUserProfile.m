@@ -60,7 +60,7 @@
     [super viewDidLoad];
     self.mainTable.tableFooterView = self.tableFooterView;
     self.mainTable.tableHeaderView = self.tableHeaderView;
-    
+    self.title = @"My Profile";
     [self loadUser];
     
     if([[[self.ioc_userSession currentUser] isFacebookLinked] isEqualToString:@"true"]){
@@ -372,6 +372,11 @@
         return YES;
     }
     return YES;
+}
+
+- (IBAction)myNotesButtonDidPressed
+{
+    [self.myNotesTransaction perform];
 }
 
 @end

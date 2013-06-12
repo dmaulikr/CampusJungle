@@ -10,6 +10,7 @@
 
 const struct CCAPIDefines CCAPIDefines = {
     .baseURL = @"http://collegeconnect.111projects.com",
+//    .baseURL = @"http://172.17.18.27:3000",
     .signUp = @"/api/users/sign_up",
     .authorization = @"/api/authentications",
     .login = @"/api/users/login",
@@ -24,6 +25,8 @@ const struct CCAPIDefines CCAPIDefines = {
     .allClasses = @"/api/users/me/classes",
     .addClass = @"/api/users/me/classes/%@",
     .classesOfCollege = @"/api/colleges/%@/classes",
+    .uploadNotesPath = @"/api/colleges/%@/notes",
+    .listOfMyNotes = @"/api/users/me/notes",
 };
 
 const struct CCUserDefines CCUserDefines = {

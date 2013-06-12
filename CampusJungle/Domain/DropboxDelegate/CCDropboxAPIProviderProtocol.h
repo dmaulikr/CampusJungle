@@ -25,4 +25,8 @@
 
 - (void)loadDirectURLforPath:(NSString *)path successHandler:(successWithObject)successHandler errorHanler:(errorHandler)errorHanler;
 
+- (void)createRestCliet;
+
+- (void)checkAllDirectURLForArray:(NSArray *)arrayOfMetadata successHandler:(successWithObject)successHandler;
+
 @end

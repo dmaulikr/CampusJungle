@@ -36,3 +36,14 @@ const struct CCAlertsButtons CCAlertsButtons = {
 const struct CCAlertsTitles CCAlertsTitles = {
     .requestError = @"Request failed",
 };
+
+const struct CCValidationMessages CCValidationMessages = {
+    .emailNotValid = @"Email not valid",
+    .passNotValid = @"Password to short",
+    .firstNameCantBeBlank = @"First name can not be blank",
+    .lastNameCantBeBlank = @"Last name can not be blank",
+    .priceCantBeBlank = @"Price can not be blank",
+    .fullPriceCantBeBlank = @"Full access price can not be blank",
+    .fullPriceCantBeLowerThenPriceForReview = @"Full access price can not be lower then price for review",
+    .descriptionCantBeBlank = @"Description can not be blank",
+};

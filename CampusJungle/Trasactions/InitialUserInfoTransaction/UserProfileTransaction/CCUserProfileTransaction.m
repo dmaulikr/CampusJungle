@@ -10,6 +10,7 @@
 #import "CCUserProfile.h"
 #import "CCLogoutTransaction.h"
 #import "CCStateSelectionScreenTransaction.h"
+#import "CCMyNotesTransaction.h"
 
 @implementation CCUserProfileTransaction
 
@@ -20,6 +21,8 @@
 
     CCLogoutTransaction *logoutTransaction = [CCLogoutTransaction new];
     logoutTransaction.rootMenuController = self.menuController;
+    CCMyNotesTransaction *myNotesTransaction = [CCMyNotesTransaction new];
+    userProfileController.myNotesTransaction = myNotesTransaction;
     userProfileController.logoutTransaction = logoutTransaction;
     
     userProfileController.arrayOfEducations = [NSMutableArray new];
@@ -32,6 +35,7 @@
     stateSelectionTransaction.arrayOfColleges = userProfileController.arrayOfEducations;
     stateSelectionTransaction.navigation = centralNavigation;
     userProfileController.addColegeTransaction = stateSelectionTransaction;
+    myNotesTransaction.navigation = centralNavigation;
 }
 
 @end

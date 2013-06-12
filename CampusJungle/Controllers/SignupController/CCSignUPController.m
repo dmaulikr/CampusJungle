@@ -60,12 +60,16 @@
 
 - (BOOL)isFormValid
 {
-    BOOL isFormValid = YES;
-    
-    if (![self.emailField.text isEmail]) isFormValid = NO;
-    if (![self.passField.text isMinLength:CCUserDefines.minimumPasswordLength]) isFormValid = NO;
+    if (![self.emailField.text isEmail]){
+        [CCStandardErrorHandler showErrorWithTitle:nil message:CCValidationMessages.emailNotValid];
+        return NO;
+    }
+    if (![self.passField.text isMinLength:CCUserDefines.minimumPasswordLength]){
+        [CCStandardErrorHandler showErrorWithTitle:nil message:CCValidationMessages.passNotValid];
+        return NO;
+    }
 
-    return isFormValid;
+    return YES;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

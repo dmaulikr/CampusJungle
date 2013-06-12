@@ -15,5 +15,8 @@
 @property (nonatomic, strong) UIImage *thumb;
 @property (nonatomic, strong) NSString *directLink;
 @property (nonatomic, strong) NSString *localPath;
+@property (nonatomic) BOOL isSelected;
+
++ (NSArray *)arrayOfDirectLinksFromArrayOfInfo:(NSArray *)arrayOfInfo;
 
 @end

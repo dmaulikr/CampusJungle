@@ -85,16 +85,51 @@
 		A7D53A511758CD2600FE9FCD /* CCAllClassesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D53A501758CD2600FE9FCD /* CCAllClassesTransaction.m */; };
 		A7D53A551758D6A700FE9FCD /* CCClassesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D53A541758D6A700FE9FCD /* CCClassesDataProvider.m */; };
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
+		D3039B78176880F800621CAC /* pending.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B76176880F800621CAC /* pending.png */; };
+		D3039B79176880F800621CAC /* pending@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B77176880F800621CAC /* pending@2x.png */; };
 		D3614631175E17BE00907414 /* CCDropboxAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */; };
 		D3614636175E1D3000907414 /* DropboxSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = D3614635175E1D3000907414 /* DropboxSDK */; };
-		D361463B175E355500907414 /* CCDropboxSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614639175E355500907414 /* CCDropboxSelectionViewController.m */; };
-		D361463C175E355500907414 /* CCDropboxSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D361463A175E355500907414 /* CCDropboxSelectionViewController.xib */; };
-		D3614640175E362600907414 /* CCDropboxFileSelectionTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D361463F175E362600907414 /* CCDropboxFileSelectionTransaction.m */; };
+		D3614640175E362600907414 /* CCDropboxImagesSelectionTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D361463F175E362600907414 /* CCDropboxImagesSelectionTransaction.m */; };
 		D3614644175E43A400907414 /* CCDropboxDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614643175E43A400907414 /* CCDropboxDataProvider.m */; };
 		D3614648175F133700907414 /* CCDropboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614647175F133700907414 /* CCDropboxCell.m */; };
 		D361464A175F141900907414 /* CCDropboxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3614649175F141900907414 /* CCDropboxCell.xib */; };
-		D361464E175F18C700907414 /* CCDropboxFileSystemTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D361464D175F18C700907414 /* CCDropboxFileSystemTransaction.m */; };
+		D361464E175F18C700907414 /* CCDropboxImagesFileSystemTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D361464D175F18C700907414 /* CCDropboxImagesFileSystemTransaction.m */; };
 		D3614652175F65F600907414 /* CCDropboxFileInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614651175F65F600907414 /* CCDropboxFileInfo.m */; };
+		D36146691760C4FF00907414 /* CCDropboxPDFDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D36146681760C4FF00907414 /* CCDropboxPDFDataProvider.m */; };
+		D361466F1760C5F200907414 /* CCDropboxImageDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D361466E1760C5F200907414 /* CCDropboxImageDataProvider.m */; };
+		D36146771762284800907414 /* CCNotesAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D36146761762284800907414 /* CCNotesAPIProvider.m */; };
+		D361467C1762387F00907414 /* CCNoteUploadInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D361467B1762387F00907414 /* CCNoteUploadInfo.m */; };
+		D36146881762426200907414 /* CCMyNotesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D36146871762426200907414 /* CCMyNotesTransaction.m */; };
+		D36146921762436D00907414 /* CCMyNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D36146901762436D00907414 /* CCMyNotesViewController.m */; };
+		D36146931762436D00907414 /* CCMyNotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36146911762436D00907414 /* CCMyNotesViewController.xib */; };
+		D361469A1762454A00907414 /* CCMyNotesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D36146991762454A00907414 /* CCMyNotesDataProvider.m */; };
+		D36146A4176249FA00907414 /* CCCreateNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D36146A2176249FA00907414 /* CCCreateNoteViewController.m */; };
+		D36146A5176249FA00907414 /* CCCreateNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36146A3176249FA00907414 /* CCCreateNoteViewController.xib */; };
+		D36146AC17624AB700907414 /* CCCreateNotesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D36146AB17624AB700907414 /* CCCreateNotesTransaction.m */; };
+		D36146B01763121B00907414 /* CCSelectPdfFromDropboxTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D36146AF1763121B00907414 /* CCSelectPdfFromDropboxTransaction.m */; };
+		D36146C6176314A100907414 /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146B2176314A100907414 /* folder.png */; };
+		D36146C7176314A100907414 /* folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146B3176314A100907414 /* folder@2x.png */; };
+		D36146C8176314A100907414 /* folder_app.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146B4176314A100907414 /* folder_app.png */; };
+		D36146C9176314A100907414 /* folder_app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146B5176314A100907414 /* folder_app@2x.png */; };
+		D36146CA176314A100907414 /* folder_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146B6176314A100907414 /* folder_camera.png */; };
+		D36146CB176314A100907414 /* folder_camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146B7176314A100907414 /* folder_camera@2x.png */; };
+		D36146CC176314A100907414 /* folder_camera_upload.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146B8176314A100907414 /* folder_camera_upload.png */; };
+		D36146CD176314A100907414 /* folder_camera_upload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146B9176314A100907414 /* folder_camera_upload@2x.png */; };
+		D36146CE176314A100907414 /* folder_photos.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146BA176314A100907414 /* folder_photos.png */; };
+		D36146CF176314A100907414 /* folder_photos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146BB176314A100907414 /* folder_photos@2x.png */; };
+		D36146D0176314A100907414 /* folder_public.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146BC176314A100907414 /* folder_public.png */; };
+		D36146D1176314A100907414 /* folder_public@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146BD176314A100907414 /* folder_public@2x.png */; };
+		D36146D2176314A100907414 /* folder_user.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146BE176314A100907414 /* folder_user.png */; };
+		D36146D3176314A100907414 /* folder_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146BF176314A100907414 /* folder_user@2x.png */; };
+		D36146D4176314A100907414 /* invite_folder.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146C0176314A100907414 /* invite_folder.png */; };
+		D36146D5176314A100907414 /* invite_folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146C1176314A100907414 /* invite_folder@2x.png */; };
+		D36146D6176314A100907414 /* page_white_acrobat.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146C2176314A100907414 /* page_white_acrobat.png */; };
+		D36146D7176314A100907414 /* page_white_acrobat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146C3176314A100907414 /* page_white_acrobat@2x.png */; };
+		D36146D8176314A100907414 /* page_white_acrobat_import.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146C4176314A100907414 /* page_white_acrobat_import.png */; };
+		D36146D9176314A100907414 /* page_white_acrobat_import@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146C5176314A100907414 /* page_white_acrobat_import@2x.png */; };
+		D36146DD176352FD00907414 /* CCNote.m in Sources */ = {isa = PBXBuildFile; fileRef = D36146DC176352FD00907414 /* CCNote.m */; };
+		D36146E11763629700907414 /* CCNoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D36146E01763629700907414 /* CCNoteCell.m */; };
+		D36146E31763638C00907414 /* CCNoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36146E21763638C00907414 /* CCNoteCell.xib */; };
 		D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36186471743B13E00B501BC /* SystemConfiguration.framework */; };
 		D37A475617577D5100E91850 /* CCEducation.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A475517577D5100E91850 /* CCEducation.m */; };
 		D37A475A175786D200E91850 /* CCEducationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A4759175786D200E91850 /* CCEducationCell.m */; };
@@ -105,6 +140,26 @@
 		D3A2C32A1754D6BB00989831 /* CCTwitterPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A2C3291754D6BB00989831 /* CCTwitterPicker.m */; };
 		D3AB6B5F175CEE0400097E21 /* CCUserEducationsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D3AB6B5E175CEE0400097E21 /* CCUserEducationsDataSource.m */; };
 		D3AB6B61175CFA8100097E21 /* CCEducationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3AB6B60175CFA8100097E21 /* CCEducationCell.xib */; };
+		D3B3D7D917648439000D3FAB /* CCDropboxImagesSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7D717648439000D3FAB /* CCDropboxImagesSelectionViewController.m */; };
+		D3B3D7DA17648439000D3FAB /* CCDropboxImagesSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B3D7D817648439000D3FAB /* CCDropboxImagesSelectionViewController.xib */; };
+		D3B3D7DE176484A8000D3FAB /* CCDropboxPDFSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7DD176484A8000D3FAB /* CCDropboxPDFSelectionViewController.m */; };
+		D3B3D7E217648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7E117648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.m */; };
+		D3B3D7E617649185000D3FAB /* CCViewNotesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7E517649185000D3FAB /* CCViewNotesTransaction.m */; };
+		D3B3D7EB17649263000D3FAB /* CCNotesViewerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7E917649263000D3FAB /* CCNotesViewerController.m */; };
+		D3B3D7EC17649263000D3FAB /* CCNotesViewerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B3D7EA17649263000D3FAB /* CCNotesViewerController.xib */; };
+		D3B3D7F01764AE11000D3FAB /* CCBackToListOfNotesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7EF1764AE11000D3FAB /* CCBackToListOfNotesTransaction.m */; };
+		D3B3D7F41765D6F1000D3FAB /* CCImagesSortingTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7F31765D6F1000D3FAB /* CCImagesSortingTransaction.m */; };
+		D3B3D7F91765DF15000D3FAB /* CCImageSortingController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7F71765DF15000D3FAB /* CCImageSortingController.m */; };
+		D3B3D7FA1765DF15000D3FAB /* CCImageSortingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B3D7F81765DF15000D3FAB /* CCImageSortingController.xib */; };
+		D3B3D7FE1765E15E000D3FAB /* CCImageSortingDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7FD1765E15E000D3FAB /* CCImageSortingDataSource.m */; };
+		D3B3D8021765E1F3000D3FAB /* CCImageSortingDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D8011765E1F3000D3FAB /* CCImageSortingDataProvider.m */; };
+		D3B3D8061766122D000D3FAB /* CCImagesForNotesUploadingScreenTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D8051766122D000D3FAB /* CCImagesForNotesUploadingScreenTransaction.m */; };
+		D3B3D80B176618DE000D3FAB /* CCUploadImagesController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D809176618DE000D3FAB /* CCUploadImagesController.m */; };
+		D3B3D80C176618DE000D3FAB /* CCUploadImagesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B3D80A176618DE000D3FAB /* CCUploadImagesController.xib */; };
+		D3B3D81017661DB7000D3FAB /* CCImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D80F17661DB7000D3FAB /* CCImageCell.m */; };
+		D3B3D81217661DE2000D3FAB /* CCImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B3D81117661DE1000D3FAB /* CCImageCell.xib */; };
+		D3B3D81617661F5F000D3FAB /* CCUploadingImagesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D81517661F5F000D3FAB /* CCUploadingImagesDataProvider.m */; };
+		D3B3D81A17662D16000D3FAB /* CCUIImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D81917662D16000D3FAB /* CCUIImageHelper.m */; };
 		D3EFD22A1755FC9500B7D710 /* CCCitySelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD2281755FC9500B7D710 /* CCCitySelectionController.m */; };
 		D3EFD22B1755FC9500B7D710 /* CCCitySelectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3EFD2291755FC9500B7D710 /* CCCitySelectionController.xib */; };
 		D3EFD22F1755FCE200B7D710 /* CCStateSelectionConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD22D1755FCE200B7D710 /* CCStateSelectionConroller.m */; };
@@ -274,24 +329,71 @@
 		A7D53A501758CD2600FE9FCD /* CCAllClassesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCAllClassesTransaction.m; path = AllClassesTransaction/CCAllClassesTransaction.m; sourceTree = "<group>"; };
 		A7D53A531758D6A700FE9FCD /* CCClassesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCClassesDataProvider.h; path = ClassesDataProvider/CCClassesDataProvider.h; sourceTree = "<group>"; };
 		A7D53A541758D6A700FE9FCD /* CCClassesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCClassesDataProvider.m; path = ClassesDataProvider/CCClassesDataProvider.m; sourceTree = "<group>"; };
+		D3039B76176880F800621CAC /* pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pending.png; sourceTree = "<group>"; };
+		D3039B77176880F800621CAC /* pending@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pending@2x.png"; sourceTree = "<group>"; };
 		D361462F175E17BE00907414 /* CCDropboxAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProvider.h; sourceTree = "<group>"; };
 		D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxAPIProvider.m; sourceTree = "<group>"; };
 		D3614632175E18A200907414 /* CCDropboxAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProviderProtocol.h; sourceTree = "<group>"; };
 		D3614635175E1D3000907414 /* DropboxSDK */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = DropboxSDK; path = "Pods/Dropbox-iOS-SDK/dropbox-ios-sdk-1.3.4/DropboxSDK.framework/DropboxSDK"; sourceTree = "<group>"; };
-		D3614638175E355500907414 /* CCDropboxSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxSelectionViewController.h; sourceTree = "<group>"; };
-		D3614639175E355500907414 /* CCDropboxSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxSelectionViewController.m; sourceTree = "<group>"; };
-		D361463A175E355500907414 /* CCDropboxSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCDropboxSelectionViewController.xib; sourceTree = "<group>"; };
-		D361463E175E362600907414 /* CCDropboxFileSelectionTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxFileSelectionTransaction.h; sourceTree = "<group>"; };
-		D361463F175E362600907414 /* CCDropboxFileSelectionTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxFileSelectionTransaction.m; sourceTree = "<group>"; };
+		D361463E175E362600907414 /* CCDropboxImagesSelectionTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxImagesSelectionTransaction.h; sourceTree = "<group>"; };
+		D361463F175E362600907414 /* CCDropboxImagesSelectionTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxImagesSelectionTransaction.m; sourceTree = "<group>"; };
 		D3614642175E43A400907414 /* CCDropboxDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxDataProvider.h; sourceTree = "<group>"; };
 		D3614643175E43A400907414 /* CCDropboxDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxDataProvider.m; sourceTree = "<group>"; };
 		D3614646175F133700907414 /* CCDropboxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxCell.h; sourceTree = "<group>"; };
 		D3614647175F133700907414 /* CCDropboxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxCell.m; sourceTree = "<group>"; };
 		D3614649175F141900907414 /* CCDropboxCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCDropboxCell.xib; sourceTree = "<group>"; };
-		D361464C175F18C700907414 /* CCDropboxFileSystemTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxFileSystemTransaction.h; sourceTree = "<group>"; };
-		D361464D175F18C700907414 /* CCDropboxFileSystemTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxFileSystemTransaction.m; sourceTree = "<group>"; };
+		D361464C175F18C700907414 /* CCDropboxImagesFileSystemTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxImagesFileSystemTransaction.h; sourceTree = "<group>"; };
+		D361464D175F18C700907414 /* CCDropboxImagesFileSystemTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxImagesFileSystemTransaction.m; sourceTree = "<group>"; };
 		D3614650175F65F600907414 /* CCDropboxFileInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxFileInfo.h; sourceTree = "<group>"; };
 		D3614651175F65F600907414 /* CCDropboxFileInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxFileInfo.m; sourceTree = "<group>"; };
+		D36146671760C4FF00907414 /* CCDropboxPDFDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxPDFDataProvider.h; sourceTree = "<group>"; };
+		D36146681760C4FF00907414 /* CCDropboxPDFDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxPDFDataProvider.m; sourceTree = "<group>"; };
+		D361466D1760C5F200907414 /* CCDropboxImageDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxImageDataProvider.h; sourceTree = "<group>"; };
+		D361466E1760C5F200907414 /* CCDropboxImageDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxImageDataProvider.m; sourceTree = "<group>"; };
+		D36146751762284800907414 /* CCNotesAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNotesAPIProvider.h; sourceTree = "<group>"; };
+		D36146761762284800907414 /* CCNotesAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNotesAPIProvider.m; sourceTree = "<group>"; };
+		D36146781762286A00907414 /* CCNotesAPIProviderProtolcol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCNotesAPIProviderProtolcol.h; sourceTree = "<group>"; };
+		D361467A1762387F00907414 /* CCNoteUploadInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNoteUploadInfo.h; sourceTree = "<group>"; };
+		D361467B1762387F00907414 /* CCNoteUploadInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNoteUploadInfo.m; sourceTree = "<group>"; };
+		D36146861762426200907414 /* CCMyNotesTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMyNotesTransaction.h; sourceTree = "<group>"; };
+		D36146871762426200907414 /* CCMyNotesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMyNotesTransaction.m; sourceTree = "<group>"; };
+		D361468F1762436D00907414 /* CCMyNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMyNotesViewController.h; sourceTree = "<group>"; };
+		D36146901762436D00907414 /* CCMyNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMyNotesViewController.m; sourceTree = "<group>"; };
+		D36146911762436D00907414 /* CCMyNotesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMyNotesViewController.xib; sourceTree = "<group>"; };
+		D36146981762454A00907414 /* CCMyNotesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMyNotesDataProvider.h; sourceTree = "<group>"; };
+		D36146991762454A00907414 /* CCMyNotesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMyNotesDataProvider.m; sourceTree = "<group>"; };
+		D36146A1176249FA00907414 /* CCCreateNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCreateNoteViewController.h; sourceTree = "<group>"; };
+		D36146A2176249FA00907414 /* CCCreateNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCreateNoteViewController.m; sourceTree = "<group>"; };
+		D36146A3176249FA00907414 /* CCCreateNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCCreateNoteViewController.xib; sourceTree = "<group>"; };
+		D36146AA17624AB700907414 /* CCCreateNotesTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCreateNotesTransaction.h; sourceTree = "<group>"; };
+		D36146AB17624AB700907414 /* CCCreateNotesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCreateNotesTransaction.m; sourceTree = "<group>"; };
+		D36146AE1763121B00907414 /* CCSelectPdfFromDropboxTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSelectPdfFromDropboxTransaction.h; sourceTree = "<group>"; };
+		D36146AF1763121B00907414 /* CCSelectPdfFromDropboxTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSelectPdfFromDropboxTransaction.m; sourceTree = "<group>"; };
+		D36146B2176314A100907414 /* folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder.png; sourceTree = "<group>"; };
+		D36146B3176314A100907414 /* folder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder@2x.png"; sourceTree = "<group>"; };
+		D36146B4176314A100907414 /* folder_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_app.png; sourceTree = "<group>"; };
+		D36146B5176314A100907414 /* folder_app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder_app@2x.png"; sourceTree = "<group>"; };
+		D36146B6176314A100907414 /* folder_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_camera.png; sourceTree = "<group>"; };
+		D36146B7176314A100907414 /* folder_camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder_camera@2x.png"; sourceTree = "<group>"; };
+		D36146B8176314A100907414 /* folder_camera_upload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_camera_upload.png; sourceTree = "<group>"; };
+		D36146B9176314A100907414 /* folder_camera_upload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder_camera_upload@2x.png"; sourceTree = "<group>"; };
+		D36146BA176314A100907414 /* folder_photos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_photos.png; sourceTree = "<group>"; };
+		D36146BB176314A100907414 /* folder_photos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder_photos@2x.png"; sourceTree = "<group>"; };
+		D36146BC176314A100907414 /* folder_public.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_public.png; sourceTree = "<group>"; };
+		D36146BD176314A100907414 /* folder_public@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder_public@2x.png"; sourceTree = "<group>"; };
+		D36146BE176314A100907414 /* folder_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_user.png; sourceTree = "<group>"; };
+		D36146BF176314A100907414 /* folder_user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder_user@2x.png"; sourceTree = "<group>"; };
+		D36146C0176314A100907414 /* invite_folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = invite_folder.png; sourceTree = "<group>"; };
+		D36146C1176314A100907414 /* invite_folder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "invite_folder@2x.png"; sourceTree = "<group>"; };
+		D36146C2176314A100907414 /* page_white_acrobat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_white_acrobat.png; sourceTree = "<group>"; };
+		D36146C3176314A100907414 /* page_white_acrobat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "page_white_acrobat@2x.png"; sourceTree = "<group>"; };
+		D36146C4176314A100907414 /* page_white_acrobat_import.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_white_acrobat_import.png; sourceTree = "<group>"; };
+		D36146C5176314A100907414 /* page_white_acrobat_import@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "page_white_acrobat_import@2x.png"; sourceTree = "<group>"; };
+		D36146DB176352FD00907414 /* CCNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNote.h; sourceTree = "<group>"; };
+		D36146DC176352FD00907414 /* CCNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNote.m; sourceTree = "<group>"; };
+		D36146DF1763629700907414 /* CCNoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNoteCell.h; sourceTree = "<group>"; };
+		D36146E01763629700907414 /* CCNoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNoteCell.m; sourceTree = "<group>"; };
+		D36146E21763638C00907414 /* CCNoteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCNoteCell.xib; sourceTree = "<group>"; };
 		D36186471743B13E00B501BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D37A475417577D5100E91850 /* CCEducation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEducation.h; sourceTree = "<group>"; };
 		D37A475517577D5100E91850 /* CCEducation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEducation.m; sourceTree = "<group>"; };
@@ -308,6 +410,41 @@
 		D3AB6B5D175CEE0400097E21 /* CCUserEducationsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUserEducationsDataSource.h; sourceTree = "<group>"; };
 		D3AB6B5E175CEE0400097E21 /* CCUserEducationsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUserEducationsDataSource.m; sourceTree = "<group>"; };
 		D3AB6B60175CFA8100097E21 /* CCEducationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCEducationCell.xib; sourceTree = "<group>"; };
+		D3B3D7D617648439000D3FAB /* CCDropboxImagesSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCDropboxImagesSelectionViewController.h; path = CampusJungle/Controllers/DropboxImagesSelectionViewController/CCDropboxImagesSelectionViewController.h; sourceTree = SOURCE_ROOT; };
+		D3B3D7D717648439000D3FAB /* CCDropboxImagesSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCDropboxImagesSelectionViewController.m; path = CampusJungle/Controllers/DropboxImagesSelectionViewController/CCDropboxImagesSelectionViewController.m; sourceTree = SOURCE_ROOT; };
+		D3B3D7D817648439000D3FAB /* CCDropboxImagesSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CCDropboxImagesSelectionViewController.xib; path = CampusJungle/Controllers/DropboxImagesSelectionViewController/CCDropboxImagesSelectionViewController.xib; sourceTree = SOURCE_ROOT; };
+		D3B3D7DC176484A8000D3FAB /* CCDropboxPDFSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxPDFSelectionViewController.h; sourceTree = "<group>"; };
+		D3B3D7DD176484A8000D3FAB /* CCDropboxPDFSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxPDFSelectionViewController.m; sourceTree = "<group>"; };
+		D3B3D7E017648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxPDFFileSystemTransaction.h; sourceTree = "<group>"; };
+		D3B3D7E117648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxPDFFileSystemTransaction.m; sourceTree = "<group>"; };
+		D3B3D7E417649185000D3FAB /* CCViewNotesTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCViewNotesTransaction.h; sourceTree = "<group>"; };
+		D3B3D7E517649185000D3FAB /* CCViewNotesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewNotesTransaction.m; sourceTree = "<group>"; };
+		D3B3D7E817649263000D3FAB /* CCNotesViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNotesViewerController.h; sourceTree = "<group>"; };
+		D3B3D7E917649263000D3FAB /* CCNotesViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNotesViewerController.m; sourceTree = "<group>"; };
+		D3B3D7EA17649263000D3FAB /* CCNotesViewerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCNotesViewerController.xib; sourceTree = "<group>"; };
+		D3B3D7EE1764AE11000D3FAB /* CCBackToListOfNotesTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBackToListOfNotesTransaction.h; sourceTree = "<group>"; };
+		D3B3D7EF1764AE11000D3FAB /* CCBackToListOfNotesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBackToListOfNotesTransaction.m; sourceTree = "<group>"; };
+		D3B3D7F21765D6F1000D3FAB /* CCImagesSortingTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCImagesSortingTransaction.h; sourceTree = "<group>"; };
+		D3B3D7F31765D6F1000D3FAB /* CCImagesSortingTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCImagesSortingTransaction.m; sourceTree = "<group>"; };
+		D3B3D7F61765DF15000D3FAB /* CCImageSortingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCImageSortingController.h; sourceTree = "<group>"; };
+		D3B3D7F71765DF15000D3FAB /* CCImageSortingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCImageSortingController.m; sourceTree = "<group>"; };
+		D3B3D7F81765DF15000D3FAB /* CCImageSortingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCImageSortingController.xib; sourceTree = "<group>"; };
+		D3B3D7FC1765E15E000D3FAB /* CCImageSortingDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCImageSortingDataSource.h; sourceTree = "<group>"; };
+		D3B3D7FD1765E15E000D3FAB /* CCImageSortingDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCImageSortingDataSource.m; sourceTree = "<group>"; };
+		D3B3D8001765E1F3000D3FAB /* CCImageSortingDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCImageSortingDataProvider.h; sourceTree = "<group>"; };
+		D3B3D8011765E1F3000D3FAB /* CCImageSortingDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCImageSortingDataProvider.m; sourceTree = "<group>"; };
+		D3B3D8041766122D000D3FAB /* CCImagesForNotesUploadingScreenTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCImagesForNotesUploadingScreenTransaction.h; sourceTree = "<group>"; };
+		D3B3D8051766122D000D3FAB /* CCImagesForNotesUploadingScreenTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCImagesForNotesUploadingScreenTransaction.m; sourceTree = "<group>"; };
+		D3B3D808176618DE000D3FAB /* CCUploadImagesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUploadImagesController.h; sourceTree = "<group>"; };
+		D3B3D809176618DE000D3FAB /* CCUploadImagesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUploadImagesController.m; sourceTree = "<group>"; };
+		D3B3D80A176618DE000D3FAB /* CCUploadImagesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCUploadImagesController.xib; sourceTree = "<group>"; };
+		D3B3D80E17661DB7000D3FAB /* CCImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCImageCell.h; sourceTree = "<group>"; };
+		D3B3D80F17661DB7000D3FAB /* CCImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCImageCell.m; sourceTree = "<group>"; };
+		D3B3D81117661DE1000D3FAB /* CCImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CCImageCell.xib; path = CampusJungle/View/ImageCell/CCImageCell.xib; sourceTree = SOURCE_ROOT; };
+		D3B3D81417661F5F000D3FAB /* CCUploadingImagesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUploadingImagesDataProvider.h; sourceTree = "<group>"; };
+		D3B3D81517661F5F000D3FAB /* CCUploadingImagesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUploadingImagesDataProvider.m; sourceTree = "<group>"; };
+		D3B3D81817662D16000D3FAB /* CCUIImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUIImageHelper.h; sourceTree = "<group>"; };
+		D3B3D81917662D16000D3FAB /* CCUIImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUIImageHelper.m; sourceTree = "<group>"; };
 		D3EFD2271755FC9500B7D710 /* CCCitySelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCitySelectionController.h; sourceTree = "<group>"; };
 		D3EFD2281755FC9500B7D710 /* CCCitySelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCitySelectionController.m; sourceTree = "<group>"; };
 		D3EFD2291755FC9500B7D710 /* CCCitySelectionController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCCitySelectionController.xib; sourceTree = "<group>"; };
@@ -430,9 +567,9 @@
 				A787C73217536F8400824DEA /* Controllers */,
 				A787C74E17536F8400824DEA /* Domain */,
 				D3A2C3261754D53900989831 /* View */,
-				D3A2C31F1754AD9400989831 /* DataSources */,
 				A787C77717536F8400824DEA /* Services */,
 				A787C77D17536F8400824DEA /* Trasactions */,
+				D3A2C31F1754AD9400989831 /* DataSources */,
 				D3EFD2351756080700B7D710 /* DataProviders */,
 			);
 			path = CampusJungle;
@@ -450,11 +587,17 @@
 		A787C73217536F8400824DEA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D3B3D807176618C4000D3FAB /* UploadImagesController */,
+				D3B3D7F51765DEF8000D3FAB /* CCImageSortingController */,
+				D3B3D7E717649246000D3FAB /* CCNotesViewerController */,
+				D361469B1762499F00907414 /* CreateNoteScreen */,
+				D36146891762431C00907414 /* MyNotesController */,
 				A79E2282175FD485000A1582 /* CCCollegeClassesController */,
 				A79E226D175F846A000A1582 /* CollegesListController */,
 				A7A618B0175DCED40047C5B2 /* CreateClassController */,
 				A7D53A441758CB5600FE9FCD /* ClassesController */,
-				D3614637175E352200907414 /* DropboxSelectionViewController */,
+				D3B3D7DB17648456000D3FAB /* DropboxPdfSelectionViewController */,
+				D3614637175E352200907414 /* DropboxImagesSelectionViewController */,
 				A7D539CE1756236000FE9FCD /* ClassController */,
 				D3EFD2891756971F00B7D710 /* EducationCreationController */,
 				A787C7CF1754E9AD00824DEA /* SideBarController */,
@@ -552,6 +695,7 @@
 		A787C74F17536F8400824DEA /* APIProvider */ = {
 			isa = PBXGroup;
 			children = (
+				D36146741762281F00907414 /* NotesAPIProvider */,
 				A7A618B7175E04490047C5B2 /* ClassesApiProvider */,
 				A787C75017536F8400824DEA /* CCAPIProvider.h */,
 				A787C75117536F8400824DEA /* CCAPIProvider.m */,
@@ -603,6 +747,8 @@
 		A787C76117536F8400824DEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D36146DA176352F200907414 /* Note */,
+				D36146791762382100907414 /* NoteforUploadInfo */,
 				A7A618AC175CD79B0047C5B2 /* Class */,
 				D361464F175F65E700907414 /* DropboxFileData */,
 				D37A475317577CD700E91850 /* Education */,
@@ -674,6 +820,7 @@
 		A787C77717536F8400824DEA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D3B3D81717662D04000D3FAB /* UIImageViewHelper */,
 				D39F1C0E1753821D008E08A2 /* StandardErrorHandler */,
 				A787C77817536F8400824DEA /* UserSession */,
 				A787C77B17536F8400824DEA /* UserSessionProtocol */,
@@ -701,13 +848,22 @@
 		A787C77D17536F8400824DEA /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
+				D3B3D80317661208000D3FAB /* ImagesForNotesUploadingScreenTransaction */,
+				D3B3D7F11765D6DE000D3FAB /* ImagesSortingTransaction */,
+				D3B3D7ED1764ADFC000D3FAB /* BackToListOfNotesTransaction */,
+				D3B3D7E317649171000D3FAB /* ViewNotesTransaction */,
+				D36146A617624A7500907414 /* CreateNotesTransaction */,
+				D36146851762424C00907414 /* MyNotes */,
 				A79E228A1760010E000A1582 /* ClassAddedTransaction */,
 				A79E227E175FD3A8000A1582 /* ClassesOfCurrentCollegeTransaction */,
 				A79E2275175F8C84000A1582 /* SelectCollegeClassesTransaction */,
 				A7A618A6175CA9B20047C5B2 /* AddClassTransaction */,
 				A7D53A4D1758CCE700FE9FCD /* AllClassesTransaction */,
-				D361464B175F18A500907414 /* DropboxFileSystemTransaction */,
-				D361463D175E360600907414 /* DropboxFileSelectionTransaction */,
+				D3B3D7DF17648BED000D3FAB /* DropboxPDFFileSystemTransaction */,
+				D361464B175F18A500907414 /* DropboxImagesFileSystemTransaction */,
+				D361463D175E360600907414 /* DropboxImagesFileSelectionTransaction */,
+				D36146AD176311FA00907414 /* SelectPdfFromDropbox */,
+				D35C1B481763706500C2AEB4 /* BackToListOfNotesTransaction */,
 				A7D53A081756444900FE9FCD /* ClassTransaction */,
 				D3EFD294175745E600B7D710 /* BackToUserProfileTransaction */,
 				D3EFD2901757430E00B7D710 /* EducationCreationTransaction */,
@@ -1005,6 +1161,8 @@
 		A7D53A361758A85700FE9FCD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D3039B75176880F800621CAC /* Icons */,
+				D36146B1176314A100907414 /* DropboxIcons */,
 				A79E2273175F8A75000A1582 /* monkey.jpg */,
 				A7D53A371758A85700FE9FCD /* MHTabBarController */,
 			);
@@ -1053,6 +1211,22 @@
 			name = ClassesDataProvider;
 			sourceTree = "<group>";
 		};
+		D3039B75176880F800621CAC /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				D3039B76176880F800621CAC /* pending.png */,
+				D3039B77176880F800621CAC /* pending@2x.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		D35C1B481763706500C2AEB4 /* BackToListOfNotesTransaction */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BackToListOfNotesTransaction;
+			sourceTree = "<group>";
+		};
 		D361462E175E17AD00907414 /* CCDropboxAPIProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -1064,22 +1238,24 @@
 			path = DropboxDelegate;
 			sourceTree = "<group>";
 		};
-		D3614637175E352200907414 /* DropboxSelectionViewController */ = {
+		D3614637175E352200907414 /* DropboxImagesSelectionViewController */ = {
 			isa = PBXGroup;
 			children = (
-				D3614638175E355500907414 /* CCDropboxSelectionViewController.h */,
-				D3614639175E355500907414 /* CCDropboxSelectionViewController.m */,
-				D361463A175E355500907414 /* CCDropboxSelectionViewController.xib */,
+				D3B3D7D617648439000D3FAB /* CCDropboxImagesSelectionViewController.h */,
+				D3B3D7D717648439000D3FAB /* CCDropboxImagesSelectionViewController.m */,
+				D3B3D7D817648439000D3FAB /* CCDropboxImagesSelectionViewController.xib */,
 			);
+			name = DropboxImagesSelectionViewController;
 			path = DropboxSelectionViewController;
 			sourceTree = "<group>";
 		};
-		D361463D175E360600907414 /* DropboxFileSelectionTransaction */ = {
+		D361463D175E360600907414 /* DropboxImagesFileSelectionTransaction */ = {
 			isa = PBXGroup;
 			children = (
-				D361463E175E362600907414 /* CCDropboxFileSelectionTransaction.h */,
-				D361463F175E362600907414 /* CCDropboxFileSelectionTransaction.m */,
+				D361463E175E362600907414 /* CCDropboxImagesSelectionTransaction.h */,
+				D361463F175E362600907414 /* CCDropboxImagesSelectionTransaction.m */,
 			);
+			name = DropboxImagesFileSelectionTransaction;
 			path = DropboxFileSelectionTransaction;
 			sourceTree = "<group>";
 		};
@@ -1102,12 +1278,13 @@
 			path = DropboxCell;
 			sourceTree = "<group>";
 		};
-		D361464B175F18A500907414 /* DropboxFileSystemTransaction */ = {
+		D361464B175F18A500907414 /* DropboxImagesFileSystemTransaction */ = {
 			isa = PBXGroup;
 			children = (
-				D361464C175F18C700907414 /* CCDropboxFileSystemTransaction.h */,
-				D361464D175F18C700907414 /* CCDropboxFileSystemTransaction.m */,
+				D361464C175F18C700907414 /* CCDropboxImagesFileSystemTransaction.h */,
+				D361464D175F18C700907414 /* CCDropboxImagesFileSystemTransaction.m */,
 			);
+			name = DropboxImagesFileSystemTransaction;
 			path = DropboxFileSystemTransaction;
 			sourceTree = "<group>";
 		};
@@ -1118,6 +1295,146 @@
 				D3614651175F65F600907414 /* CCDropboxFileInfo.m */,
 			);
 			path = DropboxFileData;
+			sourceTree = "<group>";
+		};
+		D36146621760BFA500907414 /* DropboxImageDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D361466D1760C5F200907414 /* CCDropboxImageDataProvider.h */,
+				D361466E1760C5F200907414 /* CCDropboxImageDataProvider.m */,
+			);
+			path = DropboxImageDataProvider;
+			sourceTree = "<group>";
+		};
+		D36146631760BFA500907414 /* DropboxPDFDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D36146671760C4FF00907414 /* CCDropboxPDFDataProvider.h */,
+				D36146681760C4FF00907414 /* CCDropboxPDFDataProvider.m */,
+			);
+			path = DropboxPDFDataProvider;
+			sourceTree = "<group>";
+		};
+		D36146741762281F00907414 /* NotesAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D36146781762286A00907414 /* CCNotesAPIProviderProtolcol.h */,
+				D36146751762284800907414 /* CCNotesAPIProvider.h */,
+				D36146761762284800907414 /* CCNotesAPIProvider.m */,
+			);
+			path = NotesAPIProvider;
+			sourceTree = "<group>";
+		};
+		D36146791762382100907414 /* NoteforUploadInfo */ = {
+			isa = PBXGroup;
+			children = (
+				D361467A1762387F00907414 /* CCNoteUploadInfo.h */,
+				D361467B1762387F00907414 /* CCNoteUploadInfo.m */,
+			);
+			name = NoteforUploadInfo;
+			path = CampusJungle/Domain/NoteforUploadInfo;
+			sourceTree = SOURCE_ROOT;
+		};
+		D36146851762424C00907414 /* MyNotes */ = {
+			isa = PBXGroup;
+			children = (
+				D36146861762426200907414 /* CCMyNotesTransaction.h */,
+				D36146871762426200907414 /* CCMyNotesTransaction.m */,
+			);
+			path = MyNotes;
+			sourceTree = "<group>";
+		};
+		D36146891762431C00907414 /* MyNotesController */ = {
+			isa = PBXGroup;
+			children = (
+				D361468F1762436D00907414 /* CCMyNotesViewController.h */,
+				D36146901762436D00907414 /* CCMyNotesViewController.m */,
+				D36146911762436D00907414 /* CCMyNotesViewController.xib */,
+			);
+			path = MyNotesController;
+			sourceTree = "<group>";
+		};
+		D3614694176244E500907414 /* MyNotesDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D36146981762454A00907414 /* CCMyNotesDataProvider.h */,
+				D36146991762454A00907414 /* CCMyNotesDataProvider.m */,
+			);
+			path = MyNotesDataProvider;
+			sourceTree = "<group>";
+		};
+		D361469B1762499F00907414 /* CreateNoteScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D36146A1176249FA00907414 /* CCCreateNoteViewController.h */,
+				D36146A2176249FA00907414 /* CCCreateNoteViewController.m */,
+				D36146A3176249FA00907414 /* CCCreateNoteViewController.xib */,
+			);
+			path = CreateNoteScreen;
+			sourceTree = "<group>";
+		};
+		D36146A617624A7500907414 /* CreateNotesTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D36146AA17624AB700907414 /* CCCreateNotesTransaction.h */,
+				D36146AB17624AB700907414 /* CCCreateNotesTransaction.m */,
+			);
+			path = CreateNotesTransaction;
+			sourceTree = "<group>";
+		};
+		D36146AD176311FA00907414 /* SelectPdfFromDropbox */ = {
+			isa = PBXGroup;
+			children = (
+				D36146AE1763121B00907414 /* CCSelectPdfFromDropboxTransaction.h */,
+				D36146AF1763121B00907414 /* CCSelectPdfFromDropboxTransaction.m */,
+			);
+			path = SelectPdfFromDropbox;
+			sourceTree = "<group>";
+		};
+		D36146B1176314A100907414 /* DropboxIcons */ = {
+			isa = PBXGroup;
+			children = (
+				D36146B2176314A100907414 /* folder.png */,
+				D36146B3176314A100907414 /* folder@2x.png */,
+				D36146B4176314A100907414 /* folder_app.png */,
+				D36146B5176314A100907414 /* folder_app@2x.png */,
+				D36146B6176314A100907414 /* folder_camera.png */,
+				D36146B7176314A100907414 /* folder_camera@2x.png */,
+				D36146B8176314A100907414 /* folder_camera_upload.png */,
+				D36146B9176314A100907414 /* folder_camera_upload@2x.png */,
+				D36146BA176314A100907414 /* folder_photos.png */,
+				D36146BB176314A100907414 /* folder_photos@2x.png */,
+				D36146BC176314A100907414 /* folder_public.png */,
+				D36146BD176314A100907414 /* folder_public@2x.png */,
+				D36146BE176314A100907414 /* folder_user.png */,
+				D36146BF176314A100907414 /* folder_user@2x.png */,
+				D36146C0176314A100907414 /* invite_folder.png */,
+				D36146C1176314A100907414 /* invite_folder@2x.png */,
+				D36146C2176314A100907414 /* page_white_acrobat.png */,
+				D36146C3176314A100907414 /* page_white_acrobat@2x.png */,
+				D36146C4176314A100907414 /* page_white_acrobat_import.png */,
+				D36146C5176314A100907414 /* page_white_acrobat_import@2x.png */,
+			);
+			path = DropboxIcons;
+			sourceTree = "<group>";
+		};
+		D36146DA176352F200907414 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				D36146DB176352FD00907414 /* CCNote.h */,
+				D36146DC176352FD00907414 /* CCNote.m */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
+		D36146DE1763629700907414 /* NoteCell */ = {
+			isa = PBXGroup;
+			children = (
+				D36146DF1763629700907414 /* CCNoteCell.h */,
+				D36146E01763629700907414 /* CCNoteCell.m */,
+				D36146E21763638C00907414 /* CCNoteCell.xib */,
+			);
+			path = NoteCell;
 			sourceTree = "<group>";
 		};
 		D37A475317577CD700E91850 /* Education */ = {
@@ -1161,6 +1478,7 @@
 		D3A2C31F1754AD9400989831 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				D3B3D7FB1765E141000D3FAB /* ImageSortingDataSource */,
 				D3AB6B5C175CEDD300097E21 /* UserEducationsTableDataSource */,
 				A7D539D817563FB200FE9FCD /* ClassTableDataSorce */,
 				A7D539CA1756157900FE9FCD /* SideMenuDataSource */,
@@ -1173,6 +1491,8 @@
 		D3A2C3261754D53900989831 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D3B3D80D17661D94000D3FAB /* ImageCell */,
+				D36146DE1763629700907414 /* NoteCell */,
 				A7A618BC175E26590047C5B2 /* CCClassCell */,
 				A7D53A261758A7CA00FE9FCD /* MHTabBarController */,
 				A7D53A101757F29F00FE9FCD /* OrdinaryCell */,
@@ -1203,6 +1523,136 @@
 				D3AB6B5E175CEE0400097E21 /* CCUserEducationsDataSource.m */,
 			);
 			path = UserEducationsTableDataSource;
+			sourceTree = "<group>";
+		};
+		D3B3D7DB17648456000D3FAB /* DropboxPdfSelectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D7DC176484A8000D3FAB /* CCDropboxPDFSelectionViewController.h */,
+				D3B3D7DD176484A8000D3FAB /* CCDropboxPDFSelectionViewController.m */,
+			);
+			path = DropboxPdfSelectionViewController;
+			sourceTree = "<group>";
+		};
+		D3B3D7DF17648BED000D3FAB /* DropboxPDFFileSystemTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D7E017648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.h */,
+				D3B3D7E117648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.m */,
+			);
+			path = DropboxPDFFileSystemTransaction;
+			sourceTree = "<group>";
+		};
+		D3B3D7E317649171000D3FAB /* ViewNotesTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D7E417649185000D3FAB /* CCViewNotesTransaction.h */,
+				D3B3D7E517649185000D3FAB /* CCViewNotesTransaction.m */,
+			);
+			path = ViewNotesTransaction;
+			sourceTree = "<group>";
+		};
+		D3B3D7E717649246000D3FAB /* CCNotesViewerController */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D7E817649263000D3FAB /* CCNotesViewerController.h */,
+				D3B3D7E917649263000D3FAB /* CCNotesViewerController.m */,
+				D3B3D7EA17649263000D3FAB /* CCNotesViewerController.xib */,
+			);
+			path = CCNotesViewerController;
+			sourceTree = "<group>";
+		};
+		D3B3D7ED1764ADFC000D3FAB /* BackToListOfNotesTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D7EE1764AE11000D3FAB /* CCBackToListOfNotesTransaction.h */,
+				D3B3D7EF1764AE11000D3FAB /* CCBackToListOfNotesTransaction.m */,
+			);
+			path = BackToListOfNotesTransaction;
+			sourceTree = "<group>";
+		};
+		D3B3D7F11765D6DE000D3FAB /* ImagesSortingTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D7F21765D6F1000D3FAB /* CCImagesSortingTransaction.h */,
+				D3B3D7F31765D6F1000D3FAB /* CCImagesSortingTransaction.m */,
+			);
+			path = ImagesSortingTransaction;
+			sourceTree = "<group>";
+		};
+		D3B3D7F51765DEF8000D3FAB /* CCImageSortingController */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D7F61765DF15000D3FAB /* CCImageSortingController.h */,
+				D3B3D7F71765DF15000D3FAB /* CCImageSortingController.m */,
+				D3B3D7F81765DF15000D3FAB /* CCImageSortingController.xib */,
+			);
+			path = CCImageSortingController;
+			sourceTree = "<group>";
+		};
+		D3B3D7FB1765E141000D3FAB /* ImageSortingDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D7FC1765E15E000D3FAB /* CCImageSortingDataSource.h */,
+				D3B3D7FD1765E15E000D3FAB /* CCImageSortingDataSource.m */,
+			);
+			path = ImageSortingDataSource;
+			sourceTree = "<group>";
+		};
+		D3B3D7FF1765E1D9000D3FAB /* ImageSortingDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D8001765E1F3000D3FAB /* CCImageSortingDataProvider.h */,
+				D3B3D8011765E1F3000D3FAB /* CCImageSortingDataProvider.m */,
+			);
+			path = ImageSortingDataProvider;
+			sourceTree = "<group>";
+		};
+		D3B3D80317661208000D3FAB /* ImagesForNotesUploadingScreenTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D8041766122D000D3FAB /* CCImagesForNotesUploadingScreenTransaction.h */,
+				D3B3D8051766122D000D3FAB /* CCImagesForNotesUploadingScreenTransaction.m */,
+			);
+			path = ImagesForNotesUploadingScreenTransaction;
+			sourceTree = "<group>";
+		};
+		D3B3D807176618C4000D3FAB /* UploadImagesController */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D808176618DE000D3FAB /* CCUploadImagesController.h */,
+				D3B3D809176618DE000D3FAB /* CCUploadImagesController.m */,
+				D3B3D80A176618DE000D3FAB /* CCUploadImagesController.xib */,
+			);
+			path = UploadImagesController;
+			sourceTree = "<group>";
+		};
+		D3B3D80D17661D94000D3FAB /* ImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D80E17661DB7000D3FAB /* CCImageCell.h */,
+				D3B3D80F17661DB7000D3FAB /* CCImageCell.m */,
+				D3B3D81117661DE1000D3FAB /* CCImageCell.xib */,
+			);
+			path = ImageCell;
+			sourceTree = "<group>";
+		};
+		D3B3D81317661F46000D3FAB /* UploadImagesDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D81417661F5F000D3FAB /* CCUploadingImagesDataProvider.h */,
+				D3B3D81517661F5F000D3FAB /* CCUploadingImagesDataProvider.m */,
+			);
+			path = UploadImagesDataProvider;
+			sourceTree = "<group>";
+		};
+		D3B3D81717662D04000D3FAB /* UIImageViewHelper */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3D81817662D16000D3FAB /* CCUIImageHelper.h */,
+				D3B3D81917662D16000D3FAB /* CCUIImageHelper.m */,
+			);
+			path = UIImageViewHelper;
 			sourceTree = "<group>";
 		};
 		D3EFD2251755FC6200B7D710 /* CitySelectionScreen */ = {
@@ -1237,10 +1687,15 @@
 		D3EFD2351756080700B7D710 /* DataProviders */ = {
 			isa = PBXGroup;
 			children = (
+				D3B3D81317661F46000D3FAB /* UploadImagesDataProvider */,
+				D3B3D7FF1765E1D9000D3FAB /* ImageSortingDataProvider */,
+				D3614694176244E500907414 /* MyNotesDataProvider */,
+				D36146621760BFA500907414 /* DropboxImageDataProvider */,
+				D36146631760BFA500907414 /* DropboxPDFDataProvider */,
+				D3614641175E438100907414 /* DropboxDataProvider */,
 				A79E227A175FA863000A1582 /* MyClassesDataProvider */,
 				A79E2269175F844A000A1582 /* SideMenuDataProvider */,
 				A7D53A521758D67500FE9FCD /* ClassesDataProvider */,
-				D3614641175E438100907414 /* DropboxDataProvider */,
 				D37A475B175788FF00E91850 /* EducationsDataProvider */,
 				D3EFD2811756856100B7D710 /* CollegeSellectionDataProvider */,
 				D3EFD26B1756594C00B7D710 /* CitiesDataProvider */,
@@ -1525,9 +1980,38 @@
 				A79E2268175F83DB000A1582 /* CCClassController.xib in Resources */,
 				A79E2272175F846B000A1582 /* CCCollegesListController.xib in Resources */,
 				A79E2274175F8A75000A1582 /* monkey.jpg in Resources */,
-				D361463C175E355500907414 /* CCDropboxSelectionViewController.xib in Resources */,
 				D361464A175F141900907414 /* CCDropboxCell.xib in Resources */,
 				A79E2287175FD509000A1582 /* CCCollegeClassesController.xib in Resources */,
+				D36146931762436D00907414 /* CCMyNotesViewController.xib in Resources */,
+				D36146A5176249FA00907414 /* CCCreateNoteViewController.xib in Resources */,
+				D36146C6176314A100907414 /* folder.png in Resources */,
+				D36146C7176314A100907414 /* folder@2x.png in Resources */,
+				D36146C8176314A100907414 /* folder_app.png in Resources */,
+				D36146C9176314A100907414 /* folder_app@2x.png in Resources */,
+				D36146CA176314A100907414 /* folder_camera.png in Resources */,
+				D36146CB176314A100907414 /* folder_camera@2x.png in Resources */,
+				D36146CC176314A100907414 /* folder_camera_upload.png in Resources */,
+				D36146CD176314A100907414 /* folder_camera_upload@2x.png in Resources */,
+				D36146CE176314A100907414 /* folder_photos.png in Resources */,
+				D36146CF176314A100907414 /* folder_photos@2x.png in Resources */,
+				D36146D0176314A100907414 /* folder_public.png in Resources */,
+				D36146D1176314A100907414 /* folder_public@2x.png in Resources */,
+				D36146D2176314A100907414 /* folder_user.png in Resources */,
+				D36146D3176314A100907414 /* folder_user@2x.png in Resources */,
+				D36146D4176314A100907414 /* invite_folder.png in Resources */,
+				D36146D5176314A100907414 /* invite_folder@2x.png in Resources */,
+				D36146D6176314A100907414 /* page_white_acrobat.png in Resources */,
+				D36146D7176314A100907414 /* page_white_acrobat@2x.png in Resources */,
+				D36146D8176314A100907414 /* page_white_acrobat_import.png in Resources */,
+				D36146D9176314A100907414 /* page_white_acrobat_import@2x.png in Resources */,
+				D36146E31763638C00907414 /* CCNoteCell.xib in Resources */,
+				D3B3D7DA17648439000D3FAB /* CCDropboxImagesSelectionViewController.xib in Resources */,
+				D3B3D7EC17649263000D3FAB /* CCNotesViewerController.xib in Resources */,
+				D3B3D7FA1765DF15000D3FAB /* CCImageSortingController.xib in Resources */,
+				D3B3D80C176618DE000D3FAB /* CCUploadImagesController.xib in Resources */,
+				D3B3D81217661DE2000D3FAB /* CCImageCell.xib in Resources */,
+				D3039B78176880F800621CAC /* pending.png in Resources */,
+				D3039B79176880F800621CAC /* pending@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1645,16 +2129,42 @@
 				A79E2271175F846B000A1582 /* CCCollegesListController.m in Sources */,
 				A79E2278175F8CC6000A1582 /* CCSelectCollegeClassesTransaction.m in Sources */,
 				D3614631175E17BE00907414 /* CCDropboxAPIProvider.m in Sources */,
-				D361463B175E355500907414 /* CCDropboxSelectionViewController.m in Sources */,
-				D3614640175E362600907414 /* CCDropboxFileSelectionTransaction.m in Sources */,
+				D3614640175E362600907414 /* CCDropboxImagesSelectionTransaction.m in Sources */,
 				D3614644175E43A400907414 /* CCDropboxDataProvider.m in Sources */,
 				D3614648175F133700907414 /* CCDropboxCell.m in Sources */,
-				D361464E175F18C700907414 /* CCDropboxFileSystemTransaction.m in Sources */,
+				D361464E175F18C700907414 /* CCDropboxImagesFileSystemTransaction.m in Sources */,
 				D3614652175F65F600907414 /* CCDropboxFileInfo.m in Sources */,
 				A79E227D175FA8AF000A1582 /* CCMyClassesDataProvider.m in Sources */,
 				A79E2281175FD3D2000A1582 /* CCClassesOfcurrentCollegeTransaction.m in Sources */,
 				A79E2285175FD4B8000A1582 /* CCCollegeClassesController.m in Sources */,
 				A79E228D17600143000A1582 /* CCClassAddedTransaction.m in Sources */,
+				D36146691760C4FF00907414 /* CCDropboxPDFDataProvider.m in Sources */,
+				D361466F1760C5F200907414 /* CCDropboxImageDataProvider.m in Sources */,
+				D36146771762284800907414 /* CCNotesAPIProvider.m in Sources */,
+				D361467C1762387F00907414 /* CCNoteUploadInfo.m in Sources */,
+				D36146881762426200907414 /* CCMyNotesTransaction.m in Sources */,
+				D36146921762436D00907414 /* CCMyNotesViewController.m in Sources */,
+				D361469A1762454A00907414 /* CCMyNotesDataProvider.m in Sources */,
+				D36146A4176249FA00907414 /* CCCreateNoteViewController.m in Sources */,
+				D36146AC17624AB700907414 /* CCCreateNotesTransaction.m in Sources */,
+				D36146B01763121B00907414 /* CCSelectPdfFromDropboxTransaction.m in Sources */,
+				D36146DD176352FD00907414 /* CCNote.m in Sources */,
+				D36146E11763629700907414 /* CCNoteCell.m in Sources */,
+				D3B3D7D917648439000D3FAB /* CCDropboxImagesSelectionViewController.m in Sources */,
+				D3B3D7DE176484A8000D3FAB /* CCDropboxPDFSelectionViewController.m in Sources */,
+				D3B3D7E217648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.m in Sources */,
+				D3B3D7E617649185000D3FAB /* CCViewNotesTransaction.m in Sources */,
+				D3B3D7EB17649263000D3FAB /* CCNotesViewerController.m in Sources */,
+				D3B3D7F01764AE11000D3FAB /* CCBackToListOfNotesTransaction.m in Sources */,
+				D3B3D7F41765D6F1000D3FAB /* CCImagesSortingTransaction.m in Sources */,
+				D3B3D7F91765DF15000D3FAB /* CCImageSortingController.m in Sources */,
+				D3B3D7FE1765E15E000D3FAB /* CCImageSortingDataSource.m in Sources */,
+				D3B3D8021765E1F3000D3FAB /* CCImageSortingDataProvider.m in Sources */,
+				D3B3D8061766122D000D3FAB /* CCImagesForNotesUploadingScreenTransaction.m in Sources */,
+				D3B3D80B176618DE000D3FAB /* CCUploadImagesController.m in Sources */,
+				D3B3D81017661DB7000D3FAB /* CCImageCell.m in Sources */,
+				D3B3D81617661F5F000D3FAB /* CCUploadingImagesDataProvider.m in Sources */,
+				D3B3D81A17662D16000D3FAB /* CCUIImageHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1698,7 +2208,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -1723,7 +2233,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";

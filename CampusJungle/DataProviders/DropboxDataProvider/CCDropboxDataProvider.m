@@ -44,9 +44,26 @@
             newInfo.fileData = file;
             [arrayOfFiles addObject:newInfo];
         }
-        self.arrayOfItems = arrayOfFiles;
+        self.arrayOfItems = [self filterArrayOfItems:arrayOfFiles];
+        for(CCDropboxFileInfo *info in self.arrayOfItems){
+            for(CCDropboxFileInfo *selectedItem in self.arrayOfSelectedItems){
+                if ([info.fileData.path isEqualToString:selectedItem.fileData.path]){
+                    info.isSelected = YES;
+                    info.directLink = selectedItem.directLink;
+                    break;
+                }
+            }
+        }
+        if(self.providerDidFinishLoading){
+            self.providerDidFinishLoading();
+        }
         [self.targetTable reloadData];
     }
+}
+
+- (NSMutableArray *)filterArrayOfItems:(NSMutableArray *)items
+{
+    return items;
 }
 
 @end

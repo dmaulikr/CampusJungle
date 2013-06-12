@@ -50,8 +50,8 @@
     
     NSNotification *notification = [NSNotification notificationWithName:kAFApplicationLaunchedWithURLNotification object:nil userInfo:[NSDictionary dictionaryWithObject:url forKey:kAFApplicationLaunchOptionsURLKey]];
     [[NSNotificationCenter defaultCenter] postNotification:notification];
-    
-    return [FBSession.activeSession handleOpenURL:url];
+    [FBSession.activeSession handleOpenURL:url];
+    return YES;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

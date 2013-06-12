@@ -17,7 +17,6 @@
 #import "CCClassController.h"
 #import "CCAllClassesTransaction.h"
 #import "CCDropboxAPIProviderProtocol.h"
-#import "CCDropboxFileSelectionTransaction.h"
 
 @interface CCMainTransaction()
 
@@ -61,10 +60,6 @@
 
     CCClassTransaction *classTransaction = [CCClassTransaction new];
     leftController.classTransaction = classTransaction;
-    
-    CCDropboxFileSelectionTransaction *dropboxTranasaction = [CCDropboxFileSelectionTransaction new];
-    dropboxTranasaction.menuController = rootController;
-    leftController.dropboxTransaction = dropboxTranasaction;
     
     if ([self.ioc_userSession currentUser]){
         

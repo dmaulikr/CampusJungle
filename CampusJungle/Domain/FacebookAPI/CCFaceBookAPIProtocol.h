@@ -5,10 +5,11 @@
 //  Created by Vlad Korzun on 26.04.13.
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
-
-typedef void (^userInfoSuccessHandler)(NSDictionary *);
-typedef void (^successHandler)();
-typedef void (^errorHandler)(NSError *);
+//
+//typedef void (^userInfoSuccessHandler)(NSDictionary *);
+//typedef void (^successHandler)();
+//typedef void (^errorHandler)(NSError *);
+#import "CCTypesDefinition.h"
 
 @protocol CCFaceBookAPIProtocol <AppleGuiceInjectable>
 

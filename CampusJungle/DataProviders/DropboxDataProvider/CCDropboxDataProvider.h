@@ -7,10 +7,12 @@
 //
 
 #import "CCBaseDataProvider.h"
+#import "CCTypesDefinition.h"
 
 @interface CCDropboxDataProvider : CCBaseDataProvider
 
 @property (nonatomic, strong) NSString *dropboxPath;
-
+@property (nonatomic, copy) action providerDidFinishLoading;
+@property (nonatomic, strong) NSMutableArray *arrayOfSelectedItems;
 
 @end
