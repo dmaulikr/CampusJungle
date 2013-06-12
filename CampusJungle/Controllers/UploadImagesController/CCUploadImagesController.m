@@ -105,12 +105,13 @@
     self.noteInfo.arrayOfImages = self.dataProvider.arrayOfImages;
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"Preparing for upload";
+    __weak id weakSelf = self;
     [self.ioc_notesAPIProvider postDropboxUploadInfoWithImages:self.noteInfo successHandler:^(id result) {
         
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
     } progress:^(double finished) {
-        [self.backToListTransaction perform];
+        [[weakSelf backToListTransaction] perform];
         NSLog(@"%0.0lf",finished * 100);
     }];
 }

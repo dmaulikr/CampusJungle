@@ -85,6 +85,8 @@
 		A7D53A511758CD2600FE9FCD /* CCAllClassesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D53A501758CD2600FE9FCD /* CCAllClassesTransaction.m */; };
 		A7D53A551758D6A700FE9FCD /* CCClassesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D53A541758D6A700FE9FCD /* CCClassesDataProvider.m */; };
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
+		D3039B78176880F800621CAC /* pending.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B76176880F800621CAC /* pending.png */; };
+		D3039B79176880F800621CAC /* pending@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B77176880F800621CAC /* pending@2x.png */; };
 		D3614631175E17BE00907414 /* CCDropboxAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */; };
 		D3614636175E1D3000907414 /* DropboxSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = D3614635175E1D3000907414 /* DropboxSDK */; };
 		D3614640175E362600907414 /* CCDropboxImagesSelectionTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D361463F175E362600907414 /* CCDropboxImagesSelectionTransaction.m */; };
@@ -327,6 +329,8 @@
 		A7D53A501758CD2600FE9FCD /* CCAllClassesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCAllClassesTransaction.m; path = AllClassesTransaction/CCAllClassesTransaction.m; sourceTree = "<group>"; };
 		A7D53A531758D6A700FE9FCD /* CCClassesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCClassesDataProvider.h; path = ClassesDataProvider/CCClassesDataProvider.h; sourceTree = "<group>"; };
 		A7D53A541758D6A700FE9FCD /* CCClassesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCClassesDataProvider.m; path = ClassesDataProvider/CCClassesDataProvider.m; sourceTree = "<group>"; };
+		D3039B76176880F800621CAC /* pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pending.png; sourceTree = "<group>"; };
+		D3039B77176880F800621CAC /* pending@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pending@2x.png"; sourceTree = "<group>"; };
 		D361462F175E17BE00907414 /* CCDropboxAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProvider.h; sourceTree = "<group>"; };
 		D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxAPIProvider.m; sourceTree = "<group>"; };
 		D3614632175E18A200907414 /* CCDropboxAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProviderProtocol.h; sourceTree = "<group>"; };
@@ -1157,6 +1161,7 @@
 		A7D53A361758A85700FE9FCD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D3039B75176880F800621CAC /* Icons */,
 				D36146B1176314A100907414 /* DropboxIcons */,
 				A79E2273175F8A75000A1582 /* monkey.jpg */,
 				A7D53A371758A85700FE9FCD /* MHTabBarController */,
@@ -1204,6 +1209,15 @@
 				A7D53A541758D6A700FE9FCD /* CCClassesDataProvider.m */,
 			);
 			name = ClassesDataProvider;
+			sourceTree = "<group>";
+		};
+		D3039B75176880F800621CAC /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				D3039B76176880F800621CAC /* pending.png */,
+				D3039B77176880F800621CAC /* pending@2x.png */,
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 		D35C1B481763706500C2AEB4 /* BackToListOfNotesTransaction */ = {
@@ -1996,6 +2010,8 @@
 				D3B3D7FA1765DF15000D3FAB /* CCImageSortingController.xib in Resources */,
 				D3B3D80C176618DE000D3FAB /* CCUploadImagesController.xib in Resources */,
 				D3B3D81217661DE2000D3FAB /* CCImageCell.xib in Resources */,
+				D3039B78176880F800621CAC /* pending.png in Resources */,
+				D3039B79176880F800621CAC /* pending@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

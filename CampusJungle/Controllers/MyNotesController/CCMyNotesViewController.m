@@ -11,10 +11,12 @@
 #import "CCMyNotesDataProvider.h"
 #import "CCNote.h"
 #import "CCStandardErrorHandler.h"
+#import "CCUserSessionProtocol.h"
 
 @interface CCMyNotesViewController ()
 
 @property (nonatomic, strong) CCBaseDataProvider *dataProvider;
+@property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSwession;
 
 @end
 
@@ -30,7 +32,11 @@
 
 - (void)createNewNote
 {
-    [self.addNewNoteTransaction perform];
+    if([[[self.ioc_userSwession currentUser] educations] count]){
+        [self.addNewNoteTransaction perform];
+    } else {
+        [CCStandardErrorHandler showErrorWithTitle:nil message:@"You have to join college first"];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated

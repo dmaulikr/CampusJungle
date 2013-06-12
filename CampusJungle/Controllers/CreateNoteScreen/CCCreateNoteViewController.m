@@ -26,6 +26,7 @@
 @property (nonatomic, strong) NSArray *arrayOfColleges;
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
 @property (nonatomic, weak) IBOutlet UIView *pickerContainer;
+@property (nonatomic, strong) IBOutlet UIPickerView *collegePicker;
 
 @property (nonatomic, strong) CCCollege *selectedCollege;
 

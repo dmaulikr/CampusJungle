@@ -14,7 +14,7 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *noteDescription;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbImage;
-@property (nonatomic, weak) IBOutlet UILabel *notReadyLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *pandingImage;
 
 @end
 
@@ -27,7 +27,7 @@
         self = [[[NSBundle mainBundle] loadNibNamed:@"CCNoteCell"
                                               owner:self
                                             options:nil] objectAtIndex:0];
-                
+            
     }
     return self;
 }
@@ -39,9 +39,9 @@
    
     self.noteDescription.text = note.noteDescription;
     if(note.link.length){
-        self.notReadyLabel.hidden = YES;
+        self.pandingImage.hidden = YES;
     } else {
-        self.notReadyLabel.hidden = NO;
+        self.pandingImage.hidden = NO;
     }
     if(note.thumbnailRetina.length){
         NSString *thumbURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,note.thumbnailRetina];
