@@ -76,9 +76,6 @@
         } errorHandler:^(NSError *error) {
             [CCStandardErrorHandler showErrorWithError:error];
         }];
-
-
-
 }
 
 - (void)performAction

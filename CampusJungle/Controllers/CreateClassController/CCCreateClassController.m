@@ -25,6 +25,7 @@
 @property (nonatomic, retain) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
 @property (nonatomic, strong) NSArray *textFieldsArray;
 
+@property (weak, nonatomic) IBOutlet UITextField *timeTable;
 
 
 @end
@@ -44,15 +45,11 @@ return self;
 
 - (void)viewDidLoad
 {
-
     [super viewDidLoad];
-    
     self.textFieldsArray = @[self.subjectField, self.semesterField, self.professorField, self.classIDFiled];
-    
     for (UITextField *tf in self.textFieldsArray) {
         tf.delegate = self;
     }
-        
 }
 
 - (IBAction)createClass:(id)sender {
@@ -91,11 +88,10 @@ return self;
     BOOL isFormValid = YES;
     
     for (UITextField *tf in self.textFieldsArray) {
-        if ([tf.text isEqualToString:@""]){
+        if ([tf.text isEqualToString:@""])  {
             isFormValid = NO;
         }
     }
-    
     return isFormValid;
 }
 

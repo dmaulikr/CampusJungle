@@ -84,6 +84,8 @@
 		A7D53A4C1758CBD300FE9FCD /* CCClassesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7D53A4A1758CBD300FE9FCD /* CCClassesController.xib */; };
 		A7D53A511758CD2600FE9FCD /* CCAllClassesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D53A501758CD2600FE9FCD /* CCAllClassesTransaction.m */; };
 		A7D53A551758D6A700FE9FCD /* CCClassesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D53A541758D6A700FE9FCD /* CCClassesDataProvider.m */; };
+		A7FA0E551768D682004D3403 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A7FA0E541768D682004D3403 /* libz.dylib */; };
+		A7FA0E571768D746004D3403 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7FA0E561768D746004D3403 /* libTestFlight.a */; };
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
 		D3039B78176880F800621CAC /* pending.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B76176880F800621CAC /* pending.png */; };
 		D3039B79176880F800621CAC /* pending@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B77176880F800621CAC /* pending@2x.png */; };
@@ -329,6 +331,8 @@
 		A7D53A501758CD2600FE9FCD /* CCAllClassesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCAllClassesTransaction.m; path = AllClassesTransaction/CCAllClassesTransaction.m; sourceTree = "<group>"; };
 		A7D53A531758D6A700FE9FCD /* CCClassesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCClassesDataProvider.h; path = ClassesDataProvider/CCClassesDataProvider.h; sourceTree = "<group>"; };
 		A7D53A541758D6A700FE9FCD /* CCClassesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCClassesDataProvider.m; path = ClassesDataProvider/CCClassesDataProvider.m; sourceTree = "<group>"; };
+		A7FA0E541768D682004D3403 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		A7FA0E561768D746004D3403 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = Pods/TestFlightSDK/libTestFlight.a; sourceTree = "<group>"; };
 		D3039B76176880F800621CAC /* pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pending.png; sourceTree = "<group>"; };
 		D3039B77176880F800621CAC /* pending@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pending@2x.png"; sourceTree = "<group>"; };
 		D361462F175E17BE00907414 /* CCDropboxAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProvider.h; sourceTree = "<group>"; };
@@ -503,6 +507,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7FA0E571768D746004D3403 /* libTestFlight.a in Frameworks */,
+				A7FA0E551768D682004D3403 /* libz.dylib in Frameworks */,
 				D3614636175E1D3000907414 /* DropboxSDK in Frameworks */,
 				A787C7C117538BCF00824DEA /* QuartzCore.framework in Frameworks */,
 				D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */,
@@ -521,6 +527,8 @@
 		A784C58C173A865E005E4921 = {
 			isa = PBXGroup;
 			children = (
+				A7FA0E561768D746004D3403 /* libTestFlight.a */,
+				A7FA0E541768D682004D3403 /* libz.dylib */,
 				A787C72C17536F8400824DEA /* CampusJungle */,
 				A787C74B17536F8400824DEA /* Default-568h@2x.png */,
 				A787C73017536F8400824DEA /* CampusJungle-Info.plist */,
@@ -2250,6 +2258,10 @@
 				GCC_PREFIX_HEADER = "CampusJungle/CampusJungle-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CampusJungle/CampusJungle-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Pods/TestFlightSDK\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lsqlite3.0",
@@ -2288,6 +2300,10 @@
 				GCC_PREFIX_HEADER = "CampusJungle/CampusJungle-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CampusJungle/CampusJungle-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Pods/TestFlightSDK\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lsqlite3.0",
