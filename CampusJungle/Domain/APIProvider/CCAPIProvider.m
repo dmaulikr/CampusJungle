@@ -222,7 +222,6 @@
                       } failure:^(RKObjectRequestOperation *operation, NSError *error) {
                           errorHandler(error);
                       }];
-
 }
 
 - (void)loadMyNotesNumberOfPage:(NSNumber *)pageNumber successHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
