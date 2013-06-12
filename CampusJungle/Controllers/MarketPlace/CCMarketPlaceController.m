@@ -13,6 +13,7 @@
 @property (nonatomic, weak) IBOutlet UICollectionView *topNotesCollectionView;
 @property (nonatomic, weak) IBOutlet UICollectionView *latestNotesCollectionView;
 @property (nonatomic, weak) IBOutlet UICollectionView *latestStuffCollectionView;
+@property (nonatomic, strong) NSArray *arrayOfFilters;
 
 @end
 
@@ -21,8 +22,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Filters" style:UIBarButtonItemStyleBordered target:self action:@selector(applyFilters)];
 }
 
+- (void)applyFilters
+{
+    [self.filtersScreenTransaction performWithObject:self.arrayOfFilters];
+}
 
 @end

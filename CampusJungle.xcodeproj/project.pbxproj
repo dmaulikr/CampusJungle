@@ -141,6 +141,9 @@
 		D3A5ECF51768A35000300399 /* CCMarketPlaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A5ECF31768A35000300399 /* CCMarketPlaceController.m */; };
 		D3A5ECF61768A35000300399 /* CCMarketPlaceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A5ECF41768A35000300399 /* CCMarketPlaceController.xib */; };
 		D3A5ECFA1768ACF900300399 /* CCMarketTranasction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A5ECF91768ACF900300399 /* CCMarketTranasction.m */; };
+		D3A5ECFF1768D54F00300399 /* CCFilterController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A5ECFD1768D54F00300399 /* CCFilterController.m */; };
+		D3A5ED001768D54F00300399 /* CCFilterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A5ECFE1768D54F00300399 /* CCFilterController.xib */; };
+		D3A5ED041768D72C00300399 /* CCSelectFiltersTranaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A5ED031768D72C00300399 /* CCSelectFiltersTranaction.m */; };
 		D3AB6B5F175CEE0400097E21 /* CCUserEducationsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D3AB6B5E175CEE0400097E21 /* CCUserEducationsDataSource.m */; };
 		D3AB6B61175CFA8100097E21 /* CCEducationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3AB6B60175CFA8100097E21 /* CCEducationCell.xib */; };
 		D3B3D7D917648439000D3FAB /* CCDropboxImagesSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7D717648439000D3FAB /* CCDropboxImagesSelectionViewController.m */; };
@@ -415,6 +418,11 @@
 		D3A5ECF41768A35000300399 /* CCMarketPlaceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMarketPlaceController.xib; sourceTree = "<group>"; };
 		D3A5ECF81768ACF900300399 /* CCMarketTranasction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMarketTranasction.h; sourceTree = "<group>"; };
 		D3A5ECF91768ACF900300399 /* CCMarketTranasction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMarketTranasction.m; sourceTree = "<group>"; };
+		D3A5ECFC1768D54F00300399 /* CCFilterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFilterController.h; sourceTree = "<group>"; };
+		D3A5ECFD1768D54F00300399 /* CCFilterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFilterController.m; sourceTree = "<group>"; };
+		D3A5ECFE1768D54F00300399 /* CCFilterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCFilterController.xib; sourceTree = "<group>"; };
+		D3A5ED021768D72C00300399 /* CCSelectFiltersTranaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSelectFiltersTranaction.h; sourceTree = "<group>"; };
+		D3A5ED031768D72C00300399 /* CCSelectFiltersTranaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSelectFiltersTranaction.m; sourceTree = "<group>"; };
 		D3AB6B5D175CEE0400097E21 /* CCUserEducationsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUserEducationsDataSource.h; sourceTree = "<group>"; };
 		D3AB6B5E175CEE0400097E21 /* CCUserEducationsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUserEducationsDataSource.m; sourceTree = "<group>"; };
 		D3AB6B60175CFA8100097E21 /* CCEducationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCEducationCell.xib; sourceTree = "<group>"; };
@@ -595,6 +603,7 @@
 		A787C73217536F8400824DEA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D3A5ECFB1768D53200300399 /* FilterController */,
 				D3A5ECF11768A32E00300399 /* MarketPlace */,
 				D3B3D807176618C4000D3FAB /* UploadImagesController */,
 				D3B3D7F51765DEF8000D3FAB /* CCImageSortingController */,
@@ -857,6 +866,7 @@
 		A787C77D17536F8400824DEA /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
+				D3A5ED011768D71400300399 /* SelectFiltersTransaction */,
 				D3A5ECF71768ACCD00300399 /* MarketTransaction */,
 				D3B3D80317661208000D3FAB /* ImagesForNotesUploadingScreenTransaction */,
 				D3B3D7F11765D6DE000D3FAB /* ImagesSortingTransaction */,
@@ -1545,6 +1555,25 @@
 			path = MarketTransaction;
 			sourceTree = "<group>";
 		};
+		D3A5ECFB1768D53200300399 /* FilterController */ = {
+			isa = PBXGroup;
+			children = (
+				D3A5ECFC1768D54F00300399 /* CCFilterController.h */,
+				D3A5ECFD1768D54F00300399 /* CCFilterController.m */,
+				D3A5ECFE1768D54F00300399 /* CCFilterController.xib */,
+			);
+			path = FilterController;
+			sourceTree = "<group>";
+		};
+		D3A5ED011768D71400300399 /* SelectFiltersTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3A5ED021768D72C00300399 /* CCSelectFiltersTranaction.h */,
+				D3A5ED031768D72C00300399 /* CCSelectFiltersTranaction.m */,
+			);
+			path = SelectFiltersTransaction;
+			sourceTree = "<group>";
+		};
 		D3AB6B5C175CEDD300097E21 /* UserEducationsTableDataSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -2042,6 +2071,7 @@
 				D3039B78176880F800621CAC /* pending.png in Resources */,
 				D3039B79176880F800621CAC /* pending@2x.png in Resources */,
 				D3A5ECF61768A35000300399 /* CCMarketPlaceController.xib in Resources */,
+				D3A5ED001768D54F00300399 /* CCFilterController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2197,6 +2227,8 @@
 				D3B3D81A17662D16000D3FAB /* CCUIImageHelper.m in Sources */,
 				D3A5ECF51768A35000300399 /* CCMarketPlaceController.m in Sources */,
 				D3A5ECFA1768ACF900300399 /* CCMarketTranasction.m in Sources */,
+				D3A5ECFF1768D54F00300399 /* CCFilterController.m in Sources */,
+				D3A5ED041768D72C00300399 /* CCSelectFiltersTranaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

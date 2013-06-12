@@ -7,7 +7,10 @@
 //
 
 #import "CCViewController.h"
+#import "CCTransactionWithObject.h"
 
 @interface CCMarketPlaceController : CCViewController
+
+@property (nonatomic, strong) id <CCTransactionWithObject> filtersScreenTransaction;
 
 @end

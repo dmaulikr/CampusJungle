@@ -60,7 +60,6 @@
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
     } ];
-    
 }
 
 - (void)didSelectedCellWithObject:(id)cellObject
@@ -76,9 +75,6 @@
         } errorHandler:^(NSError *error) {
             [CCStandardErrorHandler showErrorWithError:error];
         }];
-
-
-
 }
 
 - (void)performAction
