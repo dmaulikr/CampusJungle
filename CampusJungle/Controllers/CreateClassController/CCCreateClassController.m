@@ -17,6 +17,10 @@
 #import "CCActionSheetPickerDelegate.h"
 
 @interface CCCreateClassController ()<UITextFieldDelegate>
+{
+    NSString* timetableDay;
+    NSString* timetableTime;
+}
 
 @property (nonatomic, strong) NSString *collegeID;
 @property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_apiClassesProvider;
@@ -26,8 +30,14 @@
 @property (weak, nonatomic) IBOutlet UITextField *classIDFiled;
 @property (nonatomic, retain) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
 @property (nonatomic, strong) NSArray *textFieldsArray;
+@property (nonatomic, strong) NSMutableArray *timetableArray;
+
 
 @property (weak, nonatomic) IBOutlet UITextField *timeTable;
+@property (weak, nonatomic) IBOutlet UIButton *addTimeTable;
+
+
+
 
 
 @end
@@ -40,6 +50,7 @@ self = [super init];
 if (self) {
     self.collegeID = collegeID;
     [self.navigationItem setTitle:@"Create new class"];
+    self.timetableArray = [NSMutableArray new];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getTimeTable:) name:@"Timetable" object:nil];
 
 }
@@ -49,6 +60,9 @@ return self;
 - (void)getTimeTable:(NSNotification*)notification
 {
     self.timeTable.text = [[notification userInfo] objectForKey:@"timetable"];
+    timetableDay = [[notification userInfo] objectForKey:@"day"];
+    timetableTime = [[notification userInfo] objectForKey:@"time"];
+    [self.timetableArray addObject:@{@"day":timetableDay, @"time":timetableTime}];
 }
 
 - (void)viewDidLoad
@@ -72,7 +86,7 @@ return self;
     class.subject = self.subjectField.text;
     class.semester = self.semesterField.text;
     class.callNumber = self.classIDFiled.text;
-    class.timetable = @[@{@"day":@"Tue", @"time":@"23:00"}];
+    class.timetable = self.timetableArray;
     
     [self.ioc_apiClassesProvider createClass:class successHandler:^(id newClass) {
         [self joinClass:(CCClass*)newClass];

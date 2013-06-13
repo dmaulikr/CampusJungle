@@ -11,6 +11,4 @@
 
 @interface CCActionSheetPickerDelegate : NSObject <ActionSheetCustomPickerDelegate>
 
-
-
 @end

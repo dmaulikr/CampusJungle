@@ -48,15 +48,11 @@
     [self sendResultString];
 }
 
-- (void)actionSheetPickerDidCancel:(AbstractActionSheetPicker *)actionSheetPicker origin:(id)origin
-{
-    [self sendResultString];
-}
-
 - (void)sendResultString
 {
-    NSString *resultMessage = [NSString stringWithFormat:@"%@ %@:%@ %@", self.selectedDay, self.selectedHour, self.selectedMinutes, self.selectedTimeOfTheDay];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"Timetable" object:nil userInfo:@{@"timetable":resultMessage}];
+    NSString *time = [NSString stringWithFormat:@"%@:%@ %@",self.selectedHour, self.selectedMinutes, self.selectedTimeOfTheDay];
+    NSString *resultMessage = [NSString stringWithFormat:@"%@ %@", self.selectedDay, time];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"Timetable" object:nil userInfo:@{@"timetable":resultMessage,@"day":self.selectedDay, @"time":time}];
 }
 
 #pragma mark - UIPickerViewDataSource Implementation
