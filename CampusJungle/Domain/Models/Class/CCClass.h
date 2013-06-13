@@ -18,5 +18,6 @@
 @property (nonatomic, strong) NSDictionary *timeClassesAreTaken;
 @property (nonatomic, strong) NSString *callNumber;
 @property (nonatomic, strong) NSString *classID;
+@property (nonatomic, strong) NSString *collegeName;
 
 @end

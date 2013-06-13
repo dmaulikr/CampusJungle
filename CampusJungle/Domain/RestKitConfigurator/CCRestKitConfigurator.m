@@ -157,6 +157,7 @@
      @"semester" : @"semester",
      @"call_number":@"callNumber",
      @"id":@"classID",
+     @"college_name" : @"collegeName",
      }];
         
     RKObjectMapping *classRequestMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
@@ -167,6 +168,7 @@
      @"semester" : @"semester",
      @"call_number":@"callNumber",
      @"id":@"classID",
+     @"college_name" : @"collegeName",
      }];
     
     
@@ -307,15 +309,18 @@
      @"attachment" : @"link",
      }];
     
-    RKRelationshipMapping* relationShipResponseCitiesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"items"
+    RKRelationshipMapping* relationShipResponseCitiesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
                                                                                                            toKeyPath:CCResponseKeys.items
                                                                                                          withMapping:notesMapping];
     [paginationNotesResponseMapping addPropertyMapping:relationShipResponseCitiesMapping];
     RKResponseDescriptor *responsePaginationNote = [RKResponseDescriptor responseDescriptorWithMapping:paginationNotesResponseMapping pathPattern:CCAPIDefines.listOfMyNotes keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
+    RKResponseDescriptor *responseMarketPaginationNote = [RKResponseDescriptor responseDescriptorWithMapping:paginationNotesResponseMapping pathPattern:CCAPIDefines.notesInMarket keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
     NSString *uploadNotesPathPatern = [NSString stringWithFormat:CCAPIDefines.uploadNotesPath,@":CollegeID"];
      RKResponseDescriptor *responseOnCreateNote = [RKResponseDescriptor responseDescriptorWithMapping:notesMapping pathPattern:uploadNotesPathPatern keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
+    [objectManager addResponseDescriptor:responseMarketPaginationNote];
     [objectManager addResponseDescriptor:responseOnCreateNote];
     [objectManager addResponseDescriptor:responsePaginationNote];
 }

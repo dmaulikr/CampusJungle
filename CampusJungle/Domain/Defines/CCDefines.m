@@ -101,7 +101,9 @@ const struct CCErrorKeys CCErrorKeys = {
 };
 
 const struct CCTableDefines CCTableDefines = {
-    .tableCellIdentifier = @"CellIdentifier"
+    .tableCellIdentifier = @"CellIdentifier",
+    .tableHeaderIdentifier = @"TableHeaderIdentifier",
+    .collectionCellIdentifier = @"CollectionCellIdentifier",
 };
 
 const struct CCResponseKeys CCResponseKeys = {

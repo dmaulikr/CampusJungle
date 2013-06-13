@@ -87,6 +87,16 @@
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
 		D3013BCA1769C7190037EDAE /* CCMarketAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3013BC91769C7190037EDAE /* CCMarketAPIProvider.m */; };
 		D3013BCF1769CDA80037EDAE /* CCMarketNotesProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3013BCE1769CDA80037EDAE /* CCMarketNotesProvider.m */; };
+		D3013BD31769D27B0037EDAE /* CCCommonCollectionDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D3013BD21769D27B0037EDAE /* CCCommonCollectionDataSource.m */; };
+		D3013BD81769E7100037EDAE /* CCNotesCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3013BD71769E7100037EDAE /* CCNotesCollectionCell.m */; };
+		D3013BDA1769E8490037EDAE /* CCNotesCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3013BD91769E8490037EDAE /* CCNotesCollectionCell.xib */; };
+		D3013BDD1769FC5D0037EDAE /* book.png in Resources */ = {isa = PBXBuildFile; fileRef = D3013BDB1769FC5D0037EDAE /* book.png */; };
+		D3013BDE1769FC5D0037EDAE /* book@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3013BDC1769FC5D0037EDAE /* book@2x.png */; };
+		D3013BE2176A07B10037EDAE /* CCFilterSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D3013BE1176A07B10037EDAE /* CCFilterSectionHeader.m */; };
+		D3013BE6176A083C0037EDAE /* CCFilterSection.m in Sources */ = {isa = PBXBuildFile; fileRef = D3013BE5176A083C0037EDAE /* CCFilterSection.m */; };
+		D3013BE8176A09C60037EDAE /* CCFilterSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3013BE7176A09C60037EDAE /* CCFilterSectionHeader.xib */; };
+		D3013BEC176A102F0037EDAE /* CCFiltersDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3013BEB176A102F0037EDAE /* CCFiltersDataProvider.m */; };
+		D3013BF0176A16210037EDAE /* CCMarketFilterDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D3013BEF176A16210037EDAE /* CCMarketFilterDataSource.m */; };
 		D3039B78176880F800621CAC /* pending.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B76176880F800621CAC /* pending.png */; };
 		D3039B79176880F800621CAC /* pending@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B77176880F800621CAC /* pending@2x.png */; };
 		D3614631175E17BE00907414 /* CCDropboxAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */; };
@@ -342,6 +352,23 @@
 		D3013BCB1769C7370037EDAE /* CCMarketAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCMarketAPIProviderProtocol.h; sourceTree = "<group>"; };
 		D3013BCD1769CDA80037EDAE /* CCMarketNotesProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMarketNotesProvider.h; sourceTree = "<group>"; };
 		D3013BCE1769CDA80037EDAE /* CCMarketNotesProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMarketNotesProvider.m; sourceTree = "<group>"; };
+		D3013BD11769D27B0037EDAE /* CCCommonCollectionDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCommonCollectionDataSource.h; sourceTree = "<group>"; };
+		D3013BD21769D27B0037EDAE /* CCCommonCollectionDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCommonCollectionDataSource.m; sourceTree = "<group>"; };
+		D3013BD41769D35F0037EDAE /* CCCellSelectionProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCCellSelectionProtocol.h; sourceTree = "<group>"; };
+		D3013BD61769E7100037EDAE /* CCNotesCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNotesCollectionCell.h; sourceTree = "<group>"; };
+		D3013BD71769E7100037EDAE /* CCNotesCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNotesCollectionCell.m; sourceTree = "<group>"; };
+		D3013BD91769E8490037EDAE /* CCNotesCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCNotesCollectionCell.xib; sourceTree = "<group>"; };
+		D3013BDB1769FC5D0037EDAE /* book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = book.png; sourceTree = "<group>"; };
+		D3013BDC1769FC5D0037EDAE /* book@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "book@2x.png"; sourceTree = "<group>"; };
+		D3013BE0176A07B10037EDAE /* CCFilterSectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFilterSectionHeader.h; sourceTree = "<group>"; };
+		D3013BE1176A07B10037EDAE /* CCFilterSectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFilterSectionHeader.m; sourceTree = "<group>"; };
+		D3013BE4176A083C0037EDAE /* CCFilterSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFilterSection.h; sourceTree = "<group>"; };
+		D3013BE5176A083C0037EDAE /* CCFilterSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFilterSection.m; sourceTree = "<group>"; };
+		D3013BE7176A09C60037EDAE /* CCFilterSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCFilterSectionHeader.xib; sourceTree = "<group>"; };
+		D3013BEA176A102F0037EDAE /* CCFiltersDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFiltersDataProvider.h; sourceTree = "<group>"; };
+		D3013BEB176A102F0037EDAE /* CCFiltersDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFiltersDataProvider.m; sourceTree = "<group>"; };
+		D3013BEE176A16210037EDAE /* CCMarketFilterDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMarketFilterDataSource.h; sourceTree = "<group>"; };
+		D3013BEF176A16210037EDAE /* CCMarketFilterDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMarketFilterDataSource.m; sourceTree = "<group>"; };
 		D3039B76176880F800621CAC /* pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pending.png; sourceTree = "<group>"; };
 		D3039B77176880F800621CAC /* pending@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pending@2x.png"; sourceTree = "<group>"; };
 		D361462F175E17BE00907414 /* CCDropboxAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProvider.h; sourceTree = "<group>"; };
@@ -773,6 +800,7 @@
 		A787C76117536F8400824DEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D3013BE3176A08240037EDAE /* FilterSection */,
 				D36146DA176352F200907414 /* Note */,
 				D36146791762382100907414 /* NoteforUploadInfo */,
 				A7A618AC175CD79B0047C5B2 /* Class */,
@@ -1258,9 +1286,67 @@
 			path = MarketNotesProvider;
 			sourceTree = "<group>";
 		};
+		D3013BD01769D25F0037EDAE /* CommonCollectionDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				D3013BD11769D27B0037EDAE /* CCCommonCollectionDataSource.h */,
+				D3013BD21769D27B0037EDAE /* CCCommonCollectionDataSource.m */,
+			);
+			path = CommonCollectionDataSource;
+			sourceTree = "<group>";
+		};
+		D3013BD51769E6B60037EDAE /* NotesCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				D3013BD61769E7100037EDAE /* CCNotesCollectionCell.h */,
+				D3013BD71769E7100037EDAE /* CCNotesCollectionCell.m */,
+				D3013BD91769E8490037EDAE /* CCNotesCollectionCell.xib */,
+			);
+			path = NotesCollectionCell;
+			sourceTree = "<group>";
+		};
+		D3013BDF176A07600037EDAE /* filterSectionHeader */ = {
+			isa = PBXGroup;
+			children = (
+				D3013BE0176A07B10037EDAE /* CCFilterSectionHeader.h */,
+				D3013BE1176A07B10037EDAE /* CCFilterSectionHeader.m */,
+				D3013BE7176A09C60037EDAE /* CCFilterSectionHeader.xib */,
+			);
+			path = filterSectionHeader;
+			sourceTree = "<group>";
+		};
+		D3013BE3176A08240037EDAE /* FilterSection */ = {
+			isa = PBXGroup;
+			children = (
+				D3013BE4176A083C0037EDAE /* CCFilterSection.h */,
+				D3013BE5176A083C0037EDAE /* CCFilterSection.m */,
+			);
+			path = FilterSection;
+			sourceTree = "<group>";
+		};
+		D3013BE9176A100D0037EDAE /* FiltersDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3013BEA176A102F0037EDAE /* CCFiltersDataProvider.h */,
+				D3013BEB176A102F0037EDAE /* CCFiltersDataProvider.m */,
+			);
+			path = FiltersDataProvider;
+			sourceTree = "<group>";
+		};
+		D3013BED176A16050037EDAE /* MarketFilterDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				D3013BEE176A16210037EDAE /* CCMarketFilterDataSource.h */,
+				D3013BEF176A16210037EDAE /* CCMarketFilterDataSource.m */,
+			);
+			path = MarketFilterDataSource;
+			sourceTree = "<group>";
+		};
 		D3039B75176880F800621CAC /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				D3013BDB1769FC5D0037EDAE /* book.png */,
+				D3013BDC1769FC5D0037EDAE /* book@2x.png */,
 				D3039B76176880F800621CAC /* pending.png */,
 				D3039B77176880F800621CAC /* pending@2x.png */,
 			);
@@ -1525,6 +1611,8 @@
 		D3A2C31F1754AD9400989831 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				D3013BED176A16050037EDAE /* MarketFilterDataSource */,
+				D3013BD01769D25F0037EDAE /* CommonCollectionDataSource */,
 				D3B3D7FB1765E141000D3FAB /* ImageSortingDataSource */,
 				D3AB6B5C175CEDD300097E21 /* UserEducationsTableDataSource */,
 				A7D539D817563FB200FE9FCD /* ClassTableDataSorce */,
@@ -1538,6 +1626,8 @@
 		D3A2C3261754D53900989831 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D3013BDF176A07600037EDAE /* filterSectionHeader */,
+				D3013BD51769E6B60037EDAE /* NotesCollectionCell */,
 				D3B3D80D17661D94000D3FAB /* ImageCell */,
 				D36146DE1763629700907414 /* NoteCell */,
 				A7A618BC175E26590047C5B2 /* CCClassCell */,
@@ -1772,6 +1862,7 @@
 		D3EFD2351756080700B7D710 /* DataProviders */ = {
 			isa = PBXGroup;
 			children = (
+				D3013BE9176A100D0037EDAE /* FiltersDataProvider */,
 				D3013BCC1769CC5A0037EDAE /* MarketNotesProvider */,
 				D3B3D81317661F46000D3FAB /* UploadImagesDataProvider */,
 				D3B3D7FF1765E1D9000D3FAB /* ImageSortingDataProvider */,
@@ -1833,6 +1924,7 @@
 			children = (
 				D3EFD247175627F300B7D710 /* CCCommonDataSource.h */,
 				D3EFD248175627F300B7D710 /* CCCommonDataSource.m */,
+				D3013BD41769D35F0037EDAE /* CCCellSelectionProtocol.h */,
 			);
 			path = CommonTableDataSource;
 			sourceTree = "<group>";
@@ -2100,6 +2192,10 @@
 				D3039B79176880F800621CAC /* pending@2x.png in Resources */,
 				D3A5ECF61768A35000300399 /* CCMarketPlaceController.xib in Resources */,
 				D3A5ED001768D54F00300399 /* CCFilterController.xib in Resources */,
+				D3013BDA1769E8490037EDAE /* CCNotesCollectionCell.xib in Resources */,
+				D3013BDD1769FC5D0037EDAE /* book.png in Resources */,
+				D3013BDE1769FC5D0037EDAE /* book@2x.png in Resources */,
+				D3013BE8176A09C60037EDAE /* CCFilterSectionHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2259,6 +2355,12 @@
 				D3A5ED041768D72C00300399 /* CCSelectFiltersTranaction.m in Sources */,
 				D3013BCA1769C7190037EDAE /* CCMarketAPIProvider.m in Sources */,
 				D3013BCF1769CDA80037EDAE /* CCMarketNotesProvider.m in Sources */,
+				D3013BD31769D27B0037EDAE /* CCCommonCollectionDataSource.m in Sources */,
+				D3013BD81769E7100037EDAE /* CCNotesCollectionCell.m in Sources */,
+				D3013BE2176A07B10037EDAE /* CCFilterSectionHeader.m in Sources */,
+				D3013BE6176A083C0037EDAE /* CCFilterSection.m in Sources */,
+				D3013BEC176A102F0037EDAE /* CCFiltersDataProvider.m in Sources */,
+				D3013BF0176A16210037EDAE /* CCMarketFilterDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

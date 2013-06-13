@@ -30,6 +30,7 @@
 
 - (void)setCellObject:(id)cellObject
 {
+    _cellObject = cellObject;
     self.pageImage.image = cellObject;
 }
 

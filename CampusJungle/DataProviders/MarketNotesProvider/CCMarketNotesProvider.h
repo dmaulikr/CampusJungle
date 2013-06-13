@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCBaseDataProvider.h"
+#import "CCPaginationDataProvider.h"
 
-@interface CCMarketNotesProvider : CCBaseDataProvider
+@interface CCMarketNotesProvider : CCPaginationDataProvider
 
 @property (nonatomic, strong) NSDictionary *filters;
 @property (nonatomic, strong) NSString *query;

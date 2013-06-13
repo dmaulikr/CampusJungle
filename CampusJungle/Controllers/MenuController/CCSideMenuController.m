@@ -12,7 +12,7 @@
 #import "CCOrdinaryCell.h"
 #import "CCMenuDefines.h"
 
-@interface CCSideMenuController () <CellSelectionProtocol>
+@interface CCSideMenuController () <CCCellSelectionProtocol>
 
 @property (nonatomic, strong) CCSideMenuDataSource *dataSource;
 @property (nonatomic, strong) CCSideMenuDataProvider *dataProvider;

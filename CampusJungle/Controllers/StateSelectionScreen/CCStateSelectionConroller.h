@@ -11,7 +11,7 @@
 #import "CCTransactionWithObject.h"
 #import "CCTableBasedController.h"
 
-@interface CCStateSelectionConroller : CCTableBasedController <UISearchBarDelegate, CellSelectionProtocol>
+@interface CCStateSelectionConroller : CCTableBasedController <UISearchBarDelegate, CCCellSelectionProtocol>
 
 @property (nonatomic, strong) id <CCTransactionWithObject> citySelectionTransaction;
 

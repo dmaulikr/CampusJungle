@@ -7,7 +7,8 @@
 //
 
 #import "CCAPIProvider.h"
+#import "CCMarketAPIProviderProtocol.h"
 
-@interface CCMarketAPIProvider : CCAPIProvider
+@interface CCMarketAPIProvider : CCAPIProvider<CCMarketAPIProviderProtocol>
 
 @end
