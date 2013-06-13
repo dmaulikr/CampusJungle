@@ -191,7 +191,7 @@
     
     RKResponseDescriptor *responseClassesOfCollegeDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:classResponseMapping
                                                                                                  pathPattern:classesCollegePathPatern
-                                                                                                     keyPath:@"classes"
+                                                                                                     keyPath:@"items"
                                                                                                  statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     RKResponseDescriptor *responseAddClassDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:classResponseMapping
                                                                                                        pathPattern:joinClass
@@ -218,7 +218,7 @@
      }];
     
     
-    RKRelationshipMapping* relationShipResponseCollegesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"colleges"
+    RKRelationshipMapping* relationShipResponseCollegesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
                                                                                                            toKeyPath:CCResponseKeys.items
                                                                                                            withMapping:collegesMapping];
     RKRelationshipMapping* relationShipResponseCollegeMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"college"
@@ -258,7 +258,7 @@
      @"id" : @"stateID",
      @"name" : @"name"
      }];
-    RKRelationshipMapping* relationShipResponseStatesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"states"
+    RKRelationshipMapping* relationShipResponseStatesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
                                                                                                            toKeyPath:CCResponseKeys.items
                                                                                                          withMapping:statesMapping];
 
@@ -276,7 +276,7 @@
      @"id" : @"cityID",
      @"name" : @"name"
      }];
-    RKRelationshipMapping* relationShipResponseCitiesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"cities"
+    RKRelationshipMapping* relationShipResponseCitiesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
                                                                                                            toKeyPath:CCResponseKeys.items
                                                                                                          withMapping:citiesMapping];
     RKRelationshipMapping* relationShipResponseCityMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"city"

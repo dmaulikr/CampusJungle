@@ -8,6 +8,7 @@
 
 #import "CCMarketTranasction.h"
 #import "CCMarketPlaceController.h"
+#import "CCSelectFiltersTranaction.h"
 
 @implementation CCMarketTranasction
 
@@ -18,6 +19,10 @@
     CCMarketPlaceController *marketController = [CCMarketPlaceController new];
     
     UINavigationController *centralNavigation = [[UINavigationController alloc] initWithRootViewController:marketController];
+    CCSelectFiltersTranaction *selectFilterTransaction = [CCSelectFiltersTranaction new];
+    selectFilterTransaction.navigation = centralNavigation;
+    marketController.filtersScreenTransaction = selectFilterTransaction;
+    
     [self.menuController setCenterPanel:centralNavigation];
 }
 
