@@ -307,7 +307,7 @@
      @"attachment" : @"link",
      }];
     
-    RKRelationshipMapping* relationShipResponseCitiesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"notes"
+    RKRelationshipMapping* relationShipResponseCitiesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"items"
                                                                                                            toKeyPath:CCResponseKeys.items
                                                                                                          withMapping:notesMapping];
     [paginationNotesResponseMapping addPropertyMapping:relationShipResponseCitiesMapping];

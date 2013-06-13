@@ -86,6 +86,7 @@
 		A7D53A551758D6A700FE9FCD /* CCClassesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D53A541758D6A700FE9FCD /* CCClassesDataProvider.m */; };
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
 		D3013BCA1769C7190037EDAE /* CCMarketAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3013BC91769C7190037EDAE /* CCMarketAPIProvider.m */; };
+		D3013BCF1769CDA80037EDAE /* CCMarketNotesProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3013BCE1769CDA80037EDAE /* CCMarketNotesProvider.m */; };
 		D3039B78176880F800621CAC /* pending.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B76176880F800621CAC /* pending.png */; };
 		D3039B79176880F800621CAC /* pending@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B77176880F800621CAC /* pending@2x.png */; };
 		D3614631175E17BE00907414 /* CCDropboxAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */; };
@@ -339,6 +340,8 @@
 		D3013BC81769C7190037EDAE /* CCMarketAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMarketAPIProvider.h; sourceTree = "<group>"; };
 		D3013BC91769C7190037EDAE /* CCMarketAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMarketAPIProvider.m; sourceTree = "<group>"; };
 		D3013BCB1769C7370037EDAE /* CCMarketAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCMarketAPIProviderProtocol.h; sourceTree = "<group>"; };
+		D3013BCD1769CDA80037EDAE /* CCMarketNotesProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMarketNotesProvider.h; sourceTree = "<group>"; };
+		D3013BCE1769CDA80037EDAE /* CCMarketNotesProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMarketNotesProvider.m; sourceTree = "<group>"; };
 		D3039B76176880F800621CAC /* pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pending.png; sourceTree = "<group>"; };
 		D3039B77176880F800621CAC /* pending@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pending@2x.png"; sourceTree = "<group>"; };
 		D361462F175E17BE00907414 /* CCDropboxAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProvider.h; sourceTree = "<group>"; };
@@ -1249,6 +1252,8 @@
 		D3013BCC1769CC5A0037EDAE /* MarketNotesProvider */ = {
 			isa = PBXGroup;
 			children = (
+				D3013BCD1769CDA80037EDAE /* CCMarketNotesProvider.h */,
+				D3013BCE1769CDA80037EDAE /* CCMarketNotesProvider.m */,
 			);
 			path = MarketNotesProvider;
 			sourceTree = "<group>";
@@ -2253,6 +2258,7 @@
 				D3A5ECFF1768D54F00300399 /* CCFilterController.m in Sources */,
 				D3A5ED041768D72C00300399 /* CCSelectFiltersTranaction.m in Sources */,
 				D3013BCA1769C7190037EDAE /* CCMarketAPIProvider.m in Sources */,
+				D3013BCF1769CDA80037EDAE /* CCMarketNotesProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

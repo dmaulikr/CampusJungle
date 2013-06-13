@@ -20,7 +20,7 @@
                              @"order" : order,
                              } mutableCopy];
     if(query){
-        [params setValue:query forKey:@"name"];
+        [params setValue:query forKey:@"keywords"];
     }
     
     [objectManager postObject:nil
