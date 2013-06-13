@@ -7,8 +7,12 @@
 //
 
 #import "CCFilterController.h"
+#import "CCClassesApiProviderProtocol.h"
+#import "CCStandardErrorHandler.h"
 
 @interface CCFilterController ()
+
+@property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_classesAPIProvider;
 
 @end
 
@@ -17,6 +21,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.ioc_classesAPIProvider getAllClasesSuccessHandler:^(id result) {
+        
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
 }
 
 @end

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol CCMarketAPIProviderProtocol <NSObject>
+@protocol CCMarketAPIProviderProtocol <AppleGuiceInjectable>
 
 - (void)loadNotesNumberOfPage:(NSNumber *)pageNumber filters:(NSDictionary *)filters order:(NSString *)order query:(NSString *)query successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 

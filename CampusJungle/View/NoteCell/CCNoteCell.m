@@ -47,7 +47,7 @@
         NSString *thumbURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,note.thumbnailRetina];
         [self.thumbImage setImageWithURL:[NSURL URLWithString:thumbURL]];
     } else {
-        self.thumbImage.image = nil;
+        self.thumbImage.image = [UIImage imageNamed:@"book"];
     }
 
 }

@@ -20,7 +20,7 @@
 #import "CCEducation.h"
 
 
-@interface CCClassesController ()<CellSelectionProtocol>
+@interface CCClassesController ()<CCCellSelectionProtocol>
 @property (nonatomic, strong) CCClassesDataProvider *dataProvider;
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
 @property (nonatomic, strong) id <CCAPIProviderProtocol> ioc_apiProvider;

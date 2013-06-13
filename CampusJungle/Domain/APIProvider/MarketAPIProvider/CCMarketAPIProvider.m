@@ -23,7 +23,7 @@
         [params setValue:query forKey:@"keywords"];
     }
     
-    [objectManager postObject:nil
+    [objectManager getObject:nil
                          path:CCAPIDefines.notesInMarket
                    parameters:params
                       success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {

@@ -93,6 +93,8 @@ extern const struct CCErrorKeys {
 
 extern const struct CCTableDefines {
     __unsafe_unretained NSString *tableCellIdentifier;
+    __unsafe_unretained NSString *collectionCellIdentifier;
+    __unsafe_unretained NSString *tableHeaderIdentifier;
 } CCTableDefines;
 
 extern const struct CCLinkUserKeys {

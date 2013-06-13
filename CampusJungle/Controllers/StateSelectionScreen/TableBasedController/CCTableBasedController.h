@@ -10,7 +10,7 @@
 #import "CCBaseDataProvider.h"
 #import "CCCommonDataSource.h"
 
-@interface CCTableBasedController : CCViewController <CellSelectionProtocol>
+@interface CCTableBasedController : CCViewController <CCCellSelectionProtocol>
 
 @property (nonatomic, weak) IBOutlet UITableView *mainTable;
 @property (nonatomic, strong) CCCommonDataSource *dataSource;
