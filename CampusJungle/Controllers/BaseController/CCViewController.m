@@ -7,11 +7,18 @@
 //
 
 #import "CCViewController.h"
+#import <TestFlightSDK/TestFlight.h>
+
 
 @interface CCViewController ()
 
 @end
 
 @implementation CCViewController
+
+- (void)viewDidLoad
+{
+     [TestFlight passCheckpoint:self.title];
+}
 
 @end
