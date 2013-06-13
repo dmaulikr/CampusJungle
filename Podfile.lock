@@ -1,4 +1,5 @@
 PODS:
+  - ActionSheetPicker (0.0.2)
   - AFNetworking (1.2.1)
   - AFOAuth1Client (0.2.0):
     - AFNetworking (>= 1.0)
@@ -47,6 +48,7 @@ PODS:
   - UIAlertView-Blocks (0.0.1)
 
 DEPENDENCIES:
+  - ActionSheetPicker
   - AppleGuice (from `https://raw.github.com/korzun1993/AppleGuice/master/AppleGuice.podspec`)
   - BlocksKit
   - CJStringValidator
@@ -66,6 +68,7 @@ EXTERNAL SOURCES:
     :podspec: https://raw.github.com/korzun1993/AppleGuice/master/AppleGuice.podspec
 
 SPEC CHECKSUMS:
+  ActionSheetPicker: 16e212011d5c2e92b3e38609a58b93919b4056aa
   AFNetworking: a44069e3c9c89867544f6639482f155c7e5f9b41
   AFOAuth1Client: 3e01e6e4218116c2e279671c8ab086133514a350
   AppleGuice: abd580ba08042c5de8f6aab168417f453a9e0100

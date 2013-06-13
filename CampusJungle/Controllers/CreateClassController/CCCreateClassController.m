@@ -13,6 +13,8 @@
 #import "TPKeyboardAvoidingScrollView.h"
 #import "CCStandardErrorHandler.h"
 #import "CCAlertDefines.h"
+#import "ActionSheetPicker.h"
+#import "CCActionSheetPickerDelegate.h"
 
 @interface CCCreateClassController ()<UITextFieldDelegate>
 
@@ -38,9 +40,15 @@ self = [super init];
 if (self) {
     self.collegeID = collegeID;
     [self.navigationItem setTitle:@"Create new class"];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getTimeTable:) name:@"Timetable" object:nil];
 
 }
 return self;
+}
+
+- (void)getTimeTable:(NSNotification*)notification
+{
+    self.timeTable.text = [[notification userInfo] objectForKey:@"timetable"];
 }
 
 - (void)viewDidLoad
@@ -104,5 +112,17 @@ return self;
     }
     return YES;
 }
+
+- (IBAction)selectTimeTable:(UIControl *)sender {
+    
+    CCActionSheetPickerDelegate *delegate = [[CCActionSheetPickerDelegate alloc] init];
+    [ActionSheetCustomPicker showPickerWithTitle:@"Timetable" delegate:delegate showCancelButton:YES origin:sender];
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    [self selectTimeTable:textField];
+    return NO;
+}
+
 
 @end
