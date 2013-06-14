@@ -34,7 +34,6 @@
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [self setAuthorizationToken];
     NSString *path = [NSString stringWithFormat:CCAPIDefines.classesOfCollege,collegeID];
-    NSLog(@"");
     [objectManager getObjectsAtPath:path
                          parameters:nil
                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {

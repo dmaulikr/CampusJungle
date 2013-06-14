@@ -194,7 +194,7 @@
     
     RKResponseDescriptor *responseClassesOfCollegeDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:classResponseMapping
                                                                                                  pathPattern:classesCollegePathPatern
-                                                                                                     keyPath:@"classes"
+                                                                                                     keyPath:@"items"
                                                                                                  statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     RKResponseDescriptor *responseAddClassDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:classResponseMapping
                                                                                                        pathPattern:joinClass

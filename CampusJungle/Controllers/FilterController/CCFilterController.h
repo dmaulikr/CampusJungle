@@ -7,7 +7,11 @@
 //
 
 #import "CCTableBasedController.h"
+#import "CCTransactionWithObject.h"
 
 @interface CCFilterController : CCTableBasedController
+
+@property (nonatomic, strong) id <CCTransactionWithObject> backToMarketTRansaction;
+@property (nonatomic, strong) NSDictionary *oldFilters;
 
 @end

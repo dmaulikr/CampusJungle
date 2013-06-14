@@ -84,6 +84,9 @@
 		A7D53A4C1758CBD300FE9FCD /* CCClassesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7D53A4A1758CBD300FE9FCD /* CCClassesController.xib */; };
 		A7D53A511758CD2600FE9FCD /* CCAllClassesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D53A501758CD2600FE9FCD /* CCAllClassesTransaction.m */; };
 		A7D53A551758D6A700FE9FCD /* CCClassesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D53A541758D6A700FE9FCD /* CCClassesDataProvider.m */; };
+		A7FA0E551768D682004D3403 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A7FA0E541768D682004D3403 /* libz.dylib */; };
+		A7FA0E571768D746004D3403 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7FA0E561768D746004D3403 /* libTestFlight.a */; };
+		A7FFA52D1769F1B9004A1D02 /* CCActionSheetPickerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7FFA52C1769F1B9004A1D02 /* CCActionSheetPickerDelegate.m */; };
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
 		D3013BCA1769C7190037EDAE /* CCMarketAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3013BC91769C7190037EDAE /* CCMarketAPIProvider.m */; };
 		D3013BCF1769CDA80037EDAE /* CCMarketNotesProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3013BCE1769CDA80037EDAE /* CCMarketNotesProvider.m */; };
@@ -98,6 +101,7 @@
 		D3013BEC176A102F0037EDAE /* CCFiltersDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3013BEB176A102F0037EDAE /* CCFiltersDataProvider.m */; };
 		D3013BF0176A16210037EDAE /* CCMarketFilterDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D3013BEF176A16210037EDAE /* CCMarketFilterDataSource.m */; };
 		D3013BF9176B0BFD0037EDAE /* CCMarketFilterClassesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3013BF8176B0BFD0037EDAE /* CCMarketFilterClassesCell.m */; };
+		D3013BFD176B633C0037EDAE /* CCApplyFiltersTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3013BFC176B633C0037EDAE /* CCApplyFiltersTransaction.m */; };
 		D3039B78176880F800621CAC /* pending.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B76176880F800621CAC /* pending.png */; };
 		D3039B79176880F800621CAC /* pending@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B77176880F800621CAC /* pending@2x.png */; };
 		D3614631175E17BE00907414 /* CCDropboxAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */; };
@@ -348,6 +352,10 @@
 		A7D53A501758CD2600FE9FCD /* CCAllClassesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCAllClassesTransaction.m; path = AllClassesTransaction/CCAllClassesTransaction.m; sourceTree = "<group>"; };
 		A7D53A531758D6A700FE9FCD /* CCClassesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCClassesDataProvider.h; path = ClassesDataProvider/CCClassesDataProvider.h; sourceTree = "<group>"; };
 		A7D53A541758D6A700FE9FCD /* CCClassesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCClassesDataProvider.m; path = ClassesDataProvider/CCClassesDataProvider.m; sourceTree = "<group>"; };
+		A7FA0E541768D682004D3403 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		A7FA0E561768D746004D3403 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = Pods/TestFlightSDK/libTestFlight.a; sourceTree = "<group>"; };
+		A7FFA52B1769F1B9004A1D02 /* CCActionSheetPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCActionSheetPickerDelegate.h; path = ActionSheetPickerDelegate/CCActionSheetPickerDelegate.h; sourceTree = "<group>"; };
+		A7FFA52C1769F1B9004A1D02 /* CCActionSheetPickerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCActionSheetPickerDelegate.m; path = ActionSheetPickerDelegate/CCActionSheetPickerDelegate.m; sourceTree = "<group>"; };
 		D3013BC81769C7190037EDAE /* CCMarketAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMarketAPIProvider.h; sourceTree = "<group>"; };
 		D3013BC91769C7190037EDAE /* CCMarketAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMarketAPIProvider.m; sourceTree = "<group>"; };
 		D3013BCB1769C7370037EDAE /* CCMarketAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCMarketAPIProviderProtocol.h; sourceTree = "<group>"; };
@@ -372,6 +380,8 @@
 		D3013BEF176A16210037EDAE /* CCMarketFilterDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMarketFilterDataSource.m; sourceTree = "<group>"; };
 		D3013BF7176B0BFD0037EDAE /* CCMarketFilterClassesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMarketFilterClassesCell.h; sourceTree = "<group>"; };
 		D3013BF8176B0BFD0037EDAE /* CCMarketFilterClassesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMarketFilterClassesCell.m; sourceTree = "<group>"; };
+		D3013BFB176B633C0037EDAE /* CCApplyFiltersTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCApplyFiltersTransaction.h; sourceTree = "<group>"; };
+		D3013BFC176B633C0037EDAE /* CCApplyFiltersTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCApplyFiltersTransaction.m; sourceTree = "<group>"; };
 		D3039B76176880F800621CAC /* pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pending.png; sourceTree = "<group>"; };
 		D3039B77176880F800621CAC /* pending@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pending@2x.png"; sourceTree = "<group>"; };
 		D361462F175E17BE00907414 /* CCDropboxAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProvider.h; sourceTree = "<group>"; };
@@ -556,6 +566,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7FA0E571768D746004D3403 /* libTestFlight.a in Frameworks */,
+				A7FA0E551768D682004D3403 /* libz.dylib in Frameworks */,
 				D3614636175E1D3000907414 /* DropboxSDK in Frameworks */,
 				A787C7C117538BCF00824DEA /* QuartzCore.framework in Frameworks */,
 				D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */,
@@ -574,6 +586,8 @@
 		A784C58C173A865E005E4921 = {
 			isa = PBXGroup;
 			children = (
+				A7FA0E561768D746004D3403 /* libTestFlight.a */,
+				A7FA0E541768D682004D3403 /* libz.dylib */,
 				A787C72C17536F8400824DEA /* CampusJungle */,
 				A787C74B17536F8400824DEA /* Default-568h@2x.png */,
 				A787C73017536F8400824DEA /* CampusJungle-Info.plist */,
@@ -905,6 +919,7 @@
 		A787C77D17536F8400824DEA /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
+				D3013BFA176B631E0037EDAE /* ApplyFiltersTransaction */,
 				D3A5ED011768D71400300399 /* SelectFiltersTransaction */,
 				D3A5ECF71768ACCD00300399 /* MarketTransaction */,
 				D3B3D80317661208000D3FAB /* ImagesForNotesUploadingScreenTransaction */,
@@ -1270,6 +1285,15 @@
 			name = ClassesDataProvider;
 			sourceTree = "<group>";
 		};
+		A7FFA52A1769F184004A1D02 /* ActionSheetPickerDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A7FFA52B1769F1B9004A1D02 /* CCActionSheetPickerDelegate.h */,
+				A7FFA52C1769F1B9004A1D02 /* CCActionSheetPickerDelegate.m */,
+			);
+			name = ActionSheetPickerDelegate;
+			sourceTree = "<group>";
+		};
 		D3013BC71769C7010037EDAE /* MarketAPIProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -1352,6 +1376,15 @@
 				D3013BF8176B0BFD0037EDAE /* CCMarketFilterClassesCell.m */,
 			);
 			path = MarketFilterClassesCell;
+			sourceTree = "<group>";
+		};
+		D3013BFA176B631E0037EDAE /* ApplyFiltersTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3013BFB176B633C0037EDAE /* CCApplyFiltersTransaction.h */,
+				D3013BFC176B633C0037EDAE /* CCApplyFiltersTransaction.m */,
+			);
+			path = ApplyFiltersTransaction;
 			sourceTree = "<group>";
 		};
 		D3039B75176880F800621CAC /* Icons */ = {
@@ -1639,6 +1672,7 @@
 			isa = PBXGroup;
 			children = (
 				D3013BF6176B0BC60037EDAE /* MarketFilterClassesCell */,
+				A7FFA52A1769F184004A1D02 /* ActionSheetPickerDelegate */,
 				D3013BDF176A07600037EDAE /* filterSectionHeader */,
 				D3013BD51769E6B60037EDAE /* NotesCollectionCell */,
 				D3B3D80D17661D94000D3FAB /* ImageCell */,
@@ -2368,6 +2402,7 @@
 				D3A5ED041768D72C00300399 /* CCSelectFiltersTranaction.m in Sources */,
 				D3013BCA1769C7190037EDAE /* CCMarketAPIProvider.m in Sources */,
 				D3013BCF1769CDA80037EDAE /* CCMarketNotesProvider.m in Sources */,
+				A7FFA52D1769F1B9004A1D02 /* CCActionSheetPickerDelegate.m in Sources */,
 				D3013BD31769D27B0037EDAE /* CCCommonCollectionDataSource.m in Sources */,
 				D3013BD81769E7100037EDAE /* CCNotesCollectionCell.m in Sources */,
 				D3013BE2176A07B10037EDAE /* CCFilterSectionHeader.m in Sources */,
@@ -2375,6 +2410,7 @@
 				D3013BEC176A102F0037EDAE /* CCFiltersDataProvider.m in Sources */,
 				D3013BF0176A16210037EDAE /* CCMarketFilterDataSource.m in Sources */,
 				D3013BF9176B0BFD0037EDAE /* CCMarketFilterClassesCell.m in Sources */,
+				D3013BFD176B633C0037EDAE /* CCApplyFiltersTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2460,6 +2496,10 @@
 				GCC_PREFIX_HEADER = "CampusJungle/CampusJungle-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CampusJungle/CampusJungle-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Pods/TestFlightSDK\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lsqlite3.0",
@@ -2498,6 +2538,10 @@
 				GCC_PREFIX_HEADER = "CampusJungle/CampusJungle-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CampusJungle/CampusJungle-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Pods/TestFlightSDK\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lsqlite3.0",

@@ -15,10 +15,13 @@
 #import "CCFilterSectionHeader.h"
 #import "CCDefines.h"
 #import "CCMarketFilterClassesCell.h"
+#import "CCFilterSection.h"
+#import "CCClass.h"
 
 @interface CCFilterController ()
 
 @property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_classesAPIProvider;
+@property (nonatomic, strong) CCBaseDataProvider *dataProvider;
 
 @end
 
@@ -28,11 +31,44 @@
 {
     [super viewDidLoad];
     CCFiltersDataProvider *dataProvider = [CCFiltersDataProvider new];
+    dataProvider.filters = self.oldFilters;
+    self.dataProvider = dataProvider;
     self.dataSourceClass = [CCMarketFilterDataSource class];
     [self configTableWithProvider:dataProvider cellClass:[CCMarketFilterClassesCell class]];
     [self.mainTable registerClass:[CCFilterSectionHeader class] forHeaderFooterViewReuseIdentifier:CCTableDefines.tableHeaderIdentifier];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Apply" style:UIBarButtonItemStyleBordered target:self action:@selector(applyFilters)];
 }
 
+- (void)applyFilters
+{
+    [self.backToMarketTRansaction performWithObject:[self filters]];
+}
+
+- (NSDictionary *)filters
+{
+
+    NSMutableArray *arrayOfColleges = [NSMutableArray new];
+    NSMutableArray *arrayOfClasses = [NSMutableArray new];
+    
+    for(CCFilterSection *section in self.dataProvider.arrayOfItems){
+        if([section.classes[0] isSelected]){
+            [arrayOfColleges addObject:[NSNumber numberWithInteger: section.collegeID]];
+        } else {
+            for (CCClass *currentClass in section.classes){
+                if(currentClass.isSelected){
+                    [arrayOfClasses addObject:currentClass.classID];
+                }
+            }
+        }
+    }
+    
+    NSDictionary *filters = @{
+                @"classes_ids" : arrayOfClasses,
+                @"colleges_ids" : arrayOfColleges,
+                };
+
+    return filters;
+}
 
 
 @end

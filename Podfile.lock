@@ -1,4 +1,5 @@
 PODS:
+  - ActionSheetPicker (0.0.2)
   - AFNetworking (1.2.1)
   - AFOAuth1Client (0.2.0):
     - AFNetworking (>= 1.0)
@@ -47,6 +48,7 @@ PODS:
   - UIAlertView-Blocks (0.0.1)
 
 DEPENDENCIES:
+  - ActionSheetPicker
   - AppleGuice (from `https://raw.github.com/korzun1993/AppleGuice/master/AppleGuice.podspec`)
   - BlocksKit
   - CJStringValidator
@@ -66,6 +68,7 @@ EXTERNAL SOURCES:
     :podspec: https://raw.github.com/korzun1993/AppleGuice/master/AppleGuice.podspec
 
 SPEC CHECKSUMS:
+  ActionSheetPicker: 16e212011d5c2e92b3e38609a58b93919b4056aa
   AFNetworking: a44069e3c9c89867544f6639482f155c7e5f9b41
   AFOAuth1Client: 3e01e6e4218116c2e279671c8ab086133514a350
   AppleGuice: abd580ba08042c5de8f6aab168417f453a9e0100
@@ -75,7 +78,7 @@ SPEC CHECKSUMS:
   Facebook-iOS-SDK: 0dbd897e842cefeb012ec2eb8eba659ba6b96b12
   JASidePanels: bdc86395baee77fef838f5c7f3637300a7ff8c1f
   JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
-  libffi: 64ef39353e747bb2b25e1026afd96a157bf9231c
+  libffi: d9cf374b6b464c3ea53b13219536fad3bfb06e84
   LUKeychainAccess: 6ba22b2e1eec24f9f2fc9c6a9087d5524a58b1a2
   MBProgressHUD: 9b55a90566fb5d07df0602f6fd9fa04510ad5d52
   NSData+Base64: 36c4e5b6479259c1a68866ccd2a8dd385c9744f7
