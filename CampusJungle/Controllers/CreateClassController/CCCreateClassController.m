@@ -104,7 +104,7 @@ return self;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if(textField == self.semesterField){
+    if(textField == self.timeTable){
         [self createClass:nil];
     } else {
         [[self.view viewWithTag:textField.tag+1] becomeFirstResponder];
@@ -120,8 +120,16 @@ return self;
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    [self selectTimeTable:textField];
-    return NO;
+    switch (textField.tag) {
+        case 4:
+            [self selectTimeTable:textField];
+            return NO;
+            break;
+            
+        default:
+            return YES;
+            break;
+    }
 }
 
 
