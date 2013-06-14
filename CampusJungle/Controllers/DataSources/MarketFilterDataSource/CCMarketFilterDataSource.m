@@ -10,6 +10,8 @@
 #import "CCFilterSection.h"
 #import "CCFilterSectionHeader.h"
 #import "CCDefines.h"
+#import "CCTableCellProtocol.h"
+#import "CCClass.h"
 
 @implementation CCMarketFilterDataSource
 
@@ -27,7 +29,7 @@
     }
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     CCFilterSectionHeader *filterSection = [tableView dequeueReusableHeaderFooterViewWithIdentifier:CCTableDefines.tableHeaderIdentifier];
     filterSection.section = self.dataProvider.arrayOfItems[section];
@@ -37,7 +39,30 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    id <CCTableCellProtocol> cell = [tableView dequeueReusableCellWithIdentifier:CCTableDefines.tableCellIdentifier forIndexPath:indexPath];
+    CCFilterSection *section = self.dataProvider.arrayOfItems[indexPath.section];
+    [cell setCellObject:section.classes[indexPath.row]];
+    return (UITableViewCell *)cell;
+}
+
+- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CCFilterSection *section = self.dataProvider.arrayOfItems[indexPath.section];
+    CCClass *fakeClass = section.classes[0];
     
+    if(indexPath.row != 0){
+        fakeClass.isSelected = NO;
+    } else {
+        if(fakeClass.isSelected){
+            for(CCClass *currentClass in section.classes){
+                if(currentClass != fakeClass){
+                    currentClass.isSelected = NO;
+                }
+            }
+        }
+    }
+    
+    [tableView reloadData];
 
 }
 

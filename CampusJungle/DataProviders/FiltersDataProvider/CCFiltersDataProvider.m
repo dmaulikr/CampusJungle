@@ -38,11 +38,27 @@
         CCFilterSection *section = [self findSection:class.collegeID.integerValue inArray:arrayOfSection];
         if(!section){
            section = [CCFilterSection new];
+            section.collegeName  = class.collegeName;
+            section.collegeID = class.collegeID.integerValue;
+            section.isOpen = YES;
+            section.index = arrayOfSection.count;
+            [section.classes addObject:[self fakeClassForCollegeID:section.collegeID]];
             [arrayOfSection addObject:section];
+        
         }
         [section.classes addObject:class];
     }
     return arrayOfSection;
+}
+
+- (CCClass *)fakeClassForCollegeID:(NSInteger)collegeID
+{
+    CCClass *fakeClass = [CCClass new];
+    fakeClass.subject = @"All over college";
+    fakeClass.classID = 0;
+    fakeClass.collegeID = [NSString stringWithFormat:@"%d",collegeID];
+    fakeClass.isSelected = YES;
+    return fakeClass;
 }
 
 - (CCFilterSection *)findSection:(NSInteger)collegeID inArray:(NSArray *)sections

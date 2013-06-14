@@ -9,6 +9,12 @@
 #import "CCFilterController.h"
 #import "CCClassesApiProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
+#import "CCFiltersDataProvider.h"
+#import "CCMarketFilterDataSource.h"
+#import "CCOrdinaryCell.h"
+#import "CCFilterSectionHeader.h"
+#import "CCDefines.h"
+#import "CCMarketFilterClassesCell.h"
 
 @interface CCFilterController ()
 
@@ -21,11 +27,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.ioc_classesAPIProvider getAllClasesSuccessHandler:^(id result) {
-        
-    } errorHandler:^(NSError *error) {
-        [CCStandardErrorHandler showErrorWithError:error];
-    }];
+    CCFiltersDataProvider *dataProvider = [CCFiltersDataProvider new];
+    self.dataSourceClass = [CCMarketFilterDataSource class];
+    [self configTableWithProvider:dataProvider cellClass:[CCMarketFilterClassesCell class]];
+    [self.mainTable registerClass:[CCFilterSectionHeader class] forHeaderFooterViewReuseIdentifier:CCTableDefines.tableHeaderIdentifier];
 }
+
+
 
 @end

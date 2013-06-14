@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "CCBaseDataProvider.h"
+#import "CCCellSelectionProtocol.h"
 
 @interface CCMarketFilterDataSource : NSObject<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) CCBaseDataProvider *dataProvider;
+@property (nonatomic, strong) id<CCCellSelectionProtocol> delegate;
 
 @end

@@ -158,6 +158,7 @@
      @"call_number":@"callNumber",
      @"id":@"classID",
      @"college_name" : @"collegeName",
+     @"college_id" : @"collegeID",
      }];
         
     RKObjectMapping *classRequestMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];

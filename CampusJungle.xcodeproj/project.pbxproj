@@ -97,6 +97,7 @@
 		D3013BE8176A09C60037EDAE /* CCFilterSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3013BE7176A09C60037EDAE /* CCFilterSectionHeader.xib */; };
 		D3013BEC176A102F0037EDAE /* CCFiltersDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3013BEB176A102F0037EDAE /* CCFiltersDataProvider.m */; };
 		D3013BF0176A16210037EDAE /* CCMarketFilterDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D3013BEF176A16210037EDAE /* CCMarketFilterDataSource.m */; };
+		D3013BF9176B0BFD0037EDAE /* CCMarketFilterClassesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3013BF8176B0BFD0037EDAE /* CCMarketFilterClassesCell.m */; };
 		D3039B78176880F800621CAC /* pending.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B76176880F800621CAC /* pending.png */; };
 		D3039B79176880F800621CAC /* pending@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B77176880F800621CAC /* pending@2x.png */; };
 		D3614631175E17BE00907414 /* CCDropboxAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */; };
@@ -369,6 +370,8 @@
 		D3013BEB176A102F0037EDAE /* CCFiltersDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFiltersDataProvider.m; sourceTree = "<group>"; };
 		D3013BEE176A16210037EDAE /* CCMarketFilterDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMarketFilterDataSource.h; sourceTree = "<group>"; };
 		D3013BEF176A16210037EDAE /* CCMarketFilterDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMarketFilterDataSource.m; sourceTree = "<group>"; };
+		D3013BF7176B0BFD0037EDAE /* CCMarketFilterClassesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMarketFilterClassesCell.h; sourceTree = "<group>"; };
+		D3013BF8176B0BFD0037EDAE /* CCMarketFilterClassesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMarketFilterClassesCell.m; sourceTree = "<group>"; };
 		D3039B76176880F800621CAC /* pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pending.png; sourceTree = "<group>"; };
 		D3039B77176880F800621CAC /* pending@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pending@2x.png"; sourceTree = "<group>"; };
 		D361462F175E17BE00907414 /* CCDropboxAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProvider.h; sourceTree = "<group>"; };
@@ -1342,6 +1345,15 @@
 			path = MarketFilterDataSource;
 			sourceTree = "<group>";
 		};
+		D3013BF6176B0BC60037EDAE /* MarketFilterClassesCell */ = {
+			isa = PBXGroup;
+			children = (
+				D3013BF7176B0BFD0037EDAE /* CCMarketFilterClassesCell.h */,
+				D3013BF8176B0BFD0037EDAE /* CCMarketFilterClassesCell.m */,
+			);
+			path = MarketFilterClassesCell;
+			sourceTree = "<group>";
+		};
 		D3039B75176880F800621CAC /* Icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -1626,6 +1638,7 @@
 		D3A2C3261754D53900989831 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D3013BF6176B0BC60037EDAE /* MarketFilterClassesCell */,
 				D3013BDF176A07600037EDAE /* filterSectionHeader */,
 				D3013BD51769E6B60037EDAE /* NotesCollectionCell */,
 				D3B3D80D17661D94000D3FAB /* ImageCell */,
@@ -2361,6 +2374,7 @@
 				D3013BE6176A083C0037EDAE /* CCFilterSection.m in Sources */,
 				D3013BEC176A102F0037EDAE /* CCFiltersDataProvider.m in Sources */,
 				D3013BF0176A16210037EDAE /* CCMarketFilterDataSource.m in Sources */,
+				D3013BF9176B0BFD0037EDAE /* CCMarketFilterClassesCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
