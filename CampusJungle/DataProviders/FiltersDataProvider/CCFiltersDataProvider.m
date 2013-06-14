@@ -38,11 +38,55 @@
         CCFilterSection *section = [self findSection:class.collegeID.integerValue inArray:arrayOfSection];
         if(!section){
            section = [CCFilterSection new];
+            section.collegeName  = class.collegeName;
+            section.collegeID = class.collegeID.integerValue;
+            section.isOpen = YES;
+            section.index = arrayOfSection.count;
+            [section.classes addObject:[self fakeClassForCollegeID:section.collegeID]];
             [arrayOfSection addObject:section];
         }
         [section.classes addObject:class];
     }
+    [self checkAlreadyFiltred:arrayOfSection];
+    
     return arrayOfSection;
+}
+
+- (void)checkAlreadyFiltred:(NSArray *)sections
+{
+    NSArray *filtredColleges = self.filters[@"colleges_ids"];
+    NSArray *filtredClasses = self.filters[@"classes_ids"];
+    for(CCFilterSection *section in sections){
+        if([self isString:[NSString stringWithFormat:@"%d",section.collegeID] inArray:filtredColleges]){
+            [section.classes[0] setIsSelected:YES];
+        } else {
+            for(CCClass *currentClass in section.classes){
+                if ([self isString:currentClass.classID inArray:filtredClasses]){
+                    currentClass.isSelected = YES;
+                }
+            }
+        }
+    }
+}
+
+- (BOOL)isString:(NSString *)string inArray:(NSArray *)array
+{
+    for(NSString *stringFromArray in array){
+        if([string isEqualToString:stringFromArray]){
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (CCClass *)fakeClassForCollegeID:(NSInteger)collegeID
+{
+    CCClass *fakeClass = [CCClass new];
+    fakeClass.subject = @"All over college";
+    fakeClass.classID = 0;
+    fakeClass.collegeID = [NSString stringWithFormat:@"%d",collegeID];
+    //fakeClass.isSelected = YES;
+    return fakeClass;
 }
 
 - (CCFilterSection *)findSection:(NSInteger)collegeID inArray:(NSArray *)sections

@@ -12,5 +12,8 @@
 @interface CCMarketPlaceController : CCViewController
 
 @property (nonatomic, strong) id <CCTransactionWithObject> filtersScreenTransaction;
+@property (nonatomic, strong) NSDictionary *filters;
+
+- (void)update;
 
 @end

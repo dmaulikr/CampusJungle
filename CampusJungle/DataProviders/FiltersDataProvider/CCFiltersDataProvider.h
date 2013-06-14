@@ -10,6 +10,6 @@
 
 @interface CCFiltersDataProvider : CCBaseDataProvider
 
-
+@property (nonatomic, strong) NSDictionary *filters;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "CCSelectFiltersTranaction.h"
 #import "CCFilterController.h"
+#import "CCApplyFiltersTransaction.h"
 
 @implementation CCSelectFiltersTranaction
 
@@ -15,6 +16,13 @@
 {
     NSParameterAssert(self.navigation);
     CCFilterController *filterController = [CCFilterController new];
+    
+    CCApplyFiltersTransaction *applyFiltersTransaction = [CCApplyFiltersTransaction new];
+    applyFiltersTransaction.navigation = self.navigation;
+    applyFiltersTransaction.marketPlace = object;
+    
+    filterController.backToMarketTRansaction = applyFiltersTransaction;
+    filterController.oldFilters = [[object filters] copy];
     
     [self.navigation pushViewController:filterController animated:YES];
 }

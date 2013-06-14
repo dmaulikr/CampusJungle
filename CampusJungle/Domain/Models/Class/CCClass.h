@@ -20,4 +20,6 @@
 @property (nonatomic, strong) NSString *classID;
 @property (nonatomic, strong) NSString *collegeName;
 
+@property (nonatomic) BOOL isSelected;
+
 @end

@@ -19,15 +19,17 @@
 
 - (void)loadItemsForPageNumber:(long)numberOfPage successHandler:(successWithObject)successHandler
 {
-    [self.ioc_marketAPIProvider loadNotesNumberOfPage:[NSNumber numberWithLong:numberOfPage]
+    if(self.filters){
+        [self.ioc_marketAPIProvider loadNotesNumberOfPage:[NSNumber numberWithLong:numberOfPage]
                                               filters:self.filters
                                                 order:self.order
                                                 query:self.query
                                        successHandler:^(RKMappingResult * result) {
-        successHandler(result);
-    } errorHandler:^(NSError *error) {
-                [self showErrorWhileLoading:error];
-    }];
+                                           successHandler(result);
+                                       } errorHandler:^(NSError *error) {
+                                           [self showErrorWhileLoading:error];
+                                       }];
+    }
 }
 
 @end

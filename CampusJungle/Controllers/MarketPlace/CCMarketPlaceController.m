@@ -11,6 +11,8 @@
 #import "CCDefines.h"
 #import "CCCommonCollectionDataSource.h"
 #import "CCNotesCollectionCell.h"
+#import "CCClassesApiProviderProtocol.h"
+#import "CCStandardErrorHandler.h"
 
 @interface CCMarketPlaceController ()<CCCellSelectionProtocol>
 
@@ -18,14 +20,15 @@
 @property (nonatomic, weak) IBOutlet UICollectionView *latestNotesCollectionView;
 @property (nonatomic, weak) IBOutlet UICollectionView *latestStuffCollectionView;
 
-@property (nonatomic, strong) NSArray *arrayOfFilters;
 @property (nonatomic, strong) CCMarketNotesProvider *marketLatestNotesProvider;
 @property (nonatomic, strong) CCMarketNotesProvider *marketTopNotesProvider;
 @property (nonatomic, strong) NSMutableArray *arrayOfDataSources;
+@property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_classesAPIProvider;
 
 @end
 
 @implementation CCMarketPlaceController
+
 
 - (void)viewDidLoad
 {
@@ -33,24 +36,28 @@
     self.arrayOfDataSources = [NSMutableArray new];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Filters" style:UIBarButtonItemStyleBordered target:self action:@selector(applyFilters)];
     self.marketLatestNotesProvider = [CCMarketNotesProvider new];
-    self.marketLatestNotesProvider.filters = @{
-                                               @"colleges_ids" : @[@20429]
-                                               };
     self.marketLatestNotesProvider.order = @"date";
-    
     
     [self configCollection:self.topNotesCollectionView WithProvider:self.marketLatestNotesProvider cellClass:[CCNotesCollectionCell class]];
     
     self.marketTopNotesProvider = [CCMarketNotesProvider new];
-    self.marketTopNotesProvider.filters = self.marketLatestNotesProvider.filters;
     self.marketTopNotesProvider.order = @"sales";
     
     [self configCollection:self.latestNotesCollectionView WithProvider:self.marketTopNotesProvider cellClass:[CCNotesCollectionCell class]];
+    [self loadFilters];
+}
+
+- (void)update
+{
+    self.marketLatestNotesProvider.filters = self.filters;
+    [self.marketLatestNotesProvider loadItems];
+    self.marketTopNotesProvider.filters = self.filters;
+    [self.marketTopNotesProvider loadItems];
 }
 
 - (void)applyFilters
 {
-    [self.filtersScreenTransaction performWithObject:self.arrayOfFilters];
+    [self.filtersScreenTransaction performWithObject:self];
 }
 
 - (void)configCollection:(UICollectionView *)collectionView WithProvider:(CCBaseDataProvider *)provider cellClass:(Class)cellCass
@@ -59,7 +66,7 @@
     CCCommonCollectionDataSource *dataSource = [CCCommonCollectionDataSource new];
 
     dataSource.dataProvider = provider;
-    dataSource.dataProvider.targetTable = collectionView;
+    dataSource.dataProvider.targetTable = (UITableView *)collectionView;
     collectionView.dataSource = dataSource;
     collectionView.delegate = dataSource;
     [self.arrayOfDataSources addObject:dataSource];
@@ -70,7 +77,37 @@
 - (void)didSelectedCellWithObject:(id)cellObject
 {
 
+}
 
+- (void)loadFilters
+{
+    [self.ioc_classesAPIProvider getAllClasesSuccessHandler:^(id result) {
+        NSMutableArray *arrayOfColleges = [NSMutableArray new];
+        for (CCClass *currentClass in result){
+            if(![self isString:currentClass.collegeID inArray:arrayOfColleges]){
+                [arrayOfColleges addObject:currentClass.collegeID];
+            }
+        }
+     self.filters = @{
+     @"colleges_ids" : arrayOfColleges,
+     @"classes_ids" :@[]
+     };
+    
+        NSLog(@"%@",self.filters);
+     [self update];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
+}
+
+- (BOOL)isString:(NSString *)string inArray:(NSArray *)array
+{
+    for(NSString *stringFromArray in array){
+        if([string isEqualToString:stringFromArray]){
+            return YES;
+        }
+    }
+    return NO;
 }
 
 @end

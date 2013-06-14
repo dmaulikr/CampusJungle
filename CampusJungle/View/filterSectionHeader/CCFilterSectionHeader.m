@@ -34,6 +34,14 @@
     self.collegeName.text = section.collegeName;
 }
 
+- (void)drawRect:(CGRect)rect
+{
+    [super drawRect:rect];
+    UIView *background = [[UIView alloc] initWithFrame:self.frame];
+    background.backgroundColor = [UIColor grayColor];
+    [self setBackgroundView:background];
+}
+
 - (IBAction)sectionDidPressed
 {
     self.section.isOpen = !self.section.isOpen;
