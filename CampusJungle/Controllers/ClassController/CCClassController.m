@@ -35,5 +35,15 @@
     self.navigationController.navigationItem.title = self.currentClass.subject;
     self.professor.text = self.currentClass.professor;
     self.classNumber.text = self.currentClass.callNumber;
+
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Edit"
+                                                                              style:UIBarButtonItemStyleBordered
+                                                                             target:self
+                                                                             action:@selector(editClass)];
+}
+
+- (void)editClass
+{
+    
 }
 @end
