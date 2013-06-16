@@ -35,24 +35,6 @@
     [self becomeSelected:[(CCClass *)cellObject isSelected]];
 }
 
-- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
-{
-    [super setHighlighted:highlighted animated:animated];
-    if(highlighted){
-        CCClass *currentClass = self.cellObject;
-        
-//        if([currentClass.classID isEqualToString:@"0"]){
-//            
-//        } else {
-//            
-//        }
-        
-        currentClass.isSelected = !currentClass.isSelected;
-        [self becomeSelected:currentClass.isSelected];
-        
-    }
-}
-
 - (void)becomeSelected:(BOOL)selected
 {
     if(selected){

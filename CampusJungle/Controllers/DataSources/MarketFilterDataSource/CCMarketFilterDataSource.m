@@ -50,9 +50,13 @@
     CCFilterSection *section = self.dataProvider.arrayOfItems[indexPath.section];
     CCClass *fakeClass = section.classes[0];
     
-    if(indexPath.row != 0){
+    CCClass *selectedClass = section.classes[indexPath.row];
+    
+    if(fakeClass != selectedClass){
         fakeClass.isSelected = NO;
+        selectedClass.isSelected = !selectedClass.isSelected;
     } else {
+        fakeClass.isSelected = !fakeClass.isSelected;
         if(fakeClass.isSelected){
             for(CCClass *currentClass in section.classes){
                 if(currentClass != fakeClass){

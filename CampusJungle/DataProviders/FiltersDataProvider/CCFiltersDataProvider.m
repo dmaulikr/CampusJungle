@@ -71,8 +71,8 @@
 
 - (BOOL)isString:(NSString *)string inArray:(NSArray *)array
 {
-    for(NSString *stringFromArray in array){
-        if([string isEqualToString:stringFromArray]){
+    for(id stringFromArray in array){
+        if([string isEqualToString:[stringFromArray description]]){
             return YES;
         }
     }
@@ -85,7 +85,7 @@
     fakeClass.subject = @"All over college";
     fakeClass.classID = 0;
     fakeClass.collegeID = [NSString stringWithFormat:@"%d",collegeID];
-    //fakeClass.isSelected = YES;
+
     return fakeClass;
 }
 
