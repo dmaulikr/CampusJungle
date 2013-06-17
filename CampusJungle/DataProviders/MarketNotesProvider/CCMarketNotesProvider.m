@@ -23,7 +23,7 @@
         [self.ioc_marketAPIProvider loadNotesNumberOfPage:[NSNumber numberWithLong:numberOfPage]
                                               filters:self.filters
                                                 order:self.order
-                                                query:self.query
+                                                query:self.searchQuery
                                        successHandler:^(RKMappingResult * result) {
                                            successHandler(result);
                                        } errorHandler:^(NSError *error) {

@@ -64,7 +64,6 @@
     } errorHandler:^(NSError *error){
         [CCStandardErrorHandler showErrorWithError:error];
     }];
-    
 }
 
 @end

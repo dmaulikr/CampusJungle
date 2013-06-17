@@ -122,8 +122,8 @@
     self.marketLatestNotesProvider.targetTable = (UITableView *)self.latestNotesCollectionView;
     self.marketTopNotesProvider.targetTable = (UITableView *)self.topNotesCollectionView;
     
-    self.marketTopNotesProvider.query = nil;
-    self.marketLatestNotesProvider.query = nil;
+    self.marketTopNotesProvider.searchQuery = nil;
+    self.marketLatestNotesProvider.searchQuery = nil;
     
     [self update];
 }

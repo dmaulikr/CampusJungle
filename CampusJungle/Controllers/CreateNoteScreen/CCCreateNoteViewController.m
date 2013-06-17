@@ -44,7 +44,7 @@
         self.selectedCollege = self.arrayOfColleges[0];
     }
     
-    self.pickerContainer.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.pickerContainer.frame.size.height);
+    self.pickerContainer.frame = CGRectMake(0, self.navigationController.view.frame.size.height, self.navigationController.view.frame.size.width, self.pickerContainer.frame.size.height);
     [self.navigationController.view addSubview:self.pickerContainer];
 }
 
@@ -137,7 +137,6 @@
 
 - (IBAction)thumbDidPressed
 {
-    
         UIActionSheet *testSheet = [UIActionSheet actionSheetWithTitle:@"Select Avatar"];
         [testSheet addButtonWithTitle:@"Select from gallery" handler:^{
             [self selectAvatarFromGallery];
