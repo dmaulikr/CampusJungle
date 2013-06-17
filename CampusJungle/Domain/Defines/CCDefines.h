@@ -26,6 +26,7 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *listOfMyNotes;
     __unsafe_unretained NSString *notesInMarket;
     __unsafe_unretained NSString *stuffInMarket;
+    __unsafe_unretained NSString *notesAttachmentURL;
 } CCAPIDefines;
 
 
@@ -133,3 +134,8 @@ extern const struct CCTwitterDefines {
     __unsafe_unretained NSString *appSecret;
     __unsafe_unretained NSString *appURLSchema;
 } CCTwitterDefines;
+
+extern const struct CCMarketFilterConstants {
+    __unsafe_unretained NSString *colleges;
+    __unsafe_unretained NSString *classes;
+} CCMarketFilterConstants;

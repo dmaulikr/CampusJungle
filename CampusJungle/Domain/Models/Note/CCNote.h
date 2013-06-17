@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSNumber *fullPrice;
 @property (nonatomic, strong) NSString *thumbnail;
 @property (nonatomic, strong) NSString *thumbnailRetina;
+@property (nonatomic, strong) NSString *fullAccess;
 
 @property (nonatomic, strong) NSString *link;
 

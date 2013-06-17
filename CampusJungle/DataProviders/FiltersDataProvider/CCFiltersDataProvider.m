@@ -11,6 +11,7 @@
 #import "CCStandardErrorHandler.h"
 #import "CCClass.h"
 #import "CCFilterSection.h"
+#import "CCDefines.h"
 
 @interface CCFiltersDataProvider()
 
@@ -54,8 +55,8 @@
 
 - (void)checkAlreadyFiltred:(NSArray *)sections
 {
-    NSArray *filtredColleges = self.filters[@"colleges_ids"];
-    NSArray *filtredClasses = self.filters[@"classes_ids"];
+    NSArray *filtredColleges = self.filters[CCMarketFilterConstants.colleges];
+    NSArray *filtredClasses = self.filters[CCMarketFilterConstants.classes];
     for(CCFilterSection *section in sections){
         if([self isString:[NSString stringWithFormat:@"%d",section.collegeID] inArray:filtredColleges]){
             [section.classes[0] setIsSelected:YES];

@@ -14,6 +14,7 @@
 #import "CCClassesApiProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
 
+
 @interface CCMarketPlaceController ()<CCCellSelectionProtocol>
 
 @property (nonatomic, weak) IBOutlet UICollectionView *topNotesCollectionView;
@@ -95,8 +96,8 @@
             }
         }
      self.filters = @{
-     @"colleges_ids" : arrayOfColleges,
-     @"classes_ids" :@[]
+     CCMarketFilterConstants.colleges : arrayOfColleges,
+     CCMarketFilterConstants.classes :@[]
      };
     
         NSLog(@"%@",self.filters);

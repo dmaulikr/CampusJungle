@@ -11,5 +11,5 @@
 @interface CCAPIProvider : NSObject<CCAPIProviderProtocol>
 
 - (void)setAuthorizationToken;
-
+- (void)setContentTypeJSON;
 @end

@@ -45,6 +45,7 @@ extern const struct CCValidationMessages {
     __unsafe_unretained NSString *fullPriceCantBeBlank;
     __unsafe_unretained NSString *fullPriceCantBeLowerThenPriceForReview;
     __unsafe_unretained NSString *descriptionCantBeBlank;
+    __unsafe_unretained NSString *filterCanNotBeEmpty;
     
 } CCValidationMessages;
 

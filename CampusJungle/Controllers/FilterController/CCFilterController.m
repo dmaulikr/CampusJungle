@@ -17,6 +17,7 @@
 #import "CCMarketFilterClassesCell.h"
 #import "CCFilterSection.h"
 #import "CCClass.h"
+#import "CCAlertDefines.h"
 
 @interface CCFilterController ()
 
@@ -41,7 +42,12 @@
 
 - (void)applyFilters
 {
-    [self.backToMarketTRansaction performWithObject:[self filters]];
+    NSDictionary *filters = [self filters];
+    if([filters[CCMarketFilterConstants.classes] count] || [filters[CCMarketFilterConstants.colleges] count]){
+        [self.backToMarketTRansaction performWithObject:[self filters]];
+    } else {
+        [CCStandardErrorHandler showErrorWithTitle:nil message:CCValidationMessages.filterCanNotBeEmpty];
+    }
 }
 
 - (NSDictionary *)filters
@@ -63,8 +69,8 @@
     }
     
     NSDictionary *filters = @{
-                @"classes_ids" : arrayOfClasses,
-                @"colleges_ids" : arrayOfColleges,
+                CCMarketFilterConstants.classes : arrayOfClasses,
+                CCMarketFilterConstants.colleges : arrayOfColleges,
                 };
 
     return filters;

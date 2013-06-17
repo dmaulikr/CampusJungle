@@ -46,4 +46,5 @@ const struct CCValidationMessages CCValidationMessages = {
     .fullPriceCantBeBlank = @"Full access price can not be blank",
     .fullPriceCantBeLowerThenPriceForReview = @"Full access price can not be lower then price for review",
     .descriptionCantBeBlank = @"Description can not be blank",
+    .filterCanNotBeEmpty = @"Filter can not be empty",
 };

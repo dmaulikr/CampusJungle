@@ -21,9 +21,13 @@
 - (void)setAuthorizationToken
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
-    NSString *valueForHeader = [NSString stringWithFormat: @"Token token=%@",self.ioc_userSession.currentUser.token];
-    
-    [objectManager.HTTPClient setDefaultHeader:@"Authorization" value:valueForHeader];
+    [objectManager.HTTPClient setAuthorizationHeaderWithToken:self.ioc_userSession.currentUser.token];
+}
+
+- (void)setContentTypeJSON
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    objectManager.HTTPClient.parameterEncoding = AFJSONParameterEncoding;
 }
 
 - (void)putUser:(NSDictionary *)userInfo

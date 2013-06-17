@@ -28,6 +28,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .listOfMyNotes = @"/api/users/me/notes",
     .notesInMarket = @"/api/market/notes",
     .stuffInMarket = @"/api/market/stuff",
+    .notesAttachmentURL = @"/api/notes/%@/attachment/show",
 };
 
 const struct CCUserDefines CCUserDefines = {
@@ -131,4 +132,9 @@ const struct CCTwitterDefines CCTwitterDefines = {
     .appKey = @"5PArGIFtG4ZxIm5tm02g",
     .appSecret = @"CdvGtu0kuTvezy4jnJOx6HVRU3PaMkC9ZlmiPLc",
     .appURLSchema = @"campusjungle://success",
+};
+
+const struct CCMarketFilterConstants CCMarketFilterConstants = {
+    .colleges = @"colleges_ids",
+    .classes = @"classes_ids",
 };
