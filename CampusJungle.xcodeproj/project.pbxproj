@@ -107,6 +107,9 @@
 		D338DA5F176EFC2D00ADCD76 /* CCNoteDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D338DA5D176EFC2D00ADCD76 /* CCNoteDetailsController.m */; };
 		D338DA60176EFC2D00ADCD76 /* CCNoteDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D338DA5E176EFC2D00ADCD76 /* CCNoteDetailsController.xib */; };
 		D338DA64176EFD1600ADCD76 /* CCNoteDetailTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D338DA63176EFD1600ADCD76 /* CCNoteDetailTransaction.m */; };
+		D338DA69176F061F00ADCD76 /* CCViewMarketNotesListTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D338DA68176F061F00ADCD76 /* CCViewMarketNotesListTransaction.m */; };
+		D338DA6E176F070800ADCD76 /* CCListOfNotesInMarketController.m in Sources */ = {isa = PBXBuildFile; fileRef = D338DA6C176F070800ADCD76 /* CCListOfNotesInMarketController.m */; };
+		D338DA6F176F070800ADCD76 /* CCListOfNotesInMarketController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D338DA6D176F070800ADCD76 /* CCListOfNotesInMarketController.xib */; };
 		D3614631175E17BE00907414 /* CCDropboxAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */; };
 		D3614636175E1D3000907414 /* DropboxSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = D3614635175E1D3000907414 /* DropboxSDK */; };
 		D3614640175E362600907414 /* CCDropboxImagesSelectionTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D361463F175E362600907414 /* CCDropboxImagesSelectionTransaction.m */; };
@@ -392,6 +395,11 @@
 		D338DA5E176EFC2D00ADCD76 /* CCNoteDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCNoteDetailsController.xib; sourceTree = "<group>"; };
 		D338DA62176EFD1600ADCD76 /* CCNoteDetailTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNoteDetailTransaction.h; sourceTree = "<group>"; };
 		D338DA63176EFD1600ADCD76 /* CCNoteDetailTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNoteDetailTransaction.m; sourceTree = "<group>"; };
+		D338DA67176F061F00ADCD76 /* CCViewMarketNotesListTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCViewMarketNotesListTransaction.h; sourceTree = "<group>"; };
+		D338DA68176F061F00ADCD76 /* CCViewMarketNotesListTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewMarketNotesListTransaction.m; sourceTree = "<group>"; };
+		D338DA6B176F070800ADCD76 /* CCListOfNotesInMarketController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCListOfNotesInMarketController.h; sourceTree = "<group>"; };
+		D338DA6C176F070800ADCD76 /* CCListOfNotesInMarketController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCListOfNotesInMarketController.m; sourceTree = "<group>"; };
+		D338DA6D176F070800ADCD76 /* CCListOfNotesInMarketController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCListOfNotesInMarketController.xib; sourceTree = "<group>"; };
 		D361462F175E17BE00907414 /* CCDropboxAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProvider.h; sourceTree = "<group>"; };
 		D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxAPIProvider.m; sourceTree = "<group>"; };
 		D3614632175E18A200907414 /* CCDropboxAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProviderProtocol.h; sourceTree = "<group>"; };
@@ -662,6 +670,7 @@
 		A787C73217536F8400824DEA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D338DA6A176F06E500ADCD76 /* ListOfNotesInMarket */,
 				D338DA5B176EFC0B00ADCD76 /* NoteDetails */,
 				D3A5ECFB1768D53200300399 /* FilterController */,
 				D3A5ECF11768A32E00300399 /* MarketPlace */,
@@ -928,6 +937,7 @@
 		A787C77D17536F8400824DEA /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
+				D338DA65176F057000ADCD76 /* ViewMarketNotesListTransaction */,
 				D338DA61176EFD0200ADCD76 /* NoteDetailTransaction */,
 				D3013BFA176B631E0037EDAE /* ApplyFiltersTransaction */,
 				D3A5ED011768D71400300399 /* SelectFiltersTransaction */,
@@ -1425,6 +1435,26 @@
 				D338DA63176EFD1600ADCD76 /* CCNoteDetailTransaction.m */,
 			);
 			path = NoteDetailTransaction;
+			sourceTree = "<group>";
+		};
+		D338DA65176F057000ADCD76 /* ViewMarketNotesListTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D338DA67176F061F00ADCD76 /* CCViewMarketNotesListTransaction.h */,
+				D338DA68176F061F00ADCD76 /* CCViewMarketNotesListTransaction.m */,
+			);
+			name = ViewMarketNotesListTransaction;
+			path = ViewLatestNotesTransaction;
+			sourceTree = "<group>";
+		};
+		D338DA6A176F06E500ADCD76 /* ListOfNotesInMarket */ = {
+			isa = PBXGroup;
+			children = (
+				D338DA6B176F070800ADCD76 /* CCListOfNotesInMarketController.h */,
+				D338DA6C176F070800ADCD76 /* CCListOfNotesInMarketController.m */,
+				D338DA6D176F070800ADCD76 /* CCListOfNotesInMarketController.xib */,
+			);
+			path = ListOfNotesInMarket;
 			sourceTree = "<group>";
 		};
 		D35C1B481763706500C2AEB4 /* BackToListOfNotesTransaction */ = {
@@ -2273,6 +2303,7 @@
 				D3013BDE1769FC5D0037EDAE /* book@2x.png in Resources */,
 				D3013BE8176A09C60037EDAE /* CCFilterSectionHeader.xib in Resources */,
 				D338DA60176EFC2D00ADCD76 /* CCNoteDetailsController.xib in Resources */,
+				D338DA6F176F070800ADCD76 /* CCListOfNotesInMarketController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2443,6 +2474,8 @@
 				D3013BFD176B633C0037EDAE /* CCApplyFiltersTransaction.m in Sources */,
 				D338DA5F176EFC2D00ADCD76 /* CCNoteDetailsController.m in Sources */,
 				D338DA64176EFD1600ADCD76 /* CCNoteDetailTransaction.m in Sources */,
+				D338DA69176F061F00ADCD76 /* CCViewMarketNotesListTransaction.m in Sources */,
+				D338DA6E176F070800ADCD76 /* CCListOfNotesInMarketController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,6 @@
 #import "CCMyNotesTransaction.h"
 #import "CCMyNotesViewController.h"
 #import "CCCreateNotesTransaction.h"
-//#import "CCViewPDFNotesTransaction.h"
 #import "CCNoteDetailTransaction.h"
 #import "CCBackToListOfNotesTransaction.h"
 

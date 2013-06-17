@@ -7,10 +7,12 @@
 //
 
 #import "CCNoteDetailsController.h"
+#import "CCDefines.h"
 
 @interface CCNoteDetailsController ()
 
 @property (nonatomic, weak) IBOutlet UILabel *noteName;
+@property (nonatomic, weak) IBOutlet UIImageView *thumbnail;
 
 @end
 
@@ -20,7 +22,15 @@
 {
     [super viewDidLoad];
     self.noteName.text = self.note.noteDescription;
+    if(self.note.thumbnailRetina.length){
+        NSURL *urlToThumbnail = [NSURL URLWithString:[CCAPIDefines.baseURL stringByAppendingString:self.note.thumbnailRetina]];
+        [self.thumbnail setImageWithURL:urlToThumbnail];
+    }
 }
 
+- (IBAction)viewPDFButtonDidPressed
+{
+    [self.viewNotesAsPDFTransaction performWithObject:self.note];
+}
 
 @end

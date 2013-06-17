@@ -8,9 +8,13 @@
 
 #import "CCViewController.h"
 #import "CCNote.h"
+#import "CCTransactionWithObject.h"
 
 @interface CCNoteDetailsController : CCViewController
 
 @property (nonatomic, strong) CCNote *note;
+@property (nonatomic, strong) id <CCTransactionWithObject> viewNotesAsPDFTransaction;
+
+- (IBAction)viewPDFButtonDidPressed;
 
 @end

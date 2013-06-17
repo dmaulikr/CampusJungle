@@ -8,7 +8,7 @@
 
 #import "CCNoteDetailTransaction.h"
 #import "CCNoteDetailsController.h"
-
+#import "CCViewPDFNotesTransaction.h"
 
 @implementation CCNoteDetailTransaction
 
@@ -19,6 +19,11 @@
     
     CCNoteDetailsController *noteDetailsController = [CCNoteDetailsController new];
     noteDetailsController.note = object;
+    
+    CCViewPDFNotesTransaction *viewNotesAsPDFTRansaction = [CCViewPDFNotesTransaction new];
+    viewNotesAsPDFTRansaction.navigation = self.navigation;
+    
+    noteDetailsController.viewNotesAsPDFTransaction = viewNotesAsPDFTRansaction;
     
     [self.navigation pushViewController:noteDetailsController animated:YES];
     

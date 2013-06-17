@@ -38,13 +38,20 @@
     self.marketLatestNotesProvider = [CCMarketNotesProvider new];
     self.marketLatestNotesProvider.order = @"date";
     
-    [self configCollection:self.topNotesCollectionView WithProvider:self.marketLatestNotesProvider cellClass:[CCNotesCollectionCell class]];
-    
     self.marketTopNotesProvider = [CCMarketNotesProvider new];
     self.marketTopNotesProvider.order = @"sales";
     
-    [self configCollection:self.latestNotesCollectionView WithProvider:self.marketTopNotesProvider cellClass:[CCNotesCollectionCell class]];
+    [self configCollection:self.topNotesCollectionView WithProvider:self.marketTopNotesProvider cellClass:[CCNotesCollectionCell class]];
+    
+    [self configCollection:self.latestNotesCollectionView WithProvider:self.marketLatestNotesProvider cellClass:[CCNotesCollectionCell class]];
+    
     [self loadFilters];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self resetDataProviders];
 }
 
 - (void)update
@@ -71,7 +78,6 @@
     collectionView.delegate = dataSource;
     [self.arrayOfDataSources addObject:dataSource];
     dataSource.delegate = self;
-    [dataSource.dataProvider loadItems];
 }
 
 - (void)didSelectedCellWithObject:(id)cellObject
@@ -108,6 +114,27 @@
         }
     }
     return NO;
+}
+
+- (void)resetDataProviders
+{
+    self.marketLatestNotesProvider.targetTable = (UITableView *)self.latestNotesCollectionView;
+    self.marketTopNotesProvider.targetTable = (UITableView *)self.topNotesCollectionView;
+    
+    self.marketTopNotesProvider.query = nil;
+    self.marketLatestNotesProvider.query = nil;
+    
+    [self update];
+}
+
+- (IBAction)viewAllTopNotesPressed
+{
+    [self.fullListOfNotesTransaction performWithObject:self.marketTopNotesProvider];
+}
+
+- (IBAction)viewAllLatestNotesPressed
+{
+    [self.fullListOfNotesTransaction performWithObject:self.marketLatestNotesProvider];
 }
 
 @end
