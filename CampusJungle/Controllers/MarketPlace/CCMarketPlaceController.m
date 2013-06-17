@@ -76,7 +76,7 @@
 
 - (void)didSelectedCellWithObject:(id)cellObject
 {
-
+    [self.noteDetailsTransaction performWithObject:cellObject];
 }
 
 - (void)loadFilters

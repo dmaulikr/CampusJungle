@@ -47,12 +47,7 @@
 
 - (void)didSelectedCellWithObject:(id)cellObject
 {
-    CCNote *note = cellObject;
-    if(note.link.length){
         [self.viewNoteTransaction performWithObject:cellObject];
-    } else {
-        [CCStandardErrorHandler showErrorWithTitle:nil message:@"Note is not ready for review at the moment."];
-    }
 }
 
 @end

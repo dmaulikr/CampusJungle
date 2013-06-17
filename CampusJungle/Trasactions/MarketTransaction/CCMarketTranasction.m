@@ -9,6 +9,7 @@
 #import "CCMarketTranasction.h"
 #import "CCMarketPlaceController.h"
 #import "CCSelectFiltersTranaction.h"
+#import "CCNoteDetailTransaction.h"
 
 @implementation CCMarketTranasction
 
@@ -22,6 +23,10 @@
     CCSelectFiltersTranaction *selectFilterTransaction = [CCSelectFiltersTranaction new];
     selectFilterTransaction.navigation = centralNavigation;
     marketController.filtersScreenTransaction = selectFilterTransaction;
+    
+    CCNoteDetailTransaction *noteDetails = [CCNoteDetailTransaction new];
+    noteDetails.navigation = centralNavigation;
+    marketController.noteDetailsTransaction = noteDetails;
     
     [self.menuController setCenterPanel:centralNavigation];
 }
