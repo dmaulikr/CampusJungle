@@ -30,12 +30,6 @@
     self.title = CCScreenTitles.stateScreenTitle;
 }
 
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
-{
-    self.dataSource.dataProvider.searchQuery = searchText;
-    [self.dataSource.dataProvider loadItems];
-}
-
 - (void)didSelectedCellWithObject:(id)cellObject
 {
     [self.citySelectionTransaction performWithObject:cellObject];

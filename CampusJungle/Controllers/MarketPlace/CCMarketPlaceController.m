@@ -13,7 +13,9 @@
 #import "CCNotesCollectionCell.h"
 #import "CCClassesApiProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
-
+#import "CCUserSessionProtocol.h"
+#import "CCAPIProviderProtocol.h"
+#import "CCEducation.h"
 
 @interface CCMarketPlaceController ()<CCCellSelectionProtocol>
 
@@ -25,6 +27,8 @@
 @property (nonatomic, strong) CCMarketNotesProvider *marketTopNotesProvider;
 @property (nonatomic, strong) NSMutableArray *arrayOfDataSources;
 @property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_classesAPIProvider;
+@property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSessionProtocol;
+@property (nonatomic, strong) id <CCAPIProviderProtocol> ioc_APIProvider;
 
 @end
 
@@ -46,7 +50,24 @@
     
     [self configCollection:self.latestNotesCollectionView WithProvider:self.marketLatestNotesProvider cellClass:[CCNotesCollectionCell class]];
     
-    [self loadFilters];
+    [self loadUserEducationsSuccessHandler:^{
+        [self loadFilters];
+    }];
+}
+
+- (void)loadUserEducationsSuccessHandler:(successHandler)success
+{
+    CCUser *user = [self.ioc_userSessionProtocol currentUser];
+    if(user.educations){
+        success();
+    } else {
+        [self.ioc_APIProvider loadUserInfoSuccessHandler:^(id result) {
+            [self.ioc_userSessionProtocol setCurrentUser:result];
+            success();
+        } errorHandler:^(NSError *error) {
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -88,23 +109,13 @@
 
 - (void)loadFilters
 {
-    [self.ioc_classesAPIProvider getAllClasesSuccessHandler:^(id result) {
-        NSMutableArray *arrayOfColleges = [NSMutableArray new];
-        for (CCClass *currentClass in result){
-            if(![self isString:currentClass.collegeID inArray:arrayOfColleges]){
-                [arrayOfColleges addObject:currentClass.collegeID];
-            }
-        }
+    NSArray *arrayOfColleges = [CCEducation arrayOfCollegesIDFromEducations:[[self.ioc_userSessionProtocol currentUser] educations]];
      self.filters = @{
-     CCMarketFilterConstants.colleges : arrayOfColleges,
-     CCMarketFilterConstants.classes :@[]
+        CCMarketFilterConstants.colleges : arrayOfColleges,
+        CCMarketFilterConstants.classes :@[]
      };
     
-        NSLog(@"%@",self.filters);
      [self update];
-    } errorHandler:^(NSError *error) {
-        [CCStandardErrorHandler showErrorWithError:error];
-    }];
 }
 
 - (BOOL)isString:(NSString *)string inArray:(NSArray *)array

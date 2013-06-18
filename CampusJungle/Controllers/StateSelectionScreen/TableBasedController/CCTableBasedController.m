@@ -38,4 +38,10 @@
     
 }
 
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    self.dataSource.dataProvider.searchQuery = searchText;
+    [self.dataSource.dataProvider loadItems];
+}
+
 @end

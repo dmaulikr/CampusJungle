@@ -42,12 +42,6 @@
     [self.dataSource.dataProvider loadItems];
 }
 
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
-{
-    self.dataSource.dataProvider.searchQuery = searchText;
-    [self.dataSource.dataProvider loadItems];
-}
-
 - (void)didSelectedCellWithObject:(id)cellObject
 {
     [self.educationTransaction performWithObject:(CCCollege *)cellObject];

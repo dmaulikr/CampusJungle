@@ -24,4 +24,25 @@
     return YES;
 }
 
++ (NSArray *)arrayOfCollegesIDFromEducations:(NSArray *)educations
+{
+    NSMutableArray *colleges = [NSMutableArray new];
+    for(CCEducation *education in educations){
+        if(![CCEducation isID:[education.collegeID stringValue] alreadyExistIn:colleges]){
+            [colleges addObject:[education.collegeID stringValue]];
+        }
+    }
+    return colleges;
+}
+
++ (BOOL)isID:(NSString *)collegeID alreadyExistIn:(NSArray *)collegeIds
+{
+    for (NSString *existCollegeID in collegeIds){
+        if ([existCollegeID isEqualToString:collegeID]){
+            return YES;
+        }
+    }
+    return NO;
+}
+
 @end

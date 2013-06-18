@@ -25,6 +25,9 @@
 @property (nonatomic, weak) IBOutlet UIButton *viewOnlyAccessButton;
 @property (nonatomic, weak) IBOutlet UIButton *pdfButton;
 
+@property (nonatomic, strong) IBOutlet UILabel *collegeName;
+@property (nonatomic, strong) IBOutlet UILabel *className;
+
 @property (nonatomic, strong) id <CCNotesAPIProviderProtolcol> ioc_notesAPIProvider;
 @property (nonatomic, strong) id <CCMarketAPIProviderProtocol> ioc_marketAPIProvider;
 
