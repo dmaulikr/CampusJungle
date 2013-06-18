@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad
 {
-     [TestFlight passCheckpoint:self.title];
+     [TestFlight passCheckpoint: NSStringFromClass(self.class)];
 }
 
 @end
