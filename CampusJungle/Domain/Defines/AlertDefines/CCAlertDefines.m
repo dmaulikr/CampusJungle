@@ -14,6 +14,7 @@ const struct CCAlertsMessages CCAlertsMessages = {
     .noInternetConnection = @"No network connection",
     .formNotValid = @"Form is not valid",
     .error = @"Error",
+    .success = @"Success",
     .facebookError = @"Facebook authorization faild",
     .wrongEmailOfPassword = @"Wrong email or password",
     .authorizationFaild = @"Authorization Faild",
@@ -23,7 +24,11 @@ const struct CCAlertsMessages CCAlertsMessages = {
     .lastNameNotValid = @"Last name can not be empty",
     .createCollege = @"In order to join class you should select your college first.",
     .dropboxLinkingFaild = @"Dropbox linking faild",
-    .emptyField = @"Please, fill in all fields"
+    .emptyField = @"Please, fill in all fields",
+    .setEmailFirst = @"Set your email in user profile first",
+    .confirmation = @"Confirmation",
+    .confirmationMessage = @"Are you sure?",
+    .checkYourMail = @"Check your email box",
 };
 
 const struct CCAlertsButtons CCAlertsButtons = {

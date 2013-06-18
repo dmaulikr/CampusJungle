@@ -17,4 +17,8 @@
 
 - (IBAction)viewPDFButtonDidPressed;
 
+- (IBAction)buyForViewButtonPressed;
+
+- (IBAction)buyForDownloadButtonPressed;
+
 @end

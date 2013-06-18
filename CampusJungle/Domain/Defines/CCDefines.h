@@ -27,6 +27,7 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *notesInMarket;
     __unsafe_unretained NSString *stuffInMarket;
     __unsafe_unretained NSString *notesAttachmentURL;
+    __unsafe_unretained NSString *purchaseNote;
 } CCAPIDefines;
 
 
