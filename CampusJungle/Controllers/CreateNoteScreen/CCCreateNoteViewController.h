@@ -17,5 +17,6 @@
 
 - (IBAction)thumbDidPressed;
 - (IBAction)collegeSelectionButtonDidPressed;
+- (IBAction)classSelectionButtonDidPresed;
 
 @end

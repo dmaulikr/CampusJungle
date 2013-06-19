@@ -15,6 +15,8 @@
 #import "CCCollege.h"
 #import "CCEducation.h"
 #import "CCAlertDefines.h"
+#import "CCClassesApiProviderProtocol.h"
+#import "MBProgressHUD.h"
 
 @interface CCCreateNoteViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
@@ -23,12 +25,20 @@
 @property (nonatomic, weak) IBOutlet UITextField *descriptionField;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbView;
 @property (nonatomic, weak) IBOutlet UIButton *collegeSelectionButton;
-@property (nonatomic, strong) NSArray *arrayOfColleges;
-@property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
+@property (nonatomic, weak) IBOutlet UIButton *classesSelectionButton;
 @property (nonatomic, weak) IBOutlet UIView *pickerContainer;
 @property (nonatomic, strong) IBOutlet UIPickerView *collegePicker;
 
 @property (nonatomic, strong) CCCollege *selectedCollege;
+@property (nonatomic, strong) CCClass *selectedClass;
+
+@property (nonatomic, strong) NSArray *arrayOfColleges;
+@property (nonatomic, strong) NSArray *arrayOfClasses;
+@property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
+@property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_classesAPI;
+
+@property (nonatomic, strong) NSArray *arrayOfItemsForPicker;
+
 
 @end
 
@@ -38,26 +48,61 @@
 {
     [super viewDidLoad];
     self.title = @"New Note";
-    CCUser *currentUser = [self.ioc_userSession currentUser];
-    self.arrayOfColleges = [self arrayOfCollegesFromUser:currentUser];
-    if(self.arrayOfColleges.count){
-        self.selectedCollege = self.arrayOfColleges[0];
-    }
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self loadCollegesPicker];
+    [self loadClasses];
     
     self.pickerContainer.frame = CGRectMake(0, self.navigationController.view.frame.size.height, self.navigationController.view.frame.size.width, self.pickerContainer.frame.size.height);
     [self.navigationController.view addSubview:self.pickerContainer];
+}
+
+- (void)loadClasses
+{
+    [self.ioc_classesAPI getAllClasesSuccessHandler:^(id classes) {
+        self.arrayOfClasses = classes;
+        [self checkIsEverythingReady];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
+}
+
+- (void)loadCollegesPicker
+{
+    [self.ioc_userSession loadUserEducationsSuccessHandler:^(id educations) {
+        self.arrayOfColleges = [self arrayOfCollegesFromUser:educations];
+        [self checkIsEverythingReady];
+        if(self.arrayOfColleges.count){
+            self.selectedCollege = self.arrayOfColleges[0];
+        }
+    }];
+}
+
+- (void)checkIsEverythingReady
+{
+    if(self.arrayOfClasses && self.arrayOfColleges){
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    }
 }
 
 - (void)setSelectedCollege:(CCCollege *)selectedCollege
 {
     _selectedCollege = selectedCollege;
     [self.collegeSelectionButton setTitle:selectedCollege.name forState:UIControlStateNormal];
+    [self.classesSelectionButton setTitle:@"Select Class" forState:UIControlStateNormal];
+    self.selectedClass = nil;
 }
 
-- (NSArray *)arrayOfCollegesFromUser:(CCUser *)user
+- (void)setSelectedClass:(CCClass *)selectedClass
+{
+    _selectedClass = selectedClass;
+    [self.classesSelectionButton setTitle:selectedClass.name forState:UIControlStateNormal];
+}
+
+- (NSArray *)arrayOfCollegesFromUser:(NSArray *)educations
 {
     NSMutableArray *arrayOfColleges = [NSMutableArray new];
-    for(CCEducation *education in user.educations){
+    for(CCEducation *education in educations){
         if(![self isArrayOfColleges:arrayOfColleges containCollegeWithID:education.collegeID]){
             CCCollege *newCollege = [CCCollege new];
             newCollege.collegeID = education.collegeID;
@@ -131,6 +176,7 @@
     noteInfo.price = [NSNumber numberWithInteger:self.priceField.text.integerValue];
     noteInfo.fullPrice = [NSNumber numberWithInteger:self.fullAccessPriceField.text.integerValue];
     noteInfo.collegeID = self.selectedCollege.collegeID;
+    noteInfo.classID = [NSNumber numberWithInteger: self.selectedClass.classID.integerValue];
     noteInfo.thumbnail = self.thumbView.image;
     return noteInfo;
 }
@@ -179,12 +225,12 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return self.arrayOfColleges.count;
+    return self.arrayOfItemsForPicker.count;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return [self.arrayOfColleges[row] name];
+    return [self.arrayOfItemsForPicker[row] name];
 }
 
 - (void)showPicker
@@ -205,12 +251,41 @@
 {
     [self showPicker];
     self.view.userInteractionEnabled = NO;
+    self.arrayOfItemsForPicker = self.arrayOfColleges;
+    [self.collegePicker reloadAllComponents];
+}
 
+- (IBAction)classSelectionButtonDidPresed
+{
+    NSArray *classesInSelectedCollege = [self filterArrayOfClasses:self.arrayOfClasses];
+    if (classesInSelectedCollege.count){
+        [self showPicker];
+        self.view.userInteractionEnabled = NO;
+        self.arrayOfItemsForPicker = self.arrayOfClasses;
+        [self.collegePicker reloadAllComponents];
+    } else {
+        [CCStandardErrorHandler showErrorWithTitle:nil message:CCAlertsMessages.haveNoClassesInSelectedCollege];
+    }
+}
+
+- (NSArray *)filterArrayOfClasses:(NSArray *)classes
+{
+    NSMutableArray *arrayOfClasses = [NSMutableArray new];
+    for (CCClass *currentClass in classes){
+        if([self.selectedCollege.collegeID.stringValue isEqualToString: currentClass.collegeID]){
+            [arrayOfClasses addObject:currentClass];
+        }
+    }
+    return arrayOfClasses;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    self.selectedCollege = self.arrayOfColleges[row];
+    if([self.arrayOfItemsForPicker[row] isKindOfClass:[CCCollege class]]){
+    self.selectedCollege = self.arrayOfItemsForPicker[row];
+    } else {
+        self.selectedClass = self.arrayOfItemsForPicker[row];
+    }
     [self hidePicker];
     self.view.userInteractionEnabled = YES;
 }

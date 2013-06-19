@@ -22,4 +22,6 @@
 
 @property (nonatomic) BOOL isSelected;
 
+- (NSString *)name;
+
 @end
