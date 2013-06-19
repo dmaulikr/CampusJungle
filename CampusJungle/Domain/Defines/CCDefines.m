@@ -138,4 +138,6 @@ const struct CCTwitterDefines CCTwitterDefines = {
 const struct CCMarketFilterConstants CCMarketFilterConstants = {
     .colleges = @"colleges_ids",
     .classes = @"classes_ids",
+    .orderTop = @"sales",
+    .orderLatest = @"date",
 };

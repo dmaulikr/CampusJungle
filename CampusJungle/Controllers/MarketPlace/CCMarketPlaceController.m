@@ -41,10 +41,10 @@
     self.arrayOfDataSources = [NSMutableArray new];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Filters" style:UIBarButtonItemStyleBordered target:self action:@selector(applyFilters)];
     self.marketLatestNotesProvider = [CCMarketNotesProvider new];
-    self.marketLatestNotesProvider.order = @"date";
+    self.marketLatestNotesProvider.order = CCMarketFilterConstants.orderLatest;
     
     self.marketTopNotesProvider = [CCMarketNotesProvider new];
-    self.marketTopNotesProvider.order = @"sales";
+    self.marketTopNotesProvider.order = CCMarketFilterConstants.orderTop;
     
     [self configCollection:self.topNotesCollectionView WithProvider:self.marketTopNotesProvider cellClass:[CCNotesCollectionCell class]];
     

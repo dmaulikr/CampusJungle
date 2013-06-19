@@ -139,4 +139,6 @@ extern const struct CCTwitterDefines {
 extern const struct CCMarketFilterConstants {
     __unsafe_unretained NSString *colleges;
     __unsafe_unretained NSString *classes;
+    __unsafe_unretained NSString *orderTop;
+    __unsafe_unretained NSString *orderLatest;
 } CCMarketFilterConstants;
