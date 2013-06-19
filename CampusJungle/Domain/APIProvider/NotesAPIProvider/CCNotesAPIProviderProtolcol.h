@@ -19,4 +19,8 @@
 
 - (void)fetchAttachmentURLForNoteWithID:(NSString *)noteID successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 
+- (void)removeNoteWithID:(NSString *)noteID successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
+
+- (void)resendLinkToNote:(NSString *)noteID successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
+
 @end

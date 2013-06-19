@@ -9,6 +9,7 @@
 #import "CCNoteDetailTransaction.h"
 #import "CCNoteDetailsController.h"
 #import "CCViewPDFNotesTransaction.h"
+#import "CCBackToNotesListTransaction.h"
 
 @implementation CCNoteDetailTransaction
 
@@ -25,8 +26,12 @@
     
     noteDetailsController.viewNotesAsPDFTransaction = viewNotesAsPDFTRansaction;
     
-    [self.navigation pushViewController:noteDetailsController animated:YES];
+    CCBackToNotesListTransaction *backToListTransaction = [CCBackToNotesListTransaction new];
+    backToListTransaction.navigation = self.navigation;
     
+    noteDetailsController.backToListTransaction = backToListTransaction;
+    
+    [self.navigation pushViewController:noteDetailsController animated:YES];
 }
 
 @end

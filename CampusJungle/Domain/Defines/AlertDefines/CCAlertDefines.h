@@ -27,6 +27,7 @@ extern const struct CCAlertsMessages {
     __unsafe_unretained NSString *confirmation;
     __unsafe_unretained NSString *confirmationMessage;
     __unsafe_unretained NSString *checkYourMail;
+    __unsafe_unretained NSString *noteNotReadyForView;
     
 } CCAlertsMessages;
 

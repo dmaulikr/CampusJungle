@@ -25,8 +25,8 @@
 @property (nonatomic, weak) IBOutlet UIButton *viewOnlyAccessButton;
 @property (nonatomic, weak) IBOutlet UIButton *pdfButton;
 
-@property (nonatomic, strong) IBOutlet UILabel *collegeName;
-@property (nonatomic, strong) IBOutlet UILabel *className;
+@property (nonatomic, weak) IBOutlet UIButton *resendLinkButton;
+@property (nonatomic, weak) IBOutlet UIButton *removeNoteButton;
 
 @property (nonatomic, strong) id <CCNotesAPIProviderProtolcol> ioc_notesAPIProvider;
 @property (nonatomic, strong) id <CCMarketAPIProviderProtocol> ioc_marketAPIProvider;
@@ -55,9 +55,15 @@
         [self.pdfButton setHidden:NO];
         if([self.note.fullAccess isEqualToString:@"true"]){
             [self.fullAccessButton setHidden:YES];
+            [self.resendLinkButton setHidden:NO];
         }
     } else {
         [self.pdfButton setHidden:YES];
+        [self.resendLinkButton setHidden:YES];
+    }
+    
+    if (![self.note.ownerID isEqualToString:self.ioc_userSession.currentUser.uid]){
+        [self.removeNoteButton setHidden:YES];
     }
 
     NSString *viewOnlyTitle = [NSString stringWithFormat:@"Buy for view:%@",self.note.price];
@@ -71,8 +77,13 @@
 - (IBAction)viewPDFButtonDidPressed
 {
     [self.ioc_notesAPIProvider fetchAttachmentURLForNoteWithID:self.note.noteID successHandler:^(id result){
-        self.note.link = result[@"link"];
-        [self.viewNotesAsPDFTransaction performWithObject:self.note];
+        NSString *link = result[@"link"];
+            if(link.length){
+                self.note.link = link;
+                [self.viewNotesAsPDFTransaction performWithObject:self.note];
+            } else {
+                [CCStandardErrorHandler showErrorWithTitle:nil message:CCAlertsMessages.noteNotReadyForView];
+            }
     } errorHandler:^(NSError *error){
         [CCStandardErrorHandler showErrorWithError:error];
     }];
@@ -115,6 +126,25 @@
 	[confirmAlert addButtonWithTitle:CCAlertsButtons.yesButton handler:success];
 	[confirmAlert addButtonWithTitle:CCAlertsButtons.noButton];
 	[confirmAlert show];
+}
+
+- (IBAction)removeNoteButtonDidPressed
+{
+    [self.ioc_notesAPIProvider removeNoteWithID:self.note.noteID successHandler:^(id result) {
+        [self.backToListTransaction perform];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
+}
+
+- (IBAction)resendLinkButtonDidPressed
+{
+    [self.ioc_notesAPIProvider resendLinkToNote:self.note.noteID successHandler:^(id result) {
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.success
+                                           message:CCAlertsMessages.checkYourMail];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
 }
 
 @end

@@ -29,6 +29,7 @@ const struct CCAlertsMessages CCAlertsMessages = {
     .confirmation = @"Confirmation",
     .confirmationMessage = @"Are you sure?",
     .checkYourMail = @"Check your email box",
+    .noteNotReadyForView = @"This note not ready for review. Try again later.",
 };
 
 const struct CCAlertsButtons CCAlertsButtons = {

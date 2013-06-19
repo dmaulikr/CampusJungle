@@ -158,6 +158,7 @@
 		D37A475A175786D200E91850 /* CCEducationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A4759175786D200E91850 /* CCEducationCell.m */; };
 		D37A475E1757891600E91850 /* CCEducationsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A475D1757891600E91850 /* CCEducationsDataProvider.m */; };
 		D38470601771A5EB003CB4A6 /* CCShowNotesForClassTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D384705F1771A5EB003CB4A6 /* CCShowNotesForClassTransaction.m */; };
+		D38470641771D4C3003CB4A6 /* CCBackToNotesListTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D38470631771D4C3003CB4A6 /* CCBackToNotesListTransaction.m */; };
 		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
 		D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39F1C161753C0E8008E08A2 /* Accounts.framework */; };
 		D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A2C3241754C95700989831 /* MessageUI.framework */; };
@@ -473,6 +474,8 @@
 		D37A475D1757891600E91850 /* CCEducationsDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEducationsDataProvider.m; sourceTree = "<group>"; };
 		D384705E1771A5EB003CB4A6 /* CCShowNotesForClassTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCShowNotesForClassTransaction.h; sourceTree = "<group>"; };
 		D384705F1771A5EB003CB4A6 /* CCShowNotesForClassTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCShowNotesForClassTransaction.m; sourceTree = "<group>"; };
+		D38470621771D4C3003CB4A6 /* CCBackToNotesListTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBackToNotesListTransaction.h; sourceTree = "<group>"; };
+		D38470631771D4C3003CB4A6 /* CCBackToNotesListTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBackToNotesListTransaction.m; sourceTree = "<group>"; };
 		D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStandardErrorHandler.h; sourceTree = "<group>"; };
 		D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStandardErrorHandler.m; sourceTree = "<group>"; };
 		D39F1C161753C0E8008E08A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -940,6 +943,7 @@
 		A787C77D17536F8400824DEA /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
+				D38470611771D4AA003CB4A6 /* NotesBackToListTransaction */,
 				D384705D1771A56A003CB4A6 /* ShowNotesForClassTransaction */,
 				D338DA65176F057000ADCD76 /* ViewMarketNotesListTransaction */,
 				D338DA61176EFD0200ADCD76 /* NoteDetailTransaction */,
@@ -1716,6 +1720,15 @@
 			path = ShowNotesForClassTransaction;
 			sourceTree = "<group>";
 		};
+		D38470611771D4AA003CB4A6 /* NotesBackToListTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D38470621771D4C3003CB4A6 /* CCBackToNotesListTransaction.h */,
+				D38470631771D4C3003CB4A6 /* CCBackToNotesListTransaction.m */,
+			);
+			path = NotesBackToListTransaction;
+			sourceTree = "<group>";
+		};
 		D39F1C0E1753821D008E08A2 /* StandardErrorHandler */ = {
 			isa = PBXGroup;
 			children = (
@@ -2490,6 +2503,7 @@
 				D338DA69176F061F00ADCD76 /* CCViewMarketNotesListTransaction.m in Sources */,
 				D338DA6E176F070800ADCD76 /* CCListOfNotesInMarketController.m in Sources */,
 				D38470601771A5EB003CB4A6 /* CCShowNotesForClassTransaction.m in Sources */,
+				D38470641771D4C3003CB4A6 /* CCBackToNotesListTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

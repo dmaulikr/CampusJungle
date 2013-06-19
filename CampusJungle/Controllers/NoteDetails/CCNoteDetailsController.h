@@ -9,16 +9,22 @@
 #import "CCViewController.h"
 #import "CCNote.h"
 #import "CCTransactionWithObject.h"
+#import "CCTransaction.h"
 
 @interface CCNoteDetailsController : CCViewController
 
 @property (nonatomic, strong) CCNote *note;
 @property (nonatomic, strong) id <CCTransactionWithObject> viewNotesAsPDFTransaction;
+@property (nonatomic, strong) id <CCTransaction> backToListTransaction;
 
 - (IBAction)viewPDFButtonDidPressed;
 
 - (IBAction)buyForViewButtonPressed;
 
 - (IBAction)buyForDownloadButtonPressed;
+
+- (IBAction)resendLinkButtonDidPressed;
+
+- (IBAction)removeNoteButtonDidPressed;
 
 @end
