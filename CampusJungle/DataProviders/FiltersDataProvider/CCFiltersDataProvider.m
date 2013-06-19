@@ -29,28 +29,13 @@
 - (void)loadItems
 {
     [self.ioc_classesProviderProtocol getAllClasesSuccessHandler:^(id result) {
-        [self loadUserEducationsSuccessHandler:^{
+        [self.ioc_userSession loadUserEducationsSuccessHandler:^(id educations){
             self.arrayOfItems = [self sectionFromResponse:result];
             [self.targetTable reloadData];
         }];
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
     }];
-}
-
-- (void)loadUserEducationsSuccessHandler:(successHandler)success
-{
-    CCUser *user = [self.ioc_userSession currentUser];
-    if(user.educations){
-        success();
-    } else {
-        [self.ioc_apiProvider loadUserInfoSuccessHandler:^(id result) {
-            [self.ioc_userSession setCurrentUser:result];
-            success();
-        } errorHandler:^(NSError *error) {
-            [CCStandardErrorHandler showErrorWithError:error];
-        }];
-    }
 }
 
 - (NSArray *)sectionFromResponse:(NSArray *)response

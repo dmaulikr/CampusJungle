@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "CCUser.h"
+#import "CCStandardErrorHandler.h"
+#import "CCTypesDefinition.h"
 
 @protocol CCUserSessionProtocol<AppleGuiceInjectable,AppleGuiceSingleton>
 
@@ -18,5 +20,7 @@
 - (void)saveUser;
 
 - (void)clearUserInfo;
+
+- (void)loadUserEducationsSuccessHandler:(successWithObject)success;
 
 @end

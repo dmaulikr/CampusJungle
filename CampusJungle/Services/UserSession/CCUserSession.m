@@ -8,7 +8,14 @@
 
 #import "CCUserSession.h"
 #import "CCDefines.h"
+#import "CCTypesDefinition.h"
+#import "CCAPIProviderProtocol.h"
 
+@interface CCUserSession()
+
+@property (nonatomic, strong) id <CCAPIProviderProtocol> ioc_apiProvider;
+
+@end
 
 @implementation CCUserSession
 
@@ -43,6 +50,21 @@
     }
     _currentUser = currentUser;
     [self saveUser];
+}
+
+- (void)loadUserEducationsSuccessHandler:(successWithObject)success
+{
+    CCUser *user = [self currentUser];
+    if(user.educations){
+        success(user.educations);
+    } else {
+        [self.ioc_apiProvider loadUserInfoSuccessHandler:^(id result) {
+            [self setCurrentUser:result];
+            success(user.educations);
+        } errorHandler:^(NSError *error) {
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
+    }
 }
 
 @end

@@ -50,24 +50,9 @@
     
     [self configCollection:self.latestNotesCollectionView WithProvider:self.marketLatestNotesProvider cellClass:[CCNotesCollectionCell class]];
     
-    [self loadUserEducationsSuccessHandler:^{
+    [self.ioc_userSessionProtocol loadUserEducationsSuccessHandler:^(id educations){
         [self loadFilters];
     }];
-}
-
-- (void)loadUserEducationsSuccessHandler:(successHandler)success
-{
-    CCUser *user = [self.ioc_userSessionProtocol currentUser];
-    if(user.educations){
-        success();
-    } else {
-        [self.ioc_APIProvider loadUserInfoSuccessHandler:^(id result) {
-            [self.ioc_userSessionProtocol setCurrentUser:result];
-            success();
-        } errorHandler:^(NSError *error) {
-            [CCStandardErrorHandler showErrorWithError:error];
-        }];
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
