@@ -116,6 +116,9 @@
 		D360F8DD1772F9B700C98399 /* CCMyStuffDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8DC1772F9B700C98399 /* CCMyStuffDataProvider.m */; };
 		D360F8E11772FB2100C98399 /* CCMyStuffTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8E01772FB2100C98399 /* CCMyStuffTransaction.m */; };
 		D360F8E51772FE4A00C98399 /* CCStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8E41772FE4A00C98399 /* CCStuff.m */; };
+		D360F8EA177303D700C98399 /* CCStuffCreationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8E8177303D700C98399 /* CCStuffCreationController.m */; };
+		D360F8EB177303D700C98399 /* CCStuffCreationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D360F8E9177303D700C98399 /* CCStuffCreationController.xib */; };
+		D360F8EF17730E7C00C98399 /* CCAvatarSelectionActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8EE17730E7C00C98399 /* CCAvatarSelectionActionSheet.m */; };
 		D3614631175E17BE00907414 /* CCDropboxAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */; };
 		D3614636175E1D3000907414 /* DropboxSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = D3614635175E1D3000907414 /* DropboxSDK */; };
 		D3614640175E362600907414 /* CCDropboxImagesSelectionTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D361463F175E362600907414 /* CCDropboxImagesSelectionTransaction.m */; };
@@ -421,6 +424,12 @@
 		D360F8E01772FB2100C98399 /* CCMyStuffTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMyStuffTransaction.m; sourceTree = "<group>"; };
 		D360F8E31772FE4A00C98399 /* CCStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStuff.h; sourceTree = "<group>"; };
 		D360F8E41772FE4A00C98399 /* CCStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStuff.m; sourceTree = "<group>"; };
+		D360F8E7177303D700C98399 /* CCStuffCreationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStuffCreationController.h; sourceTree = "<group>"; };
+		D360F8E8177303D700C98399 /* CCStuffCreationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStuffCreationController.m; sourceTree = "<group>"; };
+		D360F8E9177303D700C98399 /* CCStuffCreationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCStuffCreationController.xib; sourceTree = "<group>"; };
+		D360F8ED17730E7C00C98399 /* CCAvatarSelectionActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAvatarSelectionActionSheet.h; sourceTree = "<group>"; };
+		D360F8EE17730E7C00C98399 /* CCAvatarSelectionActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAvatarSelectionActionSheet.m; sourceTree = "<group>"; };
+		D360F8F017730EA400C98399 /* CCAvatarSelectionProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCAvatarSelectionProtocol.h; sourceTree = "<group>"; };
 		D361462F175E17BE00907414 /* CCDropboxAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProvider.h; sourceTree = "<group>"; };
 		D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxAPIProvider.m; sourceTree = "<group>"; };
 		D3614632175E18A200907414 /* CCDropboxAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProviderProtocol.h; sourceTree = "<group>"; };
@@ -697,6 +706,7 @@
 		A787C73217536F8400824DEA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D360F8E6177303BE00C98399 /* StuffCreationController */,
 				D360F8CF1772F50300C98399 /* MyStuffController */,
 				D338DA6A176F06E500ADCD76 /* ListOfNotesInMarket */,
 				D338DA5B176EFC0B00ADCD76 /* NoteDetails */,
@@ -1544,6 +1554,26 @@
 			path = Stuff;
 			sourceTree = "<group>";
 		};
+		D360F8E6177303BE00C98399 /* StuffCreationController */ = {
+			isa = PBXGroup;
+			children = (
+				D360F8E7177303D700C98399 /* CCStuffCreationController.h */,
+				D360F8E8177303D700C98399 /* CCStuffCreationController.m */,
+				D360F8E9177303D700C98399 /* CCStuffCreationController.xib */,
+			);
+			path = StuffCreationController;
+			sourceTree = "<group>";
+		};
+		D360F8EC17730E5D00C98399 /* AvatarSelectionActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				D360F8ED17730E7C00C98399 /* CCAvatarSelectionActionSheet.h */,
+				D360F8EE17730E7C00C98399 /* CCAvatarSelectionActionSheet.m */,
+				D360F8F017730EA400C98399 /* CCAvatarSelectionProtocol.h */,
+			);
+			path = AvatarSelectionActionSheet;
+			sourceTree = "<group>";
+		};
 		D361462E175E17AD00907414 /* CCDropboxAPIProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -1837,6 +1867,7 @@
 		D3A2C3261754D53900989831 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D360F8EC17730E5D00C98399 /* AvatarSelectionActionSheet */,
 				D384706517720B2A003CB4A6 /* ActionSheetPickerCollegesDelegate */,
 				D3013BF6176B0BC60037EDAE /* MarketFilterClassesCell */,
 				A7FFA52A1769F184004A1D02 /* ActionSheetPickerDelegate */,
@@ -2414,6 +2445,7 @@
 				D338DA60176EFC2D00ADCD76 /* CCNoteDetailsController.xib in Resources */,
 				D338DA6F176F070800ADCD76 /* CCListOfNotesInMarketController.xib in Resources */,
 				D360F8D41772F52600C98399 /* CCMyStuffController.xib in Resources */,
+				D360F8EB177303D700C98399 /* CCStuffCreationController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2594,6 +2626,8 @@
 				D360F8DD1772F9B700C98399 /* CCMyStuffDataProvider.m in Sources */,
 				D360F8E11772FB2100C98399 /* CCMyStuffTransaction.m in Sources */,
 				D360F8E51772FE4A00C98399 /* CCStuff.m in Sources */,
+				D360F8EA177303D700C98399 /* CCStuffCreationController.m in Sources */,
+				D360F8EF17730E7C00C98399 /* CCAvatarSelectionActionSheet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

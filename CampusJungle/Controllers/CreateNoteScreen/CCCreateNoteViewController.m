@@ -10,7 +10,6 @@
 #import "CCNoteUploadInfo.h"
 #import "NSString+CJStringValidator.h"
 #import "CCStandardErrorHandler.h"
-#import "UIActionSheet+BlocksKit.h"
 #import "CCUserSessionProtocol.h"
 #import "CCCollege.h"
 #import "CCEducation.h"
@@ -19,8 +18,10 @@
 #import "MBProgressHUD.h"
 #import "ActionSheetCustomPicker.h"
 #import "CCActionSheetPickerCollegesDelegate.h"
+#import "CCAvatarSelectionProtocol.h"
+#import "CCAvatarSelectionActionSheet.h"
 
-@interface CCCreateNoteViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate, CCCellSelectionProtocol>
+@interface CCCreateNoteViewController ()<CCCellSelectionProtocol,CCAvatarSelectionProtocol>
 
 @property (nonatomic, weak) IBOutlet UITextField *priceField;
 @property (nonatomic, weak) IBOutlet UITextField *fullAccessPriceField;
@@ -28,6 +29,7 @@
 @property (nonatomic, weak) IBOutlet UIImageView *thumbView;
 @property (nonatomic, weak) IBOutlet UIButton *collegeSelectionButton;
 @property (nonatomic, weak) IBOutlet UIButton *classesSelectionButton;
+@property (nonatomic, strong) CCAvatarSelectionActionSheet *thumbSelectionSheet;
 
 @property (nonatomic, strong) CCCollege *selectedCollege;
 @property (nonatomic, strong) CCClass *selectedClass;
@@ -38,7 +40,6 @@
 @property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_classesAPI;
 
 @property (nonatomic, strong) NSArray *arrayOfItemsForPicker;
-
 
 @end
 
@@ -52,6 +53,14 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self loadCollegesPicker];
     [self loadClasses];
+    [self configAvatarSelectionSheet];
+}
+
+- (void)configAvatarSelectionSheet
+{
+    self.thumbSelectionSheet = [CCAvatarSelectionActionSheet new];
+    self.thumbSelectionSheet.delegate = self;
+    self.thumbSelectionSheet.title = @"Select Thumbnail";
 }
 
 - (void)loadClasses
@@ -180,39 +189,12 @@
 
 - (IBAction)thumbDidPressed
 {
-        UIActionSheet *testSheet = [UIActionSheet actionSheetWithTitle:@"Select Avatar"];
-        [testSheet addButtonWithTitle:@"Select from gallery" handler:^{
-            [self selectAvatarFromGallery];
-        }];
-        [testSheet addButtonWithTitle:@"Make photo" handler:^{
-            [self makePhotoForAvatar];
-        }];
-        [testSheet setCancelButtonWithTitle:nil handler:nil];
-        [testSheet showInView:self.view];
+    [self.thumbSelectionSheet selectAvatar];
 }
 
-- (void)selectAvatarFromGallery
+- (void)didSelectAvatar:(UIImage *)avatar
 {
-    UIImagePickerController * picker = [UIImagePickerController new];
-    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    picker.allowsEditing = YES;
-    picker.delegate = self;
-    [self presentViewController:picker animated:YES completion:nil];
-}
-
-- (void)makePhotoForAvatar
-{
-    UIImagePickerController * picker = [UIImagePickerController new];
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    picker.allowsEditing = YES;
-    picker.delegate = self;
-    [self presentViewController:picker animated:YES completion:nil];
-}
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    self.thumbView.image = info[UIImagePickerControllerEditedImage];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    self.thumbView.image = avatar;
 }
 
 - (IBAction)collegeSelectionButtonDidPressed

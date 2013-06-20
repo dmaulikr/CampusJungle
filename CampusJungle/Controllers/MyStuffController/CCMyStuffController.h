@@ -7,7 +7,10 @@
 //
 
 #import "CCTableBasedController.h"
+#import "CCTransaction.h"
 
 @interface CCMyStuffController : CCTableBasedController
+
+@property (nonatomic, strong) id <CCTransaction> createStuffTransaction;
 
 @end

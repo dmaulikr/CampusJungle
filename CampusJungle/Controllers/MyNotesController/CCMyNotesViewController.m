@@ -16,7 +16,7 @@
 @interface CCMyNotesViewController ()
 
 @property (nonatomic, strong) CCBaseDataProvider *dataProvider;
-@property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSwession;
+@property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
 
 @end
 
@@ -33,7 +33,7 @@
 
 - (void)createNewNote
 {
-    if([[[self.ioc_userSwession currentUser] educations] count]){
+    if([[[self.ioc_userSession currentUser] educations] count]){
         [self.addNewNoteTransaction perform];
     } else {
         [CCStandardErrorHandler showErrorWithTitle:nil message:@"You have to join college first"];
@@ -47,7 +47,7 @@
 
 - (void)didSelectedCellWithObject:(id)cellObject
 {
-        [self.viewNoteTransaction performWithObject:cellObject];
+    [self.viewNoteTransaction performWithObject:cellObject];
 }
 
 @end
