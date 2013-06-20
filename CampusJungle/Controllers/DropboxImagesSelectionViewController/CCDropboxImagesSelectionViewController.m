@@ -144,7 +144,7 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self.ioc_dropboxAPI checkAllDirectURLForArray:self.arrayOfSelectedFiles successHandler:^(NSArray *selectedFiles) {
         [self saveResultToUploadInfo:selectedFiles];
-        if(self.noteUploadInfo.arrayOfURLs){
+        if(self.uploadInfo.arrayOfURLs){
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
             [self.imageSortingTransaction performWithObject:@{
              @"uploadInfo" : self.noteUploadInfo,
@@ -152,7 +152,7 @@
              }];
         } else {
             [self saveResultToUploadInfo:selectedFiles];
-            [self.ioc_notesAPIProvider postDropboxUploadInfo:self.noteUploadInfo successHandler:^(id result) {
+            [self.ioc_notesAPIProvider postDropboxUploadInfo:self.uploadInfo successHandler:^(id result) {
                 [self.backToListTransaction perform];
             } errorHandler:^(NSError *error) {
                 [CCStandardErrorHandler showErrorWithError:error];
@@ -164,7 +164,7 @@
 
 - (void)saveResultToUploadInfo:(NSArray *)selectedFiles
 {
-    self.noteUploadInfo.arrayOfURLs = [CCDropboxFileInfo arrayOfDirectLinksFromArrayOfInfo:selectedFiles];
+    self.uploadInfo.arrayOfURLs = [CCDropboxFileInfo arrayOfDirectLinksFromArrayOfInfo:selectedFiles];
 }
 
 @end

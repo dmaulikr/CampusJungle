@@ -8,6 +8,7 @@
 
 #import "CCMyStuffTransaction.h"
 #import "CCMyStuffController.h"
+#import "CCCreateStuffTransaction.h"
 
 @implementation CCMyStuffTransaction
 
@@ -15,6 +16,10 @@
 {
     NSParameterAssert(self.navigation);
     CCMyStuffController *myStuffCOntroller = [CCMyStuffController new];
+    
+    CCCreateStuffTransaction *creatinStuffTransaction = [CCCreateStuffTransaction new];
+    creatinStuffTransaction.navigation = self.navigation;
+    myStuffCOntroller.createStuffTransaction = creatinStuffTransaction;
     
     [self.navigation pushViewController:myStuffCOntroller animated:YES];
 

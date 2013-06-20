@@ -26,7 +26,7 @@
      self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createNewStuff)];
 }
 
-- (void)createNewNote
+- (void)createNewStuff
 {
     if([[[self.ioc_userSession currentUser] educations] count]){
         [self.createStuffTransaction perform];

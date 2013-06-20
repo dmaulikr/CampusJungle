@@ -51,7 +51,7 @@
     self.title = @"New Note";
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [self loadCollegesPicker];
+    [self loadCollegesPickerInfo];
     [self loadClasses];
     [self configAvatarSelectionSheet];
 }
@@ -73,10 +73,10 @@
     }];
 }
 
-- (void)loadCollegesPicker
+- (void)loadCollegesPickerInfo
 {
     [self.ioc_userSession loadUserEducationsSuccessHandler:^(id educations) {
-        self.arrayOfColleges = [self arrayOfCollegesFromUser:educations];
+        self.arrayOfColleges = [CCEducation arrayOfCollegesFromEducations:educations];
         [self checkIsEverythingReady];
         if(self.arrayOfColleges.count){
             self.selectedCollege = self.arrayOfColleges[0];
@@ -103,31 +103,6 @@
 {
     _selectedClass = selectedClass;
     [self.classesSelectionButton setTitle:selectedClass.name forState:UIControlStateNormal];
-}
-
-- (NSArray *)arrayOfCollegesFromUser:(NSArray *)educations
-{
-    NSMutableArray *arrayOfColleges = [NSMutableArray new];
-    for(CCEducation *education in educations){
-        if(![self isArrayOfColleges:arrayOfColleges containCollegeWithID:education.collegeID]){
-            CCCollege *newCollege = [CCCollege new];
-            newCollege.collegeID = education.collegeID;
-            newCollege.name = education.collegeName;
-            [arrayOfColleges addObject:newCollege];
-        }
-    }
-    return arrayOfColleges;
-}
-
-- (BOOL)isArrayOfColleges:(NSArray *)arrayOfColleges containCollegeWithID:(NSNumber *)newCollegeID
-{
-    for(CCCollege *college in arrayOfColleges){
-        if([college.collegeID isEqualToNumber:newCollegeID]){
-            return YES;
-        }
-    }
-    
-    return NO;
 }
 
 - (BOOL)isFieldsValid
@@ -158,7 +133,6 @@
     if([self isFieldsValid]){
         [self.imagesDropboxUploadTransaction performWithObject:[self createUploadInfo]];
     }
-
 }
 
 - (IBAction)pdfFromDropboxButtonDidPressed

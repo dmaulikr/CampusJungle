@@ -119,6 +119,9 @@
 		D360F8EA177303D700C98399 /* CCStuffCreationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8E8177303D700C98399 /* CCStuffCreationController.m */; };
 		D360F8EB177303D700C98399 /* CCStuffCreationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D360F8E9177303D700C98399 /* CCStuffCreationController.xib */; };
 		D360F8EF17730E7C00C98399 /* CCAvatarSelectionActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8EE17730E7C00C98399 /* CCAvatarSelectionActionSheet.m */; };
+		D360F8F417731CB200C98399 /* CCCreateStuffTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8F317731CB200C98399 /* CCCreateStuffTransaction.m */; };
+		D360F8F81773280600C98399 /* CCImageSortingControllerForStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8F71773280600C98399 /* CCImageSortingControllerForStuff.m */; };
+		D360F8FC17732ADB00C98399 /* CCStuffUploadInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8FB17732ADB00C98399 /* CCStuffUploadInfo.m */; };
 		D3614631175E17BE00907414 /* CCDropboxAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */; };
 		D3614636175E1D3000907414 /* DropboxSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = D3614635175E1D3000907414 /* DropboxSDK */; };
 		D3614640175E362600907414 /* CCDropboxImagesSelectionTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D361463F175E362600907414 /* CCDropboxImagesSelectionTransaction.m */; };
@@ -430,6 +433,12 @@
 		D360F8ED17730E7C00C98399 /* CCAvatarSelectionActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAvatarSelectionActionSheet.h; sourceTree = "<group>"; };
 		D360F8EE17730E7C00C98399 /* CCAvatarSelectionActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAvatarSelectionActionSheet.m; sourceTree = "<group>"; };
 		D360F8F017730EA400C98399 /* CCAvatarSelectionProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCAvatarSelectionProtocol.h; sourceTree = "<group>"; };
+		D360F8F217731CB200C98399 /* CCCreateStuffTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCreateStuffTransaction.h; sourceTree = "<group>"; };
+		D360F8F317731CB200C98399 /* CCCreateStuffTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCreateStuffTransaction.m; sourceTree = "<group>"; };
+		D360F8F61773280600C98399 /* CCImageSortingControllerForStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCImageSortingControllerForStuff.h; sourceTree = "<group>"; };
+		D360F8F71773280600C98399 /* CCImageSortingControllerForStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCImageSortingControllerForStuff.m; sourceTree = "<group>"; };
+		D360F8FA17732ADB00C98399 /* CCStuffUploadInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStuffUploadInfo.h; sourceTree = "<group>"; };
+		D360F8FB17732ADB00C98399 /* CCStuffUploadInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStuffUploadInfo.m; sourceTree = "<group>"; };
 		D361462F175E17BE00907414 /* CCDropboxAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProvider.h; sourceTree = "<group>"; };
 		D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxAPIProvider.m; sourceTree = "<group>"; };
 		D3614632175E18A200907414 /* CCDropboxAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProviderProtocol.h; sourceTree = "<group>"; };
@@ -713,6 +722,7 @@
 				D3A5ECFB1768D53200300399 /* FilterController */,
 				D3A5ECF11768A32E00300399 /* MarketPlace */,
 				D3B3D807176618C4000D3FAB /* UploadImagesController */,
+				D360F8F5177327CF00C98399 /* CCImageSortingControllerForStuff */,
 				D3B3D7F51765DEF8000D3FAB /* CCImageSortingController */,
 				D3B3D7E717649246000D3FAB /* CCNotesViewerController */,
 				D361469B1762499F00907414 /* CreateNoteScreen */,
@@ -874,6 +884,7 @@
 		A787C76117536F8400824DEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D360F8F917732AC700C98399 /* StuffUploadInfo */,
 				D360F8E21772FE3B00C98399 /* Stuff */,
 				D3013BE3176A08240037EDAE /* FilterSection */,
 				D36146DA176352F200907414 /* Note */,
@@ -977,6 +988,7 @@
 		A787C77D17536F8400824DEA /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
+				D360F8F117731C9F00C98399 /* CreateStuffTransaction */,
 				D360F8DE1772FB0F00C98399 /* MyStuffTransaction */,
 				D38470611771D4AA003CB4A6 /* NotesBackToListTransaction */,
 				D384705D1771A56A003CB4A6 /* ShowNotesForClassTransaction */,
@@ -1572,6 +1584,33 @@
 				D360F8F017730EA400C98399 /* CCAvatarSelectionProtocol.h */,
 			);
 			path = AvatarSelectionActionSheet;
+			sourceTree = "<group>";
+		};
+		D360F8F117731C9F00C98399 /* CreateStuffTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D360F8F217731CB200C98399 /* CCCreateStuffTransaction.h */,
+				D360F8F317731CB200C98399 /* CCCreateStuffTransaction.m */,
+			);
+			path = CreateStuffTransaction;
+			sourceTree = "<group>";
+		};
+		D360F8F5177327CF00C98399 /* CCImageSortingControllerForStuff */ = {
+			isa = PBXGroup;
+			children = (
+				D360F8F61773280600C98399 /* CCImageSortingControllerForStuff.h */,
+				D360F8F71773280600C98399 /* CCImageSortingControllerForStuff.m */,
+			);
+			path = CCImageSortingControllerForStuff;
+			sourceTree = "<group>";
+		};
+		D360F8F917732AC700C98399 /* StuffUploadInfo */ = {
+			isa = PBXGroup;
+			children = (
+				D360F8FA17732ADB00C98399 /* CCStuffUploadInfo.h */,
+				D360F8FB17732ADB00C98399 /* CCStuffUploadInfo.m */,
+			);
+			path = StuffUploadInfo;
 			sourceTree = "<group>";
 		};
 		D361462E175E17AD00907414 /* CCDropboxAPIProvider */ = {
@@ -2628,6 +2667,9 @@
 				D360F8E51772FE4A00C98399 /* CCStuff.m in Sources */,
 				D360F8EA177303D700C98399 /* CCStuffCreationController.m in Sources */,
 				D360F8EF17730E7C00C98399 /* CCAvatarSelectionActionSheet.m in Sources */,
+				D360F8F417731CB200C98399 /* CCCreateStuffTransaction.m in Sources */,
+				D360F8F81773280600C98399 /* CCImageSortingControllerForStuff.m in Sources */,
+				D360F8FC17732ADB00C98399 /* CCStuffUploadInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

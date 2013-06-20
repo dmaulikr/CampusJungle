@@ -16,4 +16,6 @@
 @property (nonatomic, strong) id <CCTransaction> backToListTransaction;
 @property (nonatomic, strong) CCNoteUploadInfo *notesUploadInfo;
 
+- (void)saveResultToUploadInfo:(NSArray *)selectedFiles;
+
 @end

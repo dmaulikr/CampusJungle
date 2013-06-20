@@ -7,6 +7,7 @@
 //
 
 #import "CCEducation.h"
+#import "CCCollege.h"
 
 @implementation CCEducation
 
@@ -33,6 +34,31 @@
         }
     }
     return colleges;
+}
+
++ (NSArray *)arrayOfCollegesFromEducations:(NSArray *)educations
+{
+    NSMutableArray *arrayOfColleges = [NSMutableArray new];
+    for(CCEducation *education in educations){
+        if(![CCEducation isArrayOfColleges:arrayOfColleges containCollegeWithID:education.collegeID]){
+            CCCollege *newCollege = [CCCollege new];
+            newCollege.collegeID = education.collegeID;
+            newCollege.name = education.collegeName;
+            [arrayOfColleges addObject:newCollege];
+        }
+    }
+    return arrayOfColleges;
+}
+
++ (BOOL)isArrayOfColleges:(NSArray *)arrayOfColleges containCollegeWithID:(NSNumber *)newCollegeID
+{
+    for(CCCollege *college in arrayOfColleges){
+        if([college.collegeID isEqualToNumber:newCollegeID]){
+            return YES;
+        }
+    }
+    
+    return NO;
 }
 
 + (BOOL)isID:(NSString *)collegeID alreadyExistIn:(NSArray *)collegeIds
