@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCViewNotesTransaction.h"
+#import "CCViewPDFNotesTransaction.h"
 #import "CCNotesViewerController.h"
 
-@implementation CCViewNotesTransaction
+@implementation CCViewPDFNotesTransaction
 
 - (void)performWithObject:(id)object
 {

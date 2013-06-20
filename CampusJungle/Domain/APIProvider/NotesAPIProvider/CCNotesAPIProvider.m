@@ -122,8 +122,52 @@
         [operation start];
         
     });
+}
 
+- (void)fetchAttachmentURLForNoteWithID:(NSString *)noteID successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    [self setAuthorizationToken];
+    
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.notesAttachmentURL,noteID];
+    
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
 
+    [self setContentTypeJSON];
+    [objectManager getObject:nil path:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        successHandler(mappingResult.firstObject);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        errorHandler(error);
+    }];
+}
+
+- (void)removeNoteWithID:(NSString *)noteID successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    [self setAuthorizationToken];
+    
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.removeNote,noteID];
+    
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    
+    [objectManager deleteObject:nil path:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        successHandler(mappingResult);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        errorHandler(error);
+    }];
+}
+
+- (void)resendLinkToNote:(NSString *)noteID successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    [self setAuthorizationToken];
+    
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.resendLinkToNote,noteID];
+    
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    
+    [objectManager putObject:nil path:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        successHandler(mappingResult);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        errorHandler(error);
+    }];
 }
 
 @end

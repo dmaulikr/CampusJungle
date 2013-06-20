@@ -86,7 +86,7 @@
 		A7D53A551758D6A700FE9FCD /* CCClassesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D53A541758D6A700FE9FCD /* CCClassesDataProvider.m */; };
 		A7FA0E551768D682004D3403 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A7FA0E541768D682004D3403 /* libz.dylib */; };
 		A7FA0E571768D746004D3403 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7FA0E561768D746004D3403 /* libTestFlight.a */; };
-		A7FFA52D1769F1B9004A1D02 /* CCActionSheetPickerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7FFA52C1769F1B9004A1D02 /* CCActionSheetPickerDelegate.m */; };
+		A7FFA52D1769F1B9004A1D02 /* CCActionSheetPickerDateDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7FFA52C1769F1B9004A1D02 /* CCActionSheetPickerDateDelegate.m */; };
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
 		D3013BCA1769C7190037EDAE /* CCMarketAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3013BC91769C7190037EDAE /* CCMarketAPIProvider.m */; };
 		D3013BCF1769CDA80037EDAE /* CCMarketNotesProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3013BCE1769CDA80037EDAE /* CCMarketNotesProvider.m */; };
@@ -104,6 +104,24 @@
 		D3013BFD176B633C0037EDAE /* CCApplyFiltersTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3013BFC176B633C0037EDAE /* CCApplyFiltersTransaction.m */; };
 		D3039B78176880F800621CAC /* pending.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B76176880F800621CAC /* pending.png */; };
 		D3039B79176880F800621CAC /* pending@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B77176880F800621CAC /* pending@2x.png */; };
+		D338DA5F176EFC2D00ADCD76 /* CCNoteDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D338DA5D176EFC2D00ADCD76 /* CCNoteDetailsController.m */; };
+		D338DA60176EFC2D00ADCD76 /* CCNoteDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D338DA5E176EFC2D00ADCD76 /* CCNoteDetailsController.xib */; };
+		D338DA64176EFD1600ADCD76 /* CCNoteDetailTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D338DA63176EFD1600ADCD76 /* CCNoteDetailTransaction.m */; };
+		D338DA69176F061F00ADCD76 /* CCViewMarketNotesListTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D338DA68176F061F00ADCD76 /* CCViewMarketNotesListTransaction.m */; };
+		D338DA6E176F070800ADCD76 /* CCListOfNotesInMarketController.m in Sources */ = {isa = PBXBuildFile; fileRef = D338DA6C176F070800ADCD76 /* CCListOfNotesInMarketController.m */; };
+		D338DA6F176F070800ADCD76 /* CCListOfNotesInMarketController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D338DA6D176F070800ADCD76 /* CCListOfNotesInMarketController.xib */; };
+		D360F8D31772F52600C98399 /* CCMyStuffController.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8D11772F52600C98399 /* CCMyStuffController.m */; };
+		D360F8D41772F52600C98399 /* CCMyStuffController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D360F8D21772F52600C98399 /* CCMyStuffController.xib */; };
+		D360F8D81772F63100C98399 /* CCStuffAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8D71772F63100C98399 /* CCStuffAPIProvider.m */; };
+		D360F8DD1772F9B700C98399 /* CCMyStuffDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8DC1772F9B700C98399 /* CCMyStuffDataProvider.m */; };
+		D360F8E11772FB2100C98399 /* CCMyStuffTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8E01772FB2100C98399 /* CCMyStuffTransaction.m */; };
+		D360F8E51772FE4A00C98399 /* CCStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8E41772FE4A00C98399 /* CCStuff.m */; };
+		D360F8EA177303D700C98399 /* CCStuffCreationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8E8177303D700C98399 /* CCStuffCreationController.m */; };
+		D360F8EB177303D700C98399 /* CCStuffCreationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D360F8E9177303D700C98399 /* CCStuffCreationController.xib */; };
+		D360F8EF17730E7C00C98399 /* CCAvatarSelectionActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8EE17730E7C00C98399 /* CCAvatarSelectionActionSheet.m */; };
+		D360F8F417731CB200C98399 /* CCCreateStuffTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8F317731CB200C98399 /* CCCreateStuffTransaction.m */; };
+		D360F8F81773280600C98399 /* CCImageSortingControllerForStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8F71773280600C98399 /* CCImageSortingControllerForStuff.m */; };
+		D360F8FC17732ADB00C98399 /* CCStuffUploadInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8FB17732ADB00C98399 /* CCStuffUploadInfo.m */; };
 		D3614631175E17BE00907414 /* CCDropboxAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */; };
 		D3614636175E1D3000907414 /* DropboxSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = D3614635175E1D3000907414 /* DropboxSDK */; };
 		D3614640175E362600907414 /* CCDropboxImagesSelectionTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D361463F175E362600907414 /* CCDropboxImagesSelectionTransaction.m */; };
@@ -151,6 +169,9 @@
 		D37A475617577D5100E91850 /* CCEducation.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A475517577D5100E91850 /* CCEducation.m */; };
 		D37A475A175786D200E91850 /* CCEducationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A4759175786D200E91850 /* CCEducationCell.m */; };
 		D37A475E1757891600E91850 /* CCEducationsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A475D1757891600E91850 /* CCEducationsDataProvider.m */; };
+		D38470601771A5EB003CB4A6 /* CCShowNotesForClassTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D384705F1771A5EB003CB4A6 /* CCShowNotesForClassTransaction.m */; };
+		D38470641771D4C3003CB4A6 /* CCBackToNotesListTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D38470631771D4C3003CB4A6 /* CCBackToNotesListTransaction.m */; };
+		D384706817720B3A003CB4A6 /* CCActionSheetPickerCollegesDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D384706717720B3A003CB4A6 /* CCActionSheetPickerCollegesDelegate.m */; };
 		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
 		D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39F1C161753C0E8008E08A2 /* Accounts.framework */; };
 		D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A2C3241754C95700989831 /* MessageUI.framework */; };
@@ -167,7 +188,7 @@
 		D3B3D7DA17648439000D3FAB /* CCDropboxImagesSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B3D7D817648439000D3FAB /* CCDropboxImagesSelectionViewController.xib */; };
 		D3B3D7DE176484A8000D3FAB /* CCDropboxPDFSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7DD176484A8000D3FAB /* CCDropboxPDFSelectionViewController.m */; };
 		D3B3D7E217648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7E117648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.m */; };
-		D3B3D7E617649185000D3FAB /* CCViewNotesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7E517649185000D3FAB /* CCViewNotesTransaction.m */; };
+		D3B3D7E617649185000D3FAB /* CCViewPDFNotesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7E517649185000D3FAB /* CCViewPDFNotesTransaction.m */; };
 		D3B3D7EB17649263000D3FAB /* CCNotesViewerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7E917649263000D3FAB /* CCNotesViewerController.m */; };
 		D3B3D7EC17649263000D3FAB /* CCNotesViewerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B3D7EA17649263000D3FAB /* CCNotesViewerController.xib */; };
 		D3B3D7F01764AE11000D3FAB /* CCBackToListOfNotesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D7EF1764AE11000D3FAB /* CCBackToListOfNotesTransaction.m */; };
@@ -354,8 +375,8 @@
 		A7D53A541758D6A700FE9FCD /* CCClassesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCClassesDataProvider.m; path = ClassesDataProvider/CCClassesDataProvider.m; sourceTree = "<group>"; };
 		A7FA0E541768D682004D3403 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A7FA0E561768D746004D3403 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = Pods/TestFlightSDK/libTestFlight.a; sourceTree = "<group>"; };
-		A7FFA52B1769F1B9004A1D02 /* CCActionSheetPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCActionSheetPickerDelegate.h; path = ActionSheetPickerDelegate/CCActionSheetPickerDelegate.h; sourceTree = "<group>"; };
-		A7FFA52C1769F1B9004A1D02 /* CCActionSheetPickerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCActionSheetPickerDelegate.m; path = ActionSheetPickerDelegate/CCActionSheetPickerDelegate.m; sourceTree = "<group>"; };
+		A7FFA52B1769F1B9004A1D02 /* CCActionSheetPickerDateDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCActionSheetPickerDateDelegate.h; path = ActionSheetPickerDelegate/CCActionSheetPickerDateDelegate.h; sourceTree = "<group>"; };
+		A7FFA52C1769F1B9004A1D02 /* CCActionSheetPickerDateDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCActionSheetPickerDateDelegate.m; path = ActionSheetPickerDelegate/CCActionSheetPickerDateDelegate.m; sourceTree = "<group>"; };
 		D3013BC81769C7190037EDAE /* CCMarketAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMarketAPIProvider.h; sourceTree = "<group>"; };
 		D3013BC91769C7190037EDAE /* CCMarketAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMarketAPIProvider.m; sourceTree = "<group>"; };
 		D3013BCB1769C7370037EDAE /* CCMarketAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCMarketAPIProviderProtocol.h; sourceTree = "<group>"; };
@@ -384,6 +405,40 @@
 		D3013BFC176B633C0037EDAE /* CCApplyFiltersTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCApplyFiltersTransaction.m; sourceTree = "<group>"; };
 		D3039B76176880F800621CAC /* pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pending.png; sourceTree = "<group>"; };
 		D3039B77176880F800621CAC /* pending@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pending@2x.png"; sourceTree = "<group>"; };
+		D338DA5C176EFC2D00ADCD76 /* CCNoteDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNoteDetailsController.h; sourceTree = "<group>"; };
+		D338DA5D176EFC2D00ADCD76 /* CCNoteDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNoteDetailsController.m; sourceTree = "<group>"; };
+		D338DA5E176EFC2D00ADCD76 /* CCNoteDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCNoteDetailsController.xib; sourceTree = "<group>"; };
+		D338DA62176EFD1600ADCD76 /* CCNoteDetailTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNoteDetailTransaction.h; sourceTree = "<group>"; };
+		D338DA63176EFD1600ADCD76 /* CCNoteDetailTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNoteDetailTransaction.m; sourceTree = "<group>"; };
+		D338DA67176F061F00ADCD76 /* CCViewMarketNotesListTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCViewMarketNotesListTransaction.h; sourceTree = "<group>"; };
+		D338DA68176F061F00ADCD76 /* CCViewMarketNotesListTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewMarketNotesListTransaction.m; sourceTree = "<group>"; };
+		D338DA6B176F070800ADCD76 /* CCListOfNotesInMarketController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCListOfNotesInMarketController.h; sourceTree = "<group>"; };
+		D338DA6C176F070800ADCD76 /* CCListOfNotesInMarketController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCListOfNotesInMarketController.m; sourceTree = "<group>"; };
+		D338DA6D176F070800ADCD76 /* CCListOfNotesInMarketController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCListOfNotesInMarketController.xib; sourceTree = "<group>"; };
+		D360F8D01772F52600C98399 /* CCMyStuffController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMyStuffController.h; sourceTree = "<group>"; };
+		D360F8D11772F52600C98399 /* CCMyStuffController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMyStuffController.m; sourceTree = "<group>"; };
+		D360F8D21772F52600C98399 /* CCMyStuffController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMyStuffController.xib; sourceTree = "<group>"; };
+		D360F8D61772F63100C98399 /* CCStuffAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStuffAPIProvider.h; sourceTree = "<group>"; };
+		D360F8D71772F63100C98399 /* CCStuffAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStuffAPIProvider.m; sourceTree = "<group>"; };
+		D360F8D91772F64F00C98399 /* CCStuffAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCStuffAPIProviderProtocol.h; sourceTree = "<group>"; };
+		D360F8DB1772F9B700C98399 /* CCMyStuffDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMyStuffDataProvider.h; sourceTree = "<group>"; };
+		D360F8DC1772F9B700C98399 /* CCMyStuffDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMyStuffDataProvider.m; sourceTree = "<group>"; };
+		D360F8DF1772FB2100C98399 /* CCMyStuffTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMyStuffTransaction.h; sourceTree = "<group>"; };
+		D360F8E01772FB2100C98399 /* CCMyStuffTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMyStuffTransaction.m; sourceTree = "<group>"; };
+		D360F8E31772FE4A00C98399 /* CCStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStuff.h; sourceTree = "<group>"; };
+		D360F8E41772FE4A00C98399 /* CCStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStuff.m; sourceTree = "<group>"; };
+		D360F8E7177303D700C98399 /* CCStuffCreationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStuffCreationController.h; sourceTree = "<group>"; };
+		D360F8E8177303D700C98399 /* CCStuffCreationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStuffCreationController.m; sourceTree = "<group>"; };
+		D360F8E9177303D700C98399 /* CCStuffCreationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCStuffCreationController.xib; sourceTree = "<group>"; };
+		D360F8ED17730E7C00C98399 /* CCAvatarSelectionActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAvatarSelectionActionSheet.h; sourceTree = "<group>"; };
+		D360F8EE17730E7C00C98399 /* CCAvatarSelectionActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAvatarSelectionActionSheet.m; sourceTree = "<group>"; };
+		D360F8F017730EA400C98399 /* CCAvatarSelectionProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCAvatarSelectionProtocol.h; sourceTree = "<group>"; };
+		D360F8F217731CB200C98399 /* CCCreateStuffTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCreateStuffTransaction.h; sourceTree = "<group>"; };
+		D360F8F317731CB200C98399 /* CCCreateStuffTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCreateStuffTransaction.m; sourceTree = "<group>"; };
+		D360F8F61773280600C98399 /* CCImageSortingControllerForStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCImageSortingControllerForStuff.h; sourceTree = "<group>"; };
+		D360F8F71773280600C98399 /* CCImageSortingControllerForStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCImageSortingControllerForStuff.m; sourceTree = "<group>"; };
+		D360F8FA17732ADB00C98399 /* CCStuffUploadInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStuffUploadInfo.h; sourceTree = "<group>"; };
+		D360F8FB17732ADB00C98399 /* CCStuffUploadInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStuffUploadInfo.m; sourceTree = "<group>"; };
 		D361462F175E17BE00907414 /* CCDropboxAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProvider.h; sourceTree = "<group>"; };
 		D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxAPIProvider.m; sourceTree = "<group>"; };
 		D3614632175E18A200907414 /* CCDropboxAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProviderProtocol.h; sourceTree = "<group>"; };
@@ -454,6 +509,12 @@
 		D37A4759175786D200E91850 /* CCEducationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEducationCell.m; sourceTree = "<group>"; };
 		D37A475C1757891600E91850 /* CCEducationsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEducationsDataProvider.h; sourceTree = "<group>"; };
 		D37A475D1757891600E91850 /* CCEducationsDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEducationsDataProvider.m; sourceTree = "<group>"; };
+		D384705E1771A5EB003CB4A6 /* CCShowNotesForClassTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCShowNotesForClassTransaction.h; sourceTree = "<group>"; };
+		D384705F1771A5EB003CB4A6 /* CCShowNotesForClassTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCShowNotesForClassTransaction.m; sourceTree = "<group>"; };
+		D38470621771D4C3003CB4A6 /* CCBackToNotesListTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBackToNotesListTransaction.h; sourceTree = "<group>"; };
+		D38470631771D4C3003CB4A6 /* CCBackToNotesListTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBackToNotesListTransaction.m; sourceTree = "<group>"; };
+		D384706617720B3A003CB4A6 /* CCActionSheetPickerCollegesDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCActionSheetPickerCollegesDelegate.h; sourceTree = "<group>"; };
+		D384706717720B3A003CB4A6 /* CCActionSheetPickerCollegesDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCActionSheetPickerCollegesDelegate.m; sourceTree = "<group>"; };
 		D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStandardErrorHandler.h; sourceTree = "<group>"; };
 		D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStandardErrorHandler.m; sourceTree = "<group>"; };
 		D39F1C161753C0E8008E08A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -480,8 +541,8 @@
 		D3B3D7DD176484A8000D3FAB /* CCDropboxPDFSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxPDFSelectionViewController.m; sourceTree = "<group>"; };
 		D3B3D7E017648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxPDFFileSystemTransaction.h; sourceTree = "<group>"; };
 		D3B3D7E117648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxPDFFileSystemTransaction.m; sourceTree = "<group>"; };
-		D3B3D7E417649185000D3FAB /* CCViewNotesTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCViewNotesTransaction.h; sourceTree = "<group>"; };
-		D3B3D7E517649185000D3FAB /* CCViewNotesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewNotesTransaction.m; sourceTree = "<group>"; };
+		D3B3D7E417649185000D3FAB /* CCViewPDFNotesTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCViewPDFNotesTransaction.h; sourceTree = "<group>"; };
+		D3B3D7E517649185000D3FAB /* CCViewPDFNotesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewPDFNotesTransaction.m; sourceTree = "<group>"; };
 		D3B3D7E817649263000D3FAB /* CCNotesViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNotesViewerController.h; sourceTree = "<group>"; };
 		D3B3D7E917649263000D3FAB /* CCNotesViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNotesViewerController.m; sourceTree = "<group>"; };
 		D3B3D7EA17649263000D3FAB /* CCNotesViewerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCNotesViewerController.xib; sourceTree = "<group>"; };
@@ -654,9 +715,14 @@
 		A787C73217536F8400824DEA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D360F8E6177303BE00C98399 /* StuffCreationController */,
+				D360F8CF1772F50300C98399 /* MyStuffController */,
+				D338DA6A176F06E500ADCD76 /* ListOfNotesInMarket */,
+				D338DA5B176EFC0B00ADCD76 /* NoteDetails */,
 				D3A5ECFB1768D53200300399 /* FilterController */,
 				D3A5ECF11768A32E00300399 /* MarketPlace */,
 				D3B3D807176618C4000D3FAB /* UploadImagesController */,
+				D360F8F5177327CF00C98399 /* CCImageSortingControllerForStuff */,
 				D3B3D7F51765DEF8000D3FAB /* CCImageSortingController */,
 				D3B3D7E717649246000D3FAB /* CCNotesViewerController */,
 				D361469B1762499F00907414 /* CreateNoteScreen */,
@@ -764,6 +830,7 @@
 		A787C74F17536F8400824DEA /* APIProvider */ = {
 			isa = PBXGroup;
 			children = (
+				D360F8D51772F61D00C98399 /* StuffAPIProvider */,
 				D3013BC71769C7010037EDAE /* MarketAPIProvider */,
 				D36146741762281F00907414 /* NotesAPIProvider */,
 				A7A618B7175E04490047C5B2 /* ClassesApiProvider */,
@@ -817,6 +884,8 @@
 		A787C76117536F8400824DEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D360F8F917732AC700C98399 /* StuffUploadInfo */,
+				D360F8E21772FE3B00C98399 /* Stuff */,
 				D3013BE3176A08240037EDAE /* FilterSection */,
 				D36146DA176352F200907414 /* Note */,
 				D36146791762382100907414 /* NoteforUploadInfo */,
@@ -919,6 +988,12 @@
 		A787C77D17536F8400824DEA /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
+				D360F8F117731C9F00C98399 /* CreateStuffTransaction */,
+				D360F8DE1772FB0F00C98399 /* MyStuffTransaction */,
+				D38470611771D4AA003CB4A6 /* NotesBackToListTransaction */,
+				D384705D1771A56A003CB4A6 /* ShowNotesForClassTransaction */,
+				D338DA65176F057000ADCD76 /* ViewMarketNotesListTransaction */,
+				D338DA61176EFD0200ADCD76 /* NoteDetailTransaction */,
 				D3013BFA176B631E0037EDAE /* ApplyFiltersTransaction */,
 				D3A5ED011768D71400300399 /* SelectFiltersTransaction */,
 				D3A5ECF71768ACCD00300399 /* MarketTransaction */,
@@ -1288,8 +1363,8 @@
 		A7FFA52A1769F184004A1D02 /* ActionSheetPickerDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				A7FFA52B1769F1B9004A1D02 /* CCActionSheetPickerDelegate.h */,
-				A7FFA52C1769F1B9004A1D02 /* CCActionSheetPickerDelegate.m */,
+				A7FFA52B1769F1B9004A1D02 /* CCActionSheetPickerDateDelegate.h */,
+				A7FFA52C1769F1B9004A1D02 /* CCActionSheetPickerDateDelegate.m */,
 			);
 			name = ActionSheetPickerDelegate;
 			sourceTree = "<group>";
@@ -1398,11 +1473,144 @@
 			path = Icons;
 			sourceTree = "<group>";
 		};
+		D338DA5B176EFC0B00ADCD76 /* NoteDetails */ = {
+			isa = PBXGroup;
+			children = (
+				D338DA5C176EFC2D00ADCD76 /* CCNoteDetailsController.h */,
+				D338DA5D176EFC2D00ADCD76 /* CCNoteDetailsController.m */,
+				D338DA5E176EFC2D00ADCD76 /* CCNoteDetailsController.xib */,
+			);
+			path = NoteDetails;
+			sourceTree = "<group>";
+		};
+		D338DA61176EFD0200ADCD76 /* NoteDetailTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D338DA62176EFD1600ADCD76 /* CCNoteDetailTransaction.h */,
+				D338DA63176EFD1600ADCD76 /* CCNoteDetailTransaction.m */,
+			);
+			path = NoteDetailTransaction;
+			sourceTree = "<group>";
+		};
+		D338DA65176F057000ADCD76 /* ViewMarketNotesListTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D338DA67176F061F00ADCD76 /* CCViewMarketNotesListTransaction.h */,
+				D338DA68176F061F00ADCD76 /* CCViewMarketNotesListTransaction.m */,
+			);
+			name = ViewMarketNotesListTransaction;
+			path = ViewLatestNotesTransaction;
+			sourceTree = "<group>";
+		};
+		D338DA6A176F06E500ADCD76 /* ListOfNotesInMarket */ = {
+			isa = PBXGroup;
+			children = (
+				D338DA6B176F070800ADCD76 /* CCListOfNotesInMarketController.h */,
+				D338DA6C176F070800ADCD76 /* CCListOfNotesInMarketController.m */,
+				D338DA6D176F070800ADCD76 /* CCListOfNotesInMarketController.xib */,
+			);
+			path = ListOfNotesInMarket;
+			sourceTree = "<group>";
+		};
 		D35C1B481763706500C2AEB4 /* BackToListOfNotesTransaction */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = BackToListOfNotesTransaction;
+			sourceTree = "<group>";
+		};
+		D360F8CF1772F50300C98399 /* MyStuffController */ = {
+			isa = PBXGroup;
+			children = (
+				D360F8D01772F52600C98399 /* CCMyStuffController.h */,
+				D360F8D11772F52600C98399 /* CCMyStuffController.m */,
+				D360F8D21772F52600C98399 /* CCMyStuffController.xib */,
+			);
+			path = MyStuffController;
+			sourceTree = "<group>";
+		};
+		D360F8D51772F61D00C98399 /* StuffAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D360F8D91772F64F00C98399 /* CCStuffAPIProviderProtocol.h */,
+				D360F8D61772F63100C98399 /* CCStuffAPIProvider.h */,
+				D360F8D71772F63100C98399 /* CCStuffAPIProvider.m */,
+			);
+			path = StuffAPIProvider;
+			sourceTree = "<group>";
+		};
+		D360F8DA1772F99C00C98399 /* MyStuffDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D360F8DB1772F9B700C98399 /* CCMyStuffDataProvider.h */,
+				D360F8DC1772F9B700C98399 /* CCMyStuffDataProvider.m */,
+			);
+			path = MyStuffDataProvider;
+			sourceTree = "<group>";
+		};
+		D360F8DE1772FB0F00C98399 /* MyStuffTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D360F8DF1772FB2100C98399 /* CCMyStuffTransaction.h */,
+				D360F8E01772FB2100C98399 /* CCMyStuffTransaction.m */,
+			);
+			path = MyStuffTransaction;
+			sourceTree = "<group>";
+		};
+		D360F8E21772FE3B00C98399 /* Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				D360F8E31772FE4A00C98399 /* CCStuff.h */,
+				D360F8E41772FE4A00C98399 /* CCStuff.m */,
+			);
+			path = Stuff;
+			sourceTree = "<group>";
+		};
+		D360F8E6177303BE00C98399 /* StuffCreationController */ = {
+			isa = PBXGroup;
+			children = (
+				D360F8E7177303D700C98399 /* CCStuffCreationController.h */,
+				D360F8E8177303D700C98399 /* CCStuffCreationController.m */,
+				D360F8E9177303D700C98399 /* CCStuffCreationController.xib */,
+			);
+			path = StuffCreationController;
+			sourceTree = "<group>";
+		};
+		D360F8EC17730E5D00C98399 /* AvatarSelectionActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				D360F8ED17730E7C00C98399 /* CCAvatarSelectionActionSheet.h */,
+				D360F8EE17730E7C00C98399 /* CCAvatarSelectionActionSheet.m */,
+				D360F8F017730EA400C98399 /* CCAvatarSelectionProtocol.h */,
+			);
+			path = AvatarSelectionActionSheet;
+			sourceTree = "<group>";
+		};
+		D360F8F117731C9F00C98399 /* CreateStuffTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D360F8F217731CB200C98399 /* CCCreateStuffTransaction.h */,
+				D360F8F317731CB200C98399 /* CCCreateStuffTransaction.m */,
+			);
+			path = CreateStuffTransaction;
+			sourceTree = "<group>";
+		};
+		D360F8F5177327CF00C98399 /* CCImageSortingControllerForStuff */ = {
+			isa = PBXGroup;
+			children = (
+				D360F8F61773280600C98399 /* CCImageSortingControllerForStuff.h */,
+				D360F8F71773280600C98399 /* CCImageSortingControllerForStuff.m */,
+			);
+			path = CCImageSortingControllerForStuff;
+			sourceTree = "<group>";
+		};
+		D360F8F917732AC700C98399 /* StuffUploadInfo */ = {
+			isa = PBXGroup;
+			children = (
+				D360F8FA17732ADB00C98399 /* CCStuffUploadInfo.h */,
+				D360F8FB17732ADB00C98399 /* CCStuffUploadInfo.m */,
+			);
+			path = StuffUploadInfo;
 			sourceTree = "<group>";
 		};
 		D361462E175E17AD00907414 /* CCDropboxAPIProvider */ = {
@@ -1644,6 +1852,33 @@
 			path = EducationsDataProvider;
 			sourceTree = "<group>";
 		};
+		D384705D1771A56A003CB4A6 /* ShowNotesForClassTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D384705E1771A5EB003CB4A6 /* CCShowNotesForClassTransaction.h */,
+				D384705F1771A5EB003CB4A6 /* CCShowNotesForClassTransaction.m */,
+			);
+			path = ShowNotesForClassTransaction;
+			sourceTree = "<group>";
+		};
+		D38470611771D4AA003CB4A6 /* NotesBackToListTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D38470621771D4C3003CB4A6 /* CCBackToNotesListTransaction.h */,
+				D38470631771D4C3003CB4A6 /* CCBackToNotesListTransaction.m */,
+			);
+			path = NotesBackToListTransaction;
+			sourceTree = "<group>";
+		};
+		D384706517720B2A003CB4A6 /* ActionSheetPickerCollegesDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D384706617720B3A003CB4A6 /* CCActionSheetPickerCollegesDelegate.h */,
+				D384706717720B3A003CB4A6 /* CCActionSheetPickerCollegesDelegate.m */,
+			);
+			path = ActionSheetPickerCollegesDelegate;
+			sourceTree = "<group>";
+		};
 		D39F1C0E1753821D008E08A2 /* StandardErrorHandler */ = {
 			isa = PBXGroup;
 			children = (
@@ -1671,6 +1906,8 @@
 		D3A2C3261754D53900989831 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D360F8EC17730E5D00C98399 /* AvatarSelectionActionSheet */,
+				D384706517720B2A003CB4A6 /* ActionSheetPickerCollegesDelegate */,
 				D3013BF6176B0BC60037EDAE /* MarketFilterClassesCell */,
 				A7FFA52A1769F184004A1D02 /* ActionSheetPickerDelegate */,
 				D3013BDF176A07600037EDAE /* filterSectionHeader */,
@@ -1768,8 +2005,8 @@
 		D3B3D7E317649171000D3FAB /* ViewNotesTransaction */ = {
 			isa = PBXGroup;
 			children = (
-				D3B3D7E417649185000D3FAB /* CCViewNotesTransaction.h */,
-				D3B3D7E517649185000D3FAB /* CCViewNotesTransaction.m */,
+				D3B3D7E417649185000D3FAB /* CCViewPDFNotesTransaction.h */,
+				D3B3D7E517649185000D3FAB /* CCViewPDFNotesTransaction.m */,
 			);
 			path = ViewNotesTransaction;
 			sourceTree = "<group>";
@@ -1909,6 +2146,7 @@
 		D3EFD2351756080700B7D710 /* DataProviders */ = {
 			isa = PBXGroup;
 			children = (
+				D360F8DA1772F99C00C98399 /* MyStuffDataProvider */,
 				D3013BE9176A100D0037EDAE /* FiltersDataProvider */,
 				D3013BCC1769CC5A0037EDAE /* MarketNotesProvider */,
 				D3B3D81317661F46000D3FAB /* UploadImagesDataProvider */,
@@ -2243,6 +2481,10 @@
 				D3013BDD1769FC5D0037EDAE /* book.png in Resources */,
 				D3013BDE1769FC5D0037EDAE /* book@2x.png in Resources */,
 				D3013BE8176A09C60037EDAE /* CCFilterSectionHeader.xib in Resources */,
+				D338DA60176EFC2D00ADCD76 /* CCNoteDetailsController.xib in Resources */,
+				D338DA6F176F070800ADCD76 /* CCListOfNotesInMarketController.xib in Resources */,
+				D360F8D41772F52600C98399 /* CCMyStuffController.xib in Resources */,
+				D360F8EB177303D700C98399 /* CCStuffCreationController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2384,7 +2626,7 @@
 				D3B3D7D917648439000D3FAB /* CCDropboxImagesSelectionViewController.m in Sources */,
 				D3B3D7DE176484A8000D3FAB /* CCDropboxPDFSelectionViewController.m in Sources */,
 				D3B3D7E217648C27000D3FAB /* CCDropboxPDFFileSystemTransaction.m in Sources */,
-				D3B3D7E617649185000D3FAB /* CCViewNotesTransaction.m in Sources */,
+				D3B3D7E617649185000D3FAB /* CCViewPDFNotesTransaction.m in Sources */,
 				D3B3D7EB17649263000D3FAB /* CCNotesViewerController.m in Sources */,
 				D3B3D7F01764AE11000D3FAB /* CCBackToListOfNotesTransaction.m in Sources */,
 				D3B3D7F41765D6F1000D3FAB /* CCImagesSortingTransaction.m in Sources */,
@@ -2402,7 +2644,7 @@
 				D3A5ED041768D72C00300399 /* CCSelectFiltersTranaction.m in Sources */,
 				D3013BCA1769C7190037EDAE /* CCMarketAPIProvider.m in Sources */,
 				D3013BCF1769CDA80037EDAE /* CCMarketNotesProvider.m in Sources */,
-				A7FFA52D1769F1B9004A1D02 /* CCActionSheetPickerDelegate.m in Sources */,
+				A7FFA52D1769F1B9004A1D02 /* CCActionSheetPickerDateDelegate.m in Sources */,
 				D3013BD31769D27B0037EDAE /* CCCommonCollectionDataSource.m in Sources */,
 				D3013BD81769E7100037EDAE /* CCNotesCollectionCell.m in Sources */,
 				D3013BE2176A07B10037EDAE /* CCFilterSectionHeader.m in Sources */,
@@ -2411,6 +2653,23 @@
 				D3013BF0176A16210037EDAE /* CCMarketFilterDataSource.m in Sources */,
 				D3013BF9176B0BFD0037EDAE /* CCMarketFilterClassesCell.m in Sources */,
 				D3013BFD176B633C0037EDAE /* CCApplyFiltersTransaction.m in Sources */,
+				D338DA5F176EFC2D00ADCD76 /* CCNoteDetailsController.m in Sources */,
+				D338DA64176EFD1600ADCD76 /* CCNoteDetailTransaction.m in Sources */,
+				D338DA69176F061F00ADCD76 /* CCViewMarketNotesListTransaction.m in Sources */,
+				D338DA6E176F070800ADCD76 /* CCListOfNotesInMarketController.m in Sources */,
+				D38470601771A5EB003CB4A6 /* CCShowNotesForClassTransaction.m in Sources */,
+				D38470641771D4C3003CB4A6 /* CCBackToNotesListTransaction.m in Sources */,
+				D384706817720B3A003CB4A6 /* CCActionSheetPickerCollegesDelegate.m in Sources */,
+				D360F8D31772F52600C98399 /* CCMyStuffController.m in Sources */,
+				D360F8D81772F63100C98399 /* CCStuffAPIProvider.m in Sources */,
+				D360F8DD1772F9B700C98399 /* CCMyStuffDataProvider.m in Sources */,
+				D360F8E11772FB2100C98399 /* CCMyStuffTransaction.m in Sources */,
+				D360F8E51772FE4A00C98399 /* CCStuff.m in Sources */,
+				D360F8EA177303D700C98399 /* CCStuffCreationController.m in Sources */,
+				D360F8EF17730E7C00C98399 /* CCAvatarSelectionActionSheet.m in Sources */,
+				D360F8F417731CB200C98399 /* CCCreateStuffTransaction.m in Sources */,
+				D360F8F81773280600C98399 /* CCImageSortingControllerForStuff.m in Sources */,
+				D360F8FC17732ADB00C98399 /* CCStuffUploadInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

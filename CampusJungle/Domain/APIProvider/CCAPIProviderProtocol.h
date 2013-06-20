@@ -34,6 +34,6 @@
 
 - (void)loadUserInfoSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 
-- (void)loadMyNotesNumberOfPage:(NSNumber *)pageNumber successHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)loadMyNotesNumberOfPage:(NSNumber *)pageNumber query:(NSString *)query successHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler;
 
 @end

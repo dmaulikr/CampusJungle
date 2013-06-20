@@ -13,6 +13,9 @@
 #import "CCNotesCollectionCell.h"
 #import "CCClassesApiProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
+#import "CCUserSessionProtocol.h"
+#import "CCAPIProviderProtocol.h"
+#import "CCEducation.h"
 
 @interface CCMarketPlaceController ()<CCCellSelectionProtocol>
 
@@ -24,6 +27,8 @@
 @property (nonatomic, strong) CCMarketNotesProvider *marketTopNotesProvider;
 @property (nonatomic, strong) NSMutableArray *arrayOfDataSources;
 @property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_classesAPIProvider;
+@property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSessionProtocol;
+@property (nonatomic, strong) id <CCAPIProviderProtocol> ioc_APIProvider;
 
 @end
 
@@ -36,15 +41,24 @@
     self.arrayOfDataSources = [NSMutableArray new];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Filters" style:UIBarButtonItemStyleBordered target:self action:@selector(applyFilters)];
     self.marketLatestNotesProvider = [CCMarketNotesProvider new];
-    self.marketLatestNotesProvider.order = @"date";
-    
-    [self configCollection:self.topNotesCollectionView WithProvider:self.marketLatestNotesProvider cellClass:[CCNotesCollectionCell class]];
+    self.marketLatestNotesProvider.order = CCMarketFilterConstants.orderLatest;
     
     self.marketTopNotesProvider = [CCMarketNotesProvider new];
-    self.marketTopNotesProvider.order = @"sales";
+    self.marketTopNotesProvider.order = CCMarketFilterConstants.orderTop;
     
-    [self configCollection:self.latestNotesCollectionView WithProvider:self.marketTopNotesProvider cellClass:[CCNotesCollectionCell class]];
-    [self loadFilters];
+    [self configCollection:self.topNotesCollectionView WithProvider:self.marketTopNotesProvider cellClass:[CCNotesCollectionCell class]];
+    
+    [self configCollection:self.latestNotesCollectionView WithProvider:self.marketLatestNotesProvider cellClass:[CCNotesCollectionCell class]];
+    
+    [self.ioc_userSessionProtocol loadUserEducationsSuccessHandler:^(id educations){
+        [self loadFilters];
+    }];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self resetDataProviders];
 }
 
 - (void)update
@@ -71,33 +85,22 @@
     collectionView.delegate = dataSource;
     [self.arrayOfDataSources addObject:dataSource];
     dataSource.delegate = self;
-    [dataSource.dataProvider loadItems];
 }
 
 - (void)didSelectedCellWithObject:(id)cellObject
 {
-
+    [self.noteDetailsTransaction performWithObject:cellObject];
 }
 
 - (void)loadFilters
 {
-    [self.ioc_classesAPIProvider getAllClasesSuccessHandler:^(id result) {
-        NSMutableArray *arrayOfColleges = [NSMutableArray new];
-        for (CCClass *currentClass in result){
-            if(![self isString:currentClass.collegeID inArray:arrayOfColleges]){
-                [arrayOfColleges addObject:currentClass.collegeID];
-            }
-        }
+    NSArray *arrayOfColleges = [CCEducation arrayOfCollegesIDFromEducations:[[self.ioc_userSessionProtocol currentUser] educations]];
      self.filters = @{
-     @"colleges_ids" : arrayOfColleges,
-     @"classes_ids" :@[]
+        CCMarketFilterConstants.colleges : arrayOfColleges,
+        CCMarketFilterConstants.classes :@[]
      };
     
-        NSLog(@"%@",self.filters);
      [self update];
-    } errorHandler:^(NSError *error) {
-        [CCStandardErrorHandler showErrorWithError:error];
-    }];
 }
 
 - (BOOL)isString:(NSString *)string inArray:(NSArray *)array
@@ -108,6 +111,27 @@
         }
     }
     return NO;
+}
+
+- (void)resetDataProviders
+{
+    self.marketLatestNotesProvider.targetTable = (UITableView *)self.latestNotesCollectionView;
+    self.marketTopNotesProvider.targetTable = (UITableView *)self.topNotesCollectionView;
+    
+    self.marketTopNotesProvider.searchQuery = nil;
+    self.marketLatestNotesProvider.searchQuery = nil;
+    
+    [self update];
+}
+
+- (IBAction)viewAllTopNotesPressed
+{
+    [self.fullListOfNotesTransaction performWithObject:self.marketTopNotesProvider];
+}
+
+- (IBAction)viewAllLatestNotesPressed
+{
+    [self.fullListOfNotesTransaction performWithObject:self.marketLatestNotesProvider];
 }
 
 @end

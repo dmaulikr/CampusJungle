@@ -10,4 +10,9 @@
 
 @implementation CCClass
 
+- (NSString *)name
+{
+    return self.subject;
+}
+
 @end

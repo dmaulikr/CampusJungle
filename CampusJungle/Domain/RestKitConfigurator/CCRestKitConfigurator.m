@@ -53,6 +53,8 @@
     [CCRestKitConfigurator configureFacebookLinking:objectManager];
     [CCRestKitConfigurator configureNotesResponse:objectManager];
     [CCRestKitConfigurator configureNotesUploadRequest:objectManager];
+    [CCRestKitConfigurator configureAttachmentResponse:objectManager];
+    [CCRestKitConfigurator configureNotesPurchasingResponse:objectManager];
 
 }
 
@@ -308,6 +310,7 @@
      @"thumbnail" : @"thumbnail",
      @"thumbnail_retina" : @"thumbnailRetina",
      @"attachment" : @"link",
+     @"full_access" : @"fullAccess",
      }];
     
     RKRelationshipMapping* relationShipResponseCitiesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
@@ -350,6 +353,38 @@
     
     [paginationResponseMapping addAttributeMappingsFromDictionary:@{@"count": CCResponseKeys.count}];
     return paginationResponseMapping;
+}
+
++ (void)configureAttachmentResponse:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *notesLinkMaping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    [notesLinkMaping addAttributeMappingsFromDictionary:@{
+        @"note_url" : @"link",
+     }];
+    
+    NSString *pathPattern = [NSString stringWithFormat:CCAPIDefines.notesAttachmentURL,@":noteID"];
+    
+    RKResponseDescriptor *noteAttacmentDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:notesLinkMaping pathPattern:pathPattern keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [objectManager addResponseDescriptor:noteAttacmentDescriptor];
+}
+
++ (void)configureNotesPurchasingResponse:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *notesPurchasingResponse = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    [notesPurchasingResponse addAttributeMappingsFromDictionary:@{
+        @"success" : @"success",
+     }];
+    
+    NSString *pathPattern = [NSString stringWithFormat:CCAPIDefines.purchaseNote,@":noteID"];
+    
+    RKResponseDescriptor *notesPurchasingResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:notesPurchasingResponse pathPattern:pathPattern keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    NSString *resendLinkPathPattern = [NSString stringWithFormat:CCAPIDefines.resendLinkToNote,@":note"];
+    
+    RKResponseDescriptor *notesResendingLinkResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:notesPurchasingResponse pathPattern:resendLinkPathPattern keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    [objectManager addResponseDescriptor:notesPurchasingResponseDescriptor];
+    [objectManager addResponseDescriptor:notesResendingLinkResponseDescriptor];
 }
 
 @end

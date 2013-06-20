@@ -30,6 +30,7 @@
     return [super initWithNibName:@"CCDropboxImagesSelectionViewController" bundle:nibBundleOrNil];
 
 }
+
 - (CCDropboxDataProvider *)createDataProvider
 {
     return [CCDropboxPDFDataProvider new];
@@ -71,7 +72,7 @@
 
 - (void)saveResultToUploadInfo:(NSArray *)selectedFiles
 {
-    self.noteUploadInfo.pdfUrl = [[CCDropboxFileInfo arrayOfDirectLinksFromArrayOfInfo:selectedFiles] lastObject];
+    self.uploadInfo.pdfUrl = [[CCDropboxFileInfo arrayOfDirectLinksFromArrayOfInfo:selectedFiles] lastObject];
 }
 
 @end

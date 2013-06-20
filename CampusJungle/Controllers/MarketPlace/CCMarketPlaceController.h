@@ -12,7 +12,13 @@
 @interface CCMarketPlaceController : CCViewController
 
 @property (nonatomic, strong) id <CCTransactionWithObject> filtersScreenTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> noteDetailsTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> fullListOfNotesTransaction;
+
 @property (nonatomic, strong) NSDictionary *filters;
+
+- (IBAction)viewAllTopNotesPressed;
+- (IBAction)viewAllLatestNotesPressed;
 
 - (void)update;
 

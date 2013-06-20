@@ -11,5 +11,8 @@
 @interface CCAPIProvider : NSObject<CCAPIProviderProtocol>
 
 - (void)setAuthorizationToken;
+- (void)setContentTypeJSON;
+
+- (void)loadItemsWithParams:(NSDictionary *)params path:(NSString *)path successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 
 @end

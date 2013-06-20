@@ -14,7 +14,7 @@
 #import "CCStandardErrorHandler.h"
 #import "CCAlertDefines.h"
 #import "ActionSheetPicker.h"
-#import "CCActionSheetPickerDelegate.h"
+#import "CCActionSheetPickerDateDelegate.h"
 
 @interface CCCreateClassController ()<UITextFieldDelegate>
 {
@@ -129,7 +129,7 @@ return self;
 
 - (IBAction)selectTimeTable:(UIControl *)sender {
     
-    CCActionSheetPickerDelegate *delegate = [[CCActionSheetPickerDelegate alloc] init];
+    CCActionSheetPickerDateDelegate *delegate = [[CCActionSheetPickerDateDelegate alloc] init];
     [ActionSheetCustomPicker showPickerWithTitle:@"Timetable" delegate:delegate showCancelButton:YES origin:sender];
 }
 

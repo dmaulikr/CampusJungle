@@ -12,6 +12,7 @@ extern const struct CCAlertsMessages {
     __unsafe_unretained NSString *connectToTheInternet;
     __unsafe_unretained NSString *formNotValid;
     __unsafe_unretained NSString *error;
+    __unsafe_unretained NSString *success;
     __unsafe_unretained NSString *facebookError;
     __unsafe_unretained NSString *wrongEmailOfPassword;
     __unsafe_unretained NSString *authorizationFaild;
@@ -22,6 +23,13 @@ extern const struct CCAlertsMessages {
     __unsafe_unretained NSString *emptyField;
     __unsafe_unretained NSString *createCollege;
     __unsafe_unretained NSString *dropboxLinkingFaild;
+    __unsafe_unretained NSString *setEmailFirst;
+    __unsafe_unretained NSString *confirmation;
+    __unsafe_unretained NSString *confirmationMessage;
+    __unsafe_unretained NSString *checkYourMail;
+    __unsafe_unretained NSString *noteNotReadyForView;
+    __unsafe_unretained NSString *haveNoClassesInSelectedCollege;
+    
 } CCAlertsMessages;
 
 extern const struct CCAlertsButtons {
@@ -45,6 +53,7 @@ extern const struct CCValidationMessages {
     __unsafe_unretained NSString *fullPriceCantBeBlank;
     __unsafe_unretained NSString *fullPriceCantBeLowerThenPriceForReview;
     __unsafe_unretained NSString *descriptionCantBeBlank;
+    __unsafe_unretained NSString *filterCanNotBeEmpty;
     
 } CCValidationMessages;
 

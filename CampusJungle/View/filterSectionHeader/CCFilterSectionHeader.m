@@ -37,9 +37,7 @@
 - (void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];
-    UIView *background = [[UIView alloc] initWithFrame:self.frame];
-    background.backgroundColor = [UIColor grayColor];
-    [self setBackgroundView:background];
+    self.contentView.backgroundColor = [UIColor grayColor];
 }
 
 - (IBAction)sectionDidPressed

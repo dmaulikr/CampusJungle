@@ -15,15 +15,16 @@
 #import "CCStandardErrorHandler.h"
 #import "MBProgressHUD.h"
 #import "NSString+CJStringValidator.h"
-#import "UIActionSheet+BlocksKit.h"
 #import "UIAlertView+BlocksKit.h"
 #import "CCAlertDefines.h"
 #import "CCEducation.h"
 #import "CCUserEducationsDataSource.h"
+#import "CCAvatarSelectionActionSheet.h"
+#import "CCAvatarSelectionProtocol.h"
 
 #define animationDuration 0.4
 
-@interface CCUserProfile () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface CCUserProfile () <CCAvatarSelectionProtocol>
 
 @property (nonatomic, weak) IBOutlet UILabel *firstName;
 @property (nonatomic, weak) IBOutlet UILabel *lastName;
@@ -50,6 +51,8 @@
 @property (nonatomic) BOOL isNeedToUploadAvatar;
 
 @property (nonatomic, strong) NSString *facebookAvatarPath;
+
+@property (nonatomic, strong) CCAvatarSelectionActionSheet *avatarSelectionSheet;
 
 @end
 
@@ -79,6 +82,10 @@
      object:nil];
 
     self.avatar.contentMode = UIViewContentModeScaleAspectFit;
+    
+    self.avatarSelectionSheet = [CCAvatarSelectionActionSheet new];
+    self.avatarSelectionSheet.delegate = self;
+    self.avatarSelectionSheet.title = @"Select Avatar";
 }
 
 - (void)loadUser
@@ -327,41 +334,14 @@
 - (IBAction)avatarDidPressed
 {
     if(self.isEditable){
-        UIActionSheet *testSheet = [UIActionSheet actionSheetWithTitle:@"Select Avatar"];
-        [testSheet addButtonWithTitle:@"Select from gallery" handler:^{
-            [self selectAvatarFromGallery];
-        }];
-        [testSheet addButtonWithTitle:@"Make photo" handler:^{
-            [self makePhotoForAvatar];
-        }];
-        [testSheet setCancelButtonWithTitle:nil handler:nil];
-        [testSheet showInView:self.view];
+        [self.avatarSelectionSheet selectAvatar];
     }
 }
 
-- (void)selectAvatarFromGallery
+- (void)didSelectAvatar:(UIImage *)avatar
 {
-    UIImagePickerController * picker = [UIImagePickerController new];
-    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    picker.allowsEditing = YES;
-    picker.delegate = self;
-    [self presentViewController:picker animated:YES completion:nil];
-}
-
-- (void)makePhotoForAvatar
-{
-    UIImagePickerController * picker = [UIImagePickerController new];
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    picker.allowsEditing = YES;
-    picker.delegate = self;
-    [self presentViewController:picker animated:YES completion:nil];
-}
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    self.avatar.image = info[UIImagePickerControllerEditedImage];
     self.isNeedToUploadAvatar = YES;
-    [self dismissViewControllerAnimated:YES completion:nil];
+    self.avatar.image = avatar;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -377,6 +357,11 @@
 - (IBAction)myNotesButtonDidPressed
 {
     [self.myNotesTransaction perform];
+}
+
+- (IBAction)myStuffButtonDidPreessed
+{
+    [self.myStuffTransaction perform];
 }
 
 @end

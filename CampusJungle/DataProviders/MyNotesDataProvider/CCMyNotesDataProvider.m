@@ -12,7 +12,7 @@
 
 - (void)loadItemsForPageNumber:(long)numberOfPage successHandler:(successWithObject)successHandler
 {
-    [self.ioc_apiProvider loadMyNotesNumberOfPage:[NSNumber numberWithLong:numberOfPage] successHandler:^(RKMappingResult *result) {
+    [self.ioc_apiProvider loadMyNotesNumberOfPage:[NSNumber numberWithLong:numberOfPage] query:self.searchQuery successHandler:^(RKMappingResult *result) {
         
         successHandler(result.firstObject);
         

@@ -28,7 +28,7 @@
     dropboxController.backToListTransaction = self.backToListTransaction;
     dropboxController.dropboxPath = sendedObject[@"path"];
     dropboxController.arrayOfSelectedFiles = sendedObject[@"sellected"];
-    dropboxController.noteUploadInfo = sendedObject[@"noteInfo"];
+    dropboxController.uploadInfo = sendedObject[@"noteInfo"];
     
     dropboxController.dropboxFileSystemTransaction = fileSystemTransaction;
     [self.navigation pushViewController:dropboxController animated:YES];

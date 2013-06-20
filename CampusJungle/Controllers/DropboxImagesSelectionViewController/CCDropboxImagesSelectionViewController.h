@@ -20,7 +20,7 @@
 @property (nonatomic, strong) id <CCTransaction> backToListTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> imageSortingTransaction;
 @property (nonatomic, strong) NSMutableArray *arrayOfSelectedFiles;
-@property (nonatomic, strong) CCNoteUploadInfo *noteUploadInfo;
+@property (nonatomic, strong) CCNoteUploadInfo *uploadInfo;
 
 - (void)removeFrom:(NSMutableArray *)array infoWithPath:(NSString *)path;
 - (BOOL)is:(NSArray *)array containPath:(NSString *)path;

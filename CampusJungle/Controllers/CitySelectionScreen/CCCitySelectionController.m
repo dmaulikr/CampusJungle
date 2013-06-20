@@ -38,12 +38,6 @@
                                                                              action:@selector(addCity)];
 }
 
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
-{
-    self.dataSource.dataProvider.searchQuery = searchText;
-    [self.dataSource.dataProvider loadItems];
-}
-
 - (void)didSelectedCellWithObject:(id)cellObject
 {
     [self.collegeScreenTransaction performWithObject:cellObject];

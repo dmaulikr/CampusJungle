@@ -21,9 +21,13 @@
 - (void)setAuthorizationToken
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
-    NSString *valueForHeader = [NSString stringWithFormat: @"Token token=%@",self.ioc_userSession.currentUser.token];
-    
-    [objectManager.HTTPClient setDefaultHeader:@"Authorization" value:valueForHeader];
+    [objectManager.HTTPClient setAuthorizationHeaderWithToken:self.ioc_userSession.currentUser.token];
+}
+
+- (void)setContentTypeJSON
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    objectManager.HTTPClient.parameterEncoding = AFJSONParameterEncoding;
 }
 
 - (void)putUser:(NSDictionary *)userInfo
@@ -224,10 +228,14 @@
                       }];
 }
 
-- (void)loadMyNotesNumberOfPage:(NSNumber *)pageNumber successHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
+- (void)loadMyNotesNumberOfPage:(NSNumber *)pageNumber query:(NSString *)query successHandler:(successHandler)successHandler errorHandler:(errorHandler)errorHandler
 {
+    NSMutableDictionary *params = [@{@"page_number" : pageNumber.stringValue} mutableCopy];
+    if(query){
+        [params setValue:query forKey:@"keywords"];
+    }
     
-    [self loadItemsWithParams:@{@"page_number" : pageNumber.stringValue} path:CCAPIDefines.listOfMyNotes successHandler:successHandler errorHandler:errorHandler];
+    [self loadItemsWithParams:params path:CCAPIDefines.listOfMyNotes successHandler:successHandler errorHandler:errorHandler];
 }
 
 @end

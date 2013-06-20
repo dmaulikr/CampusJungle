@@ -14,6 +14,7 @@ const struct CCAlertsMessages CCAlertsMessages = {
     .noInternetConnection = @"No network connection",
     .formNotValid = @"Form is not valid",
     .error = @"Error",
+    .success = @"Success",
     .facebookError = @"Facebook authorization faild",
     .wrongEmailOfPassword = @"Wrong email or password",
     .authorizationFaild = @"Authorization Faild",
@@ -23,7 +24,13 @@ const struct CCAlertsMessages CCAlertsMessages = {
     .lastNameNotValid = @"Last name can not be empty",
     .createCollege = @"In order to join class you should select your college first.",
     .dropboxLinkingFaild = @"Dropbox linking faild",
-    .emptyField = @"Please, fill in all fields"
+    .emptyField = @"Please, fill in all fields",
+    .setEmailFirst = @"Set your email in user profile first",
+    .confirmation = @"Confirmation",
+    .confirmationMessage = @"Are you sure?",
+    .checkYourMail = @"Check your email box",
+    .noteNotReadyForView = @"This note not ready for review. Try again later.",
+    .haveNoClassesInSelectedCollege = @"You have not classes in selected college",
 };
 
 const struct CCAlertsButtons CCAlertsButtons = {
@@ -46,4 +53,5 @@ const struct CCValidationMessages CCValidationMessages = {
     .fullPriceCantBeBlank = @"Full access price can not be blank",
     .fullPriceCantBeLowerThenPriceForReview = @"Full access price can not be lower then price for review",
     .descriptionCantBeBlank = @"Description can not be blank",
+    .filterCanNotBeEmpty = @"Filter can not be empty",
 };

@@ -11,7 +11,6 @@
 @interface CCMarketNotesProvider : CCPaginationDataProvider
 
 @property (nonatomic, strong) NSDictionary *filters;
-@property (nonatomic, strong) NSString *query;
 @property (nonatomic, strong) NSString *order;
 
 @end

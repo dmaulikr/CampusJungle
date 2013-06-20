@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "ActionSheetPicker.h"
 
-@interface CCActionSheetPickerDelegate : NSObject <ActionSheetCustomPickerDelegate>
+@interface CCActionSheetPickerDateDelegate : NSObject <ActionSheetCustomPickerDelegate>
 
 @end
