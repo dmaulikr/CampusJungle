@@ -101,7 +101,6 @@
             [self.selectCollege performWithObject:[[self.ioc_userSession currentUser] educations]];
             break;
     }
-    
 }
 
 @end

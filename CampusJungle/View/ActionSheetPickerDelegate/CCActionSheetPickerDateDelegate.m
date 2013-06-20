@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCActionSheetPickerDelegate.h"
+#import "CCActionSheetPickerDateDelegate.h"
 
-@interface CCActionSheetPickerDelegate ()
+@interface CCActionSheetPickerDateDelegate ()
 {
     NSArray *daysOfTheWeek;
     NSArray *timeOftheDay;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation CCActionSheetPickerDelegate
+@implementation CCActionSheetPickerDateDelegate
 
 
 - (id)init

@@ -32,6 +32,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .purchaseNote = @"/api/notes/%@/purchase",
     .removeNote = @"/api/users/me/notes/%@",
     .resendLinkToNote = @"/api/notes/%@/resend_link",
+    .loadMyStuff = @"/api/users/me/stuff",
 };
 
 const struct CCUserDefines CCUserDefines = {

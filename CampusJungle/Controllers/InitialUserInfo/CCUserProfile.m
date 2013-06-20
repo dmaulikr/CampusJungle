@@ -379,4 +379,9 @@
     [self.myNotesTransaction perform];
 }
 
+- (IBAction)myStuffButtonDidPreessed
+{
+    [self.myStuffTransaction perform];
+}
+
 @end
