@@ -15,7 +15,9 @@
 #import "CCStandardErrorHandler.h"
 #import "CCUserSessionProtocol.h"
 #import "CCAPIProviderProtocol.h"
+#import "CCMarketStuffDataProvider.h"
 #import "CCEducation.h"
+#import "CCNote.h"
 
 @interface CCMarketPlaceController ()<CCCellSelectionProtocol>
 
@@ -25,6 +27,7 @@
 
 @property (nonatomic, strong) CCMarketNotesProvider *marketLatestNotesProvider;
 @property (nonatomic, strong) CCMarketNotesProvider *marketTopNotesProvider;
+@property (nonatomic, strong) CCMarketStuffDataProvider *marketStuffDataProvider;
 @property (nonatomic, strong) NSMutableArray *arrayOfDataSources;
 @property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_classesAPIProvider;
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSessionProtocol;
@@ -46,6 +49,11 @@
     self.marketTopNotesProvider = [CCMarketNotesProvider new];
     self.marketTopNotesProvider.order = CCMarketFilterConstants.orderTop;
     
+    self.marketStuffDataProvider = [CCMarketStuffDataProvider new];
+    self.marketStuffDataProvider.order = CCMarketFilterConstants.orderTop;
+    
+    [self configCollection:self.latestStuffCollectionView WithProvider:self.marketStuffDataProvider cellClass:[CCNotesCollectionCell class]];
+    
     [self configCollection:self.topNotesCollectionView WithProvider:self.marketTopNotesProvider cellClass:[CCNotesCollectionCell class]];
     
     [self configCollection:self.latestNotesCollectionView WithProvider:self.marketLatestNotesProvider cellClass:[CCNotesCollectionCell class]];
@@ -53,6 +61,8 @@
     [self.ioc_userSessionProtocol loadUserEducationsSuccessHandler:^(id educations){
         [self loadFilters];
     }];
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -67,6 +77,8 @@
     [self.marketLatestNotesProvider loadItems];
     self.marketTopNotesProvider.filters = self.filters;
     [self.marketTopNotesProvider loadItems];
+    self.marketStuffDataProvider.filters = self.filters;
+    [self.marketStuffDataProvider loadItems];
 }
 
 - (void)applyFilters
@@ -89,7 +101,9 @@
 
 - (void)didSelectedCellWithObject:(id)cellObject
 {
-    [self.noteDetailsTransaction performWithObject:cellObject];
+    if([cellObject isKindOfClass:[CCNote class]]){
+        [self.noteDetailsTransaction performWithObject:cellObject];
+    } 
 }
 
 - (void)loadFilters
@@ -117,9 +131,11 @@
 {
     self.marketLatestNotesProvider.targetTable = (UITableView *)self.latestNotesCollectionView;
     self.marketTopNotesProvider.targetTable = (UITableView *)self.topNotesCollectionView;
+    self.marketStuffDataProvider.targetTable = (UITableView *)self.latestStuffCollectionView;
     
     self.marketTopNotesProvider.searchQuery = nil;
     self.marketLatestNotesProvider.searchQuery = nil;
+    self.marketStuffDataProvider.searchQuery = nil;
     
     [self update];
 }

@@ -10,4 +10,9 @@
 
 @implementation CCStuff
 
+- (NSString *)description
+{
+    return self.stuffDescription;
+}
+
 @end

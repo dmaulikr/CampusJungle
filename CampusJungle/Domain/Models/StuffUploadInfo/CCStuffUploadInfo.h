@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSString *stuffDescription;
 @property (nonatomic, strong) NSNumber *price;
 @property (nonatomic, strong) UIImage *thumbnail;
-@property (nonatomic, strong) NSArray *images;
-@property (nonatomic, strong) NSArray *imageURLs;
+@property (nonatomic, strong) NSArray *arrayOfImages;
+@property (nonatomic, strong) NSArray *arrayOfURLs;
 
 @end

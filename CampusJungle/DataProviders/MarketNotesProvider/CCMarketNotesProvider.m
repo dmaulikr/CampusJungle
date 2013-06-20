@@ -25,7 +25,7 @@
                                                 order:self.order
                                                 query:self.searchQuery
                                        successHandler:^(RKMappingResult * result) {
-                                           successHandler(result);
+                                           successHandler(result.firstObject);
                                        } errorHandler:^(NSError *error) {
                                            [self showErrorWhileLoading:error];
                                        }];

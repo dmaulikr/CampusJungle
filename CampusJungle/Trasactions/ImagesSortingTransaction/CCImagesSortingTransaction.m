@@ -16,10 +16,11 @@
 {
     NSParameterAssert(self.backToListTransaction);
     NSParameterAssert(self.navigation);
+    NSParameterAssert(self.sortingControllerClass);
     NSDictionary *unSortedInfo = (NSDictionary *)object;
-    CCImageSortingController *sortingController = [CCImageSortingController new];
+    CCImageSortingController *sortingController = [self.sortingControllerClass new];
     sortingController.arrayOfDropboxImages = unSortedInfo[@"arrayOfDropboxItems"];
-    sortingController.notesUploadInfo = unSortedInfo[@"uploadInfo"];
+    sortingController.uploadInfo = unSortedInfo[@"uploadInfo"];
     sortingController.backToListTransaction = self.backToListTransaction;
     [self.navigation pushViewController:sortingController animated:YES];
 }

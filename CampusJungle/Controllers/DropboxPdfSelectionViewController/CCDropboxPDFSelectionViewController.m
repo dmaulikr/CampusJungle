@@ -43,7 +43,7 @@
         NSDictionary *objectForTransaction = @{
                                                @"path" : [self.dropboxDataProvider.dropboxPath stringByAppendingPathComponent:fileInfo.fileData.filename],
                                                @"sellected" : self.arrayOfSelectedFiles,
-                                               @"noteInfo" : self.noteUploadInfo
+                                               @"noteInfo" : self.uploadInfo
                                                };
         [self.dropboxFileSystemTransaction performWithObject:objectForTransaction];
     } else {

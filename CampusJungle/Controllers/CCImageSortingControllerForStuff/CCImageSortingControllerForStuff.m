@@ -8,6 +8,7 @@
 
 #import "CCImageSortingControllerForStuff.h"
 #import "CCStuffAPIProviderProtocol.h"
+#import "CCStandardErrorHandler.h"
 
 @interface CCImageSortingControllerForStuff ()
 
@@ -25,11 +26,11 @@
 - (void)sendFiles
 {
     [self saveResultToUploadInfo:self.arrayOfDropboxImages];
-//    [self.ioc_notesAPIProvider postDropboxUploadInfo:self.notesUploadInfo successHandler:^(id result) {
-//        [self.backToListTransaction perform];
-//    } errorHandler:^(NSError *error) {
-//        [CCStandardErrorHandler showErrorWithError:error];
-//    }];
+    [self.ioc_stuffAPIProvider postDropboxUploadInfo:(CCStuffUploadInfo *)self.uploadInfo successHandler:^(id result) {
+        [self.backToListTransaction perform];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
 }
 
 @end

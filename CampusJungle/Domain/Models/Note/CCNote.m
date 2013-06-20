@@ -10,4 +10,9 @@
 
 @implementation CCNote
 
+- (NSString *)description
+{
+    return self.noteDescription;
+}
+
 @end

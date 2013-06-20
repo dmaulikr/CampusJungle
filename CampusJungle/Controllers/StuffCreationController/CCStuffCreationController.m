@@ -15,6 +15,9 @@
 #import "CCUserSessionProtocol.h"
 #import "CCEducation.h"
 #import "MBProgressHUD.h"
+#import "NSString+CJStringValidator.h"
+#import "CCAlertDefines.h"
+#import "CCStuffUploadInfo.h"
 
 @interface CCStuffCreationController () <CCAvatarSelectionProtocol, CCCellSelectionProtocol>
 
@@ -85,6 +88,43 @@
 - (void)didSelectedCellWithObject:(id)cellObject
 {
     self.selectedCollege = cellObject;
+}
+
+- (IBAction)didPressedDropboxImagesSelectionButton
+{
+    if([self isFieldsValid]){
+        [self.selectFilesFromDropboxTransaction performWithObject:[self createUploadInfo]];
+    }
+}
+
+- (BOOL)isFieldsValid
+{
+    if ([self.decriptionField.text isEmpty]){
+        [CCStandardErrorHandler showErrorWithTitle:nil message:CCValidationMessages.descriptionCantBeBlank];
+        return NO;
+    }
+    if ([self.priceField.text isEmpty]){
+        [CCStandardErrorHandler showErrorWithTitle:nil message:CCValidationMessages.priceCantBeBlank];
+        return NO;
+    }
+    return YES;
+}
+
+- (CCStuffUploadInfo *)createUploadInfo
+{
+    CCStuffUploadInfo *uploadInfo = [CCStuffUploadInfo new];
+    uploadInfo.stuffDescription = self.decriptionField.text;
+    uploadInfo.thumbnail = self.thumbImage.image;
+    uploadInfo.price = [NSNumber numberWithInteger: self.priceField.text.integerValue];
+    uploadInfo.collegeID = self.selectedCollege.collegeID.stringValue;
+    return uploadInfo;
+}
+
+- (void)didPressedImagesUploadingButton
+{
+    if([self isFieldsValid]){
+        [self.imagesUploadTransaction performWithObject:[self createUploadInfo]];
+    }
 }
 
 @end

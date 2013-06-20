@@ -22,4 +22,17 @@
     [self loadItemsWithParams:params path:CCAPIDefines.loadMyStuff successHandler:successHandler errorHandler:errorHandler];
 }
 
+- (void)postDropboxUploadInfo:(CCStuffUploadInfo *)stuffInfo successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    successHandler(nil);
+}
+
+- (void)postUploadInfoWithImages:(CCStuffUploadInfo *)uploadInfo successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler progress:(progressBlock)progressBlock
+{
+    UIImage *thumb = uploadInfo.thumbnail;
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.createStuff,uploadInfo.collegeID];
+    
+    [self postInfoWithObject:uploadInfo thumbnail:thumb images:uploadInfo.arrayOfImages onPath:path successHandler:successHandler errorHandler:errorHandler progress:progressBlock];
+}
+
 @end

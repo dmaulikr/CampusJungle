@@ -16,8 +16,8 @@
     NSParameterAssert(self.naviation);
     NSParameterAssert(self.backToListTransaction);
     
-    CCUploadImagesController *uploadImagesController = [CCUploadImagesController new];
-    uploadImagesController.noteInfo = object;
+    CCUploadImagesController *uploadImagesController = [self.uploadImagesControllerClass new];
+    uploadImagesController.uploadInfo = object;
     uploadImagesController.backToListTransaction = self.backToListTransaction;
     
     [self.naviation pushViewController:uploadImagesController animated:YES];

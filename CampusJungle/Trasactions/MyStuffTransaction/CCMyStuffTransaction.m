@@ -9,19 +9,27 @@
 #import "CCMyStuffTransaction.h"
 #import "CCMyStuffController.h"
 #import "CCCreateStuffTransaction.h"
+#import "CCBackToListOfNotesTransaction.h"
 
 @implementation CCMyStuffTransaction
 
 - (void)perform
 {
     NSParameterAssert(self.navigation);
-    CCMyStuffController *myStuffCOntroller = [CCMyStuffController new];
+    CCMyStuffController *myStuffController = [CCMyStuffController new];
     
-    CCCreateStuffTransaction *creatinStuffTransaction = [CCCreateStuffTransaction new];
-    creatinStuffTransaction.navigation = self.navigation;
-    myStuffCOntroller.createStuffTransaction = creatinStuffTransaction;
+    CCCreateStuffTransaction *creationStuffTransaction = [CCCreateStuffTransaction new];
+    creationStuffTransaction.navigation = self.navigation;
+    myStuffController.createStuffTransaction = creationStuffTransaction;
+
     
-    [self.navigation pushViewController:myStuffCOntroller animated:YES];
+    CCBackToListOfNotesTransaction *backToListTransaction = [CCBackToListOfNotesTransaction new];
+    backToListTransaction.navigation = self.navigation;
+    backToListTransaction.listController = myStuffController;
+    
+    creationStuffTransaction.backToListTransaction = backToListTransaction;
+    
+    [self.navigation pushViewController:myStuffController animated:YES];
 
 }
 

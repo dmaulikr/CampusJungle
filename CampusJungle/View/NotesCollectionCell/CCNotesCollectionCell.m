@@ -35,7 +35,7 @@
     _cellObject = cellObject;
     CCNote *currentNote = cellObject;
     
-    self.noteDescription.text = currentNote.noteDescription;
+    self.noteDescription.text = currentNote.description;
     
     if(currentNote.thumbnailRetina.length){
         NSString *thumbPath = [CCAPIDefines.baseURL stringByAppendingString: currentNote.thumbnailRetina];

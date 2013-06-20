@@ -93,7 +93,7 @@
         NSDictionary *objectForTransaction = @{
                                                @"path" : [self.dropboxDataProvider.dropboxPath stringByAppendingPathComponent:fileInfo.fileData.filename],
                                                @"sellected" : self.arrayOfSelectedFiles,
-                                               @"noteInfo" : self.noteUploadInfo
+                                               @"noteInfo" : self.uploadInfo
                                                };
         [self.dropboxFileSystemTransaction performWithObject:objectForTransaction];
     } else {
@@ -147,7 +147,7 @@
         if(self.uploadInfo.arrayOfURLs){
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
             [self.imageSortingTransaction performWithObject:@{
-             @"uploadInfo" : self.noteUploadInfo,
+             @"uploadInfo" : self.uploadInfo,
              @"arrayOfDropboxItems" : self.arrayOfSelectedFiles,
              }];
         } else {

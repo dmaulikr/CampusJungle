@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong) NSMutableArray *arrayOfDropboxImages;
 @property (nonatomic, strong) id <CCTransaction> backToListTransaction;
-@property (nonatomic, strong) CCNoteUploadInfo *notesUploadInfo;
+@property (nonatomic, strong) CCNoteUploadInfo *uploadInfo;
 
 - (void)saveResultToUploadInfo:(NSArray *)selectedFiles;
 

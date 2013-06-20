@@ -15,4 +15,6 @@
 
 - (void)loadItemsWithParams:(NSDictionary *)params path:(NSString *)path successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 
+- (void)postInfoWithObject:(id)object thumbnail:(UIImage *)thumb images:(NSArray *)images onPath:(NSString *)path successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler progress:(progressBlock)progressBlock;
+
 @end

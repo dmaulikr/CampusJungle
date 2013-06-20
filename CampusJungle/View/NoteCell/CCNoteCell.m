@@ -37,7 +37,7 @@
     _cellObject = cellObject;
     CCNote *note = (CCNote *)cellObject;
    
-    self.noteDescription.text = note.noteDescription;
+    self.noteDescription.text = note.description;
     if(note.link.length){
         self.pandingImage.hidden = YES;
     } else {

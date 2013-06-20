@@ -14,5 +14,6 @@
 
 @property (nonatomic, strong) UINavigationController *naviation;
 @property (nonatomic, strong) id <CCTransaction> backToListTransaction;
+@property (nonatomic, strong) Class uploadImagesControllerClass;
 
 @end

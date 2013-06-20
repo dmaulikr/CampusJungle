@@ -31,7 +31,6 @@
     return self.arrayOfItems.count;
 }
 
-
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     return [self.arrayOfItems[row] name];

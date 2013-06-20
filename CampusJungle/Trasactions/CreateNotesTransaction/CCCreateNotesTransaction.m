@@ -11,6 +11,7 @@
 #import "CCDropboxImagesSelectionTransaction.h"
 #import "CCSelectPdfFromDropboxTransaction.h"
 #import "CCImagesForNotesUploadingScreenTransaction.h"
+#import "CCUploadImagesController.h"
 
 @implementation CCCreateNotesTransaction
 
@@ -22,6 +23,7 @@
     CCCreateNoteViewController *createNotesController = [CCCreateNoteViewController new];
     
     CCImagesForNotesUploadingScreenTransaction *imagesUploadTransaction = [CCImagesForNotesUploadingScreenTransaction new];
+    imagesUploadTransaction.uploadImagesControllerClass = [CCUploadImagesController class];
     imagesUploadTransaction.naviation = self.navigation;
     imagesUploadTransaction.backToListTransaction = self.backToListTransaction;
     createNotesController.imagesUploadTransaction = imagesUploadTransaction;

@@ -8,7 +8,6 @@
 
 #import "CCUploadImagesController.h"
 #import "UIActionSheet+BlocksKit.h"
-#import "CCUploadingImagesDataProvider.h"
 #import "CCImageCell.h"
 #import "CCImageSortingDataSource.h"
 #import "CCNotesAPIProviderProtolcol.h"
@@ -23,7 +22,6 @@
 
 @property (nonatomic, weak) IBOutlet UIView *tableFooterView;
 @property (nonatomic, strong) id <CCNotesAPIProviderProtolcol> ioc_notesAPIProvider;
-@property (nonatomic, strong) CCUploadingImagesDataProvider *dataProvider;
 @property (nonatomic, weak) IBOutlet UIButton *addButton;
 
 @end
@@ -103,11 +101,11 @@
 
 - (void)sendFiles
 {
-    self.noteInfo.arrayOfImages = self.dataProvider.arrayOfImages;
+    self.uploadInfo.arrayOfImages = self.dataProvider.arrayOfImages;
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"Preparing for upload";
     __weak id weakSelf = self;
-    [self.ioc_notesAPIProvider postDropboxUploadInfoWithImages:self.noteInfo successHandler:^(id result) {
+    [self.ioc_notesAPIProvider postUploadInfoWithImages:self.uploadInfo successHandler:^(id result) {
         
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];

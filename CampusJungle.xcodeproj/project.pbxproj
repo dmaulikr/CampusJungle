@@ -122,6 +122,9 @@
 		D360F8F417731CB200C98399 /* CCCreateStuffTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8F317731CB200C98399 /* CCCreateStuffTransaction.m */; };
 		D360F8F81773280600C98399 /* CCImageSortingControllerForStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8F71773280600C98399 /* CCImageSortingControllerForStuff.m */; };
 		D360F8FC17732ADB00C98399 /* CCStuffUploadInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8FB17732ADB00C98399 /* CCStuffUploadInfo.m */; };
+		D360F9001773354100C98399 /* CCDropboxImagesFileSelectionForStuffTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8FF1773354100C98399 /* CCDropboxImagesFileSelectionForStuffTransaction.m */; };
+		D360F904177341B300C98399 /* CCUploadImageForStuffController.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F903177341B300C98399 /* CCUploadImageForStuffController.m */; };
+		D360F908177358A200C98399 /* CCMarketStuffDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F907177358A200C98399 /* CCMarketStuffDataProvider.m */; };
 		D3614631175E17BE00907414 /* CCDropboxAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */; };
 		D3614636175E1D3000907414 /* DropboxSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = D3614635175E1D3000907414 /* DropboxSDK */; };
 		D3614640175E362600907414 /* CCDropboxImagesSelectionTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D361463F175E362600907414 /* CCDropboxImagesSelectionTransaction.m */; };
@@ -439,6 +442,12 @@
 		D360F8F71773280600C98399 /* CCImageSortingControllerForStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCImageSortingControllerForStuff.m; sourceTree = "<group>"; };
 		D360F8FA17732ADB00C98399 /* CCStuffUploadInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStuffUploadInfo.h; sourceTree = "<group>"; };
 		D360F8FB17732ADB00C98399 /* CCStuffUploadInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStuffUploadInfo.m; sourceTree = "<group>"; };
+		D360F8FE1773354100C98399 /* CCDropboxImagesFileSelectionForStuffTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxImagesFileSelectionForStuffTransaction.h; sourceTree = "<group>"; };
+		D360F8FF1773354100C98399 /* CCDropboxImagesFileSelectionForStuffTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxImagesFileSelectionForStuffTransaction.m; sourceTree = "<group>"; };
+		D360F902177341B300C98399 /* CCUploadImageForStuffController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUploadImageForStuffController.h; sourceTree = "<group>"; };
+		D360F903177341B300C98399 /* CCUploadImageForStuffController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUploadImageForStuffController.m; sourceTree = "<group>"; };
+		D360F906177358A200C98399 /* CCMarketStuffDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMarketStuffDataProvider.h; sourceTree = "<group>"; };
+		D360F907177358A200C98399 /* CCMarketStuffDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMarketStuffDataProvider.m; sourceTree = "<group>"; };
 		D361462F175E17BE00907414 /* CCDropboxAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProvider.h; sourceTree = "<group>"; };
 		D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxAPIProvider.m; sourceTree = "<group>"; };
 		D3614632175E18A200907414 /* CCDropboxAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProviderProtocol.h; sourceTree = "<group>"; };
@@ -721,6 +730,7 @@
 				D338DA5B176EFC0B00ADCD76 /* NoteDetails */,
 				D3A5ECFB1768D53200300399 /* FilterController */,
 				D3A5ECF11768A32E00300399 /* MarketPlace */,
+				D360F9011773418800C98399 /* UploadImageForStuffController */,
 				D3B3D807176618C4000D3FAB /* UploadImagesController */,
 				D360F8F5177327CF00C98399 /* CCImageSortingControllerForStuff */,
 				D3B3D7F51765DEF8000D3FAB /* CCImageSortingController */,
@@ -1010,6 +1020,7 @@
 				A7D53A4D1758CCE700FE9FCD /* AllClassesTransaction */,
 				D3B3D7DF17648BED000D3FAB /* DropboxPDFFileSystemTransaction */,
 				D361464B175F18A500907414 /* DropboxImagesFileSystemTransaction */,
+				D360F8FD1773351800C98399 /* DropboxImagesFileSelectionForStuffTransaction */,
 				D361463D175E360600907414 /* DropboxImagesFileSelectionTransaction */,
 				D36146AD176311FA00907414 /* SelectPdfFromDropbox */,
 				D35C1B481763706500C2AEB4 /* BackToListOfNotesTransaction */,
@@ -1613,6 +1624,33 @@
 			path = StuffUploadInfo;
 			sourceTree = "<group>";
 		};
+		D360F8FD1773351800C98399 /* DropboxImagesFileSelectionForStuffTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D360F8FE1773354100C98399 /* CCDropboxImagesFileSelectionForStuffTransaction.h */,
+				D360F8FF1773354100C98399 /* CCDropboxImagesFileSelectionForStuffTransaction.m */,
+			);
+			path = DropboxImagesFileSelectionForStuffTransaction;
+			sourceTree = "<group>";
+		};
+		D360F9011773418800C98399 /* UploadImageForStuffController */ = {
+			isa = PBXGroup;
+			children = (
+				D360F902177341B300C98399 /* CCUploadImageForStuffController.h */,
+				D360F903177341B300C98399 /* CCUploadImageForStuffController.m */,
+			);
+			path = UploadImageForStuffController;
+			sourceTree = "<group>";
+		};
+		D360F9051773588600C98399 /* MarketStuffDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D360F906177358A200C98399 /* CCMarketStuffDataProvider.h */,
+				D360F907177358A200C98399 /* CCMarketStuffDataProvider.m */,
+			);
+			path = MarketStuffDataProvider;
+			sourceTree = "<group>";
+		};
 		D361462E175E17AD00907414 /* CCDropboxAPIProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -2148,6 +2186,7 @@
 			children = (
 				D360F8DA1772F99C00C98399 /* MyStuffDataProvider */,
 				D3013BE9176A100D0037EDAE /* FiltersDataProvider */,
+				D360F9051773588600C98399 /* MarketStuffDataProvider */,
 				D3013BCC1769CC5A0037EDAE /* MarketNotesProvider */,
 				D3B3D81317661F46000D3FAB /* UploadImagesDataProvider */,
 				D3B3D7FF1765E1D9000D3FAB /* ImageSortingDataProvider */,
@@ -2670,6 +2709,9 @@
 				D360F8F417731CB200C98399 /* CCCreateStuffTransaction.m in Sources */,
 				D360F8F81773280600C98399 /* CCImageSortingControllerForStuff.m in Sources */,
 				D360F8FC17732ADB00C98399 /* CCStuffUploadInfo.m in Sources */,
+				D360F9001773354100C98399 /* CCDropboxImagesFileSelectionForStuffTransaction.m in Sources */,
+				D360F904177341B300C98399 /* CCUploadImageForStuffController.m in Sources */,
+				D360F908177358A200C98399 /* CCMarketStuffDataProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

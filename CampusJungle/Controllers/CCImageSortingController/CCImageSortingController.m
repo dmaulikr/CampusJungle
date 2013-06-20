@@ -52,7 +52,7 @@
 - (void)sendFiles
 {
     [self saveResultToUploadInfo:self.arrayOfDropboxImages];
-    [self.ioc_notesAPIProvider postDropboxUploadInfo:self.notesUploadInfo successHandler:^(id result) {
+    [self.ioc_notesAPIProvider postDropboxUploadInfo:self.uploadInfo successHandler:^(id result) {
         [self.backToListTransaction perform];
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
@@ -66,7 +66,7 @@
 
 - (void)saveResultToUploadInfo:(NSArray *)selectedFiles
 {
-    self.notesUploadInfo.arrayOfURLs = [CCDropboxFileInfo arrayOfDirectLinksFromArrayOfInfo:selectedFiles];
+    self.uploadInfo.arrayOfURLs = [CCDropboxFileInfo arrayOfDirectLinksFromArrayOfInfo:selectedFiles];
 }
 
 

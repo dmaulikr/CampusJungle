@@ -13,8 +13,6 @@
 
 - (void)loadNotesNumberOfPage:(NSNumber *)pageNumber filters:(NSDictionary *)filters order:(NSString *)order query:(NSString *)query successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
 {
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];
-    [self setAuthorizationToken];
     NSMutableDictionary *params = [@{
                              @"filters" : filters,
                              @"order" : order,
@@ -22,16 +20,19 @@
     if(query){
         [params setValue:query forKey:@"keywords"];
     }
-    
-    [objectManager getObject:nil
-                         path:CCAPIDefines.notesInMarket
-                   parameters:params
-                      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                          successHandler(mappingResult.firstObject);
-                      }
-                      failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                          errorHandler(error);
-                      }];
+    [self loadItemsWithParams:params path:CCAPIDefines.notesInMarket successHandler:successHandler errorHandler:errorHandler];
+}
+
+- (void)loadStuffNumberOfPage:(NSNumber *)pageNumber filters:(NSDictionary *)filters order:(NSString *)order query:(NSString *)query successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    NSMutableDictionary *params = [@{
+                                   @"filters" : filters,
+                                   @"order" : order,
+                                   } mutableCopy];
+    if(query){
+        [params setValue:query forKey:@"keywords"];
+    }
+    [self loadItemsWithParams:params path:CCAPIDefines.stuffInMarket successHandler:successHandler errorHandler:errorHandler];
 }
 
 - (void)performPurchase:(NSString *)noteID

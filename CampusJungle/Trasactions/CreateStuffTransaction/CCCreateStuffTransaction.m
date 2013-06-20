@@ -8,6 +8,9 @@
 
 #import "CCCreateStuffTransaction.h"
 #import "CCStuffCreationController.h"
+#import "CCDropboxImagesFileSelectionForStuffTransaction.h"
+#import "CCImagesForNotesUploadingScreenTransaction.h"
+#import "CCUploadImageForStuffController.h"
 
 @implementation CCCreateStuffTransaction
 
@@ -16,7 +19,18 @@
     NSParameterAssert(self.navigation);
 
     CCStuffCreationController *stuffCreationController = [CCStuffCreationController new];
-
+    
+    CCDropboxImagesFileSelectionForStuffTransaction *dropboxSelection = [CCDropboxImagesFileSelectionForStuffTransaction new];
+    dropboxSelection.navigation = self.navigation;
+    dropboxSelection.backToListTransaction = self.backToListTransaction;
+    
+    CCImagesForNotesUploadingScreenTransaction *imagesUploadTransaction = [CCImagesForNotesUploadingScreenTransaction new];
+    imagesUploadTransaction.uploadImagesControllerClass = [CCUploadImageForStuffController class];
+    imagesUploadTransaction.naviation = self.navigation;
+    imagesUploadTransaction.backToListTransaction = self.backToListTransaction;
+    stuffCreationController.imagesUploadTransaction = imagesUploadTransaction;
+    
+    stuffCreationController.selectFilesFromDropboxTransaction = dropboxSelection;
     [self.navigation pushViewController:stuffCreationController animated:YES];
     
 }

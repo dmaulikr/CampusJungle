@@ -238,4 +238,59 @@
     [self loadItemsWithParams:params path:CCAPIDefines.listOfMyNotes successHandler:successHandler errorHandler:errorHandler];
 }
 
+- (void)postInfoWithObject:(id)object thumbnail:(UIImage *)thumb images:(NSArray *)images onPath:(NSString *)path successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler progress:(progressBlock)progressBlock
+{
+    [self setAuthorizationToken];
+    
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        NSMutableURLRequest *request =
+        [objectManager multipartFormRequestWithObject:object
+                                               method:RKRequestMethodPOST
+                                                 path:path
+                                           parameters:nil
+                            constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
+         {
+             if(thumb){
+                 [formData appendPartWithFileData:UIImagePNGRepresentation(thumb)
+                                             name:@"thumbnail"
+                                         fileName:@"thumbnail.png"
+                                         mimeType:@"image/png"];
+             }
+             int i = 1;
+             for(UIImage *image in images){
+                 NSString *fileName = [NSString stringWithFormat:@"file%d.png",i++];
+                 [formData appendPartWithFileData:UIImagePNGRepresentation(image)
+                                             name:@"images[]"
+                                         fileName:fileName
+                                         mimeType:@"image/png"];
+             }
+             
+         }];
+        
+        RKObjectRequestOperation *operation =
+        [objectManager objectRequestOperationWithRequest:request
+                                                 success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
+         {
+             if(successHandler){
+                 successHandler(mappingResult.firstObject);
+             }
+         }
+                                                 failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                                     if(successHandler){
+                                                         errorHandler(error);
+                                                     }
+                                                 }];
+        
+        [operation.HTTPRequestOperation setUploadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
+            progressBlock((double)totalBytesWritten/totalBytesExpectedToWrite);
+        }];
+        [operation start];
+        
+    });
+}
+
+
 @end

@@ -9,6 +9,7 @@
 #import "CCDropboxImagesSelectionTransaction.h"
 #import "CCImagesSortingTransaction.h"
 #import "CCDropboxImagesFileSystemTransaction.h"
+#import "CCImageSortingController.h"
 
 @implementation CCDropboxImagesSelectionTransaction
 
@@ -19,6 +20,7 @@
     
     CCDropboxImagesFileSystemTransaction *fileSystemTransaction = [self fileSystemTransaction];
     CCImagesSortingTransaction *sortingTransaction = [CCImagesSortingTransaction new];
+    sortingTransaction.sortingControllerClass = [self sortingControllerClass];
     fileSystemTransaction.imagesSortingTransaction = sortingTransaction;
     sortingTransaction.navigation = self.navigation;
     sortingTransaction.backToListTransaction = self.backToListTransaction;
@@ -44,6 +46,11 @@
 - (CCDropboxImagesFileSystemTransaction *)fileSystemTransaction
 {
     return [CCDropboxImagesFileSystemTransaction new];
+}
+
+- (Class)sortingControllerClass
+{
+    return [CCImageSortingController class];
 }
 
 @end

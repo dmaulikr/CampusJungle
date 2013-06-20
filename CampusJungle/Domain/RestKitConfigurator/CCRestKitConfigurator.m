@@ -21,6 +21,8 @@
 #import "CCEducation.h"
 #import "CCNote.h"
 #import "CCNoteUploadInfo.h"
+#import "CCStuff.h"
+#import "CCStuffUploadInfo.h"
 
 @implementation CCRestKitConfigurator
 
@@ -55,6 +57,8 @@
     [CCRestKitConfigurator configureNotesUploadRequest:objectManager];
     [CCRestKitConfigurator configureAttachmentResponse:objectManager];
     [CCRestKitConfigurator configureNotesPurchasingResponse:objectManager];
+    [CCRestKitConfigurator configureStuffCreationRequest:objectManager];
+    [CCRestKitConfigurator configureStuffResponse:objectManager];
 
 }
 
@@ -313,10 +317,10 @@
      @"full_access" : @"fullAccess",
      }];
     
-    RKRelationshipMapping* relationShipResponseCitiesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
+    RKRelationshipMapping* relationShipResponseNotesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
                                                                                                            toKeyPath:CCResponseKeys.items
                                                                                                          withMapping:notesMapping];
-    [paginationNotesResponseMapping addPropertyMapping:relationShipResponseCitiesMapping];
+    [paginationNotesResponseMapping addPropertyMapping:relationShipResponseNotesMapping];
     RKResponseDescriptor *responsePaginationNote = [RKResponseDescriptor responseDescriptorWithMapping:paginationNotesResponseMapping pathPattern:CCAPIDefines.listOfMyNotes keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
     RKResponseDescriptor *responseMarketPaginationNote = [RKResponseDescriptor responseDescriptorWithMapping:paginationNotesResponseMapping pathPattern:CCAPIDefines.notesInMarket keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
@@ -386,5 +390,57 @@
     [objectManager addResponseDescriptor:notesPurchasingResponseDescriptor];
     [objectManager addResponseDescriptor:notesResendingLinkResponseDescriptor];
 }
+
++ (void)configureStuffCreationRequest:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *stuffMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    [stuffMapping addAttributeMappingsFromDictionary:@{
+     @"collegeID" : @"class_id",
+     @"stuffDescription" : @"description",
+     @"price" : @"price",
+     @"arrayOfURLs" :@"images_urls",
+     }];
+    RKRequestDescriptor *stuffRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:stuffMapping objectClass:[CCStuffUploadInfo class] rootKeyPath:nil];
+    [objectManager addRequestDescriptor:stuffRequestDescriptor];
+}
+
++ (void)configureStuffResponse:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *paginationNotesResponseMapping = [CCRestKitConfigurator paginationMapping];
+    RKObjectMapping *notesMapping = [RKObjectMapping mappingForClass:[CCStuff class]];
+    [notesMapping addAttributeMappingsFromDictionary:@{
+     @"id" : @"stuffID",
+     @"owner_id" : @"ownerID",
+     @"college_id" : @"collegeID",
+     @"class_id" : @"classID",
+     @"description" : @"stuffDescription",
+     @"price" : @"price",
+    
+     @"tags" : @"tags",
+     
+     @"thumbnail" : @"thumbnail",
+     @"thumbnail_retina" : @"thumbnailRetina",
+
+     }];
+    
+    RKRelationshipMapping* relationShipResponseStuffMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
+                                                                                                           toKeyPath:CCResponseKeys.items
+                                                                                                         withMapping:notesMapping];
+    [paginationNotesResponseMapping addPropertyMapping:relationShipResponseStuffMapping];
+    
+    RKResponseDescriptor *responsePaginationStuff = [RKResponseDescriptor responseDescriptorWithMapping:paginationNotesResponseMapping pathPattern:CCAPIDefines.loadMyStuff keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    RKResponseDescriptor *responseMarketPaginationStuff = [RKResponseDescriptor responseDescriptorWithMapping:paginationNotesResponseMapping pathPattern:CCAPIDefines.stuffInMarket keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    NSString *uploadStuffPathPatern = [NSString stringWithFormat:CCAPIDefines.createStuff,@":CollegeID"];
+    RKResponseDescriptor *responseOnCreateStuff = [RKResponseDescriptor responseDescriptorWithMapping:notesMapping pathPattern:uploadStuffPathPatern keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    [objectManager addResponseDescriptor:responseMarketPaginationStuff];
+    [objectManager addResponseDescriptor:responseOnCreateStuff];
+    [objectManager addResponseDescriptor:responsePaginationStuff];
+}
+
+
+
 
 @end
