@@ -10,6 +10,7 @@
 #import "CCMyStuffController.h"
 #import "CCCreateStuffTransaction.h"
 #import "CCBackToListOfNotesTransaction.h"
+#import "CCStuffDetailsTransaction.h"
 
 @implementation CCMyStuffTransaction
 
@@ -28,6 +29,11 @@
     backToListTransaction.listController = myStuffController;
     
     creationStuffTransaction.backToListTransaction = backToListTransaction;
+    
+    CCStuffDetailsTransaction *stuffDetailsTransaction = [CCStuffDetailsTransaction new];
+    stuffDetailsTransaction.navigation = self.navigation;
+    
+    myStuffController.stuffDetailsTransaction = stuffDetailsTransaction;
     
     [self.navigation pushViewController:myStuffController animated:YES];
 

@@ -15,7 +15,7 @@
 
 @property (nonatomic, strong) CCCommonCollectionDataSource *dataSource;
 @property (nonatomic, weak) IBOutlet UICollectionView *photoBrowser;
-
+@property (nonatomic) BOOL isInAction;
 @end
 
 @implementation CCPhotoBrowserController
@@ -56,15 +56,27 @@
 
 - (IBAction)didSwipeRight
 {
-    if(self.photoBrowser.contentOffset.x > 0){
+    if(!self.isInAction && self.photoBrowser.contentOffset.x > 0){
         [self.photoBrowser setContentOffset:CGPointMake(self.photoBrowser.contentOffset.x -self.view.frame.size.width, 0) animated:YES];
+        self.isInAction = YES;
+        double delayInSeconds = 0.4;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            self.isInAction = NO;
+        });
     }
 }
 
 - (IBAction)didSwipeLeft
 {
-    if(self.photoBrowser.contentOffset.x + self.view.frame.size.width < self.photoBrowser.contentSize.width){
+    if(!self.isInAction && self.photoBrowser.contentOffset.x + self.view.frame.size.width < self.photoBrowser.contentSize.width){
         [self.photoBrowser setContentOffset:CGPointMake(self.photoBrowser.contentOffset.x + self.view.frame.size.width, 0) animated:YES];
+        self .isInAction = YES;
+        double delayInSeconds = 0.4;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            self.isInAction = NO;
+        });
     }
 }
 

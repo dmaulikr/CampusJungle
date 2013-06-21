@@ -41,4 +41,9 @@
     [self.dataSource.dataProvider loadItems];
 }
 
+- (void)didSelectedCellWithObject:(id)cellObject
+{
+    [self.stuffDetailsTransaction performWithObject:cellObject];
+}
+
 @end

@@ -26,4 +26,10 @@
     [self configTableWithProvider:self.tableProvider cellClass:[CCOrdinaryCell class]];
 }
 
+- (void)didSelectedCellWithObject:(id)cellObject
+{
+    [self.stuffDetails performWithObject:cellObject];
+}
+
+
 @end

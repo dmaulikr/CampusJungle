@@ -8,9 +8,12 @@
 
 #import "CCTableBasedController.h"
 #import "CCTransaction.h"
+#import "CCTransactionWithObject.h"
+#import "CCCellSelectionProtocol.h"
 
-@interface CCMyStuffController : CCTableBasedController
+@interface CCMyStuffController : CCTableBasedController <CCCellSelectionProtocol>
 
 @property (nonatomic, strong) id <CCTransaction> createStuffTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> stuffDetailsTransaction;
 
 @end

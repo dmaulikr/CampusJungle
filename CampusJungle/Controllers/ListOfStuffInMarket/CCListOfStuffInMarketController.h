@@ -7,9 +7,12 @@
 //
 
 #import "CCTableBasedController.h"
+#import "CCCellSelectionProtocol.h"
+#import "CCTransactionWithObject.h"
 
-@interface CCListOfStuffInMarketController : CCTableBasedController
+@interface CCListOfStuffInMarketController : CCTableBasedController<CCCellSelectionProtocol>
 
 @property (nonatomic, strong) CCBaseDataProvider *tableProvider;
+@property (nonatomic, strong) id <CCTransactionWithObject> stuffDetails;
 
 @end
