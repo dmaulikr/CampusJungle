@@ -60,8 +60,10 @@
 
 - (void)didSelectedCellWithObject:(id)cellObject
 {
-
-
+    [self.photoBrowserTransaction performWithObject:@{
+            @"photosProvider" : self.dataProvider,
+            @"selectedPhoto" : cellObject,
+     }];
 }
 
 @end

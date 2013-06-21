@@ -136,6 +136,8 @@
 		D360F9281774941D00C98399 /* CCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F9271774941D00C98399 /* CCPhoto.m */; };
 		D360F92C17749C4C00C98399 /* CCPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F92B17749C4C00C98399 /* CCPhotoCell.m */; };
 		D360F92E17749C9C00C98399 /* CCPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D360F92D17749C9C00C98399 /* CCPhotoCell.xib */; };
+		D360F997177500A700C98399 /* CCPhotoBrowserTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F996177500A700C98399 /* CCPhotoBrowserTransaction.m */; };
+		D360F99B17750A4400C98399 /* CCCloseBrowserTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F99A17750A4400C98399 /* CCCloseBrowserTransaction.m */; };
 		D3614631175E17BE00907414 /* CCDropboxAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */; };
 		D3614636175E1D3000907414 /* DropboxSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = D3614635175E1D3000907414 /* DropboxSDK */; };
 		D3614640175E362600907414 /* CCDropboxImagesSelectionTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D361463F175E362600907414 /* CCDropboxImagesSelectionTransaction.m */; };
@@ -478,6 +480,10 @@
 		D360F92A17749C4C00C98399 /* CCPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPhotoCell.h; sourceTree = "<group>"; };
 		D360F92B17749C4C00C98399 /* CCPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPhotoCell.m; sourceTree = "<group>"; };
 		D360F92D17749C9C00C98399 /* CCPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCPhotoCell.xib; sourceTree = "<group>"; };
+		D360F995177500A700C98399 /* CCPhotoBrowserTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPhotoBrowserTransaction.h; sourceTree = "<group>"; };
+		D360F996177500A700C98399 /* CCPhotoBrowserTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPhotoBrowserTransaction.m; sourceTree = "<group>"; };
+		D360F99917750A4400C98399 /* CCCloseBrowserTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCloseBrowserTransaction.h; sourceTree = "<group>"; };
+		D360F99A17750A4400C98399 /* CCCloseBrowserTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCloseBrowserTransaction.m; sourceTree = "<group>"; };
 		D361462F175E17BE00907414 /* CCDropboxAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProvider.h; sourceTree = "<group>"; };
 		D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxAPIProvider.m; sourceTree = "<group>"; };
 		D3614632175E18A200907414 /* CCDropboxAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProviderProtocol.h; sourceTree = "<group>"; };
@@ -1032,6 +1038,8 @@
 		A787C77D17536F8400824DEA /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
+				D360F99817750A2A00C98399 /* CloseBrowserTransaction */,
+				D360F9941775008500C98399 /* PhotoBrowserTransaction */,
 				D360F91D17746F5700C98399 /* StuffDetailsTransaction */,
 				D360F8F117731C9F00C98399 /* CreateStuffTransaction */,
 				D360F8DE1772FB0F00C98399 /* MyStuffTransaction */,
@@ -1761,6 +1769,24 @@
 				D360F92D17749C9C00C98399 /* CCPhotoCell.xib */,
 			);
 			path = PhotoCell;
+			sourceTree = "<group>";
+		};
+		D360F9941775008500C98399 /* PhotoBrowserTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D360F995177500A700C98399 /* CCPhotoBrowserTransaction.h */,
+				D360F996177500A700C98399 /* CCPhotoBrowserTransaction.m */,
+			);
+			path = PhotoBrowserTransaction;
+			sourceTree = "<group>";
+		};
+		D360F99817750A2A00C98399 /* CloseBrowserTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D360F99917750A4400C98399 /* CCCloseBrowserTransaction.h */,
+				D360F99A17750A4400C98399 /* CCCloseBrowserTransaction.m */,
+			);
+			path = CloseBrowserTransaction;
 			sourceTree = "<group>";
 		};
 		D361462E175E17AD00907414 /* CCDropboxAPIProvider */ = {
@@ -2837,6 +2863,8 @@
 				D360F9241774932F00C98399 /* CCPhotosDataProvider.m in Sources */,
 				D360F9281774941D00C98399 /* CCPhoto.m in Sources */,
 				D360F92C17749C4C00C98399 /* CCPhotoCell.m in Sources */,
+				D360F997177500A700C98399 /* CCPhotoBrowserTransaction.m in Sources */,
+				D360F99B17750A4400C98399 /* CCCloseBrowserTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

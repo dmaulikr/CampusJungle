@@ -107,6 +107,10 @@
 							<string key="IBUIItemSize">{100, 100}</string>
 							<float key="IBUIMinimumLineSpacing">10</float>
 							<float key="IBUIMinimumInteritemSpacing">10</float>
+							<double key="IBUISectionInset.top">15</double>
+							<double key="IBUISectionInset.bottom">0.0</double>
+							<double key="IBUISectionInset.left">0.0</double>
+							<double key="IBUISectionInset.right">0.0</double>
 						</object>
 						<array key="IBUICells" id="0"/>
 					</object>

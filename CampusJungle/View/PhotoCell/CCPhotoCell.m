@@ -33,7 +33,13 @@
     _cellObject = cellObject;
     CCPhoto *currentPhoto = cellObject;
    
-    NSString *thumbPath = [CCAPIDefines.baseURL stringByAppendingString: currentPhoto.thumbnailRetina];
+    NSString *thumbPath;
+    if (self.frame.size.height < 200){
+        thumbPath = [CCAPIDefines.baseURL stringByAppendingString: currentPhoto.thumbnailRetina];
+    } else {
+        thumbPath = [CCAPIDefines.baseURL stringByAppendingString: currentPhoto.normal];
+    }
+    
     [self.thumb setImageWithURL:[NSURL URLWithString:thumbPath]];
 }
 

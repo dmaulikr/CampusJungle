@@ -8,6 +8,7 @@
 
 #import "CCStuffDetailsTransaction.h"
 #import "CCStuffDetailsController.h"
+#import "CCPhotoBrowserTransaction.h"
 
 @implementation CCStuffDetailsTransaction
 
@@ -18,6 +19,10 @@
     CCStuffDetailsController *stuffDetailsController = [CCStuffDetailsController new];
     stuffDetailsController.stuff = object;
     
+    CCPhotoBrowserTransaction *photoBrowserTransaction = [CCPhotoBrowserTransaction new];
+    photoBrowserTransaction.navigation = self.navigation;
+    
+    stuffDetailsController.photoBrowserTransaction = photoBrowserTransaction;
     [self.navigation pushViewController:stuffDetailsController animated:YES];
     
 }

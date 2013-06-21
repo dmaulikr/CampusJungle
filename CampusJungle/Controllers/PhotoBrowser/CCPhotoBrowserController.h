@@ -8,9 +8,17 @@
 
 #import "CCViewController.h"
 #import "CCBaseDataProvider.h"
+#import "CCPhoto.h"
+#import "CCTransaction.h"
 
 @interface CCPhotoBrowserController : CCViewController
 
 @property (nonatomic, strong) CCBaseDataProvider *dataProvider;
+@property (nonatomic, strong) CCPhoto *firstPhoto;
+@property (nonatomic, strong) id <CCTransaction> closeTransaction;
+
+- (IBAction)didSwipeRight;
+- (IBAction)didSwipeLeft;
+- (IBAction)doneButtonDidPressed;
 
 @end
