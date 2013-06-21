@@ -108,7 +108,6 @@
 						<string key="NSFrame">{{0, 350}, {320, 100}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -354,6 +353,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">viewAllStuffButtonPressed</string>
+						<reference key="source" ref="979461503"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">133</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">viewAllLatestNotesPressed</string>
 						<reference key="source" ref="787294589"/>
 						<reference key="destination" ref="372490531"/>
@@ -524,7 +532,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">132</int>
+			<int key="maxID">133</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -533,11 +541,16 @@
 					<string key="superclassName">CCViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="viewAllLatestNotesPressed">id</string>
+						<string key="viewAllStuffButtonPressed">id</string>
 						<string key="viewAllTopNotesPressed">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="viewAllLatestNotesPressed">
 							<string key="name">viewAllLatestNotesPressed</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="viewAllStuffButtonPressed">
+							<string key="name">viewAllStuffButtonPressed</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="viewAllTopNotesPressed">

@@ -125,6 +125,17 @@
 		D360F9001773354100C98399 /* CCDropboxImagesFileSelectionForStuffTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8FF1773354100C98399 /* CCDropboxImagesFileSelectionForStuffTransaction.m */; };
 		D360F904177341B300C98399 /* CCUploadImageForStuffController.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F903177341B300C98399 /* CCUploadImageForStuffController.m */; };
 		D360F908177358A200C98399 /* CCMarketStuffDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F907177358A200C98399 /* CCMarketStuffDataProvider.m */; };
+		D360F90C1774544900C98399 /* CCListOfStuffInMarketController.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F90B1774544900C98399 /* CCListOfStuffInMarketController.m */; };
+		D360F9101774566C00C98399 /* CCViewMarketStuffListTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F90F1774566C00C98399 /* CCViewMarketStuffListTransaction.m */; };
+		D360F9151774653700C98399 /* CCStuffDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F9131774653700C98399 /* CCStuffDetailsController.m */; };
+		D360F9161774653700C98399 /* CCStuffDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D360F9141774653700C98399 /* CCStuffDetailsController.xib */; };
+		D360F91B177466A500C98399 /* CCPhotoBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F919177466A500C98399 /* CCPhotoBrowserController.m */; };
+		D360F91C177466A500C98399 /* CCPhotoBrowserController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D360F91A177466A500C98399 /* CCPhotoBrowserController.xib */; };
+		D360F92017746F7300C98399 /* CCStuffDetailsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F91F17746F7300C98399 /* CCStuffDetailsTransaction.m */; };
+		D360F9241774932F00C98399 /* CCPhotosDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F9231774932F00C98399 /* CCPhotosDataProvider.m */; };
+		D360F9281774941D00C98399 /* CCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F9271774941D00C98399 /* CCPhoto.m */; };
+		D360F92C17749C4C00C98399 /* CCPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F92B17749C4C00C98399 /* CCPhotoCell.m */; };
+		D360F92E17749C9C00C98399 /* CCPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D360F92D17749C9C00C98399 /* CCPhotoCell.xib */; };
 		D3614631175E17BE00907414 /* CCDropboxAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */; };
 		D3614636175E1D3000907414 /* DropboxSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = D3614635175E1D3000907414 /* DropboxSDK */; };
 		D3614640175E362600907414 /* CCDropboxImagesSelectionTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D361463F175E362600907414 /* CCDropboxImagesSelectionTransaction.m */; };
@@ -448,6 +459,25 @@
 		D360F903177341B300C98399 /* CCUploadImageForStuffController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUploadImageForStuffController.m; sourceTree = "<group>"; };
 		D360F906177358A200C98399 /* CCMarketStuffDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMarketStuffDataProvider.h; sourceTree = "<group>"; };
 		D360F907177358A200C98399 /* CCMarketStuffDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMarketStuffDataProvider.m; sourceTree = "<group>"; };
+		D360F90A1774544900C98399 /* CCListOfStuffInMarketController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCListOfStuffInMarketController.h; sourceTree = "<group>"; };
+		D360F90B1774544900C98399 /* CCListOfStuffInMarketController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCListOfStuffInMarketController.m; sourceTree = "<group>"; };
+		D360F90E1774566C00C98399 /* CCViewMarketStuffListTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCViewMarketStuffListTransaction.h; sourceTree = "<group>"; };
+		D360F90F1774566C00C98399 /* CCViewMarketStuffListTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewMarketStuffListTransaction.m; sourceTree = "<group>"; };
+		D360F9121774653700C98399 /* CCStuffDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStuffDetailsController.h; sourceTree = "<group>"; };
+		D360F9131774653700C98399 /* CCStuffDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStuffDetailsController.m; sourceTree = "<group>"; };
+		D360F9141774653700C98399 /* CCStuffDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCStuffDetailsController.xib; sourceTree = "<group>"; };
+		D360F918177466A500C98399 /* CCPhotoBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPhotoBrowserController.h; sourceTree = "<group>"; };
+		D360F919177466A500C98399 /* CCPhotoBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPhotoBrowserController.m; sourceTree = "<group>"; };
+		D360F91A177466A500C98399 /* CCPhotoBrowserController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCPhotoBrowserController.xib; sourceTree = "<group>"; };
+		D360F91E17746F7300C98399 /* CCStuffDetailsTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStuffDetailsTransaction.h; sourceTree = "<group>"; };
+		D360F91F17746F7300C98399 /* CCStuffDetailsTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStuffDetailsTransaction.m; sourceTree = "<group>"; };
+		D360F9221774932F00C98399 /* CCPhotosDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPhotosDataProvider.h; sourceTree = "<group>"; };
+		D360F9231774932F00C98399 /* CCPhotosDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPhotosDataProvider.m; sourceTree = "<group>"; };
+		D360F9261774941D00C98399 /* CCPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPhoto.h; sourceTree = "<group>"; };
+		D360F9271774941D00C98399 /* CCPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPhoto.m; sourceTree = "<group>"; };
+		D360F92A17749C4C00C98399 /* CCPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPhotoCell.h; sourceTree = "<group>"; };
+		D360F92B17749C4C00C98399 /* CCPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPhotoCell.m; sourceTree = "<group>"; };
+		D360F92D17749C9C00C98399 /* CCPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCPhotoCell.xib; sourceTree = "<group>"; };
 		D361462F175E17BE00907414 /* CCDropboxAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProvider.h; sourceTree = "<group>"; };
 		D3614630175E17BE00907414 /* CCDropboxAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxAPIProvider.m; sourceTree = "<group>"; };
 		D3614632175E18A200907414 /* CCDropboxAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProviderProtocol.h; sourceTree = "<group>"; };
@@ -724,6 +754,9 @@
 		A787C73217536F8400824DEA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D360F9171774668600C98399 /* PhotoBrowser */,
+				D360F9111774651000C98399 /* StuffDetailsController */,
+				D360F9091774541E00C98399 /* ListOfStuffInMarket */,
 				D360F8E6177303BE00C98399 /* StuffCreationController */,
 				D360F8CF1772F50300C98399 /* MyStuffController */,
 				D338DA6A176F06E500ADCD76 /* ListOfNotesInMarket */,
@@ -894,6 +927,7 @@
 		A787C76117536F8400824DEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D360F9251774940F00C98399 /* Photos */,
 				D360F8F917732AC700C98399 /* StuffUploadInfo */,
 				D360F8E21772FE3B00C98399 /* Stuff */,
 				D3013BE3176A08240037EDAE /* FilterSection */,
@@ -998,10 +1032,12 @@
 		A787C77D17536F8400824DEA /* Trasactions */ = {
 			isa = PBXGroup;
 			children = (
+				D360F91D17746F5700C98399 /* StuffDetailsTransaction */,
 				D360F8F117731C9F00C98399 /* CreateStuffTransaction */,
 				D360F8DE1772FB0F00C98399 /* MyStuffTransaction */,
 				D38470611771D4AA003CB4A6 /* NotesBackToListTransaction */,
 				D384705D1771A56A003CB4A6 /* ShowNotesForClassTransaction */,
+				D360F90D1774563400C98399 /* ViewMarketStuffListTransaction */,
 				D338DA65176F057000ADCD76 /* ViewMarketNotesListTransaction */,
 				D338DA61176EFD0200ADCD76 /* NoteDetailTransaction */,
 				D3013BFA176B631E0037EDAE /* ApplyFiltersTransaction */,
@@ -1651,6 +1687,82 @@
 			path = MarketStuffDataProvider;
 			sourceTree = "<group>";
 		};
+		D360F9091774541E00C98399 /* ListOfStuffInMarket */ = {
+			isa = PBXGroup;
+			children = (
+				D360F90A1774544900C98399 /* CCListOfStuffInMarketController.h */,
+				D360F90B1774544900C98399 /* CCListOfStuffInMarketController.m */,
+			);
+			path = ListOfStuffInMarket;
+			sourceTree = "<group>";
+		};
+		D360F90D1774563400C98399 /* ViewMarketStuffListTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D360F90E1774566C00C98399 /* CCViewMarketStuffListTransaction.h */,
+				D360F90F1774566C00C98399 /* CCViewMarketStuffListTransaction.m */,
+			);
+			name = ViewMarketStuffListTransaction;
+			path = ViewStuffInMarketTransaction;
+			sourceTree = "<group>";
+		};
+		D360F9111774651000C98399 /* StuffDetailsController */ = {
+			isa = PBXGroup;
+			children = (
+				D360F9121774653700C98399 /* CCStuffDetailsController.h */,
+				D360F9131774653700C98399 /* CCStuffDetailsController.m */,
+				D360F9141774653700C98399 /* CCStuffDetailsController.xib */,
+			);
+			path = StuffDetailsController;
+			sourceTree = "<group>";
+		};
+		D360F9171774668600C98399 /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				D360F918177466A500C98399 /* CCPhotoBrowserController.h */,
+				D360F919177466A500C98399 /* CCPhotoBrowserController.m */,
+				D360F91A177466A500C98399 /* CCPhotoBrowserController.xib */,
+			);
+			path = PhotoBrowser;
+			sourceTree = "<group>";
+		};
+		D360F91D17746F5700C98399 /* StuffDetailsTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D360F91E17746F7300C98399 /* CCStuffDetailsTransaction.h */,
+				D360F91F17746F7300C98399 /* CCStuffDetailsTransaction.m */,
+			);
+			path = StuffDetailsTransaction;
+			sourceTree = "<group>";
+		};
+		D360F921177492E500C98399 /* PhotosDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D360F9221774932F00C98399 /* CCPhotosDataProvider.h */,
+				D360F9231774932F00C98399 /* CCPhotosDataProvider.m */,
+			);
+			path = PhotosDataProvider;
+			sourceTree = "<group>";
+		};
+		D360F9251774940F00C98399 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				D360F9261774941D00C98399 /* CCPhoto.h */,
+				D360F9271774941D00C98399 /* CCPhoto.m */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		D360F92917749C1B00C98399 /* PhotoCell */ = {
+			isa = PBXGroup;
+			children = (
+				D360F92A17749C4C00C98399 /* CCPhotoCell.h */,
+				D360F92B17749C4C00C98399 /* CCPhotoCell.m */,
+				D360F92D17749C9C00C98399 /* CCPhotoCell.xib */,
+			);
+			path = PhotoCell;
+			sourceTree = "<group>";
+		};
 		D361462E175E17AD00907414 /* CCDropboxAPIProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -1961,6 +2073,7 @@
 				D3EFD2631756578D00B7D710 /* CityCell */,
 				D3EFD25117563DDC00B7D710 /* StateCell */,
 				D3EFD24F175638C600B7D710 /* CCTableCellProtocol */,
+				D360F92917749C1B00C98399 /* PhotoCell */,
 				D3A2C3271754D54F00989831 /* TwitterPicker */,
 			);
 			path = View;
@@ -2184,6 +2297,7 @@
 		D3EFD2351756080700B7D710 /* DataProviders */ = {
 			isa = PBXGroup;
 			children = (
+				D360F921177492E500C98399 /* PhotosDataProvider */,
 				D360F8DA1772F99C00C98399 /* MyStuffDataProvider */,
 				D3013BE9176A100D0037EDAE /* FiltersDataProvider */,
 				D360F9051773588600C98399 /* MarketStuffDataProvider */,
@@ -2524,6 +2638,9 @@
 				D338DA6F176F070800ADCD76 /* CCListOfNotesInMarketController.xib in Resources */,
 				D360F8D41772F52600C98399 /* CCMyStuffController.xib in Resources */,
 				D360F8EB177303D700C98399 /* CCStuffCreationController.xib in Resources */,
+				D360F9161774653700C98399 /* CCStuffDetailsController.xib in Resources */,
+				D360F91C177466A500C98399 /* CCPhotoBrowserController.xib in Resources */,
+				D360F92E17749C9C00C98399 /* CCPhotoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2712,6 +2829,14 @@
 				D360F9001773354100C98399 /* CCDropboxImagesFileSelectionForStuffTransaction.m in Sources */,
 				D360F904177341B300C98399 /* CCUploadImageForStuffController.m in Sources */,
 				D360F908177358A200C98399 /* CCMarketStuffDataProvider.m in Sources */,
+				D360F90C1774544900C98399 /* CCListOfStuffInMarketController.m in Sources */,
+				D360F9101774566C00C98399 /* CCViewMarketStuffListTransaction.m in Sources */,
+				D360F9151774653700C98399 /* CCStuffDetailsController.m in Sources */,
+				D360F91B177466A500C98399 /* CCPhotoBrowserController.m in Sources */,
+				D360F92017746F7300C98399 /* CCStuffDetailsTransaction.m in Sources */,
+				D360F9241774932F00C98399 /* CCPhotosDataProvider.m in Sources */,
+				D360F9281774941D00C98399 /* CCPhoto.m in Sources */,
+				D360F92C17749C4C00C98399 /* CCPhotoCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

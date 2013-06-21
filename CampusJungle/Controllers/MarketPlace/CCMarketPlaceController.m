@@ -88,14 +88,16 @@
 
 - (void)configCollection:(UICollectionView *)collectionView WithProvider:(CCBaseDataProvider *)provider cellClass:(Class)cellCass
 {
-    [collectionView registerClass:cellCass forCellWithReuseIdentifier:CCTableDefines.collectionCellIdentifier];
     CCCommonCollectionDataSource *dataSource = [CCCommonCollectionDataSource new];
-
+    [self.arrayOfDataSources addObject:dataSource];
+    
+    [collectionView registerClass:cellCass forCellWithReuseIdentifier:CCTableDefines.collectionCellIdentifier];
+    
     dataSource.dataProvider = provider;
     dataSource.dataProvider.targetTable = (UITableView *)collectionView;
     collectionView.dataSource = dataSource;
     collectionView.delegate = dataSource;
-    [self.arrayOfDataSources addObject:dataSource];
+    
     dataSource.delegate = self;
 }
 
@@ -103,7 +105,9 @@
 {
     if([cellObject isKindOfClass:[CCNote class]]){
         [self.noteDetailsTransaction performWithObject:cellObject];
-    } 
+    } else {
+        [self.stuffDetailsTransaction performWithObject:cellObject];
+    }
 }
 
 - (void)loadFilters
@@ -148,6 +152,11 @@
 - (IBAction)viewAllLatestNotesPressed
 {
     [self.fullListOfNotesTransaction performWithObject:self.marketLatestNotesProvider];
+}
+
+- (IBAction)viewAllStuffButtonPressed
+{
+    [self.fullListOfStuffTransaction performWithObject:self.marketStuffDataProvider];
 }
 
 @end

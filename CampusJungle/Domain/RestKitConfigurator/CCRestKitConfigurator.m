@@ -23,6 +23,7 @@
 #import "CCNoteUploadInfo.h"
 #import "CCStuff.h"
 #import "CCStuffUploadInfo.h"
+#import "CCPhoto.h"
 
 @implementation CCRestKitConfigurator
 
@@ -407,15 +408,14 @@
 + (void)configureStuffResponse:(RKObjectManager *)objectManager
 {
     RKObjectMapping *paginationNotesResponseMapping = [CCRestKitConfigurator paginationMapping];
-    RKObjectMapping *notesMapping = [RKObjectMapping mappingForClass:[CCStuff class]];
-    [notesMapping addAttributeMappingsFromDictionary:@{
+    RKObjectMapping *stuffMapping = [RKObjectMapping mappingForClass:[CCStuff class]];
+    [stuffMapping addAttributeMappingsFromDictionary:@{
      @"id" : @"stuffID",
      @"owner_id" : @"ownerID",
      @"college_id" : @"collegeID",
      @"class_id" : @"classID",
      @"description" : @"stuffDescription",
      @"price" : @"price",
-    
      @"tags" : @"tags",
      
      @"thumbnail" : @"thumbnail",
@@ -425,22 +425,31 @@
     
     RKRelationshipMapping* relationShipResponseStuffMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
                                                                                                            toKeyPath:CCResponseKeys.items
-                                                                                                         withMapping:notesMapping];
+                                                                                                         withMapping:stuffMapping];
     [paginationNotesResponseMapping addPropertyMapping:relationShipResponseStuffMapping];
+    
+    RKObjectMapping *photosMapping = [RKObjectMapping mappingForClass:[CCPhoto class]];
+    [photosMapping addAttributeMappingsFromDictionary:@{
+     @"thumbnail" : @"thumbnail",
+     @"thumbnail_retina" : @"thumbnailRetina",
+     @"normalized" : @"normal"
+     }];
+    
+    RKRelationshipMapping* relationShipPhotosMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"photos"
+                                                                                                          toKeyPath:@"photos"
+                                                                                                        withMapping:photosMapping];
+    [stuffMapping addPropertyMapping:relationShipPhotosMapping];
     
     RKResponseDescriptor *responsePaginationStuff = [RKResponseDescriptor responseDescriptorWithMapping:paginationNotesResponseMapping pathPattern:CCAPIDefines.loadMyStuff keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
     RKResponseDescriptor *responseMarketPaginationStuff = [RKResponseDescriptor responseDescriptorWithMapping:paginationNotesResponseMapping pathPattern:CCAPIDefines.stuffInMarket keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
     NSString *uploadStuffPathPatern = [NSString stringWithFormat:CCAPIDefines.createStuff,@":CollegeID"];
-    RKResponseDescriptor *responseOnCreateStuff = [RKResponseDescriptor responseDescriptorWithMapping:notesMapping pathPattern:uploadStuffPathPatern keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    RKResponseDescriptor *responseOnCreateStuff = [RKResponseDescriptor responseDescriptorWithMapping:stuffMapping pathPattern:uploadStuffPathPatern keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
     [objectManager addResponseDescriptor:responseMarketPaginationStuff];
     [objectManager addResponseDescriptor:responseOnCreateStuff];
     [objectManager addResponseDescriptor:responsePaginationStuff];
 }
-
-
-
 
 @end

@@ -1,18 +1,18 @@
 //
-//  CCClassesDataProvider.m
+//  CCPhotosDataProvider.m
 //  CampusJungle
 //
-//  Created by Yulia Petryshena on 5/31/13.
+//  Created by Vlad Korzun on 21.06.13.
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCClassesDataProvider.h"
+#import "CCPhotosDataProvider.h"
 
-@implementation CCClassesDataProvider
+@implementation CCPhotosDataProvider
 
-- (void) loadItems
+- (void)loadItems
 {
-    self.arrayOfItems = self.arrayOfClasses;
+    self.arrayOfItems = self.photos;
     self.totalNumber = self.arrayOfItems.count;
     [self.targetTable reloadData];
     self.isEverythingLoaded = YES;
