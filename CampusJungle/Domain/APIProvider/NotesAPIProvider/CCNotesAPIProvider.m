@@ -65,7 +65,7 @@
 }
 
 
-- (void)postDropboxUploadInfoWithImages:(CCNoteUploadInfo *)uploadInfo successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler progress:(progressBlock)progressBlock;
+- (void)postUploadInfoWithImages:(CCNoteUploadInfo *)uploadInfo successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler progress:(progressBlock)progressBlock;
 {
     UIImage *thumb = uploadInfo.thumbnail;
     uploadInfo.thumbnail = nil;
