@@ -220,6 +220,11 @@
 		D3B3D81217661DE2000D3FAB /* CCImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B3D81117661DE1000D3FAB /* CCImageCell.xib */; };
 		D3B3D81617661F5F000D3FAB /* CCUploadingImagesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D81517661F5F000D3FAB /* CCUploadingImagesDataProvider.m */; };
 		D3B3D81A17662D16000D3FAB /* CCUIImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B3D81917662D16000D3FAB /* CCUIImageHelper.m */; };
+		D3E343B91779B3FF009DC3DB /* CCInboxControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E343B71779B3FF009DC3DB /* CCInboxControllerViewController.m */; };
+		D3E343BA1779B3FF009DC3DB /* CCInboxControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3E343B81779B3FF009DC3DB /* CCInboxControllerViewController.xib */; };
+		D3E343BE1779D82A009DC3DB /* CCCollegeSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E343BD1779D82A009DC3DB /* CCCollegeSearchController.m */; };
+		D3E343C21779D8C6009DC3DB /* CCCollegeSearchDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E343C11779D8C6009DC3DB /* CCCollegeSearchDataProvider.m */; };
+		D3E343C61779DC4C009DC3DB /* CCSearchCollegeTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E343C51779DC4C009DC3DB /* CCSearchCollegeTransaction.m */; };
 		D3EFD22A1755FC9500B7D710 /* CCCitySelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD2281755FC9500B7D710 /* CCCitySelectionController.m */; };
 		D3EFD22B1755FC9500B7D710 /* CCCitySelectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3EFD2291755FC9500B7D710 /* CCCitySelectionController.xib */; };
 		D3EFD22F1755FCE200B7D710 /* CCStateSelectionConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD22D1755FCE200B7D710 /* CCStateSelectionConroller.m */; };
@@ -614,6 +619,15 @@
 		D3B3D81517661F5F000D3FAB /* CCUploadingImagesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUploadingImagesDataProvider.m; sourceTree = "<group>"; };
 		D3B3D81817662D16000D3FAB /* CCUIImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUIImageHelper.h; sourceTree = "<group>"; };
 		D3B3D81917662D16000D3FAB /* CCUIImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUIImageHelper.m; sourceTree = "<group>"; };
+		D3E343B61779B3FF009DC3DB /* CCInboxControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCInboxControllerViewController.h; sourceTree = "<group>"; };
+		D3E343B71779B3FF009DC3DB /* CCInboxControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCInboxControllerViewController.m; sourceTree = "<group>"; };
+		D3E343B81779B3FF009DC3DB /* CCInboxControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCInboxControllerViewController.xib; sourceTree = "<group>"; };
+		D3E343BC1779D82A009DC3DB /* CCCollegeSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCollegeSearchController.h; sourceTree = "<group>"; };
+		D3E343BD1779D82A009DC3DB /* CCCollegeSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCollegeSearchController.m; sourceTree = "<group>"; };
+		D3E343C01779D8C6009DC3DB /* CCCollegeSearchDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCollegeSearchDataProvider.h; sourceTree = "<group>"; };
+		D3E343C11779D8C6009DC3DB /* CCCollegeSearchDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCollegeSearchDataProvider.m; sourceTree = "<group>"; };
+		D3E343C41779DC4C009DC3DB /* CCSearchCollegeTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSearchCollegeTransaction.h; sourceTree = "<group>"; };
+		D3E343C51779DC4C009DC3DB /* CCSearchCollegeTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSearchCollegeTransaction.m; sourceTree = "<group>"; };
 		D3EFD2271755FC9500B7D710 /* CCCitySelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCitySelectionController.h; sourceTree = "<group>"; };
 		D3EFD2281755FC9500B7D710 /* CCCitySelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCitySelectionController.m; sourceTree = "<group>"; };
 		D3EFD2291755FC9500B7D710 /* CCCitySelectionController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCCitySelectionController.xib; sourceTree = "<group>"; };
@@ -760,6 +774,7 @@
 		A787C73217536F8400824DEA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D3E343B51779B3D9009DC3DB /* InboxConroller */,
 				D360F9171774668600C98399 /* PhotoBrowser */,
 				D360F9111774651000C98399 /* StuffDetailsController */,
 				D360F9091774541E00C98399 /* ListOfStuffInMarket */,
@@ -783,6 +798,7 @@
 				D3B3D7DB17648456000D3FAB /* DropboxPdfSelectionViewController */,
 				D3614637175E352200907414 /* DropboxImagesSelectionViewController */,
 				A7D539CE1756236000FE9FCD /* ClassController */,
+				D3E343BB1779D7FE009DC3DB /* CollegeSearchController */,
 				D3EFD2891756971F00B7D710 /* EducationCreationController */,
 				A787C7CF1754E9AD00824DEA /* SideBarController */,
 				A787C73317536F8400824DEA /* BaseController */,
@@ -1050,6 +1066,7 @@
 				D338DA61176EFD0200ADCD76 /* NoteDetailTransaction */,
 				D3013BFA176B631E0037EDAE /* ApplyFiltersTransaction */,
 				D3A5ED011768D71400300399 /* SelectFiltersTransaction */,
+				D3E343C31779DC2F009DC3DB /* SearchCollegeTransaction */,
 				D3A5ECF71768ACCD00300399 /* MarketTransaction */,
 				D3B3D80317661208000D3FAB /* ImagesForNotesUploadingScreenTransaction */,
 				D3B3D7F11765D6DE000D3FAB /* ImagesSortingTransaction */,
@@ -2291,6 +2308,43 @@
 			path = UIImageViewHelper;
 			sourceTree = "<group>";
 		};
+		D3E343B51779B3D9009DC3DB /* InboxConroller */ = {
+			isa = PBXGroup;
+			children = (
+				D3E343B61779B3FF009DC3DB /* CCInboxControllerViewController.h */,
+				D3E343B71779B3FF009DC3DB /* CCInboxControllerViewController.m */,
+				D3E343B81779B3FF009DC3DB /* CCInboxControllerViewController.xib */,
+			);
+			path = InboxConroller;
+			sourceTree = "<group>";
+		};
+		D3E343BB1779D7FE009DC3DB /* CollegeSearchController */ = {
+			isa = PBXGroup;
+			children = (
+				D3E343BC1779D82A009DC3DB /* CCCollegeSearchController.h */,
+				D3E343BD1779D82A009DC3DB /* CCCollegeSearchController.m */,
+			);
+			path = CollegeSearchController;
+			sourceTree = "<group>";
+		};
+		D3E343BF1779D8A7009DC3DB /* CollegeSearchingDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3E343C01779D8C6009DC3DB /* CCCollegeSearchDataProvider.h */,
+				D3E343C11779D8C6009DC3DB /* CCCollegeSearchDataProvider.m */,
+			);
+			path = CollegeSearchingDataProvider;
+			sourceTree = "<group>";
+		};
+		D3E343C31779DC2F009DC3DB /* SearchCollegeTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3E343C41779DC4C009DC3DB /* CCSearchCollegeTransaction.h */,
+				D3E343C51779DC4C009DC3DB /* CCSearchCollegeTransaction.m */,
+			);
+			path = SearchCollegeTransaction;
+			sourceTree = "<group>";
+		};
 		D3EFD2251755FC6200B7D710 /* CitySelectionScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -2343,6 +2397,7 @@
 				D3EFD23617560A4D00B7D710 /* BaseDataProvider */,
 				D3EFD23717560A4D00B7D710 /* PaginationDataProvider */,
 				D3EFD23817560A4D00B7D710 /* StatesDataProvider */,
+				D3E343BF1779D8A7009DC3DB /* CollegeSearchingDataProvider */,
 			);
 			path = DataProviders;
 			sourceTree = "<group>";
@@ -2667,6 +2722,7 @@
 				D360F9161774653700C98399 /* CCStuffDetailsController.xib in Resources */,
 				D360F91C177466A500C98399 /* CCPhotoBrowserController.xib in Resources */,
 				D360F92E17749C9C00C98399 /* CCPhotoCell.xib in Resources */,
+				D3E343BA1779B3FF009DC3DB /* CCInboxControllerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2865,6 +2921,10 @@
 				D360F92C17749C4C00C98399 /* CCPhotoCell.m in Sources */,
 				D360F997177500A700C98399 /* CCPhotoBrowserTransaction.m in Sources */,
 				D360F99B17750A4400C98399 /* CCCloseBrowserTransaction.m in Sources */,
+				D3E343B91779B3FF009DC3DB /* CCInboxControllerViewController.m in Sources */,
+				D3E343BE1779D82A009DC3DB /* CCCollegeSearchController.m in Sources */,
+				D3E343C21779D8C6009DC3DB /* CCCollegeSearchDataProvider.m in Sources */,
+				D3E343C61779DC4C009DC3DB /* CCSearchCollegeTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

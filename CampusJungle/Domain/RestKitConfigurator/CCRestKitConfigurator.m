@@ -231,6 +231,9 @@
     RKRelationshipMapping* relationShipResponseCollegesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
                                                                                                            toKeyPath:CCResponseKeys.items
                                                                                                            withMapping:collegesMapping];
+    
+    
+    
     RKRelationshipMapping* relationShipResponseCollegeMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"college"
                                                                                                              toKeyPath:CCResponseKeys.item
                                                                                                            withMapping:collegesMapping];
@@ -238,12 +241,16 @@
     RKObjectMapping *paginationCollegesResponseMapping = [CCRestKitConfigurator paginationMapping];
     
     [paginationCollegesResponseMapping addPropertyMapping:relationShipResponseCollegeMapping];
+    
     [paginationCollegesResponseMapping addPropertyMapping:relationShipResponseCollegesMapping];
 
     NSString *collegePathPatern = [NSString stringWithFormat:CCAPIDefines.colleges,@":colleges"];
     RKResponseDescriptor *responsePaginationCollege = [RKResponseDescriptor responseDescriptorWithMapping:paginationCollegesResponseMapping pathPattern:collegePathPatern keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
+    RKResponseDescriptor *responsePaginationCollegeSearch = [RKResponseDescriptor responseDescriptorWithMapping:paginationCollegesResponseMapping pathPattern:@"/api/colleges" keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
     [objectManager addResponseDescriptor:responsePaginationCollege];
+    [objectManager addResponseDescriptor:responsePaginationCollegeSearch];
 }
 
 + (void)configureFacebookLinking:(RKObjectManager *)objectManager
@@ -399,7 +406,7 @@
      @"collegeID" : @"class_id",
      @"stuffDescription" : @"description",
      @"price" : @"price",
-     @"arrayOfURLs" :@"images_urls",
+     @"arrayOfURLs" :@"images",
      }];
     RKRequestDescriptor *stuffRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:stuffMapping objectClass:[CCStuffUploadInfo class] rootKeyPath:nil];
     [objectManager addRequestDescriptor:stuffRequestDescriptor];

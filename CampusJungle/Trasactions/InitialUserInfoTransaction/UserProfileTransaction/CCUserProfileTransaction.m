@@ -12,6 +12,7 @@
 #import "CCStateSelectionScreenTransaction.h"
 #import "CCMyNotesTransaction.h"
 #import "CCMyStuffTransaction.h"
+#import "CCSearchCollegeTransaction.h"
 
 @implementation CCUserProfileTransaction
 
@@ -35,11 +36,12 @@
     UINavigationController *centralNavigation = [[UINavigationController alloc] initWithRootViewController:userProfileController];
     
     self.menuController.centerPanel = centralNavigation;
+ 
+    CCSearchCollegeTransaction *searchTransaction = [CCSearchCollegeTransaction new];
+    searchTransaction.navigation = centralNavigation;
+    searchTransaction.arrayOfColleges = userProfileController.arrayOfEducations;
+    userProfileController.addColegeTransaction = searchTransaction;
     
-    CCStateSelectionScreenTransaction *stateSelectionTransaction = [CCStateSelectionScreenTransaction new];
-    stateSelectionTransaction.arrayOfColleges = userProfileController.arrayOfEducations;
-    stateSelectionTransaction.navigation = centralNavigation;
-    userProfileController.addColegeTransaction = stateSelectionTransaction;
     myNotesTransaction.navigation = centralNavigation;
     myStuffTransaction.navigation = centralNavigation;
 }

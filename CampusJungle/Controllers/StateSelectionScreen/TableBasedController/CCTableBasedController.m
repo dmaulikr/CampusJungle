@@ -11,6 +11,8 @@
 
 @interface CCTableBasedController ()
 
+@property (nonatomic, strong) NSDate *lastSearchPressTime;
+
 @end
 
 @implementation CCTableBasedController
@@ -41,7 +43,16 @@
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     self.dataSource.dataProvider.searchQuery = searchText;
-    [self.dataSource.dataProvider loadItems];
+    self.lastSearchPressTime = [NSDate date];
+    
+    double delayInSeconds = 1.1;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        if([[NSDate date] timeIntervalSinceDate:self.lastSearchPressTime] >= 1){
+            [self.dataSource.dataProvider loadItems];
+        }
+    });
+    ;
 }
 
 @end

@@ -114,6 +114,22 @@
     [self loadItemsWithParams:params path:path successHandler:successHandler errorHandler:errorHandler];
 }
 
+- (void)loadCollegesNumberOfPage:(NSNumber *)pageNumber query:(NSString *)query successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    
+    [params setObject:pageNumber.stringValue forKey:@"page_number"];
+    if (query) {
+        [params setObject:query forKey:@"name"];
+    }
+    
+    NSString *path = @"/api/colleges";
+    
+    [self loadItemsWithParams:params path:path successHandler:successHandler errorHandler:errorHandler];
+
+
+}
+
 - (void)loadItemsWithParams:(NSDictionary *)params path:(NSString *)path successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];

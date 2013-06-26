@@ -9,6 +9,7 @@
 #import "CCCitySelectionTransaction.h"
 #import "CCCitySelectionController.h"
 #import "CCCollegeSelectionTransaction.h"
+#import "CCEducationCreationTransaction.h"
 
 @implementation CCCitySelectionTransaction
 
@@ -20,10 +21,17 @@
     CCCitySelectionController *citySelection = [CCCitySelectionController new];
     citySelection.stateID = [object stateID];
     citySelection.title = [object name];
-    CCCollegeSelectionTransaction *collegeTransaction = [CCCollegeSelectionTransaction new];
-    collegeTransaction.arrayOfColleges = self.arrayOfColleges;
-    collegeTransaction.navigation = self.navigation;
-    citySelection.collegeScreenTransaction = collegeTransaction;
+    
+//    CCCollegeSelectionTransaction *collegeTransaction = [CCCollegeSelectionTransaction new];
+//    collegeTransaction.arrayOfColleges = self.arrayOfColleges;
+//    collegeTransaction.navigation = self.navigation;
+//    citySelection.collegeScreenTransaction = collegeTransaction;
+   
+    CCEducationCreationTransaction *educationCreation = [CCEducationCreationTransaction new];
+    educationCreation.arrayOfColleges = self.arrayOfColleges;
+    educationCreation.navigation = self.navigation;
+    citySelection.educationTransaction = educationCreation;
+    
     [self.navigation pushViewController:citySelection animated:YES];
 }
 

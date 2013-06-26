@@ -18,6 +18,7 @@
 @interface CCCitySelectionController ()<UIAlertViewDelegate>
 
 @property (nonatomic, strong) id <CCAPIProviderProtocol> ioc_apiProvider;
+@property (nonatomic, strong) NSNumber *cityID;
 
 @end
 
@@ -40,7 +41,9 @@
 
 - (void)didSelectedCellWithObject:(id)cellObject
 {
-    [self.collegeScreenTransaction performWithObject:cellObject];
+    [self addCollege];
+    
+    //[self.collegeScreenTransaction performWithObject:cellObject];
 }
 
 - (void)addCity
@@ -54,16 +57,40 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if(buttonIndex == 1){
-        [self.ioc_apiProvider createCity:[[alertView textFieldAtIndex:0] text] stateID:self.stateID SuccessHandler:^(NSDictionary *object) {
-            
-            [self.collegeScreenTransaction performWithObject:object[CCResponseKeys.item]];
-        } errorHandler:^(NSError *error) {
-            [CCStandardErrorHandler showErrorWithError:error];
-        }];
+    if([alertView.title isEqualToString:@"New city"]){
+        if(buttonIndex == 1){
+            [self.ioc_apiProvider createCity:[[alertView textFieldAtIndex:0] text] stateID:self.stateID SuccessHandler:^(NSDictionary *object) {
+                self.cityID = [object[@"item"] cityID];
+                [self addCollege];
+            } errorHandler:^(NSError *error) {
+                [CCStandardErrorHandler showErrorWithError:error];
+            }];
+        }
+    } else {
+        if(buttonIndex == 1){
+            [self.ioc_apiProvider createCollege:[[alertView textFieldAtIndex:0] text] cityID:self.cityID address:[[alertView textFieldAtIndex:1] text] SuccessHandler:^(id object) {
+                [self.educationTransaction performWithObject:object[CCResponseKeys.item]];
+            } errorHandler:^(NSError *error) {
+                [CCStandardErrorHandler showErrorWithError:error];
+            }];
+        }
     }
-
 }
+
+- (void)addCollege
+{
+    UIAlertView *alertForCityInput = [[UIAlertView alloc] initWithTitle:@"New College" message:nil delegate:self cancelButtonTitle:CCAlertsButtons.cancelButton otherButtonTitles:CCAlertsButtons.okButton, nil];
+    alertForCityInput.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+    UITextField *cityName = [alertForCityInput textFieldAtIndex:0];
+    cityName.placeholder = @"College Name";
+    
+    UITextField *address = [alertForCityInput textFieldAtIndex:1];
+    address.placeholder = @"Address";
+    address.secureTextEntry = NO;
+    
+    [alertForCityInput show];
+}
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
