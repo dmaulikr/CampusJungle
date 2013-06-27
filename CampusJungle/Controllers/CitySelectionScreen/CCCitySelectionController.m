@@ -21,7 +21,7 @@
 @property (nonatomic, strong) NSNumber *cityID;
 
 @end
-
+ 
 @implementation CCCitySelectionController
 
 - (void)viewDidLoad
@@ -41,9 +41,9 @@
 
 - (void)didSelectedCellWithObject:(id)cellObject
 {
+    self.cityID = [(CCCity *)cellObject cityID];
     [self addCollege];
-    
-    //[self.collegeScreenTransaction performWithObject:cellObject];
+
 }
 
 - (void)addCity
