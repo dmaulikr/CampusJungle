@@ -21,6 +21,7 @@
 {
     [self.mainTable registerClass:cellCass forCellReuseIdentifier:CCTableDefines.tableCellIdentifier];
     CCCommonDataSource *dataSource;
+    self.mainTable.backgroundColor = [UIColor clearColor];
     if(self.dataSourceClass){
         dataSource = [self.dataSourceClass new];
     } else {

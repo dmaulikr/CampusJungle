@@ -47,7 +47,7 @@
         NSString *thumbURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,note.thumbnailRetina];
         [self.thumbImage setImageWithURL:[NSURL URLWithString:thumbURL]];
     } else {
-        self.thumbImage.image = [UIImage imageNamed:@"book"];
+        self.thumbImage.image = [UIImage imageNamed:@"note_placeholder_icon_active"];
     }
 
 }

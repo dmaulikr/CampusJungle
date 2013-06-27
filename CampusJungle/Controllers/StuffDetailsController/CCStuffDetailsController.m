@@ -39,7 +39,7 @@
         NSURL *thumbURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,self.stuff.thumbnailRetina]];
         [self.thumb setImageWithURL:thumbURL];
     } else {
-        self.thumb.image = [UIImage imageNamed:@"book"];
+        self.thumb.image = [UIImage imageNamed:@"stuff_placeholder_icon_active"];
     }
 }
 

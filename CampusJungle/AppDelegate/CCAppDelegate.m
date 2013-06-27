@@ -16,7 +16,7 @@
 #import "CCDefines.h"
 #import <DropboxSDK/DropboxSDK.h>
 #import <TestFlightSDK/TestFlight.h>
-
+#import "CCAppearanceConfigurator.h"
 
 @implementation CCAppDelegate
 
@@ -32,6 +32,8 @@
     [CCRestKitConfigurator configure];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    [CCAppearanceConfigurator configurate];
     
     CCMainTransaction *transaction = [CCMainTransaction new];
     transaction.window = self.window;

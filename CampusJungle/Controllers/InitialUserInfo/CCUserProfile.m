@@ -63,6 +63,8 @@
     [super viewDidLoad];
     self.mainTable.tableFooterView = self.tableFooterView;
     self.mainTable.tableHeaderView = self.tableHeaderView;
+    [self setButtonsTextCollorInView:self.tableFooterView];
+    [self setButtonsTextCollorInView:self.tableHeaderView];
     self.title = @"My Profile";
     [self loadUser];
     

@@ -8,4 +8,6 @@
 
 @interface CCViewController : UIViewController
 
+- (void)setButtonsTextCollorInView:(UIView *)view;
+
 @end

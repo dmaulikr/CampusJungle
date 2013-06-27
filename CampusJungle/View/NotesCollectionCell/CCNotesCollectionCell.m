@@ -36,12 +36,19 @@
     CCNote *currentNote = cellObject;
     
     self.noteDescription.text = currentNote.description;
+    NSString *placeholderName;
+    
+    if([cellObject isKindOfClass:[CCNote class]]){
+        placeholderName = @"note_placeholder_icon_active";
+    } else {
+        placeholderName = @"stuff_placeholder_icon_active";
+    }
     
     if(currentNote.thumbnailRetina.length){
         NSString *thumbPath = [CCAPIDefines.baseURL stringByAppendingString: currentNote.thumbnailRetina];
         [self.noteThumb setImageWithURL:[NSURL URLWithString:thumbPath]];
     } else {
-        self.noteThumb.image = [UIImage imageNamed:@"book"];
+        self.noteThumb.image = [UIImage imageNamed:placeholderName];
     }
 }
 
