@@ -43,8 +43,18 @@
     [self setImagesForButton:self.signupButton];
     [self setImagesForButton:self.facebookButton];
     [self setImagesForButton:self.twitterButton];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
 
 - (void)setImagesForButton:(UIButton *)button
 {
