@@ -9,13 +9,38 @@
 #import "CCTableBasedController.h"
 #import "CCDefines.h"
 
-@interface CCTableBasedController ()
+@interface CCTableBasedController ()<UISearchBarDelegate>
 
 @property (nonatomic, strong) NSDate *lastSearchPressTime;
+@property (nonatomic, weak) IBOutlet UISearchBar *searchBar;
 
 @end
 
 @implementation CCTableBasedController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self configSearchBar];
+    self.tapRcognizer.enabled = NO;
+}
+
+- (void)configSearchBar
+{
+    [self setNilButtonBackgroundForView:self.searchBar];
+}
+
+- (void)setNilButtonBackgroundForView:(UIView *)view
+{
+    for(UIButton *button in view.subviews){
+        if([button isKindOfClass:[UIButton class]]){
+            [button setBackgroundImage:nil forState:UIControlStateNormal];
+            [button setBackgroundImage:nil forState:UIControlStateHighlighted];
+        } else {
+            [self setNilButtonBackgroundForView:button];
+        }
+    }
+}
 
 - (void)configTableWithProvider:(CCBaseDataProvider *)provider cellClass:(Class)cellCass
 {
@@ -43,6 +68,7 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
+    [self performSelector:@selector(configSearchBar) withObject:nil afterDelay:0.01];
     self.dataSource.dataProvider.searchQuery = searchText;
     self.lastSearchPressTime = [NSDate date];
     
@@ -53,7 +79,6 @@
             [self.dataSource.dataProvider loadItems];
         }
     });
-    ;
 }
 
 @end

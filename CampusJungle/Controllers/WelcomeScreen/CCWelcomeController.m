@@ -38,7 +38,20 @@
      addObserver:self
      selector:@selector(applicationDidEnterForeground)
      name:CCAppDelegateDefines.notificationOnBackToForeground
-     object:nil ];
+     object:nil];
+    [self setImagesForButton:self.loginButton];
+    [self setImagesForButton:self.signupButton];
+    [self setImagesForButton:self.facebookButton];
+    [self setImagesForButton:self.twitterButton];
+}
+
+
+- (void)setImagesForButton:(UIButton *)button
+{
+    [button setBackgroundImage:[UIImage imageNamed:@"login_button"] forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:@"loginButtonPressed"] forState:UIControlStateHighlighted];
+    button.titleLabel.font = [UIFont fontWithName:@"Noteworthy-Bold" size:19];
+
 }
 
 - (void)applicationDidEnterForeground

@@ -11,11 +11,15 @@
 #import "CCSideMenuDataProvider.h"
 #import "CCOrdinaryCell.h"
 #import "CCMenuDefines.h"
+#import "CCUserSessionProtocol.h"
+#import "CCMenuCell.h"
 
 @interface CCSideMenuController () <CCCellSelectionProtocol>
 
+@property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userProfile;
 @property (nonatomic, strong) CCSideMenuDataSource *dataSource;
 @property (nonatomic, strong) CCSideMenuDataProvider *dataProvider;
+@property (nonatomic, weak) IBOutlet UILabel *userNameLabel;
 
 @end
 
@@ -25,13 +29,14 @@
 {
     [super viewDidLoad];
     [self configTable];
+    self.userNameLabel.text = [NSString stringWithFormat:@"%@ %@",[[self.ioc_userProfile currentUser] firstName], [[self.ioc_userProfile currentUser] lastName]];
 }
 
 - (void)configTable
 {
     self.dataProvider = [CCSideMenuDataProvider new];
     self.dataProvider.arrayOfMenuItems = @[CCSideMenuTitles.profile,CCSideMenuTitles.classesScreen,CCSideMenuTitles.market,@"Inbox"];
-    [self configTableWithProvider:self.dataProvider cellClass:[CCOrdinaryCell class]];
+    [self configTableWithProvider:self.dataProvider cellClass:[CCMenuCell class]];
 }
 
 - (void)didSelectedCellWithObject:(id)cellObject

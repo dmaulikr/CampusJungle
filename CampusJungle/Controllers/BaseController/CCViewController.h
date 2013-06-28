@@ -8,6 +8,8 @@
 
 @interface CCViewController : UIViewController
 
+@property (nonatomic, strong) UITapGestureRecognizer *tapRcognizer;
+
 - (void)setButtonsTextCollorInView:(UIView *)view;
 
 @end

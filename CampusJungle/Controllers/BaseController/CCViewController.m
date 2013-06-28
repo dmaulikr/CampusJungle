@@ -27,6 +27,16 @@
     
     [self.view addSubview:backgroundView];
     [self.view sendSubviewToBack:backgroundView];
+    
+    UITapGestureRecognizer *tapGestureRecognizer = [UITapGestureRecognizer new];
+    [tapGestureRecognizer addTarget:self action:@selector(viewDidTap)];
+    [self.view addGestureRecognizer:tapGestureRecognizer];
+    self.tapRcognizer = tapGestureRecognizer;
+}
+
+- (void)viewDidTap
+{
+    [self.view endEditing:YES];
 }
 
 - (void)setButtonsTextCollorInView:(UIView *)view

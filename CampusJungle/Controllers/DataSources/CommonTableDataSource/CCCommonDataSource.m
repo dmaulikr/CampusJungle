@@ -28,6 +28,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    [[(UIViewController *)self.delegate view] endEditing:YES];
     if(scrollView.contentOffset.y > scrollView.contentSize.height - scrollView.frame.size.height - IntervalBeforeLoading){
         [self.dataProvider loadMoreItems];
     }

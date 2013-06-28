@@ -30,6 +30,9 @@
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     picker.allowsEditing = YES;
     picker.delegate = self;
+    [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateNormal];
+    
+    [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateHighlighted];
     [self.delegate presentViewController:picker animated:YES completion:nil];
 }
 
@@ -45,6 +48,13 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     [self.delegate didSelectAvatar:info[UIImagePickerControllerEditedImage]];
+    UIImage *customButtonBackground = [[UIImage imageNamed:@"button"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 10, 20, 10)];
+    
+    UIImage *customButtonActiveBackground = [UIImage imageNamed:@"button_active"];
+    
+    [[UIButton appearance] setBackgroundImage:customButtonBackground forState:UIControlStateNormal];
+    
+    [[UIButton appearance] setBackgroundImage:customButtonActiveBackground forState:UIControlStateHighlighted];
     [self.delegate dismissViewControllerAnimated:YES completion:nil];
 }
 

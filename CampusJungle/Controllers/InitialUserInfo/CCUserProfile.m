@@ -51,6 +51,8 @@
 @property (nonatomic) BOOL isNeedToUploadAvatar;
 
 @property (nonatomic, strong) NSString *facebookAvatarPath;
+@property (nonatomic, weak) IBOutlet UIButton *avatarButton;
+
 
 @property (nonatomic, strong) CCAvatarSelectionActionSheet *avatarSelectionSheet;
 
@@ -88,6 +90,8 @@
     self.avatarSelectionSheet = [CCAvatarSelectionActionSheet new];
     self.avatarSelectionSheet.delegate = self;
     self.avatarSelectionSheet.title = @"Select Avatar";
+    [self.avatarButton setBackgroundImage:[UIImage imageNamed:@"avatar_placeholder"] forState:UIControlStateNormal];
+    [self.avatarButton setBackgroundImage:[UIImage imageNamed:@"avatar_placeholder"] forState:UIControlStateHighlighted];
 }
 
 - (void)loadUser

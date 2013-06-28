@@ -11,7 +11,8 @@
 
 @interface CCMarketFilterClassesCell()
 
-@property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) IBOutlet UILabel *label;
+@property (nonatomic, strong) IBOutlet UIImageView *checkmark;
 
 @end
 
@@ -21,8 +22,7 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.label = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 300, 30)];
-        [self addSubview:self.label];
+        self = [[NSBundle mainBundle] loadNibNamed:@"CCMarketFilterClassesCell" owner:self options:nil][0];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;
@@ -38,10 +38,12 @@
 - (void)becomeSelected:(BOOL)selected
 {
     if(selected){
-        [self setAccessoryType:UITableViewCellAccessoryCheckmark];
+        self.checkmark.hidden = NO;
+        //[self setAccessoryType:UITableViewCellAccessoryCheckmark];
     } else {
-        [self setAccessoryType:UITableViewCellAccessoryNone];
-    } 
+        self.checkmark.hidden = YES;
+//        [self setAccessoryType:UITableViewCellAccessoryNone];
+    }
 }
 
 @end

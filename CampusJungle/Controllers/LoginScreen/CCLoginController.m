@@ -13,6 +13,8 @@
 #import "CCDefines.h"
 #import "CCUserSessionProtocol.h"
 #import "CCStandardErrorHandler.h"
+#import "UITextField+InsetFixing.h"
+
 
 @interface CCLoginController ()
 
@@ -53,7 +55,6 @@
         [CCStandardErrorHandler showErrorWithTitle:nil message:CCValidationMessages.passNotValid];
         return NO;
     }
-    
     return YES;
 }
 

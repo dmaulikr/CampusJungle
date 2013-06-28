@@ -35,6 +35,7 @@
     self.dataSourceClass = [CCImageSortingDataSource class];
     self.mainTable.editing = YES;
     self.mainTable.tableFooterView = self.tableFooterView;
+    [self setButtonsTextCollorInView:self.tableFooterView];
     self.dataProvider = [CCUploadingImagesDataProvider new];
     self.dataProvider.arrayOfImages = [NSMutableArray new];
     [self configTableWithProvider:self.dataProvider cellClass:[CCImageCell class]];
@@ -59,6 +60,10 @@
     UIImagePickerController * picker = [UIImagePickerController new];
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     picker.delegate = self;
+    
+    [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateNormal];
+    
+    [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateHighlighted];
     [self presentViewController:picker animated:YES completion:nil];
 }
 
@@ -75,6 +80,13 @@
     UIImage *fixedImage = [CCUIImageHelper fixOrientationOfImage:info[UIImagePickerControllerOriginalImage]];
     [self.dataProvider.arrayOfImages addObject:fixedImage];
     [self.dataProvider loadItems];
+    UIImage *customButtonBackground = [[UIImage imageNamed:@"button"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 10, 20, 10)];
+    
+    UIImage *customButtonActiveBackground = [UIImage imageNamed:@"button_active"];
+    
+    [[UIButton appearance] setBackgroundImage:customButtonBackground forState:UIControlStateNormal];
+    
+    [[UIButton appearance] setBackgroundImage:customButtonActiveBackground forState:UIControlStateHighlighted];
     [self dismissViewControllerAnimated:YES completion:nil];
     [self didUpdate];
 }

@@ -30,11 +30,19 @@
     
     [[UIButton appearance] setBackgroundImage:customButtonBackground forState:UIControlStateNormal];
     
+    [[UIButton appearance] setBackgroundImage:customButtonActiveBackground forState:UIControlStateHighlighted];
+    
     [[UILabel appearanceWhenContainedIn:[UIButton class], nil] setFont:[UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:17]];
+    
     
     [[UILabel appearanceWhenContainedIn:[UIButton class], nil] setTextColor:[UIColor yellowColor]];
     
-    [[UIButton appearance] setBackgroundImage:customButtonActiveBackground forState:UIControlStateHighlighted];
+    [[UISearchBar appearance] setTintColor:[UIColor brownColor]];
+    
+    [[UITextField appearance] setBackground:[[UIImage imageNamed:@"input_field"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)]];
+    [[UITextField appearance] setBorderStyle:UITextBorderStyleNone];
+    
+    [[UITableViewCell appearance] setAccessoryType:UITableViewCellAccessoryNone];
 }
 
 @end
