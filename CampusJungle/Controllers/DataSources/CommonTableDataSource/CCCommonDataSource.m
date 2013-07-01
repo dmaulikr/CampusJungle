@@ -21,7 +21,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-     id <CCTableCellProtocol> cell = [tableView dequeueReusableCellWithIdentifier:CCTableDefines.tableCellIdentifier];
+    id <CCTableCellProtocol> cell = [tableView dequeueReusableCellWithIdentifier:CCTableDefines.tableCellIdentifier];
     [cell setCellObject:self.dataProvider.arrayOfItems[indexPath.row]];
     return (UITableViewCell *)cell;
 }

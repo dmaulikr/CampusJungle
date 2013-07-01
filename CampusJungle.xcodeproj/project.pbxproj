@@ -934,8 +934,6 @@
 				D3A3197C177E206A0004C4E8 /* Default-568h@2x.png */,
 				D3A3197A177E205A0004C4E8 /* Default@2x.png */,
 				D3A31978177E20450004C4E8 /* Default.png */,
-				A7FA0E561768D746004D3403 /* libTestFlight.a */,
-				A7FA0E541768D682004D3403 /* libz.dylib */,
 				A787C72C17536F8400824DEA /* CampusJungle */,
 				A787C73017536F8400824DEA /* CampusJungle-Info.plist */,
 				A787C73117536F8400824DEA /* CampusJungle-Prefix.pch */,
@@ -959,6 +957,8 @@
 		A784C597173A865E005E4921 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A7FA0E561768D746004D3403 /* libTestFlight.a */,
+				A7FA0E541768D682004D3403 /* libz.dylib */,
 				D3614635175E1D3000907414 /* DropboxSDK */,
 				A787C7C017538BCF00824DEA /* QuartzCore.framework */,
 				D3A2C3241754C95700989831 /* MessageUI.framework */,

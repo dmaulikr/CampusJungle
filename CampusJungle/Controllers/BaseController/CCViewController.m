@@ -23,7 +23,7 @@
    
     backgroundView.image = [UIImage imageNamed:@"background-568h@2x"];
     
-    [self setButtonsTextCollorInView:self.view];
+    [self setButtonsTextColorInView:self.view];
     
     [self.view addSubview:backgroundView];
     [self.view sendSubviewToBack:backgroundView];
@@ -39,15 +39,35 @@
     [self.view endEditing:YES];
 }
 
-- (void)setButtonsTextCollorInView:(UIView *)view
+- (void)setButtonsTextColorInView:(UIView *)view
 {
-    for(UIButton *button in view.subviews){
+    for (UIButton *button in view.subviews) {
         if([button isKindOfClass:[UIButton class]]){
             [button setTitleColor:[UIColor colorWithRed:240./255 green:218./255 blue:161./255 alpha:1] forState:UIControlStateNormal];
-        } else {
-            [self setButtonsTextCollorInView:button];
+        }
+        else {
+            [self setButtonsTextColorInView:button];
         }
     }
 }
+
+- (void)setRightNavigationItemWithTitle:(NSString *)title selector:(SEL)selector
+{
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:title
+                                                                              style:UIBarButtonItemStyleBordered
+                                                                             target:self
+                                                                             action:selector];
+    [self.navigationItem setRightBarButtonItem:rightBarButtonItem animated:YES];
+}
+
+- (void)setLeftNavigationItemWithTitle:(NSString *)title selector:(SEL)selector
+{
+    UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:title
+                                                                              style:UIBarButtonItemStyleBordered
+                                                                             target:self
+                                                                             action:selector];
+    [self.navigationItem setLeftBarButtonItem:leftBarButtonItem animated:YES];
+}
+
 
 @end

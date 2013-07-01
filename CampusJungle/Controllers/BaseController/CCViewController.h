@@ -10,6 +10,8 @@
 
 @property (nonatomic, strong) UITapGestureRecognizer *tapRcognizer;
 
-- (void)setButtonsTextCollorInView:(UIView *)view;
+- (void)setButtonsTextColorInView:(UIView *)view;
+- (void)setRightNavigationItemWithTitle:(NSString*)title selector:(SEL)selector;
+- (void)setLeftNavigationItemWithTitle:(NSString *)title selector:(SEL)selector;
 
 @end

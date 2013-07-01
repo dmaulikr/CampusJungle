@@ -37,7 +37,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    NSLog(@"%@",[self.leftBarButton customView]);
+    NSLog(@"%@", [self.leftBarButton customView]);
     
     if(self.blockOnViewDidAppear){
         self.blockOnViewDidAppear();
@@ -46,9 +46,8 @@
     }
 }
 
-
-
-- (UIBarButtonItem *)leftButtonForCenterPanel {
+- (UIBarButtonItem *)leftButtonForCenterPanel
+{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *image = [UIImage imageNamed:@"menuButton"];
     button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
