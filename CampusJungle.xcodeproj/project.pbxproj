@@ -109,6 +109,8 @@
 		D338DA6F176F070800ADCD76 /* CCListOfNotesInMarketController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D338DA6D176F070800ADCD76 /* CCListOfNotesInMarketController.xib */; };
 		D347BBD017817F2300E54EFC /* menuButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBCE17817F0200E54EFC /* menuButton.png */; };
 		D347BBD117817F2300E54EFC /* menuButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBCF17817F0F00E54EFC /* menuButton@2x.png */; };
+		D347BBD41781B7AE00E54EFC /* separator.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBD21781B7AE00E54EFC /* separator.png */; };
+		D347BBD51781B7AE00E54EFC /* separator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBD31781B7AE00E54EFC /* separator@2x.png */; };
 		D360F8D31772F52600C98399 /* CCMyStuffController.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8D11772F52600C98399 /* CCMyStuffController.m */; };
 		D360F8D41772F52600C98399 /* CCMyStuffController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D360F8D21772F52600C98399 /* CCMyStuffController.xib */; };
 		D360F8D81772F63100C98399 /* CCStuffAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D360F8D71772F63100C98399 /* CCStuffAPIProvider.m */; };
@@ -546,6 +548,8 @@
 		D338DA6D176F070800ADCD76 /* CCListOfNotesInMarketController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCListOfNotesInMarketController.xib; sourceTree = "<group>"; };
 		D347BBCE17817F0200E54EFC /* menuButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuButton.png; sourceTree = "<group>"; };
 		D347BBCF17817F0F00E54EFC /* menuButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menuButton@2x.png"; sourceTree = "<group>"; };
+		D347BBD21781B7AE00E54EFC /* separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = separator.png; sourceTree = "<group>"; };
+		D347BBD31781B7AE00E54EFC /* separator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "separator@2x.png"; sourceTree = "<group>"; };
 		D360F8D01772F52600C98399 /* CCMyStuffController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMyStuffController.h; sourceTree = "<group>"; };
 		D360F8D11772F52600C98399 /* CCMyStuffController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMyStuffController.m; sourceTree = "<group>"; };
 		D360F8D21772F52600C98399 /* CCMyStuffController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMyStuffController.xib; sourceTree = "<group>"; };
@@ -2408,6 +2412,8 @@
 				D3A318BF177C4DAB0004C4E8 /* back_button@2x.png */,
 				D3A318C0177C4DAB0004C4E8 /* button.png */,
 				D3A318C1177C4DAB0004C4E8 /* button@2x.png */,
+				D347BBD21781B7AE00E54EFC /* separator.png */,
+				D347BBD31781B7AE00E54EFC /* separator@2x.png */,
 				D3A318C2177C4DAB0004C4E8 /* button_active.png */,
 				D3A318C3177C4DAB0004C4E8 /* button_active@2x.png */,
 				D3A318C4177C4DAB0004C4E8 /* check_icon.png */,
@@ -3218,6 +3224,8 @@
 				D3A31997177E409D0004C4E8 /* marketPlaceLogo.png in Resources */,
 				D347BBD017817F2300E54EFC /* menuButton.png in Resources */,
 				D347BBD117817F2300E54EFC /* menuButton@2x.png in Resources */,
+				D347BBD41781B7AE00E54EFC /* separator.png in Resources */,
+				D347BBD51781B7AE00E54EFC /* separator@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
