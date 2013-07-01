@@ -16,7 +16,6 @@
 #import "CCEducation.h"
 #import "MBProgressHUD.h"
 #import "NSString+CJStringValidator.h"
-#import "CCAlertDefines.h"
 #import "CCStuffUploadInfo.h"
 
 @interface CCStuffCreationController () <CCAvatarSelectionProtocol, CCCellSelectionProtocol>
@@ -100,11 +99,11 @@
 - (BOOL)isFieldsValid
 {
     if ([self.decriptionField.text isEmpty]){
-        [CCStandardErrorHandler showErrorWithTitle:nil message:CCValidationMessages.descriptionCantBeBlank];
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.descriptionCantBeBlank];
         return NO;
     }
     if ([self.priceField.text isEmpty]){
-        [CCStandardErrorHandler showErrorWithTitle:nil message:CCValidationMessages.priceCantBeBlank];
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.priceCantBeBlank];
         return NO;
     }
     return YES;

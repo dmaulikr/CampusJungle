@@ -42,6 +42,7 @@ const struct CCAlertsButtons CCAlertsButtons = {
 
 const struct CCAlertsTitles CCAlertsTitles = {
     .requestError = @"Request failed",
+    .defaultError = @"Error",
 };
 
 const struct CCValidationMessages CCValidationMessages = {

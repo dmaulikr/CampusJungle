@@ -13,7 +13,6 @@
 #import "CCClass.h"
 #import "CCUserSessionProtocol.h"
 #import "UIAlertView+BlocksKit.h"
-#import "CCAlertDefines.h"
 #import "CCAPIProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
 #import "MBProgressHUD.h"

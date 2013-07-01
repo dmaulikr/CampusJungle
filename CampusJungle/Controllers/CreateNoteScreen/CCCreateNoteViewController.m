@@ -13,7 +13,6 @@
 #import "CCUserSessionProtocol.h"
 #import "CCCollege.h"
 #import "CCEducation.h"
-#import "CCAlertDefines.h"
 #import "CCClassesApiProviderProtocol.h"
 #import "MBProgressHUD.h"
 #import "ActionSheetCustomPicker.h"
@@ -108,20 +107,20 @@
 - (BOOL)isFieldsValid
 {
     if ([self.descriptionField.text isEmpty]){
-        [CCStandardErrorHandler showErrorWithTitle:nil message:CCValidationMessages.descriptionCantBeBlank];
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.descriptionCantBeBlank];
         return NO;
     }
     if ([self.priceField.text isEmpty]){
-        [CCStandardErrorHandler showErrorWithTitle:nil message:CCValidationMessages.priceCantBeBlank];
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.priceCantBeBlank];
         return NO;
     }
     if ([self.fullAccessPriceField.text isEmpty]){
-        [CCStandardErrorHandler showErrorWithTitle:nil message:CCValidationMessages.fullPriceCantBeBlank];
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.fullPriceCantBeBlank];
         return NO;
     }
     
     if (self.fullAccessPriceField.text.integerValue < self.priceField.text.integerValue){
-        [CCStandardErrorHandler showErrorWithTitle:nil message:CCValidationMessages.fullPriceCantBeLowerThenPriceForReview];
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.fullPriceCantBeLowerThenPriceForReview];
         return NO;
     }
     

@@ -41,6 +41,7 @@ extern const struct CCAlertsButtons {
 
 extern const struct CCAlertsTitles {
     __unsafe_unretained NSString *requestError;
+    __unsafe_unretained NSString *defaultError;
 } CCAlertsTitles;
 
 extern const struct CCValidationMessages {

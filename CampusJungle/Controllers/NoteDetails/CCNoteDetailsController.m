@@ -7,12 +7,10 @@
 //
 
 #import "CCNoteDetailsController.h"
-#import "CCDefines.h"
 #import "CCNotesAPIProviderProtolcol.h"
 #import "CCMarketAPIProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
 #import "UIAlertView+BlocksKit.h"
-#import "CCAlertDefines.h"
 #import "CCUserSessionProtocol.h"
 #import "CCUser.h"
 
@@ -82,7 +80,7 @@
                 self.note.link = link;
                 [self.viewNotesAsPDFTransaction performWithObject:self.note];
             } else {
-                [CCStandardErrorHandler showErrorWithTitle:nil message:CCAlertsMessages.noteNotReadyForView];
+                [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCAlertsMessages.noteNotReadyForView];
             }
     } errorHandler:^(NSError *error){
         [CCStandardErrorHandler showErrorWithError:error];

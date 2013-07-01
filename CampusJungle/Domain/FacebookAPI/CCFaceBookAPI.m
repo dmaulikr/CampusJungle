@@ -9,7 +9,6 @@
 #import "CCFaceBookAPI.h"
 #import "FBSession.h"
 #import <FacebookSDK/FacebookSDK.h>
-#import "CCAlertDefines.h"
 
 @interface CCFaceBookAPI()
 

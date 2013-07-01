@@ -7,7 +7,6 @@
 //
 
 #import "CCBaseDataProvider.h"
-#import "CCAlertDefines.h"
 
 @implementation CCBaseDataProvider
 

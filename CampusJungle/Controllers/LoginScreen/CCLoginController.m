@@ -8,9 +8,7 @@
 
 #import "CCLoginController.h"
 #import "NSString+CJStringValidator.h"
-#import "CCAlertDefines.h"
 #import "CCLoginAPIProviderProtocol.h"
-#import "CCDefines.h"
 #import "CCUserSessionProtocol.h"
 #import "CCStandardErrorHandler.h"
 #import "UITextField+InsetFixing.h"
@@ -48,11 +46,11 @@
 - (BOOL)isFormValid
 {
     if (![self.emailField.text isEmail]){
-        [CCStandardErrorHandler showErrorWithTitle:nil message:CCValidationMessages.emailNotValid];
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.emailNotValid];
         return NO;
     }
     if (![self.passField.text isMinLength:CCUserDefines.minimumPasswordLength]){
-        [CCStandardErrorHandler showErrorWithTitle:nil message:CCValidationMessages.passNotValid];
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.passNotValid];
         return NO;
     }
     return YES;

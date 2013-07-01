@@ -10,7 +10,6 @@
 #import "CCDropboxAPIProviderProtocol.h"
 #import "CCDefines.h"
 #import "CCStandardErrorHandler.h"
-#import "CCAlertDefines.h"
 #import "CCDropboxCell.h"
 #import "CCDropboxDataProvider.h"
 #import "CCDropboxFileInfo.h"

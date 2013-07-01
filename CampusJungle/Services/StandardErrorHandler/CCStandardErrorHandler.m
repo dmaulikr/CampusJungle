@@ -7,9 +7,7 @@
 //
 
 #import "CCStandardErrorHandler.h"
-#import "CCAlertDefines.h"
 #import "JSONKit.h"
-#import "CCDefines.h"
 
 @implementation CCStandardErrorHandler
 

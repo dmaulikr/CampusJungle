@@ -16,4 +16,6 @@
     #import <Foundation/Foundation.h>
     #import <AppleGuice/AppleGuice.h>
 
+    #import "CCConstantsDefines.h"
+
 #endif

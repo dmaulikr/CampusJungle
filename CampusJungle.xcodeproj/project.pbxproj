@@ -367,6 +367,8 @@
 
 /* Begin PBXFileReference section */
 		3EA3BC22A4CB480B8934991C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7073D63C1781CC3400736112 /* CCDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDefines.h; sourceTree = "<group>"; };
+		7073D63D1781CCB600736112 /* CCConstantsDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCConstantsDefines.h; sourceTree = "<group>"; };
 		9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		A784C595173A865E005E4921 /* CampusJungle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusJungle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A784C598173A865E005E4921 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -398,7 +400,6 @@
 		A787C75217536F8400824DEA /* CCAPIProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAPIProviderProtocol.h; sourceTree = "<group>"; };
 		A787C75517536F8400824DEA /* CCAlertDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAlertDefines.h; sourceTree = "<group>"; };
 		A787C75617536F8400824DEA /* CCAlertDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAlertDefines.m; sourceTree = "<group>"; };
-		A787C75717536F8400824DEA /* CCDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDefines.h; sourceTree = "<group>"; };
 		A787C75817536F8400824DEA /* CCDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDefines.m; sourceTree = "<group>"; };
 		A787C75A17536F8400824DEA /* CCFaceBookAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFaceBookAPI.h; sourceTree = "<group>"; };
 		A787C75B17536F8400824DEA /* CCFaceBookAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFaceBookAPI.m; sourceTree = "<group>"; };
@@ -1136,8 +1137,9 @@
 			children = (
 				A7D53A161757F88B00FE9FCD /* MenuDefines */,
 				A787C75417536F8400824DEA /* AlertDefines */,
-				A787C75717536F8400824DEA /* CCDefines.h */,
 				A787C75817536F8400824DEA /* CCDefines.m */,
+				7073D63C1781CC3400736112 /* CCDefines.h */,
+				7073D63D1781CCB600736112 /* CCConstantsDefines.h */,
 			);
 			path = Defines;
 			sourceTree = "<group>";

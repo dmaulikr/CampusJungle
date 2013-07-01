@@ -31,7 +31,7 @@
     if([[[self.ioc_userSession currentUser] educations] count]){
         [self.createStuffTransaction perform];
     } else {
-        [CCStandardErrorHandler showErrorWithTitle:nil message:@"You have to join college first"];
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:@"You have to join college first"];
     }
 }
 

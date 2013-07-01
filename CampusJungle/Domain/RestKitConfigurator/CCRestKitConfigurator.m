@@ -8,8 +8,6 @@
 
 #import "CCRestKitConfigurator.h"
 #import <RestKit/RestKit.h>
-#import "CCDefines.h"
-#import "CCAlertDefines.h"
 #import "CCUser.h"
 #import "CCAuthorization.h"
 #import "CCAuthorizationResponse.h"
