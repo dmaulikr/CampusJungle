@@ -8,6 +8,12 @@
 
 #import "CCSideBarController.h"
 
+@interface CCSideBarController()
+
+@property (nonatomic, weak) UIBarButtonItem *leftBarButton;
+
+@end
+
 @implementation CCSideBarController
 
 - (id)init {
@@ -27,8 +33,12 @@
     }
 }
 
+
 -(void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
+    NSLog(@"%@",[self.leftBarButton customView]);
+    
     if(self.blockOnViewDidAppear){
         self.blockOnViewDidAppear();
         self.blockOnViewDidAppear = nil;
@@ -36,8 +46,20 @@
     }
 }
 
+
+
 - (UIBarButtonItem *)leftButtonForCenterPanel {
-    return [[UIBarButtonItem alloc] initWithImage:[[self class] defaultImage] style:UIBarButtonItemStylePlain target:self action:@selector(toggleLeftPanel:)];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *image = [UIImage imageNamed:@"menuButton"];
+    button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
+    
+    [button setBackgroundImage:nil forState:UIControlStateNormal];
+    [button setBackgroundImage:nil forState:UIControlStateHighlighted];
+    [button setImage:image forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(toggleLeftPanel:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.leftBarButton = barButton;
+    return barButton;
 }
 
 

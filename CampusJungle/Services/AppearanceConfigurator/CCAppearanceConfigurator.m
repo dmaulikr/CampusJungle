@@ -22,7 +22,6 @@
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{
        UITextAttributeTextColor : [UIColor colorWithRed:240./255 green:218./255 blue:161./255 alpha:1]
      } forState:UIControlStateNormal];
-
     
     UIImage *customButtonBackground = [[UIImage imageNamed:@"button"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 10, 20, 10)];
     
@@ -33,7 +32,6 @@
     [[UIButton appearance] setBackgroundImage:customButtonActiveBackground forState:UIControlStateHighlighted];
     
     [[UILabel appearanceWhenContainedIn:[UIButton class], nil] setFont:[UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:17]];
-    
     
     [[UILabel appearanceWhenContainedIn:[UIButton class], nil] setTextColor:[UIColor yellowColor]];
     
