@@ -6,19 +6,19 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCInboxControllerViewController.h"
+#import "CCInboxController.h"
 
-@interface CCInboxControllerViewController ()
+@interface CCInboxController ()
 
 @end
 
-@implementation CCInboxControllerViewController
+@implementation CCInboxController
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.title = @"Inbox";
 }
 
 

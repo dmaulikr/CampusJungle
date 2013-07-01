@@ -18,7 +18,8 @@
 #import "CCAllClassesTransaction.h"
 #import "CCDropboxAPIProviderProtocol.h"
 #import "CCMarketTranasction.h"
-#import "CCInboxControllerViewController.h"
+#import "CCInboxController.h"
+#import "CCInboxTransaction.h"
 
 @interface CCMainTransaction()
 
@@ -59,6 +60,9 @@
     allClassesTransaction.menuController = rootController;
     leftController.classesTransaction = allClassesTransaction;
     
+    CCInboxTransaction *inboxTransaction = [CCInboxTransaction new];
+    inboxTransaction.menuController = rootController;
+    leftController.inboxTransaction = inboxTransaction;
 
     CCClassTransaction *classTransaction = [CCClassTransaction new];
     leftController.classTransaction = classTransaction;

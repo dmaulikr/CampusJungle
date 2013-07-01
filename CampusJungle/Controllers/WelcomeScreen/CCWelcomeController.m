@@ -39,10 +39,10 @@
      selector:@selector(applicationDidEnterForeground)
      name:CCAppDelegateDefines.notificationOnBackToForeground
      object:nil];
-    [self setImagesForButton:self.loginButton];
-    [self setImagesForButton:self.signupButton];
-    [self setImagesForButton:self.facebookButton];
-    [self setImagesForButton:self.twitterButton];
+    [self setImagesNamed:@"login_button" activeName:@"loginButtonPressed" ForButton:self.loginButton];
+    [self setImagesNamed:@"login_button" activeName:@"loginButtonPressed" ForButton:self.twitterButton];
+    [self setImagesNamed:@"login_button" activeName:@"loginButtonPressed" ForButton:self.facebookButton];
+    [self setImagesNamed:@"loginButtonPressed" activeName:@"login_button" ForButton:self.signupButton];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
@@ -56,10 +56,10 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
-- (void)setImagesForButton:(UIButton *)button
+- (void)setImagesNamed:(NSString *)name activeName:(NSString *)activeName ForButton:(UIButton *)button
 {
-    [button setBackgroundImage:[UIImage imageNamed:@"login_button"] forState:UIControlStateNormal];
-    [button setBackgroundImage:[UIImage imageNamed:@"loginButtonPressed"] forState:UIControlStateHighlighted];
+    [button setBackgroundImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
+    [button setBackgroundImage:[[UIImage imageNamed:activeName] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)] forState:UIControlStateHighlighted];
     button.titleLabel.font = [UIFont fontWithName:@"Noteworthy-Bold" size:19];
 
 }

@@ -8,7 +8,7 @@
 
 #import "CCTableBasedController.h"
 
-@interface CCInboxControllerViewController : CCTableBasedController
+@interface CCInboxController : CCTableBasedController
 
 
 
