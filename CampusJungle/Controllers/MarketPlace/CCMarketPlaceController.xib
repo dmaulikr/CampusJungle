@@ -71,6 +71,10 @@
 									<string key="IBUIItemSize">{60, 90}</string>
 									<float key="IBUIMinimumLineSpacing">10</float>
 									<float key="IBUIMinimumInteritemSpacing">10</float>
+									<double key="IBUISectionInset.top">0.0</double>
+									<double key="IBUISectionInset.bottom">0.0</double>
+									<double key="IBUISectionInset.left">20</double>
+									<double key="IBUISectionInset.right">0.0</double>
 								</object>
 								<array key="IBUICells" id="0"/>
 							</object>
@@ -99,6 +103,10 @@
 									<string key="IBUIItemSize">{60, 90}</string>
 									<float key="IBUIMinimumLineSpacing">10</float>
 									<float key="IBUIMinimumInteritemSpacing">10</float>
+									<double key="IBUISectionInset.top">0.0</double>
+									<double key="IBUISectionInset.bottom">0.0</double>
+									<double key="IBUISectionInset.left">20</double>
+									<double key="IBUISectionInset.right">0.0</double>
 								</object>
 								<reference key="IBUICells" ref="0"/>
 							</object>
@@ -110,6 +118,7 @@
 								<string key="NSFrame">{{0, 371}, {320, 100}}</string>
 								<reference key="NSSuperview" ref="797519692"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="347605900"/>
 								<bool key="IBUIOpaque">NO</bool>
@@ -124,6 +133,10 @@
 									<string key="IBUIItemSize">{60, 90}</string>
 									<float key="IBUIMinimumLineSpacing">10</float>
 									<float key="IBUIMinimumInteritemSpacing">10</float>
+									<double key="IBUISectionInset.top">0.0</double>
+									<double key="IBUISectionInset.bottom">0.0</double>
+									<double key="IBUISectionInset.left">20</double>
+									<double key="IBUISectionInset.right">0.0</double>
 								</object>
 								<reference key="IBUICells" ref="0"/>
 							</object>
@@ -609,14 +622,6 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/UICollectionViewFlowLayout.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">UICollectionViewLayout</string>
-					<string key="superclassName">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/UICollectionViewLayout.h</string>
 					</object>
 				</object>
 			</array>

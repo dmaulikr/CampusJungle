@@ -42,7 +42,7 @@
 							<object class="IBUILabel" id="590620599">
 								<reference key="NSNextResponder" ref="36013919"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{245, 34}, {74, 21}}</string>
+								<string key="NSFrame">{{240, 34}, {74, 21}}</string>
 								<reference key="NSSuperview" ref="36013919"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="135035518"/>
@@ -53,15 +53,16 @@
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<string key="IBUIText">Status</string>
-								<object class="NSColor" key="IBUITextColor">
+								<object class="NSColor" key="IBUITextColor" id="224762116">
 									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC40NTA5ODAzOTIyIDAuNDMxMzcyNTQ5IDAuNDE1Njg2Mjc0NQA</bytes>
+									<bytes key="NSRGB">MC41MDk4MDM5MjE2IDAuMjU0OTAxOTYwOCAwAA</bytes>
 								</object>
 								<object class="NSColor" key="IBUIHighlightedColor" id="925494626">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MQA</bytes>
 								</object>
 								<int key="IBUIBaselineAdjustment">0</int>
+								<int key="IBUITextAlignment">2</int>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<string key="name">Avenir-Roman</string>
 									<string key="family">Avenir</string>
@@ -78,7 +79,7 @@
 							<object class="IBUILabel" id="135035518">
 								<reference key="NSNextResponder" ref="36013919"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{246, 9}, {74, 21}}</string>
+								<string key="NSFrame">{{240, 9}, {74, 21}}</string>
 								<reference key="NSSuperview" ref="36013919"/>
 								<reference key="NSWindow"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -88,13 +89,10 @@
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<string key="IBUIText">Date</string>
-								<object class="NSColor" key="IBUITextColor">
-									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC40NTA5ODAzOTIyIDAuNDMxMzcyNTQ5IDAuNDE1Njg2Mjc0NQA</bytes>
-								</object>
+								<reference key="IBUITextColor" ref="224762116"/>
 								<reference key="IBUIHighlightedColor" ref="925494626"/>
 								<int key="IBUIBaselineAdjustment">0</int>
-								<int key="IBUITextAlignment">1</int>
+								<int key="IBUITextAlignment">2</int>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<string key="name">Avenir-Heavy</string>
 									<string key="family">Avenir</string>
@@ -111,7 +109,7 @@
 							<object class="IBUILabel" id="808196540">
 								<reference key="NSNextResponder" ref="36013919"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{7, 0}, {231, 60}}</string>
+								<string key="NSFrame">{{11, 0}, {228, 60}}</string>
 								<reference key="NSSuperview" ref="36013919"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="590620599"/>
@@ -124,7 +122,7 @@
 								<string key="IBUIText">CollegeName</string>
 								<object class="NSColor" key="IBUITextColor">
 									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC40NTA5ODAzOTIyIDAuNDMxMzcyNTQ5IDAuNDE1Njg2Mjc0NQA</bytes>
+									<bytes key="NSRGB">MC41MDk4MDM5MjE2IDAuMjU0OTAxOTYwOCAwAA</bytes>
 								</object>
 								<reference key="IBUIHighlightedColor" ref="925494626"/>
 								<int key="IBUIBaselineAdjustment">0</int>
@@ -141,7 +139,7 @@
 									<int key="NSfFlags">16</int>
 								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
-								<double key="preferredMaxLayoutWidth">231</double>
+								<double key="preferredMaxLayoutWidth">228</double>
 							</object>
 						</array>
 						<string key="NSFrameSize">{320, 59}</string>
