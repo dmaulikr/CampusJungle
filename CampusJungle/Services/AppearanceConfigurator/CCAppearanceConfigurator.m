@@ -14,6 +14,11 @@
 {
     UIImage *navBackgroundImage = [[UIImage imageNamed:@"navigation_bar"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     [[UINavigationBar appearance] setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{
+                                UITextAttributeTextColor: [UIColor colorWithRed:240./255 green:218./255 blue:161./255 alpha:1]
+                                  }];
+    
     UIImage *backButtonImage = [[UIImage imageNamed:@"back_button"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 13, 0, 6)];
     [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     UIImage *barButtonImage = [[UIImage imageNamed:@"action_button"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 6, 0, 6)];
