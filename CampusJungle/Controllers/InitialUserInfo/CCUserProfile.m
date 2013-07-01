@@ -174,7 +174,7 @@
 
 - (IBAction)logout
 {
-    UIAlertView *testView = [UIAlertView alertViewWithTitle:nil message:CCAlertsMessages.confimAlert];
+    UIAlertView *testView = [UIAlertView alertViewWithTitle:CCAlertsTitles.logOut message:CCAlertsMessages.confimAlert];
     [testView addButtonWithTitle:CCAlertsButtons.noButton handler:nil];
     [testView addButtonWithTitle:CCAlertsButtons.yesButton handler:^{
         [self.logoutTransaction perform];
