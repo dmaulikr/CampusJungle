@@ -18,8 +18,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:@"CCStateSelectionConroller" bundle:nibBundleOrNil];
-
+    self = [super initWithNibName:@"CCCollegeSelectionController" bundle:nibBundleOrNil];
     return self;
 }
 
