@@ -8,7 +8,7 @@
 
 @interface CCViewController : UIViewController
 
-@property (nonatomic, strong) UITapGestureRecognizer *tapRcognizer;
+@property (nonatomic, strong) UITapGestureRecognizer *tapRecognizer;
 
 - (void)setButtonsTextColorInView:(UIView *)view;
 - (void)setRightNavigationItemWithTitle:(NSString*)title selector:(SEL)selector;

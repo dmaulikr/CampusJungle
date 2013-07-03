@@ -14,6 +14,7 @@
 #import "CCAPIProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
 #import "CCDefines.h"
+#import "CCNavigationBarViewHellper.h"
 
 @interface CCCitySelectionController ()<UIAlertViewDelegate>
 
@@ -32,11 +33,7 @@
     citiesProvider.stateID = self.stateID;
 
     [self configTableWithProvider:citiesProvider cellClass:[CCCityCell class]];
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add"
-                                                                              style:UIBarButtonItemStyleBordered
-                                                                             target:self
-                                                                             action:@selector(addCity)];
+    self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHellper plusButtonWithTarget:self action:@selector(addCity)];
 }
 
 - (void)didSelectedCellWithObject:(id)cellObject
@@ -44,6 +41,11 @@
     self.cityID = [(CCCity *)cellObject cityID];
     [self addCollege];
 
+}
+
+- (BOOL)isNeedToLeftSelected
+{
+    return NO;
 }
 
 - (void)addCity

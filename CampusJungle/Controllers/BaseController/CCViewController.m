@@ -31,7 +31,8 @@
     UITapGestureRecognizer *tapGestureRecognizer = [UITapGestureRecognizer new];
     [tapGestureRecognizer addTarget:self action:@selector(viewDidTap)];
     [self.view addGestureRecognizer:tapGestureRecognizer];
-    self.tapRcognizer = tapGestureRecognizer;
+    self.tapRecognizer = tapGestureRecognizer;
+    self.tapRecognizer.enabled = NO;
 }
 
 - (void)viewDidTap

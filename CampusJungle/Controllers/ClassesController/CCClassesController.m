@@ -18,7 +18,7 @@
 #import "CCStandardErrorHandler.h"
 #import "MBProgressHUD.h"
 #import "CCEducation.h"
-
+#import "CCNavigationBarViewHellper.h"
 
 @interface CCClassesController ()<CCCellSelectionProtocol>
 @property (nonatomic, strong) CCClassesDataProvider *dataProvider;
@@ -35,12 +35,7 @@
 {
     [super viewDidLoad];
     [self.navigationItem setTitle:@"My Classes"];
-
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                                                 target:self
-                                                                                 action:@selector(addNewClass)];
-    self.navigationItem.rightBarButtonItem = rightButton;
-
+    self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHellper plusButtonWithTarget:self action:@selector(addNewClass)];
     [self configTable];
 }
 

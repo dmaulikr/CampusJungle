@@ -62,7 +62,7 @@
         [self loadFilters];
     }];
     
-    self.tapRcognizer.enabled = NO;
+    self.tapRecognizer.enabled = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated

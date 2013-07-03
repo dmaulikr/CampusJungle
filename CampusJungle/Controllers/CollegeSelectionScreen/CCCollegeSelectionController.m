@@ -14,6 +14,7 @@
 #import "CCAPIProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
 #import "CCDefines.h"
+#import "CCNavigationBarViewHellper.h"
 
 @interface CCCollegeSelectionController ()
 
@@ -30,10 +31,8 @@
     collegesProvider.cityID = self.cityID;
     
     [self configTableWithProvider:collegesProvider cellClass:[CCCollegeSelectionCell class]];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add"
-                                                                              style:UIBarButtonItemStyleBordered
-                                                                             target:self
-                                                                             action:@selector(addCollege)];
+
+    self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHellper plusButtonWithTarget:self action:@selector(addCollege)];
 }
 
 - (void)viewWillAppear:(BOOL)animated

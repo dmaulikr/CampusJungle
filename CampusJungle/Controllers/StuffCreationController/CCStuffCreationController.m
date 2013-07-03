@@ -44,7 +44,7 @@
     self.thumbSelection = [CCAvatarSelectionActionSheet new];
     self.thumbSelection.delegate = self;
     self.thumbSelection.title = @"Select thumbnail";
-    
+    self.tapRecognizer.enabled = YES;
     [self loadColleges];
 }
 

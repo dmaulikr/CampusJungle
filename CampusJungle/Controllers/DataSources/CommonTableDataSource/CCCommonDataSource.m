@@ -39,4 +39,11 @@
     [self.delegate didSelectedCellWithObject:self.dataProvider.arrayOfItems[indexPath.row]];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if([self.delegate respondsToSelector:@selector(isNeedToLeftSelected)] && ![self.delegate isNeedToLeftSelected]){
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
+}
+
 @end

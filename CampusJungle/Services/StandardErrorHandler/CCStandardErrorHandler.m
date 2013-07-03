@@ -10,17 +10,23 @@
 #import "CCAlertDefines.h"
 #import "JSONKit.h"
 #import "CCDefines.h"
+#import "GIAlert.h"
 
 @implementation CCStandardErrorHandler
 
 + (void)showErrorWithTitle:(NSString *)title message:(NSString *)message
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message:message
-                                                   delegate:self
-                                          cancelButtonTitle:CCAlertsButtons.okButton
-                                          otherButtonTitles:nil];
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+//                                                    message:message
+//                                                   delegate:self
+//                                          cancelButtonTitle:CCAlertsButtons.okButton
+//                                          otherButtonTitles:nil];
+    
+    GIAlertButton *alertButton = [GIAlertButton buttonWithTitle:CCAlertsButtons.okButton action:nil];
+    GIAlert *alert = [GIAlert alertWithTitle:title message:message buttons:@[alertButton]];
     [alert show];
+    
+    //[alert show];
 }
 
 + (void)showErrorWithCode:(NSInteger)code

@@ -11,7 +11,7 @@
 
 @interface CCCollegeSelectionCell()
 
-@property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) IBOutlet UILabel *collegeName;
 
 @end
 
@@ -22,9 +22,8 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.label = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 300, 30)];
-        self.label.backgroundColor = [UIColor clearColor];
-        [self addSubview:self.label];
+        self = [[NSBundle mainBundle] loadNibNamed:@"CCCollegeSelectionCell" owner:self options:nil][0];
+        [self setSelectionColor];
     }
     return self;
 }
@@ -32,7 +31,7 @@
 - (void)setCellObject:(id)cellObject
 {
     _cellObject = cellObject;
-    self.label.text = [(CCCollege *)cellObject name];
+    self.collegeName.text = [(CCCollege *)cellObject name];
 }
 
 @end

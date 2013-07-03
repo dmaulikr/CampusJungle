@@ -7,8 +7,9 @@
 //
 
 #import "CCTableCellProtocol.h"
+#import "CCBaseCell.h"
 
-@interface CCClassCell : UITableViewCell<CCTableCellProtocol>
+@interface CCClassCell : CCBaseCell<CCTableCellProtocol>
 
 @property (nonatomic, strong) id cellObject;
 

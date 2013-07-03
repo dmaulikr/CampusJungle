@@ -23,7 +23,9 @@
     if (self) {
         self.label = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 300, 30)];
         self.label.backgroundColor = [UIColor clearColor];
+        self.label.textColor = [UIColor colorWithRed:130./255 green:65./255 blue:0 alpha:1];
         [self addSubview:self.label];
+        [self setSelectionColor];
     }
     return self;
 }

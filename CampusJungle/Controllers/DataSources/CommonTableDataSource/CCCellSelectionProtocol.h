@@ -12,4 +12,7 @@
 
 - (void)didSelectedCellWithObject:(id)cellObject;
 
+@optional
+- (BOOL)isNeedToLeftSelected;
+
 @end

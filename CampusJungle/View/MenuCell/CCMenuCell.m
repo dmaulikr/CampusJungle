@@ -23,6 +23,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self = [[NSBundle mainBundle] loadNibNamed:@"CCMenuCell" owner:self options:nil][0];
+        [self setSelectionColor];
     }
     return self;
 }

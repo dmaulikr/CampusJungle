@@ -36,7 +36,9 @@
                                                                   target:self
                                                                   action:@selector(saveButtonDidPressed)];
     self.navigationItem.rightBarButtonItem = saveButton;
-    
+
+   
+    self.tapRecognizer.enabled = YES;
 }
 
 - (void)saveButtonDidPressed

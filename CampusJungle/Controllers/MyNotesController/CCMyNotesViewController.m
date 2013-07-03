@@ -12,6 +12,7 @@
 #import "CCNote.h"
 #import "CCStandardErrorHandler.h"
 #import "CCUserSessionProtocol.h"
+#import "CCNavigationBarViewHellper.h"
 
 @interface CCMyNotesViewController ()
 
@@ -28,7 +29,7 @@
     self.title = @"My Notes";
     self.dataProvider = [CCMyNotesDataProvider new];
     [self configTableWithProvider:self.dataProvider cellClass:[CCNoteCell class]];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createNewNote)];
+    self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHellper plusButtonWithTarget:self action:@selector(createNewNote)];
 }
 
 - (void)createNewNote

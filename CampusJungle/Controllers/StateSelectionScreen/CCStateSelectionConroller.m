@@ -35,4 +35,9 @@
     [self.citySelectionTransaction performWithObject:cellObject];
 }
 
+- (BOOL)isNeedToLeftSelected
+{
+    return NO;
+}
+
 @end

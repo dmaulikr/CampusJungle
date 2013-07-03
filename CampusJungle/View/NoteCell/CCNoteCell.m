@@ -9,6 +9,7 @@
 #import "CCNoteCell.h"
 #import "CCNote.h"
 #import "CCDefines.h"
+#import "AFNetworking.h"
 
 @interface CCNoteCell()
 
@@ -27,7 +28,7 @@
         self = [[[NSBundle mainBundle] loadNibNamed:@"CCNoteCell"
                                               owner:self
                                             options:nil] objectAtIndex:0];
-            
+        [self setSelectionColor];
     }
     return self;
 }

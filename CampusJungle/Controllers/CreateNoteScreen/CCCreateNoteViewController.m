@@ -54,6 +54,7 @@
     [self loadCollegesPickerInfo];
     [self loadClasses];
     [self configAvatarSelectionSheet];
+    self.tapRecognizer.enabled = YES;
 }
 
 - (void)configAvatarSelectionSheet

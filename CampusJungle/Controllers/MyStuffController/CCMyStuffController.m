@@ -10,6 +10,7 @@
 #import "CCMyStuffDataProvider.h"
 #import "CCOrdinaryCell.h"
 #import "CCUserSessionProtocol.h"
+#import "CCNavigationBarViewHellper.h"
 
 @interface CCMyStuffController ()
 
@@ -23,7 +24,7 @@
 {
     [super viewDidLoad];
     [self configTableWithProvider:[CCMyStuffDataProvider new] cellClass:[CCOrdinaryCell class]];
-     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createNewStuff)];
+    self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHellper plusButtonWithTarget:self action:@selector(createNewStuff)];
 }
 
 - (void)createNewStuff

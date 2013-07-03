@@ -26,6 +26,12 @@
 
 @implementation CCLoginController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.tapRecognizer.enabled = YES;
+}
+
 - (IBAction)loginButtonDidPressed
 {
     if([self isFormValid]){

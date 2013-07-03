@@ -22,7 +22,7 @@
 {
     [super viewDidLoad];
     [self configSearchBar];
-    self.tapRcognizer.enabled = NO;
+    self.tapRecognizer.enabled = NO;
 }
 
 - (void)configSearchBar

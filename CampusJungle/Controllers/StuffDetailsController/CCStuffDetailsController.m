@@ -28,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tapRecognizer.enabled = NO;
     self.stuffDescription.text = self.stuff.description;
     
     self.dataProvider = [CCPhotosDataProvider new];
