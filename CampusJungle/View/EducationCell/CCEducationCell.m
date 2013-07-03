@@ -38,4 +38,20 @@
     self.status.text = [(CCEducation *)cellObject status];
 }
 
+- (void)layoutSubviews
+{
+    NSLog(@"%d",self.editing);
+    if(self.editing){
+        self.collegeName.transform = CGAffineTransformMakeTranslation(-10, 0);
+        self.graduationDate.transform = CGAffineTransformMakeTranslation(-27, 0);
+        self.status.transform = CGAffineTransformMakeTranslation(-27, 0);
+    } else {
+        self.collegeName.transform = CGAffineTransformMakeTranslation(0, 0);
+        self.graduationDate.transform = CGAffineTransformMakeTranslation(0, 0);
+        self.status.transform = CGAffineTransformMakeTranslation(0, 0);
+    }
+    [super layoutSubviews];
+
+}
+
 @end

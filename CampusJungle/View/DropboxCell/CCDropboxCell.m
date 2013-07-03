@@ -15,6 +15,7 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *fileName;
 @property (nonatomic, weak) IBOutlet UIImageView *fileIcon;
+@property (nonatomic, weak) IBOutlet UIImageView *checkMark;
 @property (nonatomic, strong) id <CCDropboxAPIProviderProtocol> ioc_dropboxAPIProvider;
 
 @end
@@ -83,10 +84,9 @@
 - (void)becomeSelected:(BOOL)selected
 {
     if(selected){
-        [self setAccessoryType:UITableViewCellAccessoryCheckmark];
-    
+        self.checkMark.hidden = NO;
     } else {
-        [self setAccessoryType:UITableViewCellAccessoryNone];
+        self.checkMark.hidden = YES;
     }
 }
 

@@ -20,7 +20,9 @@
     [testSheet addButtonWithTitle:@"Make photo" handler:^{
         [self makePhotoForAvatar];
     }];
-    [testSheet setCancelButtonWithTitle:nil handler:nil];
+    [testSheet setCancelButtonWithTitle:nil handler:^{
+        [self setButtonAppearance];   
+    }];
     [testSheet showInView:[self.delegate view]];
 }
 
@@ -48,6 +50,18 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     [self.delegate didSelectAvatar:info[UIImagePickerControllerEditedImage]];
+    [self setButtonAppearance];
+    [self.delegate dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self setButtonAppearance];
+    [self.delegate dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)setButtonAppearance
+{
     UIImage *customButtonBackground = [[UIImage imageNamed:@"button"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 10, 20, 10)];
     
     UIImage *customButtonActiveBackground = [UIImage imageNamed:@"button_active"];
@@ -55,7 +69,6 @@
     [[UIButton appearance] setBackgroundImage:customButtonBackground forState:UIControlStateNormal];
     
     [[UIButton appearance] setBackgroundImage:customButtonActiveBackground forState:UIControlStateHighlighted];
-    [self.delegate dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

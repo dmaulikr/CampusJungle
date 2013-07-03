@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 #import "CCViewController.h"
+#import "CCClass.h"
 
 @class CCClass;
 
