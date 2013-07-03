@@ -14,13 +14,10 @@
 
 @implementation CCInboxController
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.title = @"Inbox";
 }
-
-
 
 @end

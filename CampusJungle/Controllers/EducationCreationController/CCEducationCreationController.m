@@ -8,6 +8,7 @@
 
 #import "CCEducationCreationController.h"
 #import "CCEducation.h"
+#import <QuartzCore/QuartzCore.h>
 #define animationDuration 0.3
 #define numberOfYears 10
 
@@ -45,6 +46,7 @@
     self.currentYear = year;
     [self.view addSubview: self.pickerController];
     [self showPicker];
+    [self setUpPickerLayer];
 }
 
 - (void)segmentedControlDidChangeValue:(UISegmentedControl *)control
@@ -103,5 +105,9 @@
     return [NSString stringWithFormat:@"%d",(self.currentYear + row)];
 }
 
+- (void)setUpPickerLayer
+{
+    NSLog(@"%@",self.picker.layer.backgroundColor);
+}
 
 @end
