@@ -203,6 +203,7 @@
 		D394968E1785C36800C39A7E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D394968D1785C36800C39A7E /* Default.png */; };
 		D39496901785C36C00C39A7E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D394968F1785C36C00C39A7E /* Default-568h@2x.png */; };
 		D39496921785C37300C39A7E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D39496911785C37300C39A7E /* Default@2x.png */; };
+		D39496961785CA7C00C39A7E /* CCUploadProcessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496951785CA7C00C39A7E /* CCUploadProcessManager.m */; };
 		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
 		D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39F1C161753C0E8008E08A2 /* Accounts.framework */; };
 		D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A2C3241754C95700989831 /* MessageUI.framework */; };
@@ -710,6 +711,9 @@
 		D394968D1785C36800C39A7E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D394968F1785C36C00C39A7E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D39496911785C37300C39A7E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		D39496941785CA7C00C39A7E /* CCUploadProcessManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUploadProcessManager.h; sourceTree = "<group>"; };
+		D39496951785CA7C00C39A7E /* CCUploadProcessManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUploadProcessManager.m; sourceTree = "<group>"; };
+		D39496971785CB5400C39A7E /* CCUploadProcessManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCUploadProcessManagerProtocol.h; sourceTree = "<group>"; };
 		D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStandardErrorHandler.h; sourceTree = "<group>"; };
 		D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStandardErrorHandler.m; sourceTree = "<group>"; };
 		D39F1C161753C0E8008E08A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -1136,6 +1140,7 @@
 		A787C74E17536F8400824DEA /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D39496931785CA6700C39A7E /* UploadManager */,
 				D361462E175E17AD00907414 /* CCDropboxAPIProvider */,
 				A787C74F17536F8400824DEA /* APIProvider */,
 				A787C75317536F8400824DEA /* Defines */,
@@ -2375,6 +2380,16 @@
 			path = AlertView;
 			sourceTree = "<group>";
 		};
+		D39496931785CA6700C39A7E /* UploadManager */ = {
+			isa = PBXGroup;
+			children = (
+				D39496941785CA7C00C39A7E /* CCUploadProcessManager.h */,
+				D39496951785CA7C00C39A7E /* CCUploadProcessManager.m */,
+				D39496971785CB5400C39A7E /* CCUploadProcessManagerProtocol.h */,
+			);
+			path = UploadManager;
+			sourceTree = "<group>";
+		};
 		D39F1C0E1753821D008E08A2 /* StandardErrorHandler */ = {
 			isa = PBXGroup;
 			children = (
@@ -3519,6 +3534,7 @@
 				D394967917847E4C00C39A7E /* GIAlert.m in Sources */,
 				D394967B17847E4C00C39A7E /* GIAlertButton.m in Sources */,
 				D394967F1785A3D800C39A7E /* GIInputAlert.m in Sources */,
+				D39496961785CA7C00C39A7E /* CCUploadProcessManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

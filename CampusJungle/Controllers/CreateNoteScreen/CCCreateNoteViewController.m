@@ -21,6 +21,7 @@
 #import "CCAvatarSelectionProtocol.h"
 #import "CCAvatarSelectionActionSheet.h"
 
+
 @interface CCCreateNoteViewController ()<CCCellSelectionProtocol,CCAvatarSelectionProtocol>
 
 @property (nonatomic, weak) IBOutlet UITextField *priceField;
@@ -38,6 +39,7 @@
 @property (nonatomic, strong) NSArray *arrayOfClasses;
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
 @property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_classesAPI;
+
 
 @property (nonatomic, strong) NSArray *arrayOfItemsForPicker;
 
