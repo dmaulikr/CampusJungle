@@ -200,6 +200,9 @@
 		D394967B17847E4C00C39A7E /* GIAlertButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D394967817847E4C00C39A7E /* GIAlertButton.m */; };
 		D394967F1785A3D800C39A7E /* GIInputAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = D394967D1785A3D700C39A7E /* GIInputAlert.m */; };
 		D39496801785A3D800C39A7E /* GIInputAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = D394967E1785A3D800C39A7E /* GIInputAlert.xib */; };
+		D394968E1785C36800C39A7E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D394968D1785C36800C39A7E /* Default.png */; };
+		D39496901785C36C00C39A7E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D394968F1785C36C00C39A7E /* Default-568h@2x.png */; };
+		D39496921785C37300C39A7E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D39496911785C37300C39A7E /* Default@2x.png */; };
 		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
 		D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39F1C161753C0E8008E08A2 /* Accounts.framework */; };
 		D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A2C3241754C95700989831 /* MessageUI.framework */; };
@@ -302,9 +305,6 @@
 		D3A3196C177C5B470004C4E8 /* CCAppearanceConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A3196B177C5B470004C4E8 /* CCAppearanceConfigurator.m */; };
 		D3A3196E177D8EEC0004C4E8 /* CCMarketFilterClassesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A3196D177D8EEC0004C4E8 /* CCMarketFilterClassesCell.xib */; };
 		D3A31970177D92110004C4E8 /* clear.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A3196F177D92110004C4E8 /* clear.png */; };
-		D3A31979177E20480004C4E8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A31978177E20450004C4E8 /* Default.png */; };
-		D3A3197B177E205D0004C4E8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A3197A177E205A0004C4E8 /* Default@2x.png */; };
-		D3A3197D177E206C0004C4E8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A3197C177E206A0004C4E8 /* Default-568h@2x.png */; };
 		D3A31980177E226C0004C4E8 /* logoLogin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A3197E177E226C0004C4E8 /* logoLogin@2x.png */; };
 		D3A31981177E226C0004C4E8 /* logoLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A3197F177E226C0004C4E8 /* logoLogin.png */; };
 		D3A31984177E29300004C4E8 /* loginButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A31982177E28FC0004C4E8 /* loginButtonPressed.png */; };
@@ -707,6 +707,9 @@
 		D394967C1785A3D700C39A7E /* GIInputAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIInputAlert.h; sourceTree = "<group>"; };
 		D394967D1785A3D700C39A7E /* GIInputAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIInputAlert.m; sourceTree = "<group>"; };
 		D394967E1785A3D800C39A7E /* GIInputAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GIInputAlert.xib; sourceTree = "<group>"; };
+		D394968D1785C36800C39A7E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		D394968F1785C36C00C39A7E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D39496911785C37300C39A7E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStandardErrorHandler.h; sourceTree = "<group>"; };
 		D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStandardErrorHandler.m; sourceTree = "<group>"; };
 		D39F1C161753C0E8008E08A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -812,9 +815,6 @@
 		D3A3196B177C5B470004C4E8 /* CCAppearanceConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAppearanceConfigurator.m; sourceTree = "<group>"; };
 		D3A3196D177D8EEC0004C4E8 /* CCMarketFilterClassesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMarketFilterClassesCell.xib; sourceTree = "<group>"; };
 		D3A3196F177D92110004C4E8 /* clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clear.png; sourceTree = "<group>"; };
-		D3A31978177E20450004C4E8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		D3A3197A177E205A0004C4E8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		D3A3197C177E206A0004C4E8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D3A3197E177E226C0004C4E8 /* logoLogin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logoLogin@2x.png"; sourceTree = "<group>"; };
 		D3A3197F177E226C0004C4E8 /* logoLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoLogin.png; sourceTree = "<group>"; };
 		D3A31982177E28FC0004C4E8 /* loginButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginButtonPressed.png; sourceTree = "<group>"; };
@@ -963,9 +963,9 @@
 		A784C58C173A865E005E4921 = {
 			isa = PBXGroup;
 			children = (
-				D3A3197C177E206A0004C4E8 /* Default-568h@2x.png */,
-				D3A3197A177E205A0004C4E8 /* Default@2x.png */,
-				D3A31978177E20450004C4E8 /* Default.png */,
+				D39496911785C37300C39A7E /* Default@2x.png */,
+				D394968F1785C36C00C39A7E /* Default-568h@2x.png */,
+				D394968D1785C36800C39A7E /* Default.png */,
 				A787C72C17536F8400824DEA /* CampusJungle */,
 				A787C73017536F8400824DEA /* CampusJungle-Info.plist */,
 				A787C73117536F8400824DEA /* CampusJungle-Prefix.pch */,
@@ -3287,9 +3287,6 @@
 				D3A31968177C4DAC0004C4E8 /* text_box@2x.png in Resources */,
 				D3A3196E177D8EEC0004C4E8 /* CCMarketFilterClassesCell.xib in Resources */,
 				D3A31970177D92110004C4E8 /* clear.png in Resources */,
-				D3A31979177E20480004C4E8 /* Default.png in Resources */,
-				D3A3197B177E205D0004C4E8 /* Default@2x.png in Resources */,
-				D3A3197D177E206C0004C4E8 /* Default-568h@2x.png in Resources */,
 				D3A31980177E226C0004C4E8 /* logoLogin@2x.png in Resources */,
 				D3A31981177E226C0004C4E8 /* logoLogin.png in Resources */,
 				D3A31984177E29300004C4E8 /* loginButtonPressed.png in Resources */,
@@ -3308,6 +3305,9 @@
 				D347BBE717845B8600E54EFC /* CCCollegeSelectionCell.xib in Resources */,
 				D394967A17847E4C00C39A7E /* GIAlert.xib in Resources */,
 				D39496801785A3D800C39A7E /* GIInputAlert.xib in Resources */,
+				D394968E1785C36800C39A7E /* Default.png in Resources */,
+				D39496901785C36C00C39A7E /* Default-568h@2x.png in Resources */,
+				D39496921785C37300C39A7E /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
