@@ -23,5 +23,7 @@
 @property (nonatomic) BOOL isSelected;
 
 - (NSString *)name;
++ (NSDictionary *)responseMappingDictionary;
++ (NSDictionary *)requestMappingDictionary;
 
 @end

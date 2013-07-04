@@ -15,4 +15,29 @@
     return self.stuffDescription;
 }
 
++ (NSDictionary *)responseMappingDictionary
+{
+    return @{
+      @"id" : @"stuffID",
+      @"owner_id" : @"ownerID",
+      @"college_id" : @"collegeID",
+      @"class_id" : @"classID",
+      @"description" : @"stuffDescription",
+      @"price" : @"price",
+      @"tags" : @"tags",
+      @"thumbnail" : @"thumbnail",
+      @"thumbnail_retina" : @"thumbnailRetina",
+    };
+}
+
++ (NSDictionary *)requestMappingDictionary
+{
+    return @{
+      @"collegeID" : @"class_id",
+      @"stuffDescription" : @"description",
+      @"price" : @"price",
+      @"arrayOfURLs" :@"images",
+    };
+}
+
 @end

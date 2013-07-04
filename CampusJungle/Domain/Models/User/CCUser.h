@@ -21,4 +21,6 @@
 @property (nonatomic, strong) NSString *isFacebookLinked;
 @property (nonatomic, strong) NSArray *educations;
 
++ (NSDictionary *)responseMappingDictionary;
+
 @end

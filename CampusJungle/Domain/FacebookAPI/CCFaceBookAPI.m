@@ -16,7 +16,7 @@
 
 @implementation CCFaceBookAPI
 
--(void)loginWithSuccessHandler:(successHandler)successBlock errorHandler:(errorHandler)errorHandler
+- (void)loginWithSuccessHandler:(successHandler)successBlock errorHandler:(errorHandler)errorHandler
 {
      if (![self isDeviceSessionExist]) {
          NSArray *permissions = @[@"email"];
@@ -39,7 +39,7 @@
     }
 }
 
--(void)getUserInfoSuccessHandler:(userInfoSuccessHandler)successHandler errorHandler:(errorHandler)errorHandler
+- (void)getUserInfoSuccessHandler:(userInfoSuccessHandler)successHandler errorHandler:(errorHandler)errorHandler
 {
     if ([self isDeviceSessionExist]) {
         [[FBRequest requestForMe] startWithCompletionHandler:^(FBRequestConnection *connection,
@@ -58,7 +58,7 @@
     } 
 }
 
--(BOOL)isDeviceSessionExist
+- (BOOL)isDeviceSessionExist
 {
     if(FBSession.activeSession.isOpen){
         return YES;
@@ -66,7 +66,7 @@
     return NO;
 }
 
--(void)logout
+- (void)logout
 {
     [FBSession.activeSession closeAndClearTokenInformation];
 }

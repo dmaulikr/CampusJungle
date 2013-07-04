@@ -1,5 +1,5 @@
 //
-//  CCMenuCell.h
+//  CCSideMenuItemCell.h
 //  CampusJungle
 //
 //  Created by Vlad Korzun on 29.06.13.
@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CCTableCellProtocol.h"
 
-@interface CCMenuCell : UITableViewCell<CCTableCellProtocol>
+@interface CCSideMenuItemCell : UITableViewCell
 
-@property (nonatomic, strong) id cellObject;
+- (void)fillWithObject:(id)object;
 
 @end

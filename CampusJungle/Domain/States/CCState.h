@@ -13,4 +13,6 @@
 @property (nonatomic, strong) NSNumber *stateID;
 @property (nonatomic, strong) NSString *name;
 
++ (NSDictionary *)responseMappingDictionary;
+
 @end

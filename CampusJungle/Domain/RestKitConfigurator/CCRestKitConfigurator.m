@@ -58,34 +58,16 @@
     [CCRestKitConfigurator configureNotesPurchasingResponse:objectManager];
     [CCRestKitConfigurator configureStuffCreationRequest:objectManager];
     [CCRestKitConfigurator configureStuffResponse:objectManager];
-
+    [CCRestKitConfigurator configureClassesInCollegesResponse:objectManager];
 }
 
 + (void)configureUserResponse:(RKObjectManager *)objectManager
 {
     RKObjectMapping *userResponseMapping = [RKObjectMapping mappingForClass:[CCUser class]];
-    
-    [userResponseMapping addAttributeMappingsFromDictionary:@{
-        @"first_name" : @"firstName",
-        @"last_name" : @"lastName",
-        @"email" : @"email",
-        @"avatar" : @"avatar",
-        @"token" : @"token",
-        @"wallet" : @"wallet",
-        @"status" : @"status",
-        @"id" : @"uid",
-        @"rank" : @"rank",
-        @"is_fb_linked" :@"isFacebookLinked"
-     }];
-    
+    [userResponseMapping addAttributeMappingsFromDictionary:[CCUser responseMappingDictionary]];
     
     RKObjectMapping *userEducationResponseMapping = [RKObjectMapping mappingForClass:[CCEducation class]];
-    [userEducationResponseMapping addAttributeMappingsFromDictionary:@{
-        @"graduation_date" : @"graduationDate",
-        @"college_name" : @"collegeName",
-        @"user_status" : @"status",
-        @"college_id" : @"collegeID",
-     }];
+    [userEducationResponseMapping addAttributeMappingsFromDictionary:[CCEducation responseMappingDictionary]];
     
     RKRelationshipMapping* relationShipResponseEducationsMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"educations"
                                                                                                          toKeyPath:@"educations"
@@ -99,10 +81,7 @@
      RKObjectMapping *authorizationResponseMapping = [RKObjectMapping mappingForClass:[CCAuthorizationResponse class]];
     [authorizationResponseMapping addPropertyMapping:relationShipResponseUserMapping];
 
-    [authorizationResponseMapping addAttributeMappingsFromDictionary:
-     @{
-        @"is_new_user" : @"isFirstLaunch",
-     }];
+    [authorizationResponseMapping addAttributeMappingsFromDictionary:[CCAuthorizationResponse responseMappingDictionary]];
     
     RKResponseDescriptor *responseAuthorizationDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:authorizationResponseMapping
                                                                                            pathPattern:CCAPIDefines.authorization
@@ -155,27 +134,10 @@
 {
     RKObjectMapping* classResponseMapping = [RKObjectMapping mappingForClass:[CCClass class]];
     
-    [classResponseMapping addAttributeMappingsFromDictionary:@{
-     @"professor" : @"professor",
-     @"timetable" : @"timetable",
-     @"subject" : @"subject",
-     @"semester" : @"semester",
-     @"call_number":@"callNumber",
-     @"id":@"classID",
-     @"college_name" : @"collegeName",
-     @"college_id" : @"collegeID",
-     }];
+    [classResponseMapping addAttributeMappingsFromDictionary:[CCClass responseMappingDictionary]];
         
     RKObjectMapping *classRequestMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
-    [classRequestMapping addAttributeMappingsFromDictionary:@{
-     @"professor" : @"professor",
-     @"timetable" : @"timetable",
-     @"subject" : @"subject",
-     @"semester" : @"semester",
-     @"call_number":@"callNumber",
-     @"id":@"classID",
-     @"college_name" : @"collegeName",
-     }];
+    [classRequestMapping addAttributeMappingsFromDictionary:[CCClass requestMappingDictionary]];
     
     
     RKRequestDescriptor *classRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:classRequestMapping objectClass:[CCClass class] rootKeyPath:nil];
@@ -216,15 +178,8 @@
 
 + (void)configureCollegeResponse:(RKObjectManager *)objectManager
 {
-       
     RKObjectMapping *collegesMapping = [RKObjectMapping mappingForClass:[CCCollege class]];
-    
-    [collegesMapping addAttributeMappingsFromDictionary:@{
-        @"id" : @"collegeID",
-        @"name" : @"name",
-        @"address" : @"address"
-     }];
-    
+    [collegesMapping addAttributeMappingsFromDictionary:[CCCollege responseMappingDictionary]];
     
     RKRelationshipMapping* relationShipResponseCollegesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
                                                                                                            toKeyPath:CCResponseKeys.items
@@ -269,10 +224,7 @@
     RKObjectMapping *paginationStatesResponseMapping  = [CCRestKitConfigurator paginationMapping];
     
     RKObjectMapping *statesMapping = [RKObjectMapping mappingForClass:[CCState class]];
-    [statesMapping addAttributeMappingsFromDictionary:@{
-     @"id" : @"stateID",
-     @"name" : @"name"
-     }];
+    [statesMapping addAttributeMappingsFromDictionary:[CCState responseMappingDictionary]];
     RKRelationshipMapping* relationShipResponseStatesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
                                                                                                            toKeyPath:CCResponseKeys.items
                                                                                                          withMapping:statesMapping];
@@ -287,10 +239,7 @@
     RKObjectMapping *paginationCitiesResponseMapping = [CCRestKitConfigurator paginationMapping];
     RKObjectMapping *citiesMapping = [RKObjectMapping mappingForClass:[CCCity class]];
     
-    [citiesMapping addAttributeMappingsFromDictionary:@{
-     @"id" : @"cityID",
-     @"name" : @"name"
-     }];
+    [citiesMapping addAttributeMappingsFromDictionary:[CCCity responseMappingDictionary]];
     RKRelationshipMapping* relationShipResponseCitiesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
                                                                                                            toKeyPath:CCResponseKeys.items
                                                                                                          withMapping:citiesMapping];
@@ -308,20 +257,7 @@
 {
     RKObjectMapping *paginationNotesResponseMapping = [CCRestKitConfigurator paginationMapping];
     RKObjectMapping *notesMapping = [RKObjectMapping mappingForClass:[CCNote class]];
-    [notesMapping addAttributeMappingsFromDictionary:@{
-     @"id" : @"noteID",
-     @"owner_id" : @"ownerID",
-     @"college_id" : @"collegeID",
-     @"class_id" : @"classID",
-     @"description" : @"noteDescription",
-     @"price" : @"price",
-     @"full_access_price" : @"fullPrice",
-     @"tags" : @"tags",
-     @"thumbnail" : @"thumbnail",
-     @"thumbnail_retina" : @"thumbnailRetina",
-     @"attachment" : @"link",
-     @"full_access" : @"fullAccess",
-     }];
+    [notesMapping addAttributeMappingsFromDictionary:[CCNote responseMappingDictionary]];
     
     RKRelationshipMapping* relationShipResponseNotesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
                                                                                                            toKeyPath:CCResponseKeys.items
@@ -342,16 +278,7 @@
 + (void)configureNotesUploadRequest:(RKObjectManager *)objectManager
 {
     RKObjectMapping *notesMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
-    [notesMapping addAttributeMappingsFromDictionary:@{
-     @"classID" : @"class_id",
-     @"noteDescription" : @"description",
-     @"price" : @"price",
-     @"fullPrice" : @"full_access_price",
-     @"tags" : @"tags",
-     @"pdfUrl" : @"pdf_url",
-     @"arrayOfURLs" :@"images_urls",
-     @"thumbnail" : @"thumbnail",
-     }];
+    [notesMapping addAttributeMappingsFromDictionary:[CCNote requestMappingDictionary]];
     RKRequestDescriptor *noteRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:notesMapping objectClass:[CCNoteUploadInfo class] rootKeyPath:nil];
     [objectManager addRequestDescriptor:noteRequestDescriptor];
 
@@ -368,9 +295,7 @@
 + (void)configureAttachmentResponse:(RKObjectManager *)objectManager
 {
     RKObjectMapping *notesLinkMaping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
-    [notesLinkMaping addAttributeMappingsFromDictionary:@{
-        @"note_url" : @"link",
-     }];
+    [notesLinkMaping addAttributeMappingsFromDictionary:[CCNote noteLinkMappingDictionary]];
     
     NSString *pathPattern = [NSString stringWithFormat:CCAPIDefines.notesAttachmentURL,@":noteID"];
     
@@ -400,12 +325,7 @@
 + (void)configureStuffCreationRequest:(RKObjectManager *)objectManager
 {
     RKObjectMapping *stuffMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
-    [stuffMapping addAttributeMappingsFromDictionary:@{
-     @"collegeID" : @"class_id",
-     @"stuffDescription" : @"description",
-     @"price" : @"price",
-     @"arrayOfURLs" :@"images",
-     }];
+    [stuffMapping addAttributeMappingsFromDictionary:[CCStuff requestMappingDictionary]];
     RKRequestDescriptor *stuffRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:stuffMapping objectClass:[CCStuffUploadInfo class] rootKeyPath:nil];
     [objectManager addRequestDescriptor:stuffRequestDescriptor];
 }
@@ -414,19 +334,7 @@
 {
     RKObjectMapping *paginationNotesResponseMapping = [CCRestKitConfigurator paginationMapping];
     RKObjectMapping *stuffMapping = [RKObjectMapping mappingForClass:[CCStuff class]];
-    [stuffMapping addAttributeMappingsFromDictionary:@{
-     @"id" : @"stuffID",
-     @"owner_id" : @"ownerID",
-     @"college_id" : @"collegeID",
-     @"class_id" : @"classID",
-     @"description" : @"stuffDescription",
-     @"price" : @"price",
-     @"tags" : @"tags",
-     
-     @"thumbnail" : @"thumbnail",
-     @"thumbnail_retina" : @"thumbnailRetina",
-
-     }];
+    [stuffMapping addAttributeMappingsFromDictionary:[CCStuff responseMappingDictionary]];
     
     RKRelationshipMapping* relationShipResponseStuffMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
                                                                                                            toKeyPath:CCResponseKeys.items
@@ -434,11 +342,7 @@
     [paginationNotesResponseMapping addPropertyMapping:relationShipResponseStuffMapping];
     
     RKObjectMapping *photosMapping = [RKObjectMapping mappingForClass:[CCPhoto class]];
-    [photosMapping addAttributeMappingsFromDictionary:@{
-     @"thumbnail" : @"thumbnail",
-     @"thumbnail_retina" : @"thumbnailRetina",
-     @"normalized" : @"normal"
-     }];
+    [photosMapping addAttributeMappingsFromDictionary:[CCPhoto responseMappingDictionary]];
     
     RKRelationshipMapping* relationShipPhotosMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"photos"
                                                                                                           toKeyPath:@"photos"
@@ -455,6 +359,26 @@
     [objectManager addResponseDescriptor:responseMarketPaginationStuff];
     [objectManager addResponseDescriptor:responseOnCreateStuff];
     [objectManager addResponseDescriptor:responsePaginationStuff];
+}
+
++ (void)configureClassesInCollegesResponse:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *classesInCollegesResponseMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    [classesInCollegesResponseMapping addAttributeMappingsFromDictionary:@{
+     @"college_name" : @"collegeName",
+     }];
+    
+    RKObjectMapping *classesMapping = [RKObjectMapping mappingForClass:[CCClass class]];
+    [classesMapping addAttributeMappingsFromDictionary:[CCClass responseMappingDictionary]];
+    RKRelationshipMapping *classesToCollegeRelationMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"classes" toKeyPath:@"classes" withMapping:classesMapping];
+    
+    [classesInCollegesResponseMapping addPropertyMapping:classesToCollegeRelationMapping];
+    
+    NSString *pathPattern = CCAPIDefines.classesInColleges;
+    
+    RKResponseDescriptor *classesInCollegesResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:classesInCollegesResponseMapping pathPattern:pathPattern keyPath:@"classes_in_colleges" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    [objectManager addResponseDescriptor:classesInCollegesResponseDescriptor];
 }
 
 @end

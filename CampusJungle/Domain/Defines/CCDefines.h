@@ -32,6 +32,7 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *resendLinkToNote;
     __unsafe_unretained NSString *loadMyStuff;
     __unsafe_unretained NSString *createStuff;
+    __unsafe_unretained NSString *classesInColleges;
 } CCAPIDefines;
 
 

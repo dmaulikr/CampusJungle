@@ -6,7 +6,13 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCCommonDataSource.h"
-@interface CCSideMenuDataSource : CCCommonDataSource
+@protocol CCSideMenuDelegate <NSObject>
+
+@end
+
+@interface CCSideMenuDataSource : NSObject <UITableViewDataSource, UITableViewDelegate>
+
+- (id)initWithDelegate:(id<CCSideMenuDelegate>)delegate sectionsArray:(NSArray *)sectionsArray;
+//- (void)setSectionsArray:(NSArray *)sectionsArray;
 
 @end
