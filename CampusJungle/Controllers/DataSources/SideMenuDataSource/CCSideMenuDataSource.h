@@ -6,13 +6,19 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
+@class CCClass;
+
 @protocol CCSideMenuDelegate <NSObject>
+
+- (void)showNewsFeed;
+- (void)showMarketPlace;
+- (void)showDetailsOfClass:(CCClass *)classObject;
+- (void)addClassToCollegeWithId:(NSInteger)collegeId;
 
 @end
 
 @interface CCSideMenuDataSource : NSObject <UITableViewDataSource, UITableViewDelegate>
 
 - (id)initWithDelegate:(id<CCSideMenuDelegate>)delegate sectionsArray:(NSArray *)sectionsArray;
-//- (void)setSectionsArray:(NSArray *)sectionsArray;
 
 @end

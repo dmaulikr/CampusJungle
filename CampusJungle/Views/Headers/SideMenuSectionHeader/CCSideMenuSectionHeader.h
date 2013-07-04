@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CCSideMenuDelegate;
+
 @interface CCSideMenuSectionHeader : UIView
 
-- (id)initWithText:(NSString *)text;
+- (id)initWithText:(NSString *)text delegate:(id<CCSideMenuDelegate>)delegate;
 + (CGFloat)heightForHeaderWithText:(NSString *)text;
 
 @end

@@ -16,15 +16,17 @@ static const NSInteger kMinCellHeight = 44;
 
 @property (nonatomic, weak) IBOutlet UILabel *textLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *backgroundImageView;
+@property (nonatomic, weak) id<CCSideMenuDelegate> delegate;
 
 @end
 
 @implementation CCSideMenuSectionHeader
 
-- (id)initWithText:(NSString *)text
+- (id)initWithText:(NSString *)text delegate:(id<CCSideMenuDelegate>)delegate
 {
     self = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil][0];
     if (self) {
+        [self setDelegate:delegate];
         [self setText:text];
         [self setCorrectHeight];
         [self setBackgroundImage];

@@ -90,7 +90,6 @@
 		A787C7D21754E9CE00824DEA /* CCSideBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A787C7D11754E9CE00824DEA /* CCSideBarController.m */; };
 		A79E2267175F83DB000A1582 /* CCClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = A79E2265175F83DB000A1582 /* CCClassController.m */; };
 		A79E2268175F83DB000A1582 /* CCClassController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A79E2266175F83DB000A1582 /* CCClassController.xib */; };
-		A79E226C175F844A000A1582 /* CCSideMenuDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A79E226B175F844A000A1582 /* CCSideMenuDataProvider.m */; };
 		A79E2271175F846B000A1582 /* CCCollegesListController.m in Sources */ = {isa = PBXBuildFile; fileRef = A79E226F175F846B000A1582 /* CCCollegesListController.m */; };
 		A79E2272175F846B000A1582 /* CCCollegesListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A79E2270175F846B000A1582 /* CCCollegesListController.xib */; };
 		A79E2274175F8A75000A1582 /* monkey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A79E2273175F8A75000A1582 /* monkey.jpg */; };
@@ -529,8 +528,6 @@
 		A79E2264175F83DB000A1582 /* CCClassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCClassController.h; path = ClassController/CCClassController.h; sourceTree = "<group>"; };
 		A79E2265175F83DB000A1582 /* CCClassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCClassController.m; path = ClassController/CCClassController.m; sourceTree = "<group>"; };
 		A79E2266175F83DB000A1582 /* CCClassController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CCClassController.xib; path = ClassController/CCClassController.xib; sourceTree = "<group>"; };
-		A79E226A175F844A000A1582 /* CCSideMenuDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSideMenuDataProvider.h; sourceTree = "<group>"; };
-		A79E226B175F844A000A1582 /* CCSideMenuDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSideMenuDataProvider.m; sourceTree = "<group>"; };
 		A79E226E175F846B000A1582 /* CCCollegesListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCollegesListController.h; sourceTree = "<group>"; };
 		A79E226F175F846B000A1582 /* CCCollegesListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCollegesListController.m; sourceTree = "<group>"; };
 		A79E2270175F846B000A1582 /* CCCollegesListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCCollegesListController.xib; sourceTree = "<group>"; };
@@ -1792,15 +1789,6 @@
 			name = SideBarController;
 			sourceTree = "<group>";
 		};
-		A79E2269175F844A000A1582 /* SideMenuDataProvider */ = {
-			isa = PBXGroup;
-			children = (
-				A79E226A175F844A000A1582 /* CCSideMenuDataProvider.h */,
-				A79E226B175F844A000A1582 /* CCSideMenuDataProvider.m */,
-			);
-			path = SideMenuDataProvider;
-			sourceTree = "<group>";
-		};
 		A79E226D175F846A000A1582 /* CollegesListController */ = {
 			isa = PBXGroup;
 			children = (
@@ -2945,7 +2933,6 @@
 				D36146631760BFA500907414 /* DropboxPDFDataProvider */,
 				D3614641175E438100907414 /* DropboxDataProvider */,
 				A79E227A175FA863000A1582 /* MyClassesDataProvider */,
-				A79E2269175F844A000A1582 /* SideMenuDataProvider */,
 				A7D53A521758D67500FE9FCD /* ClassesDataProvider */,
 				D37A475B175788FF00E91850 /* EducationsDataProvider */,
 				D3EFD2811756856100B7D710 /* CollegeSellectionDataProvider */,
@@ -3465,7 +3452,6 @@
 				A7A618B5175DD0B60047C5B2 /* CCCreateClassController.m in Sources */,
 				A7A618BA175E047F0047C5B2 /* CCClassesApiProvider.m in Sources */,
 				A79E2267175F83DB000A1582 /* CCClassController.m in Sources */,
-				A79E226C175F844A000A1582 /* CCSideMenuDataProvider.m in Sources */,
 				A79E2271175F846B000A1582 /* CCCollegesListController.m in Sources */,
 				A79E2278175F8CC6000A1582 /* CCSelectCollegeClassesTransaction.m in Sources */,
 				D3614631175E17BE00907414 /* CCDropboxAPIProvider.m in Sources */,
@@ -3650,8 +3636,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusJungle/CampusJungle-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CampusJungle/CampusJungle-Info.plist";

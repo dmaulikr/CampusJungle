@@ -61,6 +61,11 @@
     return [(CCClass *)[classesInSection objectAtIndex:indexPath.row] name];
 }
 
+- (id)objectForCellAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [[self dataArrayForSectionAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+}
+
 - (Class)cellClassAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section > 0) {
@@ -97,7 +102,7 @@
     if (!cell) {
         cell = [[cellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reusableIdentifier];
     }
-    id objectForCell = [[self dataArrayForSectionAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    id objectForCell = [self objectForCellAtIndexPath:indexPath];
     [cell performSelector:@selector(fillWithObject:) withObject:objectForCell];
     return cell;
 }
@@ -119,7 +124,24 @@
         return nil;
     }
     NSString *sectionHeaderText = [self nameForSectionAtIndex:section];
-    return [[CCSideMenuSectionHeader alloc] initWithText:sectionHeaderText];
+    return [[CCSideMenuSectionHeader alloc] initWithText:sectionHeaderText delegate:self.delegate];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id objectForCell = [self objectForCellAtIndexPath:indexPath];
+    if ([objectForCell isKindOfClass:[NSString class]]) {
+        NSString *cellTitle = (NSString *)objectForCell;
+        if ([cellTitle isEqualToString:CCSideMenuTitles.newsFeed]) {
+            [self.delegate showNewsFeed];
+        }
+        else {
+            [self.delegate showMarketPlace];
+        }
+    }
+    else {
+        [self.delegate showDetailsOfClass:objectForCell];
+    }
 }
 
 @end
