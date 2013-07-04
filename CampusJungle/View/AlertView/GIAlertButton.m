@@ -30,6 +30,7 @@
     GIAlertButton * newButton = [GIAlertButton baseButtonCreationTitle:title action:actionOnClick];
     [newButton setBackgroundImage:[GIAlertButton resizableImageWithName:@"button"] forState:UIControlStateNormal];
     [newButton setBackgroundImage:[GIAlertButton resizableImageWithName:@"button_active"] forState:UIControlStateHighlighted];
+    newButton.isCancel = YES;
     return newButton;
 }
 

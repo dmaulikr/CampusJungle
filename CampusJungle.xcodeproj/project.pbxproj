@@ -198,6 +198,8 @@
 		D394967917847E4C00C39A7E /* GIAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = D394967517847E4C00C39A7E /* GIAlert.m */; };
 		D394967A17847E4C00C39A7E /* GIAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = D394967617847E4C00C39A7E /* GIAlert.xib */; };
 		D394967B17847E4C00C39A7E /* GIAlertButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D394967817847E4C00C39A7E /* GIAlertButton.m */; };
+		D394967F1785A3D800C39A7E /* GIInputAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = D394967D1785A3D700C39A7E /* GIInputAlert.m */; };
+		D39496801785A3D800C39A7E /* GIInputAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = D394967E1785A3D800C39A7E /* GIInputAlert.xib */; };
 		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
 		D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39F1C161753C0E8008E08A2 /* Accounts.framework */; };
 		D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A2C3241754C95700989831 /* MessageUI.framework */; };
@@ -702,6 +704,9 @@
 		D394967617847E4C00C39A7E /* GIAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GIAlert.xib; sourceTree = "<group>"; };
 		D394967717847E4C00C39A7E /* GIAlertButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIAlertButton.h; sourceTree = "<group>"; };
 		D394967817847E4C00C39A7E /* GIAlertButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIAlertButton.m; sourceTree = "<group>"; };
+		D394967C1785A3D700C39A7E /* GIInputAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIInputAlert.h; sourceTree = "<group>"; };
+		D394967D1785A3D700C39A7E /* GIInputAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIInputAlert.m; sourceTree = "<group>"; };
+		D394967E1785A3D800C39A7E /* GIInputAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GIInputAlert.xib; sourceTree = "<group>"; };
 		D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStandardErrorHandler.h; sourceTree = "<group>"; };
 		D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStandardErrorHandler.m; sourceTree = "<group>"; };
 		D39F1C161753C0E8008E08A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -2363,6 +2368,9 @@
 				D394967617847E4C00C39A7E /* GIAlert.xib */,
 				D394967717847E4C00C39A7E /* GIAlertButton.h */,
 				D394967817847E4C00C39A7E /* GIAlertButton.m */,
+				D394967C1785A3D700C39A7E /* GIInputAlert.h */,
+				D394967D1785A3D700C39A7E /* GIInputAlert.m */,
+				D394967E1785A3D800C39A7E /* GIInputAlert.xib */,
 			);
 			path = AlertView;
 			sourceTree = "<group>";
@@ -3299,6 +3307,7 @@
 				D347BBE5178454C200E54EFC /* SelectionBackGround.png in Resources */,
 				D347BBE717845B8600E54EFC /* CCCollegeSelectionCell.xib in Resources */,
 				D394967A17847E4C00C39A7E /* GIAlert.xib in Resources */,
+				D39496801785A3D800C39A7E /* GIInputAlert.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3509,6 +3518,7 @@
 				D394967217846B7F00C39A7E /* CCNavigationBarViewHellper.m in Sources */,
 				D394967917847E4C00C39A7E /* GIAlert.m in Sources */,
 				D394967B17847E4C00C39A7E /* GIAlertButton.m in Sources */,
+				D394967F1785A3D800C39A7E /* GIInputAlert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

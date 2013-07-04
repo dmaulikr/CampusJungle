@@ -11,10 +11,6 @@
 #define hoizontalInsets 5
 
 @interface GIAlert ()
-@property (nonatomic,strong) IBOutlet UIView* buttonsContainer;
-@property (nonatomic,strong) NSArray * arrayOfButtons;
-@property (nonatomic,strong) NSString* alertTitle;
-@property (nonatomic,strong) NSString* alertMesage;
 @property (nonatomic,strong) UIView * blockedView;
 @end
 
@@ -37,7 +33,6 @@
     [parentView addSubview:self.view];
     [self prepareButtons];
     [self setupSizesInView:parentView];
-    
     
     self.titleLabel.text = self.alertTitle;
     self.message.text = self.alertMesage;

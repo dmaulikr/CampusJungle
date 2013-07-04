@@ -13,6 +13,10 @@
 @property (nonatomic,strong) IBOutlet UILabel* titleLabel;
 @property (nonatomic,strong) IBOutlet UITextView* message;
 @property (nonatomic,strong) IBOutlet UIImageView* backgroundImage;
+@property (nonatomic,strong) IBOutlet UIView* buttonsContainer;
+@property (nonatomic,strong) NSArray * arrayOfButtons;
+@property (nonatomic,strong) NSString* alertTitle;
+@property (nonatomic,strong) NSString* alertMesage;
 
 +(GIAlert*)alertWithTitle:(NSString*)title message:(NSString*)message buttons:(NSArray*)arrayOfButtons;
 

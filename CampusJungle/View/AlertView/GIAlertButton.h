@@ -17,6 +17,7 @@ typedef void(^Action)(void);
 @interface GIAlertButton : UIButton
 @property (nonatomic,copy) Action actionOnClick;
 @property (nonatomic,strong) id<ObjectRemovingProtocol>containingObject;
+@property (nonatomic) BOOL isCancel;
 
 +(GIAlertButton*)buttonWithTitle:(NSString*)title action:(Action)actionOnClick;
 +(GIAlertButton*)cancelButtonWithTitle:(NSString *)title action:(Action)actionOnClick;

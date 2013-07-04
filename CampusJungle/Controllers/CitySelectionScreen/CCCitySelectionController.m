@@ -15,6 +15,7 @@
 #import "CCStandardErrorHandler.h"
 #import "CCDefines.h"
 #import "CCNavigationBarViewHellper.h"
+#import "GIInputAlert.h"
 
 @interface CCCitySelectionController ()<UIAlertViewDelegate>
 
@@ -50,11 +51,53 @@
 
 - (void)addCity
 {
-    UIAlertView *alertForCityInput = [[UIAlertView alloc] initWithTitle:@"New city" message:nil delegate:self cancelButtonTitle:CCAlertsButtons.cancelButton otherButtonTitles:CCAlertsButtons.okButton, nil];
-    alertForCityInput.alertViewStyle = UIAlertViewStylePlainTextInput;
-    UITextField *cityName = [alertForCityInput textFieldAtIndex:0];
-    cityName.placeholder = @"City Name";
-    [alertForCityInput show];
+    GIInputAlert *alertForCity = [GIInputAlert alertWithTitle:@"New City" numberOfFields:1 buttons:nil];
+    GIAlertButton *okButton = [GIAlertButton buttonWithTitle:CCAlertsButtons.okButton
+                                                      action:^{
+                                                          [self createCityWithName:alertForCity.firstField.text];
+                                                      }];
+    GIAlertButton *cancelButton = [GIAlertButton cancelButtonWithTitle:CCAlertsButtons.cancelButton action:nil];
+    
+    alertForCity.arrayOfButtons = @[cancelButton,okButton];
+    [alertForCity show];
+    alertForCity.firstField.placeholder = @"City Name";
+}
+
+- (void)addCollege
+{
+    GIInputAlert *alertForCollege = [GIInputAlert alertWithTitle:@"New College" numberOfFields:2 buttons:nil];
+    GIAlertButton *okButton = [GIAlertButton buttonWithTitle:CCAlertsButtons.okButton
+                                                      action:^{
+                                                          [self createCollege:alertForCollege.firstField.text
+                                                                      address:alertForCollege.secondField.text];
+                                                      }];
+    GIAlertButton *cancelButton = [GIAlertButton cancelButtonWithTitle:CCAlertsButtons.cancelButton action:nil];
+    
+    alertForCollege.arrayOfButtons = @[cancelButton,okButton];
+    [alertForCollege show];
+    
+    alertForCollege.firstField.placeholder = @"College Name";
+    alertForCollege.secondField.placeholder = @"Address";
+}
+
+- (void)createCityWithName:(NSString *)name
+{
+    [self.ioc_apiProvider createCity:name stateID:self.stateID SuccessHandler:^(NSDictionary *object) {
+        self.cityID = [object[@"item"] cityID];
+        [self addCollege];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
+}
+
+- (void)createCollege:(NSString *)name address:(NSString *)address
+{
+    [self.ioc_apiProvider createCollege:name cityID:self.cityID address:address SuccessHandler:^(id object) {
+        [self.educationTransaction performWithObject:object[CCResponseKeys.item]];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
+
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -78,21 +121,6 @@
         }
     }
 }
-
-- (void)addCollege
-{
-    UIAlertView *alertForCityInput = [[UIAlertView alloc] initWithTitle:@"New College" message:nil delegate:self cancelButtonTitle:CCAlertsButtons.cancelButton otherButtonTitles:CCAlertsButtons.okButton, nil];
-    alertForCityInput.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
-    UITextField *cityName = [alertForCityInput textFieldAtIndex:0];
-    cityName.placeholder = @"College Name";
-    
-    UITextField *address = [alertForCityInput textFieldAtIndex:1];
-    address.placeholder = @"Address";
-    address.secureTextEntry = NO;
-    
-    [alertForCityInput show];
-}
-
 
 - (void)viewWillAppear:(BOOL)animated
 {
