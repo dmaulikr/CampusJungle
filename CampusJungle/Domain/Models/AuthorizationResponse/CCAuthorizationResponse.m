@@ -10,4 +10,11 @@
 
 @implementation CCAuthorizationResponse
 
++ (NSDictionary *)responseMappingDictionary
+{
+    return @{
+             @"is_new_user" : @"isFirstLaunch",
+    };
+}
+
 @end

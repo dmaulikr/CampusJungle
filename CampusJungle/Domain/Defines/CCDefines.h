@@ -32,6 +32,7 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *resendLinkToNote;
     __unsafe_unretained NSString *loadMyStuff;
     __unsafe_unretained NSString *createStuff;
+    __unsafe_unretained NSString *classesInColleges;
 } CCAPIDefines;
 
 
@@ -51,7 +52,7 @@ extern const struct CCUserDefines {
     
     __unsafe_unretained NSString *facebookAvatarLinkTemplate;
     __unsafe_unretained NSString *isFacebookLinked;
-                        NSInteger minimumPasswordLength;
+    NSInteger minimumPasswordLength;
 } CCUserDefines;
 
 extern const struct CCUserSignUpKeys {
@@ -107,7 +108,7 @@ extern const struct CCLinkUserKeys {
     __unsafe_unretained NSString *oauth_token;
     __unsafe_unretained NSString *uid;
     __unsafe_unretained NSString *provider;
-
+    
 } CCLinkUserKeys;
 
 extern const struct CCResponseKeys
@@ -121,7 +122,7 @@ extern const struct CCAppDelegateDefines
 {
     __unsafe_unretained NSString *notificationOnBackToForeground;
     __unsafe_unretained NSString *dropboxLinked;
-
+    
 } CCAppDelegateDefines;
 
 extern const struct CCScreenTitles {

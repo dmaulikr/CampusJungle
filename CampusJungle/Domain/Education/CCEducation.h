@@ -20,4 +20,6 @@
 
 - (BOOL)isEqualToEducation:(CCEducation *)education;
 
++ (NSDictionary *)responseMappingDictionary;
+
 @end

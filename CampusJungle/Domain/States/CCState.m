@@ -10,4 +10,12 @@
 
 @implementation CCState
 
++ (NSDictionary *)responseMappingDictionary
+{
+    return @{
+      @"id" : @"stateID",
+      @"name" : @"name"
+    };
+}
+
 @end

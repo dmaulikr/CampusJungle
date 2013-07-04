@@ -14,4 +14,6 @@
 @property (nonatomic, strong) NSString *thumbnailRetina;
 @property (nonatomic, strong) NSString *normal;
 
++ (NSDictionary *)responseMappingDictionary;
+
 @end

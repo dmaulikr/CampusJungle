@@ -33,7 +33,7 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-- (CCUser*)loadSavedUser
+- (CCUser *)loadSavedUser
 {
     NSData *serializedUser = [[NSUserDefaults standardUserDefaults] objectForKey:CCUserDefines.currentUser];
     return (CCUser *)[NSKeyedUnarchiver unarchiveObjectWithData:serializedUser];

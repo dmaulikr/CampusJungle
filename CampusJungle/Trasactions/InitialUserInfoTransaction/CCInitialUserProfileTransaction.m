@@ -18,10 +18,6 @@
     NSParameterAssert(self.baseViewController);
     
     [self.loginTransaction perform];
-    CCUserProfileTransaction *profileTransaction = [CCUserProfileTransaction new];
-    profileTransaction.menuController = self.baseViewController;
-
-    [profileTransaction perform];
 }
 
 @end

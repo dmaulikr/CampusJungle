@@ -13,5 +13,7 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSNumber *cityID;
 
++ (NSDictionary *)responseMappingDictionary;
+
 @end
 

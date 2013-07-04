@@ -24,4 +24,8 @@
 
 @property (nonatomic, strong) NSString *link;
 
++ (NSDictionary *)responseMappingDictionary;
++ (NSDictionary *)requestMappingDictionary;
++ (NSDictionary *)noteLinkMappingDictionary;
+
 @end

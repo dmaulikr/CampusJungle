@@ -8,18 +8,19 @@
 
 #import "CCSideMenuController.h"
 #import "CCSideMenuDataSource.h"
-#import "CCSideMenuDataProvider.h"
 #import "CCOrdinaryCell.h"
 #import "CCMenuDefines.h"
 #import "CCUserSessionProtocol.h"
-#import "CCMenuCell.h"
+#import "CCClassesApiProviderProtocol.h"
 
-@interface CCSideMenuController () <CCCellSelectionProtocol>
+@interface CCSideMenuController () <CCCellSelectionProtocol, CCSideMenuDelegate>
+
+@property (nonatomic, weak) IBOutlet UILabel *userNameLabel;
+@property (nonatomic, weak) IBOutlet UIButton *userProfileButton;
 
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userProfile;
+@property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_classesAPI;
 @property (nonatomic, strong) CCSideMenuDataSource *dataSource;
-@property (nonatomic, strong) CCSideMenuDataProvider *dataProvider;
-@property (nonatomic, weak) IBOutlet UILabel *userNameLabel;
 
 @end
 
@@ -28,29 +29,74 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self configTable];
+    [self setupButtons];
+    [self setupLabels];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self loadUserClasses];
+}
+
+- (void)setupTableViewWithEducationsArray:(NSArray *)educationsArray
+{
+    self.dataSource = [[CCSideMenuDataSource alloc] initWithDelegate:self sectionsArray:educationsArray];
+    [self.mainTable setDataSource:self.dataSource];
+    [self.mainTable setDelegate:self.dataSource];
+    [self.mainTable reloadData];
+}
+
+- (void)setupLabels
+{
     self.userNameLabel.text = [NSString stringWithFormat:@"%@ %@",[[self.ioc_userProfile currentUser] firstName], [[self.ioc_userProfile currentUser] lastName]];
 }
 
-- (void)configTable
+- (void)setupButtons
 {
-    self.dataProvider = [CCSideMenuDataProvider new];
-    self.dataProvider.arrayOfMenuItems = @[CCSideMenuTitles.profile,CCSideMenuTitles.classesScreen,CCSideMenuTitles.market,@"Inbox"];
-    [self configTableWithProvider:self.dataProvider cellClass:[CCMenuCell class]];
+    [self.userProfileButton setBackgroundImage:nil forState:UIControlStateNormal];
+    [self.userProfileButton setBackgroundImage:nil forState:UIControlStateHighlighted];
 }
 
-- (void)didSelectedCellWithObject:(id)cellObject
+- (void)loadUserClasses
 {
-    if ([(NSString*)cellObject isEqualToString:CCSideMenuTitles.profile]) {
-        [self.userProfileTransaction perform];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    __weak CCSideMenuController *weakSelf = self;
+    [self.ioc_classesAPI getClassesInCollegesWithSuccessHandler:^(NSArray *educationsArray) {
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        [weakSelf setupTableViewWithEducationsArray:educationsArray];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    } ];
+}
 
-    } else if([(NSString*)cellObject isEqualToString:CCSideMenuTitles.classesScreen]) {
-        [self.classesTransaction perform];
-    } else if([(NSString*)cellObject isEqualToString:CCSideMenuTitles.market]){
-        [self.marketTransaction perform];
-    } else if ([(NSString *)cellObject isEqualToString:@"Inbox"]){
-        [self.inboxTransaction perform];
-    }
+#pragma mark -
+#pragma mark Actions
+- (IBAction)userProfileButtonDidPressed:(id)sender
+{
+    [self.userProfileTransaction perform];
+}
+
+#pragma mark -
+#pragma mark CCSideMenuDelegate
+- (void)showNewsFeed
+{
+    [self.inboxTransaction perform];
+}
+
+- (void)showMarketPlace
+{
+    [self.marketTransaction perform];
+}
+
+- (void)showDetailsOfClass:(CCClass *)classObject
+{
+    
+}
+
+- (void)addClassToCollegeWithId:(NSInteger)collegeId
+{
+    [self.classesTransaction perform];
 }
 
 @end

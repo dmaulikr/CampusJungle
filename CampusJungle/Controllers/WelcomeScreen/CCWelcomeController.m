@@ -10,11 +10,9 @@
 #import "CCLoginAPIProviderProtocol.h"
 #import "CCUserSessionProtocol.h"
 #import "CCAuthorizationResponse.h"
-#import "CCAlertDefines.h"
 #import "CCStandardErrorHandler.h"
 #import "CCTwitterPicker.h"
 #import "MBProgressHUD.h"
-#import "CCDefines.h"
 
 @interface CCWelcomeController ()
 

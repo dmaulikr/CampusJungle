@@ -10,4 +10,13 @@
 
 @implementation CCPhoto
 
++ (NSDictionary *)responseMappingDictionary
+{
+    return @{
+      @"thumbnail" : @"thumbnail",
+      @"thumbnail_retina" : @"thumbnailRetina",
+      @"normalized" : @"normal"
+    };
+}
+
 @end

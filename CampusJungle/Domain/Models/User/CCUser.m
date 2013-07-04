@@ -55,4 +55,20 @@
     return self;
 }
 
++ (NSDictionary *)responseMappingDictionary
+{
+    return @{
+      @"first_name" : @"firstName",
+      @"last_name" : @"lastName",
+      @"email" : @"email",
+      @"avatar" : @"avatar",
+      @"token" : @"token",
+      @"wallet" : @"wallet",
+      @"status" : @"status",
+      @"id" : @"uid",
+      @"rank" : @"rank",
+      @"is_fb_linked" :@"isFacebookLinked"
+      };
+}
+
 @end

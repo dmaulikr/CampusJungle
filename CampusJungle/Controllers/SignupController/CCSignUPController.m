@@ -9,15 +9,11 @@
 #import "CCSignUPController.h"
 #import "NSString+CJStringValidator.h"
 #import "CCSignUPAPIProtocol.h"
-#import "CCDefines.h"
-#import "CCAlertDefines.h"
 #import "CCTransaction.h"
 #import "CCStandardErrorHandler.h"
 
 @interface CCSignUPController ()
 
-@property (nonatomic, weak) IBOutlet UITextField *firstNameField;
-@property (nonatomic, weak) IBOutlet UITextField *lastNameField;
 @property (nonatomic, weak) IBOutlet UITextField *emailField;
 @property (nonatomic, weak) IBOutlet UITextField *passField;
 
@@ -30,20 +26,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save"
-                                                                   style:UIBarButtonItemStyleBordered
-                                                                  target:self
-                                                                  action:@selector(saveButtonDidPressed)];
-    self.navigationItem.rightBarButtonItem = saveButton;
-
-   
     self.tapRecognizer.enabled = YES;
+    [self setRightNavigationItemWithTitle:@"Save" selector:@selector(saveButtonDidPressed)];
 }
 
 - (void)saveButtonDidPressed
 {
-    if([self isFormValid]){
+    if ([self isFormValid]){
         NSDictionary *userFields = @{
                                      CCUserSignUpKeys.email : self.emailField.text,
                                      CCUserSignUpKeys.password :self.passField.text
@@ -54,32 +43,31 @@
             [CCStandardErrorHandler showErrorWithError:error];
         }];
         
-    } else {
-        [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error
-                                           message:CCAlertsMessages.formNotValid];
     }
 }
 
 - (BOOL)isFormValid
 {
     if (![self.emailField.text isEmail]){
-        [CCStandardErrorHandler showErrorWithTitle:nil message:CCValidationMessages.emailNotValid];
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.emailNotValid];
         return NO;
     }
     if (![self.passField.text isMinLength:CCUserDefines.minimumPasswordLength]){
-        [CCStandardErrorHandler showErrorWithTitle:nil message:CCValidationMessages.passNotValid];
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.passNotValid];
         return NO;
     }
-
     return YES;
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if(textField == self.passField){
+#pragma mark -
+#pragma mark UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.passField) {
         [self saveButtonDidPressed];
-    } else {
+    }
+    else {
         [[self.view viewWithTag:textField.tag+1] becomeFirstResponder];
-        return YES;
     }
     return YES;
 }
