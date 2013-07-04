@@ -10,6 +10,8 @@
 #import "CCCityCell.h"
 #import "CCCitiesDataProvider.h"
 #import "CCCity.h"
+#import "CCDefines.h"
+#import "CCAlertDefines.h"
 #import "CCAPIProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
 #import "CCNavigationBarViewHellper.h"

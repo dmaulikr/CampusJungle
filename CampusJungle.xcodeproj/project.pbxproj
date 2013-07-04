@@ -219,13 +219,8 @@
 		D37A475E1757891600E91850 /* CCEducationsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D37A475D1757891600E91850 /* CCEducationsDataProvider.m */; };
 		D38470601771A5EB003CB4A6 /* CCShowNotesForClassTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D384705F1771A5EB003CB4A6 /* CCShowNotesForClassTransaction.m */; };
 		D38470641771D4C3003CB4A6 /* CCBackToNotesListTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D38470631771D4C3003CB4A6 /* CCBackToNotesListTransaction.m */; };
-		D384706817720B3A003CB4A6 /* CCActionSheetPickerCollegesDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D384706717720B3A003CB4A6 /* CCActionSheetPickerCollegesDelegate.m */; };
-		D394967217846B7F00C39A7E /* CCNavigationBarViewHellper.m in Sources */ = {isa = PBXBuildFile; fileRef = D394967117846B7F00C39A7E /* CCNavigationBarViewHellper.m */; };
-		D394967917847E4C00C39A7E /* GIAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = D394967517847E4C00C39A7E /* GIAlert.m */; };
-		D394967A17847E4C00C39A7E /* GIAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = D394967617847E4C00C39A7E /* GIAlert.xib */; };
-		D394967B17847E4C00C39A7E /* GIAlertButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D394967817847E4C00C39A7E /* GIAlertButton.m */; };
-		D394967F1785A3D800C39A7E /* GIInputAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = D394967D1785A3D700C39A7E /* GIInputAlert.m */; };
-		D39496801785A3D800C39A7E /* GIInputAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = D394967E1785A3D800C39A7E /* GIInputAlert.xib */; };
+		D39496A017860DE700C39A7E /* GIInputAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = D394969E17860DE700C39A7E /* GIInputAlert.m */; };
+		D39496A117860DE700C39A7E /* GIInputAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = D394969F17860DE700C39A7E /* GIInputAlert.xib */; };
 		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
 		D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39F1C161753C0E8008E08A2 /* Accounts.framework */; };
 		D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A2C3241754C95700989831 /* MessageUI.framework */; };
@@ -755,18 +750,9 @@
 		D384705F1771A5EB003CB4A6 /* CCShowNotesForClassTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCShowNotesForClassTransaction.m; sourceTree = "<group>"; };
 		D38470621771D4C3003CB4A6 /* CCBackToNotesListTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBackToNotesListTransaction.h; sourceTree = "<group>"; };
 		D38470631771D4C3003CB4A6 /* CCBackToNotesListTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBackToNotesListTransaction.m; sourceTree = "<group>"; };
-		D384706617720B3A003CB4A6 /* CCActionSheetPickerCollegesDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCActionSheetPickerCollegesDelegate.h; sourceTree = "<group>"; };
-		D384706717720B3A003CB4A6 /* CCActionSheetPickerCollegesDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCActionSheetPickerCollegesDelegate.m; sourceTree = "<group>"; };
-		D394967017846B7F00C39A7E /* CCNavigationBarViewHellper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNavigationBarViewHellper.h; sourceTree = "<group>"; };
-		D394967117846B7F00C39A7E /* CCNavigationBarViewHellper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNavigationBarViewHellper.m; sourceTree = "<group>"; };
-		D394967417847E4C00C39A7E /* GIAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIAlert.h; sourceTree = "<group>"; };
-		D394967517847E4C00C39A7E /* GIAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIAlert.m; sourceTree = "<group>"; };
-		D394967617847E4C00C39A7E /* GIAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GIAlert.xib; sourceTree = "<group>"; };
-		D394967717847E4C00C39A7E /* GIAlertButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIAlertButton.h; sourceTree = "<group>"; };
-		D394967817847E4C00C39A7E /* GIAlertButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIAlertButton.m; sourceTree = "<group>"; };
-		D394967C1785A3D700C39A7E /* GIInputAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIInputAlert.h; sourceTree = "<group>"; };
-		D394967D1785A3D700C39A7E /* GIInputAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIInputAlert.m; sourceTree = "<group>"; };
-		D394967E1785A3D800C39A7E /* GIInputAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GIInputAlert.xib; sourceTree = "<group>"; };
+		D394969D17860DE700C39A7E /* GIInputAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIInputAlert.h; sourceTree = "<group>"; };
+		D394969E17860DE700C39A7E /* GIInputAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIInputAlert.m; sourceTree = "<group>"; };
+		D394969F17860DE700C39A7E /* GIInputAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GIInputAlert.xib; sourceTree = "<group>"; };
 		D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStandardErrorHandler.h; sourceTree = "<group>"; };
 		D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStandardErrorHandler.m; sourceTree = "<group>"; };
 		D39F1C161753C0E8008E08A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -1008,6 +994,9 @@
 		70438E3C1785B78A00537712 /* AlertViews */ = {
 			isa = PBXGroup;
 			children = (
+				D394969D17860DE700C39A7E /* GIInputAlert.h */,
+				D394969E17860DE700C39A7E /* GIInputAlert.m */,
+				D394969F17860DE700C39A7E /* GIInputAlert.xib */,
 				70438E3D1785B78A00537712 /* GIAlert.h */,
 				70438E3E1785B78A00537712 /* GIAlert.m */,
 				70438E3F1785B78A00537712 /* GIAlert.xib */,
@@ -2612,39 +2601,6 @@
 			path = NotesBackToListTransaction;
 			sourceTree = "<group>";
 		};
-		D384706517720B2A003CB4A6 /* ActionSheetPickerCollegesDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				D384706617720B3A003CB4A6 /* CCActionSheetPickerCollegesDelegate.h */,
-				D384706717720B3A003CB4A6 /* CCActionSheetPickerCollegesDelegate.m */,
-			);
-			path = ActionSheetPickerCollegesDelegate;
-			sourceTree = "<group>";
-		};
-		D394966F17846B6200C39A7E /* NavigationBarViewHelper */ = {
-			isa = PBXGroup;
-			children = (
-				D394967017846B7F00C39A7E /* CCNavigationBarViewHellper.h */,
-				D394967117846B7F00C39A7E /* CCNavigationBarViewHellper.m */,
-			);
-			path = NavigationBarViewHelper;
-			sourceTree = "<group>";
-		};
-		D394967317847E4C00C39A7E /* AlertView */ = {
-			isa = PBXGroup;
-			children = (
-				D394967417847E4C00C39A7E /* GIAlert.h */,
-				D394967517847E4C00C39A7E /* GIAlert.m */,
-				D394967617847E4C00C39A7E /* GIAlert.xib */,
-				D394967717847E4C00C39A7E /* GIAlertButton.h */,
-				D394967817847E4C00C39A7E /* GIAlertButton.m */,
-				D394967C1785A3D700C39A7E /* GIInputAlert.h */,
-				D394967D1785A3D700C39A7E /* GIInputAlert.m */,
-				D394967E1785A3D800C39A7E /* GIInputAlert.xib */,
-			);
-			path = AlertView;
-			sourceTree = "<group>";
-		};
 		D39F1C0E1753821D008E08A2 /* StandardErrorHandler */ = {
 			isa = PBXGroup;
 			children = (
@@ -3452,13 +3408,6 @@
 				D3A31997177E409D0004C4E8 /* marketPlaceLogo.png in Resources */,
 				D347BBD017817F2300E54EFC /* menuButton.png in Resources */,
 				D347BBD117817F2300E54EFC /* menuButton@2x.png in Resources */,
-				D347BBD41781B7AE00E54EFC /* separator.png in Resources */,
-				D347BBD51781B7AE00E54EFC /* separator@2x.png in Resources */,
-				D347BBE4178454C200E54EFC /* SelectionBackGround@2x.png in Resources */,
-				D347BBE5178454C200E54EFC /* SelectionBackGround.png in Resources */,
-				D347BBE717845B8600E54EFC /* CCCollegeSelectionCell.xib in Resources */,
-				D394967A17847E4C00C39A7E /* GIAlert.xib in Resources */,
-				D39496801785A3D800C39A7E /* GIInputAlert.xib in Resources */,
 				70C0FD0C1784850F005EF95E /* CCDropboxCell.xib in Resources */,
 				70C0FD0E1784850F005EF95E /* CCEducationCell.xib in Resources */,
 				70C0FD101784850F005EF95E /* CCImageCell.xib in Resources */,
@@ -3479,6 +3428,7 @@
 				70438E431785B78A00537712 /* GIAlert.xib in Resources */,
 				70438E4D1785B87900537712 /* CCCollegeSelectionCell.xib in Resources */,
 				70438E521785B8E600537712 /* CCInboxController.xib in Resources */,
+				D39496A117860DE700C39A7E /* GIInputAlert.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3662,9 +3612,6 @@
 				D3E343C21779D8C6009DC3DB /* CCCollegeSearchDataProvider.m in Sources */,
 				D3E343C61779DC4C009DC3DB /* CCSearchCollegeTransaction.m in Sources */,
 				D3A3196C177C5B470004C4E8 /* CCAppearanceConfigurator.m in Sources */,
-				D3A31991177E3D910004C4E8 /* CCMenuCell.m in Sources */,
-				D347BBDD1781CE7100E54EFC /* CCInboxTransaction.m in Sources */,
-				D394967F1785A3D800C39A7E /* GIInputAlert.m in Sources */,
 				70C0FCB6178484D0005EF95E /* UITextField+InsetFixing.m in Sources */,
 				70C0FCBA17848500005EF95E /* MHTabBarController.m in Sources */,
 				70C0FD051784850F005EF95E /* CCActionSheetPickerCollegesDelegate.m in Sources */,
@@ -3695,6 +3642,7 @@
 				70438E481785B7A800537712 /* CCNavigationBarViewHellper.m in Sources */,
 				70438E4B1785B83A00537712 /* CCCollegeSelectionCell.m in Sources */,
 				70438E511785B8E600537712 /* CCInboxController.m in Sources */,
+				D39496A017860DE700C39A7E /* GIInputAlert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
