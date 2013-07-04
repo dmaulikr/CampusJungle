@@ -15,6 +15,7 @@
 #import "CCAlertDefines.h"
 #import "CCUserSessionProtocol.h"
 #import "CCUser.h"
+#import "GIAlert.h"
 
 @interface CCNoteDetailsController ()
 
@@ -121,11 +122,14 @@
 }
 
 - (void)showConfirmWithSuccess:(successHandler)success
-{
-	UIAlertView *confirmAlert = [UIAlertView alertViewWithTitle:CCAlertsMessages.confirmation message:CCAlertsMessages.confirmationMessage];
-	[confirmAlert addButtonWithTitle:CCAlertsButtons.yesButton handler:success];
-	[confirmAlert addButtonWithTitle:CCAlertsButtons.noButton];
-	[confirmAlert show];
+{    
+    GIAlertButton *noButton = [GIAlertButton cancelButtonWithTitle:CCAlertsButtons.noButton action:nil];
+    GIAlertButton *yesButton = [GIAlertButton buttonWithTitle:CCAlertsButtons.yesButton action:success];
+    
+    GIAlert *alert = [GIAlert alertWithTitle:CCAlertsMessages.confirmation
+                                     message:CCAlertsMessages.confirmationMessage
+                                     buttons:@[noButton, yesButton,]];
+    [alert show];
 }
 
 - (IBAction)removeNoteButtonDidPressed

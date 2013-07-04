@@ -24,6 +24,7 @@
 #import "CCStuff.h"
 #import "CCStuffUploadInfo.h"
 #import "CCPhoto.h"
+#import "CCStandardErrorHandler.h"
 
 @implementation CCRestKitConfigurator
 
@@ -39,12 +40,7 @@
     
     [objectManager.HTTPClient setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         if (status == AFNetworkReachabilityStatusNotReachable) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:CCAlertsMessages.noInternetConnection
-                                                            message:CCAlertsMessages.connectToTheInternet
-                                                           delegate:nil
-                                                  cancelButtonTitle:CCAlertsButtons.okButton
-                                                  otherButtonTitles:nil];
-            [alert show];
+            [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.noInternetConnection message:CCAlertsMessages.connectToTheInternet];
         }
     }];
     

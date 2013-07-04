@@ -10,6 +10,7 @@
 #import <DropboxSDK/DropboxSDK.h>
 #import "CCDefines.h"
 #import "CCDropboxFileInfo.h"
+#import "CCStandardErrorHandler.h"
 
 @interface CCDropboxAPIProvider()<DBRestClientDelegate>
 
@@ -56,10 +57,7 @@ static int outstandingRequests;
 }
 
 - (void)sessionDidReceiveAuthorizationFailure:(DBSession*)session userId:(NSString *)userId {
-	[[[UIAlertView alloc]
-	   initWithTitle:@"Dropbox Session Ended" message:@"Do you want to relink?" delegate:self
-	   cancelButtonTitle:@"Cancel" otherButtonTitles:@"Relink", nil]
-	 show];
+    [CCStandardErrorHandler showErrorWithTitle:nil message:@"Dropbox Session Ended"];
 }
 
 - (void)createRestCliet
@@ -233,7 +231,6 @@ static int outstandingRequests;
             }];
         }
     }
-    
 }
 
 @end

@@ -42,7 +42,6 @@
     
     [newButton setTitle:title forState:UIControlStateNormal];
     
-    newButton.titleLabel.font = [UIFont fontWithName:@"Noteworthy" size:16];
     return newButton;
 }
 

@@ -16,17 +16,9 @@
 
 + (void)showErrorWithTitle:(NSString *)title message:(NSString *)message
 {
-//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-//                                                    message:message
-//                                                   delegate:self
-//                                          cancelButtonTitle:CCAlertsButtons.okButton
-//                                          otherButtonTitles:nil];
-    
     GIAlertButton *alertButton = [GIAlertButton buttonWithTitle:CCAlertsButtons.okButton action:nil];
     GIAlert *alert = [GIAlert alertWithTitle:title message:message buttons:@[alertButton]];
     [alert show];
-    
-    //[alert show];
 }
 
 + (void)showErrorWithCode:(NSInteger)code
@@ -38,7 +30,11 @@
                                                message:CCAlertsMessages.authorizationFaild];
         }
             break;
-            
+        case -1011:
+        {
+            [CCStandardErrorHandler showErrorWithTitle:nil message:CCAlertsMessages.serverUnavailable];
+        }
+            break;
         default:
             break;
     }

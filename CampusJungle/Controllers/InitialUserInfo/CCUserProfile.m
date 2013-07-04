@@ -21,6 +21,7 @@
 #import "CCUserEducationsDataSource.h"
 #import "CCAvatarSelectionActionSheet.h"
 #import "CCAvatarSelectionProtocol.h"
+#import "GIAlert.h"
 
 #define animationDuration 0.4
 
@@ -176,13 +177,15 @@
 
 - (IBAction)logout
 {
-    UIAlertView *testView = [UIAlertView alertViewWithTitle:nil message:CCAlertsMessages.confimAlert];
-    [testView addButtonWithTitle:CCAlertsButtons.noButton handler:nil];
-    [testView addButtonWithTitle:CCAlertsButtons.yesButton handler:^{
+    GIAlertButton *noButton = [GIAlertButton cancelButtonWithTitle:CCAlertsButtons.noButton action:nil];
+    GIAlertButton *yesButton = [GIAlertButton buttonWithTitle:CCAlertsButtons.yesButton action:^{
         [self.logoutTransaction perform];
     }];
-	
-	[testView show];
+    
+    GIAlert *alert = [GIAlert alertWithTitle:nil
+                                     message:CCAlertsMessages.confimAlert
+                                     buttons:@[noButton, yesButton,]];
+    [alert show];
 }
 
 - (void)editProfile

@@ -19,6 +19,7 @@
 #import "MBProgressHUD.h"
 #import "CCEducation.h"
 #import "CCNavigationBarViewHellper.h"
+#import "GIAlert.h"
 
 @interface CCClassesController ()<CCCellSelectionProtocol>
 @property (nonatomic, strong) CCClassesDataProvider *dataProvider;
@@ -84,12 +85,15 @@
         }
             break;
         case 0: {
-            UIAlertView *testView = [UIAlertView alertViewWithTitle:nil message:CCAlertsMessages.createCollege];
-            [testView addButtonWithTitle:CCAlertsButtons.noButton handler:nil];
-            [testView addButtonWithTitle:CCAlertsButtons.yesButton handler:^{
+            GIAlertButton *noButton = [GIAlertButton cancelButtonWithTitle:CCAlertsButtons.noButton action:nil];
+            GIAlertButton *yesButton = [GIAlertButton buttonWithTitle:CCAlertsButtons.yesButton action:^{
                 [self.userProfileTransaction perform];
             }];
-            [testView show];
+                        
+            GIAlert *alert = [GIAlert alertWithTitle:nil
+                                             message:CCAlertsMessages.createCollege
+                                             buttons:@[noButton, yesButton,]];
+            [alert show];
         }            
             break;
         default:

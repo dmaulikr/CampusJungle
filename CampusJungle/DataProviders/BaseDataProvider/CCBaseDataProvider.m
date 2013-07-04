@@ -8,20 +8,15 @@
 
 #import "CCBaseDataProvider.h"
 #import "CCAlertDefines.h"
+#import "CCStandardErrorHandler.h"
 
 @implementation CCBaseDataProvider
 
 - (void)showErrorWhileLoading:(NSError *)error
 {
-    NSString *errorMessage;
-    if(error.code == -1011) {
-        errorMessage = CCAlertsMessages.serverUnavailable;
-    } else {
-        errorMessage = error.localizedDescription;
-    }
     
-    UIAlertView *alertOnLoadingFaild = [[UIAlertView alloc] initWithTitle:CCAlertsTitles.requestError message:errorMessage delegate:nil cancelButtonTitle:CCAlertsButtons.okButton otherButtonTitles:nil];
-    [alertOnLoadingFaild show];
+    [CCStandardErrorHandler showErrorWithError:error];
+
 }
 
 - (BOOL)isEmpty
