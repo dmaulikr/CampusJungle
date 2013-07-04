@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CCBaseCell.h"
 
-@interface CCSideMenuItemCell : UITableViewCell
+@interface CCSideMenuItemCell : CCBaseCell
 
 - (void)fillWithObject:(id)object;
 

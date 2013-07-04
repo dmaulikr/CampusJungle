@@ -28,6 +28,7 @@
 - (void)show
 {
     UIView *parentView = [UIApplication sharedApplication].keyWindow;
+    [parentView endEditing:YES];
     self.blockedView = [[UIView alloc] initWithFrame:parentView.frame];
     [parentView addSubview:self.blockedView];
     [parentView addSubview:self.view];
@@ -59,7 +60,7 @@
 {
     CGSize alertSize = self.view.bounds.size;
     CGSize baseViewSize = view.bounds.size;
-    self.view.frame = CGRectMake((baseViewSize.width - alertSize.width)/2, (baseViewSize.height - alertSize.height)/2, alertSize.width, alertSize.height);
+    self.view.frame = CGRectMake((baseViewSize.width - alertSize.width)/2, (baseViewSize.height - alertSize.height)/3, alertSize.width, alertSize.height);
 }
 
 - (void)remove

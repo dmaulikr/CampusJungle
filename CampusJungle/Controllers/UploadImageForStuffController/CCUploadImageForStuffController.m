@@ -10,10 +10,12 @@
 #import "MBProgressHUD.h"
 #import "CCStuffAPIProvider.h"
 #import "CCStandardErrorHandler.h"
+#import "CCUploadProcessManagerProtocol.h"
 
 @interface CCUploadImageForStuffController ()
 
 @property (nonatomic, strong) id <CCStuffAPIProviderProtocol> ioc_stuffAPIProvider;
+@property (nonatomic, strong) id <CCUploadProcessManagerProtocol> ioc_uploadManager;
 
 @end
 
@@ -33,10 +35,11 @@
     [self.ioc_stuffAPIProvider postUploadInfoWithImages:(CCStuffUploadInfo *)self.uploadInfo successHandler:^(id result) {
         
     } errorHandler:^(NSError *error) {
+        [[self.ioc_uploadManager uploadingStuff] removeObject:nil];
         [CCStandardErrorHandler showErrorWithError:error];
     } progress:^(double finished) {
-        [[weakSelf backToListTransaction] perform];
-        NSLog(@"%0.0lf",finished * 100);
+//        [[weakSelf backToListTransaction] perform];
+//        NSLog(@"%0.0lf",finished * 100);
     }];
 }
 
