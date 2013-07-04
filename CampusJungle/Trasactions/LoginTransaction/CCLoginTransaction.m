@@ -7,12 +7,16 @@
 //
 
 #import "CCLoginTransaction.h"
+#import "CCUserProfileTransaction.h"
 
 @implementation CCLoginTransaction
 
 - (void)perform
 {
     [self.menuController dismissViewControllerAnimated:YES completion:nil];
+    CCUserProfileTransaction *profileTransaction = [CCUserProfileTransaction new];
+    profileTransaction.menuController = self.menuController;
+    [profileTransaction perform];
 }
 
 @end

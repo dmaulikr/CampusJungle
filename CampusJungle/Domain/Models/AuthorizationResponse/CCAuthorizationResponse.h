@@ -13,4 +13,6 @@
 @property (nonatomic, strong) CCUser *user;
 @property (nonatomic, strong) NSString *isFirstLaunch;
 
++ (NSDictionary *)responseMappingDictionary;
+
 @end

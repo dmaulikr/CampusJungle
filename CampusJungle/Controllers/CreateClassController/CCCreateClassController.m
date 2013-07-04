@@ -12,7 +12,6 @@
 #import "CCStandardErrorHandler.h"
 #import "TPKeyboardAvoidingScrollView.h"
 #import "CCStandardErrorHandler.h"
-#import "CCAlertDefines.h"
 #import "ActionSheetPicker.h"
 #import "CCActionSheetPickerDateDelegate.h"
 

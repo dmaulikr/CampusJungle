@@ -71,4 +71,14 @@
     return NO;
 }
 
++ (NSDictionary *)responseMappingDictionary
+{
+    return @{
+      @"graduation_date" : @"graduationDate",
+      @"college_name" : @"collegeName",
+      @"user_status" : @"status",
+      @"college_id" : @"collegeID",
+      };
+}
+
 @end

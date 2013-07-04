@@ -10,10 +10,8 @@
 #import "CCCollege.h"
 #import "CCCollegeSelectionDataProvider.h"
 #import "CCCollegeSelectionCell.h"
-#import "CCAlertDefines.h"
 #import "CCAPIProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
-#import "CCDefines.h"
 #import "CCNavigationBarViewHellper.h"
 
 @interface CCCollegeSelectionController ()

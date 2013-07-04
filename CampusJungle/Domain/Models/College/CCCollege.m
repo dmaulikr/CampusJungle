@@ -10,4 +10,13 @@
 
 @implementation CCCollege
 
++ (NSDictionary *)responseMappingDictionary
+{
+    return @{
+      @"id" : @"collegeID",
+      @"name" : @"name",
+      @"address" : @"address"
+    };
+}
+
 @end

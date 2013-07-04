@@ -14,4 +14,6 @@
 @property (nonatomic, strong) NSNumber *collegeID;
 @property (nonatomic, strong) NSString *address;
 
++ (NSDictionary *)responseMappingDictionary;
+
 @end

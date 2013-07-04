@@ -10,4 +10,12 @@
 
 @implementation CCCity
 
++ (NSDictionary *)responseMappingDictionary
+{
+    return @{
+      @"id" : @"cityID",
+      @"name" : @"name"
+    };
+}
+
 @end

@@ -20,4 +20,7 @@
 @property (nonatomic, strong) NSString *ownerID;
 @property (nonatomic, strong) NSArray *tags;
 
++ (NSDictionary *)responseMappingDictionary;
++ (NSDictionary *)requestMappingDictionary;
+
 @end

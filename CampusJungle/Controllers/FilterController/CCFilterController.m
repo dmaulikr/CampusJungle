@@ -13,11 +13,9 @@
 #import "CCMarketFilterDataSource.h"
 #import "CCOrdinaryCell.h"
 #import "CCFilterSectionHeader.h"
-#import "CCDefines.h"
 #import "CCMarketFilterClassesCell.h"
 #import "CCFilterSection.h"
 #import "CCClass.h"
-#import "CCAlertDefines.h"
 
 @interface CCFilterController ()
 
@@ -46,7 +44,7 @@
     if([filters[CCMarketFilterConstants.classes] count] || [filters[CCMarketFilterConstants.colleges] count]){
         [self.backToMarketTRansaction performWithObject:[self filters]];
     } else {
-        [CCStandardErrorHandler showErrorWithTitle:nil message:CCValidationMessages.filterCanNotBeEmpty];
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.filterCanNotBeEmpty];
     }
 }
 

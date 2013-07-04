@@ -8,7 +8,6 @@
 
 #import "CCUserProfile.h"
 #import "CCUserSessionProtocol.h"
-#import "CCDefines.h"
 #import "CCEducationCell.h"
 #import "CCEducationsDataProvider.h"
 #import "CCLoginAPIProvider.h"
@@ -16,7 +15,6 @@
 #import "MBProgressHUD.h"
 #import "NSString+CJStringValidator.h"
 #import "UIAlertView+BlocksKit.h"
-#import "CCAlertDefines.h"
 #import "CCEducation.h"
 #import "CCUserEducationsDataSource.h"
 #import "CCAvatarSelectionActionSheet.h"
