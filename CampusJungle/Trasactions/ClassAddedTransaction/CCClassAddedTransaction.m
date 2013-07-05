@@ -9,6 +9,7 @@
 #import "CCClassAddedTransaction.h"
 #import "CCClassController.h"
 #import "CCShowNotesForClassTransaction.h"
+#import "CCOtherUserProfileTransaction.h"
 
 @implementation CCClassAddedTransaction
 
@@ -22,6 +23,11 @@
     CCShowNotesForClassTransaction *classNotesTransaction = [CCShowNotesForClassTransaction new];
     classController.classMarketTransaction =classNotesTransaction;
     classNotesTransaction.navigation = self.navigation;
+    
+    CCOtherUserProfileTransaction *otherUserProfileTransaction = [CCOtherUserProfileTransaction new];
+    otherUserProfileTransaction.navigation = self.navigation;
+    
+    classController.otherUserProfileTransaction = otherUserProfileTransaction;
     
     [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.joinClass duration:CCProgressHudsConstants.loaderDuration];
     UIViewController *viewController = [[self.navigation viewControllers] lastObject];
