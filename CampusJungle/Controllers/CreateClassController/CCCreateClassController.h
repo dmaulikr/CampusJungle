@@ -7,12 +7,12 @@
 //
 
 #import "CCViewController.h"
-#import "CCTransaction.h"
+#import "CCTransactionWithObject.h"
 
 @interface CCCreateClassController : CCViewController
 
-- (id)initWithCollegeID:(NSString*)collegeID;
-@property (nonatomic, strong) id <CCTransaction> classAddedTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> classAddedTransaction;
 
+- (id)initWithCollegeID:(NSString *)collegeId;
 
 @end
