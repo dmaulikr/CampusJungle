@@ -26,7 +26,15 @@
     [super viewDidLoad];
     [self configTableWithProvider:[CCMyStuffDataProvider new] cellClass:[CCStuffCell class]];
     self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHelper plusButtonWithTarget:self action:@selector(createNewStuff)];
+    [self setTitle:@"My Stuff"];
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.dataSource.dataProvider loadItems];
+}
+
 
 - (void)createNewStuff
 {
@@ -35,12 +43,6 @@
     } else {
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:@"You have to join college first"];
     }
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self.dataSource.dataProvider loadItems];
 }
 
 - (void)didSelectedCellWithObject:(id)cellObject
