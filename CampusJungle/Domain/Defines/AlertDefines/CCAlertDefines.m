@@ -11,7 +11,7 @@
 const struct CCAlertsMessages CCAlertsMessages = {
     .connectToTheInternet = @"You must be connected to the internet to use this app",
     .serverUnavailable = @"Server is temporarily unavailable. Please try again later",
-    .noInternetConnection = @"There is no network connection",
+    .noInternetConnection = @"There is no Internet connection",
     .formNotValid = @"Form is not valid",
     .error = @"Error",
     .success = @"Success",

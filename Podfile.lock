@@ -13,6 +13,7 @@ PODS:
   - JSONKit (1.5pre)
   - libffi (3.0.13)
   - LUKeychainAccess (1.0.1)
+  - MACircleProgressIndicator (1.0.0)
   - MBProgressHUD (0.6)
   - NSData+Base64 (1.0.0)
   - OAuthCore (0.0.1):
@@ -57,6 +58,7 @@ DEPENDENCIES:
   - Facebook-iOS-SDK
   - JASidePanels
   - JSONKit
+  - MACircleProgressIndicator (~> 1.0.0)
   - MBProgressHUD
   - RestKit
   - SHOmniAuthTwitter
@@ -82,6 +84,7 @@ SPEC CHECKSUMS:
   JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
   libffi: 64ef39353e747bb2b25e1026afd96a157bf9231c
   LUKeychainAccess: 6ba22b2e1eec24f9f2fc9c6a9087d5524a58b1a2
+  MACircleProgressIndicator: dc497a2c68dd930d4aea837b1a732a56ce4bd6d8
   MBProgressHUD: 9b55a90566fb5d07df0602f6fd9fa04510ad5d52
   NSData+Base64: 36c4e5b6479259c1a68866ccd2a8dd385c9744f7
   OAuthCore: 4164eec5e28c68f794953446e68f91054ffe570c

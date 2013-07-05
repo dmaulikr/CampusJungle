@@ -38,7 +38,7 @@
     
     [objectManager.HTTPClient setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         if (status == AFNetworkReachabilityStatusNotReachable) {
-            [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.noInternetConnection message:CCAlertsMessages.connectToTheInternet];
+            [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:CCAlertsMessages.noInternetConnection];
         }
     }];
     

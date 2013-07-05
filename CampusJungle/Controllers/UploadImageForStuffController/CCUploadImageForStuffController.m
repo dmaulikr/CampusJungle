@@ -15,7 +15,7 @@
 @interface CCUploadImageForStuffController ()
 
 @property (nonatomic, strong) id <CCStuffAPIProviderProtocol> ioc_stuffAPIProvider;
-@property (nonatomic, strong) id <CCUploadProcessManagerProtocol> ioc_uploadManager;
+@property (nonatomic, strong) id <CCUploadProcessManagerProtocol> ioc_uploadingManager;
 
 @end
 
@@ -32,14 +32,18 @@
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"Preparing for upload";
     __weak id weakSelf = self;
+    CCNoteUploadInfo *uploadInfo = self.uploadInfo;
+    id <CCUploadProcessManagerProtocol> uploadManager = self.ioc_uploadingManager;
+     [[uploadManager uploadingStuff] addObject:self.uploadInfo];
     [self.ioc_stuffAPIProvider postUploadInfoWithImages:(CCStuffUploadInfo *)self.uploadInfo successHandler:^(id result) {
-        
+        [[uploadManager uploadingStuff] removeObject:uploadInfo];
+        [uploadManager reloadDelegate];
     } errorHandler:^(NSError *error) {
-        [[self.ioc_uploadManager uploadingStuff] removeObject:nil];
-        [CCStandardErrorHandler showErrorWithError:error];
+        [[uploadManager uploadingStuff] removeObject:uploadInfo];
+        [uploadManager reloadDelegate];
     } progress:^(double finished) {
-//        [[weakSelf backToListTransaction] perform];
-//        NSLog(@"%0.0lf",finished * 100);
+        [[weakSelf backToListTransaction] perform];
+        uploadInfo.uploadProgress = [NSNumber numberWithDouble:finished];
     }];
 }
 

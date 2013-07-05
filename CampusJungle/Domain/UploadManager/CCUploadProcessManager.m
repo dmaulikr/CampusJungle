@@ -10,4 +10,18 @@
 
 @implementation CCUploadProcessManager
 
+- (id)init
+{
+    if(self = [super init]){
+        self.uploadingNotes = [NSMutableArray new];
+        self.uploadingStuff = [NSMutableArray new];
+    }
+    return self;
+}
+
+- (void)reloadDelegate
+{
+    [self.currentDataProvider loadItems];
+}
+
 @end

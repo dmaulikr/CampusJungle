@@ -10,4 +10,15 @@
 
 @implementation CCStuffUploadInfo
 
+- (void)setUploadProgress:(NSNumber *)uploadProgress
+{
+    _uploadProgress = uploadProgress;
+    [self.delegate uploadProgressDidUpdate];
+}
+
+- (NSString *)description
+{
+    return self.stuffDescription;
+}
+
 @end

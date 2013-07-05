@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCUploadIndicatorDelegateProtocol.h"
 
 @interface CCNoteUploadInfo : NSObject
 
@@ -21,5 +22,9 @@
 @property (nonatomic, strong) NSArray *arrayOfURLs;
 @property (nonatomic, strong) NSArray *arrayOfImages;
 @property (nonatomic, strong) NSString *pdfUrl;
+
+@property (nonatomic, strong) NSNumber *uploadProgress;
+@property (nonatomic, weak) id<CCUploadIndicatorDelegateProtocol> delegate;
+@property (nonatomic, strong) NSString *thumbnailRetina;
 
 @end
