@@ -11,6 +11,7 @@
 #import "CCOrdinaryCell.h"
 #import "CCUserSessionProtocol.h"
 #import "CCNavigationBarViewHellper.h"
+#import "CCStuffCell.h"
 
 @interface CCMyStuffController ()
 
@@ -23,7 +24,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self configTableWithProvider:[CCMyStuffDataProvider new] cellClass:[CCOrdinaryCell class]];
+    [self configTableWithProvider:[CCMyStuffDataProvider new] cellClass:[CCStuffCell class]];
     self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHellper plusButtonWithTarget:self action:@selector(createNewStuff)];
 }
 
@@ -45,6 +46,11 @@
 - (void)didSelectedCellWithObject:(id)cellObject
 {
     [self.stuffDetailsTransaction performWithObject:cellObject];
+}
+
+- (BOOL)isNeedToLeftSelected
+{
+    return NO;
 }
 
 @end

@@ -1,20 +1,22 @@
 //
-//  CCNoteCell.m
+//  CCStuffCell.m
 //  CampusJungle
 //
-//  Created by Vlad Korzun on 6/8/13.
+//  Created by Vlad Korzun on 05.07.13.
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCNoteCell.h"
+#import "CCStuffCell.h"
 #import "CCNote.h"
 #import "CCDefines.h"
 #import "AFNetworking.h"
 #import "MACircleProgressIndicator.h"
 #import "CCNoteUploadInfo.h"
 #import "CCUploadIndicatorDelegateProtocol.h"
+#import "CCStuffUploadInfo.h"
+#import "CCStuff.h"
 
-@interface CCNoteCell()<CCUploadIndicatorDelegateProtocol>
+@interface CCStuffCell()<CCUploadIndicatorDelegateProtocol>
 
 @property (nonatomic, weak) IBOutlet UILabel *noteDescription;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbImage;
@@ -22,13 +24,13 @@
 
 @end
 
-@implementation CCNoteCell
+@implementation CCStuffCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self = [[[NSBundle mainBundle] loadNibNamed:@"CCNoteCell"
+        self = [[[NSBundle mainBundle] loadNibNamed:@"CCStuffCell"
                                               owner:self
                                             options:nil] objectAtIndex:0];
         [self setSelectionColor];
@@ -38,30 +40,28 @@
 
 - (void)setCellObject:(id)cellObject
 {
-
-    
-    if([cellObject isKindOfClass:[CCNoteUploadInfo class]]){
+    if([cellObject isKindOfClass:[CCStuffUploadInfo class]]){
         [self setUpUploadingIndicatorWithObject:cellObject];
     } else {
         [self removeIndicator];
     }
     _cellObject = cellObject;
-    CCNote *note = (CCNote *)cellObject;
-   
+    CCStuff *note = cellObject;
+    
     self.noteDescription.text = note.description;
     if(note.thumbnailRetina.length){
         NSString *thumbURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,note.thumbnailRetina];
         [self.thumbImage setImageWithURL:[NSURL URLWithString:thumbURL]];
     } else {
-        self.thumbImage.image = [UIImage imageNamed:@"note_placeholder_icon_active"];
+        self.thumbImage.image = [UIImage imageNamed:@"stuff_placeholder_icon_active"];
     }
 }
 
 - (void)setUpUploadingIndicatorWithObject:(CCNoteUploadInfo *)object
 {
     self.indicator.color = [UIColor brownColor];
-    if([_cellObject  isKindOfClass:[CCNoteUploadInfo class]]){
-        [(CCNoteUploadInfo *)_cellObject setDelegate:nil];
+    if([_cellObject  isKindOfClass:[CCStuffUploadInfo class]]){
+        [(CCStuffUploadInfo *)_cellObject setDelegate:nil];
     }
     object.delegate = self;
     self.indicator.value = object.uploadProgress.floatValue;
@@ -70,12 +70,13 @@
 
 - (void)uploadProgressDidUpdate
 {
-    self.indicator.value = [(CCNoteUploadInfo *)self.cellObject uploadProgress].floatValue;
+    self.indicator.value = [(CCStuffUploadInfo *)self.cellObject uploadProgress].floatValue;
 }
 
 - (void)removeIndicator
 {
     self.indicator.hidden = YES;
 }
+
 
 @end

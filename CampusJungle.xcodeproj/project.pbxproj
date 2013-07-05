@@ -227,6 +227,8 @@
 		D39496961785CA7C00C39A7E /* CCUploadProcessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496951785CA7C00C39A7E /* CCUploadProcessManager.m */; };
 		D39496A017860DE700C39A7E /* GIInputAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = D394969E17860DE700C39A7E /* GIInputAlert.m */; };
 		D39496A117860DE700C39A7E /* GIInputAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = D394969F17860DE700C39A7E /* GIInputAlert.xib */; };
+		D39496A81786ECE400C39A7E /* CCStuffCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496A71786ECE400C39A7E /* CCStuffCell.m */; };
+		D39496AA1786F25300C39A7E /* CCStuffCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39496A91786F25200C39A7E /* CCStuffCell.xib */; };
 		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
 		D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39F1C161753C0E8008E08A2 /* Accounts.framework */; };
 		D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A2C3241754C95700989831 /* MessageUI.framework */; };
@@ -762,6 +764,10 @@
 		D394969D17860DE700C39A7E /* GIInputAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIInputAlert.h; sourceTree = "<group>"; };
 		D394969E17860DE700C39A7E /* GIInputAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIInputAlert.m; sourceTree = "<group>"; };
 		D394969F17860DE700C39A7E /* GIInputAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GIInputAlert.xib; sourceTree = "<group>"; };
+		D39496A31786D50900C39A7E /* CCUploadIndicatorDelegateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCUploadIndicatorDelegateProtocol.h; sourceTree = "<group>"; };
+		D39496A61786ECE400C39A7E /* CCStuffCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStuffCell.h; sourceTree = "<group>"; };
+		D39496A71786ECE400C39A7E /* CCStuffCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStuffCell.m; sourceTree = "<group>"; };
+		D39496A91786F25200C39A7E /* CCStuffCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCStuffCell.xib; sourceTree = "<group>"; };
 		D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStandardErrorHandler.h; sourceTree = "<group>"; };
 		D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStandardErrorHandler.m; sourceTree = "<group>"; };
 		D39F1C161753C0E8008E08A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -1153,6 +1159,7 @@
 				70C0FCF21784850F005EF95E /* PhotoCell */,
 				70C0FD21178486EA005EF95E /* SideMenuCells */,
 				70C0FCF61784850F005EF95E /* StateCell */,
+				D39496A51786ECD400C39A7E /* StuffCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1607,6 +1614,7 @@
 		A787C76117536F8400824DEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D39496A21786D4DD00C39A7E /* UploadIndicatorDelegateProtocol */,
 				D360F9251774940F00C98399 /* Photos */,
 				D360F8F917732AC700C98399 /* StuffUploadInfo */,
 				D360F8E21772FE3B00C98399 /* Stuff */,
@@ -2618,6 +2626,25 @@
 			path = UploadManager;
 			sourceTree = "<group>";
 		};
+		D39496A21786D4DD00C39A7E /* UploadIndicatorDelegateProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				D39496A31786D50900C39A7E /* CCUploadIndicatorDelegateProtocol.h */,
+			);
+			name = UploadIndicatorDelegateProtocol;
+			path = UploadIndicatorDelegate;
+			sourceTree = "<group>";
+		};
+		D39496A51786ECD400C39A7E /* StuffCell */ = {
+			isa = PBXGroup;
+			children = (
+				D39496A61786ECE400C39A7E /* CCStuffCell.h */,
+				D39496A71786ECE400C39A7E /* CCStuffCell.m */,
+				D39496A91786F25200C39A7E /* CCStuffCell.xib */,
+			);
+			path = StuffCell;
+			sourceTree = "<group>";
+		};
 		D39F1C0E1753821D008E08A2 /* StandardErrorHandler */ = {
 			isa = PBXGroup;
 			children = (
@@ -3448,6 +3475,7 @@
 				D394968E1785C36800C39A7E /* Default.png in Resources */,
 				D39496901785C36C00C39A7E /* Default-568h@2x.png in Resources */,
 				D39496921785C37300C39A7E /* Default@2x.png in Resources */,
+				D39496AA1786F25300C39A7E /* CCStuffCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3663,6 +3691,7 @@
 				70438E511785B8E600537712 /* CCInboxController.m in Sources */,
 				D39496A017860DE700C39A7E /* GIInputAlert.m in Sources */,
 				D39496961785CA7C00C39A7E /* CCUploadProcessManager.m in Sources */,
+				D39496A81786ECE400C39A7E /* CCStuffCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

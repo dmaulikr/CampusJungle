@@ -10,4 +10,15 @@
 
 @implementation CCNoteUploadInfo
 
+- (void)setUploadProgress:(NSNumber *)uploadProgress
+{
+    _uploadProgress = uploadProgress;
+    [self.delegate uploadProgressDidUpdate];
+}
+
+- (NSString *)description
+{
+    return self.noteDescription;
+}
+
 @end

@@ -7,10 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCBaseDataProvider.h"
 
 @protocol CCUploadProcessManagerProtocol <AppleGuiceInjectable, AppleGuiceSingleton>
 
 @property (nonatomic, strong) NSMutableArray *uploadingNotes;
 @property (nonatomic, strong) NSMutableArray *uploadingStuff;
+
+@property (nonatomic, weak) CCBaseDataProvider *currentDataProvider;
+
+- (void)reloadDelegate;
 
 @end

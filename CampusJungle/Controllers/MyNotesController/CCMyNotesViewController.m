@@ -48,7 +48,14 @@
 
 - (void)didSelectedCellWithObject:(id)cellObject
 {
-    [self.viewNoteTransaction performWithObject:cellObject];
+    if([cellObject isKindOfClass:[CCNote class]]){
+        [self.viewNoteTransaction performWithObject:cellObject];
+    }
+}
+
+- (BOOL)isNeedToLeftSelected
+{
+    return NO;
 }
 
 @end

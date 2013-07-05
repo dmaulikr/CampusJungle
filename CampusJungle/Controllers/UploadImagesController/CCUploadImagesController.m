@@ -14,6 +14,7 @@
 #import "CCUIImageHelper.h"
 #import "CCStandardErrorHandler.h"
 #import "MBProgressHUD.h"
+#import "CCUploadProcessManagerProtocol.h"
 
 #define animationDuration 0.3
 #define maxNumberOfImages 6
@@ -23,6 +24,7 @@
 @property (nonatomic, weak) IBOutlet UIView *tableFooterView;
 @property (nonatomic, strong) id <CCNotesAPIProviderProtolcol> ioc_notesAPIProvider;
 @property (nonatomic, weak) IBOutlet UIButton *addButton;
+@property (nonatomic, strong) id <CCUploadProcessManagerProtocol> ioc_uploadingManager;
 
 @end
 
@@ -80,6 +82,19 @@
     UIImage *fixedImage = [CCUIImageHelper fixOrientationOfImage:info[UIImagePickerControllerOriginalImage]];
     [self.dataProvider.arrayOfImages addObject:fixedImage];
     [self.dataProvider loadItems];
+    [self setCustomButton];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self didUpdate];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self setCustomButton];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)setCustomButton
+{
     UIImage *customButtonBackground = [[UIImage imageNamed:@"button"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 10, 20, 10)];
     
     UIImage *customButtonActiveBackground = [UIImage imageNamed:@"button_active"];
@@ -87,8 +102,7 @@
     [[UIButton appearance] setBackgroundImage:customButtonBackground forState:UIControlStateNormal];
     
     [[UIButton appearance] setBackgroundImage:customButtonActiveBackground forState:UIControlStateHighlighted];
-    [self dismissViewControllerAnimated:YES completion:nil];
-    [self didUpdate];
+
 }
 
 - (void)didUpdate
@@ -117,13 +131,19 @@
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"Preparing for upload";
     __weak id weakSelf = self;
+    CCNoteUploadInfo *uploadInfo = self.uploadInfo;
+    id <CCUploadProcessManagerProtocol> uploadManager = self.ioc_uploadingManager;
+    [[self.ioc_uploadingManager uploadingNotes] addObject:self.uploadInfo];
     [self.ioc_notesAPIProvider postUploadInfoWithImages:self.uploadInfo successHandler:^(id result) {
-        
+        [[uploadManager uploadingNotes] removeObject:uploadInfo];
+        [uploadManager reloadDelegate];
     } errorHandler:^(NSError *error) {
+        [[uploadManager uploadingNotes] removeObject:uploadInfo];
         [CCStandardErrorHandler showErrorWithError:error];
+        [uploadManager reloadDelegate];
     } progress:^(double finished) {
         [[weakSelf backToListTransaction] perform];
-        NSLog(@"%0.0lf",finished * 100);
+        uploadInfo.uploadProgress = [NSNumber numberWithDouble:finished];
     }];
 }
 

@@ -17,6 +17,7 @@
 #import "MBProgressHUD.h"
 #import "NSString+CJStringValidator.h"
 #import "CCStuffUploadInfo.h"
+#import "CCAlertDefines.h"
 
 @interface CCStuffCreationController () <CCAvatarSelectionProtocol, CCCellSelectionProtocol>
 
@@ -113,6 +114,7 @@
 {
     CCStuffUploadInfo *uploadInfo = [CCStuffUploadInfo new];
     uploadInfo.stuffDescription = self.decriptionField.text;
+    uploadInfo.collegeName = self.collegeSelectionButton.titleLabel.text;
     uploadInfo.thumbnail = self.thumbImage.image;
     uploadInfo.price = [NSNumber numberWithInteger: self.priceField.text.integerValue];
     uploadInfo.collegeID = self.selectedCollege.collegeID.stringValue;
