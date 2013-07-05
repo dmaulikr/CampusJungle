@@ -50,4 +50,9 @@
     
 }
 
+- (IBAction)classMarketButtonDidPressed
+{
+    [self.classMarketTransaction performWithObject:self.currentClass];
+}
+
 @end

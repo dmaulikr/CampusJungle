@@ -8,6 +8,7 @@
 
 #import "CCClassTransaction.h"
 #import "CCClassController.h"
+#import "CCShowNotesForClassTransaction.h"
 
 @implementation CCClassTransaction
 
@@ -18,8 +19,12 @@
     
     CCClassController *classController = [[CCClassController alloc] initWithClass:object];
     
+    CCShowNotesForClassTransaction *classNotesTransaction = [CCShowNotesForClassTransaction new];
+    classController.classMarketTransaction =classNotesTransaction;
+
     UINavigationController *centralNavigation = [[UINavigationController alloc] initWithRootViewController:classController];
     [self.menuController setCenterPanel:centralNavigation];
+    classNotesTransaction.navigation = centralNavigation;
 }
 
 @end
