@@ -60,4 +60,14 @@
     [self.classMarketTransaction performWithObject:self.currentClass];
 }
 
+- (void)didSelectedCellWithObject:(id)cellObject
+{
+    [self.otherUserProfileTransaction performWithObject:cellObject];
+}
+
+- (BOOL)isNeedToLeftSelected
+{
+    return NO;
+}
+
 @end

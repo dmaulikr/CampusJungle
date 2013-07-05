@@ -236,6 +236,9 @@
 		D39496AE1787040900C39A7E /* CCUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496AD1787040900C39A7E /* CCUserCell.m */; };
 		D39496B2178708FA00C39A7E /* CCClassmatesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496B1178708FA00C39A7E /* CCClassmatesDataProvider.m */; };
 		D39496B417870E6D00C39A7E /* CCUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39496B317870E6C00C39A7E /* CCUserCell.xib */; };
+		D39496B91787117400C39A7E /* CCOtherUserProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496B71787117400C39A7E /* CCOtherUserProfileController.m */; };
+		D39496BA1787117400C39A7E /* CCOtherUserProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39496B81787117400C39A7E /* CCOtherUserProfileController.xib */; };
+		D39496BE1787146400C39A7E /* CCOtherUserProfileTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496BD1787146400C39A7E /* CCOtherUserProfileTransaction.m */; };
 		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
 		D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39F1C161753C0E8008E08A2 /* Accounts.framework */; };
 		D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A2C3241754C95700989831 /* MessageUI.framework */; };
@@ -783,6 +786,11 @@
 		D39496B0178708FA00C39A7E /* CCClassmatesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassmatesDataProvider.h; sourceTree = "<group>"; };
 		D39496B1178708FA00C39A7E /* CCClassmatesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassmatesDataProvider.m; sourceTree = "<group>"; };
 		D39496B317870E6C00C39A7E /* CCUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCUserCell.xib; sourceTree = "<group>"; };
+		D39496B61787117400C39A7E /* CCOtherUserProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCOtherUserProfileController.h; sourceTree = "<group>"; };
+		D39496B71787117400C39A7E /* CCOtherUserProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCOtherUserProfileController.m; sourceTree = "<group>"; };
+		D39496B81787117400C39A7E /* CCOtherUserProfileController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCOtherUserProfileController.xib; sourceTree = "<group>"; };
+		D39496BC1787146400C39A7E /* CCOtherUserProfileTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCOtherUserProfileTransaction.h; sourceTree = "<group>"; };
+		D39496BD1787146400C39A7E /* CCOtherUserProfileTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCOtherUserProfileTransaction.m; sourceTree = "<group>"; };
 		D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStandardErrorHandler.h; sourceTree = "<group>"; };
 		D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStandardErrorHandler.m; sourceTree = "<group>"; };
 		D39F1C161753C0E8008E08A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -1461,6 +1469,7 @@
 		A787C73217536F8400824DEA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D39496B51787114700C39A7E /* OtherUserProfileController */,
 				D3E343B51779B3D9009DC3DB /* InboxConroller */,
 				D360F9171774668600C98399 /* PhotoBrowser */,
 				D360F9111774651000C98399 /* StuffDetailsController */,
@@ -1748,6 +1757,7 @@
 			isa = PBXGroup;
 			children = (
 				D360F99817750A2A00C98399 /* CloseBrowserTransaction */,
+				D39496BB1787144A00C39A7E /* OtherUserProfileTransaction */,
 				D360F9941775008500C98399 /* PhotoBrowserTransaction */,
 				D360F91D17746F5700C98399 /* StuffDetailsTransaction */,
 				D360F8F117731C9F00C98399 /* CreateStuffTransaction */,
@@ -2691,6 +2701,27 @@
 			path = ClassmatesDataProvider;
 			sourceTree = "<group>";
 		};
+		D39496B51787114700C39A7E /* OtherUserProfileController */ = {
+			isa = PBXGroup;
+			children = (
+				D39496B61787117400C39A7E /* CCOtherUserProfileController.h */,
+				D39496B71787117400C39A7E /* CCOtherUserProfileController.m */,
+				D39496B81787117400C39A7E /* CCOtherUserProfileController.xib */,
+			);
+			name = OtherUserProfileController;
+			path = OtherUserProfile;
+			sourceTree = "<group>";
+		};
+		D39496BB1787144A00C39A7E /* OtherUserProfileTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D39496BC1787146400C39A7E /* CCOtherUserProfileTransaction.h */,
+				D39496BD1787146400C39A7E /* CCOtherUserProfileTransaction.m */,
+			);
+			name = OtherUserProfileTransaction;
+			path = PhotoBrowserTransaction/OtherUserProfileTransaction;
+			sourceTree = "<group>";
+		};
 		D39F1C0E1753821D008E08A2 /* StandardErrorHandler */ = {
 			isa = PBXGroup;
 			children = (
@@ -3527,6 +3558,7 @@
 				70A29C331786F812001BC8DD /* CCOrdinaryCell.xib in Resources */,
 				D39496AA1786F25300C39A7E /* CCStuffCell.xib in Resources */,
 				D39496B417870E6D00C39A7E /* CCUserCell.xib in Resources */,
+				D39496BA1787117400C39A7E /* CCOtherUserProfileController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3746,6 +3778,8 @@
 				70A29C2F1786F25C001BC8DD /* CCSuccessMessagesDefines.m in Sources */,
 				D39496AE1787040900C39A7E /* CCUserCell.m in Sources */,
 				D39496B2178708FA00C39A7E /* CCClassmatesDataProvider.m in Sources */,
+				D39496B91787117400C39A7E /* CCOtherUserProfileController.m in Sources */,
+				D39496BE1787146400C39A7E /* CCOtherUserProfileTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

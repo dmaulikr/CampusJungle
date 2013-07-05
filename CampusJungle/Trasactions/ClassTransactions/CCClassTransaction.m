@@ -9,6 +9,7 @@
 #import "CCClassTransaction.h"
 #import "CCClassController.h"
 #import "CCShowNotesForClassTransaction.h"
+#import "CCOtherUserProfileTransaction.h"
 
 @implementation CCClassTransaction
 
@@ -22,9 +23,14 @@
     CCShowNotesForClassTransaction *classNotesTransaction = [CCShowNotesForClassTransaction new];
     classController.classMarketTransaction =classNotesTransaction;
 
+    CCOtherUserProfileTransaction *otherUserProfileTransaction = [CCOtherUserProfileTransaction new];
+    
+    classController.otherUserProfileTransaction = otherUserProfileTransaction;
+    
     UINavigationController *centralNavigation = [[UINavigationController alloc] initWithRootViewController:classController];
     [self.menuController setCenterPanel:centralNavigation];
     classNotesTransaction.navigation = centralNavigation;
+    otherUserProfileTransaction.navigation = centralNavigation;
 }
 
 @end

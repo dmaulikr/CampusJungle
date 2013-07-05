@@ -15,6 +15,7 @@
 @interface CCClassController : CCTableBasedController
 
 @property (nonatomic, strong) id <CCTransactionWithObject> classMarketTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> otherUserProfileTransaction;
 
 - (id)initWithClass:(CCClass *)classObject;
 - (IBAction)classMarketButtonDidPressed;

@@ -34,7 +34,7 @@
     CCUser *currentUser = cellObject;
     self.userName.text = [NSString stringWithFormat:@"%@ %@",currentUser.firstName,currentUser.lastName];
     NSString *avatarPath = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,currentUser.avatar];
-    [self.avatar setImageWithURL:[NSURL URLWithString:avatarPath]];
+    [self.avatar setImageWithURL:[NSURL URLWithString:avatarPath] placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
     
 }
 
