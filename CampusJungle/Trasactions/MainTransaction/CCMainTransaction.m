@@ -38,15 +38,13 @@
     
     CCSideBarController *rootController = [[CCSideBarController alloc] init];
     rootController.shouldDelegateAutorotateToVisiblePanel = NO;
-    
+    self.window.rootViewController = rootController;
     CCSideMenuController *leftController = [[CCSideMenuController alloc] init];
 	rootController.leftPanel = leftController;
     rootController.panningLimitedToTopViewController = NO;
     
     CCInboxController *centralPanel = [CCInboxController new];
     rootController.centerPanel = [[UINavigationController alloc] initWithRootViewController:centralPanel];
-    
-    self.window.rootViewController = rootController;
     
     [self.ioc_userSession setCurrentUser: [self.ioc_userSession loadSavedUser]];
     

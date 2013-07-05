@@ -28,6 +28,7 @@
     [super viewDidLoad];
     self.tapRecognizer.enabled = YES;
     [self setRightNavigationItemWithTitle:@"Save" selector:@selector(saveButtonDidPressed)];
+    self.title = @"Sign Up";
 }
 
 - (void)saveButtonDidPressed

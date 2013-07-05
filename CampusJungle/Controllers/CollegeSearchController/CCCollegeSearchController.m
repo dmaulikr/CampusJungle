@@ -29,6 +29,7 @@
     [self configTableWithProvider:[CCCollegeSearchDataProvider new] cellClass:[CCCollegeSelectionCell class]];
     
     self.navigationItem.rightBarButtonItem  = [CCNavigationBarViewHelper plusButtonWithTarget:self action:@selector(addCollege)];
+    self.title = @"Sellect College";
 }
 
 - (void)addCollege

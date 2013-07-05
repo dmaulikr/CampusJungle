@@ -28,6 +28,7 @@
 {
     [super viewDidLoad];
     self.tapRecognizer.enabled = YES;
+    self.title = @"Login";
 }
 
 - (IBAction)loginButtonDidPressed

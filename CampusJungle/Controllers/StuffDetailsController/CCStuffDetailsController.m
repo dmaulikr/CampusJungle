@@ -42,6 +42,7 @@
     } else {
         self.thumb.image = [UIImage imageNamed:@"stuff_placeholder_icon_active"];
     }
+    self.title = @"Stuff";
 }
 
 - (void)configCollection:(UICollectionView *)collectionView WithProvider:(CCBaseDataProvider *)provider cellClass:(Class)cellCass

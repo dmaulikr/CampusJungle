@@ -40,6 +40,7 @@
 {
     [super viewDidLoad];
     [self setUpNotesInfo];
+    self.title = @"Note";
 }
 
 - (void)setUpNotesInfo

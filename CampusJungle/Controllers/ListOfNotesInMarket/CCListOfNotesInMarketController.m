@@ -19,6 +19,7 @@
 {
     [super viewDidLoad];
     [self configTableWithProvider:self.notesProvider cellClass:[CCNoteCell class]];
+    self.title = @"Notes";
 }
 
 - (void)didSelectedCellWithObject:(id)cellObject

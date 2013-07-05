@@ -8,6 +8,7 @@
 
 #import "CCListOfStuffInMarketController.h"
 #import "CCOrdinaryCell.h"
+#import "CCStuffCell.h"
 
 @interface CCListOfStuffInMarketController ()
 
@@ -23,7 +24,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self configTableWithProvider:self.tableProvider cellClass:[CCOrdinaryCell class]];
+    [self configTableWithProvider:self.tableProvider cellClass:[CCStuffCell class]];
+    self.title = @"Stuff";
 }
 
 - (void)didSelectedCellWithObject:(id)cellObject

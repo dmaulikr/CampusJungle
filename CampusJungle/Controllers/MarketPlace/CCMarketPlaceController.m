@@ -63,6 +63,7 @@
     }];
     
     self.tapRecognizer.enabled = NO;
+    self.title = @"Market";
 }
 
 - (void)viewWillAppear:(BOOL)animated
