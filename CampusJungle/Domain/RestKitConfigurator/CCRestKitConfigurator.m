@@ -55,6 +55,7 @@
     [CCRestKitConfigurator configureStuffCreationRequest:objectManager];
     [CCRestKitConfigurator configureStuffResponse:objectManager];
     [CCRestKitConfigurator configureClassesInCollegesResponse:objectManager];
+    [CCRestKitConfigurator configureClassmatesResponse:objectManager];
 }
 
 + (void)configureUserResponse:(RKObjectManager *)objectManager
@@ -123,6 +124,35 @@
     
     RKRequestDescriptor *userRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:userRequestMapping objectClass:[CCUser class] rootKeyPath:nil];
     [objectManager addRequestDescriptor:userRequestDescriptor];
+    
+}
+
++ (void)configureClassmatesResponse:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *userResponseMapping = [RKObjectMapping mappingForClass:[CCUser class]];
+    [userResponseMapping addAttributeMappingsFromDictionary:[CCUser responseMappingDictionary]];
+    
+    RKObjectMapping *userEducationResponseMapping = [RKObjectMapping mappingForClass:[CCEducation class]];
+    [userEducationResponseMapping addAttributeMappingsFromDictionary:[CCEducation responseMappingDictionary]];
+    
+    RKRelationshipMapping* relationShipResponseEducationsMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"educations"
+                                                                                                               toKeyPath:@"educations"
+                                                                                                             withMapping:userEducationResponseMapping];
+    [userResponseMapping addPropertyMapping:relationShipResponseEducationsMapping];
+    
+    RKObjectMapping *paginationCollegesResponseMapping = [CCRestKitConfigurator paginationMapping];
+    RKRelationshipMapping* relationShipResponseCollegesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
+                                                                                                             toKeyPath:CCResponseKeys.items
+                                                                                                           withMapping:userResponseMapping];
+    [paginationCollegesResponseMapping addPropertyMapping:relationShipResponseCollegesMapping];
+    
+    NSString *pathPattern = [NSString stringWithFormat:CCAPIDefines.classmates,@":classID"];
+    
+    RKResponseDescriptor *responseClassesOfCollegeDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginationCollegesResponseMapping
+                                                                                                       pathPattern:pathPattern
+                                                                                                           keyPath:nil
+                                                                                                       statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [objectManager addResponseDescriptor:responseClassesOfCollegeDescriptor];
     
 }
 

@@ -130,6 +130,18 @@
 
 }
 
+- (void)loadClassmatesForClass:(NSString *)classID NumberOfPage:(NSNumber *)pageNumber successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    
+    [params setObject:pageNumber.stringValue forKey:@"page_number"];
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.classmates,classID];
+    [self loadItemsWithParams:params
+                         path:path
+               successHandler:successHandler
+                 errorHandler:errorHandler];
+}
+
 - (void)loadItemsWithParams:(NSDictionary *)params path:(NSString *)path successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
@@ -307,6 +319,8 @@
         
     });
 }
+
+
 
 
 @end

@@ -35,6 +35,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .loadMyStuff = @"/api/users/me/stuff",
     .createStuff = @"/api/colleges/%@/stuff",
     .classesInColleges = @"/api/users/me/classes_in_colleges/",
+    .classmates = @"/api/classes/%@/members",
 };
 
 const struct CCUserDefines CCUserDefines = {

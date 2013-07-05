@@ -8,6 +8,8 @@
 
 #import "CCClassController.h"
 #import "CCClass.h"
+#import "CCClassmatesDataProvider.h"
+#import "CCUserCell.h"
 
 @interface CCClassController ()
 
@@ -36,6 +38,9 @@
     [super viewDidLoad];
     [self loadInfo];
     [self setRightNavigationItemWithTitle:@"Edit" selector:@selector(editClass)];
+    CCClassmatesDataProvider *classmateDataprovider = [CCClassmatesDataProvider new];
+    classmateDataprovider.classID = self.currentClass.classID;
+    [self configTableWithProvider:classmateDataprovider cellClass:[CCUserCell class]];
 }
 
 - (void)loadInfo
