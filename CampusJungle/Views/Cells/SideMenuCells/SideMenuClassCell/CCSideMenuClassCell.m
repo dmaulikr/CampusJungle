@@ -17,6 +17,12 @@
 
 @implementation CCSideMenuClassCell
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    [self setSelectionColor];
+}
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

@@ -43,7 +43,7 @@
 							<object class="IBUILabel" id="808196540">
 								<reference key="NSNextResponder" ref="36013919"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{49, 0}, {200, 43}}</string>
+								<string key="NSFrame">{{49, -1}, {200, 43}}</string>
 								<reference key="NSSuperview" ref="36013919"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="1043111951"/>
@@ -81,7 +81,7 @@
 							<object class="IBUIImageView" id="660623934">
 								<reference key="NSNextResponder" ref="36013919"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{7, 2}, {30, 42}}</string>
+								<string key="NSFrame">{{7, 1}, {30, 42}}</string>
 								<reference key="NSSuperview" ref="36013919"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="808196540"/>
@@ -94,7 +94,7 @@
 							<object class="IBUIImageView" id="1043111951">
 								<reference key="NSNextResponder" ref="36013919"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{0, 44}, {268, 2}}</string>
+								<string key="NSFrame">{{0, 42}, {268, 2}}</string>
 								<reference key="NSSuperview" ref="36013919"/>
 								<reference key="NSWindow"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -129,7 +129,6 @@
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<reference key="IBUIBackgroundColor" ref="914712485"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-				<int key="IBUISelectionStyle">0</int>
 				<reference key="IBUIContentView" ref="36013919"/>
 				<string key="IBUIReuseIdentifier">MenuItemCell</string>
 			</object>
@@ -222,8 +221,16 @@
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
-					<string key="className">CCSideMenuItemCell</string>
+					<string key="className">CCBaseCell</string>
 					<string key="superclassName">UITableViewCell</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/CCBaseCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">CCSideMenuItemCell</string>
+					<string key="superclassName">CCBaseCell</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="imageView">UIImageView</string>
 						<string key="titleLabel">UILabel</string>

@@ -12,7 +12,7 @@
 
 - (void)setSelectionColor
 {
-    UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"SelectionBackGround"]];
+    UIImageView *bgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"SelectionBackGround.png"]];
     [self setSelectedBackgroundView:bgView];
 }
 
