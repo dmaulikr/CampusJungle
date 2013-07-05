@@ -9,7 +9,7 @@
 #import "CCClassesOfCollegeController.h"
 #import "CCClassesApiProviderProtocol.h"
 #import "CCClassesDataProvider.h"
-#import "CCClassCell.h"
+#import "CCOrdinaryCell.h"
 #import "CCStandardErrorHandler.h"
 #import "CCNavigationBarViewHelper.h"
 #import "CCClass.h"
@@ -41,7 +41,7 @@
     [self.ioc_apiClassesProvider getClassesOfCollege:self.collegeID successHandler:^(id response) {
         self.dataProvider = [CCClassesDataProvider new];
         self.dataProvider.arrayOfClasses = response;
-        [self configTableWithProvider:self.dataProvider cellClass:[CCClassCell class]];
+        [self configTableWithProvider:self.dataProvider cellClass:[CCOrdinaryCell class]];
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
     }];

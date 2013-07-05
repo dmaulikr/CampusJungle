@@ -15,6 +15,11 @@
     return self.subject;
 }
 
+- (NSString *)description
+{
+    return self.subject;
+}
+
 + (NSDictionary *)responseMappingDictionary
 {
    return @{

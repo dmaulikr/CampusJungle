@@ -8,7 +8,7 @@
 
 #import "CCClassesController.h"
 #import "CCClassesDataProvider.h"
-#import "CCClassCell.h"
+#import "CCOrdinaryCell.h"
 #import "CCClassesApiProviderProtocol.h"
 #import "CCClass.h"
 #import "CCUserSessionProtocol.h"
@@ -51,7 +51,7 @@
         self.dataProvider.targetTable = self.table;
         self.dataProvider = [CCClassesDataProvider new];
         self.dataProvider.arrayOfClasses = arrayOfClasses;
-        [self configTableWithProvider:self.dataProvider cellClass:[CCClassCell class]];
+        [self configTableWithProvider:self.dataProvider cellClass:[CCOrdinaryCell class]];
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
     } ];

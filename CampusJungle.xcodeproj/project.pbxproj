@@ -30,12 +30,14 @@
 		70930824178594CA00E71AB0 /* side_menu_college_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 70930822178594CA00E71AB0 /* side_menu_college_icon.png */; };
 		70930825178594CA00E71AB0 /* side_menu_college_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70930823178594CA00E71AB0 /* side_menu_college_icon@2x.png */; };
 		70A29C2F1786F25C001BC8DD /* CCSuccessMessagesDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29C2E1786F25C001BC8DD /* CCSuccessMessagesDefines.m */; };
+		70A29C301786F79A001BC8DD /* separator.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBD21781B7AE00E54EFC /* separator.png */; };
+		70A29C311786F79A001BC8DD /* separator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBD31781B7AE00E54EFC /* separator@2x.png */; };
+		70A29C331786F812001BC8DD /* CCOrdinaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29C321786F812001BC8DD /* CCOrdinaryCell.xib */; };
 		70C0FCB6178484D0005EF95E /* UITextField+InsetFixing.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C0FCB5178484D0005EF95E /* UITextField+InsetFixing.m */; };
 		70C0FCBA17848500005EF95E /* MHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C0FCB917848500005EF95E /* MHTabBarController.m */; };
 		70C0FD051784850F005EF95E /* CCActionSheetPickerCollegesDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C0FCBF1784850F005EF95E /* CCActionSheetPickerCollegesDelegate.m */; };
 		70C0FD061784850F005EF95E /* CCActionSheetPickerDateDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C0FCC21784850F005EF95E /* CCActionSheetPickerDateDelegate.m */; };
 		70C0FD071784850F005EF95E /* CCAvatarSelectionActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C0FCC51784850F005EF95E /* CCAvatarSelectionActionSheet.m */; };
-		70C0FD081784850F005EF95E /* CCClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C0FCCA1784850F005EF95E /* CCClassCell.m */; };
 		70C0FD091784850F005EF95E /* CCCityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C0FCCF1784850F005EF95E /* CCCityCell.m */; };
 		70C0FD0B1784850F005EF95E /* CCDropboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C0FCD51784850F005EF95E /* CCDropboxCell.m */; };
 		70C0FD0C1784850F005EF95E /* CCDropboxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70C0FCD61784850F005EF95E /* CCDropboxCell.xib */; };
@@ -425,6 +427,7 @@
 		70930823178594CA00E71AB0 /* side_menu_college_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "side_menu_college_icon@2x.png"; sourceTree = "<group>"; };
 		70A29C2D1786F25C001BC8DD /* CCSuccessMessagesDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSuccessMessagesDefines.h; sourceTree = "<group>"; };
 		70A29C2E1786F25C001BC8DD /* CCSuccessMessagesDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSuccessMessagesDefines.m; sourceTree = "<group>"; };
+		70A29C321786F812001BC8DD /* CCOrdinaryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCOrdinaryCell.xib; sourceTree = "<group>"; };
 		70C0FCB4178484D0005EF95E /* UITextField+InsetFixing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+InsetFixing.h"; sourceTree = "<group>"; };
 		70C0FCB5178484D0005EF95E /* UITextField+InsetFixing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+InsetFixing.m"; sourceTree = "<group>"; };
 		70C0FCB817848500005EF95E /* MHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHTabBarController.h; sourceTree = "<group>"; };
@@ -436,8 +439,6 @@
 		70C0FCC41784850F005EF95E /* CCAvatarSelectionActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAvatarSelectionActionSheet.h; sourceTree = "<group>"; };
 		70C0FCC51784850F005EF95E /* CCAvatarSelectionActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAvatarSelectionActionSheet.m; sourceTree = "<group>"; };
 		70C0FCC61784850F005EF95E /* CCAvatarSelectionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAvatarSelectionProtocol.h; sourceTree = "<group>"; };
-		70C0FCC91784850F005EF95E /* CCClassCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassCell.h; sourceTree = "<group>"; };
-		70C0FCCA1784850F005EF95E /* CCClassCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassCell.m; sourceTree = "<group>"; };
 		70C0FCCC1784850F005EF95E /* CCTableCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableCellProtocol.h; sourceTree = "<group>"; };
 		70C0FCCE1784850F005EF95E /* CCCityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCityCell.h; sourceTree = "<group>"; };
 		70C0FCCF1784850F005EF95E /* CCCityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCityCell.m; sourceTree = "<group>"; };
@@ -1163,7 +1164,6 @@
 			isa = PBXGroup;
 			children = (
 				70438E381785B74B00537712 /* CCBaseCell */,
-				70C0FCC81784850F005EF95E /* CCClassCell */,
 				70C0FCCB1784850F005EF95E /* CCTableCellProtocol */,
 				70C0FCCD1784850F005EF95E /* CityCell */,
 				70C0FCD01784850F005EF95E /* CollegeSelectionCell */,
@@ -1179,15 +1179,6 @@
 				70C0FCF61784850F005EF95E /* StateCell */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		70C0FCC81784850F005EF95E /* CCClassCell */ = {
-			isa = PBXGroup;
-			children = (
-				70C0FCC91784850F005EF95E /* CCClassCell.h */,
-				70C0FCCA1784850F005EF95E /* CCClassCell.m */,
-			);
-			path = CCClassCell;
 			sourceTree = "<group>";
 		};
 		70C0FCCB1784850F005EF95E /* CCTableCellProtocol */ = {
@@ -1282,6 +1273,7 @@
 			children = (
 				70C0FCF01784850F005EF95E /* CCOrdinaryCell.h */,
 				70C0FCF11784850F005EF95E /* CCOrdinaryCell.m */,
+				70A29C321786F812001BC8DD /* CCOrdinaryCell.xib */,
 			);
 			path = OrdinaryCell;
 			sourceTree = "<group>";
@@ -3364,6 +3356,8 @@
 				D3A3191D177C4DAC0004C4E8 /* back_button.png in Resources */,
 				D3A3191E177C4DAC0004C4E8 /* back_button@2x.png in Resources */,
 				D3A3191F177C4DAC0004C4E8 /* button.png in Resources */,
+				70A29C301786F79A001BC8DD /* separator.png in Resources */,
+				70A29C311786F79A001BC8DD /* separator@2x.png in Resources */,
 				D3A31920177C4DAC0004C4E8 /* button@2x.png in Resources */,
 				D3A31921177C4DAC0004C4E8 /* button_active.png in Resources */,
 				D3A31922177C4DAC0004C4E8 /* button_active@2x.png in Resources */,
@@ -3474,6 +3468,7 @@
 				D394968E1785C36800C39A7E /* Default.png in Resources */,
 				D39496901785C36C00C39A7E /* Default-568h@2x.png in Resources */,
 				D39496921785C37300C39A7E /* Default@2x.png in Resources */,
+				70A29C331786F812001BC8DD /* CCOrdinaryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3662,7 +3657,6 @@
 				70C0FD051784850F005EF95E /* CCActionSheetPickerCollegesDelegate.m in Sources */,
 				70C0FD061784850F005EF95E /* CCActionSheetPickerDateDelegate.m in Sources */,
 				70C0FD071784850F005EF95E /* CCAvatarSelectionActionSheet.m in Sources */,
-				70C0FD081784850F005EF95E /* CCClassCell.m in Sources */,
 				70C0FD091784850F005EF95E /* CCCityCell.m in Sources */,
 				70C0FD0B1784850F005EF95E /* CCDropboxCell.m in Sources */,
 				70C0FD0D1784850F005EF95E /* CCEducationCell.m in Sources */,
