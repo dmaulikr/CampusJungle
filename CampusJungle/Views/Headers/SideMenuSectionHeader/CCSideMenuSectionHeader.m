@@ -8,30 +8,41 @@
 
 #import "CCSideMenuSectionHeader.h"
 #import "CCViewPositioningHelper.h"
+#import "CCSideMenuDataSource.h"
 
-static const NSInteger kDefaultTextLabelWidth = 210;
+static const NSInteger kDefaultTextLabelWidth = 155;
 static const NSInteger kMinCellHeight = 44;
 
 @interface CCSideMenuSectionHeader ()
 
 @property (nonatomic, weak) IBOutlet UILabel *textLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *backgroundImageView;
+@property (nonatomic, weak) IBOutlet UIButton *addClassesButton;
 @property (nonatomic, weak) id<CCSideMenuDelegate> delegate;
+@property (nonatomic, strong) NSString *collegeId;
 
 @end
 
 @implementation CCSideMenuSectionHeader
 
-- (id)initWithText:(NSString *)text delegate:(id<CCSideMenuDelegate>)delegate
+- (id)initWithText:(NSString *)text collegeId:(NSString *)collegeId delegate:(id<CCSideMenuDelegate>)delegate
 {
     self = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil][0];
     if (self) {
+        [self setupButtons];
         [self setDelegate:delegate];
+        [self setCollegeId:collegeId];
         [self setText:text];
         [self setCorrectHeight];
         [self setBackgroundImage];
     }
     return self;
+}
+
+- (void)setupButtons
+{
+    [self.addClassesButton setBackgroundImage:nil forState:UIControlStateNormal];
+    [self.addClassesButton setBackgroundImage:nil forState:UIControlStateHighlighted];
 }
 
 - (void)setText:(NSString *)text
@@ -60,5 +71,15 @@ static const NSInteger kMinCellHeight = 44;
     CGSize size = [[text uppercaseString] sizeWithFont:font constrainedToSize:CGSizeMake(kDefaultTextLabelWidth, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
     return MAX(size.height + 10, kMinCellHeight);
 }
+
+#pragma mark -
+#pragma mark Actions
+- (IBAction)addClassButtonDidPressed:(id)sender
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(addClassToCollegeWithId:)]) {
+        [self.delegate addClassToCollegeWithId:self.collegeId];
+    }
+}
+
 
 @end

@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCTransaction.h"
+#import "CCTransactionWithObject.h"
 
-@interface CCClassAddedTransaction : NSObject <CCTransaction>
+@interface CCClassAddedTransaction : NSObject <CCTransactionWithObject>
 
 @property (nonatomic, strong) UINavigationController *navigation;
 

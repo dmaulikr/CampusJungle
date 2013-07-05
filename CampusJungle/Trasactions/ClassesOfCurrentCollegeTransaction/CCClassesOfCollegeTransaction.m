@@ -6,28 +6,30 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCClassesOfcurrentCollegeTransaction.h"
-#import "CCCollegeClassesController.h"
+#import "CCClassesOfCollegeTransaction.h"
+#import "CCClassesOfCollegeController.h"
 #import "CCAddClassTransaction.h"
 #import "CCClassAddedTransaction.h"
 
-@implementation CCClassesOfcurrentCollegeTransaction
+@implementation CCClassesOfCollegeTransaction
 
 - (void)performWithObject:(id)object
 {
-    NSParameterAssert(self.navigation);
+    NSParameterAssert(self.menuController);
     NSParameterAssert(object);
 
-    CCCollegeClassesController *classesController = [[CCCollegeClassesController alloc] initWithCollegeID:object];
+    CCClassesOfCollegeController *classesController = [[CCClassesOfCollegeController alloc] initWithCollegeID:object];
+    UINavigationController *centralNavigation = [[UINavigationController alloc] initWithRootViewController:classesController];
+    
     CCAddClassTransaction *addClassTransaction = [CCAddClassTransaction new];
-    addClassTransaction.navigation = self.navigation;
+    addClassTransaction.navigation = centralNavigation;
     classesController.addNewClassTransaction = addClassTransaction;
     
     CCClassAddedTransaction *classAddedTransaction = [CCClassAddedTransaction new];
-    classAddedTransaction.navigation = self.navigation;
+    classAddedTransaction.navigation = centralNavigation;
     classesController.classAddedTransaction = classAddedTransaction;
     
-    [self.navigation pushViewController:classesController animated:YES];
+    [self.menuController setCenterPanel:centralNavigation];
 }
 
 @end

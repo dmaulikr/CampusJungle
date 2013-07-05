@@ -12,6 +12,6 @@
 
 @interface CCClassController : CCViewController
 
-- (id)initWitchClass:(CCClass*)class;
+- (id)initWithClass:(CCClass *)classObject;
 
 @end

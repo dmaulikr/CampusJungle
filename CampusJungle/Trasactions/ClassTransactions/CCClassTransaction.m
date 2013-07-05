@@ -13,11 +13,13 @@
 
 - (void)performWithObject:(id)object
 {
-    NSParameterAssert(self.navigation);
+    NSParameterAssert(self.menuController);
     NSParameterAssert(object);
     
-    CCClassController *classController = [[CCClassController alloc] initWitchClass:object];
-    [self.navigation pushViewController:classController animated:YES];
+    CCClassController *classController = [[CCClassController alloc] initWithClass:object];
+    
+    UINavigationController *centralNavigation = [[UINavigationController alloc] initWithRootViewController:classController];
+    [self.menuController setCenterPanel:centralNavigation];
 }
 
 @end

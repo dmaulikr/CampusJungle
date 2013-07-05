@@ -31,12 +31,28 @@
     [super viewDidLoad];
     [self setupButtons];
     [self setupLabels];
+    [self addObservers];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self loadUserClasses];
+}
+
+- (void)dealloc
+{
+    [self removeObservers];
+}
+
+- (void)addObservers
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadUserClasses) name:CCNotificationsNames.reloadSideMenu object:nil];
+}
+
+- (void)removeObservers
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:CCNotificationsNames.reloadSideMenu object:nil];
 }
 
 - (void)setupTableViewWithEducationsArray:(NSArray *)educationsArray
@@ -91,12 +107,12 @@
 
 - (void)showDetailsOfClass:(CCClass *)classObject
 {
-    
+    [self.classTransaction performWithObject:classObject];
 }
 
-- (void)addClassToCollegeWithId:(NSInteger)collegeId
+- (void)addClassToCollegeWithId:(NSString *)collegeId
 {
-    [self.classesTransaction perform];
+    [self.classesOfCollegeTransaction performWithObject:collegeId];
 }
 
 @end

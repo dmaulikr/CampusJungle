@@ -14,7 +14,7 @@
 #import "CCAlertDefines.h"
 #import "CCAPIProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
-#import "CCNavigationBarViewHellper.h"
+#import "CCNavigationBarViewHelper.h"
 #import "GIInputAlert.h"
 
 @interface CCCitySelectionController ()<UIAlertViewDelegate>
@@ -34,7 +34,7 @@
     citiesProvider.stateID = self.stateID;
 
     [self configTableWithProvider:citiesProvider cellClass:[CCCityCell class]];
-    self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHellper plusButtonWithTarget:self action:@selector(addCity)];
+    self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHelper plusButtonWithTarget:self action:@selector(addCity)];
 }
 
 - (void)didSelectedCellWithObject:(id)cellObject

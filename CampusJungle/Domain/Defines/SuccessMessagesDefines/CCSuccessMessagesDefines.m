@@ -1,0 +1,13 @@
+//
+//  CCSuccessMessagesDefines.m
+//  CampusJungle
+//
+//  Created by Yury Grinenko on 05.07.13.
+//  Copyright (c) 2013 111minutes. All rights reserved.
+//
+
+#import "CCSuccessMessagesDefines.h"
+
+const struct CCSuccessMessages CCSuccessMessages = {
+    .joinClass = @"You've successfully joined class",
+};

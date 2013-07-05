@@ -146,3 +146,7 @@ const struct CCMarketFilterConstants CCMarketFilterConstants = {
     .orderTop = @"sales",
     .orderLatest = @"date",
 };
+
+const struct CCProgressHudsConstants CCProgressHudsConstants = {
+    .loaderDuration = 5,
+};

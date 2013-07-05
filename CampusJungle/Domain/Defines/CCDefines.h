@@ -147,3 +147,7 @@ extern const struct CCMarketFilterConstants {
     __unsafe_unretained NSString *orderTop;
     __unsafe_unretained NSString *orderLatest;
 } CCMarketFilterConstants;
+
+extern const struct CCProgressHudsConstants {
+    __unsafe_unretained NSInteger loaderDuration;
+} CCProgressHudsConstants;

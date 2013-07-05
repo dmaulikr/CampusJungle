@@ -12,7 +12,7 @@
 #import "CCCollegeSelectionCell.h"
 #import "CCAPIProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
-#import "CCNavigationBarViewHellper.h"
+#import "CCNavigationBarViewHelper.h"
 
 @interface CCCollegeSelectionController ()
 
@@ -30,7 +30,7 @@
     
     [self configTableWithProvider:collegesProvider cellClass:[CCCollegeSelectionCell class]];
 
-    self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHellper plusButtonWithTarget:self action:@selector(addCollege)];
+    self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHelper plusButtonWithTarget:self action:@selector(addCollege)];
 }
 
 - (void)viewWillAppear:(BOOL)animated

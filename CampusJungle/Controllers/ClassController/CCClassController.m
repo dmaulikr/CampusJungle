@@ -10,21 +10,23 @@
 #import "CCClass.h"
 
 @interface CCClassController ()
+
+@property (nonatomic, weak) IBOutlet UILabel *classNumber;
+@property (nonatomic, weak) IBOutlet UILabel *professor;
+@property (nonatomic, weak) IBOutlet UIImageView *avatarImage;
+
 @property (nonatomic, strong) CCClass *currentClass;
-@property (weak, nonatomic) IBOutlet UILabel *classNumber;
-@property (weak, nonatomic) IBOutlet UILabel *professor;
-@property (weak, nonatomic) IBOutlet UIImageView *avatarImage;
 
 @end
 
 @implementation CCClassController
 
-- (id)initWitchClass:(CCClass*)class
+- (id)initWithClass:(CCClass *)classObject
 {
     self = [super init];
     if (self) {
-        self.currentClass = class;
-        [self.navigationItem setTitle:class.subject];
+        self.currentClass = classObject;
+        [self.navigationItem setTitle:classObject.subject];
     }
     return self;
 }
@@ -33,10 +35,7 @@
 {
     [super viewDidLoad];
     [self loadInfo];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Edit"
-                                                                              style:UIBarButtonItemStyleBordered
-                                                                             target:self
-                                                                             action:@selector(editClass)];
+    [self setRightNavigationItemWithTitle:@"Edit" selector:@selector(editClass)];
 }
 
 - (void)loadInfo
@@ -50,4 +49,5 @@
 {
     
 }
+
 @end

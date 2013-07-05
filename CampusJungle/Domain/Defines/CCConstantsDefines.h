@@ -9,3 +9,5 @@
 #import "CCDefines.h"
 #import "CCAlertDefines.h"
 #import "CCMenuDefines.h"
+#import "CCNotificationsDefines.h"
+#import "CCSuccessMessagesDefines.h"

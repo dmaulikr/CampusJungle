@@ -362,6 +362,7 @@
     RKObjectMapping *classesInCollegesResponseMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
     [classesInCollegesResponseMapping addAttributeMappingsFromDictionary:@{
      @"college_name" : @"collegeName",
+     @"college_id" : @"collegeId"
      }];
     
     RKObjectMapping *classesMapping = [RKObjectMapping mappingForClass:[CCClass class]];
