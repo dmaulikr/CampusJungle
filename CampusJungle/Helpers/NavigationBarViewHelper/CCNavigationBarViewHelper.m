@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCNavigationBarViewHellper.h"
+#import "CCNavigationBarViewHelper.h"
 
-@implementation CCNavigationBarViewHellper
+@implementation CCNavigationBarViewHelper
 
 +(UIBarButtonItem *)plusButtonWithTarget:(id)target action:(SEL)action
 {

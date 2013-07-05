@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CCNavigationBarViewHellper : NSObject
+@interface CCNavigationBarViewHelper : NSObject
 
 + (UIBarButtonItem *)plusButtonWithTarget:(id)target action:(SEL)action;
 

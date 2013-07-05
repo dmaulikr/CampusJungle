@@ -16,6 +16,8 @@
     #import <Foundation/Foundation.h>
     #import <AppleGuice/AppleGuice.h>
     #import <MBProgressHUD/MBProgressHUD.h>
+    #import <SVProgressHUD-Fork/SVProgressHUD.h>
+
     #import "CCConstantsDefines.h"
 
 #endif

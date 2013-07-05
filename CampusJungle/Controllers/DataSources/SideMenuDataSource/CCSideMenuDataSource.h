@@ -13,7 +13,7 @@
 - (void)showNewsFeed;
 - (void)showMarketPlace;
 - (void)showDetailsOfClass:(CCClass *)classObject;
-- (void)addClassToCollegeWithId:(NSInteger)collegeId;
+- (void)addClassToCollegeWithId:(NSString *)collegeId;
 
 @end
 

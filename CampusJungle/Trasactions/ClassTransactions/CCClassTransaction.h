@@ -11,6 +11,6 @@
 
 @interface CCClassTransaction : NSObject<CCTransactionWithObject>
 
-@property (nonatomic, strong) UINavigationController *navigation;
+@property (nonatomic, strong) JASidePanelController *menuController;
 
 @end

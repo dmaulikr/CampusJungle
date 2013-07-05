@@ -15,7 +15,7 @@
 #import "CCSideBarController.h"
 #import "CCClassTransaction.h"
 #import "CCClassController.h"
-#import "CCAllClassesTransaction.h"
+#import "CCClassesOfCollegeTransaction.h"
 #import "CCDropboxAPIProviderProtocol.h"
 #import "CCMarketTranasction.h"
 #import "CCInboxController.h"
@@ -46,7 +46,6 @@
     CCClassController *centralPanel = [CCClassController new];
     rootController.centerPanel = [[UINavigationController alloc] initWithRootViewController:centralPanel];
     
-    
     self.window.rootViewController = rootController;
     
     [self.ioc_userSession setCurrentUser: [self.ioc_userSession loadSavedUser]];
@@ -55,16 +54,16 @@
     userProfileTransaction.menuController = rootController;
     leftController.userProfileTransaction = userProfileTransaction;
     
-    
-    CCAllClassesTransaction *allClassesTransaction = [CCAllClassesTransaction new];
-    allClassesTransaction.menuController = rootController;
-    leftController.classesTransaction = allClassesTransaction;
+    CCClassesOfCollegeTransaction *classesOfCollegeTransaction = [CCClassesOfCollegeTransaction new];
+    classesOfCollegeTransaction.menuController = rootController;
+    leftController.classesOfCollegeTransaction = classesOfCollegeTransaction;
     
     CCInboxTransaction *inboxTransaction = [CCInboxTransaction new];
     inboxTransaction.menuController = rootController;
     leftController.inboxTransaction = inboxTransaction;
 
     CCClassTransaction *classTransaction = [CCClassTransaction new];
+    classTransaction.menuController = rootController;
     leftController.classTransaction = classTransaction;
     
     CCMarketTranasction *marketTransaction = [CCMarketTranasction new];

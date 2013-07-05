@@ -8,7 +8,7 @@
 
 #import "CCSelectCollegeClassesTransaction.h"
 #import "CCCollegesListController.h"
-#import "CCClassesOfcurrentCollegeTransaction.h"
+#import "CCClassesOfCollegeTransaction.h"
 
 @implementation CCSelectCollegeClassesTransaction
 
@@ -18,8 +18,8 @@
     NSParameterAssert(object);
     
     CCCollegesListController *listOfColleges = [[CCCollegesListController alloc] initWithArray:object];
-    CCClassesOfcurrentCollegeTransaction *classesOfCollege = [CCClassesOfcurrentCollegeTransaction new];
-    classesOfCollege.navigation = self.navigation;
+    CCClassesOfCollegeTransaction *classesOfCollege = [CCClassesOfCollegeTransaction new];
+//    classesOfCollege.navigation = self.navigation;
     listOfColleges.classesOfcurrentCollegeTransaction = classesOfCollege;
     
     [self.navigation pushViewController:listOfColleges animated:YES];    

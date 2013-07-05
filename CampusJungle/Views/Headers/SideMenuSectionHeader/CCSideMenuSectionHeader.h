@@ -12,7 +12,7 @@
 
 @interface CCSideMenuSectionHeader : UIView
 
-- (id)initWithText:(NSString *)text delegate:(id<CCSideMenuDelegate>)delegate;
+- (id)initWithText:(NSString *)text collegeId:(NSString *)collegeId delegate:(id<CCSideMenuDelegate>)delegate;
 + (CGFloat)heightForHeaderWithText:(NSString *)text;
 
 @end

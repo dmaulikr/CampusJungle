@@ -8,8 +8,6 @@
 
 #import "CCMenuDefines.h"
 
-@implementation CCMenuDefines
-
 const struct CCSideMenuTitles CCSideMenuTitles = {
     .profile = @"Profile",
     .classesScreen = @"Classes",
@@ -17,5 +15,3 @@ const struct CCSideMenuTitles CCSideMenuTitles = {
     .marketPlace = @"Market Place",
     .newsFeed = @"News Feed",
 };
-
-@end

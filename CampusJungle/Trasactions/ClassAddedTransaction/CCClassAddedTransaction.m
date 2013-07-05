@@ -7,13 +7,20 @@
 //
 
 #import "CCClassAddedTransaction.h"
+#import "CCClassController.h"
 
 @implementation CCClassAddedTransaction
 
-- (void)perform
+- (void)performWithObject:(id)object
 {
     NSParameterAssert(self.navigation);
-    [self.navigation popToRootViewControllerAnimated:YES];
+    
+    CCClassController *classController = [[CCClassController alloc] initWithClass:object];
+    [self.navigation pushViewController:classController animated:YES];
+    
+    [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.joinClass duration:CCProgressHudsConstants.loaderDuration];
+    UIViewController *viewController = [[self.navigation viewControllers] lastObject];
+    [self.navigation setViewControllers:@[viewController]];
 }
 
 @end

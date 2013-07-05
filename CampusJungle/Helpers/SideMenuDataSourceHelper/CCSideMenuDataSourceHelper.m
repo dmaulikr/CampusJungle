@@ -27,7 +27,8 @@
 {
     NSMutableArray *sectionsArray = [NSMutableArray array];
     for (NSDictionary *sectionDataDictionary in educationsArray) {
-        NSDictionary *sectionDictionary = @{@"name" : sectionDataDictionary[@"collegeName"],
+        NSDictionary *sectionDictionary = @{@"collegeId" : sectionDataDictionary[@"collegeId"],
+                                            @"name" : sectionDataDictionary[@"collegeName"],
                                             @"items" : sectionDataDictionary[@"classes"]};
         [sectionsArray addObject:sectionDictionary];
     }

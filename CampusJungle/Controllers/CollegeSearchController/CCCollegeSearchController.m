@@ -9,7 +9,7 @@
 #import "CCCollegeSearchController.h"
 #import "CCCollegeSearchDataProvider.h"
 #import "CCCollegeSelectionCell.h"
-#import "CCNavigationBarViewHellper.h"
+#import "CCNavigationBarViewHelper.h"
 
 @interface CCCollegeSearchController ()
 
@@ -28,7 +28,7 @@
     [super viewDidLoad];
     [self configTableWithProvider:[CCCollegeSearchDataProvider new] cellClass:[CCCollegeSelectionCell class]];
     
-    self.navigationItem.rightBarButtonItem  = [CCNavigationBarViewHellper plusButtonWithTarget:self action:@selector(addCollege)];
+    self.navigationItem.rightBarButtonItem  = [CCNavigationBarViewHelper plusButtonWithTarget:self action:@selector(addCollege)];
 }
 
 - (void)addCollege

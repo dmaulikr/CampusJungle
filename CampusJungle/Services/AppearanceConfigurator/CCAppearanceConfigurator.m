@@ -12,11 +12,12 @@
 
 + (void)configurate
 {
-    [CCAppearanceConfigurator configurateTextFields];
-    [CCAppearanceConfigurator configurateNavigationBar];
-    [CCAppearanceConfigurator configurateBarButtons];
-    [CCAppearanceConfigurator configurateButton];
-    [CCAppearanceConfigurator configurateSegmentController];
+    [self configurateTextFields];
+    [self configurateNavigationBar];
+    [self configurateBarButtons];
+    [self configurateButton];
+    [self configurateSegmentController];
+    [self configurateProgressHuds];
 }
 
 + (void)configurateTextFields
@@ -79,6 +80,11 @@
                                   UITextAttributeTextColor : [UIColor colorWithRed:240./255 green:218./255 blue:161./255 alpha:1],
                             UITextAttributeTextShadowColor : [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.0],
      } forState:UIControlStateNormal];
+}
+
++ (void)configurateProgressHuds
+{
+    [SVProgressHUD setShouldHideByTap:YES];
 }
 
 @end

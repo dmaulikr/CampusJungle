@@ -6,10 +6,6 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-@interface CCMenuDefines : NSObject
-
 extern const struct CCSideMenuTitles {
     __unsafe_unretained NSString *profile;
     __unsafe_unretained NSString *classesScreen;
@@ -17,5 +13,3 @@ extern const struct CCSideMenuTitles {
     __unsafe_unretained NSString *marketPlace;
     __unsafe_unretained NSString *newsFeed;
 } CCSideMenuTitles;
-
-@end

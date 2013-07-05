@@ -66,6 +66,11 @@
     return [[self dataArrayForSectionAtIndex:indexPath.section] objectAtIndex:indexPath.row];
 }
 
+- (NSString *)collegeIdForSectionAtIndex:(NSInteger)sectionIndex
+{
+    return [[[self.sectionsArray objectAtIndex:sectionIndex] valueForKey:@"collegeId"] stringValue];;
+}
+
 - (Class)cellClassAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section > 0) {
@@ -124,7 +129,7 @@
         return nil;
     }
     NSString *sectionHeaderText = [self nameForSectionAtIndex:section];
-    return [[CCSideMenuSectionHeader alloc] initWithText:sectionHeaderText delegate:self.delegate];
+    return [[CCSideMenuSectionHeader alloc] initWithText:sectionHeaderText collegeId:[self collegeIdForSectionAtIndex:section] delegate:self.delegate];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -142,6 +147,7 @@
     else {
         [self.delegate showDetailsOfClass:objectForCell];
     }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

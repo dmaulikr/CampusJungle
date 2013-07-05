@@ -1,35 +1,35 @@
 //
-//  CCCollegeClassesController.m
+//  CCClassesOfCollegeController.m
 //  CampusJungle
 //
 //  Created by Yulia Petryshena on 6/5/13.
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCCollegeClassesController.h"
+#import "CCClassesOfCollegeController.h"
 #import "CCClassesApiProviderProtocol.h"
 #import "CCClassesDataProvider.h"
 #import "CCClassCell.h"
 #import "CCStandardErrorHandler.h"
-#import "CCNavigationBarViewHellper.h"
+#import "CCNavigationBarViewHelper.h"
 #import "CCClass.h"
 
-@interface CCCollegeClassesController ()
+@interface CCClassesOfCollegeController ()
 
 @property (nonatomic, strong) NSString *collegeID;
 @property (nonatomic, strong) CCClassesDataProvider *dataProvider;
-@property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_apiClassesProvider;
+@property (nonatomic, strong) id<CCClassesApiProviderProtocol> ioc_apiClassesProvider;
 
 @end
 
-@implementation CCCollegeClassesController
+@implementation CCClassesOfCollegeController
 
-- (id)initWithCollegeID:(NSString*)collegeID
+- (id)initWithCollegeID:(NSString *)collegeID
 {
     self = [super init];
     if (self) {
         self.collegeID = collegeID;
-        [self.navigationItem setTitle:@"Join Class"];
+        [self setTitle:@"Join Class"];
     }
     return self;
 }
@@ -49,7 +49,7 @@
 
 - (void)addButton
 {
-    self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHellper plusButtonWithTarget:self action:@selector(addNewClass)];
+    self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHelper plusButtonWithTarget:self action:@selector(addNewClass)];
 }
 
 - (void)addNewClass
@@ -60,12 +60,13 @@
 
 - (void)didSelectedCellWithObject:(id)cellObject
 {
+    __weak CCClassesOfCollegeController *weakSelf = self;
     [self.ioc_apiClassesProvider joinClass:[(CCClass *)cellObject classID] SuccessHandler:^(id response) {
-        [self.classAddedTransaction perform];
+        [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadSideMenu object:nil];
+        [weakSelf.classAddedTransaction performWithObject:cellObject];
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
     }];
-    
 }
 
 @end
