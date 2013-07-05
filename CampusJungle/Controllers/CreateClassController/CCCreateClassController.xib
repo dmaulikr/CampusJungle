@@ -39,12 +39,12 @@
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="IBUIScrollView" id="95214794">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">268</int>
+						<int key="NSvFlags">292</int>
 						<array class="NSMutableArray" key="NSSubviews">
 							<object class="IBUITextField" id="122568301">
 								<reference key="NSNextResponder" ref="95214794"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{44, 84}, {256, 30}}</string>
+								<string key="NSFrame">{{32, 80}, {256, 30}}</string>
 								<reference key="NSSuperview" ref="95214794"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="313823179"/>
@@ -58,24 +58,24 @@
 								<int key="IBUIBorderStyle">3</int>
 								<string key="IBUIPlaceholder">Subject</string>
 								<object class="NSColor" key="IBUITextColor">
-									<int key="NSColorSpace">3</int>
-									<bytes key="NSWhite">MAA</bytes>
-									<object class="NSColorSpace" key="NSCustomColorSpace" id="1049170157">
-										<int key="NSID">2</int>
-									</object>
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MC40MTE4MjU4NTY5IDAuMjAzOTEyNTUwNCAwAA</bytes>
 								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 								<float key="IBUIMinimumFontSize">17</float>
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
+									<int key="IBUIAutocapitalizationType">1</int>
 									<int key="IBUIReturnKeyType">4</int>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<object class="IBUIFontDescription" key="IBUIFontDescription" id="625931044">
-									<int key="type">1</int>
+								<object class="IBUIFontDescription" key="IBUIFontDescription" id="18236986">
+									<string key="name">HelveticaNeue-Medium</string>
+									<string key="family">Helvetica Neue</string>
+									<int key="traits">0</int>
 									<double key="pointSize">14</double>
 								</object>
-								<object class="NSFont" key="IBUIFont" id="781311594">
-									<string key="NSName">Helvetica</string>
+								<object class="NSFont" key="IBUIFont" id="564328931">
+									<string key="NSName">HelveticaNeue-Medium</string>
 									<double key="NSSize">14</double>
 									<int key="NSfFlags">16</int>
 								</object>
@@ -83,7 +83,7 @@
 							<object class="IBUITextField" id="588323901">
 								<reference key="NSNextResponder" ref="95214794"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{44, 169}, {256, 30}}</string>
+								<string key="NSFrame">{{32, 168}, {256, 30}}</string>
 								<reference key="NSSuperview" ref="95214794"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="928054303"/>
@@ -96,24 +96,24 @@
 								<string key="IBUIText"/>
 								<int key="IBUIBorderStyle">3</int>
 								<string key="IBUIPlaceholder">Semester</string>
-								<object class="NSColor" key="IBUITextColor">
-									<int key="NSColorSpace">3</int>
-									<bytes key="NSWhite">MAA</bytes>
-									<reference key="NSCustomColorSpace" ref="1049170157"/>
+								<object class="NSColor" key="IBUITextColor" id="273168404">
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MC40MTE4MjU4NTY5IDAuMjAzOTEyNTUwNCAwAA</bytes>
 								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 								<float key="IBUIMinimumFontSize">17</float>
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
+									<int key="IBUIAutocapitalizationType">1</int>
 									<int key="IBUIReturnKeyType">4</int>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<reference key="IBUIFontDescription" ref="625931044"/>
-								<reference key="IBUIFont" ref="781311594"/>
+								<reference key="IBUIFontDescription" ref="18236986"/>
+								<reference key="IBUIFont" ref="564328931"/>
 							</object>
 							<object class="IBUITextField" id="313823179">
 								<reference key="NSNextResponder" ref="95214794"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{44, 122}, {256, 30}}</string>
+								<string key="NSFrame">{{32, 124}, {256, 30}}</string>
 								<reference key="NSSuperview" ref="95214794"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="588323901"/>
@@ -126,24 +126,21 @@
 								<string key="IBUIText"/>
 								<int key="IBUIBorderStyle">3</int>
 								<string key="IBUIPlaceholder">Professor</string>
-								<object class="NSColor" key="IBUITextColor">
-									<int key="NSColorSpace">3</int>
-									<bytes key="NSWhite">MAA</bytes>
-									<reference key="NSCustomColorSpace" ref="1049170157"/>
-								</object>
+								<reference key="IBUITextColor" ref="273168404"/>
 								<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 								<float key="IBUIMinimumFontSize">17</float>
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
+									<int key="IBUIAutocapitalizationType">1</int>
 									<int key="IBUIReturnKeyType">4</int>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<reference key="IBUIFontDescription" ref="625931044"/>
-								<reference key="IBUIFont" ref="781311594"/>
+								<reference key="IBUIFontDescription" ref="18236986"/>
+								<reference key="IBUIFont" ref="564328931"/>
 							</object>
 							<object class="IBUITextField" id="689611480">
 								<reference key="NSNextResponder" ref="95214794"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{44, 46}, {256, 30}}</string>
+								<string key="NSFrame">{{32, 36}, {256, 30}}</string>
 								<reference key="NSSuperview" ref="95214794"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="122568301"/>
@@ -154,25 +151,22 @@
 								<int key="IBUIContentVerticalAlignment">0</int>
 								<string key="IBUIText"/>
 								<int key="IBUIBorderStyle">3</int>
-								<string key="IBUIPlaceholder">Class ID</string>
-								<object class="NSColor" key="IBUITextColor">
-									<int key="NSColorSpace">3</int>
-									<bytes key="NSWhite">MAA</bytes>
-									<reference key="NSCustomColorSpace" ref="1049170157"/>
-								</object>
+								<string key="IBUIPlaceholder">Class ID (optional)</string>
+								<reference key="IBUITextColor" ref="273168404"/>
 								<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 								<float key="IBUIMinimumFontSize">17</float>
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
+									<int key="IBUIKeyboardType">4</int>
 									<int key="IBUIReturnKeyType">4</int>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<reference key="IBUIFontDescription" ref="625931044"/>
-								<reference key="IBUIFont" ref="781311594"/>
+								<reference key="IBUIFontDescription" ref="18236986"/>
+								<reference key="IBUIFont" ref="564328931"/>
 							</object>
 							<object class="IBUIButton" id="259844521">
 								<reference key="NSNextResponder" ref="95214794"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{111, 296}, {123, 44}}</string>
+								<string key="NSFrame">{{99, 296}, {123, 44}}</string>
 								<reference key="NSSuperview" ref="95214794"/>
 								<reference key="NSWindow"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -207,9 +201,10 @@
 							<object class="IBUITextField" id="928054303">
 								<reference key="NSNextResponder" ref="95214794"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{44, 213}, {256, 23}}</string>
+								<string key="NSFrame">{{32, 213}, {256, 30}}</string>
 								<reference key="NSSuperview" ref="95214794"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="259844521"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -220,21 +215,18 @@
 								<string key="IBUIText"/>
 								<int key="IBUIBorderStyle">3</int>
 								<string key="IBUIPlaceholder">Timetable</string>
-								<object class="NSColor" key="IBUITextColor">
-									<int key="NSColorSpace">3</int>
-									<bytes key="NSWhite">MAA</bytes>
-									<reference key="NSCustomColorSpace" ref="1049170157"/>
-								</object>
+								<reference key="IBUITextColor" ref="273168404"/>
 								<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 								<float key="IBUIMinimumFontSize">17</float>
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
+									<int key="IBUIReturnKeyType">9</int>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<reference key="IBUIFontDescription" ref="625931044"/>
-								<reference key="IBUIFont" ref="781311594"/>
+								<reference key="IBUIFontDescription" ref="18236986"/>
+								<reference key="IBUIFont" ref="564328931"/>
 							</object>
 						</array>
-						<string key="NSFrameSize">{320, 548}</string>
+						<string key="NSFrameSize">{320, 359}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="689611480"/>
@@ -251,7 +243,9 @@
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
-					<reference key="NSCustomColorSpace" ref="1049170157"/>
+					<object class="NSColorSpace" key="NSCustomColorSpace">
+						<int key="NSID">2</int>
+					</object>
 				</object>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<object class="IBUIScreenMetrics" key="IBUISimulatedDestinationMetrics">
@@ -294,43 +288,75 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">subjectField</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="122568301"/>
-					</object>
-					<int key="connectionID">222</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">semesterField</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="588323901"/>
-					</object>
-					<int key="connectionID">223</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">professorField</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="313823179"/>
-					</object>
-					<int key="connectionID">224</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">classIDFiled</string>
+						<string key="label">classIdTextField</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="689611480"/>
 					</object>
-					<int key="connectionID">225</int>
+					<int key="connectionID">270</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">timeTable</string>
+						<string key="label">professorTextField</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="313823179"/>
+					</object>
+					<int key="connectionID">271</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">semesterTextField</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="588323901"/>
+					</object>
+					<int key="connectionID">272</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">subjectTextField</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="122568301"/>
+					</object>
+					<int key="connectionID">273</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">timeTableTextField</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="928054303"/>
 					</object>
-					<int key="connectionID">244</int>
+					<int key="connectionID">274</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="122568301"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">276</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="588323901"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">278</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="313823179"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">277</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="689611480"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">275</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -456,63 +482,55 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">269</int>
+			<int key="maxID">278</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">CCCreateClassController</string>
 					<string key="superclassName">CCViewController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="createClass:">id</string>
-						<string key="selectTimeTable:">UIControl</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="createClass:">
-							<string key="name">createClass:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="selectTimeTable:">
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">selectTimeTable:</string>
+						<string key="NS.object.0">UIControl</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">selectTimeTable:</string>
+						<object class="IBActionInfo" key="NS.object.0">
 							<string key="name">selectTimeTable:</string>
 							<string key="candidateClassName">UIControl</string>
 						</object>
-					</dictionary>
+					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="addTimeTable">UIButton</string>
-						<string key="classIDFiled">UITextField</string>
-						<string key="professorField">UITextField</string>
+						<string key="classIdTextField">UITextField</string>
+						<string key="professorTextField">UITextField</string>
 						<string key="scrollView">TPKeyboardAvoidingScrollView</string>
-						<string key="semesterField">UITextField</string>
-						<string key="subjectField">UITextField</string>
-						<string key="timeTable">UITextField</string>
+						<string key="semesterTextField">UITextField</string>
+						<string key="subjectTextField">UITextField</string>
+						<string key="timeTableTextField">UITextField</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="addTimeTable">
-							<string key="name">addTimeTable</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="classIDFiled">
-							<string key="name">classIDFiled</string>
+						<object class="IBToOneOutletInfo" key="classIdTextField">
+							<string key="name">classIdTextField</string>
 							<string key="candidateClassName">UITextField</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="professorField">
-							<string key="name">professorField</string>
+						<object class="IBToOneOutletInfo" key="professorTextField">
+							<string key="name">professorTextField</string>
 							<string key="candidateClassName">UITextField</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="scrollView">
 							<string key="name">scrollView</string>
 							<string key="candidateClassName">TPKeyboardAvoidingScrollView</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="semesterField">
-							<string key="name">semesterField</string>
+						<object class="IBToOneOutletInfo" key="semesterTextField">
+							<string key="name">semesterTextField</string>
 							<string key="candidateClassName">UITextField</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="subjectField">
-							<string key="name">subjectField</string>
+						<object class="IBToOneOutletInfo" key="subjectTextField">
+							<string key="name">subjectTextField</string>
 							<string key="candidateClassName">UITextField</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="timeTable">
-							<string key="name">timeTable</string>
+						<object class="IBToOneOutletInfo" key="timeTableTextField">
+							<string key="name">timeTableTextField</string>
 							<string key="candidateClassName">UITextField</string>
 						</object>
 					</dictionary>

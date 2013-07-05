@@ -43,7 +43,7 @@
 	rootController.leftPanel = leftController;
     rootController.panningLimitedToTopViewController = NO;
     
-    CCClassController *centralPanel = [CCClassController new];
+    CCInboxController *centralPanel = [CCInboxController new];
     rootController.centerPanel = [[UINavigationController alloc] initWithRootViewController:centralPanel];
     
     self.window.rootViewController = rootController;
