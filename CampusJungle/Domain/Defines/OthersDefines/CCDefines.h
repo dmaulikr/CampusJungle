@@ -150,5 +150,13 @@ extern const struct CCMarketFilterConstants {
 } CCMarketFilterConstants;
 
 extern const struct CCProgressHudsConstants {
-    __unsafe_unretained NSInteger loaderDuration;
+    NSInteger loaderDuration;
 } CCProgressHudsConstants;
+
+enum  CCClassTabbarButtonsIdentifiers {
+    CCClassTabbarButtonsIdentifierClassmate = 1,
+    CCClassTabbarButtonsIdentifierGroup = 2,
+    CCClassTabbarButtonsIdentifierLocations = 3,
+    CCClassTabbarButtonsIdentifierForums = 4,
+};
+

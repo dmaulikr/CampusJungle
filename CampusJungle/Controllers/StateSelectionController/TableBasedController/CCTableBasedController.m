@@ -12,7 +12,6 @@
 @interface CCTableBasedController ()<UISearchBarDelegate>
 
 @property (nonatomic, strong) NSDate *lastSearchPressTime;
-@property (nonatomic, weak) IBOutlet UISearchBar *searchBar;
 
 @end
 
@@ -47,7 +46,9 @@
     [self.mainTable registerClass:cellCass forCellReuseIdentifier:CCTableDefines.tableCellIdentifier];
     CCCommonDataSource *dataSource;
     self.mainTable.backgroundColor = [UIColor clearColor];
-    if(self.dataSourceClass){
+    if(self.dataSource){
+        dataSource = self.dataSource;
+    } else if (self.dataSourceClass){
         dataSource = [self.dataSourceClass new];
     } else {
         dataSource = [CCCommonDataSource new];

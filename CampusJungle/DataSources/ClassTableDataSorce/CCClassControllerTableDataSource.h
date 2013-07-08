@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCCommonDataSource.h"
 
-@interface CCClassTableDataSource : NSObject
+@interface CCClassControllerTableDataSource : CCCommonDataSource
+
+@property (nonatomic, strong) UIView *viewForSectionHeader;
 
 @end

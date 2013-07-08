@@ -92,7 +92,7 @@
 		70A29D2A178778AB001BC8DD /* CCUploadImagesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29CDB178778AB001BC8DD /* CCUploadImagesController.xib */; };
 		70A29D2B178778AB001BC8DD /* CCWelcomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29CDE178778AB001BC8DD /* CCWelcomeController.m */; };
 		70A29D2C178778AB001BC8DD /* CCWelcomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29CDF178778AB001BC8DD /* CCWelcomeController.xib */; };
-		70A29D4417877B6B001BC8DD /* CCClassTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29D3017877B6B001BC8DD /* CCClassTableDataSource.m */; };
+		70A29D4417877B6B001BC8DD /* CCClassControllerTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29D3017877B6B001BC8DD /* CCClassControllerTableDataSource.m */; };
 		70A29D4517877B6B001BC8DD /* CCCommonCollectionDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29D3317877B6B001BC8DD /* CCCommonCollectionDataSource.m */; };
 		70A29D4617877B6B001BC8DD /* CCCommonDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29D3717877B6B001BC8DD /* CCCommonDataSource.m */; };
 		70A29D4717877B6B001BC8DD /* CCImageSortingDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29D3A17877B6B001BC8DD /* CCImageSortingDataSource.m */; };
@@ -290,6 +290,10 @@
 		D394968E1785C36800C39A7E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D394968D1785C36800C39A7E /* Default.png */; };
 		D39496901785C36C00C39A7E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D394968F1785C36C00C39A7E /* Default-568h@2x.png */; };
 		D39496921785C37300C39A7E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D39496911785C37300C39A7E /* Default@2x.png */; };
+		D39496CD178ABB0000C39A7E /* CCClassTabbarControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496CB178ABB0000C39A7E /* CCClassTabbarControllerViewController.m */; };
+		D39496CE178ABB0000C39A7E /* CCClassTabbarControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39496CC178ABB0000C39A7E /* CCClassTabbarControllerViewController.xib */; };
+		D39496D5178AC48400C39A7E /* CCClassTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496D3178AC48400C39A7E /* CCClassTableController.m */; };
+		D39496D6178AC48400C39A7E /* CCClassTableController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39496D4178AC48400C39A7E /* CCClassTableController.xib */; };
 		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
 		D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39F1C161753C0E8008E08A2 /* Accounts.framework */; };
 		D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A2C3241754C95700989831 /* MessageUI.framework */; };
@@ -540,8 +544,8 @@
 		70A29CDD178778AB001BC8DD /* CCWelcomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWelcomeController.h; sourceTree = "<group>"; };
 		70A29CDE178778AB001BC8DD /* CCWelcomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWelcomeController.m; sourceTree = "<group>"; };
 		70A29CDF178778AB001BC8DD /* CCWelcomeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCWelcomeController.xib; sourceTree = "<group>"; };
-		70A29D2F17877B6B001BC8DD /* CCClassTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassTableDataSource.h; sourceTree = "<group>"; };
-		70A29D3017877B6B001BC8DD /* CCClassTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassTableDataSource.m; sourceTree = "<group>"; };
+		70A29D2F17877B6B001BC8DD /* CCClassControllerTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassControllerTableDataSource.h; sourceTree = "<group>"; };
+		70A29D3017877B6B001BC8DD /* CCClassControllerTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassControllerTableDataSource.m; sourceTree = "<group>"; };
 		70A29D3217877B6B001BC8DD /* CCCommonCollectionDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCommonCollectionDataSource.h; sourceTree = "<group>"; };
 		70A29D3317877B6B001BC8DD /* CCCommonCollectionDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCommonCollectionDataSource.m; sourceTree = "<group>"; };
 		70A29D3517877B6B001BC8DD /* CCCellSelectionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCellSelectionProtocol.h; sourceTree = "<group>"; };
@@ -898,6 +902,13 @@
 		D394968D1785C36800C39A7E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D394968F1785C36C00C39A7E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D39496911785C37300C39A7E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		D39496CA178ABB0000C39A7E /* CCClassTabbarControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassTabbarControllerViewController.h; sourceTree = "<group>"; };
+		D39496CB178ABB0000C39A7E /* CCClassTabbarControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassTabbarControllerViewController.m; sourceTree = "<group>"; };
+		D39496CC178ABB0000C39A7E /* CCClassTabbarControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCClassTabbarControllerViewController.xib; sourceTree = "<group>"; };
+		D39496CF178ABB2500C39A7E /* CCClassTabbarControllerDelegateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCClassTabbarControllerDelegateProtocol.h; sourceTree = "<group>"; };
+		D39496D2178AC48400C39A7E /* CCClassTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassTableController.h; sourceTree = "<group>"; };
+		D39496D3178AC48400C39A7E /* CCClassTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassTableController.m; sourceTree = "<group>"; };
+		D39496D4178AC48400C39A7E /* CCClassTableController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCClassTableController.xib; sourceTree = "<group>"; };
 		D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStandardErrorHandler.h; sourceTree = "<group>"; };
 		D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStandardErrorHandler.m; sourceTree = "<group>"; };
 		D39F1C161753C0E8008E08A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -1114,6 +1125,7 @@
 				70A29CB8178778AB001BC8DD /* PhotoBrowserController */,
 				70A29CBC178778AB001BC8DD /* SideBarController */,
 				70A29CBF178778AB001BC8DD /* SignUpController */,
+				70A29CC7178778AB001BC8DD /* TableBasedController */,
 				70A29CC3178778AB001BC8DD /* StateSelectionController */,
 				70A29CCA178778AB001BC8DD /* StuffCreationController */,
 				70A29CCE178778AB001BC8DD /* StuffDetailsController */,
@@ -1514,7 +1526,6 @@
 				70A29CC4178778AB001BC8DD /* CCStateSelectionConroller.h */,
 				70A29CC5178778AB001BC8DD /* CCStateSelectionConroller.m */,
 				70A29CC6178778AB001BC8DD /* CCStateSelectionConroller.xib */,
-				70A29CC7178778AB001BC8DD /* TableBasedController */,
 			);
 			path = StateSelectionController;
 			sourceTree = "<group>";
@@ -1525,7 +1536,8 @@
 				70A29CC8178778AB001BC8DD /* CCTableBasedController.h */,
 				70A29CC9178778AB001BC8DD /* CCTableBasedController.m */,
 			);
-			path = TableBasedController;
+			name = TableBasedController;
+			path = StateSelectionController/TableBasedController;
 			sourceTree = "<group>";
 		};
 		70A29CCA178778AB001BC8DD /* StuffCreationController */ = {
@@ -1603,8 +1615,8 @@
 		70A29D2E17877B6B001BC8DD /* ClassTableDataSorce */ = {
 			isa = PBXGroup;
 			children = (
-				70A29D2F17877B6B001BC8DD /* CCClassTableDataSource.h */,
-				70A29D3017877B6B001BC8DD /* CCClassTableDataSource.m */,
+				70A29D2F17877B6B001BC8DD /* CCClassControllerTableDataSource.h */,
+				70A29D3017877B6B001BC8DD /* CCClassControllerTableDataSource.m */,
 			);
 			path = ClassTableDataSorce;
 			sourceTree = "<group>";
@@ -2269,6 +2281,8 @@
 				70A29E4B17877D2B001BC8DD /* Cells */,
 				70A29E8D17877D2B001BC8DD /* Headers */,
 				70A29E9617877D2B001BC8DD /* Pickers */,
+				D39496D0178AC1C000C39A7E /* TableView */,
+				D39496C3178AB55200C39A7E /* TabbarController */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -3265,6 +3279,43 @@
 			path = DropboxIcons;
 			sourceTree = "<group>";
 		};
+		D39496C3178AB55200C39A7E /* TabbarController */ = {
+			isa = PBXGroup;
+			children = (
+				D39496C9178ABB0000C39A7E /* ClassTabbarController */,
+			);
+			path = TabbarController;
+			sourceTree = "<group>";
+		};
+		D39496C9178ABB0000C39A7E /* ClassTabbarController */ = {
+			isa = PBXGroup;
+			children = (
+				D39496CA178ABB0000C39A7E /* CCClassTabbarControllerViewController.h */,
+				D39496CB178ABB0000C39A7E /* CCClassTabbarControllerViewController.m */,
+				D39496CC178ABB0000C39A7E /* CCClassTabbarControllerViewController.xib */,
+				D39496CF178ABB2500C39A7E /* CCClassTabbarControllerDelegateProtocol.h */,
+			);
+			path = ClassTabbarController;
+			sourceTree = "<group>";
+		};
+		D39496D0178AC1C000C39A7E /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				D39496D1178AC35E00C39A7E /* ClassTableView */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		D39496D1178AC35E00C39A7E /* ClassTableView */ = {
+			isa = PBXGroup;
+			children = (
+				D39496D2178AC48400C39A7E /* CCClassTableController.h */,
+				D39496D3178AC48400C39A7E /* CCClassTableController.m */,
+				D39496D4178AC48400C39A7E /* CCClassTableController.xib */,
+			);
+			path = ClassTableView;
+			sourceTree = "<group>";
+		};
 		D39F1C0E1753821D008E08A2 /* StandardErrorHandler */ = {
 			isa = PBXGroup;
 			children = (
@@ -3676,6 +3727,8 @@
 				70A29EBE17877D2C001BC8DD /* CCUserCell.xib in Resources */,
 				70A29EC017877D2C001BC8DD /* CCFilterSectionHeader.xib in Resources */,
 				70A29EC217877D2C001BC8DD /* CCSideMenuSectionHeader.xib in Resources */,
+				D39496CE178ABB0000C39A7E /* CCClassTabbarControllerViewController.xib in Resources */,
+				D39496D6178AC48400C39A7E /* CCClassTableController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3767,7 +3820,7 @@
 				70A29D28178778AB001BC8DD /* CCUploadImageForStuffController.m in Sources */,
 				70A29D29178778AB001BC8DD /* CCUploadImagesController.m in Sources */,
 				70A29D2B178778AB001BC8DD /* CCWelcomeController.m in Sources */,
-				70A29D4417877B6B001BC8DD /* CCClassTableDataSource.m in Sources */,
+				70A29D4417877B6B001BC8DD /* CCClassControllerTableDataSource.m in Sources */,
 				70A29D4517877B6B001BC8DD /* CCCommonCollectionDataSource.m in Sources */,
 				70A29D4617877B6B001BC8DD /* CCCommonDataSource.m in Sources */,
 				70A29D4717877B6B001BC8DD /* CCImageSortingDataSource.m in Sources */,
@@ -3897,6 +3950,8 @@
 				70A29F7E17877E0D001BC8DD /* CCViewMarketNotesListTransaction.m in Sources */,
 				70A29F7F17877E0D001BC8DD /* CCViewPDFNotesTransaction.m in Sources */,
 				70A29F8017877E0D001BC8DD /* CCViewMarketStuffListTransaction.m in Sources */,
+				D39496CD178ABB0000C39A7E /* CCClassTabbarControllerViewController.m in Sources */,
+				D39496D5178AC48400C39A7E /* CCClassTableController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,12 +10,15 @@
 #import "CCClass.h"
 #import "CCClassmatesDataProvider.h"
 #import "CCUserCell.h"
+#import "CCClassTableController.h"
 
 @interface CCClassController ()
 
 @property (nonatomic, weak) IBOutlet UILabel *classNumber;
 @property (nonatomic, weak) IBOutlet UILabel *professor;
 @property (nonatomic, weak) IBOutlet UIImageView *avatarImage;
+@property (nonatomic, weak) IBOutlet UIView *headerView;
+@property (nonatomic, strong) CCClassTableController *classContentTable;
 
 @property (nonatomic, strong) CCClass *currentClass;
 
@@ -38,9 +41,14 @@
     [super viewDidLoad];
     [self loadInfo];
     [self setRightNavigationItemWithTitle:@"Edit" selector:@selector(editClass)];
+    [self setButtonsTextColorInView:self.headerView];
     CCClassmatesDataProvider *classmateDataprovider = [CCClassmatesDataProvider new];
     classmateDataprovider.classID = self.currentClass.classID;
-    [self configTableWithProvider:classmateDataprovider cellClass:[CCUserCell class]];
+   
+    self.classContentTable = [CCClassTableController new];
+    self.classContentTable.tableHeaderView = self.headerView;
+    self.classContentTable.classID = self.currentClass.classID;
+    [self.view addSubview:self.classContentTable.view];
 }
 
 - (void)loadInfo

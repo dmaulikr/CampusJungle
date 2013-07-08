@@ -12,7 +12,7 @@
 
 @class CCClass;
 
-@interface CCClassController : CCTableBasedController
+@interface CCClassController : CCViewController
 
 @property (nonatomic, strong) id <CCTransactionWithObject> classMarketTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> otherUserProfileTransaction;
