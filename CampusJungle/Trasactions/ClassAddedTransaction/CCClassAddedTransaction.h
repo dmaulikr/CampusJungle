@@ -7,9 +7,11 @@
 //
 
 #import "CCTransactionWithObject.h"
+#import "CCTransaction.h"
 
 @interface CCClassAddedTransaction : NSObject <CCTransactionWithObject>
 
 @property (nonatomic, strong) UINavigationController *navigation;
+@property (nonatomic, strong) id <CCTransaction> inboxTransaction;
 
 @end

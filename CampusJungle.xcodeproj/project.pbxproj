@@ -294,6 +294,8 @@
 		D39496CE178ABB0000C39A7E /* CCClassTabbarControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39496CC178ABB0000C39A7E /* CCClassTabbarControllerViewController.xib */; };
 		D39496D5178AC48400C39A7E /* CCClassTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496D3178AC48400C39A7E /* CCClassTableController.m */; };
 		D39496D6178AC48400C39A7E /* CCClassTableController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39496D4178AC48400C39A7E /* CCClassTableController.xib */; };
+		D39496D9178AEEE900C39A7E /* searchFieldBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = D39496D7178AEEE900C39A7E /* searchFieldBackground.png */; };
+		D39496DA178AEEE900C39A7E /* searchFieldBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D39496D8178AEEE900C39A7E /* searchFieldBackground@2x.png */; };
 		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
 		D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39F1C161753C0E8008E08A2 /* Accounts.framework */; };
 		D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A2C3241754C95700989831 /* MessageUI.framework */; };
@@ -909,6 +911,8 @@
 		D39496D2178AC48400C39A7E /* CCClassTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassTableController.h; sourceTree = "<group>"; };
 		D39496D3178AC48400C39A7E /* CCClassTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassTableController.m; sourceTree = "<group>"; };
 		D39496D4178AC48400C39A7E /* CCClassTableController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCClassTableController.xib; sourceTree = "<group>"; };
+		D39496D7178AEEE900C39A7E /* searchFieldBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchFieldBackground.png; sourceTree = "<group>"; };
+		D39496D8178AEEE900C39A7E /* searchFieldBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchFieldBackground@2x.png"; sourceTree = "<group>"; };
 		D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStandardErrorHandler.h; sourceTree = "<group>"; };
 		D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStandardErrorHandler.m; sourceTree = "<group>"; };
 		D39F1C161753C0E8008E08A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -3337,6 +3341,8 @@
 		D3A318A9177C4DAB0004C4E8 /* Background */ = {
 			isa = PBXGroup;
 			children = (
+				D39496D7178AEEE900C39A7E /* searchFieldBackground.png */,
+				D39496D8178AEEE900C39A7E /* searchFieldBackground@2x.png */,
 				D347BBE2178454C200E54EFC /* SelectionBackGround@2x.png */,
 				D347BBE3178454C200E54EFC /* SelectionBackGround.png */,
 				D3A3198A177E3C780004C4E8 /* sideMenuBackGround@2x.png */,
@@ -3729,6 +3735,8 @@
 				70A29EC217877D2C001BC8DD /* CCSideMenuSectionHeader.xib in Resources */,
 				D39496CE178ABB0000C39A7E /* CCClassTabbarControllerViewController.xib in Resources */,
 				D39496D6178AC48400C39A7E /* CCClassTableController.xib in Resources */,
+				D39496D9178AEEE900C39A7E /* searchFieldBackground.png in Resources */,
+				D39496DA178AEEE900C39A7E /* searchFieldBackground@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

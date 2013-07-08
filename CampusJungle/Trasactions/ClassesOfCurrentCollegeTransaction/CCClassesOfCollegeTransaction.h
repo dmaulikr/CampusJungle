@@ -8,9 +8,11 @@
 
 #import "CCTransactionWithObject.h"
 #import "JASidePanelController.h"
+#import "CCTransaction.h"
 
 @interface CCClassesOfCollegeTransaction : NSObject <CCTransactionWithObject>
 
 @property (nonatomic, strong) JASidePanelController *menuController;
+@property (nonatomic, strong) id <CCTransaction> inboxTransaction;
 
 @end

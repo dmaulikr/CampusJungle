@@ -8,6 +8,7 @@
 #import "CCViewController.h"
 #import "CCClass.h"
 #import "CCTransactionWithObject.h"
+#import "CCTransaction.h"
 #import "CCTableBasedController.h"
 
 @class CCClass;
@@ -16,6 +17,7 @@
 
 @property (nonatomic, strong) id <CCTransactionWithObject> classMarketTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> otherUserProfileTransaction;
+@property (nonatomic, strong) id <CCTransaction> newsFeedTransaction;
 
 - (id)initWithClass:(CCClass *)classObject;
 - (IBAction)classMarketButtonDidPressed;

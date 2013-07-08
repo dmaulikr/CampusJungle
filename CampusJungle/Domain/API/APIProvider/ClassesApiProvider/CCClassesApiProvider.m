@@ -87,4 +87,16 @@
                             }];
 }
 
+- (void)leaveClassWithID:(NSString *)classID SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [self setAuthorizationToken];
+    NSString *path = [NSString stringWithFormat: CCAPIDefines.leaveClass,classID];
+    [objectManager deleteObject:nil path:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        successHandler(mappingResult);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        errorHandler(error);
+    }];
+}
+
 @end

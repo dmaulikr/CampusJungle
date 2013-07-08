@@ -196,6 +196,7 @@
     if ([self isFieldsValid]){
         [self sendUpdatedUserWithSuccess:^{
             [self setEditing:NO animated:YES];
+            [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadSideMenu object:nil];
         }];
     }
 }

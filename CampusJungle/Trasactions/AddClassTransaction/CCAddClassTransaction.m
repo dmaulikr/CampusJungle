@@ -16,12 +16,14 @@
 {
     NSParameterAssert(self.navigation);
     NSParameterAssert(object);
+    NSParameterAssert(self.inboxTransaction);
     
     CCCreateClassController *classesController = [[CCCreateClassController alloc] initWithCollegeID:object];
     
     CCClassAddedTransaction *classAddedTransaction = [CCClassAddedTransaction new];
     classAddedTransaction.navigation = self.navigation;
     classesController.classAddedTransaction = classAddedTransaction;
+    classAddedTransaction.inboxTransaction = self.inboxTransaction;
     [self.navigation pushViewController:classesController animated:YES];    
 }
 

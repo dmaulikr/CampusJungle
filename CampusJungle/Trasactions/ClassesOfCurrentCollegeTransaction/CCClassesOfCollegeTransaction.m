@@ -17,15 +17,18 @@
 {
     NSParameterAssert(self.menuController);
     NSParameterAssert(object);
+    NSParameterAssert(self.inboxTransaction);
 
     CCClassesOfCollegeController *classesController = [[CCClassesOfCollegeController alloc] initWithCollegeID:object];
     UINavigationController *centralNavigation = [[UINavigationController alloc] initWithRootViewController:classesController];
     
     CCAddClassTransaction *addClassTransaction = [CCAddClassTransaction new];
     addClassTransaction.navigation = centralNavigation;
+    addClassTransaction.inboxTransaction = self.inboxTransaction;
     classesController.addNewClassTransaction = addClassTransaction;
     
     CCClassAddedTransaction *classAddedTransaction = [CCClassAddedTransaction new];
+    classAddedTransaction.inboxTransaction = self.inboxTransaction;
     classAddedTransaction.navigation = centralNavigation;
     classesController.classAddedTransaction = classAddedTransaction;
     

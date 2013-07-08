@@ -12,6 +12,9 @@
 #import "CCUserCell.h"
 #import "CCClassTableController.h"
 #import "CCCellSelectionProtocol.h"
+#import "GIAlert.h"
+#import "CCClassesApiProviderProtocol.h"
+#import "CCStandardErrorHandler.h"
 
 @interface CCClassController ()<CCCellSelectionProtocol>
 
@@ -20,8 +23,11 @@
 @property (nonatomic, weak) IBOutlet UIImageView *avatarImage;
 @property (nonatomic, weak) IBOutlet UIView *headerView;
 @property (nonatomic, strong) CCClassTableController *classContentTable;
+@property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_classesApiProvider;
 
 @property (nonatomic, strong) CCClass *currentClass;
+
+- (IBAction)leaveClassButtonDidPress;
 
 @end
 
@@ -79,5 +85,29 @@
 {
     return NO;
 }
+
+- (IBAction)leaveClassButtonDidPress
+{
+    [self showConfirmWithSuccess:^{
+        [self.ioc_classesApiProvider leaveClassWithID:self.currentClass.classID SuccessHandler:^(id result) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadSideMenu object:nil];
+            [self.newsFeedTransaction perform];
+        } errorHandler:^(NSError *error) {
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
+    }];
+}
+
+- (void)showConfirmWithSuccess:(successHandler)success
+{
+    GIAlertButton *noButton = [GIAlertButton cancelButtonWithTitle:CCAlertsButtons.noButton action:nil];
+    GIAlertButton *yesButton = [GIAlertButton buttonWithTitle:CCAlertsButtons.yesButton action:success];
+    
+    GIAlert *alert = [GIAlert alertWithTitle:CCAlertsMessages.confirmation
+                                     message:CCAlertsMessages.confirmationMessage
+                                     buttons:@[noButton, yesButton]];
+    [alert show];
+}
+
 
 @end

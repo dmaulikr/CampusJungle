@@ -16,6 +16,7 @@
 - (void)performWithObject:(id)object
 {
     NSParameterAssert(self.navigation);
+    NSParameterAssert(self.inboxTransaction);
     
     CCClassController *classController = [[CCClassController alloc] initWithClass:object];
     [self.navigation pushViewController:classController animated:YES];
@@ -28,7 +29,7 @@
     otherUserProfileTransaction.navigation = self.navigation;
     
     classController.otherUserProfileTransaction = otherUserProfileTransaction;
-    
+    classController.newsFeedTransaction = self.inboxTransaction;
     [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.joinClass duration:CCProgressHudsConstants.loaderDuration];
     UIViewController *viewController = [[self.navigation viewControllers] lastObject];
     [self.navigation setViewControllers:@[viewController]];

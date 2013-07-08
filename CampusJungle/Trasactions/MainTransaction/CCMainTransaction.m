@@ -59,10 +59,13 @@
     CCInboxTransaction *inboxTransaction = [CCInboxTransaction new];
     inboxTransaction.menuController = rootController;
     leftController.inboxTransaction = inboxTransaction;
-
+    classesOfCollegeTransaction.inboxTransaction = inboxTransaction;
+    
     CCClassTransaction *classTransaction = [CCClassTransaction new];
     classTransaction.menuController = rootController;
+    classTransaction.newsFeedTransaction = inboxTransaction;
     leftController.classTransaction = classTransaction;
+    
     
     CCMarketTranasction *marketTransaction = [CCMarketTranasction new];
     marketTransaction.menuController = rootController;

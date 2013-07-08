@@ -17,6 +17,8 @@
 @property (nonatomic, weak) IBOutlet UIView *sectionHeaderView;
 @property (nonatomic, strong) CCClassTabbarControllerViewController *classTabbarController;
 @property (nonatomic, strong) CCClassmatesDataProvider *classmatesProvider;
+@property (nonatomic, weak) IBOutlet UIButton *addButton;
+@property (nonatomic, weak) IBOutlet UILabel *sectionName;
 
 @end
 
@@ -36,6 +38,8 @@
     [self.sectionHeaderView addSubview:tabbarController.view];
     [(CCClassControllerTableDataSource *)self.dataSource setViewForSectionHeader:self.sectionHeaderView];
     self.mainTable.tableHeaderView = self.tableHeaderView;
+    [self.addButton setBackgroundImage:nil forState:UIControlStateNormal];
+    [self.addButton setBackgroundImage:nil forState:UIControlStateHighlighted];
 }
 
 - (void)setClassmatesConfiguration
@@ -44,7 +48,7 @@
         self.classmatesProvider = [CCClassmatesDataProvider new];
         self.classmatesProvider.classID = self.classID;
     }
-    
+    self.sectionName.text = @"Classmates";
     self.searchBar.hidden = NO;
     [self updateSectionHeaderViewSize];
     [self configTableWithProvider:self.classmatesProvider cellClass:[CCUserCell class]];
@@ -52,26 +56,26 @@
 
 - (void)setForumsConfiguration
 {
-
+    self.sectionName.text = @"Forums";
 }
 
 - (void)setLocationConfiguration
 {
-
+    self.sectionName.text = @"Locations";
 }
 
 - (void)setGroupsConfiguration
 {
-
+    self.sectionName.text = @"Groups";
 }
 
 - (void)updateSectionHeaderViewSize
 {
     CGFloat height = 0;
     if(self.searchBar.hidden){
-        height = self.classTabbarController.view.bounds.size.height;
+        height = self.classTabbarController.view.bounds.size.height + 44;
     } else {
-        height = self.classTabbarController.view.bounds.size.height + self.searchBar.bounds.size.height;
+        height = self.classTabbarController.view.bounds.size.height + self.searchBar.bounds.size.height + 44;
     }
     
     self.sectionHeaderView.bounds = CGRectMake(0, 0, self.sectionHeaderView.bounds.size.width, height);

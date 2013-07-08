@@ -17,6 +17,7 @@
 {
     NSParameterAssert(self.menuController);
     NSParameterAssert(object);
+    NSParameterAssert(self.newsFeedTransaction);
     
     CCClassController *classController = [[CCClassController alloc] initWithClass:object];
     
@@ -26,7 +27,7 @@
     CCOtherUserProfileTransaction *otherUserProfileTransaction = [CCOtherUserProfileTransaction new];
     
     classController.otherUserProfileTransaction = otherUserProfileTransaction;
-    
+    classController.newsFeedTransaction = self.newsFeedTransaction;
     UINavigationController *centralNavigation = [[UINavigationController alloc] initWithRootViewController:classController];
     [self.menuController setCenterPanel:centralNavigation];
     classNotesTransaction.navigation = centralNavigation;
