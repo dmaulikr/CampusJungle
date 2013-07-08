@@ -106,4 +106,9 @@
     self.mainTable.tableHeaderView = tableHeaderView;
 }
 
+- (void)didSelectedCellWithObject:(id)cellObject
+{
+    [self.delegate didSelectedCellWithObject:cellObject];
+}
+
 @end

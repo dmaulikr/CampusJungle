@@ -11,8 +11,9 @@
 #import "CCClassmatesDataProvider.h"
 #import "CCUserCell.h"
 #import "CCClassTableController.h"
+#import "CCCellSelectionProtocol.h"
 
-@interface CCClassController ()
+@interface CCClassController ()<CCCellSelectionProtocol>
 
 @property (nonatomic, weak) IBOutlet UILabel *classNumber;
 @property (nonatomic, weak) IBOutlet UILabel *professor;
@@ -48,6 +49,7 @@
     self.classContentTable = [CCClassTableController new];
     self.classContentTable.tableHeaderView = self.headerView;
     self.classContentTable.classID = self.currentClass.classID;
+    self.classContentTable.delegate = self;
     [self.view addSubview:self.classContentTable.view];
 }
 
