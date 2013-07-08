@@ -12,6 +12,7 @@
 #import "CCCommonCollectionDataSource.h"
 #import "CCPhotosDataProvider.h"
 #import "CCPhotoCell.h"
+#import "CCUserSessionProtocol.h"
 
 @interface CCStuffDetailsController ()<CCCellSelectionProtocol>
 
@@ -20,6 +21,10 @@
 @property (nonatomic, weak) IBOutlet UICollectionView *stuffPhotos;
 @property (nonatomic, strong) CCCommonCollectionDataSource *dataSource;
 @property (nonatomic, strong) CCPhotosDataProvider *dataProvider;
+@property (nonatomic, weak) IBOutlet UIButton *offerButton;
+@property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
+
+- (IBAction)createOfferButtonDidPress;
 
 @end
 
@@ -42,7 +47,22 @@
     } else {
         self.thumb.image = [UIImage imageNamed:@"stuff_placeholder_icon_active"];
     }
+    if([self isMyStuff]){
+        self.offerButton.hidden = YES;
+    }
     self.title = @"Stuff";
+    
+}
+
+- (BOOL)isMyStuff
+{
+    CCUser *currentUser = [self.ioc_userSession currentUser];
+    NSString *currentUserID = currentUser.uid;
+    
+    if([self.stuff.ownerID isEqualToString:currentUserID]){
+        return YES;
+    }
+    return NO;
 }
 
 - (void)configCollection:(UICollectionView *)collectionView WithProvider:(CCBaseDataProvider *)provider cellClass:(Class)cellCass
@@ -66,6 +86,11 @@
             @"photosProvider" : self.dataProvider,
             @"selectedPhoto" : cellObject,
      }];
+}
+
+- (IBAction)createOfferButtonDidPress
+{
+    [self.createOfferTarnasaction performWithObject:self.stuff];
 }
 
 @end

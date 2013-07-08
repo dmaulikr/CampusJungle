@@ -7,6 +7,8 @@
 //
 
 #import "CCInboxController.h"
+#import "CCOffersDataProvider.h"
+#import "CCOrdinaryCell.h"
 
 @interface CCInboxController ()
 
@@ -18,6 +20,7 @@
 {
     [super viewDidLoad];
     self.title = @"Inbox";
+    [self configTableWithProvider:[CCOffersDataProvider new] cellClass:[CCOrdinaryCell class]];
 }
 
 @end

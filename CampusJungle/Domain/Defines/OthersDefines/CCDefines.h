@@ -35,6 +35,8 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *classesInColleges;
     __unsafe_unretained NSString *classmates;
     __unsafe_unretained NSString *leaveClass;
+    __unsafe_unretained NSString *makeOffer;
+    __unsafe_unretained NSString *recivedOffers;
 } CCAPIDefines;
 
 

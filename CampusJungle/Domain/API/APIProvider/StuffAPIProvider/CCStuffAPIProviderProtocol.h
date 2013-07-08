@@ -18,4 +18,8 @@
 
 - (void)postUploadInfoWithImages:(CCStuffUploadInfo *)uploadInfo successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler progress:(progressBlock)progressBlock;
 
+- (void)makeAnOffer:(NSString *)offer toStuffWithID:(NSString *)stuffID successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
+
+- (void)loadOffersNumberOfPage:(NSNumber *)pageNumber successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
+
 @end

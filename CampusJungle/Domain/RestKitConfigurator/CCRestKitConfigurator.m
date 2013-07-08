@@ -23,6 +23,7 @@
 #import "CCStuffUploadInfo.h"
 #import "CCPhoto.h"
 #import "CCStandardErrorHandler.h"
+#import "CCOffer.h"
 
 @implementation CCRestKitConfigurator
 
@@ -56,6 +57,7 @@
     [CCRestKitConfigurator configureStuffResponse:objectManager];
     [CCRestKitConfigurator configureClassesInCollegesResponse:objectManager];
     [CCRestKitConfigurator configureClassmatesResponse:objectManager];
+    [CCRestKitConfigurator configureOfferResponse:objectManager];
 }
 
 + (void)configureUserResponse:(RKObjectManager *)objectManager
@@ -406,6 +408,28 @@
     RKResponseDescriptor *classesInCollegesResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:classesInCollegesResponseMapping pathPattern:pathPattern keyPath:@"classes_in_colleges" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
     [objectManager addResponseDescriptor:classesInCollegesResponseDescriptor];
+}
+
++ (void)configureOfferResponse:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *paginationOffersResponseMapping = [CCRestKitConfigurator paginationMapping];
+    
+    RKObjectMapping *offerMapping = [RKObjectMapping mappingForClass:[CCOffer class]];
+    [offerMapping addAttributeMappingsFromDictionary:[CCOffer responseMappingDictionary]];
+    
+    RKRelationshipMapping* relationShipResponseOfferMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
+                                                                                                          toKeyPath:CCResponseKeys.items
+                                                                                                        withMapping:offerMapping];
+    
+    [paginationOffersResponseMapping addPropertyMapping:relationShipResponseOfferMapping];
+    
+    RKResponseDescriptor *responseInboxPaginationOffers = [RKResponseDescriptor responseDescriptorWithMapping:paginationOffersResponseMapping pathPattern:CCAPIDefines.recivedOffers keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    NSString *uploadOfferPathPatern = [NSString stringWithFormat:CCAPIDefines.makeOffer ,@":StuffID"];
+    RKResponseDescriptor *responseOnCreateOffer = [RKResponseDescriptor responseDescriptorWithMapping:offerMapping pathPattern:uploadOfferPathPatern keyPath:@"offer" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    [objectManager addResponseDescriptor:responseInboxPaginationOffers];
+    [objectManager addResponseDescriptor:responseOnCreateOffer];
 }
 
 @end

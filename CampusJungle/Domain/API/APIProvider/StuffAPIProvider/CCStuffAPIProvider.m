@@ -44,4 +44,24 @@
     [self postInfoWithObject:uploadInfo thumbnail:thumb images:uploadInfo.arrayOfImages onPath:path successHandler:successHandler errorHandler:errorHandler progress:progressBlock];
 }
 
+- (void)makeAnOffer:(NSString *)offer toStuffWithID:(NSString *)stuffID successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [self setAuthorizationToken];
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.makeOffer,stuffID];
+    [objectManager postObject:nil path:path parameters:@{@"text" : offer} success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        successHandler(mappingResult);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        errorHandler(error);
+    }];
+}
+
+- (void)loadOffersNumberOfPage:(NSNumber *)pageNumber successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    [self loadItemsWithParams:@{@"page_number" : pageNumber.stringValue}
+                         path:CCAPIDefines.recivedOffers
+               successHandler:successHandler
+                 errorHandler:errorHandler];
+}
+
 @end

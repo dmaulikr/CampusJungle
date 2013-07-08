@@ -9,6 +9,7 @@
 #import "CCStuffDetailsTransaction.h"
 #import "CCStuffDetailsController.h"
 #import "CCPhotoBrowserTransaction.h"
+#import "CCOfferCreationTransaction.h"
 
 @implementation CCStuffDetailsTransaction
 
@@ -18,6 +19,10 @@
     
     CCStuffDetailsController *stuffDetailsController = [CCStuffDetailsController new];
     stuffDetailsController.stuff = object;
+    
+    CCOfferCreationTransaction *offerCreationTransaction = [CCOfferCreationTransaction new];
+    offerCreationTransaction.navigation = self.navigation;
+    stuffDetailsController.createOfferTarnasaction = offerCreationTransaction;
     
     CCPhotoBrowserTransaction *photoBrowserTransaction = [CCPhotoBrowserTransaction new];
     photoBrowserTransaction.navigation = self.navigation;
