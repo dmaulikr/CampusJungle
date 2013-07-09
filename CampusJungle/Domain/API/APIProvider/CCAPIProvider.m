@@ -320,7 +320,17 @@
     });
 }
 
-
+- (void)getUserWithID:(NSString *)userID successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.getUser,userID];
+    [self setAuthorizationToken];
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [objectManager getObject:nil path:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        successHandler(mappingResult);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        errorHandler(error);
+    }];
+}
 
 
 @end

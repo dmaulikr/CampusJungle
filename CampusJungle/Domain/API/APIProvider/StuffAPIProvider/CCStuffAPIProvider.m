@@ -69,4 +69,16 @@
                  errorHandler:errorHandler];
 }
 
+- (void)getStuffWithID:(NSString *)stuffID successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.getStuff,stuffID];
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [self setAuthorizationToken];
+    [objectManager getObject:nil path:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        successHandler(mappingResult);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        errorHandler(error);
+    }];
+}
+
 @end

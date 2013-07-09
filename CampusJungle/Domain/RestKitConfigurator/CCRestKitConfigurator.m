@@ -154,8 +154,11 @@
                                                                                                        pathPattern:pathPattern
                                                                                                            keyPath:nil
                                                                                                        statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
-    [objectManager addResponseDescriptor:responseClassesOfCollegeDescriptor];
+    NSString *userResponceMappingPath = [NSString stringWithFormat:CCAPIDefines.getUser,@":UserID"];
+    RKResponseDescriptor *userResponceDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userResponseMapping pathPattern:userResponceMappingPath keyPath:@"user" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
+    [objectManager addResponseDescriptor:responseClassesOfCollegeDescriptor];
+    [objectManager addResponseDescriptor:userResponceDescriptor];
 }
 
 +(void)configureClassResponce:(RKObjectManager *)objectManager
@@ -383,10 +386,14 @@
     
     NSString *uploadStuffPathPatern = [NSString stringWithFormat:CCAPIDefines.createStuff,@":CollegeID"];
     RKResponseDescriptor *responseOnCreateStuff = [RKResponseDescriptor responseDescriptorWithMapping:stuffMapping pathPattern:uploadStuffPathPatern keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    NSString *getSingleStuffPathPattern = [NSString stringWithFormat:CCAPIDefines.getStuff,@":StuffID"];
+     RKResponseDescriptor *responseOnGetStuffRequest = [RKResponseDescriptor responseDescriptorWithMapping:stuffMapping pathPattern:getSingleStuffPathPattern keyPath:@"stuff" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
+    [objectManager addResponseDescriptor:responseOnGetStuffRequest];
     [objectManager addResponseDescriptor:responseMarketPaginationStuff];
     [objectManager addResponseDescriptor:responseOnCreateStuff];
     [objectManager addResponseDescriptor:responsePaginationStuff];
+    
 }
 
 + (void)configureClassesInCollegesResponse:(RKObjectManager *)objectManager

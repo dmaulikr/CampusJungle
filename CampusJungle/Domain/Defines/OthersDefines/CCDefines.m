@@ -39,6 +39,8 @@ const struct CCAPIDefines CCAPIDefines = {
     .leaveClass = @"/api/users/me/classes/%@",
     .makeOffer = @"/api/stuff/%@/offer",
     .recivedOffers = @"/api/users/me/offers",
+    .getStuff = @"/api/stuff/%@",
+    .getUser = @"/api/users/%@",
 };
 
 const struct CCUserDefines CCUserDefines = {

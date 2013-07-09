@@ -22,4 +22,6 @@
 
 - (void)loadOffersNumberOfPage:(NSNumber *)pageNumber successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 
+- (void)getStuffWithID:(NSString *)stuffID successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
+
 @end

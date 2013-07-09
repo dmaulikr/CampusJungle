@@ -302,6 +302,9 @@
 		D39496FF178C27DE00C39A7E /* CCClassTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496FD178C27DE00C39A7E /* CCClassTableController.m */; };
 		D3949700178C27DE00C39A7E /* CCClassTableController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39496FE178C27DE00C39A7E /* CCClassTableController.xib */; };
 		D3949704178C299100C39A7E /* CCBackToStuffTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949703178C299100C39A7E /* CCBackToStuffTransaction.m */; };
+		D3949709178C401400C39A7E /* CCOfferDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949707178C401400C39A7E /* CCOfferDetailsController.m */; };
+		D394970A178C401400C39A7E /* CCOfferDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3949708178C401400C39A7E /* CCOfferDetailsController.xib */; };
+		D394970E178C406800C39A7E /* CCOfferDetailsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D394970D178C406800C39A7E /* CCOfferDetailsTransaction.m */; };
 		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
 		D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39F1C161753C0E8008E08A2 /* Accounts.framework */; };
 		D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A2C3241754C95700989831 /* MessageUI.framework */; };
@@ -930,6 +933,11 @@
 		D39496FE178C27DE00C39A7E /* CCClassTableController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCClassTableController.xib; sourceTree = "<group>"; };
 		D3949702178C299100C39A7E /* CCBackToStuffTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBackToStuffTransaction.h; sourceTree = "<group>"; };
 		D3949703178C299100C39A7E /* CCBackToStuffTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBackToStuffTransaction.m; sourceTree = "<group>"; };
+		D3949706178C401400C39A7E /* CCOfferDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCOfferDetailsController.h; sourceTree = "<group>"; };
+		D3949707178C401400C39A7E /* CCOfferDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCOfferDetailsController.m; sourceTree = "<group>"; };
+		D3949708178C401400C39A7E /* CCOfferDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCOfferDetailsController.xib; sourceTree = "<group>"; };
+		D394970C178C406800C39A7E /* CCOfferDetailsTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCOfferDetailsTransaction.h; sourceTree = "<group>"; };
+		D394970D178C406800C39A7E /* CCOfferDetailsTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCOfferDetailsTransaction.m; sourceTree = "<group>"; };
 		D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStandardErrorHandler.h; sourceTree = "<group>"; };
 		D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStandardErrorHandler.m; sourceTree = "<group>"; };
 		D39F1C161753C0E8008E08A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -1145,6 +1153,7 @@
 				70A29CAC178778AB001BC8DD /* NoteDetailsController */,
 				70A29CB0178778AB001BC8DD /* NotesViewerController */,
 				D39496DB178B191F00C39A7E /* OfferController */,
+				D3949705178C3FED00C39A7E /* OfferDetailsControllre */,
 				70A29CB4178778AB001BC8DD /* OtherUserProfileController */,
 				70A29CB8178778AB001BC8DD /* PhotoBrowserController */,
 				70A29CBC178778AB001BC8DD /* SideBarController */,
@@ -2673,6 +2682,7 @@
 				70A29F1917877E0D001BC8DD /* MyNotes */,
 				70A29F1C17877E0D001BC8DD /* MyStuffTransaction */,
 				D39496E1178B1E6A00C39A7E /* OfferCreationTransaction */,
+				D394970B178C404B00C39A7E /* OfferDetailsController */,
 				70A29F1F17877E0D001BC8DD /* NoteDetailTransaction */,
 				70A29F2217877E0D001BC8DD /* NotesBackToListTransaction */,
 				70A29F2517877E0D001BC8DD /* PhotoBrowserTransaction */,
@@ -3375,6 +3385,25 @@
 			path = BackToStuffTransaction;
 			sourceTree = "<group>";
 		};
+		D3949705178C3FED00C39A7E /* OfferDetailsControllre */ = {
+			isa = PBXGroup;
+			children = (
+				D3949706178C401400C39A7E /* CCOfferDetailsController.h */,
+				D3949707178C401400C39A7E /* CCOfferDetailsController.m */,
+				D3949708178C401400C39A7E /* CCOfferDetailsController.xib */,
+			);
+			path = OfferDetailsControllre;
+			sourceTree = "<group>";
+		};
+		D394970B178C404B00C39A7E /* OfferDetailsController */ = {
+			isa = PBXGroup;
+			children = (
+				D394970C178C406800C39A7E /* CCOfferDetailsTransaction.h */,
+				D394970D178C406800C39A7E /* CCOfferDetailsTransaction.m */,
+			);
+			path = OfferDetailsController;
+			sourceTree = "<group>";
+		};
 		D39F1C0E1753821D008E08A2 /* StandardErrorHandler */ = {
 			isa = PBXGroup;
 			children = (
@@ -3793,6 +3822,7 @@
 				D39496E0178B193A00C39A7E /* CCOfferControllerViewController.xib in Resources */,
 				D39496FA178C27B100C39A7E /* CCClassTabbarControllerViewController.xib in Resources */,
 				D3949700178C27DE00C39A7E /* CCClassTableController.xib in Resources */,
+				D394970A178C401400C39A7E /* CCOfferDetailsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4021,6 +4051,8 @@
 				D39496F9178C27B100C39A7E /* CCClassTabbarControllerViewController.m in Sources */,
 				D39496FF178C27DE00C39A7E /* CCClassTableController.m in Sources */,
 				D3949704178C299100C39A7E /* CCBackToStuffTransaction.m in Sources */,
+				D3949709178C401400C39A7E /* CCOfferDetailsController.m in Sources */,
+				D394970E178C406800C39A7E /* CCOfferDetailsTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

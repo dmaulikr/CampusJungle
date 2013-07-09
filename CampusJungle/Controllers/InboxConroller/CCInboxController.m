@@ -9,6 +9,8 @@
 #import "CCInboxController.h"
 #import "CCOffersDataProvider.h"
 #import "CCOrdinaryCell.h"
+#import "CCOffer.h"
+
 
 @interface CCInboxController ()
 
@@ -21,6 +23,13 @@
     [super viewDidLoad];
     self.title = @"Inbox";
     [self configTableWithProvider:[CCOffersDataProvider new] cellClass:[CCOrdinaryCell class]];
+}
+
+- (void)didSelectedCellWithObject:(id)cellObject
+{
+    if([cellObject isKindOfClass:[CCOffer class]]){
+        [self.offerDetailsTransaction performWithObject:cellObject];
+    }
 }
 
 @end

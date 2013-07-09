@@ -7,9 +7,10 @@
 //
 
 #import "CCTableBasedController.h"
+#import "CCTransactionWithObject.h"
 
 @interface CCInboxController : CCTableBasedController
 
-
+@property (nonatomic, strong) id <CCTransactionWithObject> offerDetailsTransaction;
 
 @end

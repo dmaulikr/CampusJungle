@@ -40,5 +40,7 @@
 
 - (void)loadClassmatesForClass:(NSString *)classID NumberOfPage:(NSNumber *)pageNumber successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 
+- (void)getUserWithID:(NSString *)userID successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
+
 
 @end

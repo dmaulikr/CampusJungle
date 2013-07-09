@@ -8,6 +8,7 @@
 
 #import "CCInboxTransaction.h"
 #import "CCInboxController.h"
+#import "CCOfferDetailsTransaction.h"
 
 @implementation CCInboxTransaction
 
@@ -16,8 +17,11 @@
     NSParameterAssert(self.menuController);
     
     CCInboxController *inboxController = [CCInboxController new];
-    
     UINavigationController *centralNavigation = [[UINavigationController alloc] initWithRootViewController:inboxController];
+    
+    CCOfferDetailsTransaction *offerDetails = [CCOfferDetailsTransaction new];
+    offerDetails.navigation = centralNavigation;
+    inboxController.offerDetailsTransaction = offerDetails;
     
     [self.menuController setCenterPanel:centralNavigation];
 }
