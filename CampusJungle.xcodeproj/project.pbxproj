@@ -301,6 +301,7 @@
 		D39496FA178C27B100C39A7E /* CCClassTabbarControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39496F8178C27B100C39A7E /* CCClassTabbarControllerViewController.xib */; };
 		D39496FF178C27DE00C39A7E /* CCClassTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496FD178C27DE00C39A7E /* CCClassTableController.m */; };
 		D3949700178C27DE00C39A7E /* CCClassTableController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39496FE178C27DE00C39A7E /* CCClassTableController.xib */; };
+		D3949704178C299100C39A7E /* CCBackToStuffTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949703178C299100C39A7E /* CCBackToStuffTransaction.m */; };
 		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
 		D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39F1C161753C0E8008E08A2 /* Accounts.framework */; };
 		D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A2C3241754C95700989831 /* MessageUI.framework */; };
@@ -927,6 +928,8 @@
 		D39496FC178C27DE00C39A7E /* CCClassTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassTableController.h; sourceTree = "<group>"; };
 		D39496FD178C27DE00C39A7E /* CCClassTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassTableController.m; sourceTree = "<group>"; };
 		D39496FE178C27DE00C39A7E /* CCClassTableController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCClassTableController.xib; sourceTree = "<group>"; };
+		D3949702178C299100C39A7E /* CCBackToStuffTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBackToStuffTransaction.h; sourceTree = "<group>"; };
+		D3949703178C299100C39A7E /* CCBackToStuffTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBackToStuffTransaction.m; sourceTree = "<group>"; };
 		D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStandardErrorHandler.h; sourceTree = "<group>"; };
 		D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStandardErrorHandler.m; sourceTree = "<group>"; };
 		D39F1C161753C0E8008E08A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -2643,6 +2646,7 @@
 				70A29EC817877E0C001BC8DD /* AllClassesTransaction */,
 				70A29ECB17877E0C001BC8DD /* ApplyFiltersTransaction */,
 				70A29ECE17877E0C001BC8DD /* BackToListOfNotesTransaction */,
+				D3949701178C297A00C39A7E /* BackToStuffTransaction */,
 				70A29ED117877E0C001BC8DD /* BackToUserProfileTransaction */,
 				70A29ED417877E0C001BC8DD /* CitySelectionTransaction */,
 				70A29ED717877E0C001BC8DD /* ClassAddedTransaction */,
@@ -3362,6 +3366,15 @@
 			path = ClassTableView;
 			sourceTree = "<group>";
 		};
+		D3949701178C297A00C39A7E /* BackToStuffTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3949702178C299100C39A7E /* CCBackToStuffTransaction.h */,
+				D3949703178C299100C39A7E /* CCBackToStuffTransaction.m */,
+			);
+			path = BackToStuffTransaction;
+			sourceTree = "<group>";
+		};
 		D39F1C0E1753821D008E08A2 /* StandardErrorHandler */ = {
 			isa = PBXGroup;
 			children = (
@@ -4007,6 +4020,7 @@
 				D39496EC178B2A0400C39A7E /* CCOffersDataProvider.m in Sources */,
 				D39496F9178C27B100C39A7E /* CCClassTabbarControllerViewController.m in Sources */,
 				D39496FF178C27DE00C39A7E /* CCClassTableController.m in Sources */,
+				D3949704178C299100C39A7E /* CCBackToStuffTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

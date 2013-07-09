@@ -37,7 +37,7 @@
         [self.ioc_stuffAPIProvider makeAnOffer:self.inputField.text
                                  toStuffWithID:self.currentStuff.stuffID
                                 successHandler:^(id result) {
-                                    
+                                    [self.backToStuffTransaction perform];
                                 } errorHandler:^(NSError *error) {
                                     [CCStandardErrorHandler showErrorWithError:error];
                                 }];

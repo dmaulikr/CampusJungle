@@ -8,9 +8,11 @@
 
 #import "CCViewController.h"
 #import "CCStuff.h" 
+#import "CCTransaction.h"
 
 @interface CCOfferControllerViewController : CCViewController
 
 @property (nonatomic, strong) CCStuff *currentStuff;
+@property (nonatomic, strong) id <CCTransaction> backToStuffTransaction;
 
 @end
