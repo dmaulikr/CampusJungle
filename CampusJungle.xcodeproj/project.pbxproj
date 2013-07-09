@@ -305,6 +305,7 @@
 		D3949709178C401400C39A7E /* CCOfferDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949707178C401400C39A7E /* CCOfferDetailsController.m */; };
 		D394970A178C401400C39A7E /* CCOfferDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3949708178C401400C39A7E /* CCOfferDetailsController.xib */; };
 		D394970E178C406800C39A7E /* CCOfferDetailsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D394970D178C406800C39A7E /* CCOfferDetailsTransaction.m */; };
+		D3949712178C6D4500C39A7E /* CCMessageAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949711178C6D4500C39A7E /* CCMessageAPIProvider.m */; };
 		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
 		D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39F1C161753C0E8008E08A2 /* Accounts.framework */; };
 		D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A2C3241754C95700989831 /* MessageUI.framework */; };
@@ -938,6 +939,9 @@
 		D3949708178C401400C39A7E /* CCOfferDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCOfferDetailsController.xib; sourceTree = "<group>"; };
 		D394970C178C406800C39A7E /* CCOfferDetailsTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCOfferDetailsTransaction.h; sourceTree = "<group>"; };
 		D394970D178C406800C39A7E /* CCOfferDetailsTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCOfferDetailsTransaction.m; sourceTree = "<group>"; };
+		D3949710178C6D4500C39A7E /* CCMessageAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessageAPIProvider.h; sourceTree = "<group>"; };
+		D3949711178C6D4500C39A7E /* CCMessageAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessageAPIProvider.m; sourceTree = "<group>"; };
+		D3949713178C6D6300C39A7E /* CCMessageAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCMessageAPIProviderProtocol.h; sourceTree = "<group>"; };
 		D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStandardErrorHandler.h; sourceTree = "<group>"; };
 		D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStandardErrorHandler.m; sourceTree = "<group>"; };
 		D39F1C161753C0E8008E08A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -1960,6 +1964,7 @@
 				70A29DA517877CB4001BC8DD /* CCAPIProviderProtocol.h */,
 				70A29DA617877CB4001BC8DD /* ClassesApiProvider */,
 				70A29DAA17877CB4001BC8DD /* MarketAPIProvider */,
+				D394970F178C6D0000C39A7E /* MessagesAPIProvider */,
 				70A29DAE17877CB4001BC8DD /* NotesAPIProvider */,
 				70A29DB217877CB4001BC8DD /* StuffAPIProvider */,
 			);
@@ -3404,6 +3409,17 @@
 			path = OfferDetailsController;
 			sourceTree = "<group>";
 		};
+		D394970F178C6D0000C39A7E /* MessagesAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3949710178C6D4500C39A7E /* CCMessageAPIProvider.h */,
+				D3949711178C6D4500C39A7E /* CCMessageAPIProvider.m */,
+				D3949713178C6D6300C39A7E /* CCMessageAPIProviderProtocol.h */,
+			);
+			name = MessagesAPIProvider;
+			path = ../MessagesAPIProvider;
+			sourceTree = "<group>";
+		};
 		D39F1C0E1753821D008E08A2 /* StandardErrorHandler */ = {
 			isa = PBXGroup;
 			children = (
@@ -4053,6 +4069,7 @@
 				D3949704178C299100C39A7E /* CCBackToStuffTransaction.m in Sources */,
 				D3949709178C401400C39A7E /* CCOfferDetailsController.m in Sources */,
 				D394970E178C406800C39A7E /* CCOfferDetailsTransaction.m in Sources */,
+				D3949712178C6D4500C39A7E /* CCMessageAPIProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
