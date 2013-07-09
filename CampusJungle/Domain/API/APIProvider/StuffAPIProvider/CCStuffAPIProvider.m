@@ -49,16 +49,21 @@
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [self setAuthorizationToken];
     NSString *path = [NSString stringWithFormat:CCAPIDefines.makeOffer,stuffID];
-    [objectManager postObject:nil path:path parameters:@{@"text" : offer} success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        successHandler(mappingResult);
-    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+    [objectManager postObject:nil path:path parameters:@{@"text" : offer}
+                      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                          successHandler(mappingResult);
+    }
+                      failure:^(RKObjectRequestOperation *operation, NSError *error) {
         errorHandler(error);
     }];
 }
 
 - (void)loadOffersNumberOfPage:(NSNumber *)pageNumber successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
 {
-    [self loadItemsWithParams:@{@"page_number" : pageNumber.stringValue}
+    [self loadItemsWithParams:@{
+     @"page_number" : pageNumber.stringValue,
+     @"direction" : @"received"
+     }
                          path:CCAPIDefines.recivedOffers
                successHandler:successHandler
                  errorHandler:errorHandler];
