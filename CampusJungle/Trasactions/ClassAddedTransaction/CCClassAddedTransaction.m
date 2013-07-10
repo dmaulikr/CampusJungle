@@ -10,6 +10,7 @@
 #import "CCClassController.h"
 #import "CCShowNotesForClassTransaction.h"
 #import "CCOtherUserProfileTransaction.h"
+#import "CCShowLocationsTransaction.h"
 
 @implementation CCClassAddedTransaction
 
@@ -24,6 +25,10 @@
     CCShowNotesForClassTransaction *classNotesTransaction = [CCShowNotesForClassTransaction new];
     classController.classMarketTransaction =classNotesTransaction;
     classNotesTransaction.navigation = self.navigation;
+    
+    CCShowLocationsTransaction *locationsTransactions = [CCShowLocationsTransaction new];
+    locationsTransactions.navigation = self.navigation;
+    classController.locationTransaction = locationsTransactions;
     
     CCOtherUserProfileTransaction *otherUserProfileTransaction = [CCOtherUserProfileTransaction new];
     otherUserProfileTransaction.navigation = self.navigation;
