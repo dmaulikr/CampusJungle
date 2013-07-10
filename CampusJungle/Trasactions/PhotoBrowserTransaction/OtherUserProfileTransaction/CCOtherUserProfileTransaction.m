@@ -8,6 +8,7 @@
 
 #import "CCOtherUserProfileTransaction.h"
 #import "CCOtherUserProfileController.h"
+#import "CCPrivateMessageTransaction.h"
 
 @implementation CCOtherUserProfileTransaction
 
@@ -17,6 +18,11 @@
     NSParameterAssert(object);
     CCOtherUserProfileController *otherUserProfileController = [CCOtherUserProfileController new];
     otherUserProfileController.currentUser = object;
+
+    CCPrivateMessageTransaction *privateMessageTransaction = [CCPrivateMessageTransaction new];
+    privateMessageTransaction.navigation = self.navigation;
+    otherUserProfileController.sendMessageTransaction = privateMessageTransaction;
+    
     [self.navigation pushViewController:otherUserProfileController animated:YES];
 
 }

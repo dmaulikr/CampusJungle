@@ -8,9 +8,11 @@
 
 #import "CCViewController.h"
 #import "CCUser.h"
+#import "CCTransactionWithObject.h"
 
 @interface CCOtherUserProfileController : CCViewController
 
 @property (nonatomic, strong) CCUser *currentUser;
+@property (nonatomic, strong) id <CCTransactionWithObject> sendMessageTransaction;
 
 @end

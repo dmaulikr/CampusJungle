@@ -14,6 +14,8 @@
 @property (nonatomic, strong) IBOutlet UILabel *firstNameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *lastNameLabel;
 
+- (IBAction)sendMessage;
+
 @end
 
 @implementation CCOtherUserProfileController
@@ -27,6 +29,11 @@
     self.lastNameLabel.text = self.currentUser.lastName;
     self.firstNameLabel.text = self.currentUser.firstName;
     self.title = @"Profile";
+}
+
+- (IBAction)sendMessage
+{
+    [self.sendMessageTransaction performWithObject:self.currentUser];
 }
 
 @end
