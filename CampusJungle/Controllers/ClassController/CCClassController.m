@@ -12,23 +12,20 @@
 #import "CCClassmatesDataProvider.h"
 #import "CCUserCell.h"
 #import "CCClassTableController.h"
-#import "CCCellSelectionProtocol.h"
 #import "GIAlert.h"
 #import "CCClassesApiProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
 
-@interface CCClassController ()<CCCellSelectionProtocol>
+@interface CCClassController () <CCClassTableDelegate>
 
 @property (nonatomic, weak) IBOutlet UILabel *classNumber;
 @property (nonatomic, weak) IBOutlet UILabel *professor;
 @property (nonatomic, weak) IBOutlet UIImageView *avatarImage;
 @property (nonatomic, weak) IBOutlet UIView *headerView;
 @property (nonatomic, strong) CCClassTableController *classContentTable;
-@property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_classesApiProvider;
+@property (nonatomic, strong) id<CCClassesApiProviderProtocol> ioc_classesApiProvider;
 
 @property (nonatomic, strong) CCClass *currentClass;
-
-- (IBAction)leaveClassButtonDidPress;
 
 @end
 
@@ -115,7 +112,8 @@
 
 - (void)showLocation:(CCLocation *)location onMapWithLocations:(NSArray *)locationsArray
 {
-    [self.locationTransaction performWithObject:@{@"location" : location, @"array" : locationsArray, @"classId" : self.currentClass.classID}];
+    NSString *searchString = ([self.classContentTable.searchBar.text length] > 0) ? self.classContentTable.searchBar.text : @"";
+    [self.locationTransaction performWithObject:@{@"location" : location, @"array" : locationsArray, @"classId" : self.currentClass.classID, @"searchString" : searchString}];
 }
 
 @end

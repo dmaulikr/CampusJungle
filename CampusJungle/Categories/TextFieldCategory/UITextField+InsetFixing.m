@@ -10,13 +10,15 @@
 
 @implementation UITextField (InsetFixing)
 
-- (CGRect)textRectForBounds:(CGRect)bounds {
+- (CGRect)textRectForBounds:(CGRect)bounds
+{
     int margin = 17;
     CGRect inset = CGRectMake(bounds.origin.x + margin, bounds.origin.y, bounds.size.width - margin, bounds.size.height);
     return inset;
 }
 
-- (CGRect)editingRectForBounds:(CGRect)bounds {
+- (CGRect)editingRectForBounds:(CGRect)bounds
+{
     int margin = 17;
     CGRect inset = CGRectMake(bounds.origin.x + margin, bounds.origin.y, bounds.size.width - margin, bounds.size.height);
     return inset;

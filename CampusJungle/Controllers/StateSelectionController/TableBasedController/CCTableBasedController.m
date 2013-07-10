@@ -11,8 +11,6 @@
 
 @interface CCTableBasedController ()<UISearchBarDelegate>
 
-@property (nonatomic, strong) NSDate *lastSearchPressTime;
-
 @end
 
 @implementation CCTableBasedController

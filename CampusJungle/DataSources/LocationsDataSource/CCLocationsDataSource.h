@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCCommonDataSource.h"
 
-@interface CCLocationsDataSource : NSObject
+@interface CCLocationsDataSource : CCCommonDataSource
 
 @end

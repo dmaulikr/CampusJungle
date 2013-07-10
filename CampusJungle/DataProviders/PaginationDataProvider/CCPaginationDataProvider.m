@@ -24,7 +24,7 @@
         self.arrayOfItems = response[CCResponseKeys.items];
         self.isEverythingLoaded = [self checkIsComplete];
         [self.targetTable reloadData];
- 
+        
         self.isCurrentlyLoad = NO;
     }];
     self.currentPage++;
@@ -38,7 +38,6 @@
             NSDictionary *response = responseObject;
             self.arrayOfItems = [self.arrayOfItems arrayByAddingObjectsFromArray: response[CCResponseKeys.items]];
             self.isEverythingLoaded = [self checkIsComplete];
-            
             [self.targetTable reloadData];
             
             self.isCurrentlyLoad = NO;

@@ -31,7 +31,7 @@
 - (void)loadItemsForPageNumber:(long)numberOfPage successHandler:(successWithObject)successHandler
 {
     __weak CCClassLocationsDataProvider *weakSelf = self;
-    [self.ioc_locationsApiProvider loadLocationsForClassWithId:self.classId pageNumber:numberOfPage successHandler:^(RKMappingResult *result) {
+    [self.ioc_locationsApiProvider loadLocationsForClassWithId:self.classId filterString:self.searchQuery pageNumber:numberOfPage successHandler:^(RKMappingResult *result) {
         successHandler(result);
         if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(didLoadLocations:)]) {
             [weakSelf.delegate didLoadLocations:[result valueForKey:@"items"]];
