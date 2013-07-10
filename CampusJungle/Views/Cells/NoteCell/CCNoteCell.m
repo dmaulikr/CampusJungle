@@ -28,7 +28,7 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self = [[[NSBundle mainBundle] loadNibNamed:@"CCNoteCell"
+        self = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class])
                                               owner:self
                                             options:nil] objectAtIndex:0];
         [self setSelectionColor];

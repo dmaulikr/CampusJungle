@@ -7,9 +7,12 @@
 //
 
 #import "CCBaseCell.h"
+@class CCLocation;
 
 @interface CCLocationCell : CCBaseCell
 
-@property (nonatomic, strong) id cellObject;
+@property (nonatomic, strong) CCLocation *cellObject;
+
++ (CGFloat)heightForCellWithLocation:(CCLocation *)location;
 
 @end

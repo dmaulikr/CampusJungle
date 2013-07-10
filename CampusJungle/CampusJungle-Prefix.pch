@@ -18,7 +18,7 @@
     #import <MBProgressHUD/MBProgressHUD.h>
     #import <SVProgressHUD-Fork/SVProgressHUD.h>
     #import <MapKit/MapKit.h>
-
+    #import <TPKeyboardAvoiding/TPKeyboardAvoidingTableView.h>
     #import "CCConstantsDefines.h"
 
 #endif

@@ -11,7 +11,7 @@
 
 @protocol CCLocationsApiProviderProtocol <AppleGuiceInjectable>
 
-- (void)loadLocationsForClassWithId:(NSString *)classId pageNumber:(NSInteger)pageNumber successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)loadLocationsForClassWithId:(NSString *)classId filterString:(NSString *)filterString pageNumber:(NSInteger)pageNumber successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 
 
 @end

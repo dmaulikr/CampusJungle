@@ -23,8 +23,9 @@
         self.totalNumber = [response[CCResponseKeys.count] longValue];
         self.arrayOfItems = response[CCResponseKeys.items];
         self.isEverythingLoaded = [self checkIsComplete];
+        [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.tableViewWillReloadData object:nil];
         [self.targetTable reloadData];
- 
+        [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.tableViewDidReloadData object:nil];
         self.isCurrentlyLoad = NO;
     }];
     self.currentPage++;
@@ -38,8 +39,9 @@
             NSDictionary *response = responseObject;
             self.arrayOfItems = [self.arrayOfItems arrayByAddingObjectsFromArray: response[CCResponseKeys.items]];
             self.isEverythingLoaded = [self checkIsComplete];
-            
+            [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.tableViewWillReloadData object:nil];
             [self.targetTable reloadData];
+            [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.tableViewDidReloadData object:nil];
             
             self.isCurrentlyLoad = NO;
         }];

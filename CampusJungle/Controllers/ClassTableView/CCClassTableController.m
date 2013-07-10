@@ -65,6 +65,7 @@ static const NSInteger kNavBarHeight = 44;
 
 - (void)setClassmatesConfiguration
 {
+    [self clearSearchBarString];
     self.sectionName.text = CCClassTabbarButtonsTitles.classmates;
     if (!self.classmatesProvider) {
         self.classmatesProvider = [CCClassmatesDataProvider new];
@@ -76,6 +77,7 @@ static const NSInteger kNavBarHeight = 44;
 
 - (void)setForumsConfiguration
 {
+    [self clearSearchBarString];
     self.sectionName.text = CCClassTabbarButtonsTitles.forums;
     if (!self.forumsProvider) {
         self.forumsProvider = [CCForumsDataProvider new];
@@ -86,6 +88,7 @@ static const NSInteger kNavBarHeight = 44;
 
 - (void)setLocationConfiguration
 {
+    [self clearSearchBarString];
     self.sectionName.text = CCClassTabbarButtonsTitles.locations;
     if (!self.locationsProvider) {
         self.locationsProvider = [[CCClassLocationsDataProvider alloc] initWithDelegate:self];
@@ -97,12 +100,18 @@ static const NSInteger kNavBarHeight = 44;
 
 - (void)setGroupsConfiguration
 {
+    [self clearSearchBarString];
     self.sectionName.text = CCClassTabbarButtonsTitles.groups;
     if (!self.groupsProvider) {
         self.groupsProvider = [CCGroupsDataProvider new];
         self.groupsProvider.cellReuseIdentifier = CCTableDefines.groupsCellIdentifier;
     }
     [self configTableWithProvider:self.groupsProvider cellClass:[UITableViewCell class] cellReuseIdentifier:CCTableDefines.groupsCellIdentifier];
+}
+
+- (void)clearSearchBarString
+{
+    [self.searchBar setText:@""];
 }
 
 - (void)didSelectBarItemWithIdentifier:(NSInteger)identifier

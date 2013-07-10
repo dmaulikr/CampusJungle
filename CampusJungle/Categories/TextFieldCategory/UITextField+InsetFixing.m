@@ -12,6 +12,7 @@
 
 @implementation UITextField (InsetFixing)
 
+
 - (CGRect)textRectForBounds:(CGRect)bounds {
     int margin = standardTextFieldMargin;
        if([self isKindOfClass:NSClassFromString(@"UISearchBarTextField")]){

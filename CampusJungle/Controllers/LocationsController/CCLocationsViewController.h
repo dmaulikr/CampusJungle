@@ -15,6 +15,7 @@
 
 - (id)initWithLocationsArray:(NSArray *)locationsArray;
 - (void)setSelectedLocation:(CCLocation *)selectedLocation;
+- (void)setSearchString:(NSString *)searchString;
 - (void)setClassId:(NSString *)classId;
 
 @end

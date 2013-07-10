@@ -252,6 +252,7 @@
 		70C0FCB6178484D0005EF95E /* UITextField+InsetFixing.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C0FCB5178484D0005EF95E /* UITextField+InsetFixing.m */; };
 		70F42A7B178D5A2900E763F3 /* CCForumsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F42A7A178D5A2900E763F3 /* CCForumsDataProvider.m */; };
 		70F42A7E178D5A3800E763F3 /* CCGroupsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F42A7D178D5A3800E763F3 /* CCGroupsDataProvider.m */; };
+		70F42A83178D66BA00E763F3 /* CCLocationsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F42A82178D66BA00E763F3 /* CCLocationsDataSource.m */; };
 		A784C599173A865E005E4921 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C598173A865E005E4921 /* UIKit.framework */; };
 		A784C59B173A865E005E4921 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C59A173A865E005E4921 /* Foundation.framework */; };
 		A784C59D173A865E005E4921 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C59C173A865E005E4921 /* CoreGraphics.framework */; };
@@ -901,6 +902,8 @@
 		70F42A7C178D5A3800E763F3 /* CCGroupsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupsDataProvider.h; sourceTree = "<group>"; };
 		70F42A7D178D5A3800E763F3 /* CCGroupsDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupsDataProvider.m; sourceTree = "<group>"; };
 		70F42A7F178D5D3C00E763F3 /* CCClassTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassTableDelegate.h; sourceTree = "<group>"; };
+		70F42A81178D66BA00E763F3 /* CCLocationsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationsDataSource.h; sourceTree = "<group>"; };
+		70F42A82178D66BA00E763F3 /* CCLocationsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocationsDataSource.m; sourceTree = "<group>"; };
 		9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		A784C595173A865E005E4921 /* CampusJungle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusJungle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A784C598173A865E005E4921 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -1776,6 +1779,7 @@
 				70A29D3117877B6B001BC8DD /* CommonCollectionDataSource */,
 				70A29D3417877B6B001BC8DD /* CommonTableDataSource */,
 				70A29D3817877B6B001BC8DD /* ImageSortingDataSource */,
+				70F42A80178D66A600E763F3 /* LocationsDataSource */,
 				70A29D3B17877B6B001BC8DD /* MarketFilterDataSource */,
 				70A29D3E17877B6B001BC8DD /* SideMenuDataSource */,
 				70A29D4117877B6B001BC8DD /* UserEducationsTableDataSource */,
@@ -3322,6 +3326,15 @@
 			path = GroupsDataProvider;
 			sourceTree = "<group>";
 		};
+		70F42A80178D66A600E763F3 /* LocationsDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				70F42A81178D66BA00E763F3 /* CCLocationsDataSource.h */,
+				70F42A82178D66BA00E763F3 /* CCLocationsDataSource.m */,
+			);
+			path = LocationsDataSource;
+			sourceTree = "<group>";
+		};
 		A784C58C173A865E005E4921 = {
 			isa = PBXGroup;
 			children = (
@@ -4315,6 +4328,9 @@
 				D3949704178C299100C39A7E /* CCBackToStuffTransaction.m in Sources */,
 				D3949709178C401400C39A7E /* CCOfferDetailsController.m in Sources */,
 				D394970E178C406800C39A7E /* CCOfferDetailsTransaction.m in Sources */,
+
+				70F42A83178D66BA00E763F3 /* CCLocationsDataSource.m in Sources */,
+
 				D3949712178C6D4500C39A7E /* CCMessageAPIProvider.m in Sources */,
 				D3949718178D51BE00C39A7E /* CCPrivateMessageController.m in Sources */,
 				D394971D178D561100C39A7E /* CCPrivateMessageTransaction.m in Sources */,

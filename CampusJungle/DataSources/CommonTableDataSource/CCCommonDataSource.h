@@ -10,9 +10,9 @@
 #import "CCBaseDataProvider.h"
 #import "CCCellSelectionProtocol.h"
 
-@interface CCCommonDataSource : NSObject<UITableViewDataSource, UITableViewDelegate>
+@interface CCCommonDataSource : NSObject <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, weak) id <CCCellSelectionProtocol> delegate;
+@property (nonatomic, weak) id<CCCellSelectionProtocol> delegate;
 @property (nonatomic, strong) CCBaseDataProvider *dataProvider;
 
 @end
