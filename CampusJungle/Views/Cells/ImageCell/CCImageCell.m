@@ -34,4 +34,9 @@
     self.pageImage.image = cellObject;
 }
 
+- (void)drawRect:(CGRect)rect
+{
+    [super drawRect:rect];
+}
+
 @end

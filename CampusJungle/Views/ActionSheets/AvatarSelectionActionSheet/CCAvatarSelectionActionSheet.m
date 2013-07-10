@@ -17,6 +17,8 @@
     [testSheet addButtonWithTitle:@"Select from gallery" handler:^{
         [self selectAvatarFromGallery];
     }];
+    
+    
     [testSheet addButtonWithTitle:@"Make photo" handler:^{
         [self makePhotoForAvatar];
     }];
@@ -33,7 +35,6 @@
     picker.allowsEditing = YES;
     picker.delegate = self;
     [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateNormal];
-    
     [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateHighlighted];
     [self.delegate presentViewController:picker animated:YES completion:nil];
 }
@@ -44,6 +45,8 @@
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     picker.allowsEditing = YES;
     picker.delegate = self;
+    [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateNormal];
+    [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateHighlighted];
     [self.delegate presentViewController:picker animated:YES completion:nil];
 }
 

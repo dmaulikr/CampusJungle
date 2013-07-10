@@ -7,17 +7,25 @@
 //
 
 #import "UITextField+InsetFixing.h"
+#define standardTextFieldMargin 15
+#define searchMargin 22
 
 @implementation UITextField (InsetFixing)
 
 - (CGRect)textRectForBounds:(CGRect)bounds {
-    int margin = 17;
+    int margin = standardTextFieldMargin;
+       if([self isKindOfClass:NSClassFromString(@"UISearchBarTextField")]){
+           margin = searchMargin;
+       }
     CGRect inset = CGRectMake(bounds.origin.x + margin, bounds.origin.y, bounds.size.width - margin, bounds.size.height);
     return inset;
 }
 
 - (CGRect)editingRectForBounds:(CGRect)bounds {
-    int margin = 17;
+    int margin = standardTextFieldMargin;
+    if([self isKindOfClass:NSClassFromString(@"UISearchBarTextField")]){
+        margin = searchMargin;
+    }
     CGRect inset = CGRectMake(bounds.origin.x + margin, bounds.origin.y, bounds.size.width - margin, bounds.size.height);
     return inset;
 }

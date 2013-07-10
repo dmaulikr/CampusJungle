@@ -64,7 +64,6 @@
     picker.delegate = self;
     
     [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateNormal];
-    
     [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateHighlighted];
     [self presentViewController:picker animated:YES completion:nil];
 }
@@ -74,6 +73,9 @@
     UIImagePickerController * picker = [UIImagePickerController new];
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     picker.delegate = self;
+    
+    [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateNormal];
+    [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateHighlighted];
     [self presentViewController:picker animated:YES completion:nil];
 }
 

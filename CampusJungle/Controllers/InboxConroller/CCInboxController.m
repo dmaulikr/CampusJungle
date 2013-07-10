@@ -31,7 +31,8 @@
     self.title = @"Inbox";
     CCMessagesDataProvider *messagesDataProvider = [CCMessagesDataProvider new];
     messagesDataProvider.filters = @{
-                                     @"personal" : @"YES"
+                                     @"personal" : @"YES",
+                                     @"direction" : @"received"
                                      };
     [self configTableWithProvider:messagesDataProvider cellClass:[CCOrdinaryCell class]];
 }
@@ -69,7 +70,8 @@
 {
     CCMessagesDataProvider *messagesDataProvider = [CCMessagesDataProvider new];
     messagesDataProvider.filters = @{
-                                     @"personal" : @"YES"
+                                     @"personal" : @"YES",
+                                    @"direction" : @"received"
                                      };
     [self configTableWithProvider:messagesDataProvider cellClass:[CCOrdinaryCell class]];
     [self.mainTable reloadData];
