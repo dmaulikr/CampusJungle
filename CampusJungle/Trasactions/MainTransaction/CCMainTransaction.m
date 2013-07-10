@@ -20,6 +20,7 @@
 #import "CCMarketTranasction.h"
 #import "CCInboxController.h"
 #import "CCInboxTransaction.h"
+#import "CCOfferDetailsTransaction.h"
 
 @interface CCMainTransaction()
 
@@ -42,9 +43,13 @@
     CCSideMenuController *leftController = [[CCSideMenuController alloc] init];
 	rootController.leftPanel = leftController;
     rootController.panningLimitedToTopViewController = NO;
-    
-    CCInboxController *centralPanel = [CCInboxController new];
+    CCInboxController *inboxController = [CCInboxController new];
+    CCInboxController *centralPanel = inboxController;
     rootController.centerPanel = [[UINavigationController alloc] initWithRootViewController:centralPanel];
+    
+    CCOfferDetailsTransaction *offerDetails = [CCOfferDetailsTransaction new];
+    offerDetails.navigation = (UINavigationController *)rootController.centerPanel;
+    inboxController.offerDetailsTransaction = offerDetails;
     
     [self.ioc_userSession setCurrentUser: [self.ioc_userSession loadSavedUser]];
     

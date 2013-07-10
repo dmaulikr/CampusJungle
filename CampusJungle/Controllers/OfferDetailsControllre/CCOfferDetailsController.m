@@ -1,0 +1,114 @@
+//
+//  CCOfferDetailsController.m
+//  CampusJungle
+//
+//  Created by Vlad Korzun on 09.07.13.
+//  Copyright (c) 2013 111minutes. All rights reserved.
+//
+
+#import "CCOfferDetailsController.h"
+#import "CCStuffAPIProviderProtocol.h"
+#import "CCAPIProviderProtocol.h"
+#import "CCStandardErrorHandler.h"
+#import "CCStuff.h"
+#import "CCUser.h"
+
+@interface CCOfferDetailsController ()
+
+@property (nonatomic, weak) IBOutlet UITextView *offerText;
+@property (nonatomic, weak) IBOutlet UIImageView *senderAvatar;
+@property (nonatomic, weak) IBOutlet UILabel *senderName;
+@property (nonatomic, weak) IBOutlet UILabel *stuffNameLabel;
+@property (nonatomic, weak) IBOutlet UIButton *stuffDetailsButton;
+@property (nonatomic, weak) IBOutlet UIButton *senderDetailsButton;
+
+@property (nonatomic, strong) id <CCStuffAPIProviderProtocol> ioc_stuffAPIProvider;
+@property (nonatomic ,strong) id <CCAPIProviderProtocol> ioc_APIProvider;
+@property (nonatomic, strong) CCStuff *stuff;
+@property (nonatomic, strong) CCUser *sender;
+
+- (IBAction)senderButtonDidPressed;
+- (IBAction)stuffDidPerssed;
+
+@end
+
+@implementation CCOfferDetailsController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.title = @"Offer";
+    [self loadOfferInfo];
+    [self loadInfo];
+    [self setupButtons];
+    
+}
+
+- (void)setupButtons
+{
+    [self.stuffDetailsButton setBackgroundImage:nil forState:UIControlStateHighlighted];
+    [self.stuffDetailsButton setBackgroundImage:nil forState:UIControlStateNormal];
+    [self.senderDetailsButton setBackgroundImage:nil forState:UIControlStateHighlighted];
+    [self.senderDetailsButton setBackgroundImage:nil forState:UIControlStateNormal];
+}
+
+- (void)loadInfo
+{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self.ioc_stuffAPIProvider getStuffWithID:self.offer.stuffID
+                               successHandler:^(RKMappingResult *result) {
+                                   [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                   self.stuff = result.firstObject;
+                               }
+                                 errorHandler:^(NSError *error) {
+                                     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                     [CCStandardErrorHandler showErrorWithError:error];
+                                 }];
+    [self.ioc_APIProvider getUserWithID:self.offer.senderID
+                         successHandler:^(RKMappingResult *result) {
+                             self.sender = result.firstObject;
+                         } errorHandler:^(NSError *error) {
+                             [CCStandardErrorHandler showErrorWithError:error];
+                         }];
+}
+
+- (void)setStuff:(CCStuff *)stuff
+{
+    _stuff = stuff;
+    [self loadStuffInfo];
+}
+
+- (void)setSender:(CCUser *)sender
+{
+    _sender = sender;
+    [self loadSenderInfo];
+}
+
+- (void)loadOfferInfo
+{
+    self.offerText.text = self.offer.text;
+}
+
+- (void)loadStuffInfo
+{
+    self.stuffNameLabel.text = self.stuff.stuffDescription;
+}
+
+- (void)loadSenderInfo
+{
+    NSURL *avatarURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,self.sender.avatar]];
+    [self.senderAvatar setImageWithURL:avatarURL placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
+    self.senderName.text = [NSString stringWithFormat:@"%@ %@",self.sender.firstName, self.sender.lastName];
+}
+
+- (IBAction)senderButtonDidPressed
+{
+    [self.senderDetailsTransaction performWithObject:self.sender];
+}
+
+- (IBAction)stuffDidPerssed
+{
+    [self.stuffDetailsTransaction performWithObject:self.stuff];
+}
+
+@end

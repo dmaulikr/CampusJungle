@@ -18,7 +18,6 @@
              @"text" : @"text",
              @"sender_id" : @"senderID",
              @"receiver_id" : @"receiverID",
-
              };
 }
 

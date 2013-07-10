@@ -302,10 +302,6 @@
 		D394968E1785C36800C39A7E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D394968D1785C36800C39A7E /* Default.png */; };
 		D39496901785C36C00C39A7E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D394968F1785C36C00C39A7E /* Default-568h@2x.png */; };
 		D39496921785C37300C39A7E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D39496911785C37300C39A7E /* Default@2x.png */; };
-		D39496CD178ABB0000C39A7E /* CCClassTabbarControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496CB178ABB0000C39A7E /* CCClassTabbarControllerViewController.m */; };
-		D39496CE178ABB0000C39A7E /* CCClassTabbarControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39496CC178ABB0000C39A7E /* CCClassTabbarControllerViewController.xib */; };
-		D39496D5178AC48400C39A7E /* CCClassTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496D3178AC48400C39A7E /* CCClassTableController.m */; };
-		D39496D6178AC48400C39A7E /* CCClassTableController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39496D4178AC48400C39A7E /* CCClassTableController.xib */; };
 		D39496D9178AEEE900C39A7E /* searchFieldBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = D39496D7178AEEE900C39A7E /* searchFieldBackground.png */; };
 		D39496DA178AEEE900C39A7E /* searchFieldBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D39496D8178AEEE900C39A7E /* searchFieldBackground@2x.png */; };
 		D39496DF178B193A00C39A7E /* CCOfferControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496DD178B193A00C39A7E /* CCOfferControllerViewController.m */; };
@@ -313,6 +309,14 @@
 		D39496E4178B1E8600C39A7E /* CCOfferCreationTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496E3178B1E8600C39A7E /* CCOfferCreationTransaction.m */; };
 		D39496E8178B252700C39A7E /* CCOffer.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496E7178B252700C39A7E /* CCOffer.m */; };
 		D39496EC178B2A0400C39A7E /* CCOffersDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496EB178B2A0400C39A7E /* CCOffersDataProvider.m */; };
+		D39496F9178C27B100C39A7E /* CCClassTabbarControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496F7178C27B100C39A7E /* CCClassTabbarControllerViewController.m */; };
+		D39496FA178C27B100C39A7E /* CCClassTabbarControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39496F8178C27B100C39A7E /* CCClassTabbarControllerViewController.xib */; };
+		D39496FF178C27DE00C39A7E /* CCClassTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496FD178C27DE00C39A7E /* CCClassTableController.m */; };
+		D3949700178C27DE00C39A7E /* CCClassTableController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39496FE178C27DE00C39A7E /* CCClassTableController.xib */; };
+		D3949704178C299100C39A7E /* CCBackToStuffTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949703178C299100C39A7E /* CCBackToStuffTransaction.m */; };
+		D3949709178C401400C39A7E /* CCOfferDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949707178C401400C39A7E /* CCOfferDetailsController.m */; };
+		D394970A178C401400C39A7E /* CCOfferDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3949708178C401400C39A7E /* CCOfferDetailsController.xib */; };
+		D394970E178C406800C39A7E /* CCOfferDetailsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D394970D178C406800C39A7E /* CCOfferDetailsTransaction.m */; };
 		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
 		D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39F1C161753C0E8008E08A2 /* Accounts.framework */; };
 		D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A2C3241754C95700989831 /* MessageUI.framework */; };
@@ -886,6 +890,7 @@
 		70F42A7A178D5A2900E763F3 /* CCForumsDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCForumsDataProvider.m; sourceTree = "<group>"; };
 		70F42A7C178D5A3800E763F3 /* CCGroupsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupsDataProvider.h; sourceTree = "<group>"; };
 		70F42A7D178D5A3800E763F3 /* CCGroupsDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupsDataProvider.m; sourceTree = "<group>"; };
+		70F42A7F178D5D3C00E763F3 /* CCClassTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassTableDelegate.h; sourceTree = "<group>"; };
 		9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		A784C595173A865E005E4921 /* CampusJungle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusJungle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A784C598173A865E005E4921 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -945,13 +950,6 @@
 		D394968D1785C36800C39A7E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D394968F1785C36C00C39A7E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D39496911785C37300C39A7E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		D39496CA178ABB0000C39A7E /* CCClassTabbarControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassTabbarControllerViewController.h; sourceTree = "<group>"; };
-		D39496CB178ABB0000C39A7E /* CCClassTabbarControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassTabbarControllerViewController.m; sourceTree = "<group>"; };
-		D39496CC178ABB0000C39A7E /* CCClassTabbarControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCClassTabbarControllerViewController.xib; sourceTree = "<group>"; };
-		D39496CF178ABB2500C39A7E /* CCClassTabbarControllerDelegateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCClassTabbarControllerDelegateProtocol.h; sourceTree = "<group>"; };
-		D39496D2178AC48400C39A7E /* CCClassTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassTableController.h; sourceTree = "<group>"; };
-		D39496D3178AC48400C39A7E /* CCClassTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassTableController.m; sourceTree = "<group>"; };
-		D39496D4178AC48400C39A7E /* CCClassTableController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCClassTableController.xib; sourceTree = "<group>"; };
 		D39496D7178AEEE900C39A7E /* searchFieldBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchFieldBackground.png; sourceTree = "<group>"; };
 		D39496D8178AEEE900C39A7E /* searchFieldBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchFieldBackground@2x.png"; sourceTree = "<group>"; };
 		D39496DC178B193A00C39A7E /* CCOfferControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCOfferControllerViewController.h; sourceTree = "<group>"; };
@@ -963,6 +961,20 @@
 		D39496E7178B252700C39A7E /* CCOffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCOffer.m; sourceTree = "<group>"; };
 		D39496EA178B2A0400C39A7E /* CCOffersDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCOffersDataProvider.h; sourceTree = "<group>"; };
 		D39496EB178B2A0400C39A7E /* CCOffersDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCOffersDataProvider.m; sourceTree = "<group>"; };
+		D39496F5178C27B100C39A7E /* CCClassTabbarControllerDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassTabbarControllerDelegateProtocol.h; sourceTree = "<group>"; };
+		D39496F6178C27B100C39A7E /* CCClassTabbarControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassTabbarControllerViewController.h; sourceTree = "<group>"; };
+		D39496F7178C27B100C39A7E /* CCClassTabbarControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassTabbarControllerViewController.m; sourceTree = "<group>"; };
+		D39496F8178C27B100C39A7E /* CCClassTabbarControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCClassTabbarControllerViewController.xib; sourceTree = "<group>"; };
+		D39496FC178C27DE00C39A7E /* CCClassTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassTableController.h; sourceTree = "<group>"; };
+		D39496FD178C27DE00C39A7E /* CCClassTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassTableController.m; sourceTree = "<group>"; };
+		D39496FE178C27DE00C39A7E /* CCClassTableController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCClassTableController.xib; sourceTree = "<group>"; };
+		D3949702178C299100C39A7E /* CCBackToStuffTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBackToStuffTransaction.h; sourceTree = "<group>"; };
+		D3949703178C299100C39A7E /* CCBackToStuffTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBackToStuffTransaction.m; sourceTree = "<group>"; };
+		D3949706178C401400C39A7E /* CCOfferDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCOfferDetailsController.h; sourceTree = "<group>"; };
+		D3949707178C401400C39A7E /* CCOfferDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCOfferDetailsController.m; sourceTree = "<group>"; };
+		D3949708178C401400C39A7E /* CCOfferDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCOfferDetailsController.xib; sourceTree = "<group>"; };
+		D394970C178C406800C39A7E /* CCOfferDetailsTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCOfferDetailsTransaction.h; sourceTree = "<group>"; };
+		D394970D178C406800C39A7E /* CCOfferDetailsTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCOfferDetailsTransaction.m; sourceTree = "<group>"; };
 		D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStandardErrorHandler.h; sourceTree = "<group>"; };
 		D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStandardErrorHandler.m; sourceTree = "<group>"; };
 		D39F1C161753C0E8008E08A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -1219,11 +1231,13 @@
 				70A29C35178778AB001BC8DD /* BaseController */,
 				70A29C39178778AB001BC8DD /* CitySelectionController */,
 				70A29C3D178778AB001BC8DD /* ClassController */,
+				D39496FB178C27DE00C39A7E /* ClassTableView */,
 				70A29C41178778AB001BC8DD /* ClassesController */,
 				70A29C45178778AB001BC8DD /* ClassesOfCollegeController */,
 				70A29C49178778AB001BC8DD /* CollegeSearchController */,
 				70A29C4C178778AB001BC8DD /* CollegeSelectionController */,
 				70A29C50178778AB001BC8DD /* CollegesListController */,
+				D39496F4178C27B100C39A7E /* ClassTabbarController */,
 				70A29C54178778AB001BC8DD /* CreateClassController */,
 				70A29C58178778AB001BC8DD /* CreateNoteController */,
 				70A29C5C178778AB001BC8DD /* DataSources */,
@@ -1246,6 +1260,7 @@
 				70A29CAC178778AB001BC8DD /* NoteDetailsController */,
 				70A29CB0178778AB001BC8DD /* NotesViewerController */,
 				D39496DB178B191F00C39A7E /* OfferController */,
+				D3949705178C3FED00C39A7E /* OfferDetailsControllre */,
 				70A29CB4178778AB001BC8DD /* OtherUserProfileController */,
 				70A29CB8178778AB001BC8DD /* PhotoBrowserController */,
 				70A29CBC178778AB001BC8DD /* SideBarController */,
@@ -2413,8 +2428,6 @@
 				70A29E4B17877D2B001BC8DD /* Cells */,
 				70A29E8D17877D2B001BC8DD /* Headers */,
 				70A29E9617877D2B001BC8DD /* Pickers */,
-				D39496D0178AC1C000C39A7E /* TableView */,
-				D39496C3178AB55200C39A7E /* TabbarController */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2755,6 +2768,7 @@
 				70A29EC817877E0C001BC8DD /* AllClassesTransaction */,
 				70A29ECB17877E0C001BC8DD /* ApplyFiltersTransaction */,
 				70A29ECE17877E0C001BC8DD /* BackToListOfNotesTransaction */,
+				D3949701178C297A00C39A7E /* BackToStuffTransaction */,
 				70A29ED117877E0C001BC8DD /* BackToUserProfileTransaction */,
 				70A29ED417877E0C001BC8DD /* CitySelectionTransaction */,
 				70A29ED717877E0C001BC8DD /* ClassAddedTransaction */,
@@ -2781,6 +2795,7 @@
 				70A29F1917877E0D001BC8DD /* MyNotes */,
 				70A29F1C17877E0D001BC8DD /* MyStuffTransaction */,
 				D39496E1178B1E6A00C39A7E /* OfferCreationTransaction */,
+				D394970B178C404B00C39A7E /* OfferDetailsController */,
 				70A29F1F17877E0D001BC8DD /* NoteDetailTransaction */,
 				70A29F2217877E0D001BC8DD /* NotesBackToListTransaction */,
 				70A29F2517877E0D001BC8DD /* PhotoBrowserTransaction */,
@@ -3433,44 +3448,6 @@
 			path = DropboxIcons;
 			sourceTree = "<group>";
 		};
-		D39496C3178AB55200C39A7E /* TabbarController */ = {
-			isa = PBXGroup;
-			children = (
-				D39496C9178ABB0000C39A7E /* ClassTabbarController */,
-			);
-			path = TabbarController;
-			sourceTree = "<group>";
-		};
-		D39496C9178ABB0000C39A7E /* ClassTabbarController */ = {
-			isa = PBXGroup;
-			children = (
-				D39496CA178ABB0000C39A7E /* CCClassTabbarControllerViewController.h */,
-				D39496CB178ABB0000C39A7E /* CCClassTabbarControllerViewController.m */,
-				D39496CC178ABB0000C39A7E /* CCClassTabbarControllerViewController.xib */,
-				D39496CF178ABB2500C39A7E /* CCClassTabbarControllerDelegateProtocol.h */,
-			);
-			path = ClassTabbarController;
-			sourceTree = "<group>";
-		};
-		D39496D0178AC1C000C39A7E /* TableView */ = {
-			isa = PBXGroup;
-			children = (
-				D39496D1178AC35E00C39A7E /* ClassTableView */,
-			);
-			path = TableView;
-			sourceTree = "<group>";
-		};
-		D39496D1178AC35E00C39A7E /* ClassTableView */ = {
-			isa = PBXGroup;
-			children = (
-				D39496D2178AC48400C39A7E /* CCClassTableController.h */,
-				D39496D3178AC48400C39A7E /* CCClassTableController.m */,
-				D39496D4178AC48400C39A7E /* CCClassTableController.xib */,
-				703DA4F9178C66DD00464DD3 /* CCClassTableDelegate.h */,
-			);
-			path = ClassTableView;
-			sourceTree = "<group>";
-		};
 		D39496DB178B191F00C39A7E /* OfferController */ = {
 			isa = PBXGroup;
 			children = (
@@ -3504,10 +3481,62 @@
 		D39496E9178B29E400C39A7E /* OffersDataProvider */ = {
 			isa = PBXGroup;
 			children = (
+				703DA4F9178C66DD00464DD3 /* CCClassTableDelegate.h */,
 				D39496EA178B2A0400C39A7E /* CCOffersDataProvider.h */,
 				D39496EB178B2A0400C39A7E /* CCOffersDataProvider.m */,
 			);
 			path = OffersDataProvider;
+			sourceTree = "<group>";
+		};
+		D39496F4178C27B100C39A7E /* ClassTabbarController */ = {
+			isa = PBXGroup;
+			children = (
+				D39496F5178C27B100C39A7E /* CCClassTabbarControllerDelegateProtocol.h */,
+				D39496F6178C27B100C39A7E /* CCClassTabbarControllerViewController.h */,
+				D39496F7178C27B100C39A7E /* CCClassTabbarControllerViewController.m */,
+				D39496F8178C27B100C39A7E /* CCClassTabbarControllerViewController.xib */,
+			);
+			name = ClassTabbarController;
+			path = CollegesListController/ClassTabbarController;
+			sourceTree = "<group>";
+		};
+		D39496FB178C27DE00C39A7E /* ClassTableView */ = {
+			isa = PBXGroup;
+			children = (
+				D39496FC178C27DE00C39A7E /* CCClassTableController.h */,
+				D39496FD178C27DE00C39A7E /* CCClassTableController.m */,
+				D39496FE178C27DE00C39A7E /* CCClassTableController.xib */,
+				70F42A7F178D5D3C00E763F3 /* CCClassTableDelegate.h */,
+			);
+			path = ClassTableView;
+			sourceTree = "<group>";
+		};
+		D3949701178C297A00C39A7E /* BackToStuffTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3949702178C299100C39A7E /* CCBackToStuffTransaction.h */,
+				D3949703178C299100C39A7E /* CCBackToStuffTransaction.m */,
+			);
+			path = BackToStuffTransaction;
+			sourceTree = "<group>";
+		};
+		D3949705178C3FED00C39A7E /* OfferDetailsControllre */ = {
+			isa = PBXGroup;
+			children = (
+				D3949706178C401400C39A7E /* CCOfferDetailsController.h */,
+				D3949707178C401400C39A7E /* CCOfferDetailsController.m */,
+				D3949708178C401400C39A7E /* CCOfferDetailsController.xib */,
+			);
+			path = OfferDetailsControllre;
+			sourceTree = "<group>";
+		};
+		D394970B178C404B00C39A7E /* OfferDetailsController */ = {
+			isa = PBXGroup;
+			children = (
+				D394970C178C406800C39A7E /* CCOfferDetailsTransaction.h */,
+				D394970D178C406800C39A7E /* CCOfferDetailsTransaction.m */,
+			);
+			path = OfferDetailsController;
 			sourceTree = "<group>";
 		};
 		D39F1C0E1753821D008E08A2 /* StandardErrorHandler */ = {
@@ -3923,13 +3952,14 @@
 				70A29EBE17877D2C001BC8DD /* CCUserCell.xib in Resources */,
 				70A29EC017877D2C001BC8DD /* CCFilterSectionHeader.xib in Resources */,
 				70A29EC217877D2C001BC8DD /* CCSideMenuSectionHeader.xib in Resources */,
-				D39496CE178ABB0000C39A7E /* CCClassTabbarControllerViewController.xib in Resources */,
-				D39496D6178AC48400C39A7E /* CCClassTableController.xib in Resources */,
 				D39496D9178AEEE900C39A7E /* searchFieldBackground.png in Resources */,
 				D39496DA178AEEE900C39A7E /* searchFieldBackground@2x.png in Resources */,
 				D39496E0178B193A00C39A7E /* CCOfferControllerViewController.xib in Resources */,
 				703DA4ED178C31C000464DD3 /* CCLocationCell.xib in Resources */,
 				703DA4FF178C6A5900464DD3 /* CCLocationsViewController.xib in Resources */,
+				D39496FA178C27B100C39A7E /* CCClassTabbarControllerViewController.xib in Resources */,
+				D3949700178C27DE00C39A7E /* CCClassTableController.xib in Resources */,
+				D394970A178C401400C39A7E /* CCOfferDetailsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4151,8 +4181,6 @@
 				70A29F7E17877E0D001BC8DD /* CCViewMarketNotesListTransaction.m in Sources */,
 				70A29F7F17877E0D001BC8DD /* CCViewPDFNotesTransaction.m in Sources */,
 				70A29F8017877E0D001BC8DD /* CCViewMarketStuffListTransaction.m in Sources */,
-				D39496CD178ABB0000C39A7E /* CCClassTabbarControllerViewController.m in Sources */,
-				D39496D5178AC48400C39A7E /* CCClassTableController.m in Sources */,
 				D39496DF178B193A00C39A7E /* CCOfferControllerViewController.m in Sources */,
 				D39496E4178B1E8600C39A7E /* CCOfferCreationTransaction.m in Sources */,
 				D39496E8178B252700C39A7E /* CCOffer.m in Sources */,
@@ -4166,6 +4194,11 @@
 				703DA503178C6ABC00464DD3 /* CCShowLocationsTransaction.m in Sources */,
 				70F42A7B178D5A2900E763F3 /* CCForumsDataProvider.m in Sources */,
 				70F42A7E178D5A3800E763F3 /* CCGroupsDataProvider.m in Sources */,
+				D39496F9178C27B100C39A7E /* CCClassTabbarControllerViewController.m in Sources */,
+				D39496FF178C27DE00C39A7E /* CCClassTableController.m in Sources */,
+				D3949704178C299100C39A7E /* CCBackToStuffTransaction.m in Sources */,
+				D3949709178C401400C39A7E /* CCOfferDetailsController.m in Sources */,
+				D394970E178C406800C39A7E /* CCOfferDetailsTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

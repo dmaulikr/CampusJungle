@@ -8,6 +8,7 @@
 
 #import "CCOfferCreationTransaction.h"
 #import "CCOfferControllerViewController.h"
+#import "CCBackToStuffTransaction.h"
 
 @implementation CCOfferCreationTransaction
 
@@ -15,6 +16,9 @@
 {
     NSParameterAssert(self.navigation);
     CCOfferControllerViewController *offerController = [CCOfferControllerViewController new];
+    CCBackToStuffTransaction *backToStuffTransaction = [CCBackToStuffTransaction new];
+    backToStuffTransaction.navigation = self.navigation;
+    offerController.backToStuffTransaction = backToStuffTransaction;
     offerController.currentStuff = object;
     [self.navigation pushViewController:offerController animated:YES];
 }
