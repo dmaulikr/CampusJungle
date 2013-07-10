@@ -7,7 +7,8 @@
 //
 
 #import "CCAPIProvider.h"
+#import "CCMessageAPIProviderProtocol.h"
 
-@interface CCMessageAPIProvider : CCAPIProvider
+@interface CCMessageAPIProvider : CCAPIProvider <CCMessageAPIProviderProtocol>
 
 @end

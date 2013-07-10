@@ -306,6 +306,12 @@
 		D394970A178C401400C39A7E /* CCOfferDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3949708178C401400C39A7E /* CCOfferDetailsController.xib */; };
 		D394970E178C406800C39A7E /* CCOfferDetailsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D394970D178C406800C39A7E /* CCOfferDetailsTransaction.m */; };
 		D3949712178C6D4500C39A7E /* CCMessageAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949711178C6D4500C39A7E /* CCMessageAPIProvider.m */; };
+		D3949718178D51BE00C39A7E /* CCPrivateMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949716178D51BE00C39A7E /* CCPrivateMessageController.m */; };
+		D3949719178D51BE00C39A7E /* CCPrivateMessageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3949717178D51BE00C39A7E /* CCPrivateMessageController.xib */; };
+		D394971D178D561100C39A7E /* CCPrivateMessageTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D394971C178D561100C39A7E /* CCPrivateMessageTransaction.m */; };
+		D3949721178D5ADD00C39A7E /* CCSuccessSendMessageTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949720178D5ADD00C39A7E /* CCSuccessSendMessageTransaction.m */; };
+		D3949725178D5C1400C39A7E /* CCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949724178D5C1400C39A7E /* CCMessage.m */; };
+		D3949729178D61A600C39A7E /* CCMessagesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949728178D61A600C39A7E /* CCMessagesDataProvider.m */; };
 		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
 		D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39F1C161753C0E8008E08A2 /* Accounts.framework */; };
 		D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A2C3241754C95700989831 /* MessageUI.framework */; };
@@ -942,6 +948,17 @@
 		D3949710178C6D4500C39A7E /* CCMessageAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessageAPIProvider.h; sourceTree = "<group>"; };
 		D3949711178C6D4500C39A7E /* CCMessageAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessageAPIProvider.m; sourceTree = "<group>"; };
 		D3949713178C6D6300C39A7E /* CCMessageAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCMessageAPIProviderProtocol.h; sourceTree = "<group>"; };
+		D3949715178D51BE00C39A7E /* CCPrivateMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPrivateMessageController.h; sourceTree = "<group>"; };
+		D3949716178D51BE00C39A7E /* CCPrivateMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPrivateMessageController.m; sourceTree = "<group>"; };
+		D3949717178D51BE00C39A7E /* CCPrivateMessageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCPrivateMessageController.xib; sourceTree = "<group>"; };
+		D394971B178D561100C39A7E /* CCPrivateMessageTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPrivateMessageTransaction.h; sourceTree = "<group>"; };
+		D394971C178D561100C39A7E /* CCPrivateMessageTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPrivateMessageTransaction.m; sourceTree = "<group>"; };
+		D394971F178D5ADD00C39A7E /* CCSuccessSendMessageTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSuccessSendMessageTransaction.h; sourceTree = "<group>"; };
+		D3949720178D5ADD00C39A7E /* CCSuccessSendMessageTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSuccessSendMessageTransaction.m; sourceTree = "<group>"; };
+		D3949723178D5C1400C39A7E /* CCMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessage.h; sourceTree = "<group>"; };
+		D3949724178D5C1400C39A7E /* CCMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessage.m; sourceTree = "<group>"; };
+		D3949727178D61A600C39A7E /* CCMessagesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessagesDataProvider.h; sourceTree = "<group>"; };
+		D3949728178D61A600C39A7E /* CCMessagesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessagesDataProvider.m; sourceTree = "<group>"; };
 		D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStandardErrorHandler.h; sourceTree = "<group>"; };
 		D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStandardErrorHandler.m; sourceTree = "<group>"; };
 		D39F1C161753C0E8008E08A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -1157,9 +1174,10 @@
 				70A29CAC178778AB001BC8DD /* NoteDetailsController */,
 				70A29CB0178778AB001BC8DD /* NotesViewerController */,
 				D39496DB178B191F00C39A7E /* OfferController */,
-				D3949705178C3FED00C39A7E /* OfferDetailsControllre */,
+				D3949705178C3FED00C39A7E /* OfferDetailsController */,
 				70A29CB4178778AB001BC8DD /* OtherUserProfileController */,
 				70A29CB8178778AB001BC8DD /* PhotoBrowserController */,
+				D3949714178D51A000C39A7E /* PrivateMessageController */,
 				70A29CBC178778AB001BC8DD /* SideBarController */,
 				70A29CBF178778AB001BC8DD /* SignUpController */,
 				70A29CC7178778AB001BC8DD /* TableBasedController */,
@@ -1730,6 +1748,7 @@
 				70A29D6D17877B94001BC8DD /* ImageSortingDataProvider */,
 				70A29D7017877B94001BC8DD /* MarketNotesProvider */,
 				70A29D7317877B94001BC8DD /* MarketStuffDataProvider */,
+				D3949726178D618A00C39A7E /* MessagesDataProvider */,
 				70A29D7617877B94001BC8DD /* MyClassesDataProvider */,
 				70A29D7917877B94001BC8DD /* MyNotesDataProvider */,
 				70A29D7C17877B94001BC8DD /* MyStuffDataProvider */,
@@ -2120,6 +2139,7 @@
 				70A29DE717877CB5001BC8DD /* DropboxFileInfo */,
 				70A29DEA17877CB5001BC8DD /* Education */,
 				70A29DED17877CB5001BC8DD /* FilterSection */,
+				D3949722178D5C0000C39A7E /* Message */,
 				70A29DF017877CB5001BC8DD /* Note */,
 				70A29DF317877CB5001BC8DD /* NoteForUploadInfo */,
 				D39496E5178B251A00C39A7E /* Offer */,
@@ -2691,6 +2711,7 @@
 				70A29F1F17877E0D001BC8DD /* NoteDetailTransaction */,
 				70A29F2217877E0D001BC8DD /* NotesBackToListTransaction */,
 				70A29F2517877E0D001BC8DD /* PhotoBrowserTransaction */,
+				D394971A178D55F500C39A7E /* PrivateMessageTransaction */,
 				70A29F2B17877E0D001BC8DD /* SearchCollegeTransaction */,
 				70A29F2E17877E0D001BC8DD /* SelectCollegeClassesTransaction */,
 				70A29F3117877E0D001BC8DD /* SelectFiltersTransaction */,
@@ -2699,6 +2720,7 @@
 				70A29F3A17877E0D001BC8DD /* SignupTransaction */,
 				70A29F3D17877E0D001BC8DD /* StateSelectionScreenTransaction */,
 				70A29F4017877E0D001BC8DD /* StuffDetailsTransaction */,
+				D394971E178D5AC400C39A7E /* SuccessSendMessageTransaction */,
 				70A29F4317877E0D001BC8DD /* TransactionHelpers */,
 				70A29F4717877E0D001BC8DD /* TransactionProtocols */,
 				70A29F4A17877E0D001BC8DD /* ViewLatestNotesTransaction */,
@@ -3390,13 +3412,14 @@
 			path = BackToStuffTransaction;
 			sourceTree = "<group>";
 		};
-		D3949705178C3FED00C39A7E /* OfferDetailsControllre */ = {
+		D3949705178C3FED00C39A7E /* OfferDetailsController */ = {
 			isa = PBXGroup;
 			children = (
 				D3949706178C401400C39A7E /* CCOfferDetailsController.h */,
 				D3949707178C401400C39A7E /* CCOfferDetailsController.m */,
 				D3949708178C401400C39A7E /* CCOfferDetailsController.xib */,
 			);
+			name = OfferDetailsController;
 			path = OfferDetailsControllre;
 			sourceTree = "<group>";
 		};
@@ -3418,6 +3441,52 @@
 			);
 			name = MessagesAPIProvider;
 			path = ../MessagesAPIProvider;
+			sourceTree = "<group>";
+		};
+		D3949714178D51A000C39A7E /* PrivateMessageController */ = {
+			isa = PBXGroup;
+			children = (
+				D3949715178D51BE00C39A7E /* CCPrivateMessageController.h */,
+				D3949716178D51BE00C39A7E /* CCPrivateMessageController.m */,
+				D3949717178D51BE00C39A7E /* CCPrivateMessageController.xib */,
+			);
+			path = PrivateMessageController;
+			sourceTree = "<group>";
+		};
+		D394971A178D55F500C39A7E /* PrivateMessageTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D394971B178D561100C39A7E /* CCPrivateMessageTransaction.h */,
+				D394971C178D561100C39A7E /* CCPrivateMessageTransaction.m */,
+			);
+			path = PrivateMessageTransaction;
+			sourceTree = "<group>";
+		};
+		D394971E178D5AC400C39A7E /* SuccessSendMessageTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D394971F178D5ADD00C39A7E /* CCSuccessSendMessageTransaction.h */,
+				D3949720178D5ADD00C39A7E /* CCSuccessSendMessageTransaction.m */,
+			);
+			path = SuccessSendMessageTransaction;
+			sourceTree = "<group>";
+		};
+		D3949722178D5C0000C39A7E /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				D3949723178D5C1400C39A7E /* CCMessage.h */,
+				D3949724178D5C1400C39A7E /* CCMessage.m */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		D3949726178D618A00C39A7E /* MessagesDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3949727178D61A600C39A7E /* CCMessagesDataProvider.h */,
+				D3949728178D61A600C39A7E /* CCMessagesDataProvider.m */,
+			);
+			path = MessagesDataProvider;
 			sourceTree = "<group>";
 		};
 		D39F1C0E1753821D008E08A2 /* StandardErrorHandler */ = {
@@ -3839,6 +3908,7 @@
 				D39496FA178C27B100C39A7E /* CCClassTabbarControllerViewController.xib in Resources */,
 				D3949700178C27DE00C39A7E /* CCClassTableController.xib in Resources */,
 				D394970A178C401400C39A7E /* CCOfferDetailsController.xib in Resources */,
+				D3949719178D51BE00C39A7E /* CCPrivateMessageController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4070,6 +4140,11 @@
 				D3949709178C401400C39A7E /* CCOfferDetailsController.m in Sources */,
 				D394970E178C406800C39A7E /* CCOfferDetailsTransaction.m in Sources */,
 				D3949712178C6D4500C39A7E /* CCMessageAPIProvider.m in Sources */,
+				D3949718178D51BE00C39A7E /* CCPrivateMessageController.m in Sources */,
+				D394971D178D561100C39A7E /* CCPrivateMessageTransaction.m in Sources */,
+				D3949721178D5ADD00C39A7E /* CCSuccessSendMessageTransaction.m in Sources */,
+				D3949725178D5C1400C39A7E /* CCMessage.m in Sources */,
+				D3949729178D61A600C39A7E /* CCMessagesDataProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

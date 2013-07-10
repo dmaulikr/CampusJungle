@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCTypesDefinition.h"
 
 @protocol CCMessageAPIProviderProtocol <AppleGuiceInjectable>
 
-- (void)sendMessage:(NSString *)message toUser:(NSString *)userID;
+- (void)sendMessage:(NSString *)message toUser:(NSString *)userID successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;;
+
+- (void)loadMyMessagesWithParams:(NSDictionary *)params successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 
 @end
