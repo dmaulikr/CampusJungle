@@ -13,4 +13,6 @@
 
 @property (nonatomic, weak)id<CCClassTabbarControllerDelegateProtocol> delegate;
 
+- (NSInteger)selectedButtonIdentifier;
+
 @end

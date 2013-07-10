@@ -16,5 +16,6 @@
 + (void)setHeight:(CGFloat)height toView:(UIView *)view;
 + (void)setCenterX:(CGFloat)centerX toView:(UIView *)view;
 + (void)setCenterY:(CGFloat)centerY toView:(UIView *)view;
++ (CGFloat)bottomOfView:(UIView *)view;
 
 @end

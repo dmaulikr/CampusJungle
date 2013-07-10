@@ -46,4 +46,9 @@
     [view setCenter:newCenter];
 }
 
++ (CGFloat)bottomOfView:(UIView *)view
+{
+    return view.frame.origin.y + view.frame.size.height;
+}
+
 @end

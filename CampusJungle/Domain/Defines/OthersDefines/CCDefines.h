@@ -37,6 +37,7 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *leaveClass;
     __unsafe_unretained NSString *makeOffer;
     __unsafe_unretained NSString *recivedOffers;
+    __unsafe_unretained NSString *classLocations;
 } CCAPIDefines;
 
 
@@ -106,6 +107,10 @@ extern const struct CCTableDefines {
     __unsafe_unretained NSString *tableCellIdentifier;
     __unsafe_unretained NSString *collectionCellIdentifier;
     __unsafe_unretained NSString *tableHeaderIdentifier;
+    __unsafe_unretained NSString *classmatesCellIdentifier;
+    __unsafe_unretained NSString *locationsCellIdentifier;
+    __unsafe_unretained NSString *forumsCellIdentifier;
+    __unsafe_unretained NSString *groupsCellIdentifier;
 } CCTableDefines;
 
 extern const struct CCLinkUserKeys {
@@ -155,6 +160,13 @@ extern const struct CCMarketFilterConstants {
 extern const struct CCProgressHudsConstants {
     NSInteger loaderDuration;
 } CCProgressHudsConstants;
+
+extern const struct CCClassTabbarButtonsTitles {
+    __unsafe_unretained NSString *classmates;
+    __unsafe_unretained NSString *groups;
+    __unsafe_unretained NSString *locations;
+    __unsafe_unretained NSString *forums;
+} CCClassTabbarButtonsTitles;
 
 enum  CCClassTabbarButtonsIdentifiers {
     CCClassTabbarButtonsIdentifierClassmate = 1,

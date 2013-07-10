@@ -24,6 +24,7 @@
 #import "CCPhoto.h"
 #import "CCStandardErrorHandler.h"
 #import "CCOffer.h"
+#import "CCLocation.h"
 
 @implementation CCRestKitConfigurator
 
@@ -43,21 +44,22 @@
         }
     }];
     
-    [CCRestKitConfigurator configureUserResponse:objectManager];
-    [CCRestKitConfigurator configureClassResponce:objectManager];
-    [CCRestKitConfigurator configureCollegeResponse:objectManager];
-    [CCRestKitConfigurator configureCityResponse:objectManager];
-    [CCRestKitConfigurator configureStateResponse:objectManager];
-    [CCRestKitConfigurator configureFacebookLinking:objectManager];
-    [CCRestKitConfigurator configureNotesResponse:objectManager];
-    [CCRestKitConfigurator configureNotesUploadRequest:objectManager];
-    [CCRestKitConfigurator configureAttachmentResponse:objectManager];
-    [CCRestKitConfigurator configureNotesPurchasingResponse:objectManager];
-    [CCRestKitConfigurator configureStuffCreationRequest:objectManager];
-    [CCRestKitConfigurator configureStuffResponse:objectManager];
-    [CCRestKitConfigurator configureClassesInCollegesResponse:objectManager];
-    [CCRestKitConfigurator configureClassmatesResponse:objectManager];
-    [CCRestKitConfigurator configureOfferResponse:objectManager];
+    [self configureUserResponse:objectManager];
+    [self configureClassResponce:objectManager];
+    [self configureCollegeResponse:objectManager];
+    [self configureCityResponse:objectManager];
+    [self configureStateResponse:objectManager];
+    [self configureFacebookLinking:objectManager];
+    [self configureNotesResponse:objectManager];
+    [self configureNotesUploadRequest:objectManager];
+    [self configureAttachmentResponse:objectManager];
+    [self configureNotesPurchasingResponse:objectManager];
+    [self configureStuffCreationRequest:objectManager];
+    [self configureStuffResponse:objectManager];
+    [self configureClassesInCollegesResponse:objectManager];
+    [self configureClassmatesResponse:objectManager];
+    [self configureOfferResponse:objectManager];
+    [self configureLocationsResponse:objectManager];
 }
 
 + (void)configureUserResponse:(RKObjectManager *)objectManager
@@ -430,6 +432,27 @@
     
     [objectManager addResponseDescriptor:responseInboxPaginationOffers];
     [objectManager addResponseDescriptor:responseOnCreateOffer];
+}
+
++ (void)configureLocationsResponse:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *paginationLocationsResponseMapping = [CCRestKitConfigurator paginationMapping];
+    RKObjectMapping *locationsResponseMapping = [RKObjectMapping mappingForClass:[CCLocation class]];
+    [locationsResponseMapping addAttributeMappingsFromDictionary:[CCLocation responseMappingDictionary]];
+    RKRelationshipMapping *relationshipResponseLocationsMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
+                                                                                                              toKeyPath:CCResponseKeys.items
+                                                                                                            withMapping:locationsResponseMapping];
+    
+    
+    [paginationLocationsResponseMapping addPropertyMapping:relationshipResponseLocationsMapping];
+    
+    NSString *pathPattern = [NSString stringWithFormat:CCAPIDefines.classLocations, @":classID"];
+    
+    RKResponseDescriptor *classLocationsResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginationLocationsResponseMapping
+                                                                                                     pathPattern:pathPattern
+                                                                                                         keyPath:nil
+                                                                                                     statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [objectManager addResponseDescriptor:classLocationsResponseDescriptor];
 }
 
 @end

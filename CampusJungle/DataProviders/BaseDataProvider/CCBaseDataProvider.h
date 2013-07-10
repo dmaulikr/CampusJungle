@@ -13,6 +13,7 @@
 
 @property (nonatomic) long totalNumber;
 @property (nonatomic, strong) NSArray *arrayOfItems;
+@property (nonatomic, strong) NSString *cellReuseIdentifier;
 
 @property (nonatomic, weak) UITableView *targetTable;
 

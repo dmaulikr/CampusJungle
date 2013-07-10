@@ -43,7 +43,12 @@
 
 - (void)configTableWithProvider:(CCBaseDataProvider *)provider cellClass:(Class)cellCass
 {
-    [self.mainTable registerClass:cellCass forCellReuseIdentifier:CCTableDefines.tableCellIdentifier];
+    [self configTableWithProvider:provider cellClass:cellCass cellReuseIdentifier:CCTableDefines.tableCellIdentifier];
+}
+
+- (void)configTableWithProvider:(CCBaseDataProvider *)provider cellClass:(Class)cellCass cellReuseIdentifier:(NSString *)reuseIdentifier
+{
+    [self.mainTable registerClass:cellCass forCellReuseIdentifier:reuseIdentifier];
     CCCommonDataSource *dataSource;
     self.mainTable.backgroundColor = [UIColor clearColor];
     if(self.dataSource){

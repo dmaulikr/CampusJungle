@@ -8,6 +8,7 @@
 
 #import "CCClassController.h"
 #import "CCClass.h"
+#import "CCLocation.h"
 #import "CCClassmatesDataProvider.h"
 #import "CCUserCell.h"
 #import "CCClassTableController.h"
@@ -76,11 +77,6 @@
     [self.classMarketTransaction performWithObject:self.currentClass];
 }
 
-- (void)didSelectedCellWithObject:(id)cellObject
-{
-    [self.otherUserProfileTransaction performWithObject:cellObject];
-}
-
 - (BOOL)isNeedToLeftSelected
 {
     return NO;
@@ -109,5 +105,17 @@
     [alert show];
 }
 
+
+#pragma mark -
+#pragma mark ClassTableDelegate
+- (void)showProfileOfUser:(CCUser *)user
+{
+    [self.otherUserProfileTransaction performWithObject:user];
+}
+
+- (void)showLocation:(CCLocation *)location onMapWithLocations:(NSArray *)locationsArray
+{
+    [self.locationTransaction performWithObject:@{@"location" : location, @"array" : locationsArray, @"classId" : self.currentClass.classID}];
+}
 
 @end

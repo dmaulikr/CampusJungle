@@ -39,6 +39,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .leaveClass = @"/api/users/me/classes/%@",
     .makeOffer = @"/api/stuff/%@/offer",
     .recivedOffers = @"/api/users/me/offers",
+    .classLocations = @"/api/users/me/classes/%@/locations",
 };
 
 const struct CCUserDefines CCUserDefines = {
@@ -115,6 +116,10 @@ const struct CCTableDefines CCTableDefines = {
     .tableCellIdentifier = @"CellIdentifier",
     .tableHeaderIdentifier = @"TableHeaderIdentifier",
     .collectionCellIdentifier = @"CollectionCellIdentifier",
+    .classmatesCellIdentifier = @"ClassmateCellIdentifier",
+    .locationsCellIdentifier = @"LocationCellIdentifier",
+    .forumsCellIdentifier = @"ForumCellIdentifier",
+    .groupsCellIdentifier = @"GroupCellIdentifier",
 };
 
 const struct CCResponseKeys CCResponseKeys = {
@@ -149,6 +154,13 @@ const struct CCMarketFilterConstants CCMarketFilterConstants = {
     .classes = @"classes_ids",
     .orderTop = @"sales",
     .orderLatest = @"date",
+};
+
+const struct CCClassTabbarButtonsTitles CCClassTabbarButtonsTitles = {
+    .classmates = @"Classmates",
+    .groups = @"Groups",
+    .locations = @"Locations",
+    .forums = @"Forums",
 };
 
 const struct CCProgressHudsConstants CCProgressHudsConstants = {
