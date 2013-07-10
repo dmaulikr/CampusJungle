@@ -130,11 +130,14 @@
 
 }
 
-- (void)loadClassmatesForClass:(NSString *)classID NumberOfPage:(NSNumber *)pageNumber successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+- (void)loadClassmatesForClass:(NSString *)classID filterString:(NSString *)filterString numberOfPage:(NSNumber *)pageNumber successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
 {
     NSMutableDictionary *params = [NSMutableDictionary new];
-    
     [params setObject:pageNumber.stringValue forKey:@"page_number"];
+    if ([filterString length] > 0) {
+        [params setObject:filterString forKey:@"keywords"];
+    }
+    
     NSString *path = [NSString stringWithFormat:CCAPIDefines.classmates,classID];
     [self loadItemsWithParams:params
                          path:path
