@@ -29,6 +29,7 @@
 
 - (IBAction)senderButtonDidPressed;
 - (IBAction)stuffDidPerssed;
+- (IBAction)answerButtonDidPressed;
 
 @end
 
@@ -109,6 +110,11 @@
 - (IBAction)stuffDidPerssed
 {
     [self.stuffDetailsTransaction performWithObject:self.stuff];
+}
+
+- (IBAction)answerButtonDidPressed
+{
+    [self.answerTransaction  performWithObject:self.sender];
 }
 
 @end

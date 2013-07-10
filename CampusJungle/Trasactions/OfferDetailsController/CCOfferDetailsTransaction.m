@@ -10,6 +10,7 @@
 #import "CCOfferDetailsController.h"
 #import "CCOtherUserProfileTransaction.h"
 #import "CCStuffDetailsTransaction.h"
+#import "CCPrivateMessageTransaction.h"
 
 @implementation CCOfferDetailsTransaction
 
@@ -27,6 +28,11 @@
     offerDetails.stuffDetailsTransaction = stuffDetailsTransaction;
     
     offerDetails.offer = object;
+    
+    CCPrivateMessageTransaction *privateMessageTransaction = [CCPrivateMessageTransaction new];
+    privateMessageTransaction.navigation = self.navigation;
+    offerDetails.answerTransaction = privateMessageTransaction;
+    
     [self.navigation pushViewController:offerDetails animated:YES];
 }
 

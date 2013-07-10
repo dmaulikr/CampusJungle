@@ -27,6 +27,7 @@
     [super viewDidLoad];
     self.backgroundImage.image = [[UIImage imageNamed:@"text_box"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
     self.tapRecognizer.enabled = YES;
+    self.title = @"Private Message";
 }
 
 - (IBAction)sendButtonDidPress

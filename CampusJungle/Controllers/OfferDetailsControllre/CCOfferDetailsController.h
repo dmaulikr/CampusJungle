@@ -15,5 +15,6 @@
 @property (nonatomic, strong) CCOffer *offer;
 @property (nonatomic, strong) id <CCTransactionWithObject> senderDetailsTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> stuffDetailsTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> answerTransaction;
 
 @end

@@ -10,6 +10,7 @@
 #import "CCStuffDetailsController.h"
 #import "CCPhotoBrowserTransaction.h"
 #import "CCOfferCreationTransaction.h"
+#import "CCRateControllerTransaction.h"
 
 @implementation CCStuffDetailsTransaction
 
@@ -26,6 +27,10 @@
     
     CCPhotoBrowserTransaction *photoBrowserTransaction = [CCPhotoBrowserTransaction new];
     photoBrowserTransaction.navigation = self.navigation;
+    
+    CCRateControllerTransaction *rateControllerTransaction = [CCRateControllerTransaction new];
+    rateControllerTransaction.navigation = self.navigation;
+    stuffDetailsController.rateTransaction = rateControllerTransaction;
     
     stuffDetailsController.photoBrowserTransaction = photoBrowserTransaction;
     [self.navigation pushViewController:stuffDetailsController animated:YES];

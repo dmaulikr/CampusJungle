@@ -324,6 +324,9 @@
 		D3949721178D5ADD00C39A7E /* CCSuccessSendMessageTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949720178D5ADD00C39A7E /* CCSuccessSendMessageTransaction.m */; };
 		D3949725178D5C1400C39A7E /* CCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949724178D5C1400C39A7E /* CCMessage.m */; };
 		D3949729178D61A600C39A7E /* CCMessagesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949728178D61A600C39A7E /* CCMessagesDataProvider.m */; };
+		D394972E178D99BD00C39A7E /* CCRateController.m in Sources */ = {isa = PBXBuildFile; fileRef = D394972C178D99BD00C39A7E /* CCRateController.m */; };
+		D394972F178D99BD00C39A7E /* CCRateController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D394972D178D99BD00C39A7E /* CCRateController.xib */; };
+		D3949733178D9B7100C39A7E /* CCRateControllerTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949732178D9B7100C39A7E /* CCRateControllerTransaction.m */; };
 		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
 		D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39F1C161753C0E8008E08A2 /* Accounts.framework */; };
 		D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A2C3241754C95700989831 /* MessageUI.framework */; };
@@ -996,6 +999,11 @@
 		D3949724178D5C1400C39A7E /* CCMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessage.m; sourceTree = "<group>"; };
 		D3949727178D61A600C39A7E /* CCMessagesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessagesDataProvider.h; sourceTree = "<group>"; };
 		D3949728178D61A600C39A7E /* CCMessagesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessagesDataProvider.m; sourceTree = "<group>"; };
+		D394972B178D99BD00C39A7E /* CCRateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCRateController.h; sourceTree = "<group>"; };
+		D394972C178D99BD00C39A7E /* CCRateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCRateController.m; sourceTree = "<group>"; };
+		D394972D178D99BD00C39A7E /* CCRateController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCRateController.xib; sourceTree = "<group>"; };
+		D3949731178D9B7100C39A7E /* CCRateControllerTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCRateControllerTransaction.h; sourceTree = "<group>"; };
+		D3949732178D9B7100C39A7E /* CCRateControllerTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCRateControllerTransaction.m; sourceTree = "<group>"; };
 		D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStandardErrorHandler.h; sourceTree = "<group>"; };
 		D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStandardErrorHandler.m; sourceTree = "<group>"; };
 		D39F1C161753C0E8008E08A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -1285,6 +1293,7 @@
 				70A29CB4178778AB001BC8DD /* OtherUserProfileController */,
 				70A29CB8178778AB001BC8DD /* PhotoBrowserController */,
 				D3949714178D51A000C39A7E /* PrivateMessageController */,
+				D394972A178D999900C39A7E /* RateController */,
 				70A29CBC178778AB001BC8DD /* SideBarController */,
 				70A29CBF178778AB001BC8DD /* SignUpController */,
 				70A29CC7178778AB001BC8DD /* TableBasedController */,
@@ -2825,6 +2834,7 @@
 				70A29F2217877E0D001BC8DD /* NotesBackToListTransaction */,
 				70A29F2517877E0D001BC8DD /* PhotoBrowserTransaction */,
 				D394971A178D55F500C39A7E /* PrivateMessageTransaction */,
+				D3949730178D9B5400C39A7E /* RateControllerTransaction */,
 				70A29F2B17877E0D001BC8DD /* SearchCollegeTransaction */,
 				70A29F2E17877E0D001BC8DD /* SelectCollegeClassesTransaction */,
 				70A29F3117877E0D001BC8DD /* SelectFiltersTransaction */,
@@ -3624,6 +3634,25 @@
 			path = MessagesDataProvider;
 			sourceTree = "<group>";
 		};
+		D394972A178D999900C39A7E /* RateController */ = {
+			isa = PBXGroup;
+			children = (
+				D394972B178D99BD00C39A7E /* CCRateController.h */,
+				D394972C178D99BD00C39A7E /* CCRateController.m */,
+				D394972D178D99BD00C39A7E /* CCRateController.xib */,
+			);
+			path = RateController;
+			sourceTree = "<group>";
+		};
+		D3949730178D9B5400C39A7E /* RateControllerTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3949731178D9B7100C39A7E /* CCRateControllerTransaction.h */,
+				D3949732178D9B7100C39A7E /* CCRateControllerTransaction.m */,
+			);
+			path = RateControllerTransaction;
+			sourceTree = "<group>";
+		};
 		D39F1C0E1753821D008E08A2 /* StandardErrorHandler */ = {
 			isa = PBXGroup;
 			children = (
@@ -4046,6 +4075,7 @@
 				D3949700178C27DE00C39A7E /* CCClassTableController.xib in Resources */,
 				D394970A178C401400C39A7E /* CCOfferDetailsController.xib in Resources */,
 				D3949719178D51BE00C39A7E /* CCPrivateMessageController.xib in Resources */,
+				D394972F178D99BD00C39A7E /* CCRateController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4291,6 +4321,8 @@
 				D3949721178D5ADD00C39A7E /* CCSuccessSendMessageTransaction.m in Sources */,
 				D3949725178D5C1400C39A7E /* CCMessage.m in Sources */,
 				D3949729178D61A600C39A7E /* CCMessagesDataProvider.m in Sources */,
+				D394972E178D99BD00C39A7E /* CCRateController.m in Sources */,
+				D3949733178D9B7100C39A7E /* CCRateControllerTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
