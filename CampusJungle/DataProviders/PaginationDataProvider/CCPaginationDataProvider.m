@@ -18,15 +18,18 @@
 {
     self.currentPage = firstPage;
     self.isCurrentlyLoad = YES;
+    __weak CCPaginationDataProvider *weakSelf = self;
     [self loadItemsForPageNumber:self.currentPage successHandler:^(id responseObject) {
         NSDictionary *response = responseObject;
-        self.totalNumber = [response[CCResponseKeys.count] longValue];
-        self.arrayOfItems = response[CCResponseKeys.items];
-        self.isEverythingLoaded = [self checkIsComplete];
+        weakSelf.totalNumber = [response[CCResponseKeys.count] longValue];
+        weakSelf.arrayOfItems = response[CCResponseKeys.items];
+        weakSelf.isEverythingLoaded = [self checkIsComplete];
+
         [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.tableViewWillReloadData object:nil];
-        [self.targetTable reloadData];
+        [weakSelf.targetTable reloadData];
         [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.tableViewDidReloadData object:nil];
-        self.isCurrentlyLoad = NO;
+        
+        weakSelf.isCurrentlyLoad = NO;
     }];
     self.currentPage++;
 }
@@ -35,15 +38,17 @@
 {
     if(!self.isCurrentlyLoad && !self.isEverythingLoaded){
         self.isCurrentlyLoad = YES;
+        __weak CCPaginationDataProvider *weakSelf = self;
         [self loadItemsForPageNumber:self.currentPage successHandler:^(id responseObject) {
             NSDictionary *response = responseObject;
-            self.arrayOfItems = [self.arrayOfItems arrayByAddingObjectsFromArray: response[CCResponseKeys.items]];
-            self.isEverythingLoaded = [self checkIsComplete];
+            weakSelf.arrayOfItems = [weakSelf.arrayOfItems arrayByAddingObjectsFromArray: response[CCResponseKeys.items]];
+            weakSelf.isEverythingLoaded = [self checkIsComplete];
+            
             [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.tableViewWillReloadData object:nil];
-            [self.targetTable reloadData];
+            [weakSelf.targetTable reloadData];
             [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.tableViewDidReloadData object:nil];
             
-            self.isCurrentlyLoad = NO;
+            weakSelf.isCurrentlyLoad = NO;
         }];
         self.currentPage++;
     }
@@ -51,9 +56,10 @@
 
 - (BOOL)checkIsComplete
 {
-    if(self.arrayOfItems.count < self.totalNumber){
+    if (self.arrayOfItems.count < self.totalNumber) {
         return NO;
-    } else {
+    }
+    else {
         return YES;
     }
 }

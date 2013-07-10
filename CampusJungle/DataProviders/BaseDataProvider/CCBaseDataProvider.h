@@ -17,7 +17,7 @@
 
 @property (nonatomic, weak) UITableView *targetTable;
 
-@property (nonatomic) BOOL isEverythingLoaded;
+@property (nonatomic, assign) BOOL isEverythingLoaded;
 @property (nonatomic, strong) id<CCAPIProviderProtocol> ioc_apiProvider;
 
 @property (nonatomic,strong) NSString *searchQuery;
