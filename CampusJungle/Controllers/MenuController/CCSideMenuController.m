@@ -82,6 +82,7 @@
         [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         [weakSelf setupTableViewWithEducationsArray:educationsArray];
     } errorHandler:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         [CCStandardErrorHandler showErrorWithError:error];
     } ];
 }

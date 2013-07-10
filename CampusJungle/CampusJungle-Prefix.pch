@@ -17,6 +17,7 @@
     #import <AppleGuice/AppleGuice.h>
     #import <MBProgressHUD/MBProgressHUD.h>
     #import <SVProgressHUD-Fork/SVProgressHUD.h>
+    #import <MapKit/MapKit.h>
 
     #import "CCConstantsDefines.h"
 

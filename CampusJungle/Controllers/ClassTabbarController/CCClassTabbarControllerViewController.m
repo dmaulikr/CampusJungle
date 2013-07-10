@@ -48,16 +48,22 @@
 
 - (IBAction)didSelectButton:(UIButton *)sender
 {
-    if(self.currentlySelected != sender){
+    if (self.currentlySelected != sender) {
         [self.delegate didSelectBarItemWithIdentifier:sender.tag];
         self.currentlySelected = sender;
         for(UIButton *button in self.buttons){
             [button setSelected:NO];
         }
         [self.currentlySelected setSelected:YES];
-    } else {
+    }
+    else {
         [self.delegate didReselectBarItemWithIdentifier:sender.tag];
     }
+}
+
+- (NSInteger)selectedButtonIdentifier
+{
+    return [self.currentlySelected tag];
 }
 
 @end

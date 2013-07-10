@@ -13,7 +13,13 @@
 #import "CCMessage.h"
 #import "CCMessagesDataProvider.h"
 
+#define MessagesState 0
+#define InvtesState 1
+#define OffersState 2
+
 @interface CCInboxController ()
+
+- (IBAction)segmentedControlDidChangeValue:(UISegmentedControl *)control;
 
 @end
 
@@ -28,7 +34,6 @@
                                      @"personal" : @"YES"
                                      };
     [self configTableWithProvider:messagesDataProvider cellClass:[CCOrdinaryCell class]];
-   // [self configTableWithProvider:[CCOffersDataProvider new] cellClass:[CCOrdinaryCell class]];
 }
 
 - (void)didSelectedCellWithObject:(id)cellObject
@@ -38,6 +43,42 @@
     } else if ([cellObject isKindOfClass:[CCMessage class]]){
         
     }
+}
+
+- (IBAction)segmentedControlDidChangeValue:(UISegmentedControl *)control
+{
+    switch (control.selectedSegmentIndex) {
+        case MessagesState:{
+            [self setMessagesConfiguration];
+        } break;
+        case InvtesState:{
+            [self setInvitesConfiguration];
+        } break;
+        case OffersState:{
+            [self setOfferConfiguration];
+        } break;
+    }
+}
+
+- (void)setInvitesConfiguration
+{
+    [self.mainTable reloadData];
+}
+
+- (void)setMessagesConfiguration
+{
+    CCMessagesDataProvider *messagesDataProvider = [CCMessagesDataProvider new];
+    messagesDataProvider.filters = @{
+                                     @"personal" : @"YES"
+                                     };
+    [self configTableWithProvider:messagesDataProvider cellClass:[CCOrdinaryCell class]];
+    [self.mainTable reloadData];
+}
+
+- (void)setOfferConfiguration
+{
+    [self configTableWithProvider:[CCOffersDataProvider new] cellClass:[CCOrdinaryCell class]];
+    [self.mainTable reloadData];
 }
 
 - (BOOL)isNeedToLeftSelected

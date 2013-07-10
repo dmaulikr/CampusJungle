@@ -21,7 +21,9 @@
 - (void)loadItemsForPageNumber:(long)numberOfPage successHandler:(successWithObject)successHandler
 {
     if(self.filters){
-        [self.ioc_messagesAPIProvider loadMyMessagesWithParams:self.filters successHandler:^(RKMappingResult *result) {
+        NSDictionary *params = self.filters.mutableCopy;
+        [params setValue:@(numberOfPage) forKey:@"page_number"];
+        [self.ioc_messagesAPIProvider loadMyMessagesWithParams:params successHandler:^(RKMappingResult *result) {
             successHandler(result.firstObject);
         } errorHandler:^(NSError *error) {
             [self showErrorWhileLoading:error];

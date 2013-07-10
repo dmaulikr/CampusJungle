@@ -18,5 +18,6 @@
 @property (nonatomic, weak) IBOutlet UISearchBar *searchBar;
 
 - (void)configTableWithProvider:(CCBaseDataProvider *)provider cellClass:(Class)cellCass;
+- (void)configTableWithProvider:(CCBaseDataProvider *)provider cellClass:(Class)cellCass cellReuseIdentifier:(NSString *)reuseIdentifier;
 
 @end

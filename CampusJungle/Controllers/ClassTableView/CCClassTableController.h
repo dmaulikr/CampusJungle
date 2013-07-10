@@ -7,13 +7,13 @@
 //
 
 #import "CCTableBasedController.h"
-#import "CCCellSelectionProtocol.h"
+#import "CCClassTableDelegate.h"
 
 @interface CCClassTableController : CCTableBasedController
 
 @property (nonatomic, strong) NSString *classID;
 @property (nonatomic, weak) UIView *tableHeaderView;
 
-@property (nonatomic, weak) id<CCCellSelectionProtocol> delegate;
+@property (nonatomic, weak) id<CCClassTableDelegate> delegate;
 
 @end

@@ -13,7 +13,6 @@
 #import "CCUserProfileTransaction.h"
 #import "CCClassesOfCollegeTransaction.h"
 
-
 @implementation CCAllClassesTransaction
 
 - (void)perform
@@ -36,7 +35,6 @@
     classesController.userProfileTransaction = userProfileTransaction;
     
     CCClassesOfCollegeTransaction *classesOfCollege = [CCClassesOfCollegeTransaction new];
-//    classesOfCollege.navigation = centralNavigation;
     classesController.selectClass = classesOfCollege;
 }
 

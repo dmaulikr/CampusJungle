@@ -8,17 +8,36 @@
 
 #import "CCClassTableController.h"
 #import "CCClassControllerTableDataSource.h"
-#import "CCClassmatesDataProvider.h"
-#import "CCUserCell.h"
+#import "CCLocationDataProviderDelegate.h"
 #import "CCClassTabbarControllerViewController.h"
+#import "CCViewPositioningHelper.h"
+#import "CCLocation.h"
 
-@interface CCClassTableController ()<CCClassTabbarControllerDelegateProtocol>
+#import "CCClassmatesDataProvider.h"
+#import "CCClassLocationsDataProvider.h"
+#import "CCGroupsDataProvider.h"
+#import "CCForumsDataProvider.h"
+
+#import "CCUserCell.h"
+#import "CCLocationCell.h"
+
+static const NSInteger kTabbarHeight = 52;
+static const NSInteger kNavBarHeight = 44;
+
+@interface CCClassTableController () <CCClassTabbarControllerDelegateProtocol, CCLocationDataProviderDelegate>
 
 @property (nonatomic, weak) IBOutlet UIView *sectionHeaderView;
-@property (nonatomic, strong) CCClassTabbarControllerViewController *classTabbarController;
-@property (nonatomic, strong) CCClassmatesDataProvider *classmatesProvider;
 @property (nonatomic, weak) IBOutlet UIButton *addButton;
 @property (nonatomic, weak) IBOutlet UILabel *sectionName;
+
+@property (nonatomic, strong) CCClassTabbarControllerViewController *classTabbarController;
+
+@property (nonatomic, strong) CCClassmatesDataProvider *classmatesProvider;
+@property (nonatomic, strong) CCClassLocationsDataProvider *locationsProvider;
+@property (nonatomic, strong) CCForumsDataProvider *forumsProvider;
+@property (nonatomic, strong) CCGroupsDataProvider *groupsProvider;
+
+@property (nonatomic, strong) NSMutableArray *locationsArray;
 
 @end
 
@@ -27,8 +46,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.locationsArray = [NSMutableArray array];
+    
     self.dataSourceClass = [CCClassControllerTableDataSource class];
-   
     self.dataSource = [CCClassControllerTableDataSource new];
     
     CCClassTabbarControllerViewController *tabbarController = [CCClassTabbarControllerViewController new];
@@ -44,62 +65,65 @@
 
 - (void)setClassmatesConfiguration
 {
-    if(!self.classmatesProvider){
+    self.sectionName.text = CCClassTabbarButtonsTitles.classmates;
+    if (!self.classmatesProvider) {
         self.classmatesProvider = [CCClassmatesDataProvider new];
         self.classmatesProvider.classID = self.classID;
+        self.classmatesProvider.cellReuseIdentifier = CCTableDefines.classmatesCellIdentifier;
     }
-    self.sectionName.text = @"Classmates";
-    self.searchBar.hidden = NO;
-    [self updateSectionHeaderViewSize];
-    [self configTableWithProvider:self.classmatesProvider cellClass:[CCUserCell class]];
+    [self configTableWithProvider:self.classmatesProvider cellClass:[CCUserCell class] cellReuseIdentifier:CCTableDefines.classmatesCellIdentifier];
 }
 
 - (void)setForumsConfiguration
 {
-    self.sectionName.text = @"Forums";
+    self.sectionName.text = CCClassTabbarButtonsTitles.forums;
+    if (!self.forumsProvider) {
+        self.forumsProvider = [CCForumsDataProvider new];
+        self.forumsProvider.cellReuseIdentifier = CCTableDefines.forumsCellIdentifier;
+    }
+    [self configTableWithProvider:self.forumsProvider cellClass:[UITableViewCell class] cellReuseIdentifier:CCTableDefines.forumsCellIdentifier];
 }
 
 - (void)setLocationConfiguration
 {
-    self.sectionName.text = @"Locations";
+    self.sectionName.text = CCClassTabbarButtonsTitles.locations;
+    if (!self.locationsProvider) {
+        self.locationsProvider = [[CCClassLocationsDataProvider alloc] initWithDelegate:self];
+        self.locationsProvider.classId = self.classID;
+        self.locationsProvider.cellReuseIdentifier = CCTableDefines.locationsCellIdentifier;
+    }
+    [self configTableWithProvider:self.locationsProvider cellClass:[CCLocationCell class] cellReuseIdentifier:CCTableDefines.locationsCellIdentifier];
 }
 
 - (void)setGroupsConfiguration
 {
-    self.sectionName.text = @"Groups";
-}
-
-- (void)updateSectionHeaderViewSize
-{
-    CGFloat height = 0;
-    if(self.searchBar.hidden){
-        height = self.classTabbarController.view.bounds.size.height + 44;
-    } else {
-        height = self.classTabbarController.view.bounds.size.height + self.searchBar.bounds.size.height + 44;
+    self.sectionName.text = CCClassTabbarButtonsTitles.groups;
+    if (!self.groupsProvider) {
+        self.groupsProvider = [CCGroupsDataProvider new];
+        self.groupsProvider.cellReuseIdentifier = CCTableDefines.groupsCellIdentifier;
     }
-    
-    self.sectionHeaderView.bounds = CGRectMake(0, 0, self.sectionHeaderView.bounds.size.width, height);
+    [self configTableWithProvider:self.groupsProvider cellClass:[UITableViewCell class] cellReuseIdentifier:CCTableDefines.groupsCellIdentifier];
 }
 
 - (void)didSelectBarItemWithIdentifier:(NSInteger)identifier
 {
     switch (identifier) {
-        case CCClassTabbarButtonsIdentifierClassmate:{
+        case CCClassTabbarButtonsIdentifierClassmate:
             [self setClassmatesConfiguration];
-        }break;
-        case CCClassTabbarButtonsIdentifierGroup:{
+            break;
+        case CCClassTabbarButtonsIdentifierGroup:
             [self setGroupsConfiguration];
-        }break;
-        case CCClassTabbarButtonsIdentifierLocations:{
+            break;
+        case CCClassTabbarButtonsIdentifierLocations:
             [self setLocationConfiguration];
-        }break;
-        case CCClassTabbarButtonsIdentifierForums:{
+            break;
+        case CCClassTabbarButtonsIdentifierForums:
             [self setForumsConfiguration];
-        }break;
+            break;
     }
 }
 
--(void)didReselectBarItemWithIdentifier:(NSInteger)identifier
+- (void)didReselectBarItemWithIdentifier:(NSInteger)identifier
 {
     [self.mainTable setContentOffset:CGPointZero animated:YES];
 }
@@ -110,9 +134,37 @@
     self.mainTable.tableHeaderView = tableHeaderView;
 }
 
+#pragma mark -
+#pragma mark CCLocationDataProviderDelegate
+- (void)didLoadLocations:(NSArray *)locationsArray
+{
+    [self.locationsArray addObjectsFromArray:locationsArray];
+}
+
+#pragma mark -
+#pragma mark TableView callbacks
+- (BOOL)isNeedToLeftSelected
+{
+    return NO;
+}
+
 - (void)didSelectedCellWithObject:(id)cellObject
 {
-    [self.delegate didSelectedCellWithObject:cellObject];
+    NSInteger identifier = [self.classTabbarController selectedButtonIdentifier];
+    switch (identifier) {
+        case CCClassTabbarButtonsIdentifierClassmate:
+            [self.delegate showProfileOfUser:cellObject];
+            break;
+        case CCClassTabbarButtonsIdentifierGroup:
+            // go group details
+            break;
+        case CCClassTabbarButtonsIdentifierLocations:
+            [self.delegate showLocation:cellObject onMapWithLocations:self.locationsArray];
+            break;
+        case CCClassTabbarButtonsIdentifierForums:
+            // go forum details
+            break;
+    }
 }
 
 @end
