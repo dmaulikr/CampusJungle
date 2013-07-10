@@ -10,4 +10,6 @@
 
 const struct CCNotificationsNames CCNotificationsNames = {
     .reloadSideMenu = @"RELOAD_SIDE_MENU",
+    .tableViewDidReloadData = @"TABLE_VIEW_DID_RELOAD_DATA",
+    .tableViewWillReloadData = @"TABLE_VIEW_WILL_RELOAD_DATA",
 };

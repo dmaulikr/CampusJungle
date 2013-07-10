@@ -11,6 +11,8 @@
 
 @interface CCTableBasedController ()<UISearchBarDelegate>
 
+@property (nonatomic, strong) UITextField *hidedTextField;
+
 @end
 
 @implementation CCTableBasedController
@@ -19,7 +21,26 @@
 {
     [super viewDidLoad];
     [self configSearchBar];
+    [self addObservers];
     self.tapRecognizer.enabled = NO;
+    self.reloadingTableViewWithActiveSearchBar = NO;
+}
+
+- (void)dealloc
+{
+    [self removeObservers];
+}
+
+- (void)addObservers
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tableViewWillReloadData) name:CCNotificationsNames.tableViewWillReloadData object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tableViewDidReloadData) name:CCNotificationsNames.tableViewDidReloadData object:nil];
+}
+
+- (void)removeObservers
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:CCNotificationsNames.tableViewWillReloadData object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:CCNotificationsNames.tableViewDidReloadData object:nil];
 }
 
 - (void)configSearchBar
@@ -65,9 +86,43 @@
     [dataSource.dataProvider loadItems];
 }
 
+#pragma mark -
+#pragma mark Actions
 - (void)didSelectedCellWithObject:(id)cellObject
 {
     
+}
+
+- (void)tableViewWillReloadData
+{
+    if ([self.searchBar isFirstResponder]) {
+        if (!self.hidedTextField) {
+            self.hidedTextField = [self hiddenTextField];
+            [self.view insertSubview:self.hidedTextField atIndex:0];
+        }
+        self.reloadingTableViewWithActiveSearchBar = YES;
+        [self.hidedTextField becomeFirstResponder];
+    }
+}
+
+- (void)tableViewDidReloadData
+{
+    if (self.reloadingTableViewWithActiveSearchBar) {
+        [self.searchBar becomeFirstResponder];
+        self.reloadingTableViewWithActiveSearchBar = NO;
+        if ([self.mainTable isKindOfClass:[TPKeyboardAvoidingTableView class]]) {
+            [self.mainTable performSelector:@selector(adjustOffsetToIdealIfNeeded) withObject:nil afterDelay:0.3];
+        }
+    }
+}
+
+- (UITextField *)hiddenTextField
+{
+    UITextField *textField = [[UITextField alloc] initWithFrame:self.mainTable.frame];
+    [textField setReturnKeyType:UIReturnKeySearch];
+    [textField setAutocapitalizationType:UITextAutocapitalizationTypeNone];
+    [textField setAutocorrectionType:UITextAutocorrectionTypeNo];
+    return textField;
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
@@ -78,9 +133,10 @@
     
     double delayInSeconds = 1.1;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    __weak CCTableBasedController *weakSelf = self;
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        if([[NSDate date] timeIntervalSinceDate:self.lastSearchPressTime] >= 1){
-            [self.dataSource.dataProvider loadItems];
+        if ([[NSDate date] timeIntervalSinceDate:weakSelf.lastSearchPressTime] >= 1){
+            [weakSelf.dataSource.dataProvider loadItems];
         }
     });
 }
