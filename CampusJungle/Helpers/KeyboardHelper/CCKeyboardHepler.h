@@ -11,5 +11,6 @@
 @interface CCKeyboardHepler : NSObject
 
 + (void)hideKeyboard;
++ (CGFloat)visibleKeyboardHeight;
 
 @end

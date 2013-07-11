@@ -7,6 +7,9 @@
 //
 
 #import "GIAlert.h"
+#import "CCKeyboardHepler.h"
+#import "CCViewPositioningHelper.h"
+
 #define AnimationDuration 0.3
 #define hoizontalInsets 5
 
@@ -39,6 +42,7 @@
     self.message.text = self.alertMesage;
     
     self.backgroundImage.image = [UIImage imageNamed:@"alert_dialog_shape.png"];
+    [self showAnimated];
 }
 
 - (void)showAnimated
@@ -60,7 +64,18 @@
 {
     CGSize alertSize = self.view.bounds.size;
     CGSize baseViewSize = view.bounds.size;
-    self.view.frame = CGRectMake((baseViewSize.width - alertSize.width)/2, (baseViewSize.height - alertSize.height)/3, alertSize.width, alertSize.height);
+    
+    self.view.frame = CGRectMake((baseViewSize.width - alertSize.width)/2, (baseViewSize.height - alertSize.height)/2, alertSize.width, alertSize.height);
+    
+    CGFloat visibleKeyboardHeight = [CCKeyboardHepler visibleKeyboardHeight];
+    if (visibleKeyboardHeight > 0) {
+        CGFloat bottomOfHUD = [CCViewPositioningHelper bottomOfView:self.view];
+        CGFloat originYOfKeyboard = view.bounds.size.height - visibleKeyboardHeight;
+        if (bottomOfHUD > originYOfKeyboard) {
+            CGFloat delta = bottomOfHUD - originYOfKeyboard + 10;
+            [CCViewPositioningHelper setOriginY:self.view.frame.origin.y - delta toView:self.view];
+        }
+    }
 }
 
 - (void)remove
