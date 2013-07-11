@@ -103,7 +103,8 @@
 
 - (NSArray *)shareItemActionSheetButtons
 {
-    __weak CCAddLocationViewController *weakSelf = self;
+   __weak CCAddLocationViewController *weakSelf = self;
+    
     CCShareItemButton *shareWithClassButton = [CCShareItemButton buttonWithTitle:@"Share with Class" actionBlock:^{
         [weakSelf.shareItemActionSheet dismiss];
     }];
@@ -112,10 +113,13 @@
         [weakSelf.shareItemActionSheet dismiss];
     }];
     CCShareItemButton *shareWithClassmatesButton = [CCShareItemButton buttonWithTitle:@"Share with Classmates" actionBlock:^{
-        [weakSelf.selectUsersToShareTransaction performWithObject:weakSelf.locationToAddobject];
+        ShareItemButtonSuccessBlock successBlock = ^(NSArray *itemsArray) {
+            [weakSelf createLocation:nil sharedWithItems:itemsArray sharedWithAll:NO];
+        };
+        NSDictionary *params = @{@"object" : weakSelf.locationToAddobject, @"successBlock" : successBlock};
+        [weakSelf.selectUsersToShareTransaction performWithObject:params];
         [weakSelf.shareItemActionSheet dismiss];
     }];
-    
     
     return @[shareWithClassButton, shareWithGroupButton, shareWithClassmatesButton];
 }
@@ -239,6 +243,13 @@
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views
 {
     [self updateAddressData];
+}
+
+#pragma mark -
+#pragma mark Requests
+- (void)createLocation:(CCLocation *)location sharedWithItems:(NSArray *)itemsArray sharedWithAll:(BOOL)sharedWithAll
+{
+    NSLog(@"created for items %@", itemsArray);
 }
 
 @end

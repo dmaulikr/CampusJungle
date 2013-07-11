@@ -14,12 +14,19 @@
 
 - (void)performWithObject:(id)object
 {
+    NSParameterAssert(object);
+    NSParameterAssert(self.navigation);
+    
     CCBackTransaction *backTransaction = [CCBackTransaction new];
     backTransaction.navigation = self.navigation;
     
+    id class = [object valueForKey:@"object"];
+    id successBlock = [object valueForKey:@"successBlock"];
+    
     CCSelectClassmatesViewController *selectClassmateController = [CCSelectClassmatesViewController new];
     selectClassmateController.backTransaction = backTransaction;
-    [selectClassmateController setClass:object];
+    [selectClassmateController setSuccessBlock:successBlock];
+    [selectClassmateController setClass:class];
     [self.navigation pushViewController:selectClassmateController animated:YES];
 }
 

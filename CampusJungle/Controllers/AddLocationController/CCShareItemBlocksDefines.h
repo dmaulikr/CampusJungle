@@ -6,5 +6,5 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-typedef NSArray *(^ShareItemButtonSuccessBlock)();
+typedef void(^ShareItemButtonSuccessBlock)(NSArray *);
 typedef void(^ShareItemButtonCancelBlock)();
