@@ -19,10 +19,10 @@
 @interface CCSelectClassmatesViewController ()
 
 @property (nonatomic, strong) CCClass *classObject;
-@property (nonatomic, copy) ShareItemButtonSuccessBlock successBlock;
-@property (nonatomic, copy) ShareItemButtonCancelBlock cancelBlock;
 @property (nonatomic, strong) CCClassmatesDataProvider *dataProvider;
 @property (nonatomic, strong) CCSelectableCellsDataSource *dataSource;
+@property (nonatomic, copy) ShareItemButtonSuccessBlock successBlock;
+@property (nonatomic, copy) ShareItemButtonCancelBlock cancelBlock;
 
 @end
 
