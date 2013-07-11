@@ -27,4 +27,9 @@
     [self.noteDetilsTransaction performWithObject:cellObject];
 }
 
+- (BOOL)isNeedToLeftSelected
+{
+    return NO;
+}
+
 @end

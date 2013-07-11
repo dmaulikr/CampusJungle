@@ -14,7 +14,6 @@
 #import "CCStandardErrorHandler.h"
 #import "MBProgressHUD.h"
 #import "NSString+CJStringValidator.h"
-#import "UIAlertView+BlocksKit.h"
 #import "CCEducation.h"
 #import "CCUserEducationsDataSource.h"
 #import "CCAvatarSelectionActionSheet.h"
@@ -194,11 +193,39 @@
 - (void)saveProfile
 {
     if ([self isFieldsValid]){
-        [self sendUpdatedUserWithSuccess:^{
-            [self setEditing:NO animated:YES];
-            [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadSideMenu object:nil];
-        }];
+        if([self isSomeEducationRemoved]){
+            GIAlertButton *noButton = [GIAlertButton cancelButtonWithTitle:CCAlertsButtons.noButton action:nil];
+            GIAlertButton *yesButton = [GIAlertButton buttonWithTitle:CCAlertsButtons.yesButton action:^{
+                [self performSaveOperation];
+            }];
+            
+            GIAlert *alert = [GIAlert alertWithTitle:nil
+                                             message:CCAlertsMessages.educationRemoving
+                                             buttons:@[noButton, yesButton,]];
+            [alert show];
+
+        } else {
+            [self performSaveOperation];
+        }
     }
+}
+
+- (void)performSaveOperation
+{
+    [self sendUpdatedUserWithSuccess:^{
+        [self setEditing:NO animated:YES];
+        [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadSideMenu object:nil];
+    }];
+}
+
+- (BOOL)isSomeEducationRemoved
+{
+    for (CCEducation *education in self.arrayOfEducationsBackup){
+        if(![self.arrayOfEducations containsObject:education]){
+            return YES;
+        }
+    }
+    return NO;
 }
 
 - (void)saveUser:(CCUser *)user
