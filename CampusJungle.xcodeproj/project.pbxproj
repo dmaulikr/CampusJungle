@@ -439,6 +439,8 @@
 		D3A31996177E409D0004C4E8 /* marketPlaceLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A31994177E40740004C4E8 /* marketPlaceLogo@2x.png */; };
 		D3A31997177E409D0004C4E8 /* marketPlaceLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A31995177E40870004C4E8 /* marketPlaceLogo.png */; };
 		D3EC93AF178ED7960011CE72 /* CCCommonDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29C66178778AB001BC8DD /* CCCommonDataSource.m */; };
+		D3EC93B3178EF4870011CE72 /* CCReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3EC93B2178EF4870011CE72 /* CCReviewCell.xib */; };
+		D3EC93B6178EF49C0011CE72 /* CCReviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EC93B5178EF49C0011CE72 /* CCReviewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1123,6 +1125,9 @@
 		D3A31994177E40740004C4E8 /* marketPlaceLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marketPlaceLogo@2x.png"; sourceTree = "<group>"; };
 		D3A31995177E40870004C4E8 /* marketPlaceLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marketPlaceLogo.png; sourceTree = "<group>"; };
 		D3EC93B0178EDE660011CE72 /* CCClassTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassTableDelegate.h; sourceTree = "<group>"; };
+		D3EC93B2178EF4870011CE72 /* CCReviewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCReviewCell.xib; sourceTree = "<group>"; };
+		D3EC93B4178EF49C0011CE72 /* CCReviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCReviewCell.h; sourceTree = "<group>"; };
+		D3EC93B5178EF49C0011CE72 /* CCReviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCReviewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2569,6 +2574,7 @@
 				70A29E6D17877D2B001BC8DD /* NotesCollectionCell */,
 				70A29E7117877D2B001BC8DD /* OrdinaryCell */,
 				70A29E7517877D2B001BC8DD /* PhotoCell */,
+				D3EC93B1178EF4870011CE72 /* ReviewCell */,
 				70A29E7917877D2B001BC8DD /* SideMenuCells */,
 				70A29E8217877D2B001BC8DD /* StateCell */,
 				70A29E8517877D2B001BC8DD /* StuffCell */,
@@ -3861,6 +3867,16 @@
 			path = AppearanceConfigurator;
 			sourceTree = "<group>";
 		};
+		D3EC93B1178EF4870011CE72 /* ReviewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D3EC93B2178EF4870011CE72 /* CCReviewCell.xib */,
+				D3EC93B4178EF49C0011CE72 /* CCReviewCell.h */,
+				D3EC93B5178EF49C0011CE72 /* CCReviewCell.m */,
+			);
+			path = ReviewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -4125,6 +4141,7 @@
 				D394970A178C401400C39A7E /* CCOfferDetailsController.xib in Resources */,
 				D3949719178D51BE00C39A7E /* CCPrivateMessageController.xib in Resources */,
 				D394972F178D99BD00C39A7E /* CCReviewController.xib in Resources */,
+				D3EC93B3178EF4870011CE72 /* CCReviewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4376,6 +4393,7 @@
 				D3949737178EC21C00C39A7E /* CCBackToNoteTransaction.m in Sources */,
 				D394973B178EC46D00C39A7E /* CCReviewsDataProvider.m in Sources */,
 				D394973F178EC59900C39A7E /* CCReview.m in Sources */,
+				D3EC93B6178EF49C0011CE72 /* CCReviewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

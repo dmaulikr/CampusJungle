@@ -14,9 +14,12 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class])
-                                              owner:self
-                                            options:nil] objectAtIndex:0];
+        if([[NSBundle mainBundle] pathForResource:NSStringFromClass([self class]) ofType:@"nib"] != nil)
+        {
+            self = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class])
+                                                  owner:self
+                                                options:nil] objectAtIndex:0];
+        }
     }
     return self;
 }
