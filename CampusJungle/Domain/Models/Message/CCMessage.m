@@ -18,12 +18,19 @@
              @"receiver_type" : @"receiverType",
              @"sender_id" : @"senderID",
              @"text" : @"text",
+             @"created_at" : @"createdAt",
              };
 }
 
 - (NSString *)description
 {
     return self.text;
+}
+
+- (void)setCreatedAt:(NSDate *)createdAt
+{
+    _createdAt = createdAt;
+    
 }
 
 @end

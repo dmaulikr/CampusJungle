@@ -7,7 +7,10 @@
 //
 
 #import "CCBaseCell.h"
+#import "CCMessage.h"
 
 @interface CCMessageCell : CCBaseCell
+
+@property (nonatomic, strong) id cellObject;
 
 @end

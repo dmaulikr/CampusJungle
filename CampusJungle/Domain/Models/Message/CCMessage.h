@@ -15,6 +15,8 @@
 @property (nonatomic, strong) NSString *receiverType;
 @property (nonatomic, strong) NSString *senderID;
 @property (nonatomic, strong) NSString *text;
+@property (nonatomic, strong) NSString *created;
+@property (nonatomic, strong) NSDate *createdAt;
 
 + (NSDictionary *)responseMappingDictionary;
 
