@@ -54,7 +54,7 @@
 + (CGFloat)heightForCellWithObject:(id)object
 {
     CCReview *review = object;
-    UIFont *font = [UIFont boldSystemFontOfSize:17];
+    UIFont *font = [UIFont systemFontOfSize:17];
     CGSize requiredSize = [review.text sizeWithFont:font constrainedToSize:CGSizeMake(300, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
     
     return MAX(60, requiredSize.height + 40);
