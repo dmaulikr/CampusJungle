@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CCViewController.h"
 
-@interface CCAddLocationViewController : UIViewController
+#import "CCTransactionWithObject.h"
+
+@interface CCAddLocationViewController : CCViewController
+
+@property (nonatomic, strong) id<CCTransactionWithObject> selectGroupToShareTransaction;
+@property (nonatomic, strong) id<CCTransactionWithObject> selectUsersToShareTransaction;
+@property (nonatomic, strong) id locationToAddobject;
 
 @end

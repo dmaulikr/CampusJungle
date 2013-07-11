@@ -128,4 +128,9 @@
     [self.locationTransaction performWithObject:@{@"location" : location, @"array" : locationsArray, @"classId" : self.currentClass.classID, @"searchString" : searchString}];
 }
 
+- (void)addLocationToClassWithId:(NSString *)classId
+{
+    [self.addLocationTransaction performWithObject:self.currentClass];
+}
+
 @end

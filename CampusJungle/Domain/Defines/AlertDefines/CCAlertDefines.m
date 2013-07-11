@@ -31,6 +31,11 @@ const struct CCAlertsMessages CCAlertsMessages = {
     .checkYourMail = @"Check your email box",
     .noteNotReadyForView = @"This note isn't ready for review. Try again later.",
     .haveNoClassesInSelectedCollege = @"You haven't classes in selected college",
+    .incorrectAddress = @"Please enter correct address",
+    .notAccurateAddress = @"Please enter more accurate address",
+    .emptyLocationAddress = @"Please enter correct location address",
+    .emptyLocationName = @"Please enter location name",
+    .emptyLocationDescription = @"Please enter location description",
 };
 
 const struct CCAlertsButtons CCAlertsButtons = {
