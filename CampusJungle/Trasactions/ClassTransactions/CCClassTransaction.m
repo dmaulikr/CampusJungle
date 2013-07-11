@@ -11,6 +11,7 @@
 #import "CCShowNotesForClassTransaction.h"
 #import "CCOtherUserProfileTransaction.h"
 #import "CCShowLocationsTransaction.h"
+#import "CCAddLocationTransaction.h"
 
 @implementation CCClassTransaction
 
@@ -33,9 +34,13 @@
     CCShowLocationsTransaction *showLocationsTransaction = [CCShowLocationsTransaction new];
     showLocationsTransaction.navigation = centralNavigation;
     
+    CCAddLocationTransaction *addLocationTransaction = [CCAddLocationTransaction new];
+    addLocationTransaction.navigation = centralNavigation;
+    
     classController.otherUserProfileTransaction = otherUserProfileTransaction;
     classController.newsFeedTransaction = self.newsFeedTransaction;
     classController.locationTransaction = showLocationsTransaction;
+    classController.addLocationTransaction = addLocationTransaction;
     
     [self.menuController setCenterPanel:centralNavigation];
 }

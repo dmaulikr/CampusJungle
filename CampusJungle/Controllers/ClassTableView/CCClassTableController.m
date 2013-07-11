@@ -176,4 +176,24 @@ static const NSInteger kNavBarHeight = 44;
     }
 }
 
+- (IBAction)addButtonDidPressed:(id)sender
+{
+    NSInteger identifier = [self.classTabbarController selectedButtonIdentifier];
+    switch (identifier) {
+        case CCClassTabbarButtonsIdentifierClassmate:
+            // go add classmate
+
+            break;
+        case CCClassTabbarButtonsIdentifierGroup:
+            // go add group
+            break;
+        case CCClassTabbarButtonsIdentifierLocations:
+            [self.delegate addLocationToClassWithId:self.classID];
+            break;
+        case CCClassTabbarButtonsIdentifierForums:
+            // go add forum
+            break;
+    }
+}
+
 @end

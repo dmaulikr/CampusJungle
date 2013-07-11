@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		700F942B178EA07C00A6FBBA /* CCAddLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9429178EA07C00A6FBBA /* CCAddLocationViewController.m */; };
+		700F942C178EA07C00A6FBBA /* CCAddLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 700F942A178EA07C00A6FBBA /* CCAddLocationViewController.xib */; };
+		700F9430178EA74100A6FBBA /* CCAddLocationTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F942F178EA74100A6FBBA /* CCAddLocationTransaction.m */; };
+		700F9434178EBC5800A6FBBA /* CCPlacemarkAddressHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9433178EBC5800A6FBBA /* CCPlacemarkAddressHelper.m */; };
+		700F9439178ED4A800A6FBBA /* CCUserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9437178ED4A800A6FBBA /* CCUserProfile.m */; };
+		700F943A178ED4A800A6FBBA /* CCUserProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 700F9438178ED4A800A6FBBA /* CCUserProfile.xib */; };
+		700F943F178EDE1600A6FBBA /* CCShareItemActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F943D178EDE1600A6FBBA /* CCShareItemActionSheet.m */; };
+		700F9440178EDE1600A6FBBA /* CCShareItemActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 700F943E178EDE1600A6FBBA /* CCShareItemActionSheet.xib */; };
+		700F9444178EE98C00A6FBBA /* CCKeyboardHepler.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9443178EE98C00A6FBBA /* CCKeyboardHepler.m */; };
+		700F9449178EECD600A6FBBA /* CCShareItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9448178EECD600A6FBBA /* CCShareItemButton.m */; };
+		700F9452178EF1E800A6FBBA /* CCSelectUserClassmatesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9451178EF1E800A6FBBA /* CCSelectUserClassmatesTransaction.m */; };
+		700F9455178EF1F500A6FBBA /* CCSelectUserGroupsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9454178EF1F500A6FBBA /* CCSelectUserGroupsTransaction.m */; };
+		700F945B178EFA6000A6FBBA /* CCSelectClassmatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9459178EFA6000A6FBBA /* CCSelectClassmatesViewController.m */; };
+		700F945C178EFA6000A6FBBA /* CCSelectClassmatesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 700F945A178EFA6000A6FBBA /* CCSelectClassmatesViewController.xib */; };
+		700F9460178EFA6F00A6FBBA /* CCSelectGroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F945E178EFA6F00A6FBBA /* CCSelectGroupsViewController.m */; };
+		700F9461178EFA6F00A6FBBA /* CCSelectGroupsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 700F945F178EFA6F00A6FBBA /* CCSelectGroupsViewController.xib */; };
+		700F9462178EFFB200A6FBBA /* CCReviewControllerTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949732178D9B7100C39A7E /* CCReviewControllerTransaction.m */; };
+		700F9463178EFFDE00A6FBBA /* CCReviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D394972C178D99BD00C39A7E /* CCReviewController.m */; };
+		700F9464178F000500A6FBBA /* CCReviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D394972D178D99BD00C39A7E /* CCReviewController.xib */; };
 		7022F4991786C7100055221C /* SelectionBackGround@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE2178454C200E54EFC /* SelectionBackGround@2x.png */; };
 		7022F49A1786C7110055221C /* SelectionBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE3178454C200E54EFC /* SelectionBackGround.png */; };
 		703DA4DD178B455600464DD3 /* CCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4DC178B455600464DD3 /* CCLocation.m */; };
@@ -63,8 +82,6 @@
 		70A29D03178778AB001BC8DD /* CCImageSortingControllerForStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29C88178778AB001BC8DD /* CCImageSortingControllerForStuff.m */; };
 		70A29D04178778AB001BC8DD /* CCInboxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29C8B178778AB001BC8DD /* CCInboxController.m */; };
 		70A29D05178778AB001BC8DD /* CCInboxController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29C8C178778AB001BC8DD /* CCInboxController.xib */; };
-		70A29D06178778AB001BC8DD /* CCUserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29C8F178778AB001BC8DD /* CCUserProfile.m */; };
-		70A29D07178778AB001BC8DD /* CCUserProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29C90178778AB001BC8DD /* CCUserProfile.xib */; };
 		70A29D08178778AB001BC8DD /* CCListOfNotesInMarketController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29C93178778AB001BC8DD /* CCListOfNotesInMarketController.m */; };
 		70A29D09178778AB001BC8DD /* CCListOfNotesInMarketController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29C94178778AB001BC8DD /* CCListOfNotesInMarketController.xib */; };
 		70A29D0A178778AB001BC8DD /* CCListOfStuffInMarketController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29C97178778AB001BC8DD /* CCListOfStuffInMarketController.m */; };
@@ -324,9 +341,6 @@
 		D3949721178D5ADD00C39A7E /* CCSuccessSendMessageTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949720178D5ADD00C39A7E /* CCSuccessSendMessageTransaction.m */; };
 		D3949725178D5C1400C39A7E /* CCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949724178D5C1400C39A7E /* CCMessage.m */; };
 		D3949729178D61A600C39A7E /* CCMessagesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949728178D61A600C39A7E /* CCMessagesDataProvider.m */; };
-		D394972E178D99BD00C39A7E /* CCReviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D394972C178D99BD00C39A7E /* CCReviewController.m */; };
-		D394972F178D99BD00C39A7E /* CCReviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D394972D178D99BD00C39A7E /* CCReviewController.xib */; };
-		D3949733178D9B7100C39A7E /* CCReviewControllerTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949732178D9B7100C39A7E /* CCReviewControllerTransaction.m */; };
 		D3949737178EC21C00C39A7E /* CCBackToNoteTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949736178EC21C00C39A7E /* CCBackToNoteTransaction.m */; };
 		D394973B178EC46D00C39A7E /* CCReviewsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D394973A178EC46D00C39A7E /* CCReviewsDataProvider.m */; };
 		D394973F178EC59900C39A7E /* CCReview.m in Sources */ = {isa = PBXBuildFile; fileRef = D394973E178EC59900C39A7E /* CCReview.m */; };
@@ -443,6 +457,33 @@
 
 /* Begin PBXFileReference section */
 		3EA3BC22A4CB480B8934991C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		700F9428178EA07C00A6FBBA /* CCAddLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddLocationViewController.h; sourceTree = "<group>"; };
+		700F9429178EA07C00A6FBBA /* CCAddLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddLocationViewController.m; sourceTree = "<group>"; };
+		700F942A178EA07C00A6FBBA /* CCAddLocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAddLocationViewController.xib; sourceTree = "<group>"; };
+		700F942E178EA74100A6FBBA /* CCAddLocationTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddLocationTransaction.h; sourceTree = "<group>"; };
+		700F942F178EA74100A6FBBA /* CCAddLocationTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddLocationTransaction.m; sourceTree = "<group>"; };
+		700F9432178EBC5800A6FBBA /* CCPlacemarkAddressHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPlacemarkAddressHelper.h; sourceTree = "<group>"; };
+		700F9433178EBC5800A6FBBA /* CCPlacemarkAddressHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPlacemarkAddressHelper.m; sourceTree = "<group>"; };
+		700F9436178ED4A800A6FBBA /* CCUserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUserProfile.h; sourceTree = "<group>"; };
+		700F9437178ED4A800A6FBBA /* CCUserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUserProfile.m; sourceTree = "<group>"; };
+		700F9438178ED4A800A6FBBA /* CCUserProfile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCUserProfile.xib; sourceTree = "<group>"; };
+		700F943C178EDE1600A6FBBA /* CCShareItemActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCShareItemActionSheet.h; sourceTree = "<group>"; };
+		700F943D178EDE1600A6FBBA /* CCShareItemActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCShareItemActionSheet.m; sourceTree = "<group>"; };
+		700F943E178EDE1600A6FBBA /* CCShareItemActionSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCShareItemActionSheet.xib; sourceTree = "<group>"; };
+		700F9442178EE98C00A6FBBA /* CCKeyboardHepler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCKeyboardHepler.h; sourceTree = "<group>"; };
+		700F9443178EE98C00A6FBBA /* CCKeyboardHepler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCKeyboardHepler.m; sourceTree = "<group>"; };
+		700F9447178EECD600A6FBBA /* CCShareItemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCShareItemButton.h; sourceTree = "<group>"; };
+		700F9448178EECD600A6FBBA /* CCShareItemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCShareItemButton.m; sourceTree = "<group>"; };
+		700F9450178EF1E800A6FBBA /* CCSelectUserClassmatesTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSelectUserClassmatesTransaction.h; sourceTree = "<group>"; };
+		700F9451178EF1E800A6FBBA /* CCSelectUserClassmatesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSelectUserClassmatesTransaction.m; sourceTree = "<group>"; };
+		700F9453178EF1F500A6FBBA /* CCSelectUserGroupsTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSelectUserGroupsTransaction.h; sourceTree = "<group>"; };
+		700F9454178EF1F500A6FBBA /* CCSelectUserGroupsTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSelectUserGroupsTransaction.m; sourceTree = "<group>"; };
+		700F9458178EFA6000A6FBBA /* CCSelectClassmatesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSelectClassmatesViewController.h; sourceTree = "<group>"; };
+		700F9459178EFA6000A6FBBA /* CCSelectClassmatesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSelectClassmatesViewController.m; sourceTree = "<group>"; };
+		700F945A178EFA6000A6FBBA /* CCSelectClassmatesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCSelectClassmatesViewController.xib; sourceTree = "<group>"; };
+		700F945D178EFA6F00A6FBBA /* CCSelectGroupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSelectGroupsViewController.h; sourceTree = "<group>"; };
+		700F945E178EFA6F00A6FBBA /* CCSelectGroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSelectGroupsViewController.m; sourceTree = "<group>"; };
+		700F945F178EFA6F00A6FBBA /* CCSelectGroupsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCSelectGroupsViewController.xib; sourceTree = "<group>"; };
 		703DA4DB178B455600464DD3 /* CCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocation.h; sourceTree = "<group>"; };
 		703DA4DC178B455600464DD3 /* CCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocation.m; sourceTree = "<group>"; };
 		703DA4DF178B457200464DD3 /* CCClassLocationsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassLocationsDataProvider.h; sourceTree = "<group>"; };
@@ -539,9 +580,6 @@
 		70A29C8A178778AB001BC8DD /* CCInboxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCInboxController.h; sourceTree = "<group>"; };
 		70A29C8B178778AB001BC8DD /* CCInboxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCInboxController.m; sourceTree = "<group>"; };
 		70A29C8C178778AB001BC8DD /* CCInboxController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCInboxController.xib; sourceTree = "<group>"; };
-		70A29C8E178778AB001BC8DD /* CCUserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUserProfile.h; sourceTree = "<group>"; };
-		70A29C8F178778AB001BC8DD /* CCUserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUserProfile.m; sourceTree = "<group>"; };
-		70A29C90178778AB001BC8DD /* CCUserProfile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCUserProfile.xib; sourceTree = "<group>"; };
 		70A29C92178778AB001BC8DD /* CCListOfNotesInMarketController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCListOfNotesInMarketController.h; sourceTree = "<group>"; };
 		70A29C93178778AB001BC8DD /* CCListOfNotesInMarketController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCListOfNotesInMarketController.m; sourceTree = "<group>"; };
 		70A29C94178778AB001BC8DD /* CCListOfNotesInMarketController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCListOfNotesInMarketController.xib; sourceTree = "<group>"; };
@@ -1148,6 +1186,118 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		700F9427178EA06000A6FBBA /* AddLocationController */ = {
+			isa = PBXGroup;
+			children = (
+				700F9428178EA07C00A6FBBA /* CCAddLocationViewController.h */,
+				700F9429178EA07C00A6FBBA /* CCAddLocationViewController.m */,
+				700F942A178EA07C00A6FBBA /* CCAddLocationViewController.xib */,
+			);
+			path = AddLocationController;
+			sourceTree = "<group>";
+		};
+		700F942D178EA73000A6FBBA /* AddLocationTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				700F942E178EA74100A6FBBA /* CCAddLocationTransaction.h */,
+				700F942F178EA74100A6FBBA /* CCAddLocationTransaction.m */,
+			);
+			path = AddLocationTransaction;
+			sourceTree = "<group>";
+		};
+		700F9431178EBC4B00A6FBBA /* PlacemarkAddressHelper */ = {
+			isa = PBXGroup;
+			children = (
+				700F9432178EBC5800A6FBBA /* CCPlacemarkAddressHelper.h */,
+				700F9433178EBC5800A6FBBA /* CCPlacemarkAddressHelper.m */,
+			);
+			path = PlacemarkAddressHelper;
+			sourceTree = "<group>";
+		};
+		700F9435178ED4A800A6FBBA /* UserProfileController */ = {
+			isa = PBXGroup;
+			children = (
+				700F9436178ED4A800A6FBBA /* CCUserProfile.h */,
+				700F9437178ED4A800A6FBBA /* CCUserProfile.m */,
+				700F9438178ED4A800A6FBBA /* CCUserProfile.xib */,
+			);
+			path = UserProfileController;
+			sourceTree = "<group>";
+		};
+		700F943B178EDDF300A6FBBA /* ShareItemActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				700F943C178EDE1600A6FBBA /* CCShareItemActionSheet.h */,
+				700F943D178EDE1600A6FBBA /* CCShareItemActionSheet.m */,
+				700F943E178EDE1600A6FBBA /* CCShareItemActionSheet.xib */,
+			);
+			path = ShareItemActionSheet;
+			sourceTree = "<group>";
+		};
+		700F9441178EE97800A6FBBA /* KeyboardHelper */ = {
+			isa = PBXGroup;
+			children = (
+				700F9442178EE98C00A6FBBA /* CCKeyboardHepler.h */,
+				700F9443178EE98C00A6FBBA /* CCKeyboardHepler.m */,
+			);
+			path = KeyboardHelper;
+			sourceTree = "<group>";
+		};
+		700F9445178EECA700A6FBBA /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				700F9446178EECC600A6FBBA /* ShareItemButton */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		700F9446178EECC600A6FBBA /* ShareItemButton */ = {
+			isa = PBXGroup;
+			children = (
+				700F9447178EECD600A6FBBA /* CCShareItemButton.h */,
+				700F9448178EECD600A6FBBA /* CCShareItemButton.m */,
+			);
+			path = ShareItemButton;
+			sourceTree = "<group>";
+		};
+		700F944E178EF1CF00A6FBBA /* SelectUserClassmatesTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				700F9450178EF1E800A6FBBA /* CCSelectUserClassmatesTransaction.h */,
+				700F9451178EF1E800A6FBBA /* CCSelectUserClassmatesTransaction.m */,
+			);
+			path = SelectUserClassmatesTransaction;
+			sourceTree = "<group>";
+		};
+		700F944F178EF1DA00A6FBBA /* SelectUserGroupsTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				700F9453178EF1F500A6FBBA /* CCSelectUserGroupsTransaction.h */,
+				700F9454178EF1F500A6FBBA /* CCSelectUserGroupsTransaction.m */,
+			);
+			path = SelectUserGroupsTransaction;
+			sourceTree = "<group>";
+		};
+		700F9456178EFA2400A6FBBA /* SelectClassmatesController */ = {
+			isa = PBXGroup;
+			children = (
+				700F9458178EFA6000A6FBBA /* CCSelectClassmatesViewController.h */,
+				700F9459178EFA6000A6FBBA /* CCSelectClassmatesViewController.m */,
+				700F945A178EFA6000A6FBBA /* CCSelectClassmatesViewController.xib */,
+			);
+			path = SelectClassmatesController;
+			sourceTree = "<group>";
+		};
+		700F9457178EFA3500A6FBBA /* SelectGroupController */ = {
+			isa = PBXGroup;
+			children = (
+				700F945D178EFA6F00A6FBBA /* CCSelectGroupsViewController.h */,
+				700F945E178EFA6F00A6FBBA /* CCSelectGroupsViewController.m */,
+				700F945F178EFA6F00A6FBBA /* CCSelectGroupsViewController.xib */,
+			);
+			path = SelectGroupController;
+			sourceTree = "<group>";
+		};
 		703DA4DA178B455600464DD3 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -1227,8 +1377,10 @@
 		7093080D1785806000E71AB0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				700F9441178EE97800A6FBBA /* KeyboardHelper */,
 				703DA4F5178C5C8900464DD3 /* MapHelper */,
 				70438E451785B7A800537712 /* NavigationBarViewHelper */,
+				700F9431178EBC4B00A6FBBA /* PlacemarkAddressHelper */,
 				7093080E1785806000E71AB0 /* SideMenuDataSourceHelper */,
 				709308111785806000E71AB0 /* UIImageViewHelper */,
 				709308161785808400E71AB0 /* ViewPositioningHelper */,
@@ -1266,6 +1418,7 @@
 		70A29C34178778AB001BC8DD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				700F9427178EA06000A6FBBA /* AddLocationController */,
 				70A29C35178778AB001BC8DD /* BaseController */,
 				70A29C39178778AB001BC8DD /* CitySelectionController */,
 				70A29C3D178778AB001BC8DD /* ClassController */,
@@ -1286,7 +1439,6 @@
 				70A29C82178778AB001BC8DD /* ImageSortingController */,
 				70A29C86178778AB001BC8DD /* ImageSortingForStuffController */,
 				70A29C89178778AB001BC8DD /* InboxConroller */,
-				70A29C8D178778AB001BC8DD /* InitialUserInfoController */,
 				70A29C91178778AB001BC8DD /* ListOfNotesInMarketController */,
 				70A29C95178778AB001BC8DD /* ListOfStuffInMarketController */,
 				703DA4FA178C6A4800464DD3 /* LocationsController */,
@@ -1303,15 +1455,19 @@
 				70A29CB8178778AB001BC8DD /* PhotoBrowserController */,
 				D3949714178D51A000C39A7E /* PrivateMessageController */,
 				D394972A178D999900C39A7E /* ReviewController */,
+				D394972A178D999900C39A7E /* ReviewController */,
+				700F9456178EFA2400A6FBBA /* SelectClassmatesController */,
+				700F9457178EFA3500A6FBBA /* SelectGroupController */,
 				70A29CBC178778AB001BC8DD /* SideBarController */,
 				70A29CBF178778AB001BC8DD /* SignUpController */,
-				70A29CC7178778AB001BC8DD /* TableBasedController */,
 				70A29CC3178778AB001BC8DD /* StateSelectionController */,
 				70A29CCA178778AB001BC8DD /* StuffCreationController */,
 				70A29CCE178778AB001BC8DD /* StuffDetailsController */,
 				70A29CD2178778AB001BC8DD /* TabBarController */,
+				70A29CC7178778AB001BC8DD /* TableBasedController */,
 				70A29CD5178778AB001BC8DD /* UploadImageForStuffController */,
 				70A29CD8178778AB001BC8DD /* UploadImagesController */,
+				700F9435178ED4A800A6FBBA /* UserProfileController */,
 				70A29CDC178778AB001BC8DD /* WelcomeController */,
 			);
 			path = Controllers;
@@ -1560,16 +1716,6 @@
 				70A29C8C178778AB001BC8DD /* CCInboxController.xib */,
 			);
 			path = InboxConroller;
-			sourceTree = "<group>";
-		};
-		70A29C8D178778AB001BC8DD /* InitialUserInfoController */ = {
-			isa = PBXGroup;
-			children = (
-				70A29C8E178778AB001BC8DD /* CCUserProfile.h */,
-				70A29C8F178778AB001BC8DD /* CCUserProfile.m */,
-				70A29C90178778AB001BC8DD /* CCUserProfile.xib */,
-			);
-			path = InitialUserInfoController;
 			sourceTree = "<group>";
 		};
 		70A29C91178778AB001BC8DD /* ListOfNotesInMarketController */ = {
@@ -2468,6 +2614,7 @@
 			children = (
 				70A29E3417877D2B001BC8DD /* ActionSheets */,
 				70A29E3F17877D2B001BC8DD /* AlertViews */,
+				700F9445178EECA700A6FBBA /* Buttons */,
 				70A29E4B17877D2B001BC8DD /* Cells */,
 				70A29E8D17877D2B001BC8DD /* Headers */,
 				70A29E9617877D2B001BC8DD /* Pickers */,
@@ -2481,6 +2628,7 @@
 				70A29E3517877D2B001BC8DD /* ActionSheetPickerCollegesDelegate */,
 				70A29E3817877D2B001BC8DD /* ActionSheetPickerDelegate */,
 				70A29E3B17877D2B001BC8DD /* AvatarSelectionActionSheet */,
+				700F943B178EDDF300A6FBBA /* ShareItemActionSheet */,
 			);
 			path = ActionSheets;
 			sourceTree = "<group>";
@@ -2808,6 +2956,7 @@
 			isa = PBXGroup;
 			children = (
 				70A29EC517877E0C001BC8DD /* AddClassTransaction */,
+				700F942D178EA73000A6FBBA /* AddLocationTransaction */,
 				70A29EC817877E0C001BC8DD /* AllClassesTransaction */,
 				70A29ECB17877E0C001BC8DD /* ApplyFiltersTransaction */,
 				70A29ECE17877E0C001BC8DD /* BackToListOfNotesTransaction */,
@@ -2849,6 +2998,8 @@
 				70A29F2E17877E0D001BC8DD /* SelectCollegeClassesTransaction */,
 				70A29F3117877E0D001BC8DD /* SelectFiltersTransaction */,
 				70A29F3417877E0D001BC8DD /* SelectPdfFromDropbox */,
+				700F944E178EF1CF00A6FBBA /* SelectUserClassmatesTransaction */,
+				700F944F178EF1DA00A6FBBA /* SelectUserGroupsTransaction */,
 				703DA500178C6AAC00464DD3 /* ShowLocationsTransaction */,
 				70A29F3717877E0D001BC8DD /* ShowNotesForClassTransaction */,
 				70A29F3A17877E0D001BC8DD /* SignupTransaction */,
@@ -4081,7 +4232,6 @@
 				70A29D00178778AB001BC8DD /* CCFilterController.xib in Resources */,
 				70A29D02178778AB001BC8DD /* CCImageSortingController.xib in Resources */,
 				70A29D05178778AB001BC8DD /* CCInboxController.xib in Resources */,
-				70A29D07178778AB001BC8DD /* CCUserProfile.xib in Resources */,
 				70A29D09178778AB001BC8DD /* CCListOfNotesInMarketController.xib in Resources */,
 				70A29D0C178778AB001BC8DD /* CCLoginController.xib in Resources */,
 				70A29D0E178778AB001BC8DD /* CCMarketPlaceController.xib in Resources */,
@@ -4110,6 +4260,7 @@
 				70A29EB317877D2B001BC8DD /* CCOrdinaryCell.xib in Resources */,
 				70A29EB517877D2C001BC8DD /* CCPhotoCell.xib in Resources */,
 				70A29EB717877D2C001BC8DD /* CCSideMenuClassCell.xib in Resources */,
+				700F9464178F000500A6FBBA /* CCReviewController.xib in Resources */,
 				70A29EB917877D2C001BC8DD /* CCSideMenuItemCell.xib in Resources */,
 				70A29EBC17877D2C001BC8DD /* CCStuffCell.xib in Resources */,
 				70A29EBE17877D2C001BC8DD /* CCUserCell.xib in Resources */,
@@ -4124,7 +4275,11 @@
 				D3949700178C27DE00C39A7E /* CCClassTableController.xib in Resources */,
 				D394970A178C401400C39A7E /* CCOfferDetailsController.xib in Resources */,
 				D3949719178D51BE00C39A7E /* CCPrivateMessageController.xib in Resources */,
-				D394972F178D99BD00C39A7E /* CCReviewController.xib in Resources */,
+				700F942C178EA07C00A6FBBA /* CCAddLocationViewController.xib in Resources */,
+				700F943A178ED4A800A6FBBA /* CCUserProfile.xib in Resources */,
+				700F9440178EDE1600A6FBBA /* CCShareItemActionSheet.xib in Resources */,
+				700F945C178EFA6000A6FBBA /* CCSelectClassmatesViewController.xib in Resources */,
+				700F9461178EFA6F00A6FBBA /* CCSelectGroupsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4173,6 +4328,7 @@
 				D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */,
 				D3A3196C177C5B470004C4E8 /* CCAppearanceConfigurator.m in Sources */,
 				70C0FCB6178484D0005EF95E /* UITextField+InsetFixing.m in Sources */,
+				700F9462178EFFB200A6FBBA /* CCReviewControllerTransaction.m in Sources */,
 				709308141785806000E71AB0 /* CCSideMenuDataSourceHelper.m in Sources */,
 				709308151785806000E71AB0 /* CCUIImageHelper.m in Sources */,
 				709308191785809C00E71AB0 /* CCViewPositioningHelper.m in Sources */,
@@ -4192,10 +4348,10 @@
 				70A29CFC178778AB001BC8DD /* CCDropboxPDFSelectionViewController.m in Sources */,
 				70A29CFD178778AB001BC8DD /* CCEducationCreationController.m in Sources */,
 				70A29CFF178778AB001BC8DD /* CCFilterController.m in Sources */,
+				700F9463178EFFDE00A6FBBA /* CCReviewController.m in Sources */,
 				70A29D01178778AB001BC8DD /* CCImageSortingController.m in Sources */,
 				70A29D03178778AB001BC8DD /* CCImageSortingControllerForStuff.m in Sources */,
 				70A29D04178778AB001BC8DD /* CCInboxController.m in Sources */,
-				70A29D06178778AB001BC8DD /* CCUserProfile.m in Sources */,
 				70A29D08178778AB001BC8DD /* CCListOfNotesInMarketController.m in Sources */,
 				70A29D0A178778AB001BC8DD /* CCListOfStuffInMarketController.m in Sources */,
 				70A29D0B178778AB001BC8DD /* CCLoginController.m in Sources */,
@@ -4371,11 +4527,20 @@
 				D3949721178D5ADD00C39A7E /* CCSuccessSendMessageTransaction.m in Sources */,
 				D3949725178D5C1400C39A7E /* CCMessage.m in Sources */,
 				D3949729178D61A600C39A7E /* CCMessagesDataProvider.m in Sources */,
-				D394972E178D99BD00C39A7E /* CCReviewController.m in Sources */,
-				D3949733178D9B7100C39A7E /* CCReviewControllerTransaction.m in Sources */,
 				D3949737178EC21C00C39A7E /* CCBackToNoteTransaction.m in Sources */,
 				D394973B178EC46D00C39A7E /* CCReviewsDataProvider.m in Sources */,
 				D394973F178EC59900C39A7E /* CCReview.m in Sources */,
+				700F942B178EA07C00A6FBBA /* CCAddLocationViewController.m in Sources */,
+				700F9430178EA74100A6FBBA /* CCAddLocationTransaction.m in Sources */,
+				700F9434178EBC5800A6FBBA /* CCPlacemarkAddressHelper.m in Sources */,
+				700F9439178ED4A800A6FBBA /* CCUserProfile.m in Sources */,
+				700F943F178EDE1600A6FBBA /* CCShareItemActionSheet.m in Sources */,
+				700F9444178EE98C00A6FBBA /* CCKeyboardHepler.m in Sources */,
+				700F9449178EECD600A6FBBA /* CCShareItemButton.m in Sources */,
+				700F9452178EF1E800A6FBBA /* CCSelectUserClassmatesTransaction.m in Sources */,
+				700F9455178EF1F500A6FBBA /* CCSelectUserGroupsTransaction.m in Sources */,
+				700F945B178EFA6000A6FBBA /* CCSelectClassmatesViewController.m in Sources */,
+				700F9460178EFA6F00A6FBBA /* CCSelectGroupsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

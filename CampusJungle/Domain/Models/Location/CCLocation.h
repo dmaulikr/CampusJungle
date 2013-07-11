@@ -26,5 +26,7 @@
 
 + (NSDictionary *)responseMappingDictionary;
 + (NSDictionary *)requestMappingDictionary;
++ (CCLocation *)createUsingLocation:(CLLocation *)clLocation;
++ (CCLocation *)createWithCoordinates:(CLLocationCoordinate2D)coordinates;
 
 @end

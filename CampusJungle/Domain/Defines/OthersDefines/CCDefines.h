@@ -175,7 +175,7 @@ extern const struct CCClassTabbarButtonsTitles {
     __unsafe_unretained NSString *forums;
 } CCClassTabbarButtonsTitles;
 
-enum  CCClassTabbarButtonsIdentifiers {
+enum CCClassTabbarButtonsIdentifiers {
     CCClassTabbarButtonsIdentifierClassmate = 1,
     CCClassTabbarButtonsIdentifierGroup = 2,
     CCClassTabbarButtonsIdentifierLocations = 3,

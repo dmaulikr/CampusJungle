@@ -46,6 +46,17 @@
     [mapView setVisibleMapRect:pointRect animated:YES];
 }
 
++ (void)focusOnCLLocation:(CLLocation *)clLocation inMap:(MKMapView *)mapView
+{
+    CCLocation *location = [CCLocation createUsingLocation:clLocation];
+    [self focusOnLocation:location inMap:mapView];
+}
+
++ (void)removeAllAnnotationsInMap:(MKMapView *)mapView
+{
+    [mapView removeAnnotations:mapView.annotations];
+}
+
 + (CLLocationCoordinate2D)coordinatesForLocation:(CCLocation *)location
 {
     CLLocationCoordinate2D locationCoord;
