@@ -57,6 +57,18 @@
     [self.view addSubview:self.classContentTable.view];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.classContentTable viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.classContentTable viewWillDisappear:animated];
+}
+
 - (void)loadInfo
 {
     self.navigationController.navigationItem.title = self.currentClass.subject;
@@ -114,6 +126,11 @@
 {
     NSString *searchString = ([self.classContentTable.searchBar.text length] > 0) ? self.classContentTable.searchBar.text : @"";
     [self.locationTransaction performWithObject:@{@"location" : location, @"array" : locationsArray, @"classId" : self.currentClass.classID, @"searchString" : searchString}];
+}
+
+- (void)addLocationToClassWithId:(NSString *)classId
+{
+    [self.addLocationTransaction performWithObject:self.currentClass];
 }
 
 @end

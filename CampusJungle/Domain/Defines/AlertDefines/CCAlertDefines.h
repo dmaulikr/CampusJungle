@@ -29,7 +29,11 @@ extern const struct CCAlertsMessages {
     __unsafe_unretained NSString *checkYourMail;
     __unsafe_unretained NSString *noteNotReadyForView;
     __unsafe_unretained NSString *haveNoClassesInSelectedCollege;
-    
+    __unsafe_unretained NSString *incorrectAddress;
+    __unsafe_unretained NSString *notAccurateAddress;
+    __unsafe_unretained NSString *emptyLocationAddress;
+    __unsafe_unretained NSString *emptyLocationName;
+    __unsafe_unretained NSString *emptyLocationDescription;
 } CCAlertsMessages;
 
 extern const struct CCAlertsButtons {

@@ -79,10 +79,10 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     __weak CCSideMenuController *weakSelf = self;
     [self.ioc_classesAPI getClassesInCollegesWithSuccessHandler:^(NSArray *educationsArray) {
-        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        [MBProgressHUD hideAllHUDsForView:weakSelf.view animated:YES];
         [weakSelf setupTableViewWithEducationsArray:educationsArray];
     } errorHandler:^(NSError *error) {
-        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        [MBProgressHUD hideAllHUDsForView:weakSelf.view animated:YES];
         [CCStandardErrorHandler showErrorWithError:error];
     } ];
 }

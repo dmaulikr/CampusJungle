@@ -10,6 +10,19 @@
 
 @implementation CCLocation
 
++ (CCLocation *)createUsingLocation:(CLLocation *)clLocation
+{
+    return [self createWithCoordinates:clLocation.coordinate];
+}
+
++ (CCLocation *)createWithCoordinates:(CLLocationCoordinate2D)coordinates
+{
+    CCLocation *location = [CCLocation new];
+    location.latitude = coordinates.latitude;
+    location.longitude = coordinates.longitude;
+    return location;
+}
+
 + (NSDictionary *)responseMappingDictionary
 {
     return @{

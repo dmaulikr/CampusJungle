@@ -21,13 +21,19 @@
 {
     [super viewDidLoad];
     [self configSearchBar];
-    [self addObservers];
     self.tapRecognizer.enabled = NO;
     self.reloadingTableViewWithActiveSearchBar = NO;
 }
 
-- (void)dealloc
+- (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    [self addObservers];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
     [self removeObservers];
 }
 
