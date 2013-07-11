@@ -10,6 +10,7 @@
 #import "CCNoteDetailsController.h"
 #import "CCViewPDFNotesTransaction.h"
 #import "CCBackToNotesListTransaction.h"
+#import "CCRateControllerTransaction.h"
 
 @implementation CCNoteDetailTransaction
 
@@ -28,6 +29,10 @@
     
     CCBackToNotesListTransaction *backToListTransaction = [CCBackToNotesListTransaction new];
     backToListTransaction.navigation = self.navigation;
+    
+    CCRateControllerTransaction *rateControllerTransaction = [CCRateControllerTransaction new];
+    rateControllerTransaction.navigation = self.navigation;
+    noteDetailsController.rateTransaction = rateControllerTransaction;
     
     noteDetailsController.backToListTransaction = backToListTransaction;
     

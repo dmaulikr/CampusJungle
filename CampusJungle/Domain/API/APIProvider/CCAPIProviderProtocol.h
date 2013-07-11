@@ -42,5 +42,6 @@
 
 - (void)getUserWithID:(NSString *)userID successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 
+//- (void)postARate
 
 @end

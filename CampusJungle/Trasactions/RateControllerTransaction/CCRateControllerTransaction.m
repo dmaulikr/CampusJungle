@@ -16,6 +16,7 @@
     NSParameterAssert(self.navigation);
     
     CCRateController *rateController = [CCRateController new];
+    rateController.note = object;
     
     [self.navigation pushViewController:rateController animated:YES];
 

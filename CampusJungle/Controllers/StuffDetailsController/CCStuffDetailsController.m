@@ -25,7 +25,7 @@
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
 
 - (IBAction)createOfferButtonDidPress;
-- (IBAction)rateButtonPressed;
+
 
 @end
 
@@ -92,11 +92,6 @@
 - (IBAction)createOfferButtonDidPress
 {
     [self.createOfferTarnasaction performWithObject:self.stuff];
-}
-
-- (IBAction)rateButtonPressed
-{
-    [self.rateTransaction performWithObject:self.stuff];
 }
 
 @end

@@ -32,6 +32,8 @@
 
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
 
+- (IBAction)rateButtonPressed;
+
 @end
 
 @implementation CCNoteDetailsController
@@ -53,6 +55,7 @@
     if(self.note.fullAccess){
         [self.viewOnlyAccessButton setHidden:YES];
         [self.pdfButton setHidden:NO];
+        [self.resendLinkButton setHidden:YES];
         if([self.note.fullAccess isEqualToString:@"true"]){
             [self.fullAccessButton setHidden:YES];
             [self.resendLinkButton setHidden:NO];
@@ -70,7 +73,13 @@
 
     [self.viewOnlyAccessButton setTitle:viewOnlyTitle forState:UIControlStateNormal];
 
-    NSString *fullAccessTitle = [NSString stringWithFormat:@"Buy for download:%@",self.note.fullPrice];
+    NSNumber *fullPrice = self.note.fullPrice;
+    
+    if(self.note.fullAccess){
+        fullPrice = @(fullPrice.integerValue - self.note.price.integerValue);
+    }
+    
+    NSString *fullAccessTitle = [NSString stringWithFormat:@"Buy for download:%@",fullPrice];
     [self.fullAccessButton setTitle:fullAccessTitle forState:UIControlStateNormal];
 }
 
@@ -149,5 +158,11 @@
         [CCStandardErrorHandler showErrorWithError:error];
     }];
 }
+
+- (IBAction)rateButtonPressed
+{
+    [self.rateTransaction performWithObject:self.note];
+}
+
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import "CCViewController.h"
+#import "CCNote.h"
 
 @interface CCRateController : CCViewController
+
+@property (nonatomic, strong) CCNote *note;
 
 @end
