@@ -9,10 +9,19 @@
 #import "CCCommonDataSource.h"
 #import "CCTableCellProtocol.h"
 #import "CCDefines.h"
+#import "CCBaseCell.h"
 
 #define IntervalBeforeLoading 20
 
 @implementation CCCommonDataSource
+
+- (id)init
+{
+    if(self = [super init]){
+        self.registeredCellClasses = [NSMutableDictionary new];
+    }
+    return self;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -21,7 +30,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    id <CCTableCellProtocol> cell = [tableView dequeueReusableCellWithIdentifier:CCTableDefines.tableCellIdentifier];
+    id <CCTableCellProtocol> cell = [tableView dequeueReusableCellWithIdentifier:self.currentCellReuseIdentifier];
     [cell setCellObject:self.dataProvider.arrayOfItems[indexPath.row]];
     return (UITableViewCell *)cell;
 }
@@ -34,6 +43,7 @@
     }
 }
 
+
 - (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.delegate didSelectedCellWithObject:self.dataProvider.arrayOfItems[indexPath.row]];
@@ -44,6 +54,12 @@
     if([self.delegate respondsToSelector:@selector(isNeedToLeftSelected)] && ![self.delegate isNeedToLeftSelected]){
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Class cellClass = self.registeredCellClasses[self.currentCellReuseIdentifier];
+    return [cellClass heightForCellWithObject:self.dataProvider.arrayOfItems[indexPath.row]];
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "CCEducationCell.h"
 #import "CCEducation.h"
+#import "CCViewPositioningHelper.h"
 
 @interface CCEducationCell()
 
@@ -29,6 +30,7 @@
         self = [[[NSBundle mainBundle] loadNibNamed:@"CCEducationCell"
                                               owner:self
                                             options:nil] objectAtIndex:0];
+        NSLog(@"%lf",self.bounds.size.height);
         [self setSelectionColor];
     }
     return self;
@@ -40,7 +42,16 @@
     self.collegeName.text = [(CCEducation *)cellObject collegeName];
     self.graduationDate.text = [(CCEducation *)cellObject graduationDate];
     self.status.text = [(CCEducation *)cellObject status];
+    [self.collegeName sizeToFit];
+    [CCViewPositioningHelper setOriginX:5 toView:self.collegeName];
 }
+
+- (void)prepareForReuse
+{
+    [CCViewPositioningHelper setWidth:230 toView:self.collegeName];
+    [CCViewPositioningHelper setOriginX:5 toView:self.collegeName];
+}
+
 
 - (void)layoutSubviews
 {
@@ -55,5 +66,17 @@
     }
     [super layoutSubviews];
 }
+
++ (CGFloat)heightForCellWithObject:(id)object
+{
+    CCEducation *education = object;
+    UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:15];
+    
+    CGSize requiredSize = [education.collegeName sizeWithFont:font constrainedToSize:CGSizeMake(230, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
+    
+    return MAX(60, requiredSize.height + 5);
+}
+
+
 
 @end

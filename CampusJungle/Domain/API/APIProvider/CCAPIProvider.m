@@ -335,5 +335,29 @@
     }];
 }
 
+- (void)postReviewWithRate:(NSNumber *)rank text:(NSString *)text forUserWithID:(NSString *)userID successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.postReview,userID];
+    [self setAuthorizationToken];
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [objectManager postObject:nil path:path parameters:@{
+     @"rank" : rank,
+     @"text" : text
+     } success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+         successHandler(mappingResult);
+     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+         errorHandler(error);
+     }];
+}
+
+- (void)loadReviewsForUser:(NSString *)userID successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.loadReviews,userID];
+    
+    [self loadItemsWithParams:nil
+                         path:path
+               successHandler:successHandler
+                 errorHandler:errorHandler];
+}
 
 @end

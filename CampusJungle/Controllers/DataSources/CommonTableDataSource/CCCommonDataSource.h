@@ -15,4 +15,7 @@
 @property (nonatomic, weak) id <CCCellSelectionProtocol> delegate;
 @property (nonatomic, strong) CCBaseDataProvider *dataProvider;
 
+@property (nonatomic, strong) NSString *currentCellReuseIdentifier;
+@property (nonatomic, strong) NSMutableDictionary *registeredCellClasses;
+
 @end

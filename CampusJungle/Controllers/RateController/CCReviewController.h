@@ -8,9 +8,11 @@
 
 #import "CCViewController.h"
 #import "CCNote.h"
+#import "CCTransaction.h"
 
-@interface CCRateController : CCViewController
+@interface CCReviewController : CCViewController
 
 @property (nonatomic, strong) CCNote *note;
+@property (nonatomic, strong) id <CCTransaction> backToNoteTransaction;
 
 @end

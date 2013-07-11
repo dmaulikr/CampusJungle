@@ -77,6 +77,8 @@
     } else {
         dataSource = [CCCommonDataSource new];
     }
+    dataSource.currentCellReuseIdentifier = reuseIdentifier;
+    [dataSource.registeredCellClasses setObject:cellCass forKey:reuseIdentifier];
     dataSource.dataProvider = provider;
     dataSource.dataProvider.targetTable = self.mainTable;
     self.mainTable.dataSource = dataSource;

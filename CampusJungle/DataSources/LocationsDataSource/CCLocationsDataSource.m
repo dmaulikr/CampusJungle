@@ -12,10 +12,4 @@
 
 @implementation CCLocationsDataSource
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{    
-    CCLocation *location = [self.dataProvider.arrayOfItems objectAtIndex:indexPath.row];
-    return [CCLocationCell heightForCellWithLocation:location];
-}
-
 @end

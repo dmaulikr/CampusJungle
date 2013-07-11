@@ -104,7 +104,6 @@
 		70A29D2C178778AB001BC8DD /* CCWelcomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29CDF178778AB001BC8DD /* CCWelcomeController.xib */; };
 		70A29D4417877B6B001BC8DD /* CCClassControllerTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29D3017877B6B001BC8DD /* CCClassControllerTableDataSource.m */; };
 		70A29D4517877B6B001BC8DD /* CCCommonCollectionDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29D3317877B6B001BC8DD /* CCCommonCollectionDataSource.m */; };
-		70A29D4617877B6B001BC8DD /* CCCommonDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29D3717877B6B001BC8DD /* CCCommonDataSource.m */; };
 		70A29D4717877B6B001BC8DD /* CCImageSortingDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29D3A17877B6B001BC8DD /* CCImageSortingDataSource.m */; };
 		70A29D4817877B6B001BC8DD /* CCMarketFilterDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29D3D17877B6B001BC8DD /* CCMarketFilterDataSource.m */; };
 		70A29D4917877B6B001BC8DD /* CCSideMenuDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29D4017877B6B001BC8DD /* CCSideMenuDataSource.m */; };
@@ -325,9 +324,12 @@
 		D3949721178D5ADD00C39A7E /* CCSuccessSendMessageTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949720178D5ADD00C39A7E /* CCSuccessSendMessageTransaction.m */; };
 		D3949725178D5C1400C39A7E /* CCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949724178D5C1400C39A7E /* CCMessage.m */; };
 		D3949729178D61A600C39A7E /* CCMessagesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949728178D61A600C39A7E /* CCMessagesDataProvider.m */; };
-		D394972E178D99BD00C39A7E /* CCRateController.m in Sources */ = {isa = PBXBuildFile; fileRef = D394972C178D99BD00C39A7E /* CCRateController.m */; };
-		D394972F178D99BD00C39A7E /* CCRateController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D394972D178D99BD00C39A7E /* CCRateController.xib */; };
-		D3949733178D9B7100C39A7E /* CCRateControllerTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949732178D9B7100C39A7E /* CCRateControllerTransaction.m */; };
+		D394972E178D99BD00C39A7E /* CCReviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D394972C178D99BD00C39A7E /* CCReviewController.m */; };
+		D394972F178D99BD00C39A7E /* CCReviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D394972D178D99BD00C39A7E /* CCReviewController.xib */; };
+		D3949733178D9B7100C39A7E /* CCReviewControllerTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949732178D9B7100C39A7E /* CCReviewControllerTransaction.m */; };
+		D3949737178EC21C00C39A7E /* CCBackToNoteTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949736178EC21C00C39A7E /* CCBackToNoteTransaction.m */; };
+		D394973B178EC46D00C39A7E /* CCReviewsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D394973A178EC46D00C39A7E /* CCReviewsDataProvider.m */; };
+		D394973F178EC59900C39A7E /* CCReview.m in Sources */ = {isa = PBXBuildFile; fileRef = D394973E178EC59900C39A7E /* CCReview.m */; };
 		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
 		D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39F1C161753C0E8008E08A2 /* Accounts.framework */; };
 		D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A2C3241754C95700989831 /* MessageUI.framework */; };
@@ -436,6 +438,7 @@
 		D3A3198D177E3C7A0004C4E8 /* sideMenuBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A3198B177E3C790004C4E8 /* sideMenuBackGround.png */; };
 		D3A31996177E409D0004C4E8 /* marketPlaceLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A31994177E40740004C4E8 /* marketPlaceLogo@2x.png */; };
 		D3A31997177E409D0004C4E8 /* marketPlaceLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A31995177E40870004C4E8 /* marketPlaceLogo.png */; };
+		D3EC93AF178ED7960011CE72 /* CCCommonDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29C66178778AB001BC8DD /* CCCommonDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -454,7 +457,6 @@
 		703DA4EE178C3D3000464DD3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		703DA4F6178C5C9900464DD3 /* CCMapHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMapHelper.h; sourceTree = "<group>"; };
 		703DA4F7178C5C9900464DD3 /* CCMapHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMapHelper.m; sourceTree = "<group>"; };
-		703DA4F9178C66DD00464DD3 /* CCClassTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassTableDelegate.h; sourceTree = "<group>"; };
 		703DA4FB178C6A5900464DD3 /* CCLocationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationsViewController.h; sourceTree = "<group>"; };
 		703DA4FC178C6A5900464DD3 /* CCLocationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocationsViewController.m; sourceTree = "<group>"; };
 		703DA4FD178C6A5900464DD3 /* CCLocationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCLocationsViewController.xib; sourceTree = "<group>"; };
@@ -602,9 +604,6 @@
 		70A29D3017877B6B001BC8DD /* CCClassControllerTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassControllerTableDataSource.m; sourceTree = "<group>"; };
 		70A29D3217877B6B001BC8DD /* CCCommonCollectionDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCommonCollectionDataSource.h; sourceTree = "<group>"; };
 		70A29D3317877B6B001BC8DD /* CCCommonCollectionDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCommonCollectionDataSource.m; sourceTree = "<group>"; };
-		70A29D3517877B6B001BC8DD /* CCCellSelectionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCellSelectionProtocol.h; sourceTree = "<group>"; };
-		70A29D3617877B6B001BC8DD /* CCCommonDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCommonDataSource.h; sourceTree = "<group>"; };
-		70A29D3717877B6B001BC8DD /* CCCommonDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCommonDataSource.m; sourceTree = "<group>"; };
 		70A29D3917877B6B001BC8DD /* CCImageSortingDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCImageSortingDataSource.h; sourceTree = "<group>"; };
 		70A29D3A17877B6B001BC8DD /* CCImageSortingDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCImageSortingDataSource.m; sourceTree = "<group>"; };
 		70A29D3C17877B6B001BC8DD /* CCMarketFilterDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMarketFilterDataSource.h; sourceTree = "<group>"; };
@@ -1002,11 +1001,17 @@
 		D3949724178D5C1400C39A7E /* CCMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessage.m; sourceTree = "<group>"; };
 		D3949727178D61A600C39A7E /* CCMessagesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessagesDataProvider.h; sourceTree = "<group>"; };
 		D3949728178D61A600C39A7E /* CCMessagesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessagesDataProvider.m; sourceTree = "<group>"; };
-		D394972B178D99BD00C39A7E /* CCRateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCRateController.h; sourceTree = "<group>"; };
-		D394972C178D99BD00C39A7E /* CCRateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCRateController.m; sourceTree = "<group>"; };
-		D394972D178D99BD00C39A7E /* CCRateController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCRateController.xib; sourceTree = "<group>"; };
-		D3949731178D9B7100C39A7E /* CCRateControllerTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCRateControllerTransaction.h; sourceTree = "<group>"; };
-		D3949732178D9B7100C39A7E /* CCRateControllerTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCRateControllerTransaction.m; sourceTree = "<group>"; };
+		D394972B178D99BD00C39A7E /* CCReviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCReviewController.h; sourceTree = "<group>"; };
+		D394972C178D99BD00C39A7E /* CCReviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCReviewController.m; sourceTree = "<group>"; };
+		D394972D178D99BD00C39A7E /* CCReviewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCReviewController.xib; sourceTree = "<group>"; };
+		D3949731178D9B7100C39A7E /* CCReviewControllerTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCReviewControllerTransaction.h; sourceTree = "<group>"; };
+		D3949732178D9B7100C39A7E /* CCReviewControllerTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCReviewControllerTransaction.m; sourceTree = "<group>"; };
+		D3949735178EC21C00C39A7E /* CCBackToNoteTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBackToNoteTransaction.h; sourceTree = "<group>"; };
+		D3949736178EC21C00C39A7E /* CCBackToNoteTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBackToNoteTransaction.m; sourceTree = "<group>"; };
+		D3949739178EC46D00C39A7E /* CCReviewsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCReviewsDataProvider.h; sourceTree = "<group>"; };
+		D394973A178EC46D00C39A7E /* CCReviewsDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCReviewsDataProvider.m; sourceTree = "<group>"; };
+		D394973D178EC59900C39A7E /* CCReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCReview.h; sourceTree = "<group>"; };
+		D394973E178EC59900C39A7E /* CCReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCReview.m; sourceTree = "<group>"; };
 		D39F1C0F1753822F008E08A2 /* CCStandardErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStandardErrorHandler.h; sourceTree = "<group>"; };
 		D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStandardErrorHandler.m; sourceTree = "<group>"; };
 		D39F1C161753C0E8008E08A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -1117,6 +1122,7 @@
 		D3A3198B177E3C790004C4E8 /* sideMenuBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sideMenuBackGround.png; sourceTree = "<group>"; };
 		D3A31994177E40740004C4E8 /* marketPlaceLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marketPlaceLogo@2x.png"; sourceTree = "<group>"; };
 		D3A31995177E40870004C4E8 /* marketPlaceLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marketPlaceLogo.png; sourceTree = "<group>"; };
+		D3EC93B0178EDE660011CE72 /* CCClassTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassTableDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1296,7 +1302,7 @@
 				70A29CB4178778AB001BC8DD /* OtherUserProfileController */,
 				70A29CB8178778AB001BC8DD /* PhotoBrowserController */,
 				D3949714178D51A000C39A7E /* PrivateMessageController */,
-				D394972A178D999900C39A7E /* RateController */,
+				D394972A178D999900C39A7E /* ReviewController */,
 				70A29CBC178778AB001BC8DD /* SideBarController */,
 				70A29CBF178778AB001BC8DD /* SignUpController */,
 				70A29CC7178778AB001BC8DD /* TableBasedController */,
@@ -1808,9 +1814,6 @@
 		70A29D3417877B6B001BC8DD /* CommonTableDataSource */ = {
 			isa = PBXGroup;
 			children = (
-				70A29D3517877B6B001BC8DD /* CCCellSelectionProtocol.h */,
-				70A29D3617877B6B001BC8DD /* CCCommonDataSource.h */,
-				70A29D3717877B6B001BC8DD /* CCCommonDataSource.m */,
 			);
 			path = CommonTableDataSource;
 			sourceTree = "<group>";
@@ -1878,6 +1881,7 @@
 				D39496E9178B29E400C39A7E /* OffersDataProvider */,
 				70A29D7F17877B94001BC8DD /* PaginationDataProvider */,
 				70A29D8217877B94001BC8DD /* PhotosDataProvider */,
+				D3949738178EC45000C39A7E /* ReviewsDataProvider */,
 				70A29D8517877B94001BC8DD /* StatesDataProvider */,
 				70A29D8817877B94001BC8DD /* UploadImagesDataProvider */,
 			);
@@ -2273,6 +2277,7 @@
 				70A29DFC17877CB5001BC8DD /* States */,
 				70A29DFF17877CB5001BC8DD /* Stuff */,
 				70A29E0217877CB5001BC8DD /* StuffUploadInfo */,
+				D394973C178EC58C00C39A7E /* Review */,
 				70A29E0517877CB5001BC8DD /* UploadIndicatorDelegate */,
 				70A29E0717877CB5001BC8DD /* User */,
 			);
@@ -2807,6 +2812,7 @@
 				70A29ECB17877E0C001BC8DD /* ApplyFiltersTransaction */,
 				70A29ECE17877E0C001BC8DD /* BackToListOfNotesTransaction */,
 				D3949701178C297A00C39A7E /* BackToStuffTransaction */,
+				D3949734178EC1A300C39A7E /* BackToNoteTransaction */,
 				70A29ED117877E0C001BC8DD /* BackToUserProfileTransaction */,
 				70A29ED417877E0C001BC8DD /* CitySelectionTransaction */,
 				70A29ED717877E0C001BC8DD /* ClassAddedTransaction */,
@@ -2838,7 +2844,7 @@
 				70A29F2217877E0D001BC8DD /* NotesBackToListTransaction */,
 				70A29F2517877E0D001BC8DD /* PhotoBrowserTransaction */,
 				D394971A178D55F500C39A7E /* PrivateMessageTransaction */,
-				D3949730178D9B5400C39A7E /* RateControllerTransaction */,
+				D3949730178D9B5400C39A7E /* ReviewControllerTransaction */,
 				70A29F2B17877E0D001BC8DD /* SearchCollegeTransaction */,
 				70A29F2E17877E0D001BC8DD /* SelectCollegeClassesTransaction */,
 				70A29F3117877E0D001BC8DD /* SelectFiltersTransaction */,
@@ -3531,7 +3537,7 @@
 		D39496E9178B29E400C39A7E /* OffersDataProvider */ = {
 			isa = PBXGroup;
 			children = (
-				703DA4F9178C66DD00464DD3 /* CCClassTableDelegate.h */,
+				D3EC93B0178EDE660011CE72 /* CCClassTableDelegate.h */,
 				D39496EA178B2A0400C39A7E /* CCOffersDataProvider.h */,
 				D39496EB178B2A0400C39A7E /* CCOffersDataProvider.m */,
 			);
@@ -3647,23 +3653,53 @@
 			path = MessagesDataProvider;
 			sourceTree = "<group>";
 		};
-		D394972A178D999900C39A7E /* RateController */ = {
+		D394972A178D999900C39A7E /* ReviewController */ = {
 			isa = PBXGroup;
 			children = (
-				D394972B178D99BD00C39A7E /* CCRateController.h */,
-				D394972C178D99BD00C39A7E /* CCRateController.m */,
-				D394972D178D99BD00C39A7E /* CCRateController.xib */,
+				D394972B178D99BD00C39A7E /* CCReviewController.h */,
+				D394972C178D99BD00C39A7E /* CCReviewController.m */,
+				D394972D178D99BD00C39A7E /* CCReviewController.xib */,
 			);
+			name = ReviewController;
 			path = RateController;
 			sourceTree = "<group>";
 		};
-		D3949730178D9B5400C39A7E /* RateControllerTransaction */ = {
+		D3949730178D9B5400C39A7E /* ReviewControllerTransaction */ = {
 			isa = PBXGroup;
 			children = (
-				D3949731178D9B7100C39A7E /* CCRateControllerTransaction.h */,
-				D3949732178D9B7100C39A7E /* CCRateControllerTransaction.m */,
+				D3949731178D9B7100C39A7E /* CCReviewControllerTransaction.h */,
+				D3949732178D9B7100C39A7E /* CCReviewControllerTransaction.m */,
 			);
+			name = ReviewControllerTransaction;
 			path = RateControllerTransaction;
+			sourceTree = "<group>";
+		};
+		D3949734178EC1A300C39A7E /* BackToNoteTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3949735178EC21C00C39A7E /* CCBackToNoteTransaction.h */,
+				D3949736178EC21C00C39A7E /* CCBackToNoteTransaction.m */,
+			);
+			name = BackToNoteTransaction;
+			path = BackToNotesTransaction;
+			sourceTree = "<group>";
+		};
+		D3949738178EC45000C39A7E /* ReviewsDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3949739178EC46D00C39A7E /* CCReviewsDataProvider.h */,
+				D394973A178EC46D00C39A7E /* CCReviewsDataProvider.m */,
+			);
+			path = ReviewsDataProvider;
+			sourceTree = "<group>";
+		};
+		D394973C178EC58C00C39A7E /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				D394973D178EC59900C39A7E /* CCReview.h */,
+				D394973E178EC59900C39A7E /* CCReview.m */,
+			);
+			path = Review;
 			sourceTree = "<group>";
 		};
 		D39F1C0E1753821D008E08A2 /* StandardErrorHandler */ = {
@@ -4088,7 +4124,7 @@
 				D3949700178C27DE00C39A7E /* CCClassTableController.xib in Resources */,
 				D394970A178C401400C39A7E /* CCOfferDetailsController.xib in Resources */,
 				D3949719178D51BE00C39A7E /* CCPrivateMessageController.xib in Resources */,
-				D394972F178D99BD00C39A7E /* CCRateController.xib in Resources */,
+				D394972F178D99BD00C39A7E /* CCReviewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4133,6 +4169,7 @@
 				A787C79A17536F8400824DEA /* CCAppDelegate.m in Sources */,
 				A787C7B617536F8400824DEA /* main.m in Sources */,
 				A787C7B717536F8400824DEA /* CCUserSession.m in Sources */,
+				D3EC93AF178ED7960011CE72 /* CCCommonDataSource.m in Sources */,
 				D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */,
 				D3A3196C177C5B470004C4E8 /* CCAppearanceConfigurator.m in Sources */,
 				70C0FCB6178484D0005EF95E /* UITextField+InsetFixing.m in Sources */,
@@ -4182,7 +4219,6 @@
 				70A29D2B178778AB001BC8DD /* CCWelcomeController.m in Sources */,
 				70A29D4417877B6B001BC8DD /* CCClassControllerTableDataSource.m in Sources */,
 				70A29D4517877B6B001BC8DD /* CCCommonCollectionDataSource.m in Sources */,
-				70A29D4617877B6B001BC8DD /* CCCommonDataSource.m in Sources */,
 				70A29D4717877B6B001BC8DD /* CCImageSortingDataSource.m in Sources */,
 				70A29D4817877B6B001BC8DD /* CCMarketFilterDataSource.m in Sources */,
 				70A29D4917877B6B001BC8DD /* CCSideMenuDataSource.m in Sources */,
@@ -4328,17 +4364,18 @@
 				D3949704178C299100C39A7E /* CCBackToStuffTransaction.m in Sources */,
 				D3949709178C401400C39A7E /* CCOfferDetailsController.m in Sources */,
 				D394970E178C406800C39A7E /* CCOfferDetailsTransaction.m in Sources */,
-
 				70F42A83178D66BA00E763F3 /* CCLocationsDataSource.m in Sources */,
-
 				D3949712178C6D4500C39A7E /* CCMessageAPIProvider.m in Sources */,
 				D3949718178D51BE00C39A7E /* CCPrivateMessageController.m in Sources */,
 				D394971D178D561100C39A7E /* CCPrivateMessageTransaction.m in Sources */,
 				D3949721178D5ADD00C39A7E /* CCSuccessSendMessageTransaction.m in Sources */,
 				D3949725178D5C1400C39A7E /* CCMessage.m in Sources */,
 				D3949729178D61A600C39A7E /* CCMessagesDataProvider.m in Sources */,
-				D394972E178D99BD00C39A7E /* CCRateController.m in Sources */,
-				D3949733178D9B7100C39A7E /* CCRateControllerTransaction.m in Sources */,
+				D394972E178D99BD00C39A7E /* CCReviewController.m in Sources */,
+				D3949733178D9B7100C39A7E /* CCReviewControllerTransaction.m in Sources */,
+				D3949737178EC21C00C39A7E /* CCBackToNoteTransaction.m in Sources */,
+				D394973B178EC46D00C39A7E /* CCReviewsDataProvider.m in Sources */,
+				D394973F178EC59900C39A7E /* CCReview.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

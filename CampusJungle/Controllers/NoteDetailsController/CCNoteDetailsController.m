@@ -14,6 +14,8 @@
 #import "CCUserSessionProtocol.h"
 #import "CCUser.h"
 #import "GIAlert.h"
+#import "CCReviewsDataProvider.h"
+#import "CCOrdinaryCell.h"
 
 @interface CCNoteDetailsController ()
 
@@ -26,6 +28,7 @@
 
 @property (nonatomic, weak) IBOutlet UIButton *resendLinkButton;
 @property (nonatomic, weak) IBOutlet UIButton *removeNoteButton;
+@property (nonatomic, strong) CCReviewsDataProvider *reviewsDataProvider;
 
 @property (nonatomic, strong) id <CCNotesAPIProviderProtolcol> ioc_notesAPIProvider;
 @property (nonatomic, strong) id <CCMarketAPIProviderProtocol> ioc_marketAPIProvider;
@@ -43,6 +46,9 @@
     [super viewDidLoad];
     [self setUpNotesInfo];
     self.title = @"Note";
+    self.reviewsDataProvider = [CCReviewsDataProvider new];
+    self.reviewsDataProvider.userID = self.note.ownerID;
+    [self configTableWithProvider:self.reviewsDataProvider cellClass:[CCOrdinaryCell class]];
 }
 
 - (void)setUpNotesInfo
@@ -164,5 +170,10 @@
     [self.rateTransaction performWithObject:self.note];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.reviewsDataProvider loadItems];
+}
 
 @end

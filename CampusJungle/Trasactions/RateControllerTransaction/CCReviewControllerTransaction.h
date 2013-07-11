@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CCTransactionWithObject.h"
 
-@interface CCRateControllerTransaction : NSObject<CCTransactionWithObject>
+@interface CCReviewControllerTransaction : NSObject<CCTransactionWithObject>
 
 @property (nonatomic, strong) UINavigationController *navigation;
 

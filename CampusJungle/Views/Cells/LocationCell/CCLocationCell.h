@@ -13,6 +13,4 @@
 
 @property (nonatomic, strong) CCLocation *cellObject;
 
-+ (CGFloat)heightForCellWithLocation:(CCLocation *)location;
-
 @end

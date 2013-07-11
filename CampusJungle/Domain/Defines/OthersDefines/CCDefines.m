@@ -44,6 +44,8 @@ const struct CCAPIDefines CCAPIDefines = {
     .getUser = @"/api/users/%@",
     .postMessage = @"/api/messages",
     .loadMyMessages = @"/api/users/me/messages",
+    .postReview = @"/api/users/%@/reviews",
+    .loadReviews = @"/api/users/%@/reviews",
 };
 
 const struct CCUserDefines CCUserDefines = {

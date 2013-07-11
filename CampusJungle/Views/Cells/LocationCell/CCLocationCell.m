@@ -47,8 +47,9 @@ static const NSInteger kMinCellHeight = 60;
     [self.descriptionLabel sizeToFit];
 }
 
-+ (CGFloat)heightForCellWithLocation:(CCLocation *)location
++ (CGFloat)heightForCellWithObject:(id)object
 {
+    CCLocation *location = object;
     UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:13];
     CGSize requiredSize = [location.description sizeWithFont:font constrainedToSize:CGSizeMake(kDescriptionLabelDefaultWidth, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
     return MAX(kMinCellHeight, kDescriptionLabelOriginY + requiredSize.height);

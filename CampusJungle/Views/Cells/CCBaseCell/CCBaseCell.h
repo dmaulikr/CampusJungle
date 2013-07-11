@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#define defaultCellHeight 44.0
 
 @interface CCBaseCell : UITableViewCell
 
 - (void)setSelectionColor;
+
++ (CGFloat)heightForCellWithObject:(id)object;
 
 @end

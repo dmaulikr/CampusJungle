@@ -27,4 +27,9 @@
     [self setSelectedBackgroundView:bgView];
 }
 
++ (CGFloat)heightForCellWithObject:(id)object
+{
+    return defaultCellHeight;
+}
+
 @end
