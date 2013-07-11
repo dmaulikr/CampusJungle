@@ -57,6 +57,18 @@
     [self.view addSubview:self.classContentTable.view];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.classContentTable viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.classContentTable viewWillDisappear:animated];
+}
+
 - (void)loadInfo
 {
     self.navigationController.navigationItem.title = self.currentClass.subject;
