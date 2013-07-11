@@ -23,19 +23,6 @@
 
 @implementation CCEducationCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        self = [[[NSBundle mainBundle] loadNibNamed:@"CCEducationCell"
-                                              owner:self
-                                            options:nil] objectAtIndex:0];
-        NSLog(@"%lf",self.bounds.size.height);
-        [self setSelectionColor];
-    }
-    return self;
-}
-
 - (void)setCellObject:(id)cellObject
 {
     _cellObject = cellObject;

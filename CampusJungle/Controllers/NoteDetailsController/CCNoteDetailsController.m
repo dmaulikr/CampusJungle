@@ -15,7 +15,7 @@
 #import "CCUser.h"
 #import "GIAlert.h"
 #import "CCReviewsDataProvider.h"
-#import "CCOrdinaryCell.h"
+#import "CCReviewCell.h"
 
 @interface CCNoteDetailsController ()
 
@@ -48,7 +48,7 @@
     self.title = @"Note";
     self.reviewsDataProvider = [CCReviewsDataProvider new];
     self.reviewsDataProvider.userID = self.note.ownerID;
-    [self configTableWithProvider:self.reviewsDataProvider cellClass:[CCOrdinaryCell class]];
+    [self configTableWithProvider:self.reviewsDataProvider cellClass:[CCReviewCell class]];
 }
 
 - (void)setUpNotesInfo

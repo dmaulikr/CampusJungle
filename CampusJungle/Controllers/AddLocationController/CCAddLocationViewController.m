@@ -25,6 +25,7 @@
 @property (nonatomic, weak) IBOutlet UITextField *nameTextField;
 @property (nonatomic, weak) IBOutlet UITextField *descriptionTextField;
 @property (nonatomic, weak) IBOutlet UITextField *addressTextField;
+@property (nonatomic, weak) IBOutlet UIButton *detectUserLocationButton;
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) CCShareItemActionSheet *shareItemActionSheet;
@@ -232,7 +233,7 @@
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
-    if (textField == self.addressTextField) {
+    if (textField == self.addressTextField && [self.detectUserLocationButton state] != UIControlStateHighlighted) {
         [self findAddress];
     }
     return YES;
