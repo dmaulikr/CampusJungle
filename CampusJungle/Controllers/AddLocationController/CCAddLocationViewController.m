@@ -14,6 +14,7 @@
 
 #import "CCLocation.h"
 #import "CCShareItemButton.h"
+#import "CCShareItemBlocksDefines.h"
 
 #import "CCStandardErrorHandler.h"
 #import "CCShareItemActionSheet.h"

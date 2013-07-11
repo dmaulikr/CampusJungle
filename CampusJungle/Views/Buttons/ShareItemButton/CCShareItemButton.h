@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "CCTransactionWithObject.h"
 
-//typedef NSArray *(^ShareItemButtonSuccessBlock)();
-//typedef void(^ShareItemButtonCancelBlock)();
 typedef void(^ShareItemButtonActionBlock)();
 
 @interface CCShareItemButton : UIButton

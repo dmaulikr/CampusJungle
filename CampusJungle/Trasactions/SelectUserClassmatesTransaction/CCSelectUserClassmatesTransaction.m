@@ -8,12 +8,18 @@
 
 #import "CCSelectUserClassmatesTransaction.h"
 #import "CCSelectClassmatesViewController.h"
+#import "CCBackTransaction.h"
 
 @implementation CCSelectUserClassmatesTransaction
 
 - (void)performWithObject:(id)object
 {
+    CCBackTransaction *backTransaction = [CCBackTransaction new];
+    backTransaction.navigation = self.navigation;
+    
     CCSelectClassmatesViewController *selectClassmateController = [CCSelectClassmatesViewController new];
+    selectClassmateController.backTransaction = backTransaction;
+    [selectClassmateController setClass:object];
     [self.navigation pushViewController:selectClassmateController animated:YES];
 }
 
