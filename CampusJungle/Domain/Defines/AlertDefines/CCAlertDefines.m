@@ -37,6 +37,7 @@ const struct CCAlertsMessages CCAlertsMessages = {
     .emptyLocationName = @"Please enter location name",
     .emptyLocationDescription = @"Please enter location description",
     .educationRemoving = @"All classes from deleted colleges will be deleted. Continue?",
+    .noSelectedItems = @"Select some items first",
 };
 
 const struct CCAlertsButtons CCAlertsButtons = {

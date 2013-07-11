@@ -40,7 +40,7 @@
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="IBUIView" id="510328670">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">290</int>
 						<array class="NSMutableArray" key="NSSubviews">
 							<object class="IBMKMapView" id="870220808">
 								<reference key="NSNextResponder" ref="510328670"/>
@@ -57,7 +57,7 @@
 							<object class="IBUITextField" id="561638687">
 								<reference key="NSNextResponder" ref="510328670"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{17, 348}, {285, 30}}</string>
+								<string key="NSFrame">{{17, 339}, {285, 30}}</string>
 								<reference key="NSSuperview" ref="510328670"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="154682956"/>
@@ -93,7 +93,7 @@
 							<object class="IBUITextField" id="154682956">
 								<reference key="NSNextResponder" ref="510328670"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{17, 386}, {285, 30}}</string>
+								<string key="NSFrame">{{17, 377}, {285, 30}}</string>
 								<reference key="NSSuperview" ref="510328670"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView"/>
@@ -212,7 +212,7 @@
 								</object>
 							</object>
 						</array>
-						<string key="NSFrameSize">{320, 433}</string>
+						<string key="NSFrameSize">{320, 412}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="870220808"/>
@@ -300,6 +300,14 @@
 						<reference key="destination" ref="870220808"/>
 					</object>
 					<int key="connectionID">13</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">detectUserLocationButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="628267748"/>
+					</object>
+					<int key="connectionID">25</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -427,7 +435,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">24</int>
+			<int key="maxID">25</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -437,6 +445,7 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="addressTextField">UITextField</string>
 						<string key="descriptionTextField">UITextField</string>
+						<string key="detectUserLocationButton">UIButton</string>
 						<string key="mapView">MKMapView</string>
 						<string key="nameTextField">UITextField</string>
 					</dictionary>
@@ -448,6 +457,10 @@
 						<object class="IBToOneOutletInfo" key="descriptionTextField">
 							<string key="name">descriptionTextField</string>
 							<string key="candidateClassName">UITextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="detectUserLocationButton">
+							<string key="name">detectUserLocationButton</string>
+							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="mapView">
 							<string key="name">mapView</string>

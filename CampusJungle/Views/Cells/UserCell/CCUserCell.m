@@ -22,7 +22,7 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if(self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]){
-        self = [[NSBundle mainBundle] loadNibNamed:@"CCUserCell" owner:self options:nil][0];
+        self = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil][0];
     }
     return self;
 }

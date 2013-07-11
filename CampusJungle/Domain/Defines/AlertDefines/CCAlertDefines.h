@@ -35,6 +35,7 @@ extern const struct CCAlertsMessages {
     __unsafe_unretained NSString *emptyLocationName;
     __unsafe_unretained NSString *emptyLocationDescription;
     __unsafe_unretained NSString *educationRemoving;
+    __unsafe_unretained NSString *noSelectedItems;
 } CCAlertsMessages;
 
 extern const struct CCAlertsButtons {

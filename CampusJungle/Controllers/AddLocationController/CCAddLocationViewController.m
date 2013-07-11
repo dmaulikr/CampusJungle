@@ -14,6 +14,7 @@
 
 #import "CCLocation.h"
 #import "CCShareItemButton.h"
+#import "CCShareItemBlocksDefines.h"
 
 #import "CCStandardErrorHandler.h"
 #import "CCShareItemActionSheet.h"
@@ -24,6 +25,7 @@
 @property (nonatomic, weak) IBOutlet UITextField *nameTextField;
 @property (nonatomic, weak) IBOutlet UITextField *descriptionTextField;
 @property (nonatomic, weak) IBOutlet UITextField *addressTextField;
+@property (nonatomic, weak) IBOutlet UIButton *detectUserLocationButton;
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) CCShareItemActionSheet *shareItemActionSheet;
@@ -102,7 +104,8 @@
 
 - (NSArray *)shareItemActionSheetButtons
 {
-    __weak CCAddLocationViewController *weakSelf = self;
+   __weak CCAddLocationViewController *weakSelf = self;
+    
     CCShareItemButton *shareWithClassButton = [CCShareItemButton buttonWithTitle:@"Share with Class" actionBlock:^{
         [weakSelf.shareItemActionSheet dismiss];
     }];
@@ -111,10 +114,13 @@
         [weakSelf.shareItemActionSheet dismiss];
     }];
     CCShareItemButton *shareWithClassmatesButton = [CCShareItemButton buttonWithTitle:@"Share with Classmates" actionBlock:^{
-        [weakSelf.selectUsersToShareTransaction performWithObject:weakSelf.locationToAddobject];
+        ShareItemButtonSuccessBlock successBlock = ^(NSArray *itemsArray) {
+            [weakSelf createLocation:nil sharedWithItems:itemsArray sharedWithAll:NO];
+        };
+        NSDictionary *params = @{@"object" : weakSelf.locationToAddobject, @"successBlock" : successBlock};
+        [weakSelf.selectUsersToShareTransaction performWithObject:params];
         [weakSelf.shareItemActionSheet dismiss];
     }];
-    
     
     return @[shareWithClassButton, shareWithGroupButton, shareWithClassmatesButton];
 }
@@ -227,7 +233,7 @@
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
-    if (textField == self.addressTextField) {
+    if (textField == self.addressTextField && [self.detectUserLocationButton state] != UIControlStateHighlighted) {
         [self findAddress];
     }
     return YES;
@@ -238,6 +244,13 @@
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views
 {
     [self updateAddressData];
+}
+
+#pragma mark -
+#pragma mark Requests
+- (void)createLocation:(CCLocation *)location sharedWithItems:(NSArray *)itemsArray sharedWithAll:(BOOL)sharedWithAll
+{
+    NSLog(@"created for items %@", itemsArray);
 }
 
 @end

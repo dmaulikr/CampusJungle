@@ -80,7 +80,7 @@
 
 - (void)setOfferConfiguration
 {
-    [self configTableWithProvider:[CCOffersDataProvider new] cellClass:[CCOrdinaryCell class] cellReuseIdentifier:NSStringFromClass([CCMessageCell class])];
+    [self configTableWithProvider:[CCOffersDataProvider new] cellClass:[CCOrdinaryCell class] cellReuseIdentifier:NSStringFromClass([CCOffer class])];
     [self.mainTable reloadData];
 }
 

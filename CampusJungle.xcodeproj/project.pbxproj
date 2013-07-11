@@ -26,6 +26,11 @@
 		700F9462178EFFB200A6FBBA /* CCReviewControllerTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949732178D9B7100C39A7E /* CCReviewControllerTransaction.m */; };
 		700F9463178EFFDE00A6FBBA /* CCReviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D394972C178D99BD00C39A7E /* CCReviewController.m */; };
 		700F9464178F000500A6FBBA /* CCReviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D394972D178D99BD00C39A7E /* CCReviewController.xib */; };
+		700F9469178F040A00A6FBBA /* CCGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9468178F040A00A6FBBA /* CCGroup.m */; };
+		700F946D178F055F00A6FBBA /* CCBackTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F946C178F055F00A6FBBA /* CCBackTransaction.m */; };
+		700F9471178F0A4B00A6FBBA /* CCUserSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9470178F0A4B00A6FBBA /* CCUserSelectionCell.m */; };
+		700F9473178F0A8500A6FBBA /* CCUserSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 700F9472178F0A8500A6FBBA /* CCUserSelectionCell.xib */; };
+		700F947A178F0FDA00A6FBBA /* CCSelectableCellsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9479178F0FDA00A6FBBA /* CCSelectableCellsDataSource.m */; };
 		7022F4991786C7100055221C /* SelectionBackGround@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE2178454C200E54EFC /* SelectionBackGround@2x.png */; };
 		7022F49A1786C7110055221C /* SelectionBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE3178454C200E54EFC /* SelectionBackGround.png */; };
 		703DA4DD178B455600464DD3 /* CCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4DC178B455600464DD3 /* CCLocation.m */; };
@@ -488,6 +493,16 @@
 		700F945D178EFA6F00A6FBBA /* CCSelectGroupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSelectGroupsViewController.h; sourceTree = "<group>"; };
 		700F945E178EFA6F00A6FBBA /* CCSelectGroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSelectGroupsViewController.m; sourceTree = "<group>"; };
 		700F945F178EFA6F00A6FBBA /* CCSelectGroupsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCSelectGroupsViewController.xib; sourceTree = "<group>"; };
+		700F9465178F028700A6FBBA /* CCShareItemBlocksDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCShareItemBlocksDefines.h; sourceTree = "<group>"; };
+		700F9467178F040A00A6FBBA /* CCGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroup.h; sourceTree = "<group>"; };
+		700F9468178F040A00A6FBBA /* CCGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroup.m; sourceTree = "<group>"; };
+		700F946B178F055F00A6FBBA /* CCBackTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBackTransaction.h; sourceTree = "<group>"; };
+		700F946C178F055F00A6FBBA /* CCBackTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBackTransaction.m; sourceTree = "<group>"; };
+		700F946F178F0A4B00A6FBBA /* CCUserSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUserSelectionCell.h; sourceTree = "<group>"; };
+		700F9470178F0A4B00A6FBBA /* CCUserSelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUserSelectionCell.m; sourceTree = "<group>"; };
+		700F9472178F0A8500A6FBBA /* CCUserSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCUserSelectionCell.xib; sourceTree = "<group>"; };
+		700F9478178F0FDA00A6FBBA /* CCSelectableCellsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSelectableCellsDataSource.h; sourceTree = "<group>"; };
+		700F9479178F0FDA00A6FBBA /* CCSelectableCellsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSelectableCellsDataSource.m; sourceTree = "<group>"; };
 		703DA4DB178B455600464DD3 /* CCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocation.h; sourceTree = "<group>"; };
 		703DA4DC178B455600464DD3 /* CCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocation.m; sourceTree = "<group>"; };
 		703DA4DF178B457200464DD3 /* CCClassLocationsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassLocationsDataProvider.h; sourceTree = "<group>"; };
@@ -1202,6 +1217,7 @@
 				700F9428178EA07C00A6FBBA /* CCAddLocationViewController.h */,
 				700F9429178EA07C00A6FBBA /* CCAddLocationViewController.m */,
 				700F942A178EA07C00A6FBBA /* CCAddLocationViewController.xib */,
+				700F9465178F028700A6FBBA /* CCShareItemBlocksDefines.h */,
 			);
 			path = AddLocationController;
 			sourceTree = "<group>";
@@ -1298,14 +1314,52 @@
 			path = SelectClassmatesController;
 			sourceTree = "<group>";
 		};
-		700F9457178EFA3500A6FBBA /* SelectGroupController */ = {
+		700F9457178EFA3500A6FBBA /* SelectGroupsController */ = {
 			isa = PBXGroup;
 			children = (
 				700F945D178EFA6F00A6FBBA /* CCSelectGroupsViewController.h */,
 				700F945E178EFA6F00A6FBBA /* CCSelectGroupsViewController.m */,
 				700F945F178EFA6F00A6FBBA /* CCSelectGroupsViewController.xib */,
 			);
+			name = SelectGroupsController;
 			path = SelectGroupController;
+			sourceTree = "<group>";
+		};
+		700F9466178F03F700A6FBBA /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				700F9467178F040A00A6FBBA /* CCGroup.h */,
+				700F9468178F040A00A6FBBA /* CCGroup.m */,
+			);
+			path = Group;
+			sourceTree = "<group>";
+		};
+		700F946A178F054F00A6FBBA /* BackTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				700F946B178F055F00A6FBBA /* CCBackTransaction.h */,
+				700F946C178F055F00A6FBBA /* CCBackTransaction.m */,
+			);
+			path = BackTransaction;
+			sourceTree = "<group>";
+		};
+		700F946E178F0A3500A6FBBA /* UserSelectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				700F946F178F0A4B00A6FBBA /* CCUserSelectionCell.h */,
+				700F9470178F0A4B00A6FBBA /* CCUserSelectionCell.m */,
+				700F9472178F0A8500A6FBBA /* CCUserSelectionCell.xib */,
+			);
+			path = UserSelectionCell;
+			sourceTree = "<group>";
+		};
+		700F9477178F0FC500A6FBBA /* SelectableCellsDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				700F9478178F0FDA00A6FBBA /* CCSelectableCellsDataSource.h */,
+				700F9479178F0FDA00A6FBBA /* CCSelectableCellsDataSource.m */,
+			);
+			path = SelectableCellsDataSource;
 			sourceTree = "<group>";
 		};
 		703DA4DA178B455600464DD3 /* Location */ = {
@@ -1467,7 +1521,7 @@
 				D394972A178D999900C39A7E /* ReviewController */,
 				D394972A178D999900C39A7E /* ReviewController */,
 				700F9456178EFA2400A6FBBA /* SelectClassmatesController */,
-				700F9457178EFA3500A6FBBA /* SelectGroupController */,
+				700F9457178EFA3500A6FBBA /* SelectGroupsController */,
 				70A29CBC178778AB001BC8DD /* SideBarController */,
 				70A29CBF178778AB001BC8DD /* SignUpController */,
 				70A29CC3178778AB001BC8DD /* StateSelectionController */,
@@ -1939,10 +1993,10 @@
 			children = (
 				70A29D2E17877B6B001BC8DD /* ClassTableDataSorce */,
 				70A29D3117877B6B001BC8DD /* CommonCollectionDataSource */,
-				70A29D3417877B6B001BC8DD /* CommonTableDataSource */,
 				70A29D3817877B6B001BC8DD /* ImageSortingDataSource */,
 				70F42A80178D66A600E763F3 /* LocationsDataSource */,
 				70A29D3B17877B6B001BC8DD /* MarketFilterDataSource */,
+				700F9477178F0FC500A6FBBA /* SelectableCellsDataSource */,
 				70A29D3E17877B6B001BC8DD /* SideMenuDataSource */,
 				70A29D4117877B6B001BC8DD /* UserEducationsTableDataSource */,
 			);
@@ -1965,13 +2019,6 @@
 				70A29D3317877B6B001BC8DD /* CCCommonCollectionDataSource.m */,
 			);
 			path = CommonCollectionDataSource;
-			sourceTree = "<group>";
-		};
-		70A29D3417877B6B001BC8DD /* CommonTableDataSource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CommonTableDataSource;
 			sourceTree = "<group>";
 		};
 		70A29D3817877B6B001BC8DD /* ImageSortingDataSource */ = {
@@ -2424,6 +2471,7 @@
 				70A29DEA17877CB5001BC8DD /* Education */,
 				70A29DED17877CB5001BC8DD /* FilterSection */,
 				D3949722178D5C0000C39A7E /* Message */,
+				700F9466178F03F700A6FBBA /* Group */,
 				703DA4DA178B455600464DD3 /* Location */,
 				70A29DF017877CB5001BC8DD /* Note */,
 				70A29DF317877CB5001BC8DD /* NoteForUploadInfo */,
@@ -2733,6 +2781,7 @@
 				70A29E8217877D2B001BC8DD /* StateCell */,
 				70A29E8517877D2B001BC8DD /* StuffCell */,
 				70A29E8917877D2B001BC8DD /* UserCell */,
+				700F946E178F0A3500A6FBBA /* UserSelectionCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2975,6 +3024,7 @@
 				D3949701178C297A00C39A7E /* BackToStuffTransaction */,
 				D3949734178EC1A300C39A7E /* BackToNoteTransaction */,
 				70A29ED117877E0C001BC8DD /* BackToUserProfileTransaction */,
+				700F946A178F054F00A6FBBA /* BackTransaction */,
 				70A29ED417877E0C001BC8DD /* CitySelectionTransaction */,
 				70A29ED717877E0C001BC8DD /* ClassAddedTransaction */,
 				70A29EDA17877E0C001BC8DD /* ClassesOfCurrentCollegeTransaction */,
@@ -4314,6 +4364,7 @@
 				700F945C178EFA6000A6FBBA /* CCSelectClassmatesViewController.xib in Resources */,
 				700F9461178EFA6F00A6FBBA /* CCSelectGroupsViewController.xib in Resources */,
 				D3DF8C29178F06FD00B072B7 /* CCMessageCell.xib in Resources */,
+				700F9473178F0A8500A6FBBA /* CCUserSelectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4577,6 +4628,10 @@
 				700F945B178EFA6000A6FBBA /* CCSelectClassmatesViewController.m in Sources */,
 				700F9460178EFA6F00A6FBBA /* CCSelectGroupsViewController.m in Sources */,
 				D3DF8C2C178F071200B072B7 /* CCMessageCell.m in Sources */,
+				700F9469178F040A00A6FBBA /* CCGroup.m in Sources */,
+				700F946D178F055F00A6FBBA /* CCBackTransaction.m in Sources */,
+				700F9471178F0A4B00A6FBBA /* CCUserSelectionCell.m in Sources */,
+				700F947A178F0FDA00A6FBBA /* CCSelectableCellsDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

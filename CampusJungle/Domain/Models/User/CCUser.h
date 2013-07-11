@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSArray *authentications;
 @property (nonatomic, strong) NSString *isFacebookLinked;
 @property (nonatomic, strong) NSArray *educations;
+@property (nonatomic, assign) BOOL isSelected;
 
 + (NSDictionary *)responseMappingDictionary;
 
