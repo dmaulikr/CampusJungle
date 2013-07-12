@@ -21,6 +21,7 @@
              @"user_first_name" : @"userFirstName",
              @"user_last_name" : @"userLastName",
              @"user_avatar_retina" : @"userAvatar",
+             @"created_at" : @"createdAt",
              };
 }
 

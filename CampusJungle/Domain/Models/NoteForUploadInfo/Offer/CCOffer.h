@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSString *userFirstName;
 @property (nonatomic, strong) NSString *userLastName;
 @property (nonatomic, strong) NSString *userAvatar;
+@property (nonatomic, strong) NSDate *createdAt;
 
 + (NSDictionary *)responseMappingDictionary;
 

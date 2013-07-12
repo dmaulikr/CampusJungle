@@ -13,6 +13,7 @@
 #import "CCMessage.h"
 #import "CCMessagesDataProvider.h"
 #import "CCMessageCell.h"
+#import "CCOfferCell.h"
 
 #define MessagesState 0
 #define InvtesState 1
@@ -36,6 +37,7 @@
                                      @"direction" : @"received"
                                      };
     [self configTableWithProvider:messagesDataProvider cellClass:[CCMessageCell class] cellReuseIdentifier:NSStringFromClass([CCMessageCell class])];
+    self.mainTable.tableFooterView = [UIView new];
 }
 
 - (void)didSelectedCellWithObject:(id)cellObject
@@ -80,7 +82,7 @@
 
 - (void)setOfferConfiguration
 {
-    [self configTableWithProvider:[CCOffersDataProvider new] cellClass:[CCOrdinaryCell class] cellReuseIdentifier:NSStringFromClass([CCOffer class])];
+    [self configTableWithProvider:[CCOffersDataProvider new] cellClass:[CCOfferCell class] cellReuseIdentifier:NSStringFromClass([CCOffer class])];
     [self.mainTable reloadData];
 }
 

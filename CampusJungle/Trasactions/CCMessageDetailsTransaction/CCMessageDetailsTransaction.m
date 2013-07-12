@@ -27,7 +27,6 @@
     privateMessageTransaction.navigation = self.navigation;
     messageDetailsController.replyTransaction = privateMessageTransaction;
     
-    
     [self.navigation pushViewController:messageDetailsController animated:YES];
 }
 
