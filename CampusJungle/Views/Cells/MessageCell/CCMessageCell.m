@@ -27,7 +27,7 @@
     
     NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
     [outputFormatter setLocale:[NSLocale systemLocale]];
-    [outputFormatter setDateFormat:@"dd/MM/yyyy hh:mm:ss a"];
+    [outputFormatter setDateFormat:@"hh:mm:ss a dd/MM/yyyy"];
     
     self.timeLabel.text = [outputFormatter stringFromDate:[(CCMessage *)cellObject createdAt]];
     
