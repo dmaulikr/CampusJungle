@@ -18,10 +18,23 @@
 
 @implementation CCGroupCell
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    [self setSelectionColor];
+}
+
 - (void)setCellObject:(id)cellObject
 {
     _cellObject = cellObject;
-    [self.nameLabel setText:[(CCGroup *)cellObject name]];
+    [self.nameLabel setText:[self.cellObject name]];
+    [self fillImageView];
+}
+
+- (void)fillImageView
+{
+    NSURL *groupImageUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL, self.cellObject.image]];
+    [self.groupImageView setImageWithURL:groupImageUrl placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
 }
 
 + (CGFloat)heightForCellWithObject:(id)object

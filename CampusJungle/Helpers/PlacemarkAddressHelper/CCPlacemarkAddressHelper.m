@@ -12,11 +12,29 @@
 
 + (NSString *)addressForPlacemark:(CLPlacemark *)placemark
 {
+    NSMutableString *resultString = [NSMutableString new];
     NSString *street = [[placemark addressDictionary] valueForKey:@"Street"];
     NSString *city = [[placemark addressDictionary] valueForKey:@"City"];
     NSString *state = [[placemark addressDictionary] valueForKey:@"State"];
     NSString *country = [[placemark addressDictionary] valueForKey:@"Country"];
-    return [NSString stringWithFormat:@"%@, %@, %@, %@", street, city, state, country];
+    
+    if ([street length] > 0) {
+        [resultString appendFormat:@"%@, ", street];
+    }
+    if ([city length] > 0) {
+        [resultString appendFormat:@"%@, ", city];
+    }
+    if ([state length] > 0) {
+        [resultString appendFormat:@"%@, ", state];
+    }
+    if ([country length] > 0) {
+        [resultString appendFormat:@"%@, ", country];
+    }
+    
+    if ([resultString length] > 0) {
+        return [resultString substringToIndex:[resultString length] - 2];
+    }
+    return @"Unknown";
 }
 
 @end

@@ -244,7 +244,7 @@
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
-    if (textField == self.addressTextField && [self.detectUserLocationButton state] != UIControlStateHighlighted) {
+    if (textField == self.addressTextField && [textField.text length] > 0 && [self.detectUserLocationButton state] != UIControlStateHighlighted) {
         [self findAddress];
     }
     return YES;
