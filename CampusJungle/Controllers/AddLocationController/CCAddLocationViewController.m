@@ -266,7 +266,7 @@
     CCLocation *location = [CCLocation createWithCoordinates:coordinates name:self.nameTextField.text description:self.descriptionTextField.text place:self.locationToAddobject visibleItems:itemsArray sharedWithAll:sharedWithAll];
     [self.ioc_locationsApiProvider postLocation:location successHandler:^(RKMappingResult *result) {
         [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadClassLocations object:nil];
-        [SVProgressHUD showSuccessWithStatus:@"Added location" duration:CCProgressHudsConstants.loaderDuration];
+        [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.addedLocation duration:CCProgressHudsConstants.loaderDuration];
         [weakSelf.backTransaction perform];
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];

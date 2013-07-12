@@ -11,6 +11,7 @@
 #import "CCClass.h"
 #import "CCClassLocationsDataProvider.h"
 #import "CCLocationsDataSource.h"
+#import "CCNavigationBarViewHelper.h"
 
 #import "CCMapHelper.h"
 #import "CCLocationCell.h"
@@ -49,7 +50,7 @@
     [self setupSearchBar];
     [self addObservers];
     
-    [self setRightNavigationItemWithTitle:@"Add" selector:@selector(addLocation)];
+    self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHelper plusButtonWithTarget:self action:@selector(addLocation)];
     [self setTitle:@"Locations"];
     
     [(UIScrollView *)self.view setScrollEnabled:NO];
