@@ -43,13 +43,6 @@
     CCSideMenuController *leftController = [[CCSideMenuController alloc] init];
 	rootController.leftPanel = leftController;
     rootController.panningLimitedToTopViewController = NO;
-    CCInboxController *inboxController = [CCInboxController new];
-    CCInboxController *centralPanel = inboxController;
-    rootController.centerPanel = [[UINavigationController alloc] initWithRootViewController:centralPanel];
-    
-    CCOfferDetailsTransaction *offerDetails = [CCOfferDetailsTransaction new];
-    offerDetails.navigation = (UINavigationController *)rootController.centerPanel;
-    inboxController.offerDetailsTransaction = offerDetails;
     
     [self.ioc_userSession setCurrentUser: [self.ioc_userSession loadSavedUser]];
     
@@ -75,6 +68,8 @@
     CCMarketTranasction *marketTransaction = [CCMarketTranasction new];
     marketTransaction.menuController = rootController;
     leftController.marketTransaction = marketTransaction;
+    
+    [inboxTransaction perform];
     
     if ([self.ioc_userSession currentUser]){
         

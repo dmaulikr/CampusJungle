@@ -19,6 +19,9 @@
              @"sender_id" : @"senderID",
              @"text" : @"text",
              @"created_at" : @"createdAt",
+             @"user_first_name" : @"userFirstName",
+             @"user_last_name" : @"userLastName",
+             @"user_avatar_retina" : @"userAvatar",
              };
 }
 

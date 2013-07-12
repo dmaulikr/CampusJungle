@@ -15,6 +15,9 @@
 @property (nonatomic, strong) NSString *senderID;
 @property (nonatomic, strong) NSString *stuffID;
 @property (nonatomic, strong) NSString *offerID;
+@property (nonatomic, strong) NSString *userFirstName;
+@property (nonatomic, strong) NSString *userLastName;
+@property (nonatomic, strong) NSString *userAvatar;
 
 + (NSDictionary *)responseMappingDictionary;
 

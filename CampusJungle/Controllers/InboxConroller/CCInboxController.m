@@ -43,7 +43,7 @@
     if([cellObject isKindOfClass:[CCOffer class]]){
         [self.offerDetailsTransaction performWithObject:cellObject];
     } else if ([cellObject isKindOfClass:[CCMessage class]]){
-        
+        [self.messageDetailsTransaction performWithObject:cellObject];
     }
 }
 
