@@ -39,6 +39,7 @@ static const NSInteger kNavBarHeight = 44;
 @property (nonatomic, strong) CCGroupsDataProvider *groupsProvider;
 
 @property (nonatomic, strong) NSMutableArray *locationsArray;
+@property (nonatomic, assign) CGPoint tableViewContentOffsetBeforeReload;
 
 @end
 
@@ -124,6 +125,22 @@ static const NSInteger kNavBarHeight = 44;
     }
     [self fillSearchBarFromDataProvider:self.groupsProvider];
     [self configTableWithProvider:self.groupsProvider cellClass:[CCGroupCell class] cellReuseIdentifier:CCTableDefines.groupsCellIdentifier];
+}
+
+#pragma mark -
+#pragma mark Overriding base methods
+- (void)tableViewWillReloadData
+{
+    self.tableViewContentOffsetBeforeReload = CGPointMake(0, MIN(self.mainTable.contentOffset.y, 200));
+    [super tableViewWillReloadData];
+}
+
+- (void)tableViewDidReloadData
+{
+    CGPoint newContentOffset = self.mainTable.contentOffset;
+    [self.mainTable setContentOffset:self.tableViewContentOffsetBeforeReload];
+    [self.mainTable setContentOffset:newContentOffset animated:YES];
+    [super tableViewDidReloadData];
 }
 
 #pragma mark -
