@@ -52,7 +52,6 @@ static const NSInteger kNavBarHeight = 44;
     self.locationsArray = [NSMutableArray array];
     
     self.dataSourceClass = [CCClassControllerTableDataSource class];
-    self.dataSource = [CCClassControllerTableDataSource new];
     
     CCClassTabbarControllerViewController *tabbarController = [CCClassTabbarControllerViewController new];
     tabbarController.delegate = self;

@@ -2035,7 +2035,7 @@
 		70A29D2D17877B6B001BC8DD /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
-				70A29D2E17877B6B001BC8DD /* ClassTableDataSorce */,
+				70A29D2E17877B6B001BC8DD /* ClassTableDataSource */,
 				70A29D3117877B6B001BC8DD /* CommonCollectionDataSource */,
 				70A29D3817877B6B001BC8DD /* ImageSortingDataSource */,
 				70F42A80178D66A600E763F3 /* LocationsDataSource */,
@@ -2047,12 +2047,13 @@
 			path = DataSources;
 			sourceTree = "<group>";
 		};
-		70A29D2E17877B6B001BC8DD /* ClassTableDataSorce */ = {
+		70A29D2E17877B6B001BC8DD /* ClassTableDataSource */ = {
 			isa = PBXGroup;
 			children = (
 				70A29D2F17877B6B001BC8DD /* CCClassControllerTableDataSource.h */,
 				70A29D3017877B6B001BC8DD /* CCClassControllerTableDataSource.m */,
 			);
+			name = ClassTableDataSource;
 			path = ClassTableDataSorce;
 			sourceTree = "<group>";
 		};
