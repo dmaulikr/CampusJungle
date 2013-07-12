@@ -15,7 +15,7 @@
 		700F943A178ED4A800A6FBBA /* CCUserProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 700F9438178ED4A800A6FBBA /* CCUserProfile.xib */; };
 		700F943F178EDE1600A6FBBA /* CCShareItemActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F943D178EDE1600A6FBBA /* CCShareItemActionSheet.m */; };
 		700F9440178EDE1600A6FBBA /* CCShareItemActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 700F943E178EDE1600A6FBBA /* CCShareItemActionSheet.xib */; };
-		700F9444178EE98C00A6FBBA /* CCKeyboardHepler.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9443178EE98C00A6FBBA /* CCKeyboardHepler.m */; };
+		700F9444178EE98C00A6FBBA /* CCKeyboardHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9443178EE98C00A6FBBA /* CCKeyboardHelper.m */; };
 		700F9449178EECD600A6FBBA /* CCShareItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9448178EECD600A6FBBA /* CCShareItemButton.m */; };
 		700F9452178EF1E800A6FBBA /* CCSelectUserClassmatesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9451178EF1E800A6FBBA /* CCSelectUserClassmatesTransaction.m */; };
 		700F9455178EF1F500A6FBBA /* CCSelectUserGroupsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9454178EF1F500A6FBBA /* CCSelectUserGroupsTransaction.m */; };
@@ -31,6 +31,11 @@
 		700F9471178F0A4B00A6FBBA /* CCUserSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9470178F0A4B00A6FBBA /* CCUserSelectionCell.m */; };
 		700F9473178F0A8500A6FBBA /* CCUserSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 700F9472178F0A8500A6FBBA /* CCUserSelectionCell.xib */; };
 		700F947A178F0FDA00A6FBBA /* CCSelectableCellsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9479178F0FDA00A6FBBA /* CCSelectableCellsDataSource.m */; };
+		700F947E178FF42200A6FBBA /* CCGroupsApiProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F947D178FF42200A6FBBA /* CCGroupsApiProvider.m */; };
+		700F9483179007F300A6FBBA /* CCGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9482179007F300A6FBBA /* CCGroupCell.m */; };
+		700F94871790094500A6FBBA /* CCGroupSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F94861790094500A6FBBA /* CCGroupSelectionCell.m */; };
+		700F94891790097E00A6FBBA /* CCGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 700F94881790097D00A6FBBA /* CCGroupCell.xib */; };
+		700F948B179009F100A6FBBA /* CCGroupSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 700F948A179009F000A6FBBA /* CCGroupSelectionCell.xib */; };
 		7022F4991786C7100055221C /* SelectionBackGround@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE2178454C200E54EFC /* SelectionBackGround@2x.png */; };
 		7022F49A1786C7110055221C /* SelectionBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE3178454C200E54EFC /* SelectionBackGround.png */; };
 		703DA4DD178B455600464DD3 /* CCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4DC178B455600464DD3 /* CCLocation.m */; };
@@ -484,8 +489,8 @@
 		700F943C178EDE1600A6FBBA /* CCShareItemActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCShareItemActionSheet.h; sourceTree = "<group>"; };
 		700F943D178EDE1600A6FBBA /* CCShareItemActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCShareItemActionSheet.m; sourceTree = "<group>"; };
 		700F943E178EDE1600A6FBBA /* CCShareItemActionSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCShareItemActionSheet.xib; sourceTree = "<group>"; };
-		700F9442178EE98C00A6FBBA /* CCKeyboardHepler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCKeyboardHepler.h; sourceTree = "<group>"; };
-		700F9443178EE98C00A6FBBA /* CCKeyboardHepler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCKeyboardHepler.m; sourceTree = "<group>"; };
+		700F9442178EE98C00A6FBBA /* CCKeyboardHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCKeyboardHelper.h; sourceTree = "<group>"; };
+		700F9443178EE98C00A6FBBA /* CCKeyboardHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCKeyboardHelper.m; sourceTree = "<group>"; };
 		700F9447178EECD600A6FBBA /* CCShareItemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCShareItemButton.h; sourceTree = "<group>"; };
 		700F9448178EECD600A6FBBA /* CCShareItemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCShareItemButton.m; sourceTree = "<group>"; };
 		700F9450178EF1E800A6FBBA /* CCSelectUserClassmatesTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSelectUserClassmatesTransaction.h; sourceTree = "<group>"; };
@@ -508,6 +513,15 @@
 		700F9472178F0A8500A6FBBA /* CCUserSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCUserSelectionCell.xib; sourceTree = "<group>"; };
 		700F9478178F0FDA00A6FBBA /* CCSelectableCellsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSelectableCellsDataSource.h; sourceTree = "<group>"; };
 		700F9479178F0FDA00A6FBBA /* CCSelectableCellsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSelectableCellsDataSource.m; sourceTree = "<group>"; };
+		700F947C178FF42200A6FBBA /* CCGroupsApiProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupsApiProvider.h; sourceTree = "<group>"; };
+		700F947D178FF42200A6FBBA /* CCGroupsApiProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupsApiProvider.m; sourceTree = "<group>"; };
+		700F947F178FF44900A6FBBA /* CCGroupsApiProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupsApiProviderProtocol.h; sourceTree = "<group>"; };
+		700F9481179007F300A6FBBA /* CCGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupCell.h; sourceTree = "<group>"; };
+		700F9482179007F300A6FBBA /* CCGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupCell.m; sourceTree = "<group>"; };
+		700F94851790094500A6FBBA /* CCGroupSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupSelectionCell.h; sourceTree = "<group>"; };
+		700F94861790094500A6FBBA /* CCGroupSelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupSelectionCell.m; sourceTree = "<group>"; };
+		700F94881790097D00A6FBBA /* CCGroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupCell.xib; sourceTree = "<group>"; };
+		700F948A179009F000A6FBBA /* CCGroupSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupSelectionCell.xib; sourceTree = "<group>"; };
 		703DA4DB178B455600464DD3 /* CCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocation.h; sourceTree = "<group>"; };
 		703DA4DC178B455600464DD3 /* CCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocation.m; sourceTree = "<group>"; };
 		703DA4DF178B457200464DD3 /* CCClassLocationsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassLocationsDataProvider.h; sourceTree = "<group>"; };
@@ -1276,8 +1290,8 @@
 		700F9441178EE97800A6FBBA /* KeyboardHelper */ = {
 			isa = PBXGroup;
 			children = (
-				700F9442178EE98C00A6FBBA /* CCKeyboardHepler.h */,
-				700F9443178EE98C00A6FBBA /* CCKeyboardHepler.m */,
+				700F9442178EE98C00A6FBBA /* CCKeyboardHelper.h */,
+				700F9443178EE98C00A6FBBA /* CCKeyboardHelper.m */,
 			);
 			path = KeyboardHelper;
 			sourceTree = "<group>";
@@ -1373,6 +1387,36 @@
 				700F9479178F0FDA00A6FBBA /* CCSelectableCellsDataSource.m */,
 			);
 			path = SelectableCellsDataSource;
+			sourceTree = "<group>";
+		};
+		700F947B178FF40B00A6FBBA /* GroupsAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				700F947C178FF42200A6FBBA /* CCGroupsApiProvider.h */,
+				700F947D178FF42200A6FBBA /* CCGroupsApiProvider.m */,
+				700F947F178FF44900A6FBBA /* CCGroupsApiProviderProtocol.h */,
+			);
+			path = GroupsAPIProvider;
+			sourceTree = "<group>";
+		};
+		700F9480179007E500A6FBBA /* GroupCell */ = {
+			isa = PBXGroup;
+			children = (
+				700F9481179007F300A6FBBA /* CCGroupCell.h */,
+				700F9482179007F300A6FBBA /* CCGroupCell.m */,
+				700F94881790097D00A6FBBA /* CCGroupCell.xib */,
+			);
+			path = GroupCell;
+			sourceTree = "<group>";
+		};
+		700F94841790092700A6FBBA /* GroupSelectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				700F94851790094500A6FBBA /* CCGroupSelectionCell.h */,
+				700F94861790094500A6FBBA /* CCGroupSelectionCell.m */,
+				700F948A179009F000A6FBBA /* CCGroupSelectionCell.xib */,
+			);
+			path = GroupSelectionCell;
 			sourceTree = "<group>";
 		};
 		703DA4DA178B455600464DD3 /* Location */ = {
@@ -2005,7 +2049,7 @@
 		70A29D2D17877B6B001BC8DD /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
-				70A29D2E17877B6B001BC8DD /* ClassTableDataSorce */,
+				70A29D2E17877B6B001BC8DD /* ClassTableDataSource */,
 				70A29D3117877B6B001BC8DD /* CommonCollectionDataSource */,
 				70A29D3817877B6B001BC8DD /* ImageSortingDataSource */,
 				70F42A80178D66A600E763F3 /* LocationsDataSource */,
@@ -2017,12 +2061,13 @@
 			path = DataSources;
 			sourceTree = "<group>";
 		};
-		70A29D2E17877B6B001BC8DD /* ClassTableDataSorce */ = {
+		70A29D2E17877B6B001BC8DD /* ClassTableDataSource */ = {
 			isa = PBXGroup;
 			children = (
 				70A29D2F17877B6B001BC8DD /* CCClassControllerTableDataSource.h */,
 				70A29D3017877B6B001BC8DD /* CCClassControllerTableDataSource.m */,
 			);
+			name = ClassTableDataSource;
 			path = ClassTableDataSorce;
 			sourceTree = "<group>";
 		};
@@ -2313,6 +2358,7 @@
 				70A29DA217877CB4001BC8DD /* APIProvider */,
 				70A29DB617877CB4001BC8DD /* DropboxAPIProvider */,
 				70A29DBA17877CB4001BC8DD /* FacebookAPI */,
+				700F947B178FF40B00A6FBBA /* GroupsAPIProvider */,
 				703DA4E3178B465200464DD3 /* LocationsAPIProvider */,
 				70A29DBE17877CB4001BC8DD /* LoginAPIProvider */,
 				70A29DC217877CB4001BC8DD /* SignUpAPIProvider */,
@@ -2782,6 +2828,8 @@
 				70A29E5517877D2B001BC8DD /* CollegeSelectionCell */,
 				70A29E5917877D2B001BC8DD /* DropboxCell */,
 				70A29E5D17877D2B001BC8DD /* EducationCell */,
+				700F9480179007E500A6FBBA /* GroupCell */,
+				700F94841790092700A6FBBA /* GroupSelectionCell */,
 				70A29E6117877D2B001BC8DD /* ImageCell */,
 				703DA4E8178C2BC600464DD3 /* LocationCell */,
 				70A29E6517877D2B001BC8DD /* MarketFilterClassesCell */,
@@ -4410,8 +4458,13 @@
 				700F9461178EFA6F00A6FBBA /* CCSelectGroupsViewController.xib in Resources */,
 				D3DF8C29178F06FD00B072B7 /* CCMessageCell.xib in Resources */,
 				700F9473178F0A8500A6FBBA /* CCUserSelectionCell.xib in Resources */,
+
 				D3DF8C3217900AAA00B072B7 /* CCMessageDetailsController.xib in Resources */,
 				D3DF8C46179030A100B072B7 /* CCOfferCell.xib in Resources */,
+
+				700F94891790097E00A6FBBA /* CCGroupCell.xib in Resources */,
+				700F948B179009F100A6FBBA /* CCGroupSelectionCell.xib in Resources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4668,7 +4721,7 @@
 				700F9434178EBC5800A6FBBA /* CCPlacemarkAddressHelper.m in Sources */,
 				700F9439178ED4A800A6FBBA /* CCUserProfile.m in Sources */,
 				700F943F178EDE1600A6FBBA /* CCShareItemActionSheet.m in Sources */,
-				700F9444178EE98C00A6FBBA /* CCKeyboardHepler.m in Sources */,
+				700F9444178EE98C00A6FBBA /* CCKeyboardHelper.m in Sources */,
 				700F9449178EECD600A6FBBA /* CCShareItemButton.m in Sources */,
 				700F9452178EF1E800A6FBBA /* CCSelectUserClassmatesTransaction.m in Sources */,
 				700F9455178EF1F500A6FBBA /* CCSelectUserGroupsTransaction.m in Sources */,
@@ -4679,9 +4732,15 @@
 				700F946D178F055F00A6FBBA /* CCBackTransaction.m in Sources */,
 				700F9471178F0A4B00A6FBBA /* CCUserSelectionCell.m in Sources */,
 				700F947A178F0FDA00A6FBBA /* CCSelectableCellsDataSource.m in Sources */,
+
 				D3DF8C3117900AAA00B072B7 /* CCMessageDetailsController.m in Sources */,
 				D3DF8C40179029F000B072B7 /* CCMessageDetailsTransaction.m in Sources */,
 				D3DF8C441790308000B072B7 /* CCOfferCell.m in Sources */,
+
+				700F947E178FF42200A6FBBA /* CCGroupsApiProvider.m in Sources */,
+				700F9483179007F300A6FBBA /* CCGroupCell.m in Sources */,
+				700F94871790094500A6FBBA /* CCGroupSelectionCell.m in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

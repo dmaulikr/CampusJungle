@@ -7,12 +7,24 @@
 //
 
 #import "CCGroupsDataProvider.h"
+#import "CCGroupsApiProviderProtocol.h"
+
+@interface CCGroupsDataProvider ()
+
+@property (nonatomic, strong) id<CCGroupsApiProviderProtocol> ioc_groupsApiProvider;
+
+@end
 
 @implementation CCGroupsDataProvider
 
 - (void)loadItemsForPageNumber:(long)numberOfPage successHandler:(successWithObject)successHandler
 {
-    successHandler(@{@"count" : @(0), @"items" : [NSArray array]});
+    [self.ioc_groupsApiProvider loadGroupsForClassWithId:self.classId filterString:self.searchQuery pageNumber:numberOfPage successHandler:^(RKMappingResult *result) {
+        successHandler(result);
+    } errorHandler:^(NSError *error) {
+        [self showErrorWhileLoading:error];
+    }];
+
 }
 
 @end

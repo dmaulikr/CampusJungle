@@ -11,4 +11,6 @@
 
 @interface CCGroupsDataProvider : CCPaginationDataProvider
 
+@property (nonatomic, strong) NSString *classId;
+
 @end

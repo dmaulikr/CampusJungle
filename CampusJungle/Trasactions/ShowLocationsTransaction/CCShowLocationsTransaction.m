@@ -8,6 +8,7 @@
 
 #import "CCShowLocationsTransaction.h"
 #import "CCLocationsViewController.h"
+#import "CCAddLocationTransaction.h"
 
 @implementation CCShowLocationsTransaction
 
@@ -17,14 +18,18 @@
     NSParameterAssert(object);
     
     id location = [object valueForKey:@"location"];
-    NSString *classId = [object valueForKey:@"classId"];
+    id classObject = [object valueForKey:@"class"];
     NSString *searchString = [object valueForKey:@"searchString"];
     NSArray *locationsArray = [object valueForKey:@"array"];
     
+    CCAddLocationTransaction *addLocationTransaction = [CCAddLocationTransaction new];
+    addLocationTransaction.navigation = self.navigation;
+    
     CCLocationsViewController *locationsController = [[CCLocationsViewController alloc] initWithLocationsArray:locationsArray];
     [locationsController setSelectedLocation:location];
-    [locationsController setClassId:classId];
+    [locationsController setClass:classObject];
     [locationsController setSearchString:searchString];
+    locationsController.addLocationTransaction = addLocationTransaction;
     [self.navigation pushViewController:locationsController animated:YES];
 }
 

@@ -1,31 +1,31 @@
 //
-//  CCUserSelectionCell.m
+//  CCGroupSelectionCell.m
 //  CampusJungle
 //
-//  Created by Yury Grinenko on 11.07.13.
+//  Created by Yury Grinenko on 12.07.13.
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCUserSelectionCell.h"
-#import "CCUser.h"
+#import "CCGroupSelectionCell.h"
+#import "CCGroup.h"
 
 #define UNCHECKED_IMAGE [UIImage imageNamed:@"checkbox.png"]
 #define CHECKED_IMAGE [UIImage imageNamed:@"checkbox_active.png"]
 
-@interface CCUserSelectionCell ()
+@interface CCGroupSelectionCell ()
 
 @property (nonatomic, weak) IBOutlet UIImageView *checkedImageView;
 
 @end
 
-@implementation CCUserSelectionCell
+@implementation CCGroupSelectionCell
 
 - (void)setCellObject:(id)cellObject
 {
     [super setCellObject:cellObject];
-
-    CCUser *user = cellObject;
-    [self setCellChecked:user.isSelected];
+    
+    CCGroup *group = cellObject;
+    [self setCellChecked:group.isSelected];
 }
 
 - (void)setCellChecked:(BOOL)checked
@@ -36,9 +36,10 @@
 
 - (void)userDidSelectCell
 {
-    CCUser *user = self.cellObject;
-    user.isSelected = !user.isSelected;
-    [self setCellChecked:user.isSelected];
+    CCGroup *group = self.cellObject;
+    group.isSelected = !group.isSelected;
+    [self setCellChecked:group.isSelected];
 }
+
 
 @end

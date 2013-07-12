@@ -1,5 +1,5 @@
 //
-//  CCKeyboardHepler.h
+//  CCKeyboardHelper.h
 //  CampusJungle
 //
 //  Created by Yury Grinenko on 11.07.13.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CCKeyboardHepler : NSObject
+@interface CCKeyboardHelper : NSObject
 
 + (void)hideKeyboard;
 + (CGFloat)visibleKeyboardHeight;

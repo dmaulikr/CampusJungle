@@ -27,6 +27,7 @@
 #import "CCMessage.h"
 #import "CCLocation.h"
 #import "CCReview.h"
+#import "CCGroup.h"
 
 @implementation CCRestKitConfigurator
 
@@ -62,8 +63,10 @@
     [self configureClassmatesResponse:objectManager];
     [self configureOfferResponse:objectManager];
     [self configureLocationsResponse:objectManager];
+    [self configureLocationsRequest:objectManager];
     [self configureMessageResponse:objectManager];
     [self configureReviewResponse:objectManager];
+    [self configureGroupsResponse:objectManager];
 }
 
 + (void)configureUserResponse:(RKObjectManager *)objectManager
@@ -488,6 +491,14 @@
     [objectManager addResponseDescriptor:classLocationsResponseDescriptor];
 }
 
++ (void)configureLocationsRequest:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *locationMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    [locationMapping addAttributeMappingsFromDictionary:[CCLocation requestMappingDictionary]];
+    RKRequestDescriptor *locationRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:locationMapping objectClass:[CCLocation class] rootKeyPath:nil];
+    [objectManager addRequestDescriptor:locationRequestDescriptor];
+}
+
 + (void)configureReviewResponse:(RKObjectManager *)objectManager
 {
     RKObjectMapping *paginationReviewResponseMapping = [CCRestKitConfigurator paginationMapping];
@@ -510,7 +521,28 @@
 
     
     [objectManager addResponseDescriptor:responseInboxPaginationMessages];
-
 }
+
++ (void)configureGroupsResponse:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *paginationGroupsResponseMapping = [CCRestKitConfigurator paginationMapping];
+    RKObjectMapping *groupsResponseMapping = [RKObjectMapping mappingForClass:[CCGroup class]];
+    [groupsResponseMapping addAttributeMappingsFromDictionary:[CCGroup responseMappingDictionary]];
+    RKRelationshipMapping *relationshipResponseGroupsMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
+                                                                                                              toKeyPath:CCResponseKeys.items
+                                                                                                            withMapping:groupsResponseMapping];
+    
+    
+    [paginationGroupsResponseMapping addPropertyMapping:relationshipResponseGroupsMapping];
+    
+    NSString *pathPattern = [NSString stringWithFormat:CCAPIDefines.loadGroups, @":classID"];
+    
+    RKResponseDescriptor *classGroupsResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginationGroupsResponseMapping
+                                                                                                     pathPattern:pathPattern
+                                                                                                         keyPath:nil
+                                                                                                     statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [objectManager addResponseDescriptor:classGroupsResponseDescriptor];
+}
+
 
 @end

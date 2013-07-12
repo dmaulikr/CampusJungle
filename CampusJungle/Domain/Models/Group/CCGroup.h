@@ -10,4 +10,19 @@
 
 @interface CCGroup : NSObject
 
+@property (nonatomic, strong) NSString *groupId;
+@property (nonatomic, strong) NSString *classId;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *ownerId;
+@property (nonatomic, strong) NSString *image;
+
+@property (nonatomic, strong) NSArray *members;
+@property (nonatomic, strong) NSArray *locations;
+
+@property (nonatomic, assign) BOOL isSelected;
+
++ (NSDictionary *)responseMappingDictionary;
++ (NSDictionary *)requestMappingDictionary;
+
 @end

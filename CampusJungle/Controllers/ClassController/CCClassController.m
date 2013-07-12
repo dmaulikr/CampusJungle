@@ -125,7 +125,7 @@
 - (void)showLocation:(CCLocation *)location onMapWithLocations:(NSArray *)locationsArray
 {
     NSString *searchString = ([self.classContentTable.searchBar.text length] > 0) ? self.classContentTable.searchBar.text : @"";
-    [self.locationTransaction performWithObject:@{@"location" : location, @"array" : locationsArray, @"classId" : self.currentClass.classID, @"searchString" : searchString}];
+    [self.locationTransaction performWithObject:@{@"location" : location, @"array" : locationsArray, @"class" : self.currentClass, @"searchString" : searchString}];
 }
 
 - (void)addLocationToClassWithId:(NSString *)classId

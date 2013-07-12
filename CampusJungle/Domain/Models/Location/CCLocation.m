@@ -7,6 +7,9 @@
 //
 
 #import "CCLocation.h"
+#import "CCClass.h"
+#import "CCGroup.h"
+#import "CCUser.h"
 
 @implementation CCLocation
 
@@ -20,6 +23,32 @@
     CCLocation *location = [CCLocation new];
     location.latitude = coordinates.latitude;
     location.longitude = coordinates.longitude;
+    return location;
+}
+
++ (CCLocation *)createWithCoordinates:(CLLocationCoordinate2D)coordinates name:(NSString *)name description:(NSString *)description place:(id)place visibleItems:(NSArray *)visibleItemsArray sharedWithAll:(BOOL)sharedWithAll
+{
+    CCLocation *location = [CCLocation new];
+    
+    location.latitude = coordinates.latitude;
+    location.longitude = coordinates.longitude;
+    location.name = name;
+    location.description = description;
+    location.sharedWithAll = sharedWithAll;
+    
+    if ([place isKindOfClass:[CCClass class]]) {
+        location.placeId = [(CCClass *)place classID];
+    }
+    else {
+        location.placeId = [(CCGroup *)place groupId];
+    }
+    
+    if ([[visibleItemsArray objectAtIndex:0] isKindOfClass:[CCUser class]]) {
+        location.visibleUsersIdsArray = [visibleItemsArray valueForKeyPath:@"uid"];
+    }
+    else {
+        location.visibleGroupsIdsArray = [visibleItemsArray valueForKeyPath:@"groupId"];
+    }
     return location;
 }
 
@@ -47,13 +76,9 @@
          @"name" : @"name",
          @"latitude" : @"latitude",
          @"longitude" : @"longitude",
-         @"placeId" : @"place_id",
-         @"placeType" : @"place_type",
-         @"ownerId" : @"owner_id",
          @"sharedWithAll" : @"shared_with_all",
-         @"cityId" : @"city_id",
-         @"street" : @"street",
-         @"users_ids" : @"visibleUsersIdsArray"
+         @"visibleUsersIdsArray" : @"users_ids",
+         @"visibleGroupsIdsArray" : @"groups_ids"
      };
 }
 

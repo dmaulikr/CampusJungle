@@ -8,4 +8,5 @@
 
 extern const struct CCSuccessMessages {
     __unsafe_unretained NSString *joinClass;
+    __unsafe_unretained NSString *addedLocation;
 } CCSuccessMessages;

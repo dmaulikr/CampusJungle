@@ -20,13 +20,13 @@
     CCBackTransaction *backTransaction = [CCBackTransaction new];
     backTransaction.navigation = self.navigation;
     
-    id class = [object valueForKey:@"object"];
+    id classObject = [object valueForKey:@"object"];
     id successBlock = [object valueForKey:@"successBlock"];
     
     CCSelectClassmatesViewController *selectClassmateController = [CCSelectClassmatesViewController new];
     selectClassmateController.backTransaction = backTransaction;
     [selectClassmateController setSuccessBlock:successBlock];
-    [selectClassmateController setClass:class];
+    [selectClassmateController setClass:classObject];
     [self.navigation pushViewController:selectClassmateController animated:YES];
 }
 

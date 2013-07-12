@@ -22,4 +22,11 @@
     return self.viewForSectionHeader.bounds.size.height;
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if(scrollView.contentOffset.y > scrollView.contentSize.height - scrollView.frame.size.height - IntervalBeforeLoading){
+        [self.dataProvider loadMoreItems];
+    }
+}
+
 @end

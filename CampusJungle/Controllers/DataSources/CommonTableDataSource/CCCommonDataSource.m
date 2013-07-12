@@ -11,8 +11,6 @@
 #import "CCDefines.h"
 #import "CCBaseCell.h"
 
-#define IntervalBeforeLoading 20
-
 @implementation CCCommonDataSource
 
 - (id)init
