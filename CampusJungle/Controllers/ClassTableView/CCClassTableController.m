@@ -20,6 +20,7 @@
 
 #import "CCUserCell.h"
 #import "CCLocationCell.h"
+#import "CCGroupCell.h"
 
 static const NSInteger kTabbarHeight = 52;
 static const NSInteger kNavBarHeight = 44;
@@ -46,6 +47,7 @@ static const NSInteger kNavBarHeight = 44;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self addObservers];
     
     self.locationsArray = [NSMutableArray array];
     
@@ -61,6 +63,21 @@ static const NSInteger kNavBarHeight = 44;
     self.mainTable.tableHeaderView = self.tableHeaderView;
     [self.addButton setBackgroundImage:nil forState:UIControlStateNormal];
     [self.addButton setBackgroundImage:nil forState:UIControlStateHighlighted];
+}
+
+- (void)dealloc
+{
+    [self removeObservers];
+}
+
+- (void)addObservers
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadLocations) name:CCNotificationsNames.reloadClassLocations object:nil];
+}
+
+- (void)removeObservers
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:CCNotificationsNames.reloadClassLocations object:nil];
 }
 
 - (void)setClassmatesConfiguration
@@ -104,14 +121,22 @@ static const NSInteger kNavBarHeight = 44;
     self.sectionName.text = CCClassTabbarButtonsTitles.groups;
     if (!self.groupsProvider) {
         self.groupsProvider = [CCGroupsDataProvider new];
+        self.groupsProvider.classId = self.classID;
         self.groupsProvider.cellReuseIdentifier = CCTableDefines.groupsCellIdentifier;
     }
-    [self configTableWithProvider:self.groupsProvider cellClass:[UITableViewCell class] cellReuseIdentifier:CCTableDefines.groupsCellIdentifier];
+    [self configTableWithProvider:self.groupsProvider cellClass:[CCGroupCell class] cellReuseIdentifier:CCTableDefines.groupsCellIdentifier];
 }
 
+#pragma mark -
+#pragma mark Actions
 - (void)clearSearchBarString
 {
     [self.searchBar setText:@""];
+}
+
+- (void)reloadLocations
+{
+    [self.locationsProvider loadItems];
 }
 
 - (void)didSelectBarItemWithIdentifier:(NSInteger)identifier

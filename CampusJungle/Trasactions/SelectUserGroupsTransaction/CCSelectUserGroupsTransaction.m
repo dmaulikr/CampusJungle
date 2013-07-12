@@ -17,8 +17,13 @@
     CCBackTransaction *backTransaction = [CCBackTransaction new];
     backTransaction.navigation = self.navigation;
     
+    id classObject = [object valueForKey:@"object"];
+    id successBlock = [object valueForKey:@"successBlock"];
+    
     CCSelectGroupsViewController *selectGroupViewController = [CCSelectGroupsViewController new];
     selectGroupViewController.backTransaction = backTransaction;
+    [selectGroupViewController setClass:classObject];
+    [selectGroupViewController setSuccessBlock:successBlock];
     [self.navigation pushViewController:selectGroupViewController animated:YES];
 }
 

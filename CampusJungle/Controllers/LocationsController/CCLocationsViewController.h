@@ -8,14 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "CCTableBasedController.h"
+#import "CCTransactionWithObject.h"
 
-@class CCLocation;
+@class CCLocation, CCClass;
 
 @interface CCLocationsViewController : CCTableBasedController
+
+@property (nonatomic, strong) id <CCTransactionWithObject> addLocationTransaction;
 
 - (id)initWithLocationsArray:(NSArray *)locationsArray;
 - (void)setSelectedLocation:(CCLocation *)selectedLocation;
 - (void)setSearchString:(NSString *)searchString;
-- (void)setClassId:(NSString *)classId;
+- (void)setClass:(CCClass *)classObject;
 
 @end

@@ -10,7 +10,7 @@
 
 #import "CCMapHelper.h"
 #import "CCPlacemarkAddressHelper.h"
-#import "CCKeyboardHepler.h"
+#import "CCKeyboardHelper.h"
 
 #import "CCLocation.h"
 #import "CCShareItemButton.h"
@@ -18,6 +18,8 @@
 
 #import "CCStandardErrorHandler.h"
 #import "CCShareItemActionSheet.h"
+
+#import "CCLocationsApiProviderProtocol.h"
 
 @interface CCAddLocationViewController () <CLLocationManagerDelegate, UITextFieldDelegate, MKMapViewDelegate>
 
@@ -27,6 +29,7 @@
 @property (nonatomic, weak) IBOutlet UITextField *addressTextField;
 @property (nonatomic, weak) IBOutlet UIButton *detectUserLocationButton;
 
+@property (nonatomic, strong) id<CCLocationsApiProviderProtocol> ioc_locationsApiProvider;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) CCShareItemActionSheet *shareItemActionSheet;
 
@@ -91,7 +94,7 @@
 
 - (void)showShareItemActionSheet
 {
-    [CCKeyboardHepler hideKeyboard];
+    [CCKeyboardHelper hideKeyboard];
     [self createShareItemActionSheet];
     [self.shareItemActionSheet show];
 }
@@ -105,18 +108,20 @@
 - (NSArray *)shareItemActionSheetButtons
 {
    __weak CCAddLocationViewController *weakSelf = self;
+    ShareItemButtonSuccessBlock successBlock = ^(NSArray *itemsArray) {
+        [weakSelf createLocationSharedWithItems:itemsArray sharedWithAll:NO];
+    };
     
     CCShareItemButton *shareWithClassButton = [CCShareItemButton buttonWithTitle:@"Share with Class" actionBlock:^{
         [weakSelf.shareItemActionSheet dismiss];
+        [weakSelf createLocationSharedWithItems:nil sharedWithAll:YES];
     }];
     CCShareItemButton *shareWithGroupButton = [CCShareItemButton buttonWithTitle:@"Share with Group" actionBlock:^{
-        [weakSelf.selectGroupToShareTransaction performWithObject:weakSelf.locationToAddobject];
+        NSDictionary *params = @{@"object" : weakSelf.locationToAddobject, @"successBlock" : successBlock};
+        [weakSelf.selectGroupToShareTransaction performWithObject:params];
         [weakSelf.shareItemActionSheet dismiss];
     }];
     CCShareItemButton *shareWithClassmatesButton = [CCShareItemButton buttonWithTitle:@"Share with Classmates" actionBlock:^{
-        ShareItemButtonSuccessBlock successBlock = ^(NSArray *itemsArray) {
-            [weakSelf createLocation:nil sharedWithItems:itemsArray sharedWithAll:NO];
-        };
         NSDictionary *params = @{@"object" : weakSelf.locationToAddobject, @"successBlock" : successBlock};
         [weakSelf.selectUsersToShareTransaction performWithObject:params];
         [weakSelf.shareItemActionSheet dismiss];
@@ -168,6 +173,12 @@
             [weakSelf setRightNavigationBarButtonEnabled:YES];
         }];
     }
+}
+
+- (CLLocationCoordinate2D)coordinatesFromMap
+{
+    MKPointAnnotation *point = [[self.mapView annotations] objectAtIndex:0];
+    return point.coordinate;
 }
 
 - (void)setRightNavigationBarButtonEnabled:(BOOL)enabled
@@ -248,9 +259,18 @@
 
 #pragma mark -
 #pragma mark Requests
-- (void)createLocation:(CCLocation *)location sharedWithItems:(NSArray *)itemsArray sharedWithAll:(BOOL)sharedWithAll
+- (void)createLocationSharedWithItems:(NSArray *)itemsArray sharedWithAll:(BOOL)sharedWithAll
 {
-    NSLog(@"created for items %@", itemsArray);
+    __weak CCAddLocationViewController *weakSelf = self;
+    CLLocationCoordinate2D coordinates = [self coordinatesFromMap];
+    CCLocation *location = [CCLocation createWithCoordinates:coordinates name:self.nameTextField.text description:self.descriptionTextField.text place:self.locationToAddobject visibleItems:itemsArray sharedWithAll:sharedWithAll];
+    [self.ioc_locationsApiProvider postLocation:location successHandler:^(RKMappingResult *result) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadClassLocations object:nil];
+        [SVProgressHUD showSuccessWithStatus:@"Added location" duration:CCProgressHudsConstants.loaderDuration];
+        [weakSelf.backTransaction perform];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
 }
 
 @end

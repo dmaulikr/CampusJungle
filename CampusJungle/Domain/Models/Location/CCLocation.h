@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSString *placeId;
 @property (nonatomic, strong) NSString *placeType;
 @property (nonatomic, strong) NSArray *visibleUsersIdsArray;
+@property (nonatomic, strong) NSArray *visibleGroupsIdsArray;
 @property (nonatomic, assign) BOOL sharedWithAll;
 
 @property (nonatomic, assign) float latitude;
@@ -28,5 +29,6 @@
 + (NSDictionary *)requestMappingDictionary;
 + (CCLocation *)createUsingLocation:(CLLocation *)clLocation;
 + (CCLocation *)createWithCoordinates:(CLLocationCoordinate2D)coordinates;
++ (CCLocation *)createWithCoordinates:(CLLocationCoordinate2D)coordinates name:(NSString *)name description:(NSString *)description place:(id)place visibleItems:(NSArray *)visibleItemsArray sharedWithAll:(BOOL)sharedWithAll;
 
 @end

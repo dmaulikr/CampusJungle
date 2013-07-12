@@ -61,7 +61,7 @@
       @"first_name" : @"firstName",
       @"last_name" : @"lastName",
       @"email" : @"email",
-      @"avatar" : @"avatar",
+      @"avatar_retina" : @"avatar",
       @"token" : @"token",
       @"wallet" : @"wallet",
       @"status" : @"status",

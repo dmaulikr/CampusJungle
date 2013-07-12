@@ -10,4 +10,5 @@ extern const struct CCNotificationsNames {
     __unsafe_unretained NSString *reloadSideMenu;
     __unsafe_unretained NSString *tableViewDidReloadData;
     __unsafe_unretained NSString *tableViewWillReloadData;
+    __unsafe_unretained NSString *reloadClassLocations;
 } CCNotificationsNames;

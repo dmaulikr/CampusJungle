@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCKeyboardHepler.h"
+#import "CCKeyboardHelper.h"
 
-@implementation CCKeyboardHepler
+@implementation CCKeyboardHelper
 
 + (void)hideKeyboard
 {

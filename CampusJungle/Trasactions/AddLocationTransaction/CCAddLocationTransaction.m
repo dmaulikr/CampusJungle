@@ -11,6 +11,7 @@
 
 #import "CCSelectUserClassmatesTransaction.h"
 #import "CCSelectUserGroupsTransaction.h"
+#import "CCBackTransaction.h"
 
 @implementation CCAddLocationTransaction
 
@@ -25,10 +26,14 @@
     CCSelectUserGroupsTransaction *selectGroupToShareTransaction = [CCSelectUserGroupsTransaction new];
     selectGroupToShareTransaction.navigation = self.navigation;
     
+    CCBackTransaction *backTransaction = [CCBackTransaction new];
+    backTransaction.navigation = self.navigation;
+    
     CCAddLocationViewController *addLocationController = [CCAddLocationViewController new];
     addLocationController.locationToAddobject = object;
     addLocationController.selectGroupToShareTransaction = selectGroupToShareTransaction;
     addLocationController.selectUsersToShareTransaction = selectClassmatesToShareTransaction;
+    addLocationController.backTransaction = backTransaction;
     [self.navigation pushViewController:addLocationController animated:YES];
 }
 

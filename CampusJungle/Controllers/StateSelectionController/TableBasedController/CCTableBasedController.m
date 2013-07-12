@@ -28,22 +28,22 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self addObservers];
+    [self addTableViewObservers];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self removeObservers];
+    [self removeTableViewObservers];
 }
 
-- (void)addObservers
+- (void)addTableViewObservers
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tableViewWillReloadData) name:CCNotificationsNames.tableViewWillReloadData object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tableViewDidReloadData) name:CCNotificationsNames.tableViewDidReloadData object:nil];
 }
 
-- (void)removeObservers
+- (void)removeTableViewObservers
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:CCNotificationsNames.tableViewWillReloadData object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:CCNotificationsNames.tableViewDidReloadData object:nil];

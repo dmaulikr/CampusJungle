@@ -7,7 +7,7 @@
 //
 
 #import "GIAlert.h"
-#import "CCKeyboardHepler.h"
+#import "CCKeyboardHelper.h"
 #import "CCViewPositioningHelper.h"
 
 #define AnimationDuration 0.3
@@ -67,7 +67,7 @@
     
     self.view.frame = CGRectMake((baseViewSize.width - alertSize.width)/2, (baseViewSize.height - alertSize.height)/2, alertSize.width, alertSize.height);
     
-    CGFloat visibleKeyboardHeight = [CCKeyboardHepler visibleKeyboardHeight];
+    CGFloat visibleKeyboardHeight = [CCKeyboardHelper visibleKeyboardHeight];
     if (visibleKeyboardHeight > 0) {
         CGFloat bottomOfHUD = [CCViewPositioningHelper bottomOfView:self.view];
         CGFloat originYOfKeyboard = view.bounds.size.height - visibleKeyboardHeight;

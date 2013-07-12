@@ -10,11 +10,20 @@
 #import "CCClass.h"
 #import "CCGroup.h"
 
+#import "CCSelectableCellsDataSource.h"
+#import "CCGroupsDataProvider.h"
+#import "CCStandardErrorHandler.h"
+
+#import "CCGroupSelectionCell.h"
+
 @interface CCSelectGroupsViewController ()
 
 @property (nonatomic, strong) CCClass *classObject;
 @property (nonatomic, copy) ShareItemButtonSuccessBlock successBlock;
 @property (nonatomic, copy) ShareItemButtonCancelBlock cancelBlock;
+
+@property (nonatomic, strong) CCGroupsDataProvider *dataProvider;
+@property (nonatomic, strong) CCSelectableCellsDataSource *dataSource;
 
 @end
 
@@ -23,6 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setupTableView];
     [self setRightNavigationItemWithTitle:@"Share" selector:@selector(shareButtonDidPressed:)];
     [self setTitle:@"Select Groups"];
 }
@@ -35,6 +45,14 @@
     }
 }
 
+- (void)setupTableView
+{
+    self.dataSource = [CCSelectableCellsDataSource new];
+    self.dataProvider = [CCGroupsDataProvider new];
+    self.dataProvider.classId = self.classObject.classID;
+    [self configTableWithProvider:self.dataProvider cellClass:[CCGroupSelectionCell class]];
+}
+
 #pragma mark -
 #pragma mark Actions
 - (void)setClass:(CCClass *)classObject
@@ -44,10 +62,22 @@
 
 - (void)shareButtonDidPressed:(id)sender
 {
+    NSArray *selectedGroupsArray = [self selectedGroupsArray];
+    if ([selectedGroupsArray count] == 0) {
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCAlertsMessages.noSelectedItems];
+        return;
+    }
+
     [self.backTransaction perform];
     if (self.successBlock) {
-        self.successBlock(@[[CCGroup new]]);
+        self.successBlock(selectedGroupsArray);
     }
+}
+
+- (NSArray *)selectedGroupsArray
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isSelected == YES"];
+    return [self.dataProvider.arrayOfItems filteredArrayUsingPredicate:predicate];;
 }
 
 @end
