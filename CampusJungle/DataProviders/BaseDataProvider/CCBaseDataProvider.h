@@ -20,7 +20,7 @@
 @property (nonatomic, assign) BOOL isEverythingLoaded;
 @property (nonatomic, strong) id<CCAPIProviderProtocol> ioc_apiProvider;
 
-@property (nonatomic,strong) NSString *searchQuery;
+@property (nonatomic, strong) NSString *searchQuery;
 
 - (void)loadItems;
 - (void)loadMoreItems;

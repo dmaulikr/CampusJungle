@@ -44,6 +44,8 @@
 {
     [button setBackgroundImage:nil forState:UIControlStateNormal];
     [button setBackgroundImage:[UIImage imageNamed:@"tab_bar_button_background"] forState:UIControlStateSelected];
+    [button setImage:[button imageForState:UIControlStateSelected] forState:UIControlStateSelected | UIControlStateHighlighted];
+    [button setBackgroundImage:[button backgroundImageForState:UIControlStateSelected] forState:UIControlStateSelected | UIControlStateHighlighted];
 }
 
 - (IBAction)didSelectButton:(UIButton *)sender

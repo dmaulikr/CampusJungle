@@ -81,56 +81,56 @@ static const NSInteger kNavBarHeight = 44;
 
 - (void)setClassmatesConfiguration
 {
-    [self clearSearchBarString];
     self.sectionName.text = CCClassTabbarButtonsTitles.classmates;
     if (!self.classmatesProvider) {
         self.classmatesProvider = [CCClassmatesDataProvider new];
         self.classmatesProvider.classID = self.classID;
         self.classmatesProvider.cellReuseIdentifier = CCTableDefines.classmatesCellIdentifier;
     }
+    [self fillSearchBarFromDataProvider:self.classmatesProvider];
     [self configTableWithProvider:self.classmatesProvider cellClass:[CCUserCell class] cellReuseIdentifier:CCTableDefines.classmatesCellIdentifier];
 }
 
 - (void)setForumsConfiguration
 {
-    [self clearSearchBarString];
     self.sectionName.text = CCClassTabbarButtonsTitles.forums;
     if (!self.forumsProvider) {
         self.forumsProvider = [CCForumsDataProvider new];
         self.forumsProvider.cellReuseIdentifier = CCTableDefines.forumsCellIdentifier;
     }
+    [self fillSearchBarFromDataProvider:self.forumsProvider];
     [self configTableWithProvider:self.forumsProvider cellClass:[UITableViewCell class] cellReuseIdentifier:CCTableDefines.forumsCellIdentifier];
 }
 
 - (void)setLocationConfiguration
 {
-    [self clearSearchBarString];
     self.sectionName.text = CCClassTabbarButtonsTitles.locations;
     if (!self.locationsProvider) {
         self.locationsProvider = [[CCClassLocationsDataProvider alloc] initWithDelegate:self];
         self.locationsProvider.classId = self.classID;
         self.locationsProvider.cellReuseIdentifier = CCTableDefines.locationsCellIdentifier;
     }
+    [self fillSearchBarFromDataProvider:self.locationsProvider];
     [self configTableWithProvider:self.locationsProvider cellClass:[CCLocationCell class] cellReuseIdentifier:CCTableDefines.locationsCellIdentifier];
 }
 
 - (void)setGroupsConfiguration
 {
-    [self clearSearchBarString];
     self.sectionName.text = CCClassTabbarButtonsTitles.groups;
     if (!self.groupsProvider) {
         self.groupsProvider = [CCGroupsDataProvider new];
         self.groupsProvider.classId = self.classID;
         self.groupsProvider.cellReuseIdentifier = CCTableDefines.groupsCellIdentifier;
     }
+    [self fillSearchBarFromDataProvider:self.groupsProvider];
     [self configTableWithProvider:self.groupsProvider cellClass:[CCGroupCell class] cellReuseIdentifier:CCTableDefines.groupsCellIdentifier];
 }
 
 #pragma mark -
 #pragma mark Actions
-- (void)clearSearchBarString
+- (void)fillSearchBarFromDataProvider:(CCBaseDataProvider *)dataProvider
 {
-    [self.searchBar setText:@""];
+    [self.searchBar setText:dataProvider.searchQuery];
 }
 
 - (void)reloadLocations

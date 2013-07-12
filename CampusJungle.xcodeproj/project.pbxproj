@@ -1546,10 +1546,10 @@
 				D39496FB178C27DE00C39A7E /* ClassTableView */,
 				70A29C41178778AB001BC8DD /* ClassesController */,
 				70A29C45178778AB001BC8DD /* ClassesOfCollegeController */,
+				D39496F4178C27B100C39A7E /* ClassTabbarController */,
 				70A29C49178778AB001BC8DD /* CollegeSearchController */,
 				70A29C4C178778AB001BC8DD /* CollegeSelectionController */,
 				70A29C50178778AB001BC8DD /* CollegesListController */,
-				D39496F4178C27B100C39A7E /* ClassTabbarController */,
 				70A29C54178778AB001BC8DD /* CreateClassController */,
 				70A29C58178778AB001BC8DD /* CreateNoteController */,
 				70A29C5C178778AB001BC8DD /* DataSources */,
@@ -4458,13 +4458,10 @@
 				700F9461178EFA6F00A6FBBA /* CCSelectGroupsViewController.xib in Resources */,
 				D3DF8C29178F06FD00B072B7 /* CCMessageCell.xib in Resources */,
 				700F9473178F0A8500A6FBBA /* CCUserSelectionCell.xib in Resources */,
-
 				D3DF8C3217900AAA00B072B7 /* CCMessageDetailsController.xib in Resources */,
 				D3DF8C46179030A100B072B7 /* CCOfferCell.xib in Resources */,
-
 				700F94891790097E00A6FBBA /* CCGroupCell.xib in Resources */,
 				700F948B179009F100A6FBBA /* CCGroupSelectionCell.xib in Resources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4732,15 +4729,12 @@
 				700F946D178F055F00A6FBBA /* CCBackTransaction.m in Sources */,
 				700F9471178F0A4B00A6FBBA /* CCUserSelectionCell.m in Sources */,
 				700F947A178F0FDA00A6FBBA /* CCSelectableCellsDataSource.m in Sources */,
-
 				D3DF8C3117900AAA00B072B7 /* CCMessageDetailsController.m in Sources */,
 				D3DF8C40179029F000B072B7 /* CCMessageDetailsTransaction.m in Sources */,
 				D3DF8C441790308000B072B7 /* CCOfferCell.m in Sources */,
-
 				700F947E178FF42200A6FBBA /* CCGroupsApiProvider.m in Sources */,
 				700F9483179007F300A6FBBA /* CCGroupCell.m in Sources */,
 				700F94871790094500A6FBBA /* CCGroupSelectionCell.m in Sources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
