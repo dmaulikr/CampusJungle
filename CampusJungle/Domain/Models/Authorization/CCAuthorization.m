@@ -10,4 +10,22 @@
 
 @implementation CCAuthorization
 
++ (void)configureMappingWithManager:(RKObjectManager *)objectManager
+{
+    [self configureFacebookLinking:objectManager];
+}
+
++ (void)configureFacebookLinking:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *facebookLingingMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    [facebookLingingMapping addAttributeMappingsFromDictionary:@{
+     @"success" : @"success"
+     }];
+    RKResponseDescriptor *responseUserDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:facebookLingingMapping
+                                                                                           pathPattern:CCAPIDefines.linkFacebook
+                                                                                               keyPath:nil
+                                                                                           statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [objectManager addResponseDescriptor:responseUserDescriptor];
+}
+
 @end

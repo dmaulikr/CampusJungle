@@ -6,7 +6,9 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-@interface CCAuthorization : NSObject
+#import "CCRestKitMappableModel.h"
+
+@interface CCAuthorization : NSObject <CCRestKitMappableModel>
 
 @property (nonatomic, strong) NSString *provider;
 @property (nonatomic, strong) NSString *uid;

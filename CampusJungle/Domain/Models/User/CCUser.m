@@ -11,6 +11,10 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "CCDefines.h"
 
+#import "CCEducation.h"
+#import "CCAuthorizationResponse.h"
+#import "CCRestKitConfigurator.h"
+
 @implementation CCUser
 
 - (void)encodeWithCoder:(NSCoder *)encoder {
@@ -53,6 +57,112 @@
     }
     
     return self;
+}
+
++ (void)configureMappingWithManager:(RKObjectManager *)objectManager
+{
+    [self configureUserResponse:objectManager];
+    [self configureClassmatesResponse:objectManager];
+}
+
++ (void)configureUserResponse:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *userResponseMapping = [RKObjectMapping mappingForClass:[CCUser class]];
+    [userResponseMapping addAttributeMappingsFromDictionary:[CCUser responseMappingDictionary]];
+    
+    RKObjectMapping *userEducationResponseMapping = [RKObjectMapping mappingForClass:[CCEducation class]];
+    [userEducationResponseMapping addAttributeMappingsFromDictionary:[CCEducation responseMappingDictionary]];
+    
+    RKRelationshipMapping* relationShipResponseEducationsMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"educations"
+                                                                                                               toKeyPath:@"educations"
+                                                                                                             withMapping:userEducationResponseMapping];
+    
+    [userResponseMapping addPropertyMapping:relationShipResponseEducationsMapping];
+    
+    RKRelationshipMapping* relationShipResponseUserMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"user"
+                                                                                                         toKeyPath:@"user"
+                                                                                                       withMapping:userResponseMapping];
+    RKObjectMapping *authorizationResponseMapping = [RKObjectMapping mappingForClass:[CCAuthorizationResponse class]];
+    [authorizationResponseMapping addPropertyMapping:relationShipResponseUserMapping];
+    
+    [authorizationResponseMapping addAttributeMappingsFromDictionary:[CCAuthorizationResponse responseMappingDictionary]];
+    
+    RKResponseDescriptor *responseAuthorizationDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:authorizationResponseMapping
+                                                                                                    pathPattern:CCAPIDefines.authorization
+                                                                                                        keyPath:nil
+                                                                                                    statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    RKResponseDescriptor *responseSignUpDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:authorizationResponseMapping
+                                                                                             pathPattern:CCAPIDefines.signUp
+                                                                                                 keyPath:nil
+                                                                                             statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    RKResponseDescriptor *responseLoginDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:authorizationResponseMapping
+                                                                                            pathPattern:CCAPIDefines.login
+                                                                                                keyPath:nil
+                                                                                            statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    RKResponseDescriptor *responseUserDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userResponseMapping
+                                                                                           pathPattern:CCAPIDefines.updateUser
+                                                                                               keyPath:@"user"
+                                                                                           statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [objectManager addResponseDescriptor:responseUserDescriptor];
+    [objectManager addResponseDescriptor:responseAuthorizationDescriptor];
+    [objectManager addResponseDescriptor:responseSignUpDescriptor];
+    [objectManager addResponseDescriptor:responseLoginDescriptor];
+    
+    
+    RKObjectMapping *userRequestMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    [userRequestMapping addAttributeMappingsFromDictionary:@{
+     @"firstName" : @"user[first_name]",
+     @"lastName" : @"user[last_name]",
+     @"email" :@"user[email]",
+     @"avatar" : @"user[avatar]",
+     }];
+    RKObjectMapping *educationRequestMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    [educationRequestMapping addAttributeMappingsFromDictionary:@{
+     @"graduationDate" : @"graduation_date",
+     @"collegeID" : @"college_id",
+     @"status" : @"user_status",
+     }];
+    
+    RKRelationshipMapping* relationShipRequestEducationMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"educations"
+                                                                                                             toKeyPath:@"educations"
+                                                                                                           withMapping:educationRequestMapping];
+    [userRequestMapping addPropertyMapping:relationShipRequestEducationMapping];
+    
+    RKRequestDescriptor *userRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:userRequestMapping objectClass:[CCUser class] rootKeyPath:nil];
+    [objectManager addRequestDescriptor:userRequestDescriptor];
+}
+
++ (void)configureClassmatesResponse:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *userResponseMapping = [RKObjectMapping mappingForClass:[CCUser class]];
+    [userResponseMapping addAttributeMappingsFromDictionary:[CCUser responseMappingDictionary]];
+    
+    RKObjectMapping *userEducationResponseMapping = [RKObjectMapping mappingForClass:[CCEducation class]];
+    [userEducationResponseMapping addAttributeMappingsFromDictionary:[CCEducation responseMappingDictionary]];
+    
+    RKRelationshipMapping* relationShipResponseEducationsMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"educations"
+                                                                                                               toKeyPath:@"educations"
+                                                                                                             withMapping:userEducationResponseMapping];
+    [userResponseMapping addPropertyMapping:relationShipResponseEducationsMapping];
+    
+    RKObjectMapping *paginationCollegesResponseMapping = [CCRestKitConfigurator paginationMapping];
+    RKRelationshipMapping* relationShipResponseCollegesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
+                                                                                                             toKeyPath:CCResponseKeys.items
+                                                                                                           withMapping:userResponseMapping];
+    [paginationCollegesResponseMapping addPropertyMapping:relationShipResponseCollegesMapping];
+    
+    NSString *pathPattern = [NSString stringWithFormat:CCAPIDefines.classmates,@":classID"];
+    
+    RKResponseDescriptor *responseClassesOfCollegeDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginationCollegesResponseMapping
+                                                                                                       pathPattern:pathPattern
+                                                                                                           keyPath:nil
+                                                                                                       statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    NSString *userResponceMappingPath = [NSString stringWithFormat:CCAPIDefines.getUser,@":UserID"];
+    RKResponseDescriptor *userResponceDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userResponseMapping pathPattern:userResponceMappingPath keyPath:@"user" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    [objectManager addResponseDescriptor:responseClassesOfCollegeDescriptor];
+    [objectManager addResponseDescriptor:userResponceDescriptor];
 }
 
 + (NSDictionary *)responseMappingDictionary

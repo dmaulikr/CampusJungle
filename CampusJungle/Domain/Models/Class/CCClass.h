@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCRestKitMappableModel.h"
 
-@interface CCClass : NSObject
+@interface CCClass : NSObject <CCRestKitMappableModel>
 
 @property (nonatomic, strong) NSString *professor;
 @property (nonatomic, strong) NSString *collegeID;
@@ -23,7 +24,5 @@
 @property (nonatomic) BOOL isSelected;
 
 - (NSString *)name;
-+ (NSDictionary *)responseMappingDictionary;
-+ (NSDictionary *)requestMappingDictionary;
 
 @end

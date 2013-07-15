@@ -11,6 +11,8 @@
 #import "CCGroup.h"
 #import "CCUser.h"
 
+#import "CCRestKitConfigurator.h"
+
 @implementation CCLocation
 
 + (CCLocation *)createUsingLocation:(CLLocation *)clLocation
@@ -50,6 +52,41 @@
         location.visibleGroupsIdsArray = [visibleItemsArray valueForKeyPath:@"groupId"];
     }
     return location;
+}
+
++ (void)configureMappingWithManager:(RKObjectManager *)objectManager
+{
+    [self configureLocationsResponse:objectManager];
+    [self configureLocationsRequest:objectManager];
+}
+
++ (void)configureLocationsResponse:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *paginationLocationsResponseMapping = [CCRestKitConfigurator paginationMapping];
+    RKObjectMapping *locationsResponseMapping = [RKObjectMapping mappingForClass:[CCLocation class]];
+    [locationsResponseMapping addAttributeMappingsFromDictionary:[CCLocation responseMappingDictionary]];
+    RKRelationshipMapping *relationshipResponseLocationsMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
+                                                                                                              toKeyPath:CCResponseKeys.items
+                                                                                                            withMapping:locationsResponseMapping];
+    
+    
+    [paginationLocationsResponseMapping addPropertyMapping:relationshipResponseLocationsMapping];
+    
+    NSString *pathPattern = [NSString stringWithFormat:CCAPIDefines.classLocations, @":classID"];
+    
+    RKResponseDescriptor *classLocationsResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginationLocationsResponseMapping
+                                                                                                     pathPattern:pathPattern
+                                                                                                         keyPath:nil
+                                                                                                     statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [objectManager addResponseDescriptor:classLocationsResponseDescriptor];
+}
+
++ (void)configureLocationsRequest:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *locationMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    [locationMapping addAttributeMappingsFromDictionary:[CCLocation requestMappingDictionary]];
+    RKRequestDescriptor *locationRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:locationMapping objectClass:[CCLocation class] rootKeyPath:nil];
+    [objectManager addRequestDescriptor:locationRequestDescriptor];
 }
 
 + (NSDictionary *)responseMappingDictionary

@@ -1009,6 +1009,7 @@
 		70B2D0B517942F0E001B0C2C /* CCQuestionsApiProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCQuestionsApiProvider.h; sourceTree = "<group>"; };
 		70B2D0B617942F0E001B0C2C /* CCQuestionsApiProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCQuestionsApiProvider.m; sourceTree = "<group>"; };
 		70B2D0B817942F2E001B0C2C /* CCQuestionsApiProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCQuestionsApiProviderProtocol.h; sourceTree = "<group>"; };
+		70B2D0B917943886001B0C2C /* CCRestKitMappableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCRestKitMappableModel.h; sourceTree = "<group>"; };
 		70C0FCB4178484D0005EF95E /* UITextField+InsetFixing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+InsetFixing.h"; sourceTree = "<group>"; };
 		70C0FCB5178484D0005EF95E /* UITextField+InsetFixing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+InsetFixing.m"; sourceTree = "<group>"; };
 		70F42A79178D5A2900E763F3 /* CCForumsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCForumsDataProvider.h; sourceTree = "<group>"; };
@@ -2433,6 +2434,7 @@
 		70A29DD717877CB4001BC8DD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				70B2D0B917943886001B0C2C /* CCRestKitMappableModel.h */,
 				70A29DD817877CB4001BC8DD /* Authorization */,
 				70A29DDB17877CB5001BC8DD /* AuthorizationResponse */,
 				70A29DDE17877CB5001BC8DD /* City */,

@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCRestKitMappableModel.h"
 
-@interface CCNote : NSObject
+@interface CCNote : NSObject <CCRestKitMappableModel>
 
 @property (nonatomic, strong) NSString *noteID;
 @property (nonatomic, strong) NSString *ownerID;
@@ -24,8 +25,6 @@
 
 @property (nonatomic, strong) NSString *link;
 
-+ (NSDictionary *)responseMappingDictionary;
-+ (NSDictionary *)requestMappingDictionary;
 + (NSDictionary *)noteLinkMappingDictionary;
 
 @end
