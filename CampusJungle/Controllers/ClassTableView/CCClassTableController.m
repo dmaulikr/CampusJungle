@@ -22,14 +22,16 @@
 #import "CCUserCell.h"
 #import "CCLocationCell.h"
 #import "CCGroupCell.h"
+#import "CCForumCell.h"
 
 #import "CCStandardErrorHandler.h"
 #import "CCLocationsApiProviderProtocol.h"
+#import "CCForumsApiProviderProtocol.h"
 
 static const NSInteger kTabbarHeight = 52;
 static const NSInteger kNavBarHeight = 44;
 
-@interface CCClassTableController () <CCClassTabbarControllerDelegateProtocol, CCLocationDataProviderDelegate, CCLocationCellDelegate>
+@interface CCClassTableController () <CCClassTabbarControllerDelegateProtocol, CCLocationDataProviderDelegate, CCLocationCellDelegate, CCForumCellDelegate>
 
 @property (nonatomic, weak) IBOutlet UIView *sectionHeaderView;
 @property (nonatomic, weak) IBOutlet UIButton *addButton;
@@ -44,6 +46,7 @@ static const NSInteger kNavBarHeight = 44;
 @property (nonatomic, strong) CCBaseDataProvider *activeDataProvider;
 
 @property (nonatomic, strong) id<CCLocationsApiProviderProtocol> ioc_locationsApiProvider;
+@property (nonatomic, strong) id<CCForumsApiProviderProtocol> ioc_forumsApiProvider;
 
 @property (nonatomic, strong) NSMutableArray *locationsArray;
 @property (nonatomic, assign) CGPoint tableViewContentOffsetBeforeReload;
@@ -113,10 +116,11 @@ static const NSInteger kNavBarHeight = 44;
     self.sectionName.text = CCClassTabbarButtonsTitles.forums;
     if (!self.forumsProvider) {
         self.forumsProvider = [CCForumsDataProvider new];
+        self.forumsProvider.classId = self.classID;
         self.forumsProvider.cellReuseIdentifier = CCTableDefines.forumsCellIdentifier;
     }
     [self fillSearchBarFromDataProvider:self.forumsProvider];
-    [self configTableWithProvider:self.forumsProvider cellClass:[UITableViewCell class] cellReuseIdentifier:CCTableDefines.forumsCellIdentifier];
+    [self configTableWithProvider:self.forumsProvider cellClass:[CCForumCell class] cellReuseIdentifier:CCTableDefines.forumsCellIdentifier];
     self.activeDataProvider = self.forumsProvider;
 }
 
@@ -219,6 +223,21 @@ static const NSInteger kNavBarHeight = 44;
         [weakSelf.ioc_locationsApiProvider deleteLocation:location successHandler:^(RKMappingResult *object) {
             [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteLocation duration:CCProgressHudsConstants.loaderDuration];
             [weakSelf.locationsProvider loadItems];
+        } errorHandler:^(NSError *error) {
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
+    }];
+}
+
+#pragma mark -
+#pragma mark CCForumCellDelegate
+- (void)deleteForum:(CCForum *)forum
+{
+    __weak CCClassTableController *weakSelf = self;
+    [CCAlertHelper showConfirmWithSuccess:^{
+        [weakSelf.ioc_forumsApiProvider deleteForum:forum successHandler:^(RKMappingResult *object) {
+            [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteLocation duration:CCProgressHudsConstants.loaderDuration];
+            [weakSelf.forumsProvider loadItems];
         } errorHandler:^(NSError *error) {
             [CCStandardErrorHandler showErrorWithError:error];
         }];

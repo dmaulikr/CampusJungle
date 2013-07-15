@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *description;
 @property (nonatomic, strong) NSString *classId;
+@property (nonatomic, assign) NSInteger questionsCount;
 @property (nonatomic, strong) NSArray *questionsArray;
 
 + (NSDictionary *)responseMappingDictionary;

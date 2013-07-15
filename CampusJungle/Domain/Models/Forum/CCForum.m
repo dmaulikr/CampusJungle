@@ -17,6 +17,7 @@
              @"description" : @"description",
              @"name" : @"name",
              @"owner_id" : @"ownerId",
+             @"questions_count" : @"questionsCount",
              };
 }
 

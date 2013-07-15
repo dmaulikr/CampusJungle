@@ -49,6 +49,9 @@ const struct CCAPIDefines CCAPIDefines = {
     .postReview = @"/api/users/%@/reviews",
     .loadReviews = @"/api/users/%@/reviews",
     .loadGroups = @"/api/users/me/classes/%@/groups",
+    .loadForums = @"/api/classes/%@/forums",
+    .postForum = @"/api/classes/%@/forums",
+    .deleteForum = @"/api/forums/%@",
 };
 
 const struct CCUserDefines CCUserDefines = {
