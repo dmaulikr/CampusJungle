@@ -265,7 +265,7 @@ static const NSInteger kNavBarHeight = 44;
             [self.delegate showLocation:cellObject onMapWithLocations:self.locationsArray];
             break;
         case CCClassTabbarButtonsIdentifierForums:
-            // go forum details
+            [self.delegate showDetailsOfForum:cellObject];
             break;
     }
 }

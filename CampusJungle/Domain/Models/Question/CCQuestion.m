@@ -57,6 +57,10 @@
              @"owner_id" : @"ownerId",
              @"attachment" : @"attachment",
              @"answers_count" : @"answersCount",
+             @"created_at" : @"createdDate",
+             @"owner_first_name" : @"ownerFirstName",
+             @"owner_last_name" : @"ownerLastName",
+             @"owner_avatar" : @"ownerAvatar",
              };
 }
 

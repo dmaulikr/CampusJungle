@@ -13,6 +13,7 @@
 #import "CCShowLocationsTransaction.h"
 #import "CCAddLocationTransaction.h"
 #import "CCAddForumTransaction.h"
+#import "CCForumDetailsTransaction.h"
 
 @implementation CCClassAddedTransaction
 
@@ -41,11 +42,15 @@
     CCAddForumTransaction *addForumTransaction = [CCAddForumTransaction new];
     addForumTransaction.navigation = self.navigation;
     
+    CCForumDetailsTransaction *forumDetailsTransaction = [CCForumDetailsTransaction new];
+    forumDetailsTransaction.navigation = self.navigation;
+    
     classController.otherUserProfileTransaction = otherUserProfileTransaction;
     classController.newsFeedTransaction = self.inboxTransaction;
     classController.locationTransaction = locationsTransactions;
     classController.addLocationTransaction = addLocationTransaction;
     classController.addForumTransaction = addForumTransaction;
+    classController.forumDetailsTransaction = forumDetailsTransaction;
     
     [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.joinClass duration:CCProgressHudsConstants.loaderDuration];
     UIViewController *viewController = [[self.navigation viewControllers] lastObject];

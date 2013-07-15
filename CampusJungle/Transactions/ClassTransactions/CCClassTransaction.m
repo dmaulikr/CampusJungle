@@ -13,6 +13,7 @@
 #import "CCShowLocationsTransaction.h"
 #import "CCAddLocationTransaction.h"
 #import "CCAddForumTransaction.h"
+#import "CCForumDetailsTransaction.h"
 
 @implementation CCClassTransaction
 
@@ -41,11 +42,15 @@
     CCAddForumTransaction *addForumTransaction = [CCAddForumTransaction new];
     addForumTransaction.navigation = centralNavigation;
     
+    CCForumDetailsTransaction *forumDetailsTransaction = [CCForumDetailsTransaction new];
+    forumDetailsTransaction.navigation = centralNavigation;
+    
     classController.otherUserProfileTransaction = otherUserProfileTransaction;
     classController.newsFeedTransaction = self.newsFeedTransaction;
     classController.locationTransaction = showLocationsTransaction;
     classController.addLocationTransaction = addLocationTransaction;
     classController.addForumTransaction = addForumTransaction;
+    classController.forumDetailsTransaction = forumDetailsTransaction;
     
     [self.menuController setCenterPanel:centralNavigation];
 }
