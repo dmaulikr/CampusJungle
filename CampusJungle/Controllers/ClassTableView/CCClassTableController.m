@@ -11,6 +11,7 @@
 #import "CCLocationDataProviderDelegate.h"
 #import "CCClassTabbarControllerViewController.h"
 #import "CCViewPositioningHelper.h"
+#import "CCAlertHelper.h"
 #import "CCLocation.h"
 
 #import "CCClassmatesDataProvider.h"
@@ -22,10 +23,13 @@
 #import "CCLocationCell.h"
 #import "CCGroupCell.h"
 
+#import "CCStandardErrorHandler.h"
+#import "CCLocationsApiProviderProtocol.h"
+
 static const NSInteger kTabbarHeight = 52;
 static const NSInteger kNavBarHeight = 44;
 
-@interface CCClassTableController () <CCClassTabbarControllerDelegateProtocol, CCLocationDataProviderDelegate>
+@interface CCClassTableController () <CCClassTabbarControllerDelegateProtocol, CCLocationDataProviderDelegate, CCLocationCellDelegate>
 
 @property (nonatomic, weak) IBOutlet UIView *sectionHeaderView;
 @property (nonatomic, weak) IBOutlet UIButton *addButton;
@@ -37,6 +41,9 @@ static const NSInteger kNavBarHeight = 44;
 @property (nonatomic, strong) CCClassLocationsDataProvider *locationsProvider;
 @property (nonatomic, strong) CCForumsDataProvider *forumsProvider;
 @property (nonatomic, strong) CCGroupsDataProvider *groupsProvider;
+@property (nonatomic, strong) CCBaseDataProvider *activeDataProvider;
+
+@property (nonatomic, strong) id<CCLocationsApiProviderProtocol> ioc_locationsApiProvider;
 
 @property (nonatomic, strong) NSMutableArray *locationsArray;
 @property (nonatomic, assign) CGPoint tableViewContentOffsetBeforeReload;
@@ -65,6 +72,14 @@ static const NSInteger kNavBarHeight = 44;
     [self.addButton setBackgroundImage:nil forState:UIControlStateHighlighted];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (self.activeDataProvider) {
+        [self.activeDataProvider loadItems];
+    }
+}
+
 - (void)dealloc
 {
     [self removeObservers];
@@ -90,6 +105,7 @@ static const NSInteger kNavBarHeight = 44;
     }
     [self fillSearchBarFromDataProvider:self.classmatesProvider];
     [self configTableWithProvider:self.classmatesProvider cellClass:[CCUserCell class] cellReuseIdentifier:CCTableDefines.classmatesCellIdentifier];
+    self.activeDataProvider = self.classmatesProvider;
 }
 
 - (void)setForumsConfiguration
@@ -101,6 +117,7 @@ static const NSInteger kNavBarHeight = 44;
     }
     [self fillSearchBarFromDataProvider:self.forumsProvider];
     [self configTableWithProvider:self.forumsProvider cellClass:[UITableViewCell class] cellReuseIdentifier:CCTableDefines.forumsCellIdentifier];
+    self.activeDataProvider = self.forumsProvider;
 }
 
 - (void)setLocationConfiguration
@@ -113,6 +130,7 @@ static const NSInteger kNavBarHeight = 44;
     }
     [self fillSearchBarFromDataProvider:self.locationsProvider];
     [self configTableWithProvider:self.locationsProvider cellClass:[CCLocationCell class] cellReuseIdentifier:CCTableDefines.locationsCellIdentifier];
+    self.activeDataProvider = self.locationsProvider;
 }
 
 - (void)setGroupsConfiguration
@@ -125,6 +143,7 @@ static const NSInteger kNavBarHeight = 44;
     }
     [self fillSearchBarFromDataProvider:self.groupsProvider];
     [self configTableWithProvider:self.groupsProvider cellClass:[CCGroupCell class] cellReuseIdentifier:CCTableDefines.groupsCellIdentifier];
+    self.activeDataProvider = self.groupsProvider;
 }
 
 #pragma mark -
@@ -189,6 +208,21 @@ static const NSInteger kNavBarHeight = 44;
 - (void)didLoadLocations:(NSArray *)locationsArray
 {
     [self.locationsArray addObjectsFromArray:locationsArray];
+}
+
+#pragma mark -
+#pragma mark CCLocationCellDelegate
+- (void)deleteLocation:(CCLocation *)location
+{
+    __weak CCClassTableController *weakSelf = self;
+    [CCAlertHelper showConfirmWithSuccess:^{
+        [weakSelf.ioc_locationsApiProvider deleteLocation:location successHandler:^(RKMappingResult *object) {
+            [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteLocation duration:CCProgressHudsConstants.loaderDuration];
+            [weakSelf.locationsProvider loadItems];
+        } errorHandler:^(NSError *error) {
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
+    }];
 }
 
 #pragma mark -

@@ -11,4 +11,5 @@
 const struct CCSuccessMessages CCSuccessMessages = {
     .joinClass = @"You've successfully joined class",
     .addedLocation = @"You've successfully added location",
+    .deleteLocation = @"Location was successfully removed",
 };

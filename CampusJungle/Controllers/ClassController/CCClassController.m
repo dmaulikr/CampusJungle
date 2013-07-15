@@ -15,6 +15,7 @@
 #import "GIAlert.h"
 #import "CCClassesApiProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
+#import "CCAlertHelper.h"
 
 @interface CCClassController () <CCClassTableDelegate>
 
@@ -93,7 +94,7 @@
 
 - (IBAction)leaveClassButtonDidPress
 {
-    [self showConfirmWithSuccess:^{
+    [CCAlertHelper showConfirmWithSuccess:^{
         [self.ioc_classesApiProvider leaveClassWithID:self.currentClass.classID SuccessHandler:^(id result) {
             [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadSideMenu object:nil];
             [self.newsFeedTransaction perform];
@@ -102,18 +103,6 @@
         }];
     }];
 }
-
-- (void)showConfirmWithSuccess:(successHandler)success
-{
-    GIAlertButton *noButton = [GIAlertButton cancelButtonWithTitle:CCAlertsButtons.noButton action:nil];
-    GIAlertButton *yesButton = [GIAlertButton buttonWithTitle:CCAlertsButtons.yesButton action:success];
-    
-    GIAlert *alert = [GIAlert alertWithTitle:CCAlertsMessages.confirmation
-                                     message:CCAlertsMessages.confirmationMessage
-                                     buttons:@[noButton, yesButton]];
-    [alert show];
-}
-
 
 #pragma mark -
 #pragma mark ClassTableDelegate

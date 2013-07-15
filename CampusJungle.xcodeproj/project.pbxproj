@@ -275,6 +275,7 @@
 		70A29F7E17877E0D001BC8DD /* CCViewMarketNotesListTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29F4C17877E0D001BC8DD /* CCViewMarketNotesListTransaction.m */; };
 		70A29F7F17877E0D001BC8DD /* CCViewPDFNotesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29F4F17877E0D001BC8DD /* CCViewPDFNotesTransaction.m */; };
 		70A29F8017877E0D001BC8DD /* CCViewMarketStuffListTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29F5217877E0D001BC8DD /* CCViewMarketStuffListTransaction.m */; };
+		70B2D04A1793F887001B0C2C /* CCAlertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0491793F887001B0C2C /* CCAlertHelper.m */; };
 		70C0FCB6178484D0005EF95E /* UITextField+InsetFixing.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C0FCB5178484D0005EF95E /* UITextField+InsetFixing.m */; };
 		70F42A7B178D5A2900E763F3 /* CCForumsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F42A7A178D5A2900E763F3 /* CCForumsDataProvider.m */; };
 		70F42A7E178D5A3800E763F3 /* CCGroupsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F42A7D178D5A3800E763F3 /* CCGroupsDataProvider.m */; };
@@ -970,6 +971,8 @@
 		70A29F4F17877E0D001BC8DD /* CCViewPDFNotesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewPDFNotesTransaction.m; sourceTree = "<group>"; };
 		70A29F5117877E0D001BC8DD /* CCViewMarketStuffListTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCViewMarketStuffListTransaction.h; sourceTree = "<group>"; };
 		70A29F5217877E0D001BC8DD /* CCViewMarketStuffListTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewMarketStuffListTransaction.m; sourceTree = "<group>"; };
+		70B2D0481793F887001B0C2C /* CCAlertHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAlertHelper.h; sourceTree = "<group>"; };
+		70B2D0491793F887001B0C2C /* CCAlertHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAlertHelper.m; sourceTree = "<group>"; };
 		70C0FCB4178484D0005EF95E /* UITextField+InsetFixing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+InsetFixing.h"; sourceTree = "<group>"; };
 		70C0FCB5178484D0005EF95E /* UITextField+InsetFixing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+InsetFixing.m"; sourceTree = "<group>"; };
 		70F42A79178D5A2900E763F3 /* CCForumsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCForumsDataProvider.h; sourceTree = "<group>"; };
@@ -1498,6 +1501,7 @@
 		7093080D1785806000E71AB0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				70B2D0471793F879001B0C2C /* AlertHelper */,
 				700F9441178EE97800A6FBBA /* KeyboardHelper */,
 				703DA4F5178C5C8900464DD3 /* MapHelper */,
 				70438E451785B7A800537712 /* NavigationBarViewHelper */,
@@ -3574,6 +3578,15 @@
 			path = ViewStuffInMarketTransaction;
 			sourceTree = "<group>";
 		};
+		70B2D0471793F879001B0C2C /* AlertHelper */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D0481793F887001B0C2C /* CCAlertHelper.h */,
+				70B2D0491793F887001B0C2C /* CCAlertHelper.m */,
+			);
+			path = AlertHelper;
+			sourceTree = "<group>";
+		};
 		70C0FCB2178484C7005EF95E /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -4735,6 +4748,7 @@
 				700F947E178FF42200A6FBBA /* CCGroupsApiProvider.m in Sources */,
 				700F9483179007F300A6FBBA /* CCGroupCell.m in Sources */,
 				700F94871790094500A6FBBA /* CCGroupSelectionCell.m in Sources */,
+				70B2D04A1793F887001B0C2C /* CCAlertHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

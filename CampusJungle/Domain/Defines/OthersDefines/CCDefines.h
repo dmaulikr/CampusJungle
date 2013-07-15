@@ -39,6 +39,7 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *recivedOffers;
     __unsafe_unretained NSString *classLocations;
     __unsafe_unretained NSString *postClassLocation;
+    __unsafe_unretained NSString *deleteLocation;
     __unsafe_unretained NSString *getStuff;
     __unsafe_unretained NSString *getUser;
     __unsafe_unretained NSString *postMessage;

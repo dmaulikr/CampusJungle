@@ -10,7 +10,9 @@
 #import "CCLocation.h"
 #import "CCViewPositioningHelper.h"
 
-static const NSInteger kDescriptionLabelDefaultWidth = 280;
+#import "CCUserSessionProtocol.h"
+
+static const NSInteger kDescriptionLabelDefaultWidth = 246;
 static const NSInteger kDescriptionLabelOriginY = 30;
 static const NSInteger kMinCellHeight = 60;
 
@@ -18,6 +20,10 @@ static const NSInteger kMinCellHeight = 60;
 
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
+@property (nonatomic, weak) IBOutlet UIButton *deleteLocationButton;
+
+@property (nonatomic, strong) id<CCUserSessionProtocol> ioc_userSession;
+@property (nonatomic, weak) id<CCLocationCellDelegate> delegate;
 
 @end
 
@@ -27,6 +33,7 @@ static const NSInteger kMinCellHeight = 60;
 {
     [super awakeFromNib];
     [self setSelectionColor];
+    [self.deleteLocationButton addTarget:self action:@selector(deleteLocationButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)prepareForReuse
@@ -38,6 +45,7 @@ static const NSInteger kMinCellHeight = 60;
 {
     _cellObject = cellObject;
     [self fillLabels];
+    [self setupDeleteButtonVisibility];
 }
 
 - (void)fillLabels
@@ -47,6 +55,15 @@ static const NSInteger kMinCellHeight = 60;
     [self.descriptionLabel sizeToFit];
 }
 
+- (void)setupDeleteButtonVisibility
+{
+    BOOL isHidden = YES;
+    if ([self.ioc_userSession.currentUser.uid isEqualToString:self.cellObject.ownerId]) {
+        isHidden = NO;
+    }
+    [self.deleteLocationButton setHidden:isHidden];
+}
+
 + (CGFloat)heightForCellWithObject:(id)object
 {
     CCLocation *location = object;
@@ -54,5 +71,15 @@ static const NSInteger kMinCellHeight = 60;
     CGSize requiredSize = [location.description sizeWithFont:font constrainedToSize:CGSizeMake(kDescriptionLabelDefaultWidth, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
     return MAX(kMinCellHeight, kDescriptionLabelOriginY + requiredSize.height);
 }
+
+#pragma mark -
+#pragma mark Actions
+- (void)deleteLocationButtonDidPressed:(id)sender
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(deleteLocation:)]) {
+        [self.delegate deleteLocation:self.cellObject];
+    }
+}
+
 
 @end

@@ -12,11 +12,14 @@
 #import "CCClassLocationsDataProvider.h"
 #import "CCLocationsDataSource.h"
 #import "CCNavigationBarViewHelper.h"
+#import "CCAlertHelper.h"
 
 #import "CCMapHelper.h"
 #import "CCLocationCell.h"
 
 #import "CCLocationDataProviderDelegate.h"
+#import "CCLocationsApiProviderProtocol.h"
+#import "CCStandardErrorHandler.h"
 
 @interface CCLocationsViewController () <CCLocationDataProviderDelegate>
 
@@ -29,6 +32,8 @@
 @property (nonatomic, strong) CCClassLocationsDataProvider *dataProvider;
 @property (nonatomic, strong) CCLocationsDataSource *dataSource;
 @property (nonatomic, assign) Class dataSourceClass;
+
+@property (nonatomic, strong) id<CCLocationsApiProviderProtocol> ioc_locationsApiProvider;
 
 @end
 
@@ -126,6 +131,21 @@
 - (void)addLocation
 {
     [self.addLocationTransaction performWithObject:self.classObject];
+}
+
+#pragma mark -
+#pragma mark CCLocationCellDelegate
+- (void)deleteLocation:(CCLocation *)location
+{
+    __weak CCLocationsViewController *weakSelf = self;
+    [CCAlertHelper showConfirmWithSuccess:^{
+        [weakSelf.ioc_locationsApiProvider deleteLocation:location successHandler:^(RKMappingResult *object) {
+            [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteLocation duration:CCProgressHudsConstants.loaderDuration];
+            [weakSelf.dataProvider loadItems];
+        } errorHandler:^(NSError *error) {
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
+    }];
 }
 
 #pragma mark -

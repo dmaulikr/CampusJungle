@@ -41,6 +41,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .recivedOffers = @"/api/users/me/offers",
     .classLocations = @"/api/users/me/classes/%@/locations",
     .postClassLocation = @"/api/classes/%@/locations",
+    .deleteLocation = @"/api/locations/%@",
     .getStuff = @"/api/stuff/%@",
     .getUser = @"/api/users/%@",
     .postMessage = @"/api/messages",
