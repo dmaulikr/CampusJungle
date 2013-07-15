@@ -37,6 +37,7 @@
     
     [self setTitle:@"Questions"];
     self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHelper plusButtonWithTarget:self action:@selector(addQuestionButtonDidPressed:)];
+    [(UIScrollView *)self.view setScrollEnabled:NO];
 }
 
 - (void)setupLabels
