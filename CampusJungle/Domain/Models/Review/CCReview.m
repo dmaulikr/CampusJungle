@@ -36,7 +36,6 @@
                                                 keyPath:nil
                                             statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
-    
     [objectManager addResponseDescriptor:responseInboxPaginationMessages];
 }
 

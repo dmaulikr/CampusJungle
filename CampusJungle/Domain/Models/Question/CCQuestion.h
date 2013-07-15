@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCRestKitMappableModel.h"
 
-@interface CCQuestion : NSObject
+@interface CCQuestion : NSObject <CCRestKitMappableModel>
 
 @property (nonatomic, strong) NSString *questionId;
 @property (nonatomic, strong) NSString *forumId;
