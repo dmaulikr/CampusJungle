@@ -54,8 +54,10 @@ static const NSInteger kMinCellHeight = 88;
 {
     [self.nameLabel setText:self.cellObject.name];
     [self.descriptionLabel setText:self.cellObject.description];
-    [self.descriptionLabel sizeToFit];
     [self.questionCountLabel setText:[NSString stringWithFormat:@"%i %@", self.cellObject.questionsCount, [CCPluralizeHelper pluralizeEntityName:@"question" withNumberOfItems:self.cellObject.questionsCount]]];
+    
+    [self.descriptionLabel sizeToFit];
+    [CCViewPositioningHelper setOriginY:[CCViewPositioningHelper bottomOfView:self.descriptionLabel] + 5 toView:self.questionCountLabel];
 }
 
 - (void)setupDeleteButtonVisibility

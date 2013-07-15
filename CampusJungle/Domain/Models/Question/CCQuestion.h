@@ -7,15 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCRestKitMappableModel.h"
 
-@interface CCQuestion : NSObject
+@interface CCQuestion : NSObject <CCRestKitMappableModel>
 
 @property (nonatomic, strong) NSString *questionId;
 @property (nonatomic, strong) NSString *forumId;
 @property (nonatomic, strong) NSString *ownerId;
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSString *attachment;
+@property (nonatomic, strong) NSDate *createdDate;
 @property (nonatomic, assign) NSInteger answersCount;
+
+@property (nonatomic, strong) NSString *ownerFirstName;
+@property (nonatomic, strong) NSString *ownerLastName;
+@property (nonatomic, strong) NSString *ownerAvatar;
 
 + (NSDictionary *)responseMappingDictionary;
 + (NSDictionary *)requestMappingDictionary;

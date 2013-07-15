@@ -117,6 +117,11 @@
     [self.locationTransaction performWithObject:@{@"location" : location, @"array" : locationsArray, @"class" : self.currentClass, @"searchString" : searchString}];
 }
 
+- (void)showDetailsOfForum:(CCForum *)forum
+{
+    [self.forumDetailsTransaction performWithObject:forum];
+}
+
 - (void)addLocation
 {
     [self.addLocationTransaction performWithObject:self.currentClass];
