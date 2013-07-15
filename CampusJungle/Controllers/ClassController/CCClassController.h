@@ -19,6 +19,7 @@
 @property (nonatomic, strong) id <CCTransactionWithObject> otherUserProfileTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> locationTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> addLocationTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> addForumTransaction;
 @property (nonatomic, strong) id <CCTransaction> newsFeedTransaction;
 
 - (id)initWithClass:(CCClass *)classObject;

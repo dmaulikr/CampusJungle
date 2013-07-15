@@ -282,6 +282,10 @@
 		70B2D095179404F3001B0C2C /* CCForumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D094179404F3001B0C2C /* CCForumCell.m */; };
 		70B2D09717940505001B0C2C /* CCForumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70B2D09617940505001B0C2C /* CCForumCell.xib */; };
 		70B2D09B17941349001B0C2C /* CCPluralizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D09A17941349001B0C2C /* CCPluralizeHelper.m */; };
+		70B2D0A617941A0C001B0C2C /* CCAddForumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0A417941A0C001B0C2C /* CCAddForumViewController.m */; };
+		70B2D0A717941A0C001B0C2C /* CCAddForumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70B2D0A517941A0C001B0C2C /* CCAddForumViewController.xib */; };
+		70B2D0AB179427FA001B0C2C /* CCAddForumTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0AA179427FA001B0C2C /* CCAddForumTransaction.m */; };
+		70B2D0AF17942AE5001B0C2C /* CCStringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0AE17942AE5001B0C2C /* CCStringHelper.m */; };
 		70C0FCB6178484D0005EF95E /* UITextField+InsetFixing.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C0FCB5178484D0005EF95E /* UITextField+InsetFixing.m */; };
 		70F42A7B178D5A2900E763F3 /* CCForumsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F42A7A178D5A2900E763F3 /* CCForumsDataProvider.m */; };
 		70F42A7E178D5A3800E763F3 /* CCGroupsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F42A7D178D5A3800E763F3 /* CCGroupsDataProvider.m */; };
@@ -991,6 +995,13 @@
 		70B2D09617940505001B0C2C /* CCForumCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCForumCell.xib; sourceTree = "<group>"; };
 		70B2D09917941349001B0C2C /* CCPluralizeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPluralizeHelper.h; sourceTree = "<group>"; };
 		70B2D09A17941349001B0C2C /* CCPluralizeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPluralizeHelper.m; sourceTree = "<group>"; };
+		70B2D0A317941A0C001B0C2C /* CCAddForumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddForumViewController.h; sourceTree = "<group>"; };
+		70B2D0A417941A0C001B0C2C /* CCAddForumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddForumViewController.m; sourceTree = "<group>"; };
+		70B2D0A517941A0C001B0C2C /* CCAddForumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAddForumViewController.xib; sourceTree = "<group>"; };
+		70B2D0A9179427FA001B0C2C /* CCAddForumTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddForumTransaction.h; sourceTree = "<group>"; };
+		70B2D0AA179427FA001B0C2C /* CCAddForumTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddForumTransaction.m; sourceTree = "<group>"; };
+		70B2D0AD17942AE5001B0C2C /* CCStringHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStringHelper.h; sourceTree = "<group>"; };
+		70B2D0AE17942AE5001B0C2C /* CCStringHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStringHelper.m; sourceTree = "<group>"; };
 		70C0FCB4178484D0005EF95E /* UITextField+InsetFixing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+InsetFixing.h"; sourceTree = "<group>"; };
 		70C0FCB5178484D0005EF95E /* UITextField+InsetFixing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+InsetFixing.m"; sourceTree = "<group>"; };
 		70F42A79178D5A2900E763F3 /* CCForumsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCForumsDataProvider.h; sourceTree = "<group>"; };
@@ -1503,6 +1514,7 @@
 				700F9431178EBC4B00A6FBBA /* PlacemarkAddressHelper */,
 				70B2D09817941336001B0C2C /* PluralizeHelper */,
 				7093080E1785806000E71AB0 /* SideMenuDataSourceHelper */,
+				70B2D0AC17942ADB001B0C2C /* StringHelper */,
 				709308111785806000E71AB0 /* UIImageViewHelper */,
 				709308161785808400E71AB0 /* ViewPositioningHelper */,
 			);
@@ -1539,6 +1551,7 @@
 		70A29C34178778AB001BC8DD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				70B2D0A217941A01001B0C2C /* AddForumController */,
 				700F9427178EA06000A6FBBA /* AddLocationController */,
 				70A29C35178778AB001BC8DD /* BaseController */,
 				70A29C39178778AB001BC8DD /* CitySelectionController */,
@@ -2973,6 +2986,7 @@
 			isa = PBXGroup;
 			children = (
 				70A29EC517877E0C001BC8DD /* AddClassTransaction */,
+				70B2D0A8179427ED001B0C2C /* AddForumTransaction */,
 				700F942D178EA73000A6FBBA /* AddLocationTransaction */,
 				70A29EC817877E0C001BC8DD /* AllClassesTransaction */,
 				70A29ECB17877E0C001BC8DD /* ApplyFiltersTransaction */,
@@ -3652,6 +3666,34 @@
 				70B2D09A17941349001B0C2C /* CCPluralizeHelper.m */,
 			);
 			path = PluralizeHelper;
+			sourceTree = "<group>";
+		};
+		70B2D0A217941A01001B0C2C /* AddForumController */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D0A317941A0C001B0C2C /* CCAddForumViewController.h */,
+				70B2D0A417941A0C001B0C2C /* CCAddForumViewController.m */,
+				70B2D0A517941A0C001B0C2C /* CCAddForumViewController.xib */,
+			);
+			path = AddForumController;
+			sourceTree = "<group>";
+		};
+		70B2D0A8179427ED001B0C2C /* AddForumTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D0A9179427FA001B0C2C /* CCAddForumTransaction.h */,
+				70B2D0AA179427FA001B0C2C /* CCAddForumTransaction.m */,
+			);
+			path = AddForumTransaction;
+			sourceTree = "<group>";
+		};
+		70B2D0AC17942ADB001B0C2C /* StringHelper */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D0AD17942AE5001B0C2C /* CCStringHelper.h */,
+				70B2D0AE17942AE5001B0C2C /* CCStringHelper.m */,
+			);
+			path = StringHelper;
 			sourceTree = "<group>";
 		};
 		70C0FCB2178484C7005EF95E /* Categories */ = {
@@ -4532,6 +4574,7 @@
 				700F94891790097E00A6FBBA /* CCGroupCell.xib in Resources */,
 				700F948B179009F100A6FBBA /* CCGroupSelectionCell.xib in Resources */,
 				70B2D09717940505001B0C2C /* CCForumCell.xib in Resources */,
+				70B2D0A717941A0C001B0C2C /* CCAddForumViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4810,6 +4853,9 @@
 				70B2D08F17940277001B0C2C /* CCForumsApiProvider.m in Sources */,
 				70B2D095179404F3001B0C2C /* CCForumCell.m in Sources */,
 				70B2D09B17941349001B0C2C /* CCPluralizeHelper.m in Sources */,
+				70B2D0A617941A0C001B0C2C /* CCAddForumViewController.m in Sources */,
+				70B2D0AB179427FA001B0C2C /* CCAddForumTransaction.m in Sources */,
+				70B2D0AF17942AE5001B0C2C /* CCStringHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -117,9 +117,15 @@
     [self.locationTransaction performWithObject:@{@"location" : location, @"array" : locationsArray, @"class" : self.currentClass, @"searchString" : searchString}];
 }
 
-- (void)addLocationToClassWithId:(NSString *)classId
+- (void)addLocation
 {
     [self.addLocationTransaction performWithObject:self.currentClass];
 }
+
+- (void)addForum
+{
+    [self.addForumTransaction performWithObject:self.currentClass];
+}
+
 
 @end

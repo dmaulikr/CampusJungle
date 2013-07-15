@@ -12,6 +12,7 @@
 #import "CCOtherUserProfileTransaction.h"
 #import "CCShowLocationsTransaction.h"
 #import "CCAddLocationTransaction.h"
+#import "CCAddForumTransaction.h"
 
 @implementation CCClassAddedTransaction
 
@@ -37,10 +38,14 @@
     CCOtherUserProfileTransaction *otherUserProfileTransaction = [CCOtherUserProfileTransaction new];
     otherUserProfileTransaction.navigation = self.navigation;
     
+    CCAddForumTransaction *addForumTransaction = [CCAddForumTransaction new];
+    addForumTransaction.navigation = self.navigation;
+    
     classController.otherUserProfileTransaction = otherUserProfileTransaction;
     classController.newsFeedTransaction = self.inboxTransaction;
     classController.locationTransaction = locationsTransactions;
     classController.addLocationTransaction = addLocationTransaction;
+    classController.addForumTransaction = addForumTransaction;
     
     [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.joinClass duration:CCProgressHudsConstants.loaderDuration];
     UIViewController *viewController = [[self.navigation viewControllers] lastObject];

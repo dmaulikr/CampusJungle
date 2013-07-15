@@ -236,7 +236,7 @@ static const NSInteger kNavBarHeight = 44;
     __weak CCClassTableController *weakSelf = self;
     [CCAlertHelper showConfirmWithSuccess:^{
         [weakSelf.ioc_forumsApiProvider deleteForum:forum successHandler:^(RKMappingResult *object) {
-            [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteLocation duration:CCProgressHudsConstants.loaderDuration];
+            [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteForum duration:CCProgressHudsConstants.loaderDuration];
             [weakSelf.forumsProvider loadItems];
         } errorHandler:^(NSError *error) {
             [CCStandardErrorHandler showErrorWithError:error];
@@ -282,10 +282,10 @@ static const NSInteger kNavBarHeight = 44;
             // go add group
             break;
         case CCClassTabbarButtonsIdentifierLocations:
-            [self.delegate addLocationToClassWithId:self.classID];
+            [self.delegate addLocation];
             break;
         case CCClassTabbarButtonsIdentifierForums:
-            // go add forum
+            [self.delegate addForum];
             break;
     }
 }

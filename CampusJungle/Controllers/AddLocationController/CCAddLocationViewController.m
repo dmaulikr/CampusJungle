@@ -11,6 +11,7 @@
 #import "CCMapHelper.h"
 #import "CCPlacemarkAddressHelper.h"
 #import "CCKeyboardHelper.h"
+#import "CCStringHelper.h"
 
 #import "CCLocation.h"
 #import "CCShareItemButton.h"
@@ -248,6 +249,11 @@
         [self findAddress];
     }
     return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    textField.text = [CCStringHelper trimSpacesFromString:textField.text];
 }
 
 #pragma mark -
