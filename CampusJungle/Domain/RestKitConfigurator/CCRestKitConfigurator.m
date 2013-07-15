@@ -10,22 +10,8 @@
 #import <RestKit/RestKit.h>
 #import "CCStandardErrorHandler.h"
 
-#import "CCUser.h"
-#import "CCAuthorization.h"
-#import "CCPaginationResponse.h"
-#import "CCState.h"
-#import "CCCity.h"
-#import "CCCollege.h"
-#import "CCClass.h"
-#import "CCNote.h"
-#import "CCStuff.h"
-#import "CCPhoto.h"
-#import "CCOffer.h"
-#import "CCMessage.h"
-#import "CCLocation.h"
-#import "CCReview.h"
-#import "CCGroup.h"
-#import "CCForum.h"
+#include <objc/objc-runtime.h>
+#import "CCRestKitMappableModel.h"
 
 @implementation CCRestKitConfigurator
 
@@ -52,20 +38,19 @@
 
 + (void)configureAllModelsWithObjectManager:(RKObjectManager *)objectManager
 {
-    [CCUser configureMappingWithManager:objectManager];
-    [CCClass configureMappingWithManager:objectManager];
-    [CCCollege configureMappingWithManager:objectManager];
-    [CCCity configureMappingWithManager:objectManager];
-    [CCState configureMappingWithManager:objectManager];
-    [CCAuthorization configureMappingWithManager:objectManager];
-    [CCNote configureMappingWithManager:objectManager];
-    [CCStuff configureMappingWithManager:objectManager];
-    [CCOffer configureMappingWithManager:objectManager];
-    [CCLocation configureMappingWithManager:objectManager];
-    [CCMessage configureMappingWithManager:objectManager];
-    [CCReview configureMappingWithManager:objectManager];
-    [CCGroup configureMappingWithManager:objectManager];
-    [CCForum configureMappingWithManager:objectManager];
+    Class *classes = NULL;
+    int numClasses = objc_getClassList(NULL, 0);
+    if (numClasses > 0 ) {
+        classes = (__unsafe_unretained Class *)malloc(sizeof(Class) * numClasses);
+        numClasses = objc_getClassList(classes, numClasses);
+        for (int index = 0; index < numClasses; index++) {
+            Class class = classes[index];
+            if (class_conformsToProtocol(class, @protocol(CCRestKitMappableModel))) {
+                [class performSelector:@selector(configureMappingWithManager:) withObject:objectManager];
+            }
+        }
+        free(classes);
+    }
 }
 
 + (RKObjectMapping *)paginationMapping
