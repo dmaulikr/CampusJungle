@@ -14,8 +14,11 @@
 #import "CCStandardErrorHandler.h"
 #import "ActionSheetPicker.h"
 #import "CCActionSheetPickerDateDelegate.h"
+#import "CCTimeTableDataProvider.h"
+#import "CCTimeTableCell.h"
+#import "AbstractActionSheetPicker.h"
 
-@interface CCCreateClassController () <UITextFieldDelegate>
+@interface CCCreateClassController () <UITextFieldDelegate,  DatePickerDelegateProtocol>
 
 {
     NSString *timetableDay;
@@ -26,7 +29,9 @@
 @property (nonatomic, weak) IBOutlet UITextField *semesterTextField;
 @property (nonatomic, weak) IBOutlet UITextField *professorTextField;
 @property (nonatomic, weak) IBOutlet UITextField *classIdTextField;
-@property (nonatomic, weak) IBOutlet UITextField *timeTableTextField;
+@property (nonatomic, strong) CCTimeTableDataProvider *tableDataProvider;
+@property (nonatomic, weak) UIView *pickerContainer;
+@property (nonatomic, weak) id actionSheetPicker;
 
 @property (nonatomic, strong) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
 
@@ -57,6 +62,9 @@
     [self setupScrollView];
     [self setupTextFields];
     [self addObservers];
+    self.tableDataProvider = [CCTimeTableDataProvider new];
+    [self configTableWithProvider:self.tableDataProvider cellClass:[CCTimeTableCell class]];
+//    self.navigationItem.
 }
 
 - (void)dealloc
@@ -71,7 +79,7 @@
 
 - (void)setupTextFields
 {
-    self.textFieldsArray = @[self.subjectTextField, self.professorTextField, self.semesterTextField, self.timeTableTextField];
+    self.textFieldsArray = @[self.subjectTextField, self.professorTextField, self.semesterTextField];
 }
 
 - (void)addObservers
@@ -99,27 +107,20 @@
         return;
     }
     CCClass *class = [CCClass new];
+    class.className = @"Name";
     class.collegeID = self.collegeId;
     class.professor = self.professorTextField.text;
     class.subject = self.subjectTextField.text;
     class.semester = self.semesterTextField.text;
     class.callNumber = self.classIdTextField.text;
-    class.timetable = self.timetableArray;
-    
+    class.timetable = [self.tableDataProvider.arrayOfLessons copy] ;
+    [(NSMutableArray *)class.timetable removeObjectAtIndex:0];
     [self.ioc_apiClassesProvider createClass:class successHandler:^(id newClass) {
         [self joinClass:(CCClass*)newClass];
         
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
     }];
-}
-
-- (void)getTimeTable:(NSNotification *)notification
-{
-    self.timeTableTextField.text = [[notification userInfo] objectForKey:@"timetable"];
-    timetableDay = [[notification userInfo] objectForKey:@"day"];
-    timetableTime = [[notification userInfo] objectForKey:@"time"];
-    [self.timetableArray addObject:@{@"day":timetableDay, @"time":timetableTime}];
 }
 
 - (void)joinClass:(CCClass *)class
@@ -149,22 +150,65 @@
 #pragma mark -
 #pragma mark UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if (textField == self.timeTableTextField){
-        [self createClass:nil];
-    }
-    else {
+//    if (textField == self.timeTableTextField){
+//        [self createClass:nil];
+//    }
+  //  else {
         [[self.view viewWithTag:textField.tag + 1] becomeFirstResponder];
-    }
+    //}
     return YES;
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
-    if (textField == self.timeTableTextField) {
-        [self selectTimeTable:textField];
-        return NO;
-    }
+//    if (textField == self.timeTableTextField) {
+//        [self selectTimeTable:textField];
+//        return NO;
+//    }
     return YES;
+}
+
+- (void)didSelectedCellWithObject:(id)cellObject
+{
+    NSDictionary *date = cellObject;
+    
+    if (!date[@"time"]){
+        date = nil;
+    }
+    
+    CCActionSheetPickerDateDelegate *delegate = [[CCActionSheetPickerDateDelegate alloc] initWithDate:date];
+    delegate.delegate = self;
+    
+    ActionSheetCustomPicker *actionSheetPicker = [ActionSheetCustomPicker showPickerWithTitle:@"Timetable" delegate:delegate showCancelButton:YES origin:self.view];
+    self.pickerContainer = actionSheetPicker.pickerView.superview;
+    self.actionSheetPicker = actionSheetPicker;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOut:)];
+    tap.cancelsTouchesInView = NO;
+    [actionSheetPicker.pickerView.window addGestureRecognizer:tap];
+    
+}
+
+- (void)tapOut:(UIGestureRecognizer *)gestureRecognizer
+{
+    CGPoint p = [gestureRecognizer locationInView:self.pickerContainer];
+    if(p.y < 0){
+        [self.actionSheetPicker performSelector:@selector(dismissPicker)];
+    }
+}
+
+- (void)lessonDidCreate:(NSDictionary *)lesson
+{
+    [self.tableDataProvider insertNewLesson:lesson];
+}
+
+- (void)lesson:(NSDictionary *)lesson didUpdateWithObject:(NSDictionary *)newLesson
+{
+    [self.tableDataProvider replaseTime:lesson withTime:newLesson];
+}
+
+- (BOOL)isNeedToLeftSelected
+{
+    return NO;
 }
 
 @end

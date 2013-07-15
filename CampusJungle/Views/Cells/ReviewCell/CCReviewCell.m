@@ -46,9 +46,19 @@
 
 - (void)configStars
 {
-    self.rateView = [[DYRateView alloc] initWithFrame:self.rateContainer.bounds fullStar:[UIImage imageNamed:@"StarFullLarge"] emptyStar:[UIImage imageNamed:@"StarEmptyLarge"]];
+    self.rateView = [[DYRateView alloc] initWithFrame:self.rateContainer.bounds fullStar:[self scaledImageWithName:@"star_icon_active"] emptyStar:[self scaledImageWithName:@"star_icon"]];
     [self.rateContainer addSubview:self.rateView];
     self.rateView.alignment = RateViewAlignmentCenter;
+}
+
+- (UIImage *)scaledImageWithName:(NSString *)name
+{
+    UIImage *originalImage = [UIImage imageNamed:name];
+    UIImage *scaledImage =
+    [UIImage imageWithCGImage:[originalImage CGImage]
+                        scale:(originalImage.scale * 2.0)
+                  orientation:(originalImage.imageOrientation)];
+    return scaledImage;
 }
 
 + (CGFloat)heightForCellWithObject:(id)object

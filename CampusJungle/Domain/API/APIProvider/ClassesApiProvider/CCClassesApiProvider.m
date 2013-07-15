@@ -16,7 +16,7 @@
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [self setAuthorizationToken];
     
-    NSDictionary *parametersArray =  @{@"professor":class.professor,@"subject":class.subject,@"timetable":class.timetable,@"semester":@"summer", @"call_number":class.callNumber,};
+    NSDictionary *parametersArray =  @{@"professor":class.professor,@"subject":class.subject,@"timetable":class.timetable,@"semester":@"summer", @"call_number":class.callNumber,@"name" : class.className};
 
     [objectManager postObject:nil
                          path:[NSString stringWithFormat:CCAPIDefines.createClass,class.collegeID]

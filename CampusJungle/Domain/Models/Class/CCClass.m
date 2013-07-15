@@ -31,6 +31,7 @@
       @"id":@"classID",
       @"college_name" : @"collegeName",
       @"college_id" : @"collegeID",
+      @"class_name" : @"className"
       };
 }
 
@@ -44,6 +45,8 @@
       @"call_number":@"callNumber",
       @"id":@"classID",
       @"college_name" : @"collegeName",
+      @"class_name" : @"className"
+      
       };
 }
 

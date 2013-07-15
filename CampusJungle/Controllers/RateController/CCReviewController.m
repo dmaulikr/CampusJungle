@@ -38,11 +38,21 @@
 
 - (void)configStars
 {
-    self.rateView = [[DYRateView alloc] initWithFrame:CGRectMake(0, 0, 320, 100) fullStar:[UIImage imageNamed:@"StarFullLarge"] emptyStar:[UIImage imageNamed:@"StarEmptyLarge"]];
+    self.rateView = [[DYRateView alloc] initWithFrame:CGRectMake(0, 0, 320, 100) fullStar:[self scaledImageWithName:@"star_icon_active"] emptyStar:[self scaledImageWithName:@"star_icon"]];
     self.rateView.rate = 5;
     [self.rateViewContainer addSubview:self.rateView];
     self.rateView.editable = YES;
     self.rateView.alignment = RateViewAlignmentCenter;
+}
+
+- (UIImage *)scaledImageWithName:(NSString *)name
+{
+    UIImage *originalImage = [UIImage imageNamed:name];
+    UIImage *scaledImage =
+    [UIImage imageWithCGImage:[originalImage CGImage]
+                        scale:(originalImage.scale * 1.5)
+                  orientation:(originalImage.imageOrientation)];
+    return scaledImage;
 }
 
 - (IBAction)rate
@@ -66,7 +76,6 @@
     if( [text rangeOfCharacterFromSet:[NSCharacterSet newlineCharacterSet]].location == NSNotFound ) {
         return YES;
     }
-    
     [self rate];
     return NO;
 }

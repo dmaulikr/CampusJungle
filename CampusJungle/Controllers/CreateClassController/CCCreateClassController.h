@@ -8,8 +8,9 @@
 
 #import "CCViewController.h"
 #import "CCTransactionWithObject.h"
+#import "CCTableBasedController.h"
 
-@interface CCCreateClassController : CCViewController
+@interface CCCreateClassController : CCTableBasedController
 
 @property (nonatomic, strong) id <CCTransactionWithObject> classAddedTransaction;
 

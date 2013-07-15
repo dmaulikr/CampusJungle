@@ -9,6 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "ActionSheetPicker.h"
 
+@protocol DatePickerDelegateProtocol <NSObject>
+
+- (void)lesson:(NSDictionary *)lesson didUpdateWithObject:(NSDictionary *)newLesson;
+- (void)lessonDidCreate:(NSDictionary *)object;
+
+@end
+
 @interface CCActionSheetPickerDateDelegate : NSObject <ActionSheetCustomPickerDelegate>
+
+- (id)initWithDate:(NSDictionary *)date;
+
+@property (nonatomic, weak) id <DatePickerDelegateProtocol> delegate;
+@property (nonatomic, strong) NSDictionary *beginTime;
 
 @end
