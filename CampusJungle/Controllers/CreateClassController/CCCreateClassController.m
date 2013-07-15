@@ -19,7 +19,6 @@
 #import "AbstractActionSheetPicker.h"
 
 @interface CCCreateClassController () <UITextFieldDelegate,  DatePickerDelegateProtocol>
-
 {
     NSString *timetableDay;
     NSString *timetableTime;
@@ -29,6 +28,7 @@
 @property (nonatomic, weak) IBOutlet UITextField *semesterTextField;
 @property (nonatomic, weak) IBOutlet UITextField *professorTextField;
 @property (nonatomic, weak) IBOutlet UITextField *classIdTextField;
+@property (nonatomic, weak) IBOutlet UITextField *classNameTextField;
 @property (nonatomic, strong) CCTimeTableDataProvider *tableDataProvider;
 @property (nonatomic, weak) UIView *pickerContainer;
 @property (nonatomic, weak) id actionSheetPicker;
@@ -58,13 +58,13 @@
 {
     [super viewDidLoad];
     
-    [self setTitle:@"Create New Class"];
+    [self setTitle:@"New Class"];
     [self setupScrollView];
     [self setupTextFields];
     [self addObservers];
     self.tableDataProvider = [CCTimeTableDataProvider new];
     [self configTableWithProvider:self.tableDataProvider cellClass:[CCTimeTableCell class]];
-//    self.navigationItem.
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleBordered target:self action:@selector(createClass:)];
 }
 
 - (void)dealloc
@@ -150,21 +150,12 @@
 #pragma mark -
 #pragma mark UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-//    if (textField == self.timeTableTextField){
-//        [self createClass:nil];
-//    }
-  //  else {
+    if (textField == self.semesterTextField){
+        [self.view endEditing:YES];
+    }
+    else {
         [[self.view viewWithTag:textField.tag + 1] becomeFirstResponder];
-    //}
-    return YES;
-}
-
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
-{
-//    if (textField == self.timeTableTextField) {
-//        [self selectTimeTable:textField];
-//        return NO;
-//    }
+    }
     return YES;
 }
 
