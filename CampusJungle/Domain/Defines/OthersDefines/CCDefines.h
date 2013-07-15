@@ -50,6 +50,10 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *loadForums;
     __unsafe_unretained NSString *postForum;
     __unsafe_unretained NSString *deleteForum;
+    __unsafe_unretained NSString *loadQuestions;
+    __unsafe_unretained NSString *postQuestion;
+    __unsafe_unretained NSString *deleteQuestion;
+
 } CCAPIDefines;
 
 

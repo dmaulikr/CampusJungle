@@ -1,5 +1,5 @@
 //
-//  CCForum.h
+//  CCQuestion.h
 //  CampusJungle
 //
 //  Created by Yury Grinenko on 15.07.13.
@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CCForum : NSObject
+@interface CCQuestion : NSObject
 
+@property (nonatomic, strong) NSString *questionId;
 @property (nonatomic, strong) NSString *forumId;
 @property (nonatomic, strong) NSString *ownerId;
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *description;
-@property (nonatomic, strong) NSString *classId;
-@property (nonatomic, assign) NSInteger questionsCount;
+@property (nonatomic, strong) NSString *text;
+@property (nonatomic, strong) NSString *attachment;
+@property (nonatomic, assign) NSInteger answersCount;
 
 + (NSDictionary *)responseMappingDictionary;
 + (NSDictionary *)requestMappingDictionary;

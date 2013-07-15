@@ -286,6 +286,8 @@
 		70B2D0A717941A0C001B0C2C /* CCAddForumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70B2D0A517941A0C001B0C2C /* CCAddForumViewController.xib */; };
 		70B2D0AB179427FA001B0C2C /* CCAddForumTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0AA179427FA001B0C2C /* CCAddForumTransaction.m */; };
 		70B2D0AF17942AE5001B0C2C /* CCStringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0AE17942AE5001B0C2C /* CCStringHelper.m */; };
+		70B2D0B317942DCC001B0C2C /* CCQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0B217942DCC001B0C2C /* CCQuestion.m */; };
+		70B2D0B717942F0E001B0C2C /* CCQuestionsApiProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0B617942F0E001B0C2C /* CCQuestionsApiProvider.m */; };
 		70C0FCB6178484D0005EF95E /* UITextField+InsetFixing.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C0FCB5178484D0005EF95E /* UITextField+InsetFixing.m */; };
 		70F42A7B178D5A2900E763F3 /* CCForumsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F42A7A178D5A2900E763F3 /* CCForumsDataProvider.m */; };
 		70F42A7E178D5A3800E763F3 /* CCGroupsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F42A7D178D5A3800E763F3 /* CCGroupsDataProvider.m */; };
@@ -1002,6 +1004,11 @@
 		70B2D0AA179427FA001B0C2C /* CCAddForumTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddForumTransaction.m; sourceTree = "<group>"; };
 		70B2D0AD17942AE5001B0C2C /* CCStringHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStringHelper.h; sourceTree = "<group>"; };
 		70B2D0AE17942AE5001B0C2C /* CCStringHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStringHelper.m; sourceTree = "<group>"; };
+		70B2D0B117942DCC001B0C2C /* CCQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCQuestion.h; sourceTree = "<group>"; };
+		70B2D0B217942DCC001B0C2C /* CCQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCQuestion.m; sourceTree = "<group>"; };
+		70B2D0B517942F0E001B0C2C /* CCQuestionsApiProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCQuestionsApiProvider.h; sourceTree = "<group>"; };
+		70B2D0B617942F0E001B0C2C /* CCQuestionsApiProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCQuestionsApiProvider.m; sourceTree = "<group>"; };
+		70B2D0B817942F2E001B0C2C /* CCQuestionsApiProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCQuestionsApiProviderProtocol.h; sourceTree = "<group>"; };
 		70C0FCB4178484D0005EF95E /* UITextField+InsetFixing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+InsetFixing.h"; sourceTree = "<group>"; };
 		70C0FCB5178484D0005EF95E /* UITextField+InsetFixing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+InsetFixing.m"; sourceTree = "<group>"; };
 		70F42A79178D5A2900E763F3 /* CCForumsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCForumsDataProvider.h; sourceTree = "<group>"; };
@@ -2443,10 +2450,11 @@
 				D39496E5178B251A00C39A7E /* Offer */,
 				70A29DF617877CB5001BC8DD /* PaginationResponse */,
 				70A29DF917877CB5001BC8DD /* Photos */,
+				70B2D0B017942DB6001B0C2C /* Question */,
+				D394973C178EC58C00C39A7E /* Review */,
 				70A29DFC17877CB5001BC8DD /* States */,
 				70A29DFF17877CB5001BC8DD /* Stuff */,
 				70A29E0217877CB5001BC8DD /* StuffUploadInfo */,
-				D394973C178EC58C00C39A7E /* Review */,
 				70A29E0517877CB5001BC8DD /* UploadIndicatorDelegate */,
 				70A29E0717877CB5001BC8DD /* User */,
 			);
@@ -3513,6 +3521,7 @@
 				70B2D06C17940245001B0C2C /* MarketAPIProvider */,
 				70B2D07017940245001B0C2C /* MessagesAPIProvider */,
 				70B2D07417940245001B0C2C /* NotesAPIProvider */,
+				70B2D0B417942F01001B0C2C /* QuestionsAPIProvider */,
 				70B2D07817940245001B0C2C /* SignUpAPIProvider */,
 				70B2D07C17940245001B0C2C /* StuffAPIProvider */,
 			);
@@ -3694,6 +3703,25 @@
 				70B2D0AE17942AE5001B0C2C /* CCStringHelper.m */,
 			);
 			path = StringHelper;
+			sourceTree = "<group>";
+		};
+		70B2D0B017942DB6001B0C2C /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D0B117942DCC001B0C2C /* CCQuestion.h */,
+				70B2D0B217942DCC001B0C2C /* CCQuestion.m */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		70B2D0B417942F01001B0C2C /* QuestionsAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D0B517942F0E001B0C2C /* CCQuestionsApiProvider.h */,
+				70B2D0B617942F0E001B0C2C /* CCQuestionsApiProvider.m */,
+				70B2D0B817942F2E001B0C2C /* CCQuestionsApiProviderProtocol.h */,
+			);
+			path = QuestionsAPIProvider;
 			sourceTree = "<group>";
 		};
 		70C0FCB2178484C7005EF95E /* Categories */ = {
@@ -4856,6 +4884,8 @@
 				70B2D0A617941A0C001B0C2C /* CCAddForumViewController.m in Sources */,
 				70B2D0AB179427FA001B0C2C /* CCAddForumTransaction.m in Sources */,
 				70B2D0AF17942AE5001B0C2C /* CCStringHelper.m in Sources */,
+				70B2D0B317942DCC001B0C2C /* CCQuestion.m in Sources */,
+				70B2D0B717942F0E001B0C2C /* CCQuestionsApiProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

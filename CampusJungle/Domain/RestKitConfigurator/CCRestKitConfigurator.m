@@ -216,7 +216,6 @@
     [objectManager addResponseDescriptor:responseNewClassDescriptor];
     [objectManager addResponseDescriptor:responseAllClassesDescriptor];
     [objectManager addRequestDescriptor:classRequestDescriptor];
-    
 }
 
 + (void)configureCollegeResponse:(RKObjectManager *)objectManager
@@ -227,8 +226,6 @@
     RKRelationshipMapping* relationShipResponseCollegesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
                                                                                                            toKeyPath:CCResponseKeys.items
                                                                                                            withMapping:collegesMapping];
-    
-    
     
     RKRelationshipMapping* relationShipResponseCollegeMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"college"
                                                                                                              toKeyPath:CCResponseKeys.item
