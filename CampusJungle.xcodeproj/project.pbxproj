@@ -168,10 +168,6 @@
 		70A29E9F17877D2B001BC8DD /* GIAlertButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29E4617877D2B001BC8DD /* GIAlertButton.m */; };
 		70A29EA017877D2B001BC8DD /* GIInputAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29E4917877D2B001BC8DD /* GIInputAlert.m */; };
 		70A29EA117877D2B001BC8DD /* GIInputAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29E4A17877D2B001BC8DD /* GIInputAlert.xib */; };
-		70A29EBF17877D2C001BC8DD /* CCFilterSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29E9017877D2B001BC8DD /* CCFilterSectionHeader.m */; };
-		70A29EC017877D2C001BC8DD /* CCFilterSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29E9117877D2B001BC8DD /* CCFilterSectionHeader.xib */; };
-		70A29EC117877D2C001BC8DD /* CCSideMenuSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29E9417877D2B001BC8DD /* CCSideMenuSectionHeader.m */; };
-		70A29EC217877D2C001BC8DD /* CCSideMenuSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29E9517877D2B001BC8DD /* CCSideMenuSectionHeader.xib */; };
 		70A29EC317877D2C001BC8DD /* CCTwitterPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29E9917877D2B001BC8DD /* CCTwitterPicker.m */; };
 		70B2D04A1793F887001B0C2C /* CCAlertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0491793F887001B0C2C /* CCAlertHelper.m */; };
 		70B2D04E1794016F001B0C2C /* CCForum.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D04D1794016F001B0C2C /* CCForum.m */; };
@@ -343,6 +339,12 @@
 		D359E60A1794383A00869D6C /* star_icon_active.png in Resources */ = {isa = PBXBuildFile; fileRef = D359E6061794383A00869D6C /* star_icon_active.png */; };
 		D359E60B1794383A00869D6C /* star_icon_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D359E6071794383A00869D6C /* star_icon_active@2x.png */; };
 		D359E60F17945F2600869D6C /* CCClassCreationDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D359E60E17945F2600869D6C /* CCClassCreationDataSource.m */; };
+		D359E6141794624B00869D6C /* CCTimeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D359E6121794624B00869D6C /* CCTimeTableCell.m */; };
+		D359E6151794624B00869D6C /* CCTimeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D359E6131794624B00869D6C /* CCTimeTableCell.xib */; };
+		D359E61A179462A500869D6C /* CCFilterSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D359E618179462A500869D6C /* CCFilterSectionHeader.m */; };
+		D359E61B179462A500869D6C /* CCFilterSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D359E619179462A500869D6C /* CCFilterSectionHeader.xib */; };
+		D359E620179462C100869D6C /* CCSideMenuSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D359E61E179462C100869D6C /* CCSideMenuSectionHeader.m */; };
+		D359E621179462C100869D6C /* CCSideMenuSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D359E61F179462C100869D6C /* CCSideMenuSectionHeader.xib */; };
 		D3614636175E1D3000907414 /* DropboxSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = D3614635175E1D3000907414 /* DropboxSDK */; };
 		D36146C6176314A100907414 /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146B2176314A100907414 /* folder.png */; };
 		D36146C7176314A100907414 /* folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146B3176314A100907414 /* folder@2x.png */; };
@@ -389,8 +391,6 @@
 		D39F1C111753822F008E08A2 /* CCStandardErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D39F1C101753822F008E08A2 /* CCStandardErrorHandler.m */; };
 		D39F1C171753C0E8008E08A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39F1C161753C0E8008E08A2 /* Accounts.framework */; };
 		D3A2A2F41793F2F700516818 /* CCTimeTableDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A2A2F31793F2F700516818 /* CCTimeTableDataProvider.m */; };
-		D3A2A2F81793F56100516818 /* CCTimeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A2A2F71793F56100516818 /* CCTimeTableCell.m */; };
-		D3A2A2FA1793F5C300516818 /* CCTimeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3A2A2F91793F5C300516818 /* CCTimeTableCell.xib */; };
 		D3A2C3251754C95800989831 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A2C3241754C95700989831 /* MessageUI.framework */; };
 		D3A3190A177C4DAC0004C4E8 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A318AA177C4DAB0004C4E8 /* background.png */; };
 		D3A3190B177C4DAC0004C4E8 /* background-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A318AB177C4DAB0004C4E8 /* background-568h@2x.png */; };
@@ -795,12 +795,6 @@
 		70A29E4817877D2B001BC8DD /* GIInputAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIInputAlert.h; sourceTree = "<group>"; };
 		70A29E4917877D2B001BC8DD /* GIInputAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIInputAlert.m; sourceTree = "<group>"; };
 		70A29E4A17877D2B001BC8DD /* GIInputAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GIInputAlert.xib; sourceTree = "<group>"; };
-		70A29E8F17877D2B001BC8DD /* CCFilterSectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFilterSectionHeader.h; sourceTree = "<group>"; };
-		70A29E9017877D2B001BC8DD /* CCFilterSectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFilterSectionHeader.m; sourceTree = "<group>"; };
-		70A29E9117877D2B001BC8DD /* CCFilterSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCFilterSectionHeader.xib; sourceTree = "<group>"; };
-		70A29E9317877D2B001BC8DD /* CCSideMenuSectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSideMenuSectionHeader.h; sourceTree = "<group>"; };
-		70A29E9417877D2B001BC8DD /* CCSideMenuSectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSideMenuSectionHeader.m; sourceTree = "<group>"; };
-		70A29E9517877D2B001BC8DD /* CCSideMenuSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCSideMenuSectionHeader.xib; sourceTree = "<group>"; };
 		70A29E9817877D2B001BC8DD /* CCTwitterPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTwitterPicker.h; sourceTree = "<group>"; };
 		70A29E9917877D2B001BC8DD /* CCTwitterPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTwitterPicker.m; sourceTree = "<group>"; };
 		70B2D0481793F887001B0C2C /* CCAlertHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAlertHelper.h; sourceTree = "<group>"; };
@@ -1118,6 +1112,15 @@
 		D359E6071794383A00869D6C /* star_icon_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_icon_active@2x.png"; sourceTree = "<group>"; };
 		D359E60D17945F2600869D6C /* CCClassCreationDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassCreationDataSource.h; sourceTree = "<group>"; };
 		D359E60E17945F2600869D6C /* CCClassCreationDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassCreationDataSource.m; sourceTree = "<group>"; };
+		D359E6111794624B00869D6C /* CCTimeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTimeTableCell.h; sourceTree = "<group>"; };
+		D359E6121794624B00869D6C /* CCTimeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTimeTableCell.m; sourceTree = "<group>"; };
+		D359E6131794624B00869D6C /* CCTimeTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCTimeTableCell.xib; sourceTree = "<group>"; };
+		D359E617179462A500869D6C /* CCFilterSectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFilterSectionHeader.h; sourceTree = "<group>"; };
+		D359E618179462A500869D6C /* CCFilterSectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFilterSectionHeader.m; sourceTree = "<group>"; };
+		D359E619179462A500869D6C /* CCFilterSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCFilterSectionHeader.xib; sourceTree = "<group>"; };
+		D359E61D179462C100869D6C /* CCSideMenuSectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSideMenuSectionHeader.h; sourceTree = "<group>"; };
+		D359E61E179462C100869D6C /* CCSideMenuSectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSideMenuSectionHeader.m; sourceTree = "<group>"; };
+		D359E61F179462C100869D6C /* CCSideMenuSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCSideMenuSectionHeader.xib; sourceTree = "<group>"; };
 		D3614635175E1D3000907414 /* DropboxSDK */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = DropboxSDK; path = "Pods/Dropbox-iOS-SDK/dropbox-ios-sdk-1.3.4/DropboxSDK.framework/DropboxSDK"; sourceTree = "<group>"; };
 		D36146B2176314A100907414 /* folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder.png; sourceTree = "<group>"; };
 		D36146B3176314A100907414 /* folder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder@2x.png"; sourceTree = "<group>"; };
@@ -1178,9 +1181,6 @@
 		D39F1C161753C0E8008E08A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		D3A2A2F21793F2F700516818 /* CCTimeTableDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTimeTableDataProvider.h; sourceTree = "<group>"; };
 		D3A2A2F31793F2F700516818 /* CCTimeTableDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTimeTableDataProvider.m; sourceTree = "<group>"; };
-		D3A2A2F61793F56100516818 /* CCTimeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTimeTableCell.h; sourceTree = "<group>"; };
-		D3A2A2F71793F56100516818 /* CCTimeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTimeTableCell.m; sourceTree = "<group>"; };
-		D3A2A2F91793F5C300516818 /* CCTimeTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCTimeTableCell.xib; sourceTree = "<group>"; };
 		D3A2C3241754C95700989831 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D3A318AA177C4DAB0004C4E8 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		D3A318AB177C4DAB0004C4E8 /* background-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-568h@2x.png"; sourceTree = "<group>"; };
@@ -2610,8 +2610,9 @@
 				70A29E3417877D2B001BC8DD /* ActionSheets */,
 				70A29E3F17877D2B001BC8DD /* AlertViews */,
 				700F9445178EECA700A6FBBA /* Buttons */,
+				D359E61C179462C100869D6C /* SideMenuSectionHeader */,
+				D359E616179462A500869D6C /* FilterSectionHeader */,
 				70B2D1D317944E39001B0C2C /* Cells */,
-				70A29E8D17877D2B001BC8DD /* Headers */,
 				70A29E9617877D2B001BC8DD /* Pickers */,
 			);
 			path = Views;
@@ -2693,61 +2694,6 @@
 				70A29E4A17877D2B001BC8DD /* GIInputAlert.xib */,
 			);
 			path = AlertView;
-			sourceTree = "<group>";
-		};
-		70A29E4B17877D2B001BC8DD /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				70A29E4C17877D2B001BC8DD /* CCBaseCell */,
-				70A29E4F17877D2B001BC8DD /* CCClassCell */,
-				70A29E5017877D2B001BC8DD /* CCTableCellProtocol */,
-				70A29E5217877D2B001BC8DD /* CityCell */,
-				70A29E5517877D2B001BC8DD /* CollegeSelectionCell */,
-				70A29E5917877D2B001BC8DD /* DropboxCell */,
-				70A29E5D17877D2B001BC8DD /* EducationCell */,
-				70B2D092179404E5001B0C2C /* ForumCell */,
-				700F9480179007E500A6FBBA /* GroupCell */,
-				700F94841790092700A6FBBA /* GroupSelectionCell */,
-				70A29E6117877D2B001BC8DD /* ImageCell */,
-				703DA4E8178C2BC600464DD3 /* LocationCell */,
-				70A29E6517877D2B001BC8DD /* MarketFilterClassesCell */,
-				D3DF8C27178F06FD00B072B7 /* MessageCell */,
-				70A29E6917877D2B001BC8DD /* NoteCell */,
-				70A29E6D17877D2B001BC8DD /* NotesCollectionCell */,
-				D3DF8C411790307000B072B7 /* OfferCell */,
-				70A29E7117877D2B001BC8DD /* OrdinaryCell */,
-				70A29E7517877D2B001BC8DD /* PhotoCell */,
-				D3EC93B1178EF4870011CE72 /* ReviewCell */,
-				70A29E7917877D2B001BC8DD /* SideMenuCells */,
-				70A29E8217877D2B001BC8DD /* StateCell */,
-				70A29E8517877D2B001BC8DD /* StuffCell */,
-				D3A2A2F51793F54B00516818 /* TimeTableCell */,
-				70A29E8917877D2B001BC8DD /* UserCell */,
-				700F946E178F0A3500A6FBBA /* UserSelectionCell */,
-				70A29E8E17877D2B001BC8DD /* FilterSectionHeader */,
-				70A29E9217877D2B001BC8DD /* SideMenuSectionHeader */,
-			);
-			path = Headers;
-			sourceTree = "<group>";
-		};
-		70A29E8E17877D2B001BC8DD /* FilterSectionHeader */ = {
-			isa = PBXGroup;
-			children = (
-				70A29E8F17877D2B001BC8DD /* CCFilterSectionHeader.h */,
-				70A29E9017877D2B001BC8DD /* CCFilterSectionHeader.m */,
-				70A29E9117877D2B001BC8DD /* CCFilterSectionHeader.xib */,
-			);
-			path = FilterSectionHeader;
-			sourceTree = "<group>";
-		};
-		70A29E9217877D2B001BC8DD /* SideMenuSectionHeader */ = {
-			isa = PBXGroup;
-			children = (
-				70A29E9317877D2B001BC8DD /* CCSideMenuSectionHeader.h */,
-				70A29E9417877D2B001BC8DD /* CCSideMenuSectionHeader.m */,
-				70A29E9517877D2B001BC8DD /* CCSideMenuSectionHeader.xib */,
-			);
-			path = SideMenuSectionHeader;
 			sourceTree = "<group>";
 		};
 		70A29E9617877D2B001BC8DD /* Pickers */ = {
@@ -3685,6 +3631,7 @@
 				70B2D22417944E39001B0C2C /* StateCell */,
 				70B2D22717944E39001B0C2C /* StuffCell */,
 				70B2D22B17944E39001B0C2C /* TableCellProtocol */,
+				D359E6101794624A00869D6C /* TimeTableCell */,
 				70B2D22D17944E39001B0C2C /* UserCell */,
 				70B2D23117944E39001B0C2C /* UserSelectionCell */,
 			);
@@ -4179,6 +4126,38 @@
 			path = ClassCreationDataSourse;
 			sourceTree = "<group>";
 		};
+		D359E6101794624A00869D6C /* TimeTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				D359E6111794624B00869D6C /* CCTimeTableCell.h */,
+				D359E6121794624B00869D6C /* CCTimeTableCell.m */,
+				D359E6131794624B00869D6C /* CCTimeTableCell.xib */,
+			);
+			path = TimeTableCell;
+			sourceTree = "<group>";
+		};
+		D359E616179462A500869D6C /* FilterSectionHeader */ = {
+			isa = PBXGroup;
+			children = (
+				D359E617179462A500869D6C /* CCFilterSectionHeader.h */,
+				D359E618179462A500869D6C /* CCFilterSectionHeader.m */,
+				D359E619179462A500869D6C /* CCFilterSectionHeader.xib */,
+			);
+			name = FilterSectionHeader;
+			path = Headers/FilterSectionHeader;
+			sourceTree = "<group>";
+		};
+		D359E61C179462C100869D6C /* SideMenuSectionHeader */ = {
+			isa = PBXGroup;
+			children = (
+				D359E61D179462C100869D6C /* CCSideMenuSectionHeader.h */,
+				D359E61E179462C100869D6C /* CCSideMenuSectionHeader.m */,
+				D359E61F179462C100869D6C /* CCSideMenuSectionHeader.xib */,
+			);
+			name = SideMenuSectionHeader;
+			path = Headers/SideMenuSectionHeader;
+			sourceTree = "<group>";
+		};
 		D36146B1176314A100907414 /* DropboxIcons */ = {
 			isa = PBXGroup;
 			children = (
@@ -4332,16 +4311,6 @@
 				D3A2A2F31793F2F700516818 /* CCTimeTableDataProvider.m */,
 			);
 			path = TimeTableDataProvider;
-			sourceTree = "<group>";
-		};
-		D3A2A2F51793F54B00516818 /* TimeTableCell */ = {
-			isa = PBXGroup;
-			children = (
-				D3A2A2F91793F5C300516818 /* CCTimeTableCell.xib */,
-				D3A2A2F61793F56100516818 /* CCTimeTableCell.h */,
-				D3A2A2F71793F56100516818 /* CCTimeTableCell.m */,
-			);
-			path = TimeTableCell;
 			sourceTree = "<group>";
 		};
 		D3A318A8177C4DAB0004C4E8 /* Images */ = {
@@ -4740,8 +4709,6 @@
 				70A29D2C178778AB001BC8DD /* CCWelcomeController.xib in Resources */,
 				70A29E9E17877D2B001BC8DD /* GIAlert.xib in Resources */,
 				70A29EA117877D2B001BC8DD /* GIInputAlert.xib in Resources */,
-				70A29EC017877D2C001BC8DD /* CCFilterSectionHeader.xib in Resources */,
-				70A29EC217877D2C001BC8DD /* CCSideMenuSectionHeader.xib in Resources */,
 				D39496D9178AEEE900C39A7E /* searchFieldBackground.png in Resources */,
 				D39496DA178AEEE900C39A7E /* searchFieldBackground@2x.png in Resources */,
 				D39496E0178B193A00C39A7E /* CCOfferControllerViewController.xib in Resources */,
@@ -4756,17 +4723,10 @@
 				700F945C178EFA6000A6FBBA /* CCSelectClassmatesViewController.xib in Resources */,
 				700F9461178EFA6F00A6FBBA /* CCSelectGroupsViewController.xib in Resources */,
 				D3DF8C3217900AAA00B072B7 /* CCMessageDetailsController.xib in Resources */,
-
-				D3DF8C46179030A100B072B7 /* CCOfferCell.xib in Resources */,
-				700F94891790097E00A6FBBA /* CCGroupCell.xib in Resources */,
-				700F948B179009F100A6FBBA /* CCGroupSelectionCell.xib in Resources */,
-				D3A2A2FA1793F5C300516818 /* CCTimeTableCell.xib in Resources */,
 				D359E6081794383A00869D6C /* star_icon.png in Resources */,
 				D359E6091794383A00869D6C /* star_icon@2x.png in Resources */,
 				D359E60A1794383A00869D6C /* star_icon_active.png in Resources */,
 				D359E60B1794383A00869D6C /* star_icon_active@2x.png in Resources */,
-				70B2D09717940505001B0C2C /* CCForumCell.xib in Resources */,
-
 				70B2D0A717941A0C001B0C2C /* CCAddForumViewController.xib in Resources */,
 				70B2D0C517944325001B0C2C /* CCReviewController.xib in Resources */,
 				70B2D0CB1794434E001B0C2C /* CCQuestionsViewController.xib in Resources */,
@@ -4793,6 +4753,9 @@
 				70B2D25F17944E39001B0C2C /* CCUserCell.xib in Resources */,
 				70B2D26117944E39001B0C2C /* CCUserSelectionCell.xib in Resources */,
 				70B2D26717944E70001B0C2C /* CCQuestionCell.xib in Resources */,
+				D359E6151794624B00869D6C /* CCTimeTableCell.xib in Resources */,
+				D359E61B179462A500869D6C /* CCFilterSectionHeader.xib in Resources */,
+				D359E621179462C100869D6C /* CCSideMenuSectionHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4939,8 +4902,6 @@
 				70A29E9D17877D2B001BC8DD /* GIAlert.m in Sources */,
 				70A29E9F17877D2B001BC8DD /* GIAlertButton.m in Sources */,
 				70A29EA017877D2B001BC8DD /* GIInputAlert.m in Sources */,
-				70A29EBF17877D2C001BC8DD /* CCFilterSectionHeader.m in Sources */,
-				70A29EC117877D2C001BC8DD /* CCSideMenuSectionHeader.m in Sources */,
 				70A29EC317877D2C001BC8DD /* CCTwitterPicker.m in Sources */,
 				D39496DF178B193A00C39A7E /* CCOfferControllerViewController.m in Sources */,
 				D39496E8178B252700C39A7E /* CCOffer.m in Sources */,
@@ -4971,12 +4932,7 @@
 				700F9469178F040A00A6FBBA /* CCGroup.m in Sources */,
 				700F947A178F0FDA00A6FBBA /* CCSelectableCellsDataSource.m in Sources */,
 				D3DF8C3117900AAA00B072B7 /* CCMessageDetailsController.m in Sources */,
-				D3DF8C40179029F000B072B7 /* CCMessageDetailsTransaction.m in Sources */,
-				D3DF8C441790308000B072B7 /* CCOfferCell.m in Sources */,
-				700F9483179007F300A6FBBA /* CCGroupCell.m in Sources */,
-				700F94871790094500A6FBBA /* CCGroupSelectionCell.m in Sources */,
 				D3A2A2F41793F2F700516818 /* CCTimeTableDataProvider.m in Sources */,
-				D3A2A2F81793F56100516818 /* CCTimeTableCell.m in Sources */,
 				70B2D04A1793F887001B0C2C /* CCAlertHelper.m in Sources */,
 				70B2D04E1794016F001B0C2C /* CCForum.m in Sources */,
 				70B2D08017940245001B0C2C /* CCAPIProvider.m in Sources */,
@@ -5090,6 +5046,9 @@
 				70B2D26517944E60001B0C2C /* CCQuestionCell.m in Sources */,
 				70B2D26B17944F80001B0C2C /* CCQuestionsDataProvider.m in Sources */,
 				70B2D26F179456D9001B0C2C /* CCUserNameHelper.m in Sources */,
+				D359E6141794624B00869D6C /* CCTimeTableCell.m in Sources */,
+				D359E61A179462A500869D6C /* CCFilterSectionHeader.m in Sources */,
+				D359E620179462C100869D6C /* CCSideMenuSectionHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
