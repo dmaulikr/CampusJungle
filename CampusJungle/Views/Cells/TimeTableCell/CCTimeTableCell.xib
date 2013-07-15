@@ -45,7 +45,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrameSize">{320, 44}</string>
 								<reference key="NSSuperview" ref="1055201553"/>
-								<reference key="NSNextKeyView" ref="592597846"/>
+								<reference key="NSNextKeyView" ref="199500351"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -78,7 +78,7 @@
 								</object>
 								<double key="preferredMaxLayoutWidth">320</double>
 							</object>
-							<object class="IBUIButton" id="592597846">
+							<object class="IBUIButton" id="199500351">
 								<reference key="NSNextResponder" ref="1055201553"/>
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{277, 0}, {43, 44}}</string>
@@ -153,9 +153,18 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">removeButton</string>
 						<reference key="source" ref="639130181"/>
-						<reference key="destination" ref="592597846"/>
+						<reference key="destination" ref="199500351"/>
 					</object>
 					<int key="connectionID">12</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">didPressedRemoveButton</string>
+						<reference key="source" ref="199500351"/>
+						<reference key="destination" ref="639130181"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">13</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -182,7 +191,7 @@
 						<reference key="object" ref="639130181"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="872919008"/>
-							<reference ref="592597846"/>
+							<reference ref="199500351"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -194,7 +203,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">11</int>
-						<reference key="object" ref="592597846"/>
+						<reference key="object" ref="199500351"/>
 						<reference key="parent" ref="639130181"/>
 					</object>
 				</array>
@@ -214,7 +223,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">12</int>
+			<int key="maxID">13</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>

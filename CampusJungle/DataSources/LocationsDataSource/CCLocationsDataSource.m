@@ -9,7 +9,15 @@
 #import "CCLocationsDataSource.h"
 #import "CCLocation.h"
 #import "CCLocationCell.h"
+#import "CCTableCellProtocol.h"
 
 @implementation CCLocationsDataSource
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id <CCTableCellProtocol> cell = [tableView dequeueReusableCellWithIdentifier:self.currentCellReuseIdentifier];
+    [cell setCellObject:self.dataProvider.arrayOfItems[indexPath.row]];
+    return (UITableViewCell *)cell;
+}
 
 @end

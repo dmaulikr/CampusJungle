@@ -13,5 +13,6 @@
 @property (nonatomic, strong) NSMutableArray *arrayOfLessons;
 
 - (void)insertNewLesson:(NSDictionary *)lesson;
+- (void)removeObject:(NSDictionary *)lesson;
 - (void)replaseTime:(NSDictionary *)time withTime:(NSDictionary *)newTime;
 @end

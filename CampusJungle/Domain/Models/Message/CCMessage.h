@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCRestKitMappableModel.h"
 
-@interface CCMessage : NSObject
+@interface CCMessage : NSObject <CCRestKitMappableModel>
 
 @property (nonatomic, strong) NSString *messageID;
 @property (nonatomic, strong) NSString *receiverID;
@@ -20,8 +21,6 @@
 @property (nonatomic, strong) NSString *userFirstName;
 @property (nonatomic, strong) NSString *userLastName;
 @property (nonatomic, strong) NSString *userAvatar;
-
-+ (NSDictionary *)responseMappingDictionary;
 
 @end
 

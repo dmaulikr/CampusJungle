@@ -13,6 +13,8 @@
 @property (nonatomic, weak) IBOutlet UILabel *timeLabel;
 @property (nonatomic, weak) IBOutlet UIButton *removeButton;
 
+- (IBAction)didPressedRemoveButton;
+
 @end
 
 @implementation CCTimeTableCell
@@ -33,6 +35,11 @@
     
 }
 
-
+- (IBAction)didPressedRemoveButton
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(deleteCellObject:)]) {
+        [self.delegate performSelector:@selector(deleteCellObject:) withObject:self.cellObject];
+    }
+}
 
 @end

@@ -14,6 +14,7 @@
 
 - (void)showProfileOfUser:(CCUser *)user;
 - (void)showLocation:(CCLocation *)location onMapWithLocations:(NSArray *)locationsArray;
-- (void)addLocationToClassWithId:(NSString *)classId;
+- (void)addLocation;
+- (void)addForum;
 
 @end

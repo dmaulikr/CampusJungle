@@ -14,7 +14,7 @@
 {
     if(self = [super init]){
         self.arrayOfLessons = [NSMutableArray new];
-        [self.arrayOfLessons addObject:@{@"timetable" : @"Add New"}];
+        [self.arrayOfLessons addObject:@{@"timetable" : @"Add New Lesson"}];
     }
     return self;
 }
@@ -34,9 +34,15 @@
     [self.targetTable reloadData];
 }
 
-- (void)insertNewLesson:(NSDictionary *)lesson
+- (void)removeObject:(NSDictionary *)lesson
 {
     [self.arrayOfLessons addObject:lesson];
+    self.totalNumber = self.arrayOfLessons.count;
+}
+
+- (void)insertNewLesson:(NSDictionary *)lesson
+{
+    [self.arrayOfLessons insertObject:lesson atIndex:1];
     self.totalNumber = self.arrayOfLessons.count;
     [self.targetTable reloadData];
 }

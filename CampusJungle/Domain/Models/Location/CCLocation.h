@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCRestKitMappableModel.h"
 
-@interface CCLocation : NSObject
+@interface CCLocation : NSObject <CCRestKitMappableModel>
 
 @property (nonatomic, strong) NSString *locationId;
 @property (nonatomic, strong) NSString *name;
@@ -25,8 +26,6 @@
 @property (nonatomic, assign) float latitude;
 @property (nonatomic, assign) float longitude;
 
-+ (NSDictionary *)responseMappingDictionary;
-+ (NSDictionary *)requestMappingDictionary;
 + (CCLocation *)createUsingLocation:(CLLocation *)clLocation;
 + (CCLocation *)createWithCoordinates:(CLLocationCoordinate2D)coordinates;
 + (CCLocation *)createWithCoordinates:(CLLocationCoordinate2D)coordinates name:(NSString *)name description:(NSString *)description place:(id)place visibleItems:(NSArray *)visibleItemsArray sharedWithAll:(BOOL)sharedWithAll;

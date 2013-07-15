@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCRestKitMappableModel.h"
 
-@interface CCGroup : NSObject
+@interface CCGroup : NSObject <CCRestKitMappableModel>
 
 @property (nonatomic, strong) NSString *groupId;
 @property (nonatomic, strong) NSString *classId;
@@ -21,8 +22,5 @@
 @property (nonatomic, strong) NSArray *locations;
 
 @property (nonatomic, assign) BOOL isSelected;
-
-+ (NSDictionary *)responseMappingDictionary;
-+ (NSDictionary *)requestMappingDictionary;
 
 @end

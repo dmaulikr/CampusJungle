@@ -31,7 +31,6 @@
 		700F9471178F0A4B00A6FBBA /* CCUserSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9470178F0A4B00A6FBBA /* CCUserSelectionCell.m */; };
 		700F9473178F0A8500A6FBBA /* CCUserSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 700F9472178F0A8500A6FBBA /* CCUserSelectionCell.xib */; };
 		700F947A178F0FDA00A6FBBA /* CCSelectableCellsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9479178F0FDA00A6FBBA /* CCSelectableCellsDataSource.m */; };
-		700F947E178FF42200A6FBBA /* CCGroupsApiProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F947D178FF42200A6FBBA /* CCGroupsApiProvider.m */; };
 		700F9483179007F300A6FBBA /* CCGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9482179007F300A6FBBA /* CCGroupCell.m */; };
 		700F94871790094500A6FBBA /* CCGroupSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F94861790094500A6FBBA /* CCGroupSelectionCell.m */; };
 		700F94891790097E00A6FBBA /* CCGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 700F94881790097D00A6FBBA /* CCGroupCell.xib */; };
@@ -40,7 +39,6 @@
 		7022F49A1786C7110055221C /* SelectionBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE3178454C200E54EFC /* SelectionBackGround.png */; };
 		703DA4DD178B455600464DD3 /* CCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4DC178B455600464DD3 /* CCLocation.m */; };
 		703DA4E2178B457200464DD3 /* CCClassLocationsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4E0178B457200464DD3 /* CCClassLocationsDataProvider.m */; };
-		703DA4E7178B469000464DD3 /* CCLocationsApiProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4E6178B469000464DD3 /* CCLocationsApiProvider.m */; };
 		703DA4EB178C2BD800464DD3 /* CCLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4EA178C2BD800464DD3 /* CCLocationCell.m */; };
 		703DA4ED178C31C000464DD3 /* CCLocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703DA4EC178C31C000464DD3 /* CCLocationCell.xib */; };
 		703DA4F0178C3D3C00464DD3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 703DA4EE178C3D3000464DD3 /* MapKit.framework */; };
@@ -155,15 +153,6 @@
 		70A29D9D17877B94001BC8DD /* CCPhotosDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29D8417877B94001BC8DD /* CCPhotosDataProvider.m */; };
 		70A29D9E17877B94001BC8DD /* CCStatesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29D8717877B94001BC8DD /* CCStatesDataProvider.m */; };
 		70A29D9F17877B94001BC8DD /* CCUploadingImagesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29D8A17877B94001BC8DD /* CCUploadingImagesDataProvider.m */; };
-		70A29E1317877CB6001BC8DD /* CCAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29DA417877CB4001BC8DD /* CCAPIProvider.m */; };
-		70A29E1417877CB6001BC8DD /* CCClassesApiProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29DA817877CB4001BC8DD /* CCClassesApiProvider.m */; };
-		70A29E1517877CB6001BC8DD /* CCMarketAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29DAC17877CB4001BC8DD /* CCMarketAPIProvider.m */; };
-		70A29E1617877CB6001BC8DD /* CCNotesAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29DB017877CB4001BC8DD /* CCNotesAPIProvider.m */; };
-		70A29E1717877CB6001BC8DD /* CCStuffAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29DB417877CB4001BC8DD /* CCStuffAPIProvider.m */; };
-		70A29E1817877CB6001BC8DD /* CCDropboxAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29DB817877CB4001BC8DD /* CCDropboxAPIProvider.m */; };
-		70A29E1917877CB6001BC8DD /* CCFaceBookAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29DBC17877CB4001BC8DD /* CCFaceBookAPI.m */; };
-		70A29E1A17877CB6001BC8DD /* CCLoginAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29DC017877CB4001BC8DD /* CCLoginAPIProvider.m */; };
-		70A29E1B17877CB6001BC8DD /* CCSignUpAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29DC517877CB4001BC8DD /* CCSignUpAPIProvider.m */; };
 		70A29E1C17877CB6001BC8DD /* CCAlertDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29DC917877CB4001BC8DD /* CCAlertDefines.m */; };
 		70A29E1D17877CB6001BC8DD /* CCMenuDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29DCD17877CB4001BC8DD /* CCMenuDefines.m */; };
 		70A29E1E17877CB6001BC8DD /* CCNotificationsDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29DD017877CB4001BC8DD /* CCNotificationsDefines.m */; };
@@ -275,6 +264,30 @@
 		70A29F7E17877E0D001BC8DD /* CCViewMarketNotesListTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29F4C17877E0D001BC8DD /* CCViewMarketNotesListTransaction.m */; };
 		70A29F7F17877E0D001BC8DD /* CCViewPDFNotesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29F4F17877E0D001BC8DD /* CCViewPDFNotesTransaction.m */; };
 		70A29F8017877E0D001BC8DD /* CCViewMarketStuffListTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29F5217877E0D001BC8DD /* CCViewMarketStuffListTransaction.m */; };
+		70B2D04A1793F887001B0C2C /* CCAlertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0491793F887001B0C2C /* CCAlertHelper.m */; };
+		70B2D04E1794016F001B0C2C /* CCForum.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D04D1794016F001B0C2C /* CCForum.m */; };
+		70B2D08017940245001B0C2C /* CCAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D05217940245001B0C2C /* CCAPIProvider.m */; };
+		70B2D08117940245001B0C2C /* CCClassesApiProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D05617940245001B0C2C /* CCClassesApiProvider.m */; };
+		70B2D08217940245001B0C2C /* CCDropboxAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D05A17940245001B0C2C /* CCDropboxAPIProvider.m */; };
+		70B2D08317940245001B0C2C /* CCFaceBookAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D05E17940245001B0C2C /* CCFaceBookAPI.m */; };
+		70B2D08417940245001B0C2C /* CCGroupsApiProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D06217940245001B0C2C /* CCGroupsApiProvider.m */; };
+		70B2D08517940245001B0C2C /* CCLocationsApiProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D06617940245001B0C2C /* CCLocationsApiProvider.m */; };
+		70B2D08617940245001B0C2C /* CCLoginAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D06A17940245001B0C2C /* CCLoginAPIProvider.m */; };
+		70B2D08717940245001B0C2C /* CCMarketAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D06E17940245001B0C2C /* CCMarketAPIProvider.m */; };
+		70B2D08817940245001B0C2C /* CCMessageAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D07217940245001B0C2C /* CCMessageAPIProvider.m */; };
+		70B2D08917940245001B0C2C /* CCNotesAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D07617940245001B0C2C /* CCNotesAPIProvider.m */; };
+		70B2D08A17940245001B0C2C /* CCSignUpAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D07B17940245001B0C2C /* CCSignUpAPIProvider.m */; };
+		70B2D08B17940245001B0C2C /* CCStuffAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D07E17940245001B0C2C /* CCStuffAPIProvider.m */; };
+		70B2D08F17940277001B0C2C /* CCForumsApiProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D08E17940277001B0C2C /* CCForumsApiProvider.m */; };
+		70B2D095179404F3001B0C2C /* CCForumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D094179404F3001B0C2C /* CCForumCell.m */; };
+		70B2D09717940505001B0C2C /* CCForumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70B2D09617940505001B0C2C /* CCForumCell.xib */; };
+		70B2D09B17941349001B0C2C /* CCPluralizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D09A17941349001B0C2C /* CCPluralizeHelper.m */; };
+		70B2D0A617941A0C001B0C2C /* CCAddForumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0A417941A0C001B0C2C /* CCAddForumViewController.m */; };
+		70B2D0A717941A0C001B0C2C /* CCAddForumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70B2D0A517941A0C001B0C2C /* CCAddForumViewController.xib */; };
+		70B2D0AB179427FA001B0C2C /* CCAddForumTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0AA179427FA001B0C2C /* CCAddForumTransaction.m */; };
+		70B2D0AF17942AE5001B0C2C /* CCStringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0AE17942AE5001B0C2C /* CCStringHelper.m */; };
+		70B2D0B317942DCC001B0C2C /* CCQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0B217942DCC001B0C2C /* CCQuestion.m */; };
+		70B2D0B717942F0E001B0C2C /* CCQuestionsApiProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0B617942F0E001B0C2C /* CCQuestionsApiProvider.m */; };
 		70C0FCB6178484D0005EF95E /* UITextField+InsetFixing.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C0FCB5178484D0005EF95E /* UITextField+InsetFixing.m */; };
 		70F42A7B178D5A2900E763F3 /* CCForumsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F42A7A178D5A2900E763F3 /* CCForumsDataProvider.m */; };
 		70F42A7E178D5A3800E763F3 /* CCGroupsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F42A7D178D5A3800E763F3 /* CCGroupsDataProvider.m */; };
@@ -306,6 +319,7 @@
 		D359E6091794383A00869D6C /* star_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D359E6051794383A00869D6C /* star_icon@2x.png */; };
 		D359E60A1794383A00869D6C /* star_icon_active.png in Resources */ = {isa = PBXBuildFile; fileRef = D359E6061794383A00869D6C /* star_icon_active.png */; };
 		D359E60B1794383A00869D6C /* star_icon_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D359E6071794383A00869D6C /* star_icon_active@2x.png */; };
+		D359E60F17945F2600869D6C /* CCClassCreationDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D359E60E17945F2600869D6C /* CCClassCreationDataSource.m */; };
 		D3614636175E1D3000907414 /* DropboxSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = D3614635175E1D3000907414 /* DropboxSDK */; };
 		D36146C6176314A100907414 /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146B2176314A100907414 /* folder.png */; };
 		D36146C7176314A100907414 /* folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146B3176314A100907414 /* folder@2x.png */; };
@@ -346,7 +360,6 @@
 		D3949709178C401400C39A7E /* CCOfferDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949707178C401400C39A7E /* CCOfferDetailsController.m */; };
 		D394970A178C401400C39A7E /* CCOfferDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3949708178C401400C39A7E /* CCOfferDetailsController.xib */; };
 		D394970E178C406800C39A7E /* CCOfferDetailsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D394970D178C406800C39A7E /* CCOfferDetailsTransaction.m */; };
-		D3949712178C6D4500C39A7E /* CCMessageAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949711178C6D4500C39A7E /* CCMessageAPIProvider.m */; };
 		D3949718178D51BE00C39A7E /* CCPrivateMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949716178D51BE00C39A7E /* CCPrivateMessageController.m */; };
 		D3949719178D51BE00C39A7E /* CCPrivateMessageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3949717178D51BE00C39A7E /* CCPrivateMessageController.xib */; };
 		D394971D178D561100C39A7E /* CCPrivateMessageTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D394971C178D561100C39A7E /* CCPrivateMessageTransaction.m */; };
@@ -518,9 +531,6 @@
 		700F9472178F0A8500A6FBBA /* CCUserSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCUserSelectionCell.xib; sourceTree = "<group>"; };
 		700F9478178F0FDA00A6FBBA /* CCSelectableCellsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSelectableCellsDataSource.h; sourceTree = "<group>"; };
 		700F9479178F0FDA00A6FBBA /* CCSelectableCellsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSelectableCellsDataSource.m; sourceTree = "<group>"; };
-		700F947C178FF42200A6FBBA /* CCGroupsApiProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupsApiProvider.h; sourceTree = "<group>"; };
-		700F947D178FF42200A6FBBA /* CCGroupsApiProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupsApiProvider.m; sourceTree = "<group>"; };
-		700F947F178FF44900A6FBBA /* CCGroupsApiProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupsApiProviderProtocol.h; sourceTree = "<group>"; };
 		700F9481179007F300A6FBBA /* CCGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupCell.h; sourceTree = "<group>"; };
 		700F9482179007F300A6FBBA /* CCGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupCell.m; sourceTree = "<group>"; };
 		700F94851790094500A6FBBA /* CCGroupSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupSelectionCell.h; sourceTree = "<group>"; };
@@ -532,9 +542,6 @@
 		703DA4DF178B457200464DD3 /* CCClassLocationsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassLocationsDataProvider.h; sourceTree = "<group>"; };
 		703DA4E0178B457200464DD3 /* CCClassLocationsDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassLocationsDataProvider.m; sourceTree = "<group>"; };
 		703DA4E1178B457200464DD3 /* CCLocationDataProviderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationDataProviderDelegate.h; sourceTree = "<group>"; };
-		703DA4E4178B466300464DD3 /* CCLocationsApiProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationsApiProviderProtocol.h; sourceTree = "<group>"; };
-		703DA4E5178B469000464DD3 /* CCLocationsApiProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationsApiProvider.h; sourceTree = "<group>"; };
-		703DA4E6178B469000464DD3 /* CCLocationsApiProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocationsApiProvider.m; sourceTree = "<group>"; };
 		703DA4E9178C2BD800464DD3 /* CCLocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationCell.h; sourceTree = "<group>"; };
 		703DA4EA178C2BD800464DD3 /* CCLocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocationCell.m; sourceTree = "<group>"; };
 		703DA4EC178C31C000464DD3 /* CCLocationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCLocationCell.xib; sourceTree = "<group>"; };
@@ -735,33 +742,6 @@
 		70A29D8717877B94001BC8DD /* CCStatesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStatesDataProvider.m; sourceTree = "<group>"; };
 		70A29D8917877B94001BC8DD /* CCUploadingImagesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUploadingImagesDataProvider.h; sourceTree = "<group>"; };
 		70A29D8A17877B94001BC8DD /* CCUploadingImagesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUploadingImagesDataProvider.m; sourceTree = "<group>"; };
-		70A29DA317877CB4001BC8DD /* CCAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAPIProvider.h; sourceTree = "<group>"; };
-		70A29DA417877CB4001BC8DD /* CCAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAPIProvider.m; sourceTree = "<group>"; };
-		70A29DA517877CB4001BC8DD /* CCAPIProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAPIProviderProtocol.h; sourceTree = "<group>"; };
-		70A29DA717877CB4001BC8DD /* CCClassesApiProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassesApiProvider.h; sourceTree = "<group>"; };
-		70A29DA817877CB4001BC8DD /* CCClassesApiProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassesApiProvider.m; sourceTree = "<group>"; };
-		70A29DA917877CB4001BC8DD /* CCClassesApiProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassesApiProviderProtocol.h; sourceTree = "<group>"; };
-		70A29DAB17877CB4001BC8DD /* CCMarketAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMarketAPIProvider.h; sourceTree = "<group>"; };
-		70A29DAC17877CB4001BC8DD /* CCMarketAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMarketAPIProvider.m; sourceTree = "<group>"; };
-		70A29DAD17877CB4001BC8DD /* CCMarketAPIProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMarketAPIProviderProtocol.h; sourceTree = "<group>"; };
-		70A29DAF17877CB4001BC8DD /* CCNotesAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNotesAPIProvider.h; sourceTree = "<group>"; };
-		70A29DB017877CB4001BC8DD /* CCNotesAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNotesAPIProvider.m; sourceTree = "<group>"; };
-		70A29DB117877CB4001BC8DD /* CCNotesAPIProviderProtolcol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNotesAPIProviderProtolcol.h; sourceTree = "<group>"; };
-		70A29DB317877CB4001BC8DD /* CCStuffAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStuffAPIProvider.h; sourceTree = "<group>"; };
-		70A29DB417877CB4001BC8DD /* CCStuffAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStuffAPIProvider.m; sourceTree = "<group>"; };
-		70A29DB517877CB4001BC8DD /* CCStuffAPIProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStuffAPIProviderProtocol.h; sourceTree = "<group>"; };
-		70A29DB717877CB4001BC8DD /* CCDropboxAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProvider.h; sourceTree = "<group>"; };
-		70A29DB817877CB4001BC8DD /* CCDropboxAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxAPIProvider.m; sourceTree = "<group>"; };
-		70A29DB917877CB4001BC8DD /* CCDropboxAPIProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProviderProtocol.h; sourceTree = "<group>"; };
-		70A29DBB17877CB4001BC8DD /* CCFaceBookAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFaceBookAPI.h; sourceTree = "<group>"; };
-		70A29DBC17877CB4001BC8DD /* CCFaceBookAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFaceBookAPI.m; sourceTree = "<group>"; };
-		70A29DBD17877CB4001BC8DD /* CCFaceBookAPIProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFaceBookAPIProtocol.h; sourceTree = "<group>"; };
-		70A29DBF17877CB4001BC8DD /* CCLoginAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLoginAPIProvider.h; sourceTree = "<group>"; };
-		70A29DC017877CB4001BC8DD /* CCLoginAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLoginAPIProvider.m; sourceTree = "<group>"; };
-		70A29DC117877CB4001BC8DD /* CCLoginAPIProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLoginAPIProviderProtocol.h; sourceTree = "<group>"; };
-		70A29DC317877CB4001BC8DD /* CCSignUPAPIProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSignUPAPIProtocol.h; sourceTree = "<group>"; };
-		70A29DC417877CB4001BC8DD /* CCSignUpAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSignUpAPIProvider.h; sourceTree = "<group>"; };
-		70A29DC517877CB4001BC8DD /* CCSignUpAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSignUpAPIProvider.m; sourceTree = "<group>"; };
 		70A29DC817877CB4001BC8DD /* CCAlertDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAlertDefines.h; sourceTree = "<group>"; };
 		70A29DC917877CB4001BC8DD /* CCAlertDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAlertDefines.m; sourceTree = "<group>"; };
 		70A29DCA17877CB4001BC8DD /* CCConstantsDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCConstantsDefines.h; sourceTree = "<group>"; };
@@ -975,6 +955,67 @@
 		70A29F4F17877E0D001BC8DD /* CCViewPDFNotesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewPDFNotesTransaction.m; sourceTree = "<group>"; };
 		70A29F5117877E0D001BC8DD /* CCViewMarketStuffListTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCViewMarketStuffListTransaction.h; sourceTree = "<group>"; };
 		70A29F5217877E0D001BC8DD /* CCViewMarketStuffListTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewMarketStuffListTransaction.m; sourceTree = "<group>"; };
+		70B2D0481793F887001B0C2C /* CCAlertHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAlertHelper.h; sourceTree = "<group>"; };
+		70B2D0491793F887001B0C2C /* CCAlertHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAlertHelper.m; sourceTree = "<group>"; };
+		70B2D04C1794016F001B0C2C /* CCForum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCForum.h; sourceTree = "<group>"; };
+		70B2D04D1794016F001B0C2C /* CCForum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCForum.m; sourceTree = "<group>"; };
+		70B2D05117940245001B0C2C /* CCAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAPIProvider.h; sourceTree = "<group>"; };
+		70B2D05217940245001B0C2C /* CCAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAPIProvider.m; sourceTree = "<group>"; };
+		70B2D05317940245001B0C2C /* CCAPIProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAPIProviderProtocol.h; sourceTree = "<group>"; };
+		70B2D05517940245001B0C2C /* CCClassesApiProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassesApiProvider.h; sourceTree = "<group>"; };
+		70B2D05617940245001B0C2C /* CCClassesApiProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassesApiProvider.m; sourceTree = "<group>"; };
+		70B2D05717940245001B0C2C /* CCClassesApiProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassesApiProviderProtocol.h; sourceTree = "<group>"; };
+		70B2D05917940245001B0C2C /* CCDropboxAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProvider.h; sourceTree = "<group>"; };
+		70B2D05A17940245001B0C2C /* CCDropboxAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxAPIProvider.m; sourceTree = "<group>"; };
+		70B2D05B17940245001B0C2C /* CCDropboxAPIProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxAPIProviderProtocol.h; sourceTree = "<group>"; };
+		70B2D05D17940245001B0C2C /* CCFaceBookAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFaceBookAPI.h; sourceTree = "<group>"; };
+		70B2D05E17940245001B0C2C /* CCFaceBookAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFaceBookAPI.m; sourceTree = "<group>"; };
+		70B2D05F17940245001B0C2C /* CCFaceBookAPIProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFaceBookAPIProtocol.h; sourceTree = "<group>"; };
+		70B2D06117940245001B0C2C /* CCGroupsApiProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupsApiProvider.h; sourceTree = "<group>"; };
+		70B2D06217940245001B0C2C /* CCGroupsApiProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupsApiProvider.m; sourceTree = "<group>"; };
+		70B2D06317940245001B0C2C /* CCGroupsApiProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupsApiProviderProtocol.h; sourceTree = "<group>"; };
+		70B2D06517940245001B0C2C /* CCLocationsApiProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationsApiProvider.h; sourceTree = "<group>"; };
+		70B2D06617940245001B0C2C /* CCLocationsApiProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocationsApiProvider.m; sourceTree = "<group>"; };
+		70B2D06717940245001B0C2C /* CCLocationsApiProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationsApiProviderProtocol.h; sourceTree = "<group>"; };
+		70B2D06917940245001B0C2C /* CCLoginAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLoginAPIProvider.h; sourceTree = "<group>"; };
+		70B2D06A17940245001B0C2C /* CCLoginAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLoginAPIProvider.m; sourceTree = "<group>"; };
+		70B2D06B17940245001B0C2C /* CCLoginAPIProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLoginAPIProviderProtocol.h; sourceTree = "<group>"; };
+		70B2D06D17940245001B0C2C /* CCMarketAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMarketAPIProvider.h; sourceTree = "<group>"; };
+		70B2D06E17940245001B0C2C /* CCMarketAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMarketAPIProvider.m; sourceTree = "<group>"; };
+		70B2D06F17940245001B0C2C /* CCMarketAPIProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMarketAPIProviderProtocol.h; sourceTree = "<group>"; };
+		70B2D07117940245001B0C2C /* CCMessageAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessageAPIProvider.h; sourceTree = "<group>"; };
+		70B2D07217940245001B0C2C /* CCMessageAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessageAPIProvider.m; sourceTree = "<group>"; };
+		70B2D07317940245001B0C2C /* CCMessageAPIProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessageAPIProviderProtocol.h; sourceTree = "<group>"; };
+		70B2D07517940245001B0C2C /* CCNotesAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNotesAPIProvider.h; sourceTree = "<group>"; };
+		70B2D07617940245001B0C2C /* CCNotesAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNotesAPIProvider.m; sourceTree = "<group>"; };
+		70B2D07717940245001B0C2C /* CCNotesAPIProviderProtolcol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNotesAPIProviderProtolcol.h; sourceTree = "<group>"; };
+		70B2D07917940245001B0C2C /* CCSignUPAPIProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSignUPAPIProtocol.h; sourceTree = "<group>"; };
+		70B2D07A17940245001B0C2C /* CCSignUpAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSignUpAPIProvider.h; sourceTree = "<group>"; };
+		70B2D07B17940245001B0C2C /* CCSignUpAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSignUpAPIProvider.m; sourceTree = "<group>"; };
+		70B2D07D17940245001B0C2C /* CCStuffAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStuffAPIProvider.h; sourceTree = "<group>"; };
+		70B2D07E17940245001B0C2C /* CCStuffAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStuffAPIProvider.m; sourceTree = "<group>"; };
+		70B2D07F17940245001B0C2C /* CCStuffAPIProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStuffAPIProviderProtocol.h; sourceTree = "<group>"; };
+		70B2D08D17940277001B0C2C /* CCForumsApiProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCForumsApiProvider.h; sourceTree = "<group>"; };
+		70B2D08E17940277001B0C2C /* CCForumsApiProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCForumsApiProvider.m; sourceTree = "<group>"; };
+		70B2D09117940298001B0C2C /* CCForumsApiProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCForumsApiProviderProtocol.h; sourceTree = "<group>"; };
+		70B2D093179404F3001B0C2C /* CCForumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCForumCell.h; sourceTree = "<group>"; };
+		70B2D094179404F3001B0C2C /* CCForumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCForumCell.m; sourceTree = "<group>"; };
+		70B2D09617940505001B0C2C /* CCForumCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCForumCell.xib; sourceTree = "<group>"; };
+		70B2D09917941349001B0C2C /* CCPluralizeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPluralizeHelper.h; sourceTree = "<group>"; };
+		70B2D09A17941349001B0C2C /* CCPluralizeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPluralizeHelper.m; sourceTree = "<group>"; };
+		70B2D0A317941A0C001B0C2C /* CCAddForumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddForumViewController.h; sourceTree = "<group>"; };
+		70B2D0A417941A0C001B0C2C /* CCAddForumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddForumViewController.m; sourceTree = "<group>"; };
+		70B2D0A517941A0C001B0C2C /* CCAddForumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAddForumViewController.xib; sourceTree = "<group>"; };
+		70B2D0A9179427FA001B0C2C /* CCAddForumTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddForumTransaction.h; sourceTree = "<group>"; };
+		70B2D0AA179427FA001B0C2C /* CCAddForumTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddForumTransaction.m; sourceTree = "<group>"; };
+		70B2D0AD17942AE5001B0C2C /* CCStringHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStringHelper.h; sourceTree = "<group>"; };
+		70B2D0AE17942AE5001B0C2C /* CCStringHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStringHelper.m; sourceTree = "<group>"; };
+		70B2D0B117942DCC001B0C2C /* CCQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCQuestion.h; sourceTree = "<group>"; };
+		70B2D0B217942DCC001B0C2C /* CCQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCQuestion.m; sourceTree = "<group>"; };
+		70B2D0B517942F0E001B0C2C /* CCQuestionsApiProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCQuestionsApiProvider.h; sourceTree = "<group>"; };
+		70B2D0B617942F0E001B0C2C /* CCQuestionsApiProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCQuestionsApiProvider.m; sourceTree = "<group>"; };
+		70B2D0B817942F2E001B0C2C /* CCQuestionsApiProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCQuestionsApiProviderProtocol.h; sourceTree = "<group>"; };
+		70B2D0B917943886001B0C2C /* CCRestKitMappableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCRestKitMappableModel.h; sourceTree = "<group>"; };
 		70C0FCB4178484D0005EF95E /* UITextField+InsetFixing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+InsetFixing.h"; sourceTree = "<group>"; };
 		70C0FCB5178484D0005EF95E /* UITextField+InsetFixing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+InsetFixing.m"; sourceTree = "<group>"; };
 		70F42A79178D5A2900E763F3 /* CCForumsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCForumsDataProvider.h; sourceTree = "<group>"; };
@@ -1020,6 +1061,8 @@
 		D359E6051794383A00869D6C /* star_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_icon@2x.png"; sourceTree = "<group>"; };
 		D359E6061794383A00869D6C /* star_icon_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_icon_active.png; sourceTree = "<group>"; };
 		D359E6071794383A00869D6C /* star_icon_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_icon_active@2x.png"; sourceTree = "<group>"; };
+		D359E60D17945F2600869D6C /* CCClassCreationDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassCreationDataSource.h; sourceTree = "<group>"; };
+		D359E60E17945F2600869D6C /* CCClassCreationDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassCreationDataSource.m; sourceTree = "<group>"; };
 		D3614635175E1D3000907414 /* DropboxSDK */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = DropboxSDK; path = "Pods/Dropbox-iOS-SDK/dropbox-ios-sdk-1.3.4/DropboxSDK.framework/DropboxSDK"; sourceTree = "<group>"; };
 		D36146B2176314A100907414 /* folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder.png; sourceTree = "<group>"; };
 		D36146B3176314A100907414 /* folder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder@2x.png"; sourceTree = "<group>"; };
@@ -1070,9 +1113,6 @@
 		D3949708178C401400C39A7E /* CCOfferDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCOfferDetailsController.xib; sourceTree = "<group>"; };
 		D394970C178C406800C39A7E /* CCOfferDetailsTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCOfferDetailsTransaction.h; sourceTree = "<group>"; };
 		D394970D178C406800C39A7E /* CCOfferDetailsTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCOfferDetailsTransaction.m; sourceTree = "<group>"; };
-		D3949710178C6D4500C39A7E /* CCMessageAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessageAPIProvider.h; sourceTree = "<group>"; };
-		D3949711178C6D4500C39A7E /* CCMessageAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessageAPIProvider.m; sourceTree = "<group>"; };
-		D3949713178C6D6300C39A7E /* CCMessageAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCMessageAPIProviderProtocol.h; sourceTree = "<group>"; };
 		D3949715178D51BE00C39A7E /* CCPrivateMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPrivateMessageController.h; sourceTree = "<group>"; };
 		D3949716178D51BE00C39A7E /* CCPrivateMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPrivateMessageController.m; sourceTree = "<group>"; };
 		D3949717178D51BE00C39A7E /* CCPrivateMessageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCPrivateMessageController.xib; sourceTree = "<group>"; };
@@ -1401,16 +1441,6 @@
 			path = SelectableCellsDataSource;
 			sourceTree = "<group>";
 		};
-		700F947B178FF40B00A6FBBA /* GroupsAPIProvider */ = {
-			isa = PBXGroup;
-			children = (
-				700F947C178FF42200A6FBBA /* CCGroupsApiProvider.h */,
-				700F947D178FF42200A6FBBA /* CCGroupsApiProvider.m */,
-				700F947F178FF44900A6FBBA /* CCGroupsApiProviderProtocol.h */,
-			);
-			path = GroupsAPIProvider;
-			sourceTree = "<group>";
-		};
 		700F9480179007E500A6FBBA /* GroupCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1448,16 +1478,6 @@
 				703DA4E1178B457200464DD3 /* CCLocationDataProviderDelegate.h */,
 			);
 			path = ClassLocationsDataProvider;
-			sourceTree = "<group>";
-		};
-		703DA4E3178B465200464DD3 /* LocationsAPIProvider */ = {
-			isa = PBXGroup;
-			children = (
-				703DA4E4178B466300464DD3 /* CCLocationsApiProviderProtocol.h */,
-				703DA4E5178B469000464DD3 /* CCLocationsApiProvider.h */,
-				703DA4E6178B469000464DD3 /* CCLocationsApiProvider.m */,
-			);
-			path = LocationsAPIProvider;
 			sourceTree = "<group>";
 		};
 		703DA4E8178C2BC600464DD3 /* LocationCell */ = {
@@ -1510,11 +1530,14 @@
 		7093080D1785806000E71AB0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				70B2D0471793F879001B0C2C /* AlertHelper */,
 				700F9441178EE97800A6FBBA /* KeyboardHelper */,
 				703DA4F5178C5C8900464DD3 /* MapHelper */,
 				70438E451785B7A800537712 /* NavigationBarViewHelper */,
 				700F9431178EBC4B00A6FBBA /* PlacemarkAddressHelper */,
+				70B2D09817941336001B0C2C /* PluralizeHelper */,
 				7093080E1785806000E71AB0 /* SideMenuDataSourceHelper */,
+				70B2D0AC17942ADB001B0C2C /* StringHelper */,
 				709308111785806000E71AB0 /* UIImageViewHelper */,
 				709308161785808400E71AB0 /* ViewPositioningHelper */,
 			);
@@ -1551,6 +1574,7 @@
 		70A29C34178778AB001BC8DD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				70B2D0A217941A01001B0C2C /* AddForumController */,
 				700F9427178EA06000A6FBBA /* AddLocationController */,
 				70A29C35178778AB001BC8DD /* BaseController */,
 				70A29C39178778AB001BC8DD /* CitySelectionController */,
@@ -2062,6 +2086,7 @@
 			isa = PBXGroup;
 			children = (
 				70A29D2E17877B6B001BC8DD /* ClassTableDataSource */,
+				D359E60C17945F0000869D6C /* ClassCreationDataSourse */,
 				70A29D3117877B6B001BC8DD /* CommonCollectionDataSource */,
 				70A29D3817877B6B001BC8DD /* ImageSortingDataSource */,
 				70F42A80178D66A600E763F3 /* LocationsDataSource */,
@@ -2355,7 +2380,7 @@
 		70A29DA017877CB4001BC8DD /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				70A29DA117877CB4001BC8DD /* API */,
+				70B2D04F17940245001B0C2C /* API */,
 				70A29DC617877CB4001BC8DD /* Defines */,
 				70A29DD717877CB4001BC8DD /* Models */,
 				70A29E0A17877CB5001BC8DD /* RestKitConfigurator */,
@@ -2363,115 +2388,6 @@
 				70A29E0F17877CB6001BC8DD /* UploadManager */,
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		70A29DA117877CB4001BC8DD /* API */ = {
-			isa = PBXGroup;
-			children = (
-				70A29DA217877CB4001BC8DD /* APIProvider */,
-				70A29DB617877CB4001BC8DD /* DropboxAPIProvider */,
-				70A29DBA17877CB4001BC8DD /* FacebookAPI */,
-				700F947B178FF40B00A6FBBA /* GroupsAPIProvider */,
-				703DA4E3178B465200464DD3 /* LocationsAPIProvider */,
-				70A29DBE17877CB4001BC8DD /* LoginAPIProvider */,
-				70A29DC217877CB4001BC8DD /* SignUpAPIProvider */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		70A29DA217877CB4001BC8DD /* APIProvider */ = {
-			isa = PBXGroup;
-			children = (
-				70A29DA317877CB4001BC8DD /* CCAPIProvider.h */,
-				70A29DA417877CB4001BC8DD /* CCAPIProvider.m */,
-				70A29DA517877CB4001BC8DD /* CCAPIProviderProtocol.h */,
-				70A29DA617877CB4001BC8DD /* ClassesApiProvider */,
-				70A29DAA17877CB4001BC8DD /* MarketAPIProvider */,
-				D394970F178C6D0000C39A7E /* MessagesAPIProvider */,
-				70A29DAE17877CB4001BC8DD /* NotesAPIProvider */,
-				70A29DB217877CB4001BC8DD /* StuffAPIProvider */,
-			);
-			path = APIProvider;
-			sourceTree = "<group>";
-		};
-		70A29DA617877CB4001BC8DD /* ClassesApiProvider */ = {
-			isa = PBXGroup;
-			children = (
-				70A29DA717877CB4001BC8DD /* CCClassesApiProvider.h */,
-				70A29DA817877CB4001BC8DD /* CCClassesApiProvider.m */,
-				70A29DA917877CB4001BC8DD /* CCClassesApiProviderProtocol.h */,
-			);
-			path = ClassesApiProvider;
-			sourceTree = "<group>";
-		};
-		70A29DAA17877CB4001BC8DD /* MarketAPIProvider */ = {
-			isa = PBXGroup;
-			children = (
-				70A29DAB17877CB4001BC8DD /* CCMarketAPIProvider.h */,
-				70A29DAC17877CB4001BC8DD /* CCMarketAPIProvider.m */,
-				70A29DAD17877CB4001BC8DD /* CCMarketAPIProviderProtocol.h */,
-			);
-			path = MarketAPIProvider;
-			sourceTree = "<group>";
-		};
-		70A29DAE17877CB4001BC8DD /* NotesAPIProvider */ = {
-			isa = PBXGroup;
-			children = (
-				70A29DAF17877CB4001BC8DD /* CCNotesAPIProvider.h */,
-				70A29DB017877CB4001BC8DD /* CCNotesAPIProvider.m */,
-				70A29DB117877CB4001BC8DD /* CCNotesAPIProviderProtolcol.h */,
-			);
-			path = NotesAPIProvider;
-			sourceTree = "<group>";
-		};
-		70A29DB217877CB4001BC8DD /* StuffAPIProvider */ = {
-			isa = PBXGroup;
-			children = (
-				70A29DB317877CB4001BC8DD /* CCStuffAPIProvider.h */,
-				70A29DB417877CB4001BC8DD /* CCStuffAPIProvider.m */,
-				70A29DB517877CB4001BC8DD /* CCStuffAPIProviderProtocol.h */,
-			);
-			path = StuffAPIProvider;
-			sourceTree = "<group>";
-		};
-		70A29DB617877CB4001BC8DD /* DropboxAPIProvider */ = {
-			isa = PBXGroup;
-			children = (
-				70A29DB717877CB4001BC8DD /* CCDropboxAPIProvider.h */,
-				70A29DB817877CB4001BC8DD /* CCDropboxAPIProvider.m */,
-				70A29DB917877CB4001BC8DD /* CCDropboxAPIProviderProtocol.h */,
-			);
-			path = DropboxAPIProvider;
-			sourceTree = "<group>";
-		};
-		70A29DBA17877CB4001BC8DD /* FacebookAPI */ = {
-			isa = PBXGroup;
-			children = (
-				70A29DBB17877CB4001BC8DD /* CCFaceBookAPI.h */,
-				70A29DBC17877CB4001BC8DD /* CCFaceBookAPI.m */,
-				70A29DBD17877CB4001BC8DD /* CCFaceBookAPIProtocol.h */,
-			);
-			path = FacebookAPI;
-			sourceTree = "<group>";
-		};
-		70A29DBE17877CB4001BC8DD /* LoginAPIProvider */ = {
-			isa = PBXGroup;
-			children = (
-				70A29DBF17877CB4001BC8DD /* CCLoginAPIProvider.h */,
-				70A29DC017877CB4001BC8DD /* CCLoginAPIProvider.m */,
-				70A29DC117877CB4001BC8DD /* CCLoginAPIProviderProtocol.h */,
-			);
-			path = LoginAPIProvider;
-			sourceTree = "<group>";
-		};
-		70A29DC217877CB4001BC8DD /* SignUpAPIProvider */ = {
-			isa = PBXGroup;
-			children = (
-				70A29DC317877CB4001BC8DD /* CCSignUPAPIProtocol.h */,
-				70A29DC417877CB4001BC8DD /* CCSignUpAPIProvider.h */,
-				70A29DC517877CB4001BC8DD /* CCSignUpAPIProvider.m */,
-			);
-			path = SignUpAPIProvider;
 			sourceTree = "<group>";
 		};
 		70A29DC617877CB4001BC8DD /* Defines */ = {
@@ -2535,6 +2451,7 @@
 		70A29DD717877CB4001BC8DD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				70B2D0B917943886001B0C2C /* CCRestKitMappableModel.h */,
 				70A29DD817877CB4001BC8DD /* Authorization */,
 				70A29DDB17877CB5001BC8DD /* AuthorizationResponse */,
 				70A29DDE17877CB5001BC8DD /* City */,
@@ -2543,18 +2460,20 @@
 				70A29DE717877CB5001BC8DD /* DropboxFileInfo */,
 				70A29DEA17877CB5001BC8DD /* Education */,
 				70A29DED17877CB5001BC8DD /* FilterSection */,
-				D3949722178D5C0000C39A7E /* Message */,
+				70B2D04B17940161001B0C2C /* Forum */,
 				700F9466178F03F700A6FBBA /* Group */,
 				703DA4DA178B455600464DD3 /* Location */,
+				D3949722178D5C0000C39A7E /* Message */,
 				70A29DF017877CB5001BC8DD /* Note */,
 				70A29DF317877CB5001BC8DD /* NoteForUploadInfo */,
 				D39496E5178B251A00C39A7E /* Offer */,
 				70A29DF617877CB5001BC8DD /* PaginationResponse */,
 				70A29DF917877CB5001BC8DD /* Photos */,
+				70B2D0B017942DB6001B0C2C /* Question */,
+				D394973C178EC58C00C39A7E /* Review */,
 				70A29DFC17877CB5001BC8DD /* States */,
 				70A29DFF17877CB5001BC8DD /* Stuff */,
 				70A29E0217877CB5001BC8DD /* StuffUploadInfo */,
-				D394973C178EC58C00C39A7E /* Review */,
 				70A29E0517877CB5001BC8DD /* UploadIndicatorDelegate */,
 				70A29E0717877CB5001BC8DD /* User */,
 			);
@@ -2841,6 +2760,7 @@
 				70A29E5517877D2B001BC8DD /* CollegeSelectionCell */,
 				70A29E5917877D2B001BC8DD /* DropboxCell */,
 				70A29E5D17877D2B001BC8DD /* EducationCell */,
+				70B2D092179404E5001B0C2C /* ForumCell */,
 				700F9480179007E500A6FBBA /* GroupCell */,
 				700F94841790092700A6FBBA /* GroupSelectionCell */,
 				70A29E6117877D2B001BC8DD /* ImageCell */,
@@ -3094,6 +3014,7 @@
 			isa = PBXGroup;
 			children = (
 				70A29EC517877E0C001BC8DD /* AddClassTransaction */,
+				70B2D0A8179427ED001B0C2C /* AddForumTransaction */,
 				700F942D178EA73000A6FBBA /* AddLocationTransaction */,
 				70A29EC817877E0C001BC8DD /* AllClassesTransaction */,
 				70A29ECB17877E0C001BC8DD /* ApplyFiltersTransaction */,
@@ -3588,6 +3509,241 @@
 			path = ViewStuffInMarketTransaction;
 			sourceTree = "<group>";
 		};
+		70B2D0471793F879001B0C2C /* AlertHelper */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D0481793F887001B0C2C /* CCAlertHelper.h */,
+				70B2D0491793F887001B0C2C /* CCAlertHelper.m */,
+			);
+			path = AlertHelper;
+			sourceTree = "<group>";
+		};
+		70B2D04B17940161001B0C2C /* Forum */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D04C1794016F001B0C2C /* CCForum.h */,
+				70B2D04D1794016F001B0C2C /* CCForum.m */,
+			);
+			path = Forum;
+			sourceTree = "<group>";
+		};
+		70B2D04F17940245001B0C2C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D05017940245001B0C2C /* APIProvider */,
+				70B2D05417940245001B0C2C /* ClassesApiProvider */,
+				70B2D05817940245001B0C2C /* DropboxAPIProvider */,
+				70B2D05C17940245001B0C2C /* FacebookAPI */,
+				70B2D08C1794026C001B0C2C /* ForumsAPIProvider */,
+				70B2D06017940245001B0C2C /* GroupsAPIProvider */,
+				70B2D06417940245001B0C2C /* LocationsAPIProvider */,
+				70B2D06817940245001B0C2C /* LoginAPIProvider */,
+				70B2D06C17940245001B0C2C /* MarketAPIProvider */,
+				70B2D07017940245001B0C2C /* MessagesAPIProvider */,
+				70B2D07417940245001B0C2C /* NotesAPIProvider */,
+				70B2D0B417942F01001B0C2C /* QuestionsAPIProvider */,
+				70B2D07817940245001B0C2C /* SignUpAPIProvider */,
+				70B2D07C17940245001B0C2C /* StuffAPIProvider */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		70B2D05017940245001B0C2C /* APIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D05117940245001B0C2C /* CCAPIProvider.h */,
+				70B2D05217940245001B0C2C /* CCAPIProvider.m */,
+				70B2D05317940245001B0C2C /* CCAPIProviderProtocol.h */,
+			);
+			path = APIProvider;
+			sourceTree = "<group>";
+		};
+		70B2D05417940245001B0C2C /* ClassesApiProvider */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D05517940245001B0C2C /* CCClassesApiProvider.h */,
+				70B2D05617940245001B0C2C /* CCClassesApiProvider.m */,
+				70B2D05717940245001B0C2C /* CCClassesApiProviderProtocol.h */,
+			);
+			path = ClassesApiProvider;
+			sourceTree = "<group>";
+		};
+		70B2D05817940245001B0C2C /* DropboxAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D05917940245001B0C2C /* CCDropboxAPIProvider.h */,
+				70B2D05A17940245001B0C2C /* CCDropboxAPIProvider.m */,
+				70B2D05B17940245001B0C2C /* CCDropboxAPIProviderProtocol.h */,
+			);
+			path = DropboxAPIProvider;
+			sourceTree = "<group>";
+		};
+		70B2D05C17940245001B0C2C /* FacebookAPI */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D05D17940245001B0C2C /* CCFaceBookAPI.h */,
+				70B2D05E17940245001B0C2C /* CCFaceBookAPI.m */,
+				70B2D05F17940245001B0C2C /* CCFaceBookAPIProtocol.h */,
+			);
+			path = FacebookAPI;
+			sourceTree = "<group>";
+		};
+		70B2D06017940245001B0C2C /* GroupsAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D06117940245001B0C2C /* CCGroupsApiProvider.h */,
+				70B2D06217940245001B0C2C /* CCGroupsApiProvider.m */,
+				70B2D06317940245001B0C2C /* CCGroupsApiProviderProtocol.h */,
+			);
+			path = GroupsAPIProvider;
+			sourceTree = "<group>";
+		};
+		70B2D06417940245001B0C2C /* LocationsAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D06517940245001B0C2C /* CCLocationsApiProvider.h */,
+				70B2D06617940245001B0C2C /* CCLocationsApiProvider.m */,
+				70B2D06717940245001B0C2C /* CCLocationsApiProviderProtocol.h */,
+			);
+			path = LocationsAPIProvider;
+			sourceTree = "<group>";
+		};
+		70B2D06817940245001B0C2C /* LoginAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D06917940245001B0C2C /* CCLoginAPIProvider.h */,
+				70B2D06A17940245001B0C2C /* CCLoginAPIProvider.m */,
+				70B2D06B17940245001B0C2C /* CCLoginAPIProviderProtocol.h */,
+			);
+			path = LoginAPIProvider;
+			sourceTree = "<group>";
+		};
+		70B2D06C17940245001B0C2C /* MarketAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D06D17940245001B0C2C /* CCMarketAPIProvider.h */,
+				70B2D06E17940245001B0C2C /* CCMarketAPIProvider.m */,
+				70B2D06F17940245001B0C2C /* CCMarketAPIProviderProtocol.h */,
+			);
+			path = MarketAPIProvider;
+			sourceTree = "<group>";
+		};
+		70B2D07017940245001B0C2C /* MessagesAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D07117940245001B0C2C /* CCMessageAPIProvider.h */,
+				70B2D07217940245001B0C2C /* CCMessageAPIProvider.m */,
+				70B2D07317940245001B0C2C /* CCMessageAPIProviderProtocol.h */,
+			);
+			path = MessagesAPIProvider;
+			sourceTree = "<group>";
+		};
+		70B2D07417940245001B0C2C /* NotesAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D07517940245001B0C2C /* CCNotesAPIProvider.h */,
+				70B2D07617940245001B0C2C /* CCNotesAPIProvider.m */,
+				70B2D07717940245001B0C2C /* CCNotesAPIProviderProtolcol.h */,
+			);
+			path = NotesAPIProvider;
+			sourceTree = "<group>";
+		};
+		70B2D07817940245001B0C2C /* SignUpAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D07917940245001B0C2C /* CCSignUPAPIProtocol.h */,
+				70B2D07A17940245001B0C2C /* CCSignUpAPIProvider.h */,
+				70B2D07B17940245001B0C2C /* CCSignUpAPIProvider.m */,
+			);
+			path = SignUpAPIProvider;
+			sourceTree = "<group>";
+		};
+		70B2D07C17940245001B0C2C /* StuffAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D07D17940245001B0C2C /* CCStuffAPIProvider.h */,
+				70B2D07E17940245001B0C2C /* CCStuffAPIProvider.m */,
+				70B2D07F17940245001B0C2C /* CCStuffAPIProviderProtocol.h */,
+			);
+			path = StuffAPIProvider;
+			sourceTree = "<group>";
+		};
+		70B2D08C1794026C001B0C2C /* ForumsAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D08D17940277001B0C2C /* CCForumsApiProvider.h */,
+				70B2D08E17940277001B0C2C /* CCForumsApiProvider.m */,
+				70B2D09117940298001B0C2C /* CCForumsApiProviderProtocol.h */,
+			);
+			path = ForumsAPIProvider;
+			sourceTree = "<group>";
+		};
+		70B2D092179404E5001B0C2C /* ForumCell */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D093179404F3001B0C2C /* CCForumCell.h */,
+				70B2D094179404F3001B0C2C /* CCForumCell.m */,
+				70B2D09617940505001B0C2C /* CCForumCell.xib */,
+			);
+			path = ForumCell;
+			sourceTree = "<group>";
+		};
+		70B2D09817941336001B0C2C /* PluralizeHelper */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D09917941349001B0C2C /* CCPluralizeHelper.h */,
+				70B2D09A17941349001B0C2C /* CCPluralizeHelper.m */,
+			);
+			path = PluralizeHelper;
+			sourceTree = "<group>";
+		};
+		70B2D0A217941A01001B0C2C /* AddForumController */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D0A317941A0C001B0C2C /* CCAddForumViewController.h */,
+				70B2D0A417941A0C001B0C2C /* CCAddForumViewController.m */,
+				70B2D0A517941A0C001B0C2C /* CCAddForumViewController.xib */,
+			);
+			path = AddForumController;
+			sourceTree = "<group>";
+		};
+		70B2D0A8179427ED001B0C2C /* AddForumTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D0A9179427FA001B0C2C /* CCAddForumTransaction.h */,
+				70B2D0AA179427FA001B0C2C /* CCAddForumTransaction.m */,
+			);
+			path = AddForumTransaction;
+			sourceTree = "<group>";
+		};
+		70B2D0AC17942ADB001B0C2C /* StringHelper */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D0AD17942AE5001B0C2C /* CCStringHelper.h */,
+				70B2D0AE17942AE5001B0C2C /* CCStringHelper.m */,
+			);
+			path = StringHelper;
+			sourceTree = "<group>";
+		};
+		70B2D0B017942DB6001B0C2C /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D0B117942DCC001B0C2C /* CCQuestion.h */,
+				70B2D0B217942DCC001B0C2C /* CCQuestion.m */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		70B2D0B417942F01001B0C2C /* QuestionsAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				70B2D0B517942F0E001B0C2C /* CCQuestionsApiProvider.h */,
+				70B2D0B617942F0E001B0C2C /* CCQuestionsApiProvider.m */,
+				70B2D0B817942F2E001B0C2C /* CCQuestionsApiProviderProtocol.h */,
+			);
+			path = QuestionsAPIProvider;
+			sourceTree = "<group>";
+		};
 		70C0FCB2178484C7005EF95E /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -3778,6 +3934,15 @@
 			path = Stars;
 			sourceTree = "<group>";
 		};
+		D359E60C17945F0000869D6C /* ClassCreationDataSourse */ = {
+			isa = PBXGroup;
+			children = (
+				D359E60D17945F2600869D6C /* CCClassCreationDataSource.h */,
+				D359E60E17945F2600869D6C /* CCClassCreationDataSource.m */,
+			);
+			path = ClassCreationDataSourse;
+			sourceTree = "<group>";
+		};
 		D36146B1176314A100907414 /* DropboxIcons */ = {
 			isa = PBXGroup;
 			children = (
@@ -3895,17 +4060,6 @@
 				D394970D178C406800C39A7E /* CCOfferDetailsTransaction.m */,
 			);
 			path = OfferDetailsController;
-			sourceTree = "<group>";
-		};
-		D394970F178C6D0000C39A7E /* MessagesAPIProvider */ = {
-			isa = PBXGroup;
-			children = (
-				D3949710178C6D4500C39A7E /* CCMessageAPIProvider.h */,
-				D3949711178C6D4500C39A7E /* CCMessageAPIProvider.m */,
-				D3949713178C6D6300C39A7E /* CCMessageAPIProviderProtocol.h */,
-			);
-			name = MessagesAPIProvider;
-			path = ../MessagesAPIProvider;
 			sourceTree = "<group>";
 		};
 		D3949714178D51A000C39A7E /* PrivateMessageController */ = {
@@ -4508,6 +4662,8 @@
 				D359E6091794383A00869D6C /* star_icon@2x.png in Resources */,
 				D359E60A1794383A00869D6C /* star_icon_active.png in Resources */,
 				D359E60B1794383A00869D6C /* star_icon_active@2x.png in Resources */,
+				70B2D09717940505001B0C2C /* CCForumCell.xib in Resources */,
+				70B2D0A717941A0C001B0C2C /* CCAddForumViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4627,15 +4783,6 @@
 				70A29D9D17877B94001BC8DD /* CCPhotosDataProvider.m in Sources */,
 				70A29D9E17877B94001BC8DD /* CCStatesDataProvider.m in Sources */,
 				70A29D9F17877B94001BC8DD /* CCUploadingImagesDataProvider.m in Sources */,
-				70A29E1317877CB6001BC8DD /* CCAPIProvider.m in Sources */,
-				70A29E1417877CB6001BC8DD /* CCClassesApiProvider.m in Sources */,
-				70A29E1517877CB6001BC8DD /* CCMarketAPIProvider.m in Sources */,
-				70A29E1617877CB6001BC8DD /* CCNotesAPIProvider.m in Sources */,
-				70A29E1717877CB6001BC8DD /* CCStuffAPIProvider.m in Sources */,
-				70A29E1817877CB6001BC8DD /* CCDropboxAPIProvider.m in Sources */,
-				70A29E1917877CB6001BC8DD /* CCFaceBookAPI.m in Sources */,
-				70A29E1A17877CB6001BC8DD /* CCLoginAPIProvider.m in Sources */,
-				70A29E1B17877CB6001BC8DD /* CCSignUpAPIProvider.m in Sources */,
 				70A29E1C17877CB6001BC8DD /* CCAlertDefines.m in Sources */,
 				70A29E1D17877CB6001BC8DD /* CCMenuDefines.m in Sources */,
 				70A29E1E17877CB6001BC8DD /* CCNotificationsDefines.m in Sources */,
@@ -4736,7 +4883,6 @@
 				D39496EC178B2A0400C39A7E /* CCOffersDataProvider.m in Sources */,
 				703DA4DD178B455600464DD3 /* CCLocation.m in Sources */,
 				703DA4E2178B457200464DD3 /* CCClassLocationsDataProvider.m in Sources */,
-				703DA4E7178B469000464DD3 /* CCLocationsApiProvider.m in Sources */,
 				703DA4EB178C2BD800464DD3 /* CCLocationCell.m in Sources */,
 				703DA4F8178C5C9900464DD3 /* CCMapHelper.m in Sources */,
 				703DA4FE178C6A5900464DD3 /* CCLocationsViewController.m in Sources */,
@@ -4749,7 +4895,6 @@
 				D3949709178C401400C39A7E /* CCOfferDetailsController.m in Sources */,
 				D394970E178C406800C39A7E /* CCOfferDetailsTransaction.m in Sources */,
 				70F42A83178D66BA00E763F3 /* CCLocationsDataSource.m in Sources */,
-				D3949712178C6D4500C39A7E /* CCMessageAPIProvider.m in Sources */,
 				D3949718178D51BE00C39A7E /* CCPrivateMessageController.m in Sources */,
 				D394971D178D561100C39A7E /* CCPrivateMessageTransaction.m in Sources */,
 				D3949721178D5ADD00C39A7E /* CCSuccessSendMessageTransaction.m in Sources */,
@@ -4778,11 +4923,33 @@
 				D3DF8C3117900AAA00B072B7 /* CCMessageDetailsController.m in Sources */,
 				D3DF8C40179029F000B072B7 /* CCMessageDetailsTransaction.m in Sources */,
 				D3DF8C441790308000B072B7 /* CCOfferCell.m in Sources */,
-				700F947E178FF42200A6FBBA /* CCGroupsApiProvider.m in Sources */,
 				700F9483179007F300A6FBBA /* CCGroupCell.m in Sources */,
 				700F94871790094500A6FBBA /* CCGroupSelectionCell.m in Sources */,
 				D3A2A2F41793F2F700516818 /* CCTimeTableDataProvider.m in Sources */,
 				D3A2A2F81793F56100516818 /* CCTimeTableCell.m in Sources */,
+				70B2D04A1793F887001B0C2C /* CCAlertHelper.m in Sources */,
+				70B2D04E1794016F001B0C2C /* CCForum.m in Sources */,
+				70B2D08017940245001B0C2C /* CCAPIProvider.m in Sources */,
+				70B2D08117940245001B0C2C /* CCClassesApiProvider.m in Sources */,
+				70B2D08217940245001B0C2C /* CCDropboxAPIProvider.m in Sources */,
+				70B2D08317940245001B0C2C /* CCFaceBookAPI.m in Sources */,
+				70B2D08417940245001B0C2C /* CCGroupsApiProvider.m in Sources */,
+				70B2D08517940245001B0C2C /* CCLocationsApiProvider.m in Sources */,
+				70B2D08617940245001B0C2C /* CCLoginAPIProvider.m in Sources */,
+				70B2D08717940245001B0C2C /* CCMarketAPIProvider.m in Sources */,
+				70B2D08817940245001B0C2C /* CCMessageAPIProvider.m in Sources */,
+				70B2D08917940245001B0C2C /* CCNotesAPIProvider.m in Sources */,
+				70B2D08A17940245001B0C2C /* CCSignUpAPIProvider.m in Sources */,
+				70B2D08B17940245001B0C2C /* CCStuffAPIProvider.m in Sources */,
+				70B2D08F17940277001B0C2C /* CCForumsApiProvider.m in Sources */,
+				70B2D095179404F3001B0C2C /* CCForumCell.m in Sources */,
+				70B2D09B17941349001B0C2C /* CCPluralizeHelper.m in Sources */,
+				70B2D0A617941A0C001B0C2C /* CCAddForumViewController.m in Sources */,
+				70B2D0AB179427FA001B0C2C /* CCAddForumTransaction.m in Sources */,
+				70B2D0AF17942AE5001B0C2C /* CCStringHelper.m in Sources */,
+				70B2D0B317942DCC001B0C2C /* CCQuestion.m in Sources */,
+				70B2D0B717942F0E001B0C2C /* CCQuestionsApiProvider.m in Sources */,
+				D359E60F17945F2600869D6C /* CCClassCreationDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,5 +11,6 @@
 @interface CCTimeTableCell : CCBaseCell
 
 @property (nonatomic, strong) id cellObject;
+@property (nonatomic, strong) id delegate;
 
 @end

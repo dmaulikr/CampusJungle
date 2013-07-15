@@ -7,8 +7,35 @@
 //
 
 #import "CCGroup.h"
+#import "CCRestKitConfigurator.h"
 
 @implementation CCGroup
+
++ (void)configureMappingWithManager:(RKObjectManager *)objectManager
+{
+    [self configureGroupsResponse:objectManager];
+}
+
++ (void)configureGroupsResponse:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *paginationGroupsResponseMapping = [CCRestKitConfigurator paginationMapping];
+    RKObjectMapping *groupsResponseMapping = [RKObjectMapping mappingForClass:[CCGroup class]];
+    [groupsResponseMapping addAttributeMappingsFromDictionary:[CCGroup responseMappingDictionary]];
+    RKRelationshipMapping *relationshipResponseGroupsMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
+                                                                                                           toKeyPath:CCResponseKeys.items
+                                                                                                         withMapping:groupsResponseMapping];
+    
+    
+    [paginationGroupsResponseMapping addPropertyMapping:relationshipResponseGroupsMapping];
+    
+    NSString *pathPattern = [NSString stringWithFormat:CCAPIDefines.loadGroups, @":classID"];
+    
+    RKResponseDescriptor *classGroupsResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginationGroupsResponseMapping
+                                                                                                  pathPattern:pathPattern
+                                                                                                      keyPath:nil
+                                                                                                  statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [objectManager addResponseDescriptor:classGroupsResponseDescriptor];
+}
 
 + (NSDictionary *)responseMappingDictionary
 {

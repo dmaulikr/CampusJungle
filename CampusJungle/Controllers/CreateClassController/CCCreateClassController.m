@@ -17,6 +17,7 @@
 #import "CCTimeTableDataProvider.h"
 #import "CCTimeTableCell.h"
 #import "AbstractActionSheetPicker.h"
+#import "CCClassCreationDataSource.h"
 
 @interface CCCreateClassController () <UITextFieldDelegate,  DatePickerDelegateProtocol>
 {
@@ -62,6 +63,7 @@
     [self setupScrollView];
     [self setupTextFields];
     [self addObservers];
+    self.dataSourceClass = [CCClassCreationDataSource class];
     self.tableDataProvider = [CCTimeTableDataProvider new];
     [self configTableWithProvider:self.tableDataProvider cellClass:[CCTimeTableCell class]];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleBordered target:self action:@selector(createClass:)];
@@ -113,7 +115,7 @@
     class.subject = self.subjectTextField.text;
     class.semester = self.semesterTextField.text;
     class.callNumber = self.classIdTextField.text;
-    class.timetable = [self.tableDataProvider.arrayOfLessons copy] ;
+    class.timetable = [self.tableDataProvider.arrayOfLessons mutableCopy] ;
     [(NSMutableArray *)class.timetable removeObjectAtIndex:0];
     [self.ioc_apiClassesProvider createClass:class successHandler:^(id newClass) {
         [self joinClass:(CCClass*)newClass];
@@ -200,6 +202,15 @@
 - (BOOL)isNeedToLeftSelected
 {
     return NO;
+}
+
+- (void)deleteCellObject:(NSDictionary *)object{
+    NSInteger objectIndex = [self.tableDataProvider.arrayOfLessons indexOfObject:object];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:objectIndex inSection:0];
+    [(NSMutableArray *)self.tableDataProvider.arrayOfItems removeObjectAtIndex:objectIndex];
+    [self.mainTable beginUpdates];
+    [self.mainTable deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [self.mainTable endUpdates];
 }
 
 @end

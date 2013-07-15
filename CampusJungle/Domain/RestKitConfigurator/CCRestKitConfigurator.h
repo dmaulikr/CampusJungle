@@ -9,5 +9,6 @@
 @interface CCRestKitConfigurator : NSObject
 
 + (void)configure;
++ (RKObjectMapping *)paginationMapping;
 
 @end

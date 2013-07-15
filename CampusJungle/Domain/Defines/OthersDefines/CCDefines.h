@@ -39,13 +39,21 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *recivedOffers;
     __unsafe_unretained NSString *classLocations;
     __unsafe_unretained NSString *postClassLocation;
+    __unsafe_unretained NSString *deleteLocation;
     __unsafe_unretained NSString *getStuff;
     __unsafe_unretained NSString *getUser;
     __unsafe_unretained NSString *postMessage;
     __unsafe_unretained NSString *loadMyMessages;
     __unsafe_unretained NSString *postReview;
     __unsafe_unretained NSString *loadReviews;
-    __unsafe_unretained NSString *loadGroups;    
+    __unsafe_unretained NSString *loadGroups;
+    __unsafe_unretained NSString *loadForums;
+    __unsafe_unretained NSString *postForum;
+    __unsafe_unretained NSString *deleteForum;
+    __unsafe_unretained NSString *loadQuestions;
+    __unsafe_unretained NSString *postQuestion;
+    __unsafe_unretained NSString *deleteQuestion;
+
 } CCAPIDefines;
 
 

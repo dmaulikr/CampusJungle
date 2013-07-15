@@ -30,6 +30,9 @@
 {
     id <CCTableCellProtocol> cell = [tableView dequeueReusableCellWithIdentifier:self.currentCellReuseIdentifier];
     [cell setCellObject:self.dataProvider.arrayOfItems[indexPath.row]];
+    if ([cell respondsToSelector:@selector(setDelegate:)]) {
+        [cell performSelector:@selector(setDelegate:) withObject:self.delegate];
+    }
     return (UITableViewCell *)cell;
 }
 
@@ -40,7 +43,6 @@
         [self.dataProvider loadMoreItems];
     }
 }
-
 
 - (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -58,11 +60,6 @@
 {
     Class cellClass = self.registeredCellClasses[self.currentCellReuseIdentifier];
     return [cellClass heightForCellWithObject:self.dataProvider.arrayOfItems[indexPath.row]];
-}
-
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-
 }
 
 @end
