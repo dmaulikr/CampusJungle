@@ -202,7 +202,7 @@
 		70B2D19417944895001B0C2C /* CCAddLocationTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0DF17944894001B0C2C /* CCAddLocationTransaction.m */; };
 		70B2D19517944895001B0C2C /* CCAllClassesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0E217944894001B0C2C /* CCAllClassesTransaction.m */; };
 		70B2D19617944895001B0C2C /* CCApplyFiltersTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0E517944894001B0C2C /* CCApplyFiltersTransaction.m */; };
-		70B2D19717944895001B0C2C /* CCBackToListOfNotesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0E817944894001B0C2C /* CCBackToListOfNotesTransaction.m */; };
+		70B2D19717944895001B0C2C /* CCBackToListTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0E817944894001B0C2C /* CCBackToListTransaction.m */; };
 		70B2D19817944895001B0C2C /* CCBackToNoteTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0EB17944894001B0C2C /* CCBackToNoteTransaction.m */; };
 		70B2D19917944895001B0C2C /* CCBackToStuffTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0EE17944894001B0C2C /* CCBackToStuffTransaction.m */; };
 		70B2D19A17944895001B0C2C /* CCBackToUserProfileTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0F117944894001B0C2C /* CCBackToUserProfileTransaction.m */; };
@@ -875,8 +875,8 @@
 		70B2D0E217944894001B0C2C /* CCAllClassesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAllClassesTransaction.m; sourceTree = "<group>"; };
 		70B2D0E417944894001B0C2C /* CCApplyFiltersTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCApplyFiltersTransaction.h; sourceTree = "<group>"; };
 		70B2D0E517944894001B0C2C /* CCApplyFiltersTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCApplyFiltersTransaction.m; sourceTree = "<group>"; };
-		70B2D0E717944894001B0C2C /* CCBackToListOfNotesTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBackToListOfNotesTransaction.h; sourceTree = "<group>"; };
-		70B2D0E817944894001B0C2C /* CCBackToListOfNotesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBackToListOfNotesTransaction.m; sourceTree = "<group>"; };
+		70B2D0E717944894001B0C2C /* CCBackToListTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBackToListTransaction.h; sourceTree = "<group>"; };
+		70B2D0E817944894001B0C2C /* CCBackToListTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBackToListTransaction.m; sourceTree = "<group>"; };
 		70B2D0EA17944894001B0C2C /* CCBackToNoteTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBackToNoteTransaction.h; sourceTree = "<group>"; };
 		70B2D0EB17944894001B0C2C /* CCBackToNoteTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBackToNoteTransaction.m; sourceTree = "<group>"; };
 		70B2D0ED17944894001B0C2C /* CCBackToStuffTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBackToStuffTransaction.h; sourceTree = "<group>"; };
@@ -3085,8 +3085,8 @@
 		70B2D0E617944894001B0C2C /* BackToListOfNotesTransaction */ = {
 			isa = PBXGroup;
 			children = (
-				70B2D0E717944894001B0C2C /* CCBackToListOfNotesTransaction.h */,
-				70B2D0E817944894001B0C2C /* CCBackToListOfNotesTransaction.m */,
+				70B2D0E717944894001B0C2C /* CCBackToListTransaction.h */,
+				70B2D0E817944894001B0C2C /* CCBackToListTransaction.m */,
 			);
 			path = BackToListOfNotesTransaction;
 			sourceTree = "<group>";
@@ -4963,7 +4963,7 @@
 				70B2D19417944895001B0C2C /* CCAddLocationTransaction.m in Sources */,
 				70B2D19517944895001B0C2C /* CCAllClassesTransaction.m in Sources */,
 				70B2D19617944895001B0C2C /* CCApplyFiltersTransaction.m in Sources */,
-				70B2D19717944895001B0C2C /* CCBackToListOfNotesTransaction.m in Sources */,
+				70B2D19717944895001B0C2C /* CCBackToListTransaction.m in Sources */,
 				70B2D19817944895001B0C2C /* CCBackToNoteTransaction.m in Sources */,
 				70B2D19917944895001B0C2C /* CCBackToStuffTransaction.m in Sources */,
 				70B2D19A17944895001B0C2C /* CCBackToUserProfileTransaction.m in Sources */,

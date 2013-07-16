@@ -15,6 +15,7 @@
     if(self = [super init]){
         self.uploadingNotes = [NSMutableArray new];
         self.uploadingStuff = [NSMutableArray new];
+        self.uploadingQuestions = [NSMutableArray new];
     }
     return self;
 }

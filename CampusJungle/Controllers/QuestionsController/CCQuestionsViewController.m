@@ -81,4 +81,10 @@
     }];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.dataProvider loadItems];
+}
+
 @end

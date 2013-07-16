@@ -187,8 +187,6 @@
                 [[weakSelf backToListTransaction] perform];
                 uploadInfo.uploadProgress = [NSNumber numberWithDouble:finished];
             }];
-
-        
         }];
     }
 }

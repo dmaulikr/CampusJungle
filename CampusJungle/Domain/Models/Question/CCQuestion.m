@@ -68,8 +68,15 @@
 {
     return @{
              @"text" : @"text",
-             @"attachment" : @"attachment",
+             @"arrayOfImageUrls" : @"images_urls",
+             @"pdfUrl" : @"pdf_url",
              };
+}
+
+- (void)setUploadProgress:(NSNumber *)uploadProgress
+{
+    _uploadProgress = uploadProgress;
+    [self.delegate uploadProgressDidUpdate];
 }
 
 @end

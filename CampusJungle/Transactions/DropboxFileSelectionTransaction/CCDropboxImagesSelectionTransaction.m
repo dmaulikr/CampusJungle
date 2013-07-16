@@ -16,7 +16,6 @@
 - (void)performWithObject:(id)object
 {
     NSParameterAssert(self.navigation);
-    NSParameterAssert(self.backToListTransaction);
     
     CCDropboxImagesFileSystemTransaction *fileSystemTransaction = [self fileSystemTransaction];
     CCImagesSortingTransaction *sortingTransaction = [CCImagesSortingTransaction new];

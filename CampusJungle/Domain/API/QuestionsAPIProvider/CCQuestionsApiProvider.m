@@ -53,4 +53,17 @@
     }];
 }
 
+- (void)postUploadInfoWithImages:(CCQuestion *)question withImages:(NSArray *)images successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler progress:(progressBlock)progressBlock
+{
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.postQuestion, question.forumId];
+   [self postInfoWithObject:question
+                  thumbnail:nil
+                     images:images
+                     onPath:path
+             successHandler:successHandler
+               errorHandler:errorHandler
+                   progress:progressBlock];
+}
+
+
 @end

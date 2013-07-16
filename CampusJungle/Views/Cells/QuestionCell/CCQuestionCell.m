@@ -12,13 +12,14 @@
 #import "CCPluralizeHelper.h"
 #import "CCViewPositioningHelper.h"
 #import "CCUserSessionProtocol.h"
+#import "MACircleProgressIndicator.h"
 
 static const NSInteger kTextLabelOriginY = 77;
 static const NSInteger kDefaultTextLabelWidth = 272;
 static const NSInteger kBottomSpace = 30;
 static const CGFloat kMinCellHeight = 133;
 
-@interface CCQuestionCell ()
+@interface CCQuestionCell ()<CCUploadIndicatorDelegateProtocol>
 
 @property (nonatomic, weak) IBOutlet UIImageView *ownerAvatarImageView;
 @property (nonatomic, weak) IBOutlet UILabel *ownerNameLabel;
@@ -30,6 +31,7 @@ static const CGFloat kMinCellHeight = 133;
 @property (nonatomic, strong) CCQuestion *question;
 @property (nonatomic, weak) id<CCQuestionCellDelegate> delegate;
 @property (nonatomic, strong) id<CCUserSessionProtocol> ioc_userSessionProvider;
+@property (nonatomic, weak) IBOutlet MACircleProgressIndicator *indicator;
 
 @end
 
@@ -49,6 +51,12 @@ static const CGFloat kMinCellHeight = 133;
 
 - (void)setCellObject:(CCQuestion *)object
 {
+    if(object.uploadProgress){
+        [self setUpUploadingIndicatorWithObject:object];
+    } else {
+        [self removeIndicator];
+    }
+    _cellObject = object;
     self.question = object;
     [self fillLabels];
     [self fillImageView];
@@ -59,7 +67,11 @@ static const CGFloat kMinCellHeight = 133;
 {
     [self.ownerNameLabel setText:[NSString stringWithFormat:@"%@ %@", self.question.ownerFirstName, self.question.ownerLastName]];
     [self.questionTextLabel setText:self.question.text];
-    [self.createdAtLabel setText:[NSString stringWithFormat:@"%@", self.question.createdDate]];
+    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+    [outputFormatter setLocale:[NSLocale systemLocale]];
+    [outputFormatter setDateFormat:@"hh:mma dd/MM/yy"];
+
+    [self.createdAtLabel setText:[outputFormatter stringFromDate:self.question.createdDate]];
     [self.answersNumberLabel setText:[NSString stringWithFormat:@"%i %@", self.question.answersCount, [CCPluralizeHelper pluralizeEntityName:@"answer" withNumberOfItems:self.question.answersCount]]];
     
     [self.questionTextLabel sizeToFit];
@@ -95,6 +107,29 @@ static const CGFloat kMinCellHeight = 133;
     if (self.delegate && [self.delegate respondsToSelector:@selector(deleteQuestion:)]) {
         [self.delegate deleteQuestion:self.question];
     }
+}
+
+- (void)setUpUploadingIndicatorWithObject:(CCQuestion *)object
+{
+    self.indicator.color = [UIColor brownColor];
+    if(_cellObject.uploadProgress){
+        [(CCQuestion *)_cellObject setDelegate:nil];
+    }
+    object.delegate = self;
+    self.indicator.value = object.uploadProgress.floatValue;
+    self.indicator.hidden = NO;
+    self.deleteQuestionButton.hidden = YES;
+}
+
+- (void)uploadProgressDidUpdate
+{
+    self.indicator.value = [(CCQuestion *)self.cellObject uploadProgress].floatValue;
+}
+
+- (void)removeIndicator
+{
+    self.indicator.hidden = YES;
+    self.deleteQuestionButton.hidden = NO;
 }
 
 @end

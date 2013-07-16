@@ -14,14 +14,12 @@
 
 - (void)performWithObject:(id)object
 {
-    NSParameterAssert(self.backToListTransaction);
     NSParameterAssert(self.navigation);
     NSParameterAssert(self.sortingControllerClass);
     NSParameterAssert(self.uploadingBlock);
     NSDictionary *unSortedInfo = (NSDictionary *)object;
     CCImageSortingController *sortingController = [self.sortingControllerClass new];
     sortingController.arrayOfDropboxImages = unSortedInfo[@"arrayOfDropboxItems"];
-   // sortingController.uploadInfo = unSortedInfo[@"uploadInfo"];
     sortingController.dropboxUploading = self.uploadingBlock;
     sortingController.backToListTransaction = self.backToListTransaction;
     [self.navigation pushViewController:sortingController animated:YES];

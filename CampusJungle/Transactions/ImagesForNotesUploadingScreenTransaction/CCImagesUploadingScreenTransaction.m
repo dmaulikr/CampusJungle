@@ -14,7 +14,6 @@
 - (void)performWithObject:(id)object
 {
     NSParameterAssert(self.naviation);
-    NSParameterAssert(self.backToListTransaction);
     
     CCUploadImagesController *uploadImagesController = [CCUploadImagesController new];
 

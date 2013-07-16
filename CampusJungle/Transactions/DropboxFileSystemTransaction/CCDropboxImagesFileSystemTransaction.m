@@ -14,7 +14,6 @@
 - (void)performWithObject:(id)object
 {
     NSParameterAssert(self.navigation);
-    NSParameterAssert(self.backToListTransaction);
     NSParameterAssert(self.imagesSortingTransaction);
     
     NSDictionary *sendedObject = object;
@@ -30,7 +29,6 @@
     dropboxController.backToListTransaction = self.backToListTransaction;
     dropboxController.dropboxPath = sendedObject[@"path"];
     dropboxController.arrayOfSelectedFiles = sendedObject[@"sellected"];
-    dropboxController.uploadInfo = sendedObject[@"noteInfo"];
     
     dropboxController.dropboxFileSystemTransaction = fileSystemTransaction;
     [self.navigation pushViewController:dropboxController animated:YES];
