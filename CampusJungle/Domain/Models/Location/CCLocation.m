@@ -28,13 +28,14 @@
     return location;
 }
 
-+ (CCLocation *)createWithCoordinates:(CLLocationCoordinate2D)coordinates name:(NSString *)name description:(NSString *)description place:(id)place visibleItems:(NSArray *)visibleItemsArray sharedWithAll:(BOOL)sharedWithAll
++ (CCLocation *)createWithCoordinates:(CLLocationCoordinate2D)coordinates name:(NSString *)name description:(NSString *)description address:(NSString *)address place:(id)place visibleItems:(NSArray *)visibleItemsArray sharedWithAll:(BOOL)sharedWithAll
 {
     CCLocation *location = [CCLocation new];
     
     location.latitude = coordinates.latitude;
     location.longitude = coordinates.longitude;
     location.name = name;
+    location.address = address;
     location.description = description;
     location.sharedWithAll = sharedWithAll;
     
@@ -102,7 +103,7 @@
          @"owner_id" : @"ownerId",
          @"shared_with_all" : @"sharedWithAll",
          @"city_id" : @"cityId",
-         @"street" : @"street"
+         @"address" : @"address"
       };
 }
 
@@ -113,6 +114,7 @@
          @"name" : @"name",
          @"latitude" : @"latitude",
          @"longitude" : @"longitude",
+         @"address" : @"address",
          @"sharedWithAll" : @"shared_with_all",
          @"visibleUsersIdsArray" : @"users_ids",
          @"visibleGroupsIdsArray" : @"groups_ids"

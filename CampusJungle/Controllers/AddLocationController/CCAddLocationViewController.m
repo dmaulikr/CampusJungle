@@ -269,7 +269,7 @@
 {
     __weak CCAddLocationViewController *weakSelf = self;
     CLLocationCoordinate2D coordinates = [self coordinatesFromMap];
-    CCLocation *location = [CCLocation createWithCoordinates:coordinates name:self.nameTextField.text description:self.descriptionTextField.text place:self.locationToAddobject visibleItems:itemsArray sharedWithAll:sharedWithAll];
+    CCLocation *location = [CCLocation createWithCoordinates:coordinates name:self.nameTextField.text description:self.descriptionTextField.text address:self.addressTextField.text place:self.locationToAddobject visibleItems:itemsArray sharedWithAll:sharedWithAll];
     [self.ioc_locationsApiProvider postLocation:location successHandler:^(RKMappingResult *result) {
         [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadClassLocations object:nil];
         [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.addedLocation duration:CCProgressHudsConstants.loaderDuration];
