@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "CCTransaction.h"
-#import "CCViewController.h"
+#import "CCBaseViewController.h"
 
 @interface CCBackToListOfNotesTransaction : NSObject <CCTransaction>
 
 @property (nonatomic, strong) UINavigationController *navigation;
-@property (nonatomic, strong) CCViewController *listController;
+@property (nonatomic, strong) CCBaseViewController *listController;
 
 @end

@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CCViewController.h"
+#import "CCBaseViewController.h"
 
 @class CCForum;
 
-@interface CCAddQuestionViewController : CCViewController
+@interface CCAddQuestionViewController : CCBaseViewController
 
 - (void)setForum:(CCForum *)forum;
 

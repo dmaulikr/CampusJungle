@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCViewController.h"
+#import "CCBaseViewController.h"
 #import "CCTransaction.h"
-#import "CCTableBasedController.h"
+#import "CCTableBaseViewController.h"
 
-@interface CCUserProfile : CCTableBasedController
+@interface CCUserProfile : CCTableBaseViewController
 
 @property (nonatomic, strong) id <CCTransaction> logoutTransaction;
 @property (nonatomic, strong) id <CCTransaction> addColegeTransaction;

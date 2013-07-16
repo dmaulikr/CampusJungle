@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCViewController.h"
+#import "CCBaseViewController.h"
 #import "CCTransactionWithObject.h"
-#import "CCTableBasedController.h"
+#import "CCTableBaseViewController.h"
 
-@interface CCCreateClassController : CCTableBasedController
+@interface CCCreateClassController : CCTableBaseViewController
 
 @property (nonatomic, strong) id <CCTransactionWithObject> classAddedTransaction;
 

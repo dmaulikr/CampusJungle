@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCViewController.h"
+#import "CCBaseViewController.h"
 #import "CCNote.h"
 #import "CCTransaction.h"
 
-@interface CCReviewController : CCViewController
+@interface CCReviewController : CCBaseViewController
 
 @property (nonatomic, strong) CCNote *note;
 @property (nonatomic, strong) id <CCTransaction> backToNoteTransaction;

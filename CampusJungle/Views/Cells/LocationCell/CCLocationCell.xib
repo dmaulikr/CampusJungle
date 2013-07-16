@@ -46,7 +46,7 @@
 								<string key="NSFrame">{{16, 7}, {250, 23}}</string>
 								<reference key="NSSuperview" ref="724599094"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="641606400"/>
+								<reference key="NSNextKeyView" ref="275767888"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -76,7 +76,7 @@
 									<int key="NSfFlags">16</int>
 								</object>
 							</object>
-							<object class="IBUILabel" id="641606400">
+							<object class="IBUILabel" id="275767888">
 								<reference key="NSNextResponder" ref="724599094"/>
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{16, 28}, {250, 23}}</string>
@@ -257,7 +257,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">addressLabel</string>
 						<reference key="source" ref="138029283"/>
-						<reference key="destination" ref="641606400"/>
+						<reference key="destination" ref="275767888"/>
 					</object>
 					<int key="connectionID">23</int>
 				</object>
@@ -288,7 +288,7 @@
 							<reference ref="336056943"/>
 							<reference ref="889408872"/>
 							<reference ref="209970921"/>
-							<reference ref="641606400"/>
+							<reference ref="275767888"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -311,7 +311,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">22</int>
-						<reference key="object" ref="641606400"/>
+						<reference key="object" ref="275767888"/>
 						<reference key="parent" ref="138029283"/>
 					</object>
 				</array>

@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCTableBasedController.h"
+#import "CCTableBaseViewController.h"
 #import "CCTransactionWithObject.h"
 #import "CCNoteUploadInfo.h"
 #import "CCDropboxDataProvider.h"
 #import "CCTransaction.h"
 
-@interface CCDropboxImagesSelectionViewController : CCTableBasedController
+@interface CCDropboxImagesSelectionViewController : CCTableBaseViewController
 
 @property (nonatomic, strong) CCDropboxDataProvider *dropboxDataProvider;
 @property (nonatomic, strong) NSString *dropboxPath;

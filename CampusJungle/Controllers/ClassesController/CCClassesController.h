@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCTableBasedController.h"
+#import "CCTableBaseViewController.h"
 #import "CCTransactionWithObject.h"
 #import "CCTransaction.h"
 
-@interface CCClassesController : CCTableBasedController
+@interface CCClassesController : CCTableBaseViewController
 @property (nonatomic, strong) id <CCTransactionWithObject> classTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> selectCollege;
 @property (nonatomic, strong) id <CCTransaction> userProfileTransaction;

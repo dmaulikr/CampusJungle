@@ -1,19 +1,19 @@
 //
-//  CCViewController.m
+//  CCBaseViewController.m
 //  CollegeConnect
 //
 //  Created by Vlad Korzun on 21.05.13.
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCViewController.h"
+#import "CCBaseViewController.h"
 #import <TestFlightSDK/TestFlight.h>
 
-@interface CCViewController ()
+@interface CCBaseViewController ()
 
 @end
 
-@implementation CCViewController
+@implementation CCBaseViewController
 
 - (void)viewDidLoad
 {

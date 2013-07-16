@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCViewController.h"
+#import "CCBaseViewController.h"
 #import "CCTransactionWithObject.h"
 
-@interface CCEducationCreationController : CCViewController
+@interface CCEducationCreationController : CCBaseViewController
 
 @property (nonatomic, strong) id <CCTransactionWithObject> backToUserTransaction;
 @property (nonatomic, strong) NSString *collegeName;

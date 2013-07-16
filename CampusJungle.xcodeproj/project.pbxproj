@@ -42,8 +42,8 @@
 		70930825178594CA00E71AB0 /* side_menu_college_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70930823178594CA00E71AB0 /* side_menu_college_icon@2x.png */; };
 		70A29C301786F79A001BC8DD /* separator.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBD21781B7AE00E54EFC /* separator.png */; };
 		70A29C311786F79A001BC8DD /* separator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBD31781B7AE00E54EFC /* separator@2x.png */; };
-		70A29CE0178778AB001BC8DD /* CCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29C37178778AB001BC8DD /* CCViewController.m */; };
-		70A29CE1178778AB001BC8DD /* CCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29C38178778AB001BC8DD /* CCViewController.xib */; };
+		70A29CE0178778AB001BC8DD /* CCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29C37178778AB001BC8DD /* CCBaseViewController.m */; };
+		70A29CE1178778AB001BC8DD /* CCBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29C38178778AB001BC8DD /* CCBaseViewController.xib */; };
 		70A29CE2178778AB001BC8DD /* CCCitySelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29C3B178778AB001BC8DD /* CCCitySelectionController.m */; };
 		70A29CE3178778AB001BC8DD /* CCCitySelectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29C3C178778AB001BC8DD /* CCCitySelectionController.xib */; };
 		70A29CE4178778AB001BC8DD /* CCClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29C3F178778AB001BC8DD /* CCClassController.m */; };
@@ -100,7 +100,7 @@
 		70A29D1F178778AB001BC8DD /* CCSignUPController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29CC2178778AB001BC8DD /* CCSignUPController.xib */; };
 		70A29D20178778AB001BC8DD /* CCStateSelectionConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29CC5178778AB001BC8DD /* CCStateSelectionConroller.m */; };
 		70A29D21178778AB001BC8DD /* CCStateSelectionConroller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29CC6178778AB001BC8DD /* CCStateSelectionConroller.xib */; };
-		70A29D22178778AB001BC8DD /* CCTableBasedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29CC9178778AB001BC8DD /* CCTableBasedController.m */; };
+		70A29D22178778AB001BC8DD /* CCTableBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29CC9178778AB001BC8DD /* CCTableBaseViewController.m */; };
 		70A29D23178778AB001BC8DD /* CCStuffCreationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29CCC178778AB001BC8DD /* CCStuffCreationController.m */; };
 		70A29D24178778AB001BC8DD /* CCStuffCreationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29CCD178778AB001BC8DD /* CCStuffCreationController.xib */; };
 		70A29D25178778AB001BC8DD /* CCStuffDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29CD0178778AB001BC8DD /* CCStuffDetailsController.m */; };
@@ -555,9 +555,9 @@
 		7093081F178592CC00E71AB0 /* news_feed_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_feed_icon@2x.png"; sourceTree = "<group>"; };
 		70930822178594CA00E71AB0 /* side_menu_college_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = side_menu_college_icon.png; sourceTree = "<group>"; };
 		70930823178594CA00E71AB0 /* side_menu_college_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "side_menu_college_icon@2x.png"; sourceTree = "<group>"; };
-		70A29C36178778AB001BC8DD /* CCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCViewController.h; sourceTree = "<group>"; };
-		70A29C37178778AB001BC8DD /* CCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewController.m; sourceTree = "<group>"; };
-		70A29C38178778AB001BC8DD /* CCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCViewController.xib; sourceTree = "<group>"; };
+		70A29C36178778AB001BC8DD /* CCBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBaseViewController.h; sourceTree = "<group>"; };
+		70A29C37178778AB001BC8DD /* CCBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBaseViewController.m; sourceTree = "<group>"; };
+		70A29C38178778AB001BC8DD /* CCBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCBaseViewController.xib; sourceTree = "<group>"; };
 		70A29C3A178778AB001BC8DD /* CCCitySelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCitySelectionController.h; sourceTree = "<group>"; };
 		70A29C3B178778AB001BC8DD /* CCCitySelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCitySelectionController.m; sourceTree = "<group>"; };
 		70A29C3C178778AB001BC8DD /* CCCitySelectionController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCCitySelectionController.xib; sourceTree = "<group>"; };
@@ -658,8 +658,8 @@
 		70A29CC4178778AB001BC8DD /* CCStateSelectionConroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStateSelectionConroller.h; sourceTree = "<group>"; };
 		70A29CC5178778AB001BC8DD /* CCStateSelectionConroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStateSelectionConroller.m; sourceTree = "<group>"; };
 		70A29CC6178778AB001BC8DD /* CCStateSelectionConroller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCStateSelectionConroller.xib; sourceTree = "<group>"; };
-		70A29CC8178778AB001BC8DD /* CCTableBasedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableBasedController.h; sourceTree = "<group>"; };
-		70A29CC9178778AB001BC8DD /* CCTableBasedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableBasedController.m; sourceTree = "<group>"; };
+		70A29CC8178778AB001BC8DD /* CCTableBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableBaseViewController.h; sourceTree = "<group>"; };
+		70A29CC9178778AB001BC8DD /* CCTableBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableBaseViewController.m; sourceTree = "<group>"; };
 		70A29CCB178778AB001BC8DD /* CCStuffCreationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStuffCreationController.h; sourceTree = "<group>"; };
 		70A29CCC178778AB001BC8DD /* CCStuffCreationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStuffCreationController.m; sourceTree = "<group>"; };
 		70A29CCD178778AB001BC8DD /* CCStuffCreationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCStuffCreationController.xib; sourceTree = "<group>"; };
@@ -1578,9 +1578,9 @@
 		70A29C35178778AB001BC8DD /* BaseController */ = {
 			isa = PBXGroup;
 			children = (
-				70A29C36178778AB001BC8DD /* CCViewController.h */,
-				70A29C37178778AB001BC8DD /* CCViewController.m */,
-				70A29C38178778AB001BC8DD /* CCViewController.xib */,
+				70A29C36178778AB001BC8DD /* CCBaseViewController.h */,
+				70A29C37178778AB001BC8DD /* CCBaseViewController.m */,
+				70A29C38178778AB001BC8DD /* CCBaseViewController.xib */,
 			);
 			path = BaseController;
 			sourceTree = "<group>";
@@ -1961,8 +1961,8 @@
 		70A29CC7178778AB001BC8DD /* TableBasedController */ = {
 			isa = PBXGroup;
 			children = (
-				70A29CC8178778AB001BC8DD /* CCTableBasedController.h */,
-				70A29CC9178778AB001BC8DD /* CCTableBasedController.m */,
+				70A29CC8178778AB001BC8DD /* CCTableBaseViewController.h */,
+				70A29CC9178778AB001BC8DD /* CCTableBaseViewController.m */,
 			);
 			name = TableBasedController;
 			path = StateSelectionController/TableBasedController;
@@ -4677,7 +4677,7 @@
 				D394968E1785C36800C39A7E /* Default.png in Resources */,
 				D39496901785C36C00C39A7E /* Default-568h@2x.png in Resources */,
 				D39496921785C37300C39A7E /* Default@2x.png in Resources */,
-				70A29CE1178778AB001BC8DD /* CCViewController.xib in Resources */,
+				70A29CE1178778AB001BC8DD /* CCBaseViewController.xib in Resources */,
 				70A29CE3178778AB001BC8DD /* CCCitySelectionController.xib in Resources */,
 				70A29CE5178778AB001BC8DD /* CCClassController.xib in Resources */,
 				70A29CE7178778AB001BC8DD /* CCClassesController.xib in Resources */,
@@ -4808,7 +4808,7 @@
 				709308151785806000E71AB0 /* CCUIImageHelper.m in Sources */,
 				709308191785809C00E71AB0 /* CCViewPositioningHelper.m in Sources */,
 				70438E481785B7A800537712 /* CCNavigationBarViewHelper.m in Sources */,
-				70A29CE0178778AB001BC8DD /* CCViewController.m in Sources */,
+				70A29CE0178778AB001BC8DD /* CCBaseViewController.m in Sources */,
 				70A29CE2178778AB001BC8DD /* CCCitySelectionController.m in Sources */,
 				70A29CE4178778AB001BC8DD /* CCClassController.m in Sources */,
 				70A29CE6178778AB001BC8DD /* CCClassesController.m in Sources */,
@@ -4840,7 +4840,7 @@
 				70A29D1D178778AB001BC8DD /* CCSideBarController.m in Sources */,
 				70A29D1E178778AB001BC8DD /* CCSignUPController.m in Sources */,
 				70A29D20178778AB001BC8DD /* CCStateSelectionConroller.m in Sources */,
-				70A29D22178778AB001BC8DD /* CCTableBasedController.m in Sources */,
+				70A29D22178778AB001BC8DD /* CCTableBaseViewController.m in Sources */,
 				70A29D23178778AB001BC8DD /* CCStuffCreationController.m in Sources */,
 				70A29D25178778AB001BC8DD /* CCStuffDetailsController.m in Sources */,
 				70A29D27178778AB001BC8DD /* MHTabBarController.m in Sources */,

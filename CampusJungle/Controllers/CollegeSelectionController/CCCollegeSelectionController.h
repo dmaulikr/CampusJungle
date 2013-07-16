@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCTableBasedController.h"
+#import "CCTableBaseViewController.h"
 #import "CCTransactionWithObject.h"
 
-@interface CCCollegeSelectionController : CCTableBasedController
+@interface CCCollegeSelectionController : CCTableBaseViewController
 
 @property (nonatomic, strong) NSNumber *cityID;
 @property (nonatomic, strong) id <CCTransactionWithObject> educationTransaction;

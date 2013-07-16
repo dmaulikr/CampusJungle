@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCViewController.h"
+#import "CCBaseViewController.h"
 #import "CCTransactionWithObject.h"
 
-@interface CCMarketPlaceController : CCViewController
+@interface CCMarketPlaceController : CCBaseViewController
 
 @property (nonatomic, strong) id <CCTransactionWithObject> filtersScreenTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> noteDetailsTransaction;

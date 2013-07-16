@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCViewController.h"
+#import "CCBaseViewController.h"
 #import "CCUser.h"
 #import "CCTransaction.h"
 
-@interface CCPrivateMessageController : CCViewController
+@interface CCPrivateMessageController : CCBaseViewController
 
 @property (nonatomic, strong) CCUser *recipient;
 @property (nonatomic, strong) id <CCTransaction> successMessageSendTransaction;

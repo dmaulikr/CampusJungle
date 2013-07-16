@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCTableBasedController.h"
+#import "CCTableBaseViewController.h"
 #import "CCTransaction.h"
 #import "CCTransactionWithObject.h"
 
-@interface CCMyNotesViewController : CCTableBasedController
+@interface CCMyNotesViewController : CCTableBaseViewController
 
 @property (nonatomic, strong) id <CCTransaction> addNewNoteTransaction;
 @property (nonatomic ,strong) id <CCTransactionWithObject> viewNoteTransaction;

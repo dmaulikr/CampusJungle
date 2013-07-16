@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCTableBasedController.h"
+#import "CCTableBaseViewController.h"
 #import "CCClassTableDelegate.h"
 
-@interface CCClassTableController : CCTableBasedController
+@interface CCClassTableController : CCTableBaseViewController
 
 @property (nonatomic, strong) NSString *classID;
 @property (nonatomic, weak) UIView *tableHeaderView;
