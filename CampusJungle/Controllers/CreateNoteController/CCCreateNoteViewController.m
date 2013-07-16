@@ -133,7 +133,9 @@
 - (IBAction)imagesFromDropBoxButtonDidPressed
 {
     if([self isFieldsValid]){
-        [self.imagesDropboxUploadTransaction performWithObject:[self createUploadInfo]];
+        [self.imagesDropboxUploadTransaction performWithObject:^(NSArray *arrayOfUrls){
+            
+        }];
     }
 }
 
@@ -147,6 +149,7 @@
 - (IBAction)UploadPhotosDidPressed
 {
     if([self isFieldsValid]){
+        
         [self.imagesUploadTransaction performWithObject:[self createUploadInfo]];
     }
 }

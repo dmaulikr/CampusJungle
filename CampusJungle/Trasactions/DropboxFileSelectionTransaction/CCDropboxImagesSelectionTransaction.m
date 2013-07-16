@@ -24,6 +24,7 @@
     fileSystemTransaction.imagesSortingTransaction = sortingTransaction;
     sortingTransaction.navigation = self.navigation;
     sortingTransaction.backToListTransaction = self.backToListTransaction;
+    sortingTransaction.uploadingBlock = object;
     
     fileSystemTransaction.backToListTransaction = self.backToListTransaction;
     fileSystemTransaction.navigation = self.navigation;
@@ -34,7 +35,7 @@
     dropboxController.arrayOfSelectedFiles = [NSMutableArray new];
     dropboxController.dropboxPath = @"/";
     dropboxController.dropboxFileSystemTransaction = fileSystemTransaction;
-    dropboxController.uploadInfo = object;
+    //dropboxController.uploadInfo = object;
     [self.navigation pushViewController:dropboxController animated:YES];
 }
 
