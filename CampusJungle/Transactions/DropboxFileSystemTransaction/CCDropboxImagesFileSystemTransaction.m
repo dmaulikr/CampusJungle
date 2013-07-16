@@ -22,8 +22,10 @@
     fileSystemTransaction.navigation = self.navigation;
     fileSystemTransaction.backToListTransaction = self.backToListTransaction;
     fileSystemTransaction.imagesSortingTransaction = self.imagesSortingTransaction;
+    fileSystemTransaction.uploadingBlock = self.uploadingBlock;
     
     CCDropboxImagesSelectionViewController *dropboxController = [self viewController];
+    dropboxController.uploadingBlock = self.uploadingBlock;
     dropboxController.imageSortingTransaction = self.imagesSortingTransaction;
     dropboxController.backToListTransaction = self.backToListTransaction;
     dropboxController.dropboxPath = sendedObject[@"path"];

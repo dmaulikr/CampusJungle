@@ -21,7 +21,7 @@
     NSDictionary *unSortedInfo = (NSDictionary *)object;
     CCImageSortingController *sortingController = [self.sortingControllerClass new];
     sortingController.arrayOfDropboxImages = unSortedInfo[@"arrayOfDropboxItems"];
-    sortingController.uploadInfo = unSortedInfo[@"uploadInfo"];
+   // sortingController.uploadInfo = unSortedInfo[@"uploadInfo"];
     sortingController.dropboxUploading = self.uploadingBlock;
     sortingController.backToListTransaction = self.backToListTransaction;
     [self.navigation pushViewController:sortingController animated:YES];

@@ -106,7 +106,6 @@
 		70A29D25178778AB001BC8DD /* CCStuffDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29CD0178778AB001BC8DD /* CCStuffDetailsController.m */; };
 		70A29D26178778AB001BC8DD /* CCStuffDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29CD1178778AB001BC8DD /* CCStuffDetailsController.xib */; };
 		70A29D27178778AB001BC8DD /* MHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29CD4178778AB001BC8DD /* MHTabBarController.m */; };
-		70A29D28178778AB001BC8DD /* CCUploadImageForStuffController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29CD7178778AB001BC8DD /* CCUploadImageForStuffController.m */; };
 		70A29D29178778AB001BC8DD /* CCUploadImagesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29CDA178778AB001BC8DD /* CCUploadImagesController.m */; };
 		70A29D2A178778AB001BC8DD /* CCUploadImagesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29CDB178778AB001BC8DD /* CCUploadImagesController.xib */; };
 		70A29D2B178778AB001BC8DD /* CCWelcomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29CDE178778AB001BC8DD /* CCWelcomeController.m */; };
@@ -217,11 +216,10 @@
 		70B2D1A417944895001B0C2C /* CCCreateStuffTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D10F17944894001B0C2C /* CCCreateStuffTransaction.m */; };
 		70B2D1A517944895001B0C2C /* CCDropboxImagesSelectionTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D11217944894001B0C2C /* CCDropboxImagesSelectionTransaction.m */; };
 		70B2D1A617944895001B0C2C /* CCDropboxImagesFileSystemTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D11517944894001B0C2C /* CCDropboxImagesFileSystemTransaction.m */; };
-		70B2D1A717944895001B0C2C /* CCDropboxImagesFileSelectionForStuffTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D11817944894001B0C2C /* CCDropboxImagesFileSelectionForStuffTransaction.m */; };
 		70B2D1A817944895001B0C2C /* CCDropboxPDFFileSystemTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D11B17944894001B0C2C /* CCDropboxPDFFileSystemTransaction.m */; };
 		70B2D1A917944895001B0C2C /* CCEducationCreationTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D11E17944894001B0C2C /* CCEducationCreationTransaction.m */; };
 		70B2D1AA17944895001B0C2C /* CCForumDetailsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D12117944894001B0C2C /* CCForumDetailsTransaction.m */; };
-		70B2D1AB17944895001B0C2C /* CCImagesForNotesUploadingScreenTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D12417944894001B0C2C /* CCImagesForNotesUploadingScreenTransaction.m */; };
+		70B2D1AB17944895001B0C2C /* CCImagesUploadingScreenTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D12417944894001B0C2C /* CCImagesUploadingScreenTransaction.m */; };
 		70B2D1AC17944895001B0C2C /* CCImagesSortingTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D12717944894001B0C2C /* CCImagesSortingTransaction.m */; };
 		70B2D1AD17944895001B0C2C /* CCInboxTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D12A17944894001B0C2C /* CCInboxTransaction.m */; };
 		70B2D1AE17944895001B0C2C /* CCInitialUserProfileTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D12D17944894001B0C2C /* CCInitialUserProfileTransaction.m */; };
@@ -668,8 +666,6 @@
 		70A29CD1178778AB001BC8DD /* CCStuffDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCStuffDetailsController.xib; sourceTree = "<group>"; };
 		70A29CD3178778AB001BC8DD /* MHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHTabBarController.h; sourceTree = "<group>"; };
 		70A29CD4178778AB001BC8DD /* MHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHTabBarController.m; sourceTree = "<group>"; };
-		70A29CD6178778AB001BC8DD /* CCUploadImageForStuffController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUploadImageForStuffController.h; sourceTree = "<group>"; };
-		70A29CD7178778AB001BC8DD /* CCUploadImageForStuffController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUploadImageForStuffController.m; sourceTree = "<group>"; };
 		70A29CD9178778AB001BC8DD /* CCUploadImagesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUploadImagesController.h; sourceTree = "<group>"; };
 		70A29CDA178778AB001BC8DD /* CCUploadImagesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUploadImagesController.m; sourceTree = "<group>"; };
 		70A29CDB178778AB001BC8DD /* CCUploadImagesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCUploadImagesController.xib; sourceTree = "<group>"; };
@@ -904,16 +900,14 @@
 		70B2D11217944894001B0C2C /* CCDropboxImagesSelectionTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxImagesSelectionTransaction.m; sourceTree = "<group>"; };
 		70B2D11417944894001B0C2C /* CCDropboxImagesFileSystemTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxImagesFileSystemTransaction.h; sourceTree = "<group>"; };
 		70B2D11517944894001B0C2C /* CCDropboxImagesFileSystemTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxImagesFileSystemTransaction.m; sourceTree = "<group>"; };
-		70B2D11717944894001B0C2C /* CCDropboxImagesFileSelectionForStuffTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxImagesFileSelectionForStuffTransaction.h; sourceTree = "<group>"; };
-		70B2D11817944894001B0C2C /* CCDropboxImagesFileSelectionForStuffTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxImagesFileSelectionForStuffTransaction.m; sourceTree = "<group>"; };
 		70B2D11A17944894001B0C2C /* CCDropboxPDFFileSystemTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDropboxPDFFileSystemTransaction.h; sourceTree = "<group>"; };
 		70B2D11B17944894001B0C2C /* CCDropboxPDFFileSystemTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDropboxPDFFileSystemTransaction.m; sourceTree = "<group>"; };
 		70B2D11D17944894001B0C2C /* CCEducationCreationTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEducationCreationTransaction.h; sourceTree = "<group>"; };
 		70B2D11E17944894001B0C2C /* CCEducationCreationTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEducationCreationTransaction.m; sourceTree = "<group>"; };
 		70B2D12017944894001B0C2C /* CCForumDetailsTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCForumDetailsTransaction.h; sourceTree = "<group>"; };
 		70B2D12117944894001B0C2C /* CCForumDetailsTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCForumDetailsTransaction.m; sourceTree = "<group>"; };
-		70B2D12317944894001B0C2C /* CCImagesForNotesUploadingScreenTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCImagesForNotesUploadingScreenTransaction.h; sourceTree = "<group>"; };
-		70B2D12417944894001B0C2C /* CCImagesForNotesUploadingScreenTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCImagesForNotesUploadingScreenTransaction.m; sourceTree = "<group>"; };
+		70B2D12317944894001B0C2C /* CCImagesUploadingScreenTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCImagesUploadingScreenTransaction.h; sourceTree = "<group>"; };
+		70B2D12417944894001B0C2C /* CCImagesUploadingScreenTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCImagesUploadingScreenTransaction.m; sourceTree = "<group>"; };
 		70B2D12617944894001B0C2C /* CCImagesSortingTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCImagesSortingTransaction.h; sourceTree = "<group>"; };
 		70B2D12717944894001B0C2C /* CCImagesSortingTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCImagesSortingTransaction.m; sourceTree = "<group>"; };
 		70B2D12917944894001B0C2C /* CCInboxTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCInboxTransaction.h; sourceTree = "<group>"; };
@@ -1567,7 +1561,6 @@
 				70A29CCE178778AB001BC8DD /* StuffDetailsController */,
 				70A29CD2178778AB001BC8DD /* TabBarController */,
 				70A29CC7178778AB001BC8DD /* TableBasedController */,
-				70A29CD5178778AB001BC8DD /* UploadImageForStuffController */,
 				70A29CD8178778AB001BC8DD /* UploadImagesController */,
 				700F9435178ED4A800A6FBBA /* UserProfileController */,
 				70A29CDC178778AB001BC8DD /* WelcomeController */,
@@ -1995,15 +1988,6 @@
 				70A29CD4178778AB001BC8DD /* MHTabBarController.m */,
 			);
 			path = TabBarController;
-			sourceTree = "<group>";
-		};
-		70A29CD5178778AB001BC8DD /* UploadImageForStuffController */ = {
-			isa = PBXGroup;
-			children = (
-				70A29CD6178778AB001BC8DD /* CCUploadImageForStuffController.h */,
-				70A29CD7178778AB001BC8DD /* CCUploadImageForStuffController.m */,
-			);
-			path = UploadImageForStuffController;
 			sourceTree = "<group>";
 		};
 		70A29CD8178778AB001BC8DD /* UploadImagesController */ = {
@@ -2984,7 +2968,6 @@
 				70B2D10D17944894001B0C2C /* CreateStuffTransaction */,
 				70B2D11017944894001B0C2C /* DropboxFileSelectionTransaction */,
 				70B2D11317944894001B0C2C /* DropboxFileSystemTransaction */,
-				70B2D11617944894001B0C2C /* DropboxImagesFileSelectionForStuffTransaction */,
 				70B2D11917944894001B0C2C /* DropboxPDFFileSystemTransaction */,
 				70B2D11C17944894001B0C2C /* EducationSettingSettingUpTransaction */,
 				70B2D11F17944894001B0C2C /* ForumDetailsTransaction */,
@@ -3215,15 +3198,6 @@
 			path = DropboxFileSystemTransaction;
 			sourceTree = "<group>";
 		};
-		70B2D11617944894001B0C2C /* DropboxImagesFileSelectionForStuffTransaction */ = {
-			isa = PBXGroup;
-			children = (
-				70B2D11717944894001B0C2C /* CCDropboxImagesFileSelectionForStuffTransaction.h */,
-				70B2D11817944894001B0C2C /* CCDropboxImagesFileSelectionForStuffTransaction.m */,
-			);
-			path = DropboxImagesFileSelectionForStuffTransaction;
-			sourceTree = "<group>";
-		};
 		70B2D11917944894001B0C2C /* DropboxPDFFileSystemTransaction */ = {
 			isa = PBXGroup;
 			children = (
@@ -3254,8 +3228,8 @@
 		70B2D12217944894001B0C2C /* ImagesForNotesUploadingScreenTransaction */ = {
 			isa = PBXGroup;
 			children = (
-				70B2D12317944894001B0C2C /* CCImagesForNotesUploadingScreenTransaction.h */,
-				70B2D12417944894001B0C2C /* CCImagesForNotesUploadingScreenTransaction.m */,
+				70B2D12317944894001B0C2C /* CCImagesUploadingScreenTransaction.h */,
+				70B2D12417944894001B0C2C /* CCImagesUploadingScreenTransaction.m */,
 			);
 			path = ImagesForNotesUploadingScreenTransaction;
 			sourceTree = "<group>";
@@ -4844,7 +4818,6 @@
 				70A29D23178778AB001BC8DD /* CCStuffCreationController.m in Sources */,
 				70A29D25178778AB001BC8DD /* CCStuffDetailsController.m in Sources */,
 				70A29D27178778AB001BC8DD /* MHTabBarController.m in Sources */,
-				70A29D28178778AB001BC8DD /* CCUploadImageForStuffController.m in Sources */,
 				70A29D29178778AB001BC8DD /* CCUploadImagesController.m in Sources */,
 				70A29D2B178778AB001BC8DD /* CCWelcomeController.m in Sources */,
 				70A29D4417877B6B001BC8DD /* CCClassControllerTableDataSource.m in Sources */,
@@ -4978,11 +4951,10 @@
 				70B2D1A417944895001B0C2C /* CCCreateStuffTransaction.m in Sources */,
 				70B2D1A517944895001B0C2C /* CCDropboxImagesSelectionTransaction.m in Sources */,
 				70B2D1A617944895001B0C2C /* CCDropboxImagesFileSystemTransaction.m in Sources */,
-				70B2D1A717944895001B0C2C /* CCDropboxImagesFileSelectionForStuffTransaction.m in Sources */,
 				70B2D1A817944895001B0C2C /* CCDropboxPDFFileSystemTransaction.m in Sources */,
 				70B2D1A917944895001B0C2C /* CCEducationCreationTransaction.m in Sources */,
 				70B2D1AA17944895001B0C2C /* CCForumDetailsTransaction.m in Sources */,
-				70B2D1AB17944895001B0C2C /* CCImagesForNotesUploadingScreenTransaction.m in Sources */,
+				70B2D1AB17944895001B0C2C /* CCImagesUploadingScreenTransaction.m in Sources */,
 				70B2D1AC17944895001B0C2C /* CCImagesSortingTransaction.m in Sources */,
 				70B2D1AD17944895001B0C2C /* CCInboxTransaction.m in Sources */,
 				70B2D1AE17944895001B0C2C /* CCInitialUserProfileTransaction.m in Sources */,

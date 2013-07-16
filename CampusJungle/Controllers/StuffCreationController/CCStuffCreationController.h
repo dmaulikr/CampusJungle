@@ -8,11 +8,13 @@
 
 #import "CCViewController.h"
 #import "CCTransactionWithObject.h"
+#import "CCTransaction.h"
 
 @interface CCStuffCreationController : CCViewController
 
 @property (nonatomic, strong) id <CCTransactionWithObject> selectFilesFromDropboxTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> imagesUploadTransaction;
+@property (nonatomic, strong) id <CCTransaction> backToListTransaction;
 
 - (IBAction)thumbDidPressed;
 - (IBAction)collegeSelectionButtonDidPressed;

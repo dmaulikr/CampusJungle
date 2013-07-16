@@ -19,9 +19,8 @@
 
 @interface CCDropboxImagesSelectionViewController ()
 
-@property (nonatomic, strong) id <CCDropboxAPIProviderProtocol> ioc_dropboxAPI;
-
 @property (nonatomic, strong) id <CCNotesAPIProviderProtolcol> ioc_notesAPIProvider;
+
 
 @end
 
@@ -92,7 +91,6 @@
         NSDictionary *objectForTransaction = @{
                                                @"path" : [self.dropboxDataProvider.dropboxPath stringByAppendingPathComponent:fileInfo.fileData.filename],
                                                @"sellected" : self.arrayOfSelectedFiles,
-                                               @"noteInfo" : self.uploadInfo
                                                };
         [self.dropboxFileSystemTransaction performWithObject:objectForTransaction];
     } else {
@@ -142,28 +140,11 @@
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self.ioc_dropboxAPI checkAllDirectURLForArray:self.arrayOfSelectedFiles successHandler:^(NSArray *selectedFiles) {
-        [self saveResultToUploadInfo:selectedFiles];
-        if(self.uploadInfo.arrayOfURLs){
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
             [self.imageSortingTransaction performWithObject:@{
-             @"uploadInfo" : self.uploadInfo,
              @"arrayOfDropboxItems" : self.arrayOfSelectedFiles,
              }];
-        } else {
-            [self saveResultToUploadInfo:selectedFiles];
-            [self.ioc_notesAPIProvider postDropboxUploadInfo:self.uploadInfo successHandler:^(id result) {
-                [self.backToListTransaction perform];
-            } errorHandler:^(NSError *error) {
-                [CCStandardErrorHandler showErrorWithError:error];
-            }];
-            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        }
-    }];
-}
-
-- (void)saveResultToUploadInfo:(NSArray *)selectedFiles
-{
-    self.uploadInfo.arrayOfURLs = [CCDropboxFileInfo arrayOfDirectLinksFromArrayOfInfo:selectedFiles];
+        }];
 }
 
 @end

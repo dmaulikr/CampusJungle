@@ -17,3 +17,4 @@ typedef void (^successHandlerWithRKResult)(RKMappingResult *);
 typedef void (^RKErrorHandler)(RKObjectRequestOperation *operation, NSError *error);
 typedef void (^progressBlock)(double finished);
 typedef void (^DropboxUploadingBlock)(NSArray *arrayOfUrls);
+typedef void (^ImagesUploadingBlock)(NSArray *arrayOfImages);
