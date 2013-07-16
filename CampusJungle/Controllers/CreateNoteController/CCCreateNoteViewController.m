@@ -19,7 +19,8 @@
 #import "CCActionSheetPickerCollegesDelegate.h"
 #import "CCAvatarSelectionProtocol.h"
 #import "CCAvatarSelectionActionSheet.h"
-
+#import "CCNotesAPIProviderProtolcol.h"
+#import "CCUploadProcessManagerProtocol.h"
 
 @interface CCCreateNoteViewController ()<CCCellSelectionProtocol,CCAvatarSelectionProtocol>
 
@@ -38,7 +39,9 @@
 @property (nonatomic, strong) NSArray *arrayOfClasses;
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
 @property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_classesAPI;
-
+@property (nonatomic, strong) id <CCNotesAPIProviderProtolcol> ioc_notesAPIProvider;
+@property (nonatomic, weak) IBOutlet UIButton *addButton;
+@property (nonatomic, strong) id <CCUploadProcessManagerProtocol> ioc_uploadingManager;
 
 @property (nonatomic, strong) NSArray *arrayOfItemsForPicker;
 
@@ -133,21 +136,60 @@
 - (IBAction)imagesFromDropBoxButtonDidPressed
 {
     if([self isFieldsValid]){
-        [self.imagesDropboxUploadTransaction performWithObject:[self createUploadInfo]];
+        [self.imagesDropboxUploadTransaction performWithObject:^(NSArray *arrayOfUrls){
+            CCNoteUploadInfo *uploadInfo = [self createUploadInfo];
+            uploadInfo.arrayOfURLs = arrayOfUrls;
+                [self.ioc_notesAPIProvider postDropboxUploadInfo:uploadInfo successHandler:^(id result) {
+                    [self.backToListTransaction perform];
+                } errorHandler:^(NSError *error) {
+                    [CCStandardErrorHandler showErrorWithError:error];
+                }];
+        }];
     }
 }
 
 - (IBAction)pdfFromDropboxButtonDidPressed
 {
     if([self isFieldsValid]){
-        [self.pdfDropboxUploadTransaction performWithObject:[self createUploadInfo]];
+        [self.pdfDropboxUploadTransaction performWithObject:^(NSArray *arrayOfUrls){
+            CCNoteUploadInfo *uploadInfo = [self createUploadInfo];
+            uploadInfo.pdfUrl = [arrayOfUrls lastObject];
+            [self.ioc_notesAPIProvider postDropboxUploadInfo:uploadInfo successHandler:^(id result) {
+                [self.backToListTransaction perform];
+            } errorHandler:^(NSError *error) {
+                [CCStandardErrorHandler showErrorWithError:error];
+            }];
+        }];
     }
 }
 
 - (IBAction)UploadPhotosDidPressed
 {
     if([self isFieldsValid]){
-        [self.imagesUploadTransaction performWithObject:[self createUploadInfo]];
+        
+        [self.imagesUploadTransaction performWithObject:^(NSArray *arrayOfImages){
+            CCNoteUploadInfo *uploadInfo = [self createUploadInfo];
+            uploadInfo.arrayOfImages = arrayOfImages;
+            
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.labelText = @"Preparing for upload";
+            __weak id weakSelf = self;
+            id <CCUploadProcessManagerProtocol> uploadManager = self.ioc_uploadingManager;
+            [[self.ioc_uploadingManager uploadingNotes] addObject:uploadInfo];
+            [self.ioc_notesAPIProvider postUploadInfoWithImages:uploadInfo successHandler:^(id result) {
+                [[uploadManager uploadingNotes] removeObject:uploadInfo];
+                [uploadManager reloadDelegate];
+            } errorHandler:^(NSError *error) {
+                [[uploadManager uploadingNotes] removeObject:uploadInfo];
+                [CCStandardErrorHandler showErrorWithError:error];
+                [uploadManager reloadDelegate];
+            } progress:^(double finished) {
+                [[weakSelf backToListTransaction] perform];
+                uploadInfo.uploadProgress = [NSNumber numberWithDouble:finished];
+            }];
+
+        
+        }];
     }
 }
 

@@ -10,12 +10,14 @@
 #import "CCNoteUploadInfo.h"
 #import "CCTransaction.h"
 #import "CCUploadingImagesDataProvider.h"
+#import "CCTypesDefinition.h"
 
 @interface CCUploadImagesController : CCTableBaseViewController
 
 @property (nonatomic, strong) CCNoteUploadInfo *uploadInfo;
 @property (nonatomic, strong) id <CCTransaction> backToListTransaction;
 @property (nonatomic, strong) CCUploadingImagesDataProvider *dataProvider;
+@property (nonatomic, copy) ImagesUploadingBlock imagesUploading;
 
 - (IBAction)addImageButtonDidPressed;
 

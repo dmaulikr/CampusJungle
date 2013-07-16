@@ -39,4 +39,9 @@
     [super drawRect:rect];
 }
 
++ (CGFloat)heightForCellWithObject:(id)object
+{
+    return 272;
+}
+
 @end

@@ -10,12 +10,11 @@
 #import "CCImageSortingDataSource.h"
 #import "CCImageSortingDataProvider.h"
 #import "CCDropboxCell.h"
-#import "CCNotesAPIProviderProtolcol.h"
 #import "CCStandardErrorHandler.h"
+#import "CCTypesDefinition.h"
+#import "CCDropboxFileInfo.h"
 
 @interface CCImageSortingController ()
-
-@property (nonatomic, strong) id <CCNotesAPIProviderProtolcol> ioc_notesAPIProvider;
 
 @end
 
@@ -51,12 +50,9 @@
 
 - (void)sendFiles
 {
-    [self saveResultToUploadInfo:self.arrayOfDropboxImages];
-    [self.ioc_notesAPIProvider postDropboxUploadInfo:self.uploadInfo successHandler:^(id result) {
-        [self.backToListTransaction perform];
-    } errorHandler:^(NSError *error) {
-        [CCStandardErrorHandler showErrorWithError:error];
-    }];
+    if(self.dropboxUploading){
+        self.dropboxUploading([CCDropboxFileInfo arrayOfDirectLinksFromArrayOfInfo:self.arrayOfDropboxImages]);
+    }
 }
 
 - (void)didUpdate
@@ -68,6 +64,5 @@
 {
     self.uploadInfo.arrayOfURLs = [CCDropboxFileInfo arrayOfDirectLinksFromArrayOfInfo:selectedFiles];
 }
-
 
 @end

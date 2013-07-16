@@ -129,24 +129,7 @@
 
 - (void)sendFiles
 {
-    self.uploadInfo.arrayOfImages = self.dataProvider.arrayOfImages;
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"Preparing for upload";
-    __weak id weakSelf = self;
-    CCNoteUploadInfo *uploadInfo = self.uploadInfo;
-    id <CCUploadProcessManagerProtocol> uploadManager = self.ioc_uploadingManager;
-    [[self.ioc_uploadingManager uploadingNotes] addObject:self.uploadInfo];
-    [self.ioc_notesAPIProvider postUploadInfoWithImages:self.uploadInfo successHandler:^(id result) {
-        [[uploadManager uploadingNotes] removeObject:uploadInfo];
-        [uploadManager reloadDelegate];
-    } errorHandler:^(NSError *error) {
-        [[uploadManager uploadingNotes] removeObject:uploadInfo];
-        [CCStandardErrorHandler showErrorWithError:error];
-        [uploadManager reloadDelegate];
-    } progress:^(double finished) {
-        [[weakSelf backToListTransaction] perform];
-        uploadInfo.uploadProgress = [NSNumber numberWithDouble:finished];
-    }];
+    self.imagesUploading(self.dataProvider.arrayOfImages);
 }
 
 @end
