@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CCTableBasedController.h"
+#import "CCTableBaseViewController.h"
 #import "CCTransactionWithObject.h"
 
 @class CCLocation, CCClass;
 
-@interface CCLocationsViewController : CCTableBasedController
+@interface CCLocationsViewController : CCTableBaseViewController
 
 @property (nonatomic, strong) id <CCTransactionWithObject> addLocationTransaction;
 

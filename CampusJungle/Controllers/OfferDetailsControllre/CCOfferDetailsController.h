@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCViewController.h"
+#import "CCBaseViewController.h"
 #import "CCOffer.h"
 #import "CCTransactionWithObject.h"
 
-@interface CCOfferDetailsController : CCViewController
+@interface CCOfferDetailsController : CCBaseViewController
 
 @property (nonatomic, strong) CCOffer *offer;
 @property (nonatomic, strong) id <CCTransactionWithObject> senderDetailsTransaction;

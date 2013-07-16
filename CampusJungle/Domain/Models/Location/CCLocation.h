@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *description;
 @property (nonatomic, strong) NSString *cityId;
-@property (nonatomic, strong) NSString *street;
+@property (nonatomic, strong) NSString *address;
 @property (nonatomic, strong) NSString *ownerId;
 @property (nonatomic, strong) NSString *placeId;
 @property (nonatomic, strong) NSString *placeType;
@@ -28,6 +28,6 @@
 
 + (CCLocation *)createUsingLocation:(CLLocation *)clLocation;
 + (CCLocation *)createWithCoordinates:(CLLocationCoordinate2D)coordinates;
-+ (CCLocation *)createWithCoordinates:(CLLocationCoordinate2D)coordinates name:(NSString *)name description:(NSString *)description place:(id)place visibleItems:(NSArray *)visibleItemsArray sharedWithAll:(BOOL)sharedWithAll;
++ (CCLocation *)createWithCoordinates:(CLLocationCoordinate2D)coordinates name:(NSString *)name description:(NSString *)description address:(NSString *)address place:(id)place visibleItems:(NSArray *)visibleItemsArray sharedWithAll:(BOOL)sharedWithAll;
 
 @end

@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCTableBasedController.h"
+#import "CCTableBaseViewController.h"
 #import "CCNoteUploadInfo.h"
 #import "CCTransaction.h"
 
-@interface CCImageSortingController : CCTableBasedController
+@interface CCImageSortingController : CCTableBaseViewController
 
 @property (nonatomic, strong) NSMutableArray *arrayOfDropboxImages;
 @property (nonatomic, strong) id <CCTransaction> backToListTransaction;

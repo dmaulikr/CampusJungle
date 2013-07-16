@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCTableBasedController.h"
+#import "CCTableBaseViewController.h"
 #import "CCNoteUploadInfo.h"
 #import "CCTransaction.h"
 #import "CCUploadingImagesDataProvider.h"
 
-@interface CCUploadImagesController : CCTableBasedController
+@interface CCUploadImagesController : CCTableBaseViewController
 
 @property (nonatomic, strong) CCNoteUploadInfo *uploadInfo;
 @property (nonatomic, strong) id <CCTransaction> backToListTransaction;

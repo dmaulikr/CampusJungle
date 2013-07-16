@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCViewController.h"
+#import "CCBaseViewController.h"
 #import "CCStuff.h"
 #import "CCTransactionWithObject.h"
 
-@interface CCStuffDetailsController : CCViewController
+@interface CCStuffDetailsController : CCBaseViewController
 
 @property (nonatomic, strong) CCStuff *stuff;
 

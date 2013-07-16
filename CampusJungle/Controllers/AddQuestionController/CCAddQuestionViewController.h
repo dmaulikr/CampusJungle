@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CCViewController.h"
+#import "CCBaseViewController.h"
+#import "CCTransactionWithObject.h"
 
 @class CCForum;
 
-@interface CCAddQuestionViewController : CCViewController
+@interface CCAddQuestionViewController : CCBaseViewController
+
+@property (nonatomic, strong) id <CCTransactionWithObject> imagesDropboxUploadTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> pdfDropboxUploadTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> imagesUploadTransaction;
 
 - (void)setForum:(CCForum *)forum;
 

@@ -55,6 +55,10 @@ const struct CCAPIDefines CCAPIDefines = {
     .loadQuestions = @"/api/forums/%@/questions",
     .postQuestion = @"/api/forums/%@/questions",
     .deleteQuestion = @"questions/%@",
+    .loadAnswers = @"/api/questions/%@/answers",
+    .postAnswer = @"/api/questions/%@/answers",
+    .deleteAnswer = @"/api/answers/%@",
+    .likeAnswer = @"/api/answers/%@/like",
 };
 
 const struct CCUserDefines CCUserDefines = {

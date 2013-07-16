@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCTableBasedController.h"
+#import "CCTableBaseViewController.h"
 #import "CCTransactionWithObject.h"
 #import "CCTransaction.h"
 
-@interface CCClassesOfCollegeController : CCTableBasedController
+@interface CCClassesOfCollegeController : CCTableBaseViewController
 
 - (id)initWithCollegeID:(NSString*)collegeID;
 

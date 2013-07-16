@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCViewController.h"
+#import "CCBaseViewController.h"
 #import "CCBaseDataProvider.h"
 #import "CCPhoto.h"
 #import "CCTransaction.h"
 
-@interface CCPhotoBrowserController : CCViewController
+@interface CCPhotoBrowserController : CCBaseViewController
 
 @property (nonatomic, strong) CCBaseDataProvider *dataProvider;
 @property (nonatomic, strong) CCPhoto *firstPhoto;

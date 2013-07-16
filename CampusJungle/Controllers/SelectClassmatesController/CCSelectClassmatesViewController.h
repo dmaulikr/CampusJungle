@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CCTableBasedController.h"
+#import "CCTableBaseViewController.h"
 #import "CCShareItemBlocksDefines.h"
 #import "CCTransaction.h"
 
 @class CCClass;
 
-@interface CCSelectClassmatesViewController : CCTableBasedController
+@interface CCSelectClassmatesViewController : CCTableBaseViewController
 
 @property (nonatomic, strong) id<CCTransaction> backTransaction;
 

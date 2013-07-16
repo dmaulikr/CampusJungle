@@ -1,21 +1,21 @@
 //
-//  CCTableBasedControllerViewController.m
+//  CCTableBaseViewController.m
 //  CampusJungle
 //
 //  Created by Vlad Korzun on 29.05.13.
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCTableBasedController.h"
+#import "CCTableBaseViewController.h"
 #import "CCDefines.h"
 
-@interface CCTableBasedController ()<UISearchBarDelegate>
+@interface CCTableBaseViewController () <UISearchBarDelegate>
 
 @property (nonatomic, strong) UITextField *hidedTextField;
 
 @end
 
-@implementation CCTableBasedController
+@implementation CCTableBaseViewController
 
 - (void)viewDidLoad
 {
@@ -141,7 +141,7 @@
     
     double delayInSeconds = 1.1;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    __weak CCTableBasedController *weakSelf = self;
+    __weak CCTableBaseViewController *weakSelf = self;
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         if ([[NSDate date] timeIntervalSinceDate:weakSelf.lastSearchPressTime] >= 1){
             [weakSelf.dataSource.dataProvider loadItems];

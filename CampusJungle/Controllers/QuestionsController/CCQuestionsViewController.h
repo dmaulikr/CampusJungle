@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CCTableBasedController.h"
+#import "CCTableBaseViewController.h"
 #import "CCTransactionWithObject.h"
 
 @class CCForum;
 
-@interface CCQuestionsViewController : CCTableBasedController
+@interface CCQuestionsViewController : CCTableBaseViewController
 
 @property (nonatomic, strong) id<CCTransactionWithObject> addQuestionTransaction;
 

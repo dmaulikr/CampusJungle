@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCViewController.h"
+#import "CCBaseViewController.h"
 #import "CCTransactionWithObject.h"
 
-@interface CCCreateNoteViewController : CCViewController
+@interface CCCreateNoteViewController : CCBaseViewController
 
 @property (nonatomic, strong) id <CCTransactionWithObject> imagesDropboxUploadTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> pdfDropboxUploadTransaction;

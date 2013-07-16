@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCViewController.h"
-#import "CCTableBasedController.h"
+#import "CCBaseViewController.h"
+#import "CCTableBaseViewController.h"
 #import "CCNote.h"
 #import "CCTransactionWithObject.h"
 #import "CCTransaction.h"
 
-@interface CCNoteDetailsController : CCTableBasedController
+@interface CCNoteDetailsController : CCTableBaseViewController
 
 @property (nonatomic, strong) CCNote *note;
 @property (nonatomic, strong) id <CCTransactionWithObject> viewNotesAsPDFTransaction;

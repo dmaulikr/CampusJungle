@@ -24,11 +24,11 @@
     RKObjectMapping *questionsMapping = [RKObjectMapping mappingForClass:[CCQuestion class]];
     [questionsMapping addAttributeMappingsFromDictionary:[CCQuestion responseMappingDictionary]];
     
-    RKRelationshipMapping *relationShipResponseReviewMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
+    RKRelationshipMapping *relationShipResponseQuestionsMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
                                                                                                            toKeyPath:CCResponseKeys.items
                                                                                                          withMapping:questionsMapping];
     
-    [paginationQuestionsResponseMapping addPropertyMapping:relationShipResponseReviewMapping];
+    [paginationQuestionsResponseMapping addPropertyMapping:relationShipResponseQuestionsMapping];
     
     NSString *pathPattern = [NSString stringWithFormat:CCAPIDefines.loadQuestions, @":forumID"];
     RKResponseDescriptor *responseQuestionsDescriptor =

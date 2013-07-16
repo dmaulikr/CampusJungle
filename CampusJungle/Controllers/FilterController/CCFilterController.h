@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCTableBasedController.h"
+#import "CCTableBaseViewController.h"
 #import "CCTransactionWithObject.h"
 
-@interface CCFilterController : CCTableBasedController
+@interface CCFilterController : CCTableBaseViewController
 
 @property (nonatomic, strong) id <CCTransactionWithObject> backToMarketTRansaction;
 @property (nonatomic, strong) NSDictionary *oldFilters;

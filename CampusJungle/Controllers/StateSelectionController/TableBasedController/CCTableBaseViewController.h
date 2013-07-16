@@ -1,16 +1,16 @@
 //
-//  CCTableBasedControllerViewController.h
+//  CCTableBaseViewController.h
 //  CampusJungle
 //
 //  Created by Vlad Korzun on 29.05.13.
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCViewController.h"
+#import "CCBaseViewController.h"
 #import "CCBaseDataProvider.h"
 #import "CCCommonDataSource.h"
 
-@interface CCTableBasedController : CCViewController <CCCellSelectionProtocol>
+@interface CCTableBaseViewController : CCBaseViewController <CCCellSelectionProtocol>
 
 @property (nonatomic, weak) IBOutlet UITableView *mainTable;
 @property (nonatomic, weak) IBOutlet UISearchBar *searchBar;

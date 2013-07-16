@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCTableBasedController.h"
+#import "CCTableBaseViewController.h"
 #import "CCCellSelectionProtocol.h"
 #import "CCTransactionWithObject.h"
 
-@interface CCListOfStuffInMarketController : CCTableBasedController<CCCellSelectionProtocol>
+@interface CCListOfStuffInMarketController : CCTableBaseViewController<CCCellSelectionProtocol>
 
 @property (nonatomic, strong) CCBaseDataProvider *tableProvider;
 @property (nonatomic, strong) id <CCTransactionWithObject> stuffDetails;

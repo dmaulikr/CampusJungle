@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCViewController.h"
+#import "CCBaseViewController.h"
 #import "CCTransaction.h"
 
-@interface CCLoginController : CCViewController
+@interface CCLoginController : CCBaseViewController
 
 @property (nonatomic, strong) id <CCTransaction> loginTransaction;
 @property (nonatomic, strong) id <CCTransaction> userProfileTransaction;

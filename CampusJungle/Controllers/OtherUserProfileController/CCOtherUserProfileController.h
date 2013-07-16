@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCViewController.h"
+#import "CCBaseViewController.h"
 #import "CCUser.h"
 #import "CCTransactionWithObject.h"
 
-@interface CCOtherUserProfileController : CCViewController
+@interface CCOtherUserProfileController : CCBaseViewController
 
 @property (nonatomic, strong) CCUser *currentUser;
 @property (nonatomic, strong) id <CCTransactionWithObject> sendMessageTransaction;

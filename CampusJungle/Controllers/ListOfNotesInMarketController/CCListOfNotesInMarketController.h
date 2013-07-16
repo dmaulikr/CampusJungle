@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCTableBasedController.h"
+#import "CCTableBaseViewController.h"
 #import "CCBaseDataProvider.h"
 #import "CCTransactionWithObject.h"
 
-@interface CCListOfNotesInMarketController : CCTableBasedController
+@interface CCListOfNotesInMarketController : CCTableBaseViewController
 
 @property (nonatomic, strong) CCBaseDataProvider *notesProvider;
 @property (nonatomic, strong) id <CCTransactionWithObject> noteDetilsTransaction;

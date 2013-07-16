@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CCViewController.h"
+#import "CCBaseViewController.h"
 #import "CCTransaction.h"
 
 @class CCClass;
 
-@interface CCAddForumViewController : CCViewController
+@interface CCAddForumViewController : CCBaseViewController
 
 @property (nonatomic, strong) id<CCTransaction> backTransaction;
 

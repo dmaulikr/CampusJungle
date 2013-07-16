@@ -12,14 +12,15 @@
 
 #import "CCUserSessionProtocol.h"
 
-static const NSInteger kDescriptionLabelDefaultWidth = 246;
-static const NSInteger kDescriptionLabelOriginY = 30;
-static const NSInteger kMinCellHeight = 60;
+static const NSInteger kDescriptionLabelDefaultWidth = 250;
+static const NSInteger kDescriptionLabelOriginY = 51;
+static const NSInteger kMinCellHeight = 85;
 
 @interface CCLocationCell ()
 
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
+@property (nonatomic, weak) IBOutlet UILabel *addressLabel;
 @property (nonatomic, weak) IBOutlet UIButton *deleteLocationButton;
 
 @property (nonatomic, strong) id<CCUserSessionProtocol> ioc_userSession;
@@ -52,6 +53,7 @@ static const NSInteger kMinCellHeight = 60;
 {
     [self.nameLabel setText:[self.cellObject name]];
     [self.descriptionLabel setText:[self.cellObject description]];
+    [self.addressLabel setText:[self.cellObject address]];
     [self.descriptionLabel sizeToFit];
 }
 

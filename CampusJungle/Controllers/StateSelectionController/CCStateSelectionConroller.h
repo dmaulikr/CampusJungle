@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCViewController.h"
+#import "CCBaseViewController.h"
 #import "CCCommonDataSource.h"
 #import "CCTransactionWithObject.h"
-#import "CCTableBasedController.h"
+#import "CCTableBaseViewController.h"
 
-@interface CCStateSelectionConroller : CCTableBasedController <UISearchBarDelegate, CCCellSelectionProtocol>
+@interface CCStateSelectionConroller : CCTableBaseViewController <UISearchBarDelegate, CCCellSelectionProtocol>
 
 @property (nonatomic, strong) id <CCTransactionWithObject> citySelectionTransaction;
 
