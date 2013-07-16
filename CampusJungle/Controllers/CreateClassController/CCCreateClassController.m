@@ -81,7 +81,7 @@
 
 - (void)setupTextFields
 {
-    self.textFieldsArray = @[self.subjectTextField, self.professorTextField, self.semesterTextField];
+    self.textFieldsArray = @[self.classNameTextField,self.subjectTextField, self.professorTextField, self.semesterTextField];
 }
 
 - (void)addObservers
