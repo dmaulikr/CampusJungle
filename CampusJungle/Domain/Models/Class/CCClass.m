@@ -97,14 +97,14 @@
 {
    return @{
       @"professor" : @"professor",
-      @"timetable" : @"timetable",
+      @"lessons" : @"timetable",
       @"subject" : @"subject",
       @"semester" : @"semester",
       @"call_number":@"callNumber",
       @"id":@"classID",
       @"college_name" : @"collegeName",
       @"college_id" : @"collegeID",
-      @"class_name" : @"className"
+      @"class_name" : @"className",
       };
 }
 

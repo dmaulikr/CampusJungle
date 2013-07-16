@@ -87,4 +87,11 @@
     [self.dataProvider loadItems];
 }
 
+- (void)didSelectedCellWithObject:(id)cellObject
+{
+    if(![(CCQuestion *)cellObject uploadProgress]){
+        
+    }
+}
+
 @end
