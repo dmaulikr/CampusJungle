@@ -12,6 +12,8 @@
 #import "CCOffer.h"
 #import "CCMessage.h"
 #import "CCMessagesDataProvider.h"
+#import "CCMessageCell.h"
+#import "CCOfferCell.h"
 
 #define MessagesState 0
 #define InvtesState 1
@@ -34,7 +36,8 @@
                                      @"personal" : @"YES",
                                      @"direction" : @"received"
                                      };
-    [self configTableWithProvider:messagesDataProvider cellClass:[CCOrdinaryCell class]];
+    [self configTableWithProvider:messagesDataProvider cellClass:[CCMessageCell class] cellReuseIdentifier:NSStringFromClass([CCMessageCell class])];
+    self.mainTable.tableFooterView = [UIView new];
 }
 
 - (void)didSelectedCellWithObject:(id)cellObject
@@ -42,7 +45,7 @@
     if([cellObject isKindOfClass:[CCOffer class]]){
         [self.offerDetailsTransaction performWithObject:cellObject];
     } else if ([cellObject isKindOfClass:[CCMessage class]]){
-        
+        [self.messageDetailsTransaction performWithObject:cellObject];
     }
 }
 
@@ -73,13 +76,13 @@
                                      @"personal" : @"YES",
                                     @"direction" : @"received"
                                      };
-    [self configTableWithProvider:messagesDataProvider cellClass:[CCOrdinaryCell class]];
+    [self configTableWithProvider:messagesDataProvider cellClass:[CCMessageCell class] cellReuseIdentifier:NSStringFromClass([CCMessageCell class])];
     [self.mainTable reloadData];
 }
 
 - (void)setOfferConfiguration
 {
-    [self configTableWithProvider:[CCOffersDataProvider new] cellClass:[CCOrdinaryCell class]];
+    [self configTableWithProvider:[CCOffersDataProvider new] cellClass:[CCOfferCell class] cellReuseIdentifier:NSStringFromClass([CCOffer class])];
     [self.mainTable reloadData];
 }
 

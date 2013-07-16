@@ -38,9 +38,12 @@
 
 - (void)loadCollegesNumberOfPage:(NSNumber *)pageNumber query:(NSString *)query successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 
-- (void)loadClassmatesForClass:(NSString *)classID NumberOfPage:(NSNumber *)pageNumber successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)loadClassmatesForClass:(NSString *)classID filterString:(NSString *)filterString numberOfPage:(NSNumber *)pageNumber successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 
 - (void)getUserWithID:(NSString *)userID successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 
+- (void)postReviewWithRate:(NSNumber *)rank text:(NSString *)text forUserWithID:(NSString *)userID successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
+
+- (void)loadReviewsForUser:(NSString *)userID successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 
 @end

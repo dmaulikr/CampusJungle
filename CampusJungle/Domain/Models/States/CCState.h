@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCRestKitMappableModel.h"
 
-@interface CCState : NSObject
+@interface CCState : NSObject <CCRestKitMappableModel>
 
 @property (nonatomic, strong) NSNumber *stateID;
 @property (nonatomic, strong) NSString *name;
-
-+ (NSDictionary *)responseMappingDictionary;
 
 @end

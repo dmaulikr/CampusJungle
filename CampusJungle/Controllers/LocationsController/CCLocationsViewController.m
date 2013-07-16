@@ -8,25 +8,32 @@
 
 #import "CCLocationsViewController.h"
 #import "CCLocation.h"
+#import "CCClass.h"
 #import "CCClassLocationsDataProvider.h"
 #import "CCLocationsDataSource.h"
+#import "CCNavigationBarViewHelper.h"
+#import "CCAlertHelper.h"
 
 #import "CCMapHelper.h"
 #import "CCLocationCell.h"
 
 #import "CCLocationDataProviderDelegate.h"
+#import "CCLocationsApiProviderProtocol.h"
+#import "CCStandardErrorHandler.h"
 
 @interface CCLocationsViewController () <CCLocationDataProviderDelegate>
 
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 
-@property (nonatomic, strong) NSString *classId;
+@property (nonatomic, strong) CCClass *classObject;
 @property (nonatomic, strong) NSMutableArray *locationsArray;
 @property (nonatomic, strong) CCLocation *selectedLocation;
 @property (nonatomic, strong) NSString *searchString;
-@property (nonatomic, strong) CCClassLocationsDataProvider *locationsProvider;
+@property (nonatomic, strong) CCClassLocationsDataProvider *dataProvider;
 @property (nonatomic, strong) CCLocationsDataSource *dataSource;
 @property (nonatomic, assign) Class dataSourceClass;
+
+@property (nonatomic, strong) id<CCLocationsApiProviderProtocol> ioc_locationsApiProvider;
 
 @end
 
@@ -46,6 +53,9 @@
     [super viewDidLoad];
     [self setupTableView];
     [self setupSearchBar];
+    [self addObservers];
+    
+    self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHelper plusButtonWithTarget:self action:@selector(addLocation)];
     [self setTitle:@"Locations"];
     
     [(UIScrollView *)self.view setScrollEnabled:NO];
@@ -60,6 +70,21 @@
     }
 }
 
+- (void)dealloc
+{
+    [self removeObservers];
+}
+
+- (void)addObservers
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadLocations) name:CCNotificationsNames.reloadClassLocations object:nil];
+}
+
+- (void)removeObservers
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:CCNotificationsNames.reloadClassLocations object:nil];
+}
+
 - (void)setupSearchBar
 {
     [self.searchBar setText:self.searchString];
@@ -69,9 +94,9 @@
 {
     self.dataSource = [CCLocationsDataSource new];
     self.dataSourceClass = [CCLocationsDataSource class];
-    self.locationsProvider = [[CCClassLocationsDataProvider alloc] initWithDelegate:self];
-    self.locationsProvider.classId = self.classId;
-    [self configTableWithProvider:self.locationsProvider cellClass:[CCLocationCell class]];
+    self.dataProvider = [[CCClassLocationsDataProvider alloc] initWithDelegate:self];
+    self.dataProvider.classId = self.classObject.classID;
+    [self configTableWithProvider:self.dataProvider cellClass:[CCLocationCell class]];
 }
 
 #pragma mark -
@@ -93,6 +118,35 @@
 
 #pragma mark -
 #pragma mark Actions
+- (void)setClass:(CCClass *)classObject
+{
+    _classObject = classObject;
+}
+
+- (void)reloadLocations
+{
+    [self.dataProvider loadItems];
+}
+
+- (void)addLocation
+{
+    [self.addLocationTransaction performWithObject:self.classObject];
+}
+
+#pragma mark -
+#pragma mark CCLocationCellDelegate
+- (void)deleteLocation:(CCLocation *)location
+{
+    __weak CCLocationsViewController *weakSelf = self;
+    [CCAlertHelper showConfirmWithSuccess:^{
+        [weakSelf.ioc_locationsApiProvider deleteLocation:location successHandler:^(RKMappingResult *object) {
+            [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteLocation duration:CCProgressHudsConstants.loaderDuration];
+            [weakSelf.dataProvider loadItems];
+        } errorHandler:^(NSError *error) {
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
+    }];
+}
 
 #pragma mark -
 #pragma mark CCLocationDataProviderDelegate

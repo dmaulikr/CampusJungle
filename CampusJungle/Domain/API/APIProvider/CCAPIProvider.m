@@ -130,11 +130,14 @@
 
 }
 
-- (void)loadClassmatesForClass:(NSString *)classID NumberOfPage:(NSNumber *)pageNumber successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+- (void)loadClassmatesForClass:(NSString *)classID filterString:(NSString *)filterString numberOfPage:(NSNumber *)pageNumber successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
 {
     NSMutableDictionary *params = [NSMutableDictionary new];
-    
     [params setObject:pageNumber.stringValue forKey:@"page_number"];
+    if ([filterString length] > 0) {
+        [params setObject:filterString forKey:@"keywords"];
+    }
+    
     NSString *path = [NSString stringWithFormat:CCAPIDefines.classmates,classID];
     [self loadItemsWithParams:params
                          path:path
@@ -332,5 +335,29 @@
     }];
 }
 
+- (void)postReviewWithRate:(NSNumber *)rank text:(NSString *)text forUserWithID:(NSString *)userID successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.postReview,userID];
+    [self setAuthorizationToken];
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [objectManager postObject:nil path:path parameters:@{
+     @"rank" : rank,
+     @"text" : text
+     } success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+         successHandler(mappingResult);
+     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+         errorHandler(error);
+     }];
+}
+
+- (void)loadReviewsForUser:(NSString *)userID successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.loadReviews,userID];
+    
+    [self loadItemsWithParams:nil
+                         path:path
+               successHandler:successHandler
+                 errorHandler:errorHandler];
+}
 
 @end

@@ -21,23 +21,29 @@
 {
     [super viewDidLoad];
     [self configSearchBar];
-    [self addObservers];
     self.tapRecognizer.enabled = NO;
     self.reloadingTableViewWithActiveSearchBar = NO;
 }
 
-- (void)dealloc
+- (void)viewWillAppear:(BOOL)animated
 {
-    [self removeObservers];
+    [super viewWillAppear:animated];
+    [self addTableViewObservers];
 }
 
-- (void)addObservers
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self removeTableViewObservers];
+}
+
+- (void)addTableViewObservers
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tableViewWillReloadData) name:CCNotificationsNames.tableViewWillReloadData object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tableViewDidReloadData) name:CCNotificationsNames.tableViewDidReloadData object:nil];
 }
 
-- (void)removeObservers
+- (void)removeTableViewObservers
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:CCNotificationsNames.tableViewWillReloadData object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:CCNotificationsNames.tableViewDidReloadData object:nil];
@@ -77,6 +83,8 @@
     } else {
         dataSource = [CCCommonDataSource new];
     }
+    dataSource.currentCellReuseIdentifier = reuseIdentifier;
+    [dataSource.registeredCellClasses setObject:cellCass forKey:reuseIdentifier];
     dataSource.dataProvider = provider;
     dataSource.dataProvider.targetTable = self.mainTable;
     self.mainTable.dataSource = dataSource;

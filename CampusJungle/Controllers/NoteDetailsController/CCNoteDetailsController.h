@@ -7,15 +7,17 @@
 //
 
 #import "CCViewController.h"
+#import "CCTableBasedController.h"
 #import "CCNote.h"
 #import "CCTransactionWithObject.h"
 #import "CCTransaction.h"
 
-@interface CCNoteDetailsController : CCViewController
+@interface CCNoteDetailsController : CCTableBasedController
 
 @property (nonatomic, strong) CCNote *note;
 @property (nonatomic, strong) id <CCTransactionWithObject> viewNotesAsPDFTransaction;
 @property (nonatomic, strong) id <CCTransaction> backToListTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> rateTransaction;
 
 - (IBAction)viewPDFButtonDidPressed;
 

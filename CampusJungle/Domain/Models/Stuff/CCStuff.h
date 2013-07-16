@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCRestKitMappableModel.h"
 
-@interface CCStuff : NSObject
+@interface CCStuff : NSObject <CCRestKitMappableModel>
 
 @property (nonatomic, strong) NSString *collegeID;
 @property (nonatomic, strong) NSString *stuffID;
@@ -19,8 +20,5 @@
 @property (nonatomic, strong) NSArray *photos;
 @property (nonatomic, strong) NSString *ownerID;
 @property (nonatomic, strong) NSArray *tags;
-
-+ (NSDictionary *)responseMappingDictionary;
-+ (NSDictionary *)requestMappingDictionary;
 
 @end

@@ -31,6 +31,13 @@ const struct CCAlertsMessages CCAlertsMessages = {
     .checkYourMail = @"Check your email box",
     .noteNotReadyForView = @"This note isn't ready for review. Try again later.",
     .haveNoClassesInSelectedCollege = @"You haven't classes in selected college",
+    .incorrectAddress = @"Please enter correct address",
+    .notAccurateAddress = @"Please enter more accurate address",
+    .emptyLocationAddress = @"Please enter correct location address",
+    .emptyLocationName = @"Please enter location name",
+    .emptyLocationDescription = @"Please enter location description",
+    .educationRemoving = @"All classes from deleted colleges will be deleted. Continue?",
+    .noSelectedItems = @"Select some items first",
 };
 
 const struct CCAlertsButtons CCAlertsButtons = {
@@ -56,4 +63,6 @@ const struct CCValidationMessages CCValidationMessages = {
     .fullPriceCantBeLowerThenPriceForReview = @"Full access price can't be lower than price for review",
     .descriptionCantBeBlank = @"Description can't be blank",
     .filterCanNotBeEmpty = @"Filter can't be empty",
+    .emptyName = @"Name can't be empty",
+    .emptyDescription = @"Description can't be empty",
 };

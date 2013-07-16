@@ -14,9 +14,12 @@
 #import "CCStandardErrorHandler.h"
 #import "ActionSheetPicker.h"
 #import "CCActionSheetPickerDateDelegate.h"
+#import "CCTimeTableDataProvider.h"
+#import "CCTimeTableCell.h"
+#import "AbstractActionSheetPicker.h"
+#import "CCClassCreationDataSource.h"
 
-@interface CCCreateClassController () <UITextFieldDelegate>
-
+@interface CCCreateClassController () <UITextFieldDelegate,  DatePickerDelegateProtocol>
 {
     NSString *timetableDay;
     NSString *timetableTime;
@@ -26,7 +29,10 @@
 @property (nonatomic, weak) IBOutlet UITextField *semesterTextField;
 @property (nonatomic, weak) IBOutlet UITextField *professorTextField;
 @property (nonatomic, weak) IBOutlet UITextField *classIdTextField;
-@property (nonatomic, weak) IBOutlet UITextField *timeTableTextField;
+@property (nonatomic, weak) IBOutlet UITextField *classNameTextField;
+@property (nonatomic, strong) CCTimeTableDataProvider *tableDataProvider;
+@property (nonatomic, weak) UIView *pickerContainer;
+@property (nonatomic, weak) id actionSheetPicker;
 
 @property (nonatomic, strong) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
 
@@ -53,10 +59,14 @@
 {
     [super viewDidLoad];
     
-    [self setTitle:@"Create New Class"];
+    [self setTitle:@"New Class"];
     [self setupScrollView];
     [self setupTextFields];
     [self addObservers];
+    self.dataSourceClass = [CCClassCreationDataSource class];
+    self.tableDataProvider = [CCTimeTableDataProvider new];
+    [self configTableWithProvider:self.tableDataProvider cellClass:[CCTimeTableCell class]];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleBordered target:self action:@selector(createClass:)];
 }
 
 - (void)dealloc
@@ -71,7 +81,7 @@
 
 - (void)setupTextFields
 {
-    self.textFieldsArray = @[self.subjectTextField, self.professorTextField, self.semesterTextField, self.timeTableTextField];
+    self.textFieldsArray = @[self.classNameTextField,self.subjectTextField, self.professorTextField, self.semesterTextField];
 }
 
 - (void)addObservers
@@ -99,27 +109,20 @@
         return;
     }
     CCClass *class = [CCClass new];
+    class.className = @"Name";
     class.collegeID = self.collegeId;
     class.professor = self.professorTextField.text;
     class.subject = self.subjectTextField.text;
     class.semester = self.semesterTextField.text;
     class.callNumber = self.classIdTextField.text;
-    class.timetable = self.timetableArray;
-    
+    class.timetable = [self.tableDataProvider.arrayOfLessons mutableCopy] ;
+    [(NSMutableArray *)class.timetable removeObjectAtIndex:0];
     [self.ioc_apiClassesProvider createClass:class successHandler:^(id newClass) {
         [self joinClass:(CCClass*)newClass];
         
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
     }];
-}
-
-- (void)getTimeTable:(NSNotification *)notification
-{
-    self.timeTableTextField.text = [[notification userInfo] objectForKey:@"timetable"];
-    timetableDay = [[notification userInfo] objectForKey:@"day"];
-    timetableTime = [[notification userInfo] objectForKey:@"time"];
-    [self.timetableArray addObject:@{@"day":timetableDay, @"time":timetableTime}];
 }
 
 - (void)joinClass:(CCClass *)class
@@ -149,8 +152,8 @@
 #pragma mark -
 #pragma mark UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if (textField == self.timeTableTextField){
-        [self createClass:nil];
+    if (textField == self.semesterTextField){
+        [self.view endEditing:YES];
     }
     else {
         [[self.view viewWithTag:textField.tag + 1] becomeFirstResponder];
@@ -158,13 +161,56 @@
     return YES;
 }
 
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+- (void)didSelectedCellWithObject:(id)cellObject
 {
-    if (textField == self.timeTableTextField) {
-        [self selectTimeTable:textField];
-        return NO;
+    NSDictionary *date = cellObject;
+    
+    if (!date[@"time"]){
+        date = nil;
     }
-    return YES;
+    
+    CCActionSheetPickerDateDelegate *delegate = [[CCActionSheetPickerDateDelegate alloc] initWithDate:date];
+    delegate.delegate = self;
+    
+    ActionSheetCustomPicker *actionSheetPicker = [ActionSheetCustomPicker showPickerWithTitle:@"Timetable" delegate:delegate showCancelButton:YES origin:self.view];
+    self.pickerContainer = actionSheetPicker.pickerView.superview;
+    self.actionSheetPicker = actionSheetPicker;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOut:)];
+    tap.cancelsTouchesInView = NO;
+    [actionSheetPicker.pickerView.window addGestureRecognizer:tap];
+    
+}
+
+- (void)tapOut:(UIGestureRecognizer *)gestureRecognizer
+{
+    CGPoint p = [gestureRecognizer locationInView:self.pickerContainer];
+    if(p.y < 0){
+        [self.actionSheetPicker performSelector:@selector(dismissPicker)];
+    }
+}
+
+- (void)lessonDidCreate:(NSDictionary *)lesson
+{
+    [self.tableDataProvider insertNewLesson:lesson];
+}
+
+- (void)lesson:(NSDictionary *)lesson didUpdateWithObject:(NSDictionary *)newLesson
+{
+    [self.tableDataProvider replaseTime:lesson withTime:newLesson];
+}
+
+- (BOOL)isNeedToLeftSelected
+{
+    return NO;
+}
+
+- (void)deleteCellObject:(NSDictionary *)object{
+    NSInteger objectIndex = [self.tableDataProvider.arrayOfLessons indexOfObject:object];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:objectIndex inSection:0];
+    [(NSMutableArray *)self.tableDataProvider.arrayOfItems removeObjectAtIndex:objectIndex];
+    [self.mainTable beginUpdates];
+    [self.mainTable deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [self.mainTable endUpdates];
 }
 
 @end

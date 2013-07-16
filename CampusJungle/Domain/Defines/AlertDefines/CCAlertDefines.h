@@ -29,7 +29,13 @@ extern const struct CCAlertsMessages {
     __unsafe_unretained NSString *checkYourMail;
     __unsafe_unretained NSString *noteNotReadyForView;
     __unsafe_unretained NSString *haveNoClassesInSelectedCollege;
-    
+    __unsafe_unretained NSString *incorrectAddress;
+    __unsafe_unretained NSString *notAccurateAddress;
+    __unsafe_unretained NSString *emptyLocationAddress;
+    __unsafe_unretained NSString *emptyLocationName;
+    __unsafe_unretained NSString *emptyLocationDescription;
+    __unsafe_unretained NSString *educationRemoving;
+    __unsafe_unretained NSString *noSelectedItems;
 } CCAlertsMessages;
 
 extern const struct CCAlertsButtons {
@@ -56,6 +62,8 @@ extern const struct CCValidationMessages {
     __unsafe_unretained NSString *fullPriceCantBeLowerThenPriceForReview;
     __unsafe_unretained NSString *descriptionCantBeBlank;
     __unsafe_unretained NSString *filterCanNotBeEmpty;
+    __unsafe_unretained NSString *emptyName;
+    __unsafe_unretained NSString *emptyDescription;
     
 } CCValidationMessages;
 

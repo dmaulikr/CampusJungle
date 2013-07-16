@@ -40,10 +40,21 @@ const struct CCAPIDefines CCAPIDefines = {
     .makeOffer = @"/api/stuff/%@/offer",
     .recivedOffers = @"/api/users/me/offers",
     .classLocations = @"/api/users/me/classes/%@/locations",
+    .postClassLocation = @"/api/classes/%@/locations",
+    .deleteLocation = @"/api/locations/%@",
     .getStuff = @"/api/stuff/%@",
     .getUser = @"/api/users/%@",
     .postMessage = @"/api/messages",
     .loadMyMessages = @"/api/users/me/messages",
+    .postReview = @"/api/users/%@/reviews",
+    .loadReviews = @"/api/users/%@/reviews",
+    .loadGroups = @"/api/users/me/classes/%@/groups",
+    .loadForums = @"/api/classes/%@/forums",
+    .postForum = @"/api/classes/%@/forums",
+    .deleteForum = @"/api/forums/%@",
+    .loadQuestions = @"/api/forums/%@/questions",
+    .postQuestion = @"/api/forums/%@/questions",
+    .deleteQuestion = @"questions/%@",
 };
 
 const struct CCUserDefines CCUserDefines = {
@@ -165,6 +176,11 @@ const struct CCClassTabbarButtonsTitles CCClassTabbarButtonsTitles = {
     .groups = @"Groups",
     .locations = @"Locations",
     .forums = @"Forums",
+};
+
+const struct CCLocationPlacesTypes CCLocationPlacesTypes = {
+    .classType = @"Klass",
+    .groupType = @"Group"
 };
 
 const struct CCProgressHudsConstants CCProgressHudsConstants = {

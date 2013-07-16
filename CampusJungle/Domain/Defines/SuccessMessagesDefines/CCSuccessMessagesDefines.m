@@ -10,4 +10,9 @@
 
 const struct CCSuccessMessages CCSuccessMessages = {
     .joinClass = @"You've successfully joined class",
+    .addedLocation = @"You've successfully added location",
+    .deleteLocation = @"Location was successfully removed",
+    .deleteForum = @"Forum was successfully removed",
+    .addedForum = @"You've successfully added forum",
+    .deleteQuestion = @"Question was successfully removed",
 };

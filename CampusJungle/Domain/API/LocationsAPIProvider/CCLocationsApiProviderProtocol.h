@@ -9,9 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "CCTypesDefinition.h"
 
+@class CCLocation;
+
 @protocol CCLocationsApiProviderProtocol <AppleGuiceInjectable>
 
 - (void)loadLocationsForClassWithId:(NSString *)classId filterString:(NSString *)filterString pageNumber:(NSInteger)pageNumber successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
-
+- (void)postLocation:(CCLocation *)location successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)deleteLocation:(CCLocation *)location successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 
 @end

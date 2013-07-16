@@ -15,5 +15,7 @@
 + (void)createAnnotationsOnMap:(MKMapView *)mapView withLocationsArray:(NSArray *)locationsArray;
 + (void)makeVisibleAllLocations:(NSArray *)locationsArray onMap:(MKMapView *)mapView;
 + (void)focusOnLocation:(CCLocation *)location inMap:(MKMapView *)mapView;
++ (void)focusOnCLLocation:(CLLocation *)clLocation inMap:(MKMapView *)mapView;
++ (void)removeAllAnnotationsInMap:(MKMapView *)mapView;
 
 @end

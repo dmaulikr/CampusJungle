@@ -12,5 +12,6 @@
 @interface CCInboxController : CCTableBasedController
 
 @property (nonatomic, strong) id <CCTransactionWithObject> offerDetailsTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> messageDetailsTransaction;
 
 @end

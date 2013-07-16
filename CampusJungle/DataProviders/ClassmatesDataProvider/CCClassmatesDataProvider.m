@@ -13,7 +13,8 @@
 - (void)loadItemsForPageNumber:(long)numberOfPage successHandler:(successWithObject)successHandler
 {
     [self.ioc_apiProvider loadClassmatesForClass:self.classID
-                                    NumberOfPage:[NSNumber numberWithLong:numberOfPage]
+                                    filterString:self.searchQuery
+                                    numberOfPage:[NSNumber numberWithLong:numberOfPage]
                                   successHandler:^(RKMappingResult *result) {
                                       successHandler(result.firstObject);
                                   } errorHandler:^(NSError *error) {

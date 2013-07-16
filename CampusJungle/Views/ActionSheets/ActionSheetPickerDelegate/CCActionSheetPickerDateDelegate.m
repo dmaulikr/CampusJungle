@@ -19,17 +19,22 @@
 @property (nonatomic, strong) NSString *selectedMinutes;
 @property (nonatomic, strong) NSString *selectedTimeOfTheDay;
 
+@property (nonatomic, weak) UIPickerView *picker;
+
 @end
 
 @implementation CCActionSheetPickerDateDelegate
 
-
-- (id)init
+- (id)initWithDate:(NSDictionary *)date
 {
     if (self = [super init]) {
         daysOfTheWeek = @[@"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", @"Saturday" ,@"Sunday"];
         timeOftheDay = @[@"AM", @"PM"];
-        [self initializeStartParameters];
+        if(date){
+            self.beginTime = date;
+        } else {
+            [self initializeStartParameters];
+        }
     }
     return self;
 }
@@ -42,6 +47,39 @@
     self.selectedTimeOfTheDay = @"AM";
 }
 
+- (void)setBeginTime:(NSDictionary *)beginTime
+{
+    _beginTime = beginTime;
+    NSDictionary *separatedTime = [self separeteTime:self.beginTime];
+    self.selectedDay = separatedTime[@"day"];
+    self.selectedHour = separatedTime[@"hour"];
+    self.selectedMinutes = separatedTime[@"min"];
+    self.selectedTimeOfTheDay = separatedTime[@"timeOfDay"];
+}
+
+- (NSDictionary *)separeteTime:(NSDictionary *)time
+{
+    NSMutableDictionary *separatedTime = [NSMutableDictionary new];
+    [separatedTime addEntriesFromDictionary:@{@"day" : time[@"day"]}];
+    NSString *timeAsString = time[@"time"];
+    timeAsString = [timeAsString stringByReplacingOccurrencesOfString:@" " withString:@":"];
+    NSArray *timeAsStringSubstrings = [timeAsString componentsSeparatedByString:@":"];
+    [separatedTime addEntriesFromDictionary:@{
+     @"hour" : timeAsStringSubstrings[0],
+     @"min" : timeAsStringSubstrings[1],
+     @"timeOfDay": timeAsStringSubstrings[2],
+     }];
+    return separatedTime;
+}
+
+- (void)setSlectedItems
+{
+    [self.picker selectRow:[daysOfTheWeek indexOfObject:self.selectedDay] inComponent:0 animated:NO];
+    [self.picker selectRow:[self.selectedHour integerValue] inComponent:1 animated:NO];
+    [self.picker selectRow:[self.selectedMinutes integerValue] inComponent:2 animated:NO];
+    [self.picker selectRow:[timeOftheDay indexOfObject:self.selectedTimeOfTheDay] inComponent:3 animated:NO];
+
+}
 
 - (void)actionSheetPickerDidSucceed:(AbstractActionSheetPicker *)actionSheetPicker origin:(id)origin
 {
@@ -52,13 +90,19 @@
 {
     NSString *time = [NSString stringWithFormat:@"%@:%@ %@",self.selectedHour, self.selectedMinutes, self.selectedTimeOfTheDay];
     NSString *resultMessage = [NSString stringWithFormat:@"%@ %@", self.selectedDay, time];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"Timetable" object:nil userInfo:@{@"timetable":resultMessage,@"day":self.selectedDay, @"time":time}];
+    if(self.beginTime){
+        [self.delegate lesson:self.beginTime didUpdateWithObject:@{@"timetable":resultMessage,@"day":self.selectedDay, @"time":time}];
+    } else {
+        [self.delegate lessonDidCreate:@{@"timetable":resultMessage,@"day":self.selectedDay, @"time":time}];
+    }
+
 }
 
 #pragma mark - UIPickerViewDataSource Implementation
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
+    self.picker = pickerView;
     return 4;
 }
 
@@ -88,13 +132,25 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
+    
     switch (component) {
         case 0: return [daysOfTheWeek objectAtIndex:row];
         case 1: return  [NSString stringWithFormat:@"%d",row];
         case 2: return  [NSString stringWithFormat:@"%d",row];
-        case 3: return [timeOftheDay objectAtIndex:row];
+        case 3: {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self setSlectedItems];
+            });
+            return [timeOftheDay objectAtIndex:row];
+        }
     }
     return nil;
+}
+
+- (void)configurePickerView:(UIPickerView *)pickerView
+{
+    self.picker = pickerView;
+    [self setSlectedItems];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component

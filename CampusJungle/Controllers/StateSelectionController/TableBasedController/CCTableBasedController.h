@@ -23,4 +23,7 @@
 - (void)configTableWithProvider:(CCBaseDataProvider *)provider cellClass:(Class)cellCass;
 - (void)configTableWithProvider:(CCBaseDataProvider *)provider cellClass:(Class)cellCass cellReuseIdentifier:(NSString *)reuseIdentifier;
 
+- (void)tableViewWillReloadData;
+- (void)tableViewDidReloadData;
+
 @end

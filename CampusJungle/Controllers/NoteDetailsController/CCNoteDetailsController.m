@@ -14,6 +14,8 @@
 #import "CCUserSessionProtocol.h"
 #import "CCUser.h"
 #import "GIAlert.h"
+#import "CCReviewsDataProvider.h"
+#import "CCReviewCell.h"
 
 @interface CCNoteDetailsController ()
 
@@ -26,11 +28,14 @@
 
 @property (nonatomic, weak) IBOutlet UIButton *resendLinkButton;
 @property (nonatomic, weak) IBOutlet UIButton *removeNoteButton;
+@property (nonatomic, strong) CCReviewsDataProvider *reviewsDataProvider;
 
 @property (nonatomic, strong) id <CCNotesAPIProviderProtolcol> ioc_notesAPIProvider;
 @property (nonatomic, strong) id <CCMarketAPIProviderProtocol> ioc_marketAPIProvider;
 
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
+
+- (IBAction)rateButtonPressed;
 
 @end
 
@@ -41,6 +46,9 @@
     [super viewDidLoad];
     [self setUpNotesInfo];
     self.title = @"Note";
+    self.reviewsDataProvider = [CCReviewsDataProvider new];
+    self.reviewsDataProvider.userID = self.note.ownerID;
+    [self configTableWithProvider:self.reviewsDataProvider cellClass:[CCReviewCell class]];
 }
 
 - (void)setUpNotesInfo
@@ -53,6 +61,7 @@
     if(self.note.fullAccess){
         [self.viewOnlyAccessButton setHidden:YES];
         [self.pdfButton setHidden:NO];
+        [self.resendLinkButton setHidden:YES];
         if([self.note.fullAccess isEqualToString:@"true"]){
             [self.fullAccessButton setHidden:YES];
             [self.resendLinkButton setHidden:NO];
@@ -70,7 +79,13 @@
 
     [self.viewOnlyAccessButton setTitle:viewOnlyTitle forState:UIControlStateNormal];
 
-    NSString *fullAccessTitle = [NSString stringWithFormat:@"Buy for download:%@",self.note.fullPrice];
+    NSNumber *fullPrice = self.note.fullPrice;
+    
+    if(self.note.fullAccess){
+        fullPrice = @(fullPrice.integerValue - self.note.price.integerValue);
+    }
+    
+    NSString *fullAccessTitle = [NSString stringWithFormat:@"Buy for download:%@",fullPrice];
     [self.fullAccessButton setTitle:fullAccessTitle forState:UIControlStateNormal];
 }
 
@@ -148,6 +163,17 @@
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
     }];
+}
+
+- (IBAction)rateButtonPressed
+{
+    [self.rateTransaction performWithObject:self.note];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.reviewsDataProvider loadItems];
 }
 
 @end

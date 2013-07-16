@@ -7,12 +7,18 @@
 //
 
 #import "CCBaseCell.h"
+
 @class CCLocation;
+
+@protocol CCLocationCellDelegate <NSObject>
+
+- (void)deleteLocation:(CCLocation *)location;
+
+@end
 
 @interface CCLocationCell : CCBaseCell
 
 @property (nonatomic, strong) CCLocation *cellObject;
-
-+ (CGFloat)heightForCellWithLocation:(CCLocation *)location;
+- (void)setDelegate:(id<CCLocationCellDelegate>)delegate;
 
 @end

@@ -11,6 +11,7 @@
 #import "CCLocationDataProviderDelegate.h"
 #import "CCClassTabbarControllerViewController.h"
 #import "CCViewPositioningHelper.h"
+#import "CCAlertHelper.h"
 #import "CCLocation.h"
 
 #import "CCClassmatesDataProvider.h"
@@ -20,11 +21,17 @@
 
 #import "CCUserCell.h"
 #import "CCLocationCell.h"
+#import "CCGroupCell.h"
+#import "CCForumCell.h"
+
+#import "CCStandardErrorHandler.h"
+#import "CCLocationsApiProviderProtocol.h"
+#import "CCForumsApiProviderProtocol.h"
 
 static const NSInteger kTabbarHeight = 52;
 static const NSInteger kNavBarHeight = 44;
 
-@interface CCClassTableController () <CCClassTabbarControllerDelegateProtocol, CCLocationDataProviderDelegate>
+@interface CCClassTableController () <CCClassTabbarControllerDelegateProtocol, CCLocationDataProviderDelegate, CCLocationCellDelegate, CCForumCellDelegate>
 
 @property (nonatomic, weak) IBOutlet UIView *sectionHeaderView;
 @property (nonatomic, weak) IBOutlet UIButton *addButton;
@@ -36,8 +43,13 @@ static const NSInteger kNavBarHeight = 44;
 @property (nonatomic, strong) CCClassLocationsDataProvider *locationsProvider;
 @property (nonatomic, strong) CCForumsDataProvider *forumsProvider;
 @property (nonatomic, strong) CCGroupsDataProvider *groupsProvider;
+@property (nonatomic, strong) CCBaseDataProvider *activeDataProvider;
+
+@property (nonatomic, strong) id<CCLocationsApiProviderProtocol> ioc_locationsApiProvider;
+@property (nonatomic, strong) id<CCForumsApiProviderProtocol> ioc_forumsApiProvider;
 
 @property (nonatomic, strong) NSMutableArray *locationsArray;
+@property (nonatomic, assign) CGPoint tableViewContentOffsetBeforeReload;
 
 @end
 
@@ -46,11 +58,11 @@ static const NSInteger kNavBarHeight = 44;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self addObservers];
     
     self.locationsArray = [NSMutableArray array];
     
     self.dataSourceClass = [CCClassControllerTableDataSource class];
-    self.dataSource = [CCClassControllerTableDataSource new];
     
     CCClassTabbarControllerViewController *tabbarController = [CCClassTabbarControllerViewController new];
     tabbarController.delegate = self;
@@ -63,55 +75,107 @@ static const NSInteger kNavBarHeight = 44;
     [self.addButton setBackgroundImage:nil forState:UIControlStateHighlighted];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (self.activeDataProvider) {
+        [self.activeDataProvider loadItems];
+    }
+}
+
+- (void)dealloc
+{
+    [self removeObservers];
+}
+
+- (void)addObservers
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadLocations) name:CCNotificationsNames.reloadClassLocations object:nil];
+}
+
+- (void)removeObservers
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:CCNotificationsNames.reloadClassLocations object:nil];
+}
+
 - (void)setClassmatesConfiguration
 {
-    [self clearSearchBarString];
     self.sectionName.text = CCClassTabbarButtonsTitles.classmates;
     if (!self.classmatesProvider) {
         self.classmatesProvider = [CCClassmatesDataProvider new];
         self.classmatesProvider.classID = self.classID;
         self.classmatesProvider.cellReuseIdentifier = CCTableDefines.classmatesCellIdentifier;
     }
+    [self fillSearchBarFromDataProvider:self.classmatesProvider];
     [self configTableWithProvider:self.classmatesProvider cellClass:[CCUserCell class] cellReuseIdentifier:CCTableDefines.classmatesCellIdentifier];
+    self.activeDataProvider = self.classmatesProvider;
 }
 
 - (void)setForumsConfiguration
 {
-    [self clearSearchBarString];
     self.sectionName.text = CCClassTabbarButtonsTitles.forums;
     if (!self.forumsProvider) {
         self.forumsProvider = [CCForumsDataProvider new];
+        self.forumsProvider.classId = self.classID;
         self.forumsProvider.cellReuseIdentifier = CCTableDefines.forumsCellIdentifier;
     }
-    [self configTableWithProvider:self.forumsProvider cellClass:[UITableViewCell class] cellReuseIdentifier:CCTableDefines.forumsCellIdentifier];
+    [self fillSearchBarFromDataProvider:self.forumsProvider];
+    [self configTableWithProvider:self.forumsProvider cellClass:[CCForumCell class] cellReuseIdentifier:CCTableDefines.forumsCellIdentifier];
+    self.activeDataProvider = self.forumsProvider;
 }
 
 - (void)setLocationConfiguration
 {
-    [self clearSearchBarString];
     self.sectionName.text = CCClassTabbarButtonsTitles.locations;
     if (!self.locationsProvider) {
         self.locationsProvider = [[CCClassLocationsDataProvider alloc] initWithDelegate:self];
         self.locationsProvider.classId = self.classID;
         self.locationsProvider.cellReuseIdentifier = CCTableDefines.locationsCellIdentifier;
     }
+    [self fillSearchBarFromDataProvider:self.locationsProvider];
     [self configTableWithProvider:self.locationsProvider cellClass:[CCLocationCell class] cellReuseIdentifier:CCTableDefines.locationsCellIdentifier];
+    self.activeDataProvider = self.locationsProvider;
 }
 
 - (void)setGroupsConfiguration
 {
-    [self clearSearchBarString];
     self.sectionName.text = CCClassTabbarButtonsTitles.groups;
     if (!self.groupsProvider) {
         self.groupsProvider = [CCGroupsDataProvider new];
+        self.groupsProvider.classId = self.classID;
         self.groupsProvider.cellReuseIdentifier = CCTableDefines.groupsCellIdentifier;
     }
-    [self configTableWithProvider:self.groupsProvider cellClass:[UITableViewCell class] cellReuseIdentifier:CCTableDefines.groupsCellIdentifier];
+    [self fillSearchBarFromDataProvider:self.groupsProvider];
+    [self configTableWithProvider:self.groupsProvider cellClass:[CCGroupCell class] cellReuseIdentifier:CCTableDefines.groupsCellIdentifier];
+    self.activeDataProvider = self.groupsProvider;
 }
 
-- (void)clearSearchBarString
+#pragma mark -
+#pragma mark Overriding base methods
+- (void)tableViewWillReloadData
 {
-    [self.searchBar setText:@""];
+    self.tableViewContentOffsetBeforeReload = CGPointMake(0, MIN(self.mainTable.contentOffset.y, 200));
+    [super tableViewWillReloadData];
+}
+
+- (void)tableViewDidReloadData
+{
+    CGPoint newContentOffset = self.mainTable.contentOffset;
+    [self.mainTable setContentOffset:self.tableViewContentOffsetBeforeReload];
+    [self.mainTable setContentOffset:newContentOffset animated:YES];
+    [super tableViewDidReloadData];
+}
+
+#pragma mark -
+#pragma mark Actions
+- (void)fillSearchBarFromDataProvider:(CCBaseDataProvider *)dataProvider
+{
+    [self.searchBar setText:dataProvider.searchQuery];
+}
+
+- (void)reloadLocations
+{
+    [self.locationsProvider loadItems];
 }
 
 - (void)didSelectBarItemWithIdentifier:(NSInteger)identifier
@@ -151,6 +215,36 @@ static const NSInteger kNavBarHeight = 44;
 }
 
 #pragma mark -
+#pragma mark CCLocationCellDelegate
+- (void)deleteLocation:(CCLocation *)location
+{
+    __weak CCClassTableController *weakSelf = self;
+    [CCAlertHelper showConfirmWithSuccess:^{
+        [weakSelf.ioc_locationsApiProvider deleteLocation:location successHandler:^(RKMappingResult *object) {
+            [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteLocation duration:CCProgressHudsConstants.loaderDuration];
+            [weakSelf.locationsProvider loadItems];
+        } errorHandler:^(NSError *error) {
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
+    }];
+}
+
+#pragma mark -
+#pragma mark CCForumCellDelegate
+- (void)deleteForum:(CCForum *)forum
+{
+    __weak CCClassTableController *weakSelf = self;
+    [CCAlertHelper showConfirmWithSuccess:^{
+        [weakSelf.ioc_forumsApiProvider deleteForum:forum successHandler:^(RKMappingResult *object) {
+            [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteForum duration:CCProgressHudsConstants.loaderDuration];
+            [weakSelf.forumsProvider loadItems];
+        } errorHandler:^(NSError *error) {
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
+    }];
+}
+
+#pragma mark -
 #pragma mark TableView callbacks
 - (BOOL)isNeedToLeftSelected
 {
@@ -171,7 +265,27 @@ static const NSInteger kNavBarHeight = 44;
             [self.delegate showLocation:cellObject onMapWithLocations:self.locationsArray];
             break;
         case CCClassTabbarButtonsIdentifierForums:
-            // go forum details
+            [self.delegate showDetailsOfForum:cellObject];
+            break;
+    }
+}
+
+- (IBAction)addButtonDidPressed:(id)sender
+{
+    NSInteger identifier = [self.classTabbarController selectedButtonIdentifier];
+    switch (identifier) {
+        case CCClassTabbarButtonsIdentifierClassmate:
+            // go add classmate
+
+            break;
+        case CCClassTabbarButtonsIdentifierGroup:
+            // go add group
+            break;
+        case CCClassTabbarButtonsIdentifierLocations:
+            [self.delegate addLocation];
+            break;
+        case CCClassTabbarButtonsIdentifierForums:
+            [self.delegate addForum];
             break;
     }
 }

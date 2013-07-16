@@ -7,8 +7,35 @@
 //
 
 #import "CCMessage.h"
+#import "CCRestKitConfigurator.h"
 
 @implementation CCMessage
+
++ (void)configureMappingWithManager:(RKObjectManager *)objectManager
+{
+    [self configureMessageResponse:objectManager];
+}
+
++ (void)configureMessageResponse:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *paginationMessageResponseMapping = [CCRestKitConfigurator paginationMapping];
+    
+    RKObjectMapping *messageMapping = [RKObjectMapping mappingForClass:[CCMessage class]];
+    [messageMapping addAttributeMappingsFromDictionary:[CCMessage responseMappingDictionary]];
+    
+    RKRelationshipMapping* relationShipResponseMessageMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
+                                                                                                            toKeyPath:CCResponseKeys.items
+                                                                                                          withMapping:messageMapping];
+    
+    [paginationMessageResponseMapping addPropertyMapping:relationShipResponseMessageMapping];
+    
+    RKResponseDescriptor *responseInboxPaginationMessages = [RKResponseDescriptor responseDescriptorWithMapping:paginationMessageResponseMapping pathPattern:CCAPIDefines.loadMyMessages keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    RKResponseDescriptor *responseOnCreateMessage = [RKResponseDescriptor responseDescriptorWithMapping:messageMapping pathPattern:CCAPIDefines.postMessage keyPath:@"message" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    [objectManager addResponseDescriptor:responseInboxPaginationMessages];
+    [objectManager addResponseDescriptor:responseOnCreateMessage];
+}
 
 + (NSDictionary *)responseMappingDictionary
 {
@@ -18,12 +45,22 @@
              @"receiver_type" : @"receiverType",
              @"sender_id" : @"senderID",
              @"text" : @"text",
+             @"created_at" : @"createdAt",
+             @"user_first_name" : @"userFirstName",
+             @"user_last_name" : @"userLastName",
+             @"user_avatar_retina" : @"userAvatar",
              };
 }
 
 - (NSString *)description
 {
     return self.text;
+}
+
+- (void)setCreatedAt:(NSDate *)createdAt
+{
+    _createdAt = createdAt;
+    
 }
 
 @end

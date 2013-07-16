@@ -7,15 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCRestKitMappableModel.h"
 
-@interface CCOffer : NSObject
+@interface CCOffer : NSObject <CCRestKitMappableModel>
 
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSString *receiverID;
 @property (nonatomic, strong) NSString *senderID;
 @property (nonatomic, strong) NSString *stuffID;
 @property (nonatomic, strong) NSString *offerID;
-
-+ (NSDictionary *)responseMappingDictionary;
+@property (nonatomic, strong) NSString *userFirstName;
+@property (nonatomic, strong) NSString *userLastName;
+@property (nonatomic, strong) NSString *userAvatar;
+@property (nonatomic, strong) NSDate *createdAt;
 
 @end

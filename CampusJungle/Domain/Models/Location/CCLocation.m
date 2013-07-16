@@ -7,8 +7,87 @@
 //
 
 #import "CCLocation.h"
+#import "CCClass.h"
+#import "CCGroup.h"
+#import "CCUser.h"
+
+#import "CCRestKitConfigurator.h"
 
 @implementation CCLocation
+
++ (CCLocation *)createUsingLocation:(CLLocation *)clLocation
+{
+    return [self createWithCoordinates:clLocation.coordinate];
+}
+
++ (CCLocation *)createWithCoordinates:(CLLocationCoordinate2D)coordinates
+{
+    CCLocation *location = [CCLocation new];
+    location.latitude = coordinates.latitude;
+    location.longitude = coordinates.longitude;
+    return location;
+}
+
++ (CCLocation *)createWithCoordinates:(CLLocationCoordinate2D)coordinates name:(NSString *)name description:(NSString *)description place:(id)place visibleItems:(NSArray *)visibleItemsArray sharedWithAll:(BOOL)sharedWithAll
+{
+    CCLocation *location = [CCLocation new];
+    
+    location.latitude = coordinates.latitude;
+    location.longitude = coordinates.longitude;
+    location.name = name;
+    location.description = description;
+    location.sharedWithAll = sharedWithAll;
+    
+    if ([place isKindOfClass:[CCClass class]]) {
+        location.placeId = [(CCClass *)place classID];
+    }
+    else {
+        location.placeId = [(CCGroup *)place groupId];
+    }
+    
+    if ([[visibleItemsArray objectAtIndex:0] isKindOfClass:[CCUser class]]) {
+        location.visibleUsersIdsArray = [visibleItemsArray valueForKeyPath:@"uid"];
+    }
+    else {
+        location.visibleGroupsIdsArray = [visibleItemsArray valueForKeyPath:@"groupId"];
+    }
+    return location;
+}
+
++ (void)configureMappingWithManager:(RKObjectManager *)objectManager
+{
+    [self configureLocationsResponse:objectManager];
+    [self configureLocationsRequest:objectManager];
+}
+
++ (void)configureLocationsResponse:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *paginationLocationsResponseMapping = [CCRestKitConfigurator paginationMapping];
+    RKObjectMapping *locationsResponseMapping = [RKObjectMapping mappingForClass:[CCLocation class]];
+    [locationsResponseMapping addAttributeMappingsFromDictionary:[CCLocation responseMappingDictionary]];
+    RKRelationshipMapping *relationshipResponseLocationsMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
+                                                                                                              toKeyPath:CCResponseKeys.items
+                                                                                                            withMapping:locationsResponseMapping];
+    
+    
+    [paginationLocationsResponseMapping addPropertyMapping:relationshipResponseLocationsMapping];
+    
+    NSString *pathPattern = [NSString stringWithFormat:CCAPIDefines.classLocations, @":classID"];
+    
+    RKResponseDescriptor *classLocationsResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginationLocationsResponseMapping
+                                                                                                     pathPattern:pathPattern
+                                                                                                         keyPath:nil
+                                                                                                     statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [objectManager addResponseDescriptor:classLocationsResponseDescriptor];
+}
+
++ (void)configureLocationsRequest:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *locationMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    [locationMapping addAttributeMappingsFromDictionary:[CCLocation requestMappingDictionary]];
+    RKRequestDescriptor *locationRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:locationMapping objectClass:[CCLocation class] rootKeyPath:nil];
+    [objectManager addRequestDescriptor:locationRequestDescriptor];
+}
 
 + (NSDictionary *)responseMappingDictionary
 {
@@ -34,13 +113,9 @@
          @"name" : @"name",
          @"latitude" : @"latitude",
          @"longitude" : @"longitude",
-         @"placeId" : @"place_id",
-         @"placeType" : @"place_type",
-         @"ownerId" : @"owner_id",
          @"sharedWithAll" : @"shared_with_all",
-         @"cityId" : @"city_id",
-         @"street" : @"street",
-         @"users_ids" : @"visibleUsersIdsArray"
+         @"visibleUsersIdsArray" : @"users_ids",
+         @"visibleGroupsIdsArray" : @"groups_ids"
      };
 }
 

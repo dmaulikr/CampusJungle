@@ -5,8 +5,9 @@
 //  Created by Vlad Korzun on 21.05.13.
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
+#import "CCRestKitMappableModel.h"
 
-@interface CCUser : NSObject
+@interface CCUser : NSObject <CCRestKitMappableModel>
 
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *lastName;
@@ -20,7 +21,6 @@
 @property (nonatomic, strong) NSArray *authentications;
 @property (nonatomic, strong) NSString *isFacebookLinked;
 @property (nonatomic, strong) NSArray *educations;
-
-+ (NSDictionary *)responseMappingDictionary;
+@property (nonatomic, assign) BOOL isSelected;
 
 @end

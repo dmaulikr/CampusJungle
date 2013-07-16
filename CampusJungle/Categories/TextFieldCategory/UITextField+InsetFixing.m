@@ -18,7 +18,7 @@
        if([self isKindOfClass:NSClassFromString(@"UISearchBarTextField")]){
            margin = searchMargin;
        }
-    CGRect inset = CGRectMake(bounds.origin.x + margin, bounds.origin.y, bounds.size.width - margin, bounds.size.height);
+    CGRect inset = CGRectMake(bounds.origin.x + margin, bounds.origin.y, bounds.size.width - margin * 2, bounds.size.height);
     return inset;
 }
 
@@ -27,7 +27,7 @@
     if([self isKindOfClass:NSClassFromString(@"UISearchBarTextField")]){
         margin = searchMargin;
     }
-    CGRect inset = CGRectMake(bounds.origin.x + margin, bounds.origin.y, bounds.size.width - margin, bounds.size.height);
+    CGRect inset = CGRectMake(bounds.origin.x + margin, bounds.origin.y, bounds.size.width - margin * 2, bounds.size.height);
     return inset;
 }
 

@@ -16,6 +16,6 @@
 
 @property (nonatomic, strong) id <CCTransactionWithObject> photoBrowserTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> createOfferTarnasaction;
-@property (nonatomic, strong) id <CCTransactionWithObject> rateTransaction;
+
 
 @end
