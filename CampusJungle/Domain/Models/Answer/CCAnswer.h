@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCRestKitMappableModel.h"
 
-@interface CCAnswer : NSObject
+@interface CCAnswer : NSObject <CCRestKitMappableModel>
+
+@property (nonatomic, strong) NSString *answerId;
+@property (nonatomic, strong) NSString *questionId;
+@property (nonatomic, strong) NSString *ownerId;
+@property (nonatomic, strong) NSString *text;
+@property (nonatomic, assign) NSInteger commentsCount;
+@property (nonatomic, assign) NSInteger likesCount;
+@property (nonatomic, assign) BOOL isLiked;
 
 @end

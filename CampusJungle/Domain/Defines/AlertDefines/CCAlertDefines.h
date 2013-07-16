@@ -64,6 +64,7 @@ extern const struct CCValidationMessages {
     __unsafe_unretained NSString *filterCanNotBeEmpty;
     __unsafe_unretained NSString *emptyName;
     __unsafe_unretained NSString *emptyDescription;
+    __unsafe_unretained NSString *emptyQuestionText;
     
 } CCValidationMessages;
 

@@ -18,7 +18,6 @@
 
 @interface CCQuestionsViewController () <CCQuestionCellDelegate>
 
-@property (nonatomic, weak) IBOutlet UILabel *forumNameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *forumDescriptionLabel;
 
 @property (nonatomic, strong) id<CCQuestionsApiProviderProtocol> ioc_questionsApiProvider;
@@ -35,14 +34,13 @@
     [self setupLabels];
     [self setupTableView];
     
-    [self setTitle:@"Questions"];
+    [self setTitle:self.forum.name];
     self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHelper plusButtonWithTarget:self action:@selector(addQuestionButtonDidPressed:)];
     [(UIScrollView *)self.view setScrollEnabled:NO];
 }
 
 - (void)setupLabels
 {
-    [self.forumNameLabel setText:self.forum.name];
     [self.forumDescriptionLabel setText:self.forum.description];
 }
 
@@ -59,6 +57,13 @@
 - (void)addQuestionButtonDidPressed:(id)sender
 {
     [self.addQuestionTransaction performWithObject:self.forum];
+}
+
+#pragma mark -
+#pragma mark TableView callbacks
+- (BOOL)isNeedToLeftSelected
+{
+    return NO;
 }
 
 #pragma mark -
