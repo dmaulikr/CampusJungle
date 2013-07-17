@@ -10,12 +10,14 @@
 #import "CCBaseDataProvider.h"
 #import "CCTypesDefinition.h"
 
+#define firstPage 1
+
 @interface CCPaginationDataProvider : CCBaseDataProvider
 
 @property (nonatomic) long currentPage;
 @property (nonatomic) BOOL isCurrentlyLoad;
 
 - (void)loadItemsForPageNumber:(long)numberOfPage successHandler:(successWithObject)successHandler;
-
+- (BOOL)checkIsComplete;
 
 @end

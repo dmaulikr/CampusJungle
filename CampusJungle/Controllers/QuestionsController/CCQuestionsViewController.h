@@ -15,6 +15,7 @@
 @interface CCQuestionsViewController : CCTableBaseViewController
 
 @property (nonatomic, strong) id<CCTransactionWithObject> addQuestionTransaction;
+@property (nonatomic, strong) id<CCTransactionWithObject> answersTransaction;
 
 - (void)setForum:(CCForum *)forum;
 

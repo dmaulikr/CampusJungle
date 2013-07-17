@@ -14,7 +14,10 @@
 @property (nonatomic, strong) NSString *answerId;
 @property (nonatomic, strong) NSString *questionId;
 @property (nonatomic, strong) NSString *ownerId;
+@property (nonatomic, strong) NSString *ownerFirstName;
+@property (nonatomic, strong) NSString *ownerLastName;
 @property (nonatomic, strong) NSString *text;
+@property (nonatomic, strong) NSDate *createdDate;
 @property (nonatomic, assign) NSInteger commentsCount;
 @property (nonatomic, assign) NSInteger likesCount;
 @property (nonatomic, assign) BOOL isLiked;

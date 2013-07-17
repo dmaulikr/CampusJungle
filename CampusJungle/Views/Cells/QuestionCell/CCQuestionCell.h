@@ -14,6 +14,8 @@
 @protocol CCQuestionCellDelegate <NSObject>
 
 - (void)deleteQuestion:(CCQuestion *)question;
+- (void)emailAttachmentOfQuestion:(CCQuestion *)question;
+- (void)viewAttachmentOfQuestion:(CCQuestion *)question;
 
 @end
 

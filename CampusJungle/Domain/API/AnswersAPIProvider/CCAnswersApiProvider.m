@@ -9,13 +9,16 @@
 #import "CCAnswersApiProvider.h"
 #import "CCAnswer.h"
 
+static const NSInteger kItemsPerPage = 10;
+
 @implementation CCAnswersApiProvider
 
-- (void)loadForumsForQuestionWithId:(NSString *)questionId filterString:(NSString *)filterString pageNumber:(NSInteger)pageNumber successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+- (void)loadAnswersForQuestionWithId:(NSString *)questionId filterString:(NSString *)filterString pageNumber:(NSInteger)pageNumber successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
     NSMutableDictionary *params = [NSMutableDictionary new];
     
     [params setObject:@(pageNumber) forKey:@"page_number"];
+    [params setObject:@(kItemsPerPage) forKey:@"per_page"];
     if ([filterString length] > 0) {
         [params setObject:filterString forKey:@"keywords"];
     }
@@ -42,7 +45,7 @@
     }];
 }
 
-- (void)deleteForum:(CCAnswer *)answer successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+- (void)deleteAnswer:(CCAnswer *)answer successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [self setAuthorizationToken];

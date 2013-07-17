@@ -10,8 +10,6 @@
 #import "CCPaginationResponse.h"
 #import "CCDefines.h"
 
-#define firstPage 1
-
 @implementation CCPaginationDataProvider
 
 - (void)loadItems

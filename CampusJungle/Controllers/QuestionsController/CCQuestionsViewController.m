@@ -66,6 +66,13 @@
     return NO;
 }
 
+- (void)didSelectedCellWithObject:(CCQuestion *)question
+{
+    if (![question uploadProgress]){
+        [self.answersTransaction performWithObject:question];
+    }
+}
+
 #pragma mark -
 #pragma mark CCQuestionCellDelegate
 - (void)deleteQuestion:(CCQuestion *)question
@@ -85,13 +92,6 @@
 {
     [super viewDidAppear:animated];
     [self.dataProvider loadItems];
-}
-
-- (void)didSelectedCellWithObject:(id)cellObject
-{
-    if(![(CCQuestion *)cellObject uploadProgress]){
-        
-    }
 }
 
 @end

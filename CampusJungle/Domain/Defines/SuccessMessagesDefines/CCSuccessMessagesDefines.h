@@ -13,4 +13,5 @@ extern const struct CCSuccessMessages {
     __unsafe_unretained NSString *deleteForum;
     __unsafe_unretained NSString *addedForum;
     __unsafe_unretained NSString *deleteQuestion;
+    __unsafe_unretained NSString *deleteAnswer;
 } CCSuccessMessages;

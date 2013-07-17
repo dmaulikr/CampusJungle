@@ -17,6 +17,7 @@
 static const NSInteger kTextLabelOriginY = 77;
 static const NSInteger kDefaultTextLabelWidth = 272;
 static const NSInteger kBottomSpace = 30;
+static const NSInteger kAttachmentViewHeight = 34;
 static const CGFloat kMinCellHeight = 133;
 
 @interface CCQuestionCell ()<CCUploadIndicatorDelegateProtocol>
@@ -27,6 +28,10 @@ static const CGFloat kMinCellHeight = 133;
 @property (nonatomic, weak) IBOutlet UILabel *questionTextLabel;
 @property (nonatomic, weak) IBOutlet UILabel *answersNumberLabel;
 @property (nonatomic, weak) IBOutlet UIButton *deleteQuestionButton;
+
+@property (nonatomic, weak) IBOutlet UIView *attachmentView;
+@property (nonatomic, weak) IBOutlet UIButton *emailAttachmentButton;
+@property (nonatomic, weak) IBOutlet UIButton *viewAttachmentButton;
 
 @property (nonatomic, strong) CCQuestion *question;
 @property (nonatomic, weak) id<CCQuestionCellDelegate> delegate;
@@ -42,6 +47,8 @@ static const CGFloat kMinCellHeight = 133;
     [super awakeFromNib];
     [self setSelectionColor];
     [self.deleteQuestionButton addTarget:self action:@selector(deleteQuestionButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.emailAttachmentButton addTarget:self action:@selector(emailAttachmentButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.viewAttachmentButton addTarget:self action:@selector(viewAttachmentButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)prepareForReuse
@@ -61,6 +68,7 @@ static const CGFloat kMinCellHeight = 133;
     [self fillLabels];
     [self fillImageView];
     [self setDeleteButtonVisibility];
+    [self setAttachmentViewVisibility];
 }
 
 - (void)fillLabels
@@ -75,7 +83,8 @@ static const CGFloat kMinCellHeight = 133;
     [self.answersNumberLabel setText:[NSString stringWithFormat:@"%i %@", self.question.answersCount, [CCPluralizeHelper pluralizeEntityName:@"answer" withNumberOfItems:self.question.answersCount]]];
     
     [self.questionTextLabel sizeToFit];
-    [CCViewPositioningHelper setOriginY:[CCViewPositioningHelper bottomOfView:self.questionTextLabel] + 5 toView:self.answersNumberLabel];
+    [CCViewPositioningHelper setOriginY:[CCViewPositioningHelper bottomOfView:self.questionTextLabel] toView:self.attachmentView];
+    [CCViewPositioningHelper setOriginY:[CCViewPositioningHelper bottomOfView:self.attachmentView] + 5 toView:self.answersNumberLabel];
 }
 
 - (void)fillImageView
@@ -93,11 +102,24 @@ static const CGFloat kMinCellHeight = 133;
     [self.deleteQuestionButton setHidden:isHidden];
 }
 
+- (void)setAttachmentViewVisibility
+{
+    if ([self.question.attachment length] > 0) {
+        [self.attachmentView setHidden:NO];
+        [CCViewPositioningHelper setOriginY:[CCViewPositioningHelper bottomOfView:self.attachmentView] + 5 toView:self.answersNumberLabel];
+    }
+    else {
+        [self.attachmentView setHidden:YES];
+        [CCViewPositioningHelper setOriginY:self.attachmentView.frame.origin.y + 5 toView:self.answersNumberLabel];
+    }
+}
+
 + (CGFloat)heightForCellWithObject:(CCQuestion *)question
 {
-    UIFont *font = [UIFont fontWithName:@"Avenir-Medium" size:15];
+    UIFont *font = [UIFont fontWithName:@"Avenir-MediumOblique" size:15];
     CGSize requiredSize = [question.text sizeWithFont:font constrainedToSize:CGSizeMake(kDefaultTextLabelWidth, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
-    return MAX(kMinCellHeight, kTextLabelOriginY + requiredSize.height + kBottomSpace);
+    CGFloat additionalAttachmentHeight = [question.attachment length] > 0 ? kAttachmentViewHeight : 0;
+    return MAX(kMinCellHeight + additionalAttachmentHeight, kTextLabelOriginY + requiredSize.height + kBottomSpace + additionalAttachmentHeight);
 }
 
 #pragma mark -
@@ -106,6 +128,21 @@ static const CGFloat kMinCellHeight = 133;
 {
     if (self.delegate && [self.delegate respondsToSelector:@selector(deleteQuestion:)]) {
         [self.delegate deleteQuestion:self.question];
+    }
+}
+
+
+- (void)emailAttachmentButtonDidPressed:(id)sender
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(emailAttachmentOfQuestion:)]) {
+        [self.delegate emailAttachmentOfQuestion:self.question];
+    }
+}
+
+- (void)viewAttachmentButtonDidPressed:(id)sender
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(viewAttachmentOfQuestion:)]) {
+        [self.delegate viewAttachmentOfQuestion:self.question];
     }
 }
 
