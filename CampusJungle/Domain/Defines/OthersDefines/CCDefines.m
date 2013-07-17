@@ -190,3 +190,7 @@ const struct CCLocationPlacesTypes CCLocationPlacesTypes = {
 const struct CCProgressHudsConstants CCProgressHudsConstants = {
     .loaderDuration = 5,
 };
+
+const struct CCHeaderViewsTitles CCHeaderViewsTitles = {
+    .answersHeaderViewTitle = @"Tap to load previous answers",
+};

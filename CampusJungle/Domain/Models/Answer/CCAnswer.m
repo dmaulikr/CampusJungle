@@ -55,6 +55,8 @@
              @"question_id" : @"questionId",
              @"text" : @"text",
              @"owner_id" : @"ownerId",
+             @"owner_first_name" : @"ownerFirstName",
+             @"owner_last_name" : @"ownerLastName",
              @"comments_count" : @"commentsCount",
              @"created_at" : @"createdDate",
              @"likes_count" : @"likesCount",

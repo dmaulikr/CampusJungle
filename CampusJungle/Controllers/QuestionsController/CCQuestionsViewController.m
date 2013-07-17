@@ -66,6 +66,11 @@
     return NO;
 }
 
+- (void)didSelectedCellWithObject:(id)cellObject
+{
+    [self.answersTransaction performWithObject:cellObject];
+}
+
 #pragma mark -
 #pragma mark CCQuestionCellDelegate
 - (void)deleteQuestion:(CCQuestion *)question

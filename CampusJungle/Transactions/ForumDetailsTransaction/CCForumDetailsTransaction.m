@@ -9,6 +9,7 @@
 #import "CCForumDetailsTransaction.h"
 #import "CCQuestionsViewController.h"
 #import "CCAddQuestionTransaction.h"
+#import "CCAnswersTransaction.h"
 
 @implementation CCForumDetailsTransaction
 
@@ -20,9 +21,13 @@
     CCAddQuestionTransaction *addQuestionTransaction = [CCAddQuestionTransaction new];
     addQuestionTransaction.navigation = self.navigation;
     
+    CCAnswersTransaction *answersTransation = [CCAnswersTransaction new];
+    answersTransation.navigation = self.navigation;
+    
     CCQuestionsViewController *questionsController = [CCQuestionsViewController new];
     [questionsController setForum:object];
     questionsController.addQuestionTransaction = addQuestionTransaction;
+    questionsController.answersTransaction = answersTransation;
     
     [self.navigation pushViewController:questionsController animated:YES];
 }

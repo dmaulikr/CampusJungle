@@ -15,4 +15,5 @@ const struct CCSuccessMessages CCSuccessMessages = {
     .deleteForum = @"Forum was successfully removed",
     .addedForum = @"You've successfully added forum",
     .deleteQuestion = @"Question was successfully removed",
+    .deleteAnswer = @"Answer was successfully removed",
 };

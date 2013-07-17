@@ -13,9 +13,9 @@
 
 @protocol CCAnswersApiProviderProtocol <AppleGuiceInjectable>
 
-- (void)loadForumsForQuestionWithId:(NSString *)questionId filterString:(NSString *)filterString pageNumber:(NSInteger)pageNumber successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)loadAnswersForQuestionWithId:(NSString *)questionId filterString:(NSString *)filterString pageNumber:(NSInteger)pageNumber successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 - (void)postAnswer:(CCAnswer *)answer successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
-- (void)deleteForum:(CCAnswer *)answer successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)deleteAnswer:(CCAnswer *)answer successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 - (void)likeAnswer:(CCAnswer *)answer successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 
 @end

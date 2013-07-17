@@ -192,6 +192,10 @@ extern const struct CCLocationPlacesTypes {
     __unsafe_unretained NSString *groupType;
 } CCLocationPlacesTypes;
 
+extern const struct CCHeaderViewsTitles {
+    __unsafe_unretained NSString *answersHeaderViewTitle;
+} CCHeaderViewsTitles;
+
 enum CCClassTabbarButtonsIdentifiers {
     CCClassTabbarButtonsIdentifierClassmate = 1,
     CCClassTabbarButtonsIdentifierGroup = 2,
