@@ -18,5 +18,5 @@
 - (void)getClassesInCollegesWithSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 
 - (void)leaveClassWithID:(NSString *)classID SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
-
+- (void)updateClass:(CCClass *)class successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 @end

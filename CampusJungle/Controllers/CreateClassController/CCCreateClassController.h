@@ -9,11 +9,23 @@
 #import "CCBaseViewController.h"
 #import "CCTransactionWithObject.h"
 #import "CCTableBaseViewController.h"
+#import "CCTimeTableDataProvider.h"
+#import "CCClass.h"
 
 @interface CCCreateClassController : CCTableBaseViewController
 
 @property (nonatomic, strong) id <CCTransactionWithObject> classAddedTransaction;
+@property (nonatomic, weak) IBOutlet UITextField *subjectTextField;
+@property (nonatomic, weak) IBOutlet UITextField *semesterTextField;
+@property (nonatomic, weak) IBOutlet UITextField *professorTextField;
+@property (nonatomic, weak) IBOutlet UITextField *classIdTextField;
+@property (nonatomic, weak) IBOutlet UITextField *classNameTextField;
+@property (nonatomic, weak) IBOutlet UIImageView *thumbView;
+@property (nonatomic, strong) CCTimeTableDataProvider *tableDataProvider;
+@property (nonatomic) BOOL isAvatarUpdated;
 
 - (id)initWithCollegeID:(NSString *)collegeId;
+- (BOOL)isFormValid;
+- (CCClass *)prepareClass;
 
 @end

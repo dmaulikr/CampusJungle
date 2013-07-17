@@ -44,6 +44,11 @@
     return self;
 }
 
+- (void)updateWithClass:(CCClass *)updatedClass
+{
+    self.currentClass = updatedClass;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -57,7 +62,6 @@
     self.classContentTable.tableHeaderView = self.headerView;
     self.classContentTable.classID = self.currentClass.classID;
     self.classContentTable.delegate = self;
-    [self fillTimeTable];
     [self.view addSubview:self.classContentTable.view];
 }
 
@@ -79,6 +83,7 @@
 {
     [super viewWillAppear:animated];
     [self.classContentTable viewWillAppear:animated];
+    [self loadInfo];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -93,11 +98,13 @@
     self.professor.text = self.currentClass.professor;
     self.classNumber.text = self.currentClass.callNumber;
     [self.classImage setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,self.currentClass.classImageURL]] placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
+    [self fillTimeTable];
+    self.title = self.currentClass.subject;
 }
 
 - (void)editClass
 {
-    
+    [self.editClassTransaction performWithObject:self.currentClass];
 }
 
 - (IBAction)classMarketButtonDidPressed

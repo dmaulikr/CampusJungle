@@ -49,6 +49,13 @@
                                                                                                    keyPath:@"class"
                                                                                                statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
+    NSString *classUpdatePathPattern = [NSString stringWithFormat:CCAPIDefines.updateClass,@":class_id"];
+    RKResponseDescriptor *responseUpdateClassDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:classResponseMapping
+                                                                                               pathPattern:classUpdatePathPattern
+                                                                                                   keyPath:@"class"
+                                                                                               statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+
     
     RKResponseDescriptor *responseAllClassesDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:classResponseMapping
                                                                                                  pathPattern:CCAPIDefines.allClasses
@@ -67,6 +74,7 @@
     [objectManager addResponseDescriptor:responseAddClassDescriptor];
     [objectManager addResponseDescriptor:responseClassesOfCollegeDescriptor];
     [objectManager addResponseDescriptor:responseNewClassDescriptor];
+    [objectManager addResponseDescriptor:responseUpdateClassDescriptor];
     [objectManager addResponseDescriptor:responseAllClassesDescriptor];
     [objectManager addRequestDescriptor:classRequestDescriptor];
 }
@@ -104,7 +112,7 @@
       @"id":@"classID",
       @"college_name" : @"collegeName",
       @"college_id" : @"collegeID",
-      @"class_name" : @"className",
+      @"name" : @"className",
       @"image" : @"classImageURL"
       };
 }

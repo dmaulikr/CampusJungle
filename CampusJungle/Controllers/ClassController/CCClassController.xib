@@ -76,16 +76,17 @@
 					<object class="IBUIImageView" id="568286377">
 						<reference key="NSNextResponder" ref="510158987"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{8, 20}, {81, 78}}</string>
+						<string key="NSFrame">{{10, 27}, {81, 78}}</string>
 						<reference key="NSSuperview" ref="510158987"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1033822521"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<int key="IBUIContentMode">1</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">monkey.jpg</string>
+							<string key="NSResourceName">avatar_placeholder.png</string>
 						</object>
 					</object>
 					<object class="IBUIView" id="473858337">
@@ -462,13 +463,13 @@
 						<int key="objectID">173</int>
 						<reference key="object" ref="510158987"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="568286377"/>
 							<reference ref="473858337"/>
 							<reference ref="29864430"/>
 							<reference ref="629066445"/>
 							<reference ref="588238371"/>
 							<reference ref="144210820"/>
 							<reference ref="1033822521"/>
+							<reference ref="568286377"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">HeaderView</string>
@@ -639,8 +640,8 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">monkey.jpg</string>
-			<string key="NS.object.0">{500, 625}</string>
+			<string key="NS.key.0">avatar_placeholder.png</string>
+			<string key="NS.object.0">{104, 99}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>

@@ -347,6 +347,9 @@
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
 		D3039B78176880F800621CAC /* pending.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B76176880F800621CAC /* pending.png */; };
 		D3039B79176880F800621CAC /* pending@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B77176880F800621CAC /* pending@2x.png */; };
+		D342BCD51796AD3D0034E88C /* CCEditClassTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BCD41796AD3D0034E88C /* CCEditClassTransaction.m */; };
+		D342BCD91796B1640034E88C /* CCUpdateClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BCD81796B1640034E88C /* CCUpdateClassController.m */; };
+		D342BCDD1796C2890034E88C /* CCBackToClassTransactionAfterUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BCDC1796C2890034E88C /* CCBackToClassTransactionAfterUpdate.m */; };
 		D347BBD017817F2300E54EFC /* menuButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBCE17817F0200E54EFC /* menuButton.png */; };
 		D347BBD117817F2300E54EFC /* menuButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBCF17817F0F00E54EFC /* menuButton@2x.png */; };
 		D359E6081794383A00869D6C /* star_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D359E6041794383A00869D6C /* star_icon.png */; };
@@ -1136,6 +1139,12 @@
 		A7FA0E561768D746004D3403 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = Pods/TestFlightSDK/libTestFlight.a; sourceTree = "<group>"; };
 		D3039B76176880F800621CAC /* pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pending.png; sourceTree = "<group>"; };
 		D3039B77176880F800621CAC /* pending@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pending@2x.png"; sourceTree = "<group>"; };
+		D342BCD31796AD3D0034E88C /* CCEditClassTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEditClassTransaction.h; sourceTree = "<group>"; };
+		D342BCD41796AD3D0034E88C /* CCEditClassTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEditClassTransaction.m; sourceTree = "<group>"; };
+		D342BCD71796B1640034E88C /* CCUpdateClassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUpdateClassController.h; sourceTree = "<group>"; };
+		D342BCD81796B1640034E88C /* CCUpdateClassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUpdateClassController.m; sourceTree = "<group>"; };
+		D342BCDB1796C2890034E88C /* CCBackToClassTransactionAfterUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBackToClassTransactionAfterUpdate.h; sourceTree = "<group>"; };
+		D342BCDC1796C2890034E88C /* CCBackToClassTransactionAfterUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBackToClassTransactionAfterUpdate.m; sourceTree = "<group>"; };
 		D347BBCE17817F0200E54EFC /* menuButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuButton.png; sourceTree = "<group>"; };
 		D347BBCF17817F0F00E54EFC /* menuButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menuButton@2x.png"; sourceTree = "<group>"; };
 		D347BBD21781B7AE00E54EFC /* separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = separator.png; sourceTree = "<group>"; };
@@ -1715,6 +1724,7 @@
 				70A29CCE178778AB001BC8DD /* StuffDetailsController */,
 				70A29CD2178778AB001BC8DD /* TabBarController */,
 				70A29CC7178778AB001BC8DD /* TableBasedController */,
+				D342BCD61796B1380034E88C /* UpdateClassController */,
 				70A29CD8178778AB001BC8DD /* UploadImagesController */,
 				700F9435178ED4A800A6FBBA /* UserProfileController */,
 				70A29CDC178778AB001BC8DD /* WelcomeController */,
@@ -3110,6 +3120,7 @@
 				70B2D0E017944894001B0C2C /* AllClassesTransaction */,
 				7012AC8217955A41002DA5E9 /* AnswersTransaction */,
 				70B2D0E317944894001B0C2C /* ApplyFiltersTransaction */,
+				D342BCDA1796C2640034E88C /* BackToClassTransactionAfterUpdate */,
 				70B2D0E617944894001B0C2C /* BackToListOfNotesTransaction */,
 				70B2D0E917944894001B0C2C /* BackToNotesTransaction */,
 				70B2D0EC17944894001B0C2C /* BackToStuffTransaction */,
@@ -3127,6 +3138,7 @@
 				70B2D11017944894001B0C2C /* DropboxFileSelectionTransaction */,
 				70B2D11317944894001B0C2C /* DropboxFileSystemTransaction */,
 				70B2D11917944894001B0C2C /* DropboxPDFFileSystemTransaction */,
+				D342BCD21796ACF60034E88C /* EditClassTransaction */,
 				70B2D11C17944894001B0C2C /* EducationSettingSettingUpTransaction */,
 				70B2D11F17944894001B0C2C /* ForumDetailsTransaction */,
 				70B2D12217944894001B0C2C /* ImagesForNotesUploadingScreenTransaction */,
@@ -4239,6 +4251,33 @@
 			path = Icons;
 			sourceTree = "<group>";
 		};
+		D342BCD21796ACF60034E88C /* EditClassTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D342BCD31796AD3D0034E88C /* CCEditClassTransaction.h */,
+				D342BCD41796AD3D0034E88C /* CCEditClassTransaction.m */,
+			);
+			path = EditClassTransaction;
+			sourceTree = "<group>";
+		};
+		D342BCD61796B1380034E88C /* UpdateClassController */ = {
+			isa = PBXGroup;
+			children = (
+				D342BCD71796B1640034E88C /* CCUpdateClassController.h */,
+				D342BCD81796B1640034E88C /* CCUpdateClassController.m */,
+			);
+			path = UpdateClassController;
+			sourceTree = "<group>";
+		};
+		D342BCDA1796C2640034E88C /* BackToClassTransactionAfterUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				D342BCDB1796C2890034E88C /* CCBackToClassTransactionAfterUpdate.h */,
+				D342BCDC1796C2890034E88C /* CCBackToClassTransactionAfterUpdate.m */,
+			);
+			path = BackToClassTransactionAfterUpdate;
+			sourceTree = "<group>";
+		};
 		D359E6031794383A00869D6C /* Stars */ = {
 			isa = PBXGroup;
 			children = (
@@ -5171,6 +5210,9 @@
 				7012AC9F17957C03002DA5E9 /* CCSideMenuSectionHeader.m in Sources */,
 				7012ACA417957C37002DA5E9 /* CCLoadPreviousItemsSectionHeader.m in Sources */,
 				701253F1179694A50085247A /* CCQuestionHeaderView.m in Sources */,
+				D342BCD51796AD3D0034E88C /* CCEditClassTransaction.m in Sources */,
+				D342BCD91796B1640034E88C /* CCUpdateClassController.m in Sources */,
+				D342BCDD1796C2890034E88C /* CCBackToClassTransactionAfterUpdate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

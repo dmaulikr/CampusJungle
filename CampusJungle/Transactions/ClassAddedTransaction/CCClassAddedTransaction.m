@@ -14,6 +14,7 @@
 #import "CCAddLocationTransaction.h"
 #import "CCAddForumTransaction.h"
 #import "CCForumDetailsTransaction.h"
+#import "CCEditClassTransaction.h"
 
 @implementation CCClassAddedTransaction
 
@@ -24,6 +25,10 @@
     
     CCClassController *classController = [[CCClassController alloc] initWithClass:object];
     [self.navigation pushViewController:classController animated:YES];
+    
+    CCEditClassTransaction *editTransaction = [CCEditClassTransaction new];
+    editTransaction.navigation = self.navigation;
+    classController.editClassTransaction = editTransaction;
     
     CCShowNotesForClassTransaction *classNotesTransaction = [CCShowNotesForClassTransaction new];
     classController.classMarketTransaction =classNotesTransaction;
