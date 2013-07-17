@@ -60,6 +60,9 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *likeAnswer;
     __unsafe_unretained NSString *updateClass;
     __unsafe_unretained NSString *purchasedNotes;
+    __unsafe_unretained NSString *loadComments;
+    __unsafe_unretained NSString *postComment;
+    __unsafe_unretained NSString *deleteComment;
 } CCAPIDefines;
 
 

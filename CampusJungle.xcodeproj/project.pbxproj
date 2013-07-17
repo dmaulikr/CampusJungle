@@ -27,6 +27,8 @@
 		701253F81796CF620085247A /* CCAddAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 701253F61796CF620085247A /* CCAddAnswerViewController.m */; };
 		701253F91796CF620085247A /* CCAddAnswerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 701253F71796CF620085247A /* CCAddAnswerViewController.xib */; };
 		701253FD1796D1680085247A /* CCAddAnswerTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 701253FC1796D1680085247A /* CCAddAnswerTransaction.m */; };
+		701254011796E6DF0085247A /* CCComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 701254001796E6DF0085247A /* CCComment.m */; };
+		701254051796E8A40085247A /* CCCommentsApiProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 701254041796E8A40085247A /* CCCommentsApiProvider.m */; };
 		7012AC7617954DB4002DA5E9 /* CCAnswer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7012AC7517954DB4002DA5E9 /* CCAnswer.m */; };
 		7012AC7A1795508E002DA5E9 /* CCAnswersApiProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7012AC791795508E002DA5E9 /* CCAnswersApiProvider.m */; };
 		7012AC80179558C9002DA5E9 /* CCAnswersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7012AC7E179558C9002DA5E9 /* CCAnswersViewController.m */; };
@@ -556,6 +558,11 @@
 		701253F71796CF620085247A /* CCAddAnswerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAddAnswerViewController.xib; sourceTree = "<group>"; };
 		701253FB1796D1680085247A /* CCAddAnswerTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddAnswerTransaction.h; sourceTree = "<group>"; };
 		701253FC1796D1680085247A /* CCAddAnswerTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddAnswerTransaction.m; sourceTree = "<group>"; };
+		701253FF1796E6DF0085247A /* CCComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCComment.h; sourceTree = "<group>"; };
+		701254001796E6DF0085247A /* CCComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCComment.m; sourceTree = "<group>"; };
+		701254031796E8A40085247A /* CCCommentsApiProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCommentsApiProvider.h; sourceTree = "<group>"; };
+		701254041796E8A40085247A /* CCCommentsApiProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCommentsApiProvider.m; sourceTree = "<group>"; };
+		701254061796E9360085247A /* CCCommentsApiProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCommentsApiProviderProtocol.h; sourceTree = "<group>"; };
 		7012AC7417954DB4002DA5E9 /* CCAnswer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnswer.h; sourceTree = "<group>"; };
 		7012AC7517954DB4002DA5E9 /* CCAnswer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAnswer.m; sourceTree = "<group>"; };
 		7012AC781795508E002DA5E9 /* CCAnswersApiProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnswersApiProvider.h; sourceTree = "<group>"; };
@@ -1499,6 +1506,25 @@
 				701253FC1796D1680085247A /* CCAddAnswerTransaction.m */,
 			);
 			path = AddAnswerTransaction;
+			sourceTree = "<group>";
+		};
+		701253FE1796E6CF0085247A /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				701253FF1796E6DF0085247A /* CCComment.h */,
+				701254001796E6DF0085247A /* CCComment.m */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		701254021796E8940085247A /* CommentsAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				701254031796E8A40085247A /* CCCommentsApiProvider.h */,
+				701254041796E8A40085247A /* CCCommentsApiProvider.m */,
+				701254061796E9360085247A /* CCCommentsApiProviderProtocol.h */,
+			);
+			path = CommentsAPIProvider;
 			sourceTree = "<group>";
 		};
 		7012AC7317954DAB002DA5E9 /* Answer */ = {
@@ -2586,6 +2612,7 @@
 				70A29DDE17877CB5001BC8DD /* City */,
 				70A29DE117877CB5001BC8DD /* Class */,
 				70A29DE417877CB5001BC8DD /* College */,
+				701253FE1796E6CF0085247A /* Comment */,
 				70A29DE717877CB5001BC8DD /* DropboxFileInfo */,
 				70A29DEA17877CB5001BC8DD /* Education */,
 				70A29DED17877CB5001BC8DD /* FilterSection */,
@@ -2920,6 +2947,7 @@
 				7012AC771795507E002DA5E9 /* AnswersAPIProvider */,
 				70B2D05017940245001B0C2C /* APIProvider */,
 				70B2D05417940245001B0C2C /* ClassesApiProvider */,
+				701254021796E8940085247A /* CommentsAPIProvider */,
 				70B2D05817940245001B0C2C /* DropboxAPIProvider */,
 				70B2D05C17940245001B0C2C /* FacebookAPI */,
 				70B2D08C1794026C001B0C2C /* ForumsAPIProvider */,
@@ -5257,12 +5285,11 @@
 				D342BCD51796AD3D0034E88C /* CCEditClassTransaction.m in Sources */,
 				D342BCD91796B1640034E88C /* CCUpdateClassController.m in Sources */,
 				D342BCDD1796C2890034E88C /* CCBackToClassTransactionAfterUpdate.m in Sources */,
-
 				701253F81796CF620085247A /* CCAddAnswerViewController.m in Sources */,
 				701253FD1796D1680085247A /* CCAddAnswerTransaction.m in Sources */,
-
 				D342BCE11796D0210034E88C /* CCPurchasedNotesDataProvider.m in Sources */,
-
+				701254011796E6DF0085247A /* CCComment.m in Sources */,
+				701254051796E8A40085247A /* CCCommentsApiProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
