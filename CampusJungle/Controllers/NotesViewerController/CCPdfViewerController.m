@@ -1,22 +1,23 @@
 //
-//  CCNotesViewerControllerViewController.m
+//  CCPdfViewerController.m
 //  CampusJungle
 //
 //  Created by Vlad Korzun on 09.06.13.
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCNotesViewerController.h"
+#import "CCPdfViewerController.h"
 #import "CCDefines.h"
 #import "MBProgressHUD.h"
 
-@interface CCNotesViewerController () <UIWebViewDelegate>
+@interface CCPdfViewerController () <UIWebViewDelegate>
 
-@property (nonatomic, weak)  IBOutlet UIWebView *pdfViewer;
+@property (nonatomic, weak) IBOutlet UIWebView *pdfViewer;
+@property (nonatomic, strong) NSString *pdfUrlString;
 
 @end
 
-@implementation CCNotesViewerController
+@implementation CCPdfViewerController
 
 - (void)viewDidLoad
 {
@@ -27,7 +28,7 @@
 
 - (void)loadPDF
 {
-    NSString *noteURLStringRepresentation = [CCAPIDefines.baseURL stringByAppendingString: self.noteForDisplay.link];
+    NSString *noteURLStringRepresentation = [CCAPIDefines.baseURL stringByAppendingString:self.pdfUrlString];
     NSURL *noteURL = [NSURL URLWithString:noteURLStringRepresentation];
     NSURLRequest *requestForNote = [NSURLRequest requestWithURL:noteURL];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];

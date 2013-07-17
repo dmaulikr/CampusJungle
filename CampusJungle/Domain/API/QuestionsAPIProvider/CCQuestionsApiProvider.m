@@ -56,7 +56,7 @@
 - (void)postUploadInfoWithImages:(CCQuestion *)question withImages:(NSArray *)images successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler progress:(progressBlock)progressBlock
 {
     NSString *path = [NSString stringWithFormat:CCAPIDefines.postQuestion, question.forumId];
-   [self postInfoWithObject:question
+    [self postInfoWithObject:question
                   thumbnail:nil
                      images:images
                      onPath:path
@@ -65,5 +65,17 @@
                    progress:progressBlock];
 }
 
+- (void)emailAttachmentOfQuestion:(CCQuestion *)question successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [self setAuthorizationToken];
+
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.emailQuestionAttachment, question.questionId];
+    [objectManager putObject:nil path:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        successHandler(mappingResult);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        errorHandler(error);
+    }];
+}
 
 @end
