@@ -104,7 +104,7 @@ static const CGFloat kMinCellHeight = 133;
 
 - (void)setAttachmentViewVisibility
 {
-    if ([self.question.attachment length] > 0) {
+    if ([self.question.attachment length] > 0 && ![self.question uploadProgress]) {
         [self.attachmentView setHidden:NO];
         [CCViewPositioningHelper setOriginY:[CCViewPositioningHelper bottomOfView:self.attachmentView] + 5 toView:self.answersNumberLabel];
     }
@@ -167,6 +167,7 @@ static const CGFloat kMinCellHeight = 133;
 {
     self.indicator.hidden = YES;
     self.deleteQuestionButton.hidden = NO;
+    [self setAttachmentViewVisibility];
 }
 
 @end

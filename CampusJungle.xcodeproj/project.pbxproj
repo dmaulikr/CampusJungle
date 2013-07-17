@@ -106,8 +106,8 @@
 		70A29D14178778AB001BC8DD /* CCMyStuffController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29CAB178778AB001BC8DD /* CCMyStuffController.xib */; };
 		70A29D15178778AB001BC8DD /* CCNoteDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29CAE178778AB001BC8DD /* CCNoteDetailsController.m */; };
 		70A29D16178778AB001BC8DD /* CCNoteDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29CAF178778AB001BC8DD /* CCNoteDetailsController.xib */; };
-		70A29D17178778AB001BC8DD /* CCNotesViewerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29CB2178778AB001BC8DD /* CCNotesViewerController.m */; };
-		70A29D18178778AB001BC8DD /* CCNotesViewerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29CB3178778AB001BC8DD /* CCNotesViewerController.xib */; };
+		70A29D17178778AB001BC8DD /* CCPdfViewerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29CB2178778AB001BC8DD /* CCPdfViewerController.m */; };
+		70A29D18178778AB001BC8DD /* CCPdfViewerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29CB3178778AB001BC8DD /* CCPdfViewerController.xib */; };
 		70A29D19178778AB001BC8DD /* CCOtherUserProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29CB6178778AB001BC8DD /* CCOtherUserProfileController.m */; };
 		70A29D1A178778AB001BC8DD /* CCOtherUserProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29CB7178778AB001BC8DD /* CCOtherUserProfileController.xib */; };
 		70A29D1B178778AB001BC8DD /* CCPhotoBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29CBA178778AB001BC8DD /* CCPhotoBrowserController.m */; };
@@ -270,7 +270,7 @@
 		70B2D1CA17944895001B0C2C /* CCSuccessSendMessageTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D18117944894001B0C2C /* CCSuccessSendMessageTransaction.m */; };
 		70B2D1CB17944895001B0C2C /* CCWelcomeScreenConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D18517944894001B0C2C /* CCWelcomeScreenConfigurator.m */; };
 		70B2D1CC17944895001B0C2C /* CCViewMarketNotesListTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D18B17944894001B0C2C /* CCViewMarketNotesListTransaction.m */; };
-		70B2D1CD17944895001B0C2C /* CCViewPDFNotesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D18E17944894001B0C2C /* CCViewPDFNotesTransaction.m */; };
+		70B2D1CD17944895001B0C2C /* CCViewPDFTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D18E17944894001B0C2C /* CCViewPDFTransaction.m */; };
 		70B2D1CE17944895001B0C2C /* CCViewMarketStuffListTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D19117944894001B0C2C /* CCViewMarketStuffListTransaction.m */; };
 		70B2D1D2179448B9001B0C2C /* CCAddQuestionTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D1D1179448B9001B0C2C /* CCAddQuestionTransaction.m */; };
 		70B2D23517944E39001B0C2C /* CCBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D1D617944E39001B0C2C /* CCBaseCell.m */; };
@@ -681,9 +681,9 @@
 		70A29CAD178778AB001BC8DD /* CCNoteDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNoteDetailsController.h; sourceTree = "<group>"; };
 		70A29CAE178778AB001BC8DD /* CCNoteDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNoteDetailsController.m; sourceTree = "<group>"; };
 		70A29CAF178778AB001BC8DD /* CCNoteDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCNoteDetailsController.xib; sourceTree = "<group>"; };
-		70A29CB1178778AB001BC8DD /* CCNotesViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNotesViewerController.h; sourceTree = "<group>"; };
-		70A29CB2178778AB001BC8DD /* CCNotesViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNotesViewerController.m; sourceTree = "<group>"; };
-		70A29CB3178778AB001BC8DD /* CCNotesViewerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCNotesViewerController.xib; sourceTree = "<group>"; };
+		70A29CB1178778AB001BC8DD /* CCPdfViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPdfViewerController.h; sourceTree = "<group>"; };
+		70A29CB2178778AB001BC8DD /* CCPdfViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPdfViewerController.m; sourceTree = "<group>"; };
+		70A29CB3178778AB001BC8DD /* CCPdfViewerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCPdfViewerController.xib; sourceTree = "<group>"; };
 		70A29CB5178778AB001BC8DD /* CCOtherUserProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCOtherUserProfileController.h; sourceTree = "<group>"; };
 		70A29CB6178778AB001BC8DD /* CCOtherUserProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCOtherUserProfileController.m; sourceTree = "<group>"; };
 		70A29CB7178778AB001BC8DD /* CCOtherUserProfileController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCOtherUserProfileController.xib; sourceTree = "<group>"; };
@@ -1018,8 +1018,8 @@
 		70B2D18817944894001B0C2C /* CCTransactionWithObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTransactionWithObject.h; sourceTree = "<group>"; };
 		70B2D18A17944894001B0C2C /* CCViewMarketNotesListTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCViewMarketNotesListTransaction.h; sourceTree = "<group>"; };
 		70B2D18B17944894001B0C2C /* CCViewMarketNotesListTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewMarketNotesListTransaction.m; sourceTree = "<group>"; };
-		70B2D18D17944894001B0C2C /* CCViewPDFNotesTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCViewPDFNotesTransaction.h; sourceTree = "<group>"; };
-		70B2D18E17944894001B0C2C /* CCViewPDFNotesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewPDFNotesTransaction.m; sourceTree = "<group>"; };
+		70B2D18D17944894001B0C2C /* CCViewPDFTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCViewPDFTransaction.h; sourceTree = "<group>"; };
+		70B2D18E17944894001B0C2C /* CCViewPDFTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewPDFTransaction.m; sourceTree = "<group>"; };
 		70B2D19017944894001B0C2C /* CCViewMarketStuffListTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCViewMarketStuffListTransaction.h; sourceTree = "<group>"; };
 		70B2D19117944894001B0C2C /* CCViewMarketStuffListTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewMarketStuffListTransaction.m; sourceTree = "<group>"; };
 		70B2D1D0179448B9001B0C2C /* CCAddQuestionTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddQuestionTransaction.h; sourceTree = "<group>"; };
@@ -1698,7 +1698,7 @@
 				70A29CA4178778AB001BC8DD /* MyNotesController */,
 				70A29CA8178778AB001BC8DD /* MyStuffController */,
 				70A29CAC178778AB001BC8DD /* NoteDetailsController */,
-				70A29CB0178778AB001BC8DD /* NotesViewerController */,
+				70A29CB0178778AB001BC8DD /* PdfViewerController */,
 				D39496DB178B191F00C39A7E /* OfferController */,
 				D3949705178C3FED00C39A7E /* OfferDetailsController */,
 				70A29CB4178778AB001BC8DD /* OtherUserProfileController */,
@@ -2046,13 +2046,14 @@
 			path = NoteDetailsController;
 			sourceTree = "<group>";
 		};
-		70A29CB0178778AB001BC8DD /* NotesViewerController */ = {
+		70A29CB0178778AB001BC8DD /* PdfViewerController */ = {
 			isa = PBXGroup;
 			children = (
-				70A29CB1178778AB001BC8DD /* CCNotesViewerController.h */,
-				70A29CB2178778AB001BC8DD /* CCNotesViewerController.m */,
-				70A29CB3178778AB001BC8DD /* CCNotesViewerController.xib */,
+				70A29CB1178778AB001BC8DD /* CCPdfViewerController.h */,
+				70A29CB2178778AB001BC8DD /* CCPdfViewerController.m */,
+				70A29CB3178778AB001BC8DD /* CCPdfViewerController.xib */,
 			);
+			name = PdfViewerController;
 			path = NotesViewerController;
 			sourceTree = "<group>";
 		};
@@ -3712,8 +3713,8 @@
 		70B2D18C17944894001B0C2C /* ViewNotesTransaction */ = {
 			isa = PBXGroup;
 			children = (
-				70B2D18D17944894001B0C2C /* CCViewPDFNotesTransaction.h */,
-				70B2D18E17944894001B0C2C /* CCViewPDFNotesTransaction.m */,
+				70B2D18D17944894001B0C2C /* CCViewPDFTransaction.h */,
+				70B2D18E17944894001B0C2C /* CCViewPDFTransaction.m */,
 			);
 			path = ViewNotesTransaction;
 			sourceTree = "<group>";
@@ -4809,7 +4810,7 @@
 				70A29D12178778AB001BC8DD /* CCMyNotesViewController.xib in Resources */,
 				70A29D14178778AB001BC8DD /* CCMyStuffController.xib in Resources */,
 				70A29D16178778AB001BC8DD /* CCNoteDetailsController.xib in Resources */,
-				70A29D18178778AB001BC8DD /* CCNotesViewerController.xib in Resources */,
+				70A29D18178778AB001BC8DD /* CCPdfViewerController.xib in Resources */,
 				70A29D1A178778AB001BC8DD /* CCOtherUserProfileController.xib in Resources */,
 				70A29D1C178778AB001BC8DD /* CCPhotoBrowserController.xib in Resources */,
 				70A29D1F178778AB001BC8DD /* CCSignUPController.xib in Resources */,
@@ -4949,7 +4950,7 @@
 				70A29D11178778AB001BC8DD /* CCMyNotesViewController.m in Sources */,
 				70A29D13178778AB001BC8DD /* CCMyStuffController.m in Sources */,
 				70A29D15178778AB001BC8DD /* CCNoteDetailsController.m in Sources */,
-				70A29D17178778AB001BC8DD /* CCNotesViewerController.m in Sources */,
+				70A29D17178778AB001BC8DD /* CCPdfViewerController.m in Sources */,
 				70A29D19178778AB001BC8DD /* CCOtherUserProfileController.m in Sources */,
 				70A29D1B178778AB001BC8DD /* CCPhotoBrowserController.m in Sources */,
 				70A29D1D178778AB001BC8DD /* CCSideBarController.m in Sources */,
@@ -5129,7 +5130,7 @@
 				70B2D1CA17944895001B0C2C /* CCSuccessSendMessageTransaction.m in Sources */,
 				70B2D1CB17944895001B0C2C /* CCWelcomeScreenConfigurator.m in Sources */,
 				70B2D1CC17944895001B0C2C /* CCViewMarketNotesListTransaction.m in Sources */,
-				70B2D1CD17944895001B0C2C /* CCViewPDFNotesTransaction.m in Sources */,
+				70B2D1CD17944895001B0C2C /* CCViewPDFTransaction.m in Sources */,
 				70B2D1CE17944895001B0C2C /* CCViewMarketStuffListTransaction.m in Sources */,
 				70B2D1D2179448B9001B0C2C /* CCAddQuestionTransaction.m in Sources */,
 				70B2D23517944E39001B0C2C /* CCBaseCell.m in Sources */,

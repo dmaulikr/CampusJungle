@@ -1,5 +1,5 @@
 //
-//  CCNotesViewerControllerViewController.h
+//  CCPdfViewerController.h
 //  CampusJungle
 //
 //  Created by Vlad Korzun on 09.06.13.
@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "CCNote.h"
 
-@interface CCNotesViewerController : UIViewController
+@interface CCPdfViewerController : UIViewController
 
-@property (nonatomic, strong) CCNote *noteForDisplay;
+- (void)setPdfUrlString:(NSString *)pdfUrlString;
 
 @end

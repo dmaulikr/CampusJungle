@@ -16,6 +16,7 @@
 
 @property (nonatomic, strong) id<CCTransactionWithObject> addQuestionTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> answersTransaction;
+@property (nonatomic, strong) id<CCTransactionWithObject> viewQuestionAttachmentTransaction;
 
 - (void)setForum:(CCForum *)forum;
 

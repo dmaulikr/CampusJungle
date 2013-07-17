@@ -39,6 +39,12 @@
     [(UIScrollView *)self.view setScrollEnabled:NO];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.dataProvider loadItems];
+}
+
 - (void)setupLabels
 {
     [self.forumDescriptionLabel setText:self.forum.description];
@@ -68,7 +74,7 @@
 
 - (void)didSelectedCellWithObject:(CCQuestion *)question
 {
-    if (![question uploadProgress]){
+    if (![question uploadProgress]) {
         [self.answersTransaction performWithObject:question];
     }
 }
@@ -88,10 +94,18 @@
     }];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)emailAttachmentOfQuestion:(CCQuestion *)question
 {
-    [super viewDidAppear:animated];
-    [self.dataProvider loadItems];
+    [self.ioc_questionsApiProvider emailAttachmentOfQuestion:question successHandler:^(id object) {
+        [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.questionAttachmentEmailed duration:CCProgressHudsConstants.loaderDuration];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
+}
+
+- (void)viewAttachmentOfQuestion:(CCQuestion *)question
+{
+    [self.viewQuestionAttachmentTransaction performWithObject:question.attachment];
 }
 
 @end

@@ -95,7 +95,7 @@
         NSString *link = result[@"link"];
             if(link.length){
                 self.note.link = link;
-                [self.viewNotesAsPDFTransaction performWithObject:self.note];
+                [self.viewNotesAsPDFTransaction performWithObject:self.note.link];
             } else {
                 [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCAlertsMessages.noteNotReadyForView];
             }
