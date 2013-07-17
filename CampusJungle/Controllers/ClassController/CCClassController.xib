@@ -310,7 +310,7 @@
 						<reference key="IBUIFontDescription" ref="616348448"/>
 						<reference key="IBUIFont" ref="765469282"/>
 					</object>
-					<object class="IBUITextView" id="409224028">
+					<object class="IBUITextView" id="277148268">
 						<reference key="NSNextResponder" ref="510158987"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{90, 40}, {210, 82}}</string>
@@ -399,7 +399,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">timeTable</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="409224028"/>
+						<reference key="destination" ref="277148268"/>
 					</object>
 					<int key="connectionID">182</int>
 				</object>
@@ -457,7 +457,7 @@
 							<reference ref="629066445"/>
 							<reference ref="588238371"/>
 							<reference ref="144210820"/>
-							<reference ref="409224028"/>
+							<reference ref="277148268"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">HeaderView</string>
@@ -520,7 +520,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">181</int>
-						<reference key="object" ref="409224028"/>
+						<reference key="object" ref="277148268"/>
 						<reference key="parent" ref="510158987"/>
 					</object>
 				</array>
