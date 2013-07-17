@@ -48,7 +48,7 @@
 
 - (void)setupTableView
 {
-    self.tableHeaderView = [[CCQuestionHeaderView alloc] initWithQuestionText:self.question.text];
+    self.tableHeaderView = [[CCQuestionHeaderView alloc] initWithQuestionText:self.question.text bottomDividerVisibile:YES];
     self.mainTable.tableHeaderView = self.tableHeaderView;
     
     self.dataSource = [CCAnswersDataSource new];

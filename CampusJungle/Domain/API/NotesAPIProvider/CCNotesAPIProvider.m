@@ -120,4 +120,13 @@
     }];
 }
 
+- (void)loadPurchasedNotesSearchQuery:(NSString *)query PageNumber:(NSNumber *)pageNumber successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    NSMutableDictionary *params = [@{@"page_number" : pageNumber} mutableCopy];
+    if(query){
+        [params setObject:params forKey:@"keywords"];
+    }
+    [self loadItemsWithParams:params path:CCAPIDefines.purchasedNotes successHandler:successHandler errorHandler:errorHandler];
+}
+
 @end

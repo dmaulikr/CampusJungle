@@ -13,11 +13,16 @@
 #import "CCStandardErrorHandler.h"
 #import "CCUserSessionProtocol.h"
 #import "CCNavigationBarViewHelper.h"
+#import "CCPurchasedNotesDataProvider.h"
+#define UploadedState 0
+#define PurchasedState 1
 
 @interface CCMyNotesViewController ()
 
 @property (nonatomic, strong) CCBaseDataProvider *dataProvider;
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
+
+- (IBAction)segmentedControlDidChangeValue:(UISegmentedControl *)control;
 
 @end
 
@@ -27,8 +32,7 @@
 {
     [super viewDidLoad];
     self.title = @"My Notes";
-    self.dataProvider = [CCMyNotesDataProvider new];
-    [self configTableWithProvider:self.dataProvider cellClass:[CCNoteCell class]];
+    [self setUploadedConfiguration];
     self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHelper plusButtonWithTarget:self action:@selector(createNewNote)];
 }
 
@@ -52,6 +56,32 @@
         [self.viewNoteTransaction performWithObject:cellObject];
     }
 }
+
+- (IBAction)segmentedControlDidChangeValue:(UISegmentedControl *)control
+{
+    switch (control.selectedSegmentIndex) {
+        case UploadedState :{
+            [self setUploadedConfiguration];
+        } break;
+        case PurchasedState:{
+            [self setPurchasedConfiguration];
+        } break;
+
+    }
+}
+
+- (void)setUploadedConfiguration
+{
+    self.dataProvider = [CCMyNotesDataProvider new];
+    [self configTableWithProvider:self.dataProvider cellClass:[CCNoteCell class]];
+}
+
+- (void)setPurchasedConfiguration
+{
+    self.dataProvider = [CCPurchasedNotesDataProvider new];
+    [self configTableWithProvider:self.dataProvider cellClass:[CCNoteCell class]];
+}
+
 
 - (BOOL)isNeedToLeftSelected
 {
