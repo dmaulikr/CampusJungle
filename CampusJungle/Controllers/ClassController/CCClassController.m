@@ -26,6 +26,7 @@
 @property (nonatomic, strong) CCClassTableController *classContentTable;
 @property (nonatomic, strong) id<CCClassesApiProviderProtocol> ioc_classesApiProvider;
 @property (nonatomic, weak) IBOutlet UITextView *timeTable;
+@property (nonatomic, weak) IBOutlet UIImageView *classImage;
 
 @property (nonatomic, strong) CCClass *currentClass;
 
@@ -91,6 +92,7 @@
     self.navigationController.navigationItem.title = self.currentClass.subject;
     self.professor.text = self.currentClass.professor;
     self.classNumber.text = self.currentClass.callNumber;
+    [self.classImage setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,self.currentClass.classImageURL]] placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
 }
 
 - (void)editClass

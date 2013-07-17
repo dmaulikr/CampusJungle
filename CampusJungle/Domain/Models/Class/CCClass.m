@@ -105,6 +105,7 @@
       @"college_name" : @"collegeName",
       @"college_id" : @"collegeID",
       @"class_name" : @"className",
+      @"image" : @"classImageURL"
       };
 }
 
@@ -115,11 +116,8 @@
       @"timetable" : @"timetable",
       @"subject" : @"subject",
       @"semester" : @"semester",
-      @"call_number":@"callNumber",
-      @"id":@"classID",
-      @"college_name" : @"collegeName",
-      @"class_name" : @"className"
-      
+      @"callNumber":@"call_number",
+      @"className" : @"name"
       };
 }
 
