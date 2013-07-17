@@ -30,7 +30,7 @@
     
     [paginationCommentsResponseMapping addPropertyMapping:relationShipResponseCommentsMapping];
     
-    NSString *pathPattern = [NSString stringWithFormat:CCAPIDefines.loadAnswers, @":answerID"];
+    NSString *pathPattern = [NSString stringWithFormat:CCAPIDefines.loadComments, @":answerID"];
     RKResponseDescriptor *responseCommentsDescriptor =
     [RKResponseDescriptor responseDescriptorWithMapping:paginationCommentsResponseMapping
                                             pathPattern:pathPattern

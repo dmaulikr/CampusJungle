@@ -9,6 +9,7 @@
 #import "CCAnswersTransaction.h"
 #import "CCAnswersViewController.h"
 #import "CCAddAnswerTransaction.h"
+#import "CCCommentsTransaction.h"
 
 @implementation CCAnswersTransaction
 
@@ -20,9 +21,13 @@
     CCAddAnswerTransaction *addAnswerTransaction = [CCAddAnswerTransaction new];
     addAnswerTransaction.navigation = self.navigation;
     
+    CCCommentsTransaction *commentsTransaction = [CCCommentsTransaction new];
+    commentsTransaction.navigation = self.navigation;
+    
     CCAnswersViewController *answersController = [CCAnswersViewController new];
     [answersController setQuestion:object];
     answersController.addAnswerTransaction = addAnswerTransaction;
+    answersController.showCommentsTransaction = commentsTransaction;
     [self.navigation pushViewController:answersController animated:YES];
 }
 

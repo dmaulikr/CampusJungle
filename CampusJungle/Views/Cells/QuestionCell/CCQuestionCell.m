@@ -14,6 +14,8 @@
 #import "CCUserSessionProtocol.h"
 #import "MACircleProgressIndicator.h"
 
+#import "CCDateFormatterProtocol.h"
+
 static const NSInteger kTextLabelOriginY = 77;
 static const NSInteger kDefaultTextLabelWidth = 272;
 static const NSInteger kBottomSpace = 30;
@@ -36,6 +38,7 @@ static const CGFloat kMinCellHeight = 133;
 @property (nonatomic, strong) CCQuestion *question;
 @property (nonatomic, weak) id<CCQuestionCellDelegate> delegate;
 @property (nonatomic, strong) id<CCUserSessionProtocol> ioc_userSessionProvider;
+@property (nonatomic, strong) id<CCDateFormatterProtocol> ioc_dateFormatterHelper;
 @property (nonatomic, weak) IBOutlet MACircleProgressIndicator *indicator;
 
 @end
@@ -75,11 +78,8 @@ static const CGFloat kMinCellHeight = 133;
 {
     [self.ownerNameLabel setText:[NSString stringWithFormat:@"%@ %@", self.question.ownerFirstName, self.question.ownerLastName]];
     [self.questionTextLabel setText:self.question.text];
-    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
-    [outputFormatter setLocale:[NSLocale systemLocale]];
-    [outputFormatter setDateFormat:@"hh:mma dd/MM/yy"];
-
-    [self.createdAtLabel setText:[outputFormatter stringFromDate:self.question.createdDate]];
+    [self.createdAtLabel setText:[self.ioc_dateFormatterHelper formatedDateStringFromDate:self.question.createdDate]];
+    
     [self.answersNumberLabel setText:[NSString stringWithFormat:@"%i %@", self.question.answersCount, [CCPluralizeHelper pluralizeEntityName:@"answer" withNumberOfItems:self.question.answersCount]]];
     
     [self.questionTextLabel sizeToFit];

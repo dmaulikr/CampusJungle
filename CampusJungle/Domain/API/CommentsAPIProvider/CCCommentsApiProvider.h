@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "CCAPIProvider.h"
+#import "CCCommentsApiProviderProtocol.h"
 
-@interface CCCommentsApiProvider : CCAPIProvider
+@interface CCCommentsApiProvider : CCAPIProvider <CCCommentsApiProviderProtocol>
+
 
 @end

@@ -8,12 +8,15 @@
 
 #import "CCMessageCell.h"
 #import "CCViewPositioningHelper.h"
+#import "CCDateFormatterProtocol.h"
 
 @interface CCMessageCell()
 
 @property (nonatomic, weak) IBOutlet UILabel *messageLabel;
 @property (nonatomic, weak) IBOutlet UILabel *timeLabel;
 @property (nonatomic, weak) IBOutlet UILabel *userName;
+
+@property (nonatomic, strong) id<CCDateFormatterProtocol> ioc_dateFormatterHelper;
 
 @end
 
@@ -26,11 +29,7 @@
     self.messageLabel.text = [(CCMessage *)cellObject text];
     [self.messageLabel sizeToFit];
     
-    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
-    [outputFormatter setLocale:[NSLocale systemLocale]];
-    [outputFormatter setDateFormat:@"hh:mma dd/MM/yy"];
-    
-    self.timeLabel.text = [outputFormatter stringFromDate:[(CCMessage *)cellObject createdAt]];
+    self.timeLabel.text = [self.ioc_dateFormatterHelper formatedDateStringFromDate:[(CCMessage *)cellObject createdAt]];
     self.userName.text = [NSString stringWithFormat:@"%@ %@", [(CCMessage *)cellObject userFirstName],[(CCMessage *)cellObject userLastName]];
     [CCViewPositioningHelper setOriginX:5 toView:self.messageLabel];
     [self setSelectionColor];

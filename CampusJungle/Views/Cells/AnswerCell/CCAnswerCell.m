@@ -11,6 +11,7 @@
 
 #import "CCUserSessionProtocol.h"
 #import "CCViewPositioningHelper.h"
+#import "CCDateFormatterProtocol.h"
 
 static const NSInteger kTextLabelOriginY = 55;
 static const NSInteger kDefaultTextLabelWidth = 286;
@@ -28,6 +29,7 @@ static const CGFloat kMinCellHeight = 113;
 @property (nonatomic, weak) IBOutlet UILabel *commentsCountLabel;
 
 @property (nonatomic, strong) id<CCUserSessionProtocol> ioc_userSessionProvider;
+@property (nonatomic, strong) id<CCDateFormatterProtocol> ioc_dateFormatterHelper;
 @property (nonatomic, strong) CCAnswer *answer;
 @property (nonatomic, weak) id<CCAnswerCellDelegate> delegate;
 
@@ -59,7 +61,7 @@ static const CGFloat kMinCellHeight = 113;
 - (void)fillLabels
 {
     [self.userNameLabel setText:[NSString stringWithFormat:@"%@ %@", self.answer.ownerFirstName, self.answer.ownerLastName]];
-    [self.createdDateLabel setText:[NSString stringWithFormat:@"%@", self.answer.createdDate]];
+    [self.createdDateLabel setText:[self.ioc_dateFormatterHelper formatedDateStringFromDate:self.answer.createdDate]];
     [self.answerTextLabel setText:self.answer.text];
     [self.answerTextLabel sizeToFit];
     

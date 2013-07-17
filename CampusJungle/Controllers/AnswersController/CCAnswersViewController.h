@@ -15,6 +15,7 @@
 @interface CCAnswersViewController : CCTableBaseViewController
 
 @property (nonatomic, strong) id<CCTransactionWithObject> addAnswerTransaction;
+@property (nonatomic, strong) id<CCTransactionWithObject> showCommentsTransaction;
 
 - (void)setQuestion:(CCQuestion *)question;
 

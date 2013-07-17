@@ -83,7 +83,7 @@
 
 - (void)didSelectedCellWithObject:(id)cellObject
 {
-    // go comments
+    [self.showCommentsTransaction performWithObject:cellObject];
 }
 
 - (void)addAnswerButtonDidPressed:(id)sender

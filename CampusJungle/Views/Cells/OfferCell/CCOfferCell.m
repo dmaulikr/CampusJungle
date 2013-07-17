@@ -9,6 +9,7 @@
 #import "CCOfferCell.h"
 #import "CCOffer.h"
 #import "CCViewPositioningHelper.h"
+#import "CCDateFormatterProtocol.h"
 
 @interface CCOfferCell()
 
@@ -16,6 +17,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *timeLabel;
 @property (nonatomic, weak) IBOutlet UILabel *userName;
 
+@property (nonatomic, strong) id<CCDateFormatterProtocol> ioc_dateFormatterHelper;
 
 @end
 
@@ -28,11 +30,7 @@
     self.messageLabel.text = [(CCOffer *)cellObject text];
     [self.messageLabel sizeToFit];
     
-    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
-    [outputFormatter setLocale:[NSLocale systemLocale]];
-    [outputFormatter setDateFormat:@"hh:mma dd/MM/yy"];
-    
-    self.timeLabel.text = [outputFormatter stringFromDate:[(CCOffer *)cellObject createdAt]];
+    self.timeLabel.text = [self.ioc_dateFormatterHelper formatedDateStringFromDate:[(CCOffer *)cellObject createdAt]];
     self.userName.text = [NSString stringWithFormat:@"%@ %@",[(CCOffer *)cellObject userFirstName],[(CCOffer *)cellObject userLastName]];
     [CCViewPositioningHelper setOriginX:5 toView:self.messageLabel];
     [self setSelectionColor];
