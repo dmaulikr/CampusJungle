@@ -28,6 +28,24 @@
                     }];
 }
 
+- (void)updateClass:(CCClass *)class successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    [self putInfoWithObject:class
+                   thumbnail:class.thumb
+                      images:nil
+                      onPath:[NSString stringWithFormat:CCAPIDefines.updateClass,class.classID]
+              successHandler:^(RKMappingResult *mappingResult) {
+                  successHandler(mappingResult);
+              }
+                errorHandler:^(NSError *error) {
+                    errorHandler(error);
+                }
+                    progress:^(double finished) {
+                        
+                    }];
+}
+
+
 - (void)getClassesOfCollege:(NSString*)collegeID successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];

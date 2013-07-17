@@ -14,7 +14,7 @@
 #import "CCStandardErrorHandler.h"
 #import "ActionSheetPicker.h"
 #import "CCActionSheetPickerDateDelegate.h"
-#import "CCTimeTableDataProvider.h"
+
 #import "CCTimeTableCell.h"
 #import "AbstractActionSheetPicker.h"
 #import "CCClassCreationDataSource.h"
@@ -26,20 +26,11 @@
     NSString *timetableTime;
 }
 
-@property (nonatomic, weak) IBOutlet UITextField *subjectTextField;
-@property (nonatomic, weak) IBOutlet UITextField *semesterTextField;
-@property (nonatomic, weak) IBOutlet UITextField *professorTextField;
-@property (nonatomic, weak) IBOutlet UITextField *classIdTextField;
-@property (nonatomic, weak) IBOutlet UITextField *classNameTextField;
-@property (nonatomic, strong) CCTimeTableDataProvider *tableDataProvider;
 @property (nonatomic, weak) UIView *pickerContainer;
 @property (nonatomic, weak) id actionSheetPicker;
-@property (nonatomic, weak) IBOutlet UIImageView *thumbView;
 @property (nonatomic, strong) CCAvatarSelectionActionSheet *thumbSelectionSheet;
-//@property (nonatomic, strong) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
-
+@property (nonatomic, weak) IBOutlet UIButton *thumbButton;
 @property (nonatomic, strong) NSArray *textFieldsArray;
-@property (nonatomic, strong) NSMutableArray *timetableArray;
 @property (nonatomic, strong) NSString *collegeId;
 @property (nonatomic, strong) id<CCClassesApiProviderProtocol> ioc_apiClassesProvider;
 
@@ -54,7 +45,6 @@
     self = [super init];
     if (self) {
         self.collegeId = collegeId;
-        self.timetableArray = [NSMutableArray new];
     }
     return self;
 }
@@ -64,7 +54,6 @@
     [super viewDidLoad];
     
     [self setTitle:@"New Class"];
-    [self setupScrollView];
     [self setupTextFields];
     [self addObservers];
     self.dataSourceClass = [CCClassCreationDataSource class];
@@ -72,6 +61,9 @@
     [self configAvatarSelectionSheet];
     [self configTableWithProvider:self.tableDataProvider cellClass:[CCTimeTableCell class]];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleBordered target:self action:@selector(createClass:)];
+    self.thumbView.image = [UIImage imageNamed:@"avatar_placeholder"];
+    [self.thumbButton setBackgroundImage:nil forState:UIControlStateNormal];
+    [self.thumbButton setBackgroundImage:nil forState:UIControlStateHighlighted];
 }
 
 - (void)configAvatarSelectionSheet
@@ -89,16 +81,12 @@
 - (void)didSelectAvatar:(UIImage *)avatar
 {
     self.thumbView.image = avatar;
+    self.isAvatarUpdated = YES;
 }
 
 - (void)dealloc
 {
     [self removeObservers];
-}
-
-- (void)setupScrollView
-{
-    //[self.scrollView setContentSize:self.scrollView.bounds.size];
 }
 
 - (void)setupTextFields
@@ -130,22 +118,31 @@
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:CCAlertsMessages.emptyField];
         return;
     }
+    
+    [self.ioc_apiClassesProvider createClass:[self prepareClass] successHandler:^(id newClass) {
+        [self joinClass:(CCClass*)newClass];
+        
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
+}
+
+- (CCClass *)prepareClass
+{
     CCClass *class = [CCClass new];
-    class.className = @"Name";
+    class.className = self.classNameTextField.text;
     class.collegeID = self.collegeId;
     class.professor = self.professorTextField.text;
     class.subject = self.subjectTextField.text;
     class.semester = self.semesterTextField.text;
     class.callNumber = self.classIdTextField.text;
     class.timetable = [self.tableDataProvider.arrayOfLessons mutableCopy];
-    class.thumb = self.thumbView.image;
+    if(self.isAvatarUpdated){
+        class.thumb = self.thumbView.image;
+    }
+    
     [(NSMutableArray *)class.timetable removeObjectAtIndex:0];
-    [self.ioc_apiClassesProvider createClass:class successHandler:^(id newClass) {
-        [self joinClass:(CCClass*)newClass];
-        
-    } errorHandler:^(NSError *error) {
-        [CCStandardErrorHandler showErrorWithError:error];
-    }];
+    return class;
 }
 
 - (void)joinClass:(CCClass *)class

@@ -271,6 +271,17 @@
 
 - (void)postInfoWithObject:(id)object thumbnail:(UIImage *)thumb images:(NSArray *)images onPath:(NSString *)path successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler progress:(progressBlock)progressBlock
 {
+    [self uploadInfoWithObject:object thumbnail:thumb images:images onPath:path successHandler:successHandler errorHandler:errorHandler progress:progressBlock method:RKRequestMethodPOST];
+}
+
+- (void)putInfoWithObject:(id)object thumbnail:(UIImage *)thumb images:(NSArray *)images onPath:(NSString *)path successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler progress:(progressBlock)progressBlock
+{
+    [self uploadInfoWithObject:object thumbnail:thumb images:images onPath:path successHandler:successHandler errorHandler:errorHandler progress:progressBlock method:RKRequestMethodPUT];
+}
+
+
+- (void)uploadInfoWithObject:(id)object thumbnail:(UIImage *)thumb images:(NSArray *)images onPath:(NSString *)path successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler progress:(progressBlock)progressBlock method:(RKRequestMethod)method
+{
     [self setAuthorizationToken];
     
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
@@ -279,7 +290,7 @@
         
         NSMutableURLRequest *request =
         [objectManager multipartFormRequestWithObject:object
-                                               method:RKRequestMethodPOST
+                                               method:method
                                                  path:path
                                            parameters:nil
                             constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
