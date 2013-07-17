@@ -12,21 +12,20 @@
 @implementation CCClassesApiProvider
 
 - (void)createClass:(CCClass *)class successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
-{
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];
-    [self setAuthorizationToken];
-    
-    NSDictionary *parametersArray =  @{@"professor":class.professor,@"subject":class.subject,@"timetable":class.timetable,@"semester":@"summer", @"call_number":class.callNumber,@"name" : class.className};
-
-    [objectManager postObject:nil
-                         path:[NSString stringWithFormat:CCAPIDefines.createClass,class.collegeID]
-                   parameters:parametersArray
-                      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                          successHandler(mappingResult.firstObject);
-                      }
-                      failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                          errorHandler(error);
-                      }];
+{  
+    [self postInfoWithObject:class
+                   thumbnail:class.thumb
+                      images:nil
+                      onPath:[NSString stringWithFormat:CCAPIDefines.createClass,class.collegeID]
+              successHandler:^(RKMappingResult *mappingResult) {
+                  successHandler(mappingResult);
+              }
+                errorHandler:^(NSError *error) {
+                    errorHandler(error);
+                }
+                    progress:^(double finished) {
+                        
+                    }];
 }
 
 - (void)getClassesOfCollege:(NSString*)collegeID successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler

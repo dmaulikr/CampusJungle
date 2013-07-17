@@ -18,8 +18,9 @@
 #import "CCTimeTableCell.h"
 #import "AbstractActionSheetPicker.h"
 #import "CCClassCreationDataSource.h"
+#import "CCAvatarSelectionActionSheet.h"
 
-@interface CCCreateClassController () <UITextFieldDelegate,  DatePickerDelegateProtocol>
+@interface CCCreateClassController () <UITextFieldDelegate,  DatePickerDelegateProtocol,CCAvatarSelectionProtocol>
 {
     NSString *timetableDay;
     NSString *timetableTime;
@@ -33,13 +34,16 @@
 @property (nonatomic, strong) CCTimeTableDataProvider *tableDataProvider;
 @property (nonatomic, weak) UIView *pickerContainer;
 @property (nonatomic, weak) id actionSheetPicker;
-
-@property (nonatomic, strong) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet UIImageView *thumbView;
+@property (nonatomic, strong) CCAvatarSelectionActionSheet *thumbSelectionSheet;
+//@property (nonatomic, strong) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
 
 @property (nonatomic, strong) NSArray *textFieldsArray;
 @property (nonatomic, strong) NSMutableArray *timetableArray;
 @property (nonatomic, strong) NSString *collegeId;
 @property (nonatomic, strong) id<CCClassesApiProviderProtocol> ioc_apiClassesProvider;
+
+- (IBAction)thumbDidPressed;
 
 @end
 
@@ -65,8 +69,26 @@
     [self addObservers];
     self.dataSourceClass = [CCClassCreationDataSource class];
     self.tableDataProvider = [CCTimeTableDataProvider new];
+    [self configAvatarSelectionSheet];
     [self configTableWithProvider:self.tableDataProvider cellClass:[CCTimeTableCell class]];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleBordered target:self action:@selector(createClass:)];
+}
+
+- (void)configAvatarSelectionSheet
+{
+    self.thumbSelectionSheet = [CCAvatarSelectionActionSheet new];
+    self.thumbSelectionSheet.delegate = self;
+    self.thumbSelectionSheet.title = @"Select Thumbnail";
+}
+
+- (IBAction)thumbDidPressed
+{
+    [self.thumbSelectionSheet selectAvatar];
+}
+
+- (void)didSelectAvatar:(UIImage *)avatar
+{
+    self.thumbView.image = avatar;
 }
 
 - (void)dealloc
@@ -76,7 +98,7 @@
 
 - (void)setupScrollView
 {
-    [self.scrollView setContentSize:self.scrollView.bounds.size];
+    //[self.scrollView setContentSize:self.scrollView.bounds.size];
 }
 
 - (void)setupTextFields
@@ -115,7 +137,8 @@
     class.subject = self.subjectTextField.text;
     class.semester = self.semesterTextField.text;
     class.callNumber = self.classIdTextField.text;
-    class.timetable = [self.tableDataProvider.arrayOfLessons mutableCopy] ;
+    class.timetable = [self.tableDataProvider.arrayOfLessons mutableCopy];
+    class.thumb = self.thumbView.image;
     [(NSMutableArray *)class.timetable removeObjectAtIndex:0];
     [self.ioc_apiClassesProvider createClass:class successHandler:^(id newClass) {
         [self joinClass:(CCClass*)newClass];

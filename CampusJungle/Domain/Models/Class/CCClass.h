@@ -21,6 +21,8 @@
 @property (nonatomic, strong) NSString *classID;
 @property (nonatomic, strong) NSString *collegeName;
 @property (nonatomic, strong) NSString *className;
+@property (nonatomic, strong) UIImage *thumb;
+@property (nonatomic, strong) NSString *classImageURL;
 
 @property (nonatomic) BOOL isSelected;
 
