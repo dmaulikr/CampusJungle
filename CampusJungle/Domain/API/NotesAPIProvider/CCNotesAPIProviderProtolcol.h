@@ -23,4 +23,6 @@
 
 - (void)resendLinkToNote:(NSString *)noteID successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 
+- (void)loadPurchasedNotesSearchQuery:(NSString *)query PageNumber:(NSNumber *)pageNumber successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
+
 @end

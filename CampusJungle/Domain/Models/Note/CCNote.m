@@ -42,6 +42,9 @@
     NSString *uploadNotesPathPatern = [NSString stringWithFormat:CCAPIDefines.uploadNotesPath,@":CollegeID"];
     RKResponseDescriptor *responseOnCreateNote = [RKResponseDescriptor responseDescriptorWithMapping:notesMapping pathPattern:uploadNotesPathPatern keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
+    RKResponseDescriptor *responsePurchasedPaginationNote = [RKResponseDescriptor responseDescriptorWithMapping:paginationNotesResponseMapping pathPattern:CCAPIDefines.purchasedNotes keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    [objectManager addResponseDescriptor:responsePurchasedPaginationNote];
     [objectManager addResponseDescriptor:responseMarketPaginationNote];
     [objectManager addResponseDescriptor:responseOnCreateNote];
     [objectManager addResponseDescriptor:responsePaginationNote];

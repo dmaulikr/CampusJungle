@@ -350,6 +350,7 @@
 		D342BCD51796AD3D0034E88C /* CCEditClassTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BCD41796AD3D0034E88C /* CCEditClassTransaction.m */; };
 		D342BCD91796B1640034E88C /* CCUpdateClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BCD81796B1640034E88C /* CCUpdateClassController.m */; };
 		D342BCDD1796C2890034E88C /* CCBackToClassTransactionAfterUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BCDC1796C2890034E88C /* CCBackToClassTransactionAfterUpdate.m */; };
+		D342BCE11796D0210034E88C /* CCPurchasedNotesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BCE01796D0210034E88C /* CCPurchasedNotesDataProvider.m */; };
 		D347BBD017817F2300E54EFC /* menuButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBCE17817F0200E54EFC /* menuButton.png */; };
 		D347BBD117817F2300E54EFC /* menuButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBCF17817F0F00E54EFC /* menuButton@2x.png */; };
 		D359E6081794383A00869D6C /* star_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D359E6041794383A00869D6C /* star_icon.png */; };
@@ -1145,6 +1146,8 @@
 		D342BCD81796B1640034E88C /* CCUpdateClassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUpdateClassController.m; sourceTree = "<group>"; };
 		D342BCDB1796C2890034E88C /* CCBackToClassTransactionAfterUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBackToClassTransactionAfterUpdate.h; sourceTree = "<group>"; };
 		D342BCDC1796C2890034E88C /* CCBackToClassTransactionAfterUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBackToClassTransactionAfterUpdate.m; sourceTree = "<group>"; };
+		D342BCDF1796D0210034E88C /* CCPurchasedNotesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPurchasedNotesDataProvider.h; sourceTree = "<group>"; };
+		D342BCE01796D0210034E88C /* CCPurchasedNotesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPurchasedNotesDataProvider.m; sourceTree = "<group>"; };
 		D347BBCE17817F0200E54EFC /* menuButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuButton.png; sourceTree = "<group>"; };
 		D347BBCF17817F0F00E54EFC /* menuButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menuButton@2x.png"; sourceTree = "<group>"; };
 		D347BBD21781B7AE00E54EFC /* separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = separator.png; sourceTree = "<group>"; };
@@ -2275,6 +2278,7 @@
 				D39496E9178B29E400C39A7E /* OffersDataProvider */,
 				70A29D7F17877B94001BC8DD /* PaginationDataProvider */,
 				70A29D8217877B94001BC8DD /* PhotosDataProvider */,
+				D342BCDE1796CFFF0034E88C /* PurchasedNotesDataProvider */,
 				70B2D26817944F6E001B0C2C /* QuestionsDataProvider */,
 				D3949738178EC45000C39A7E /* ReviewsDataProvider */,
 				70A29D8517877B94001BC8DD /* StatesDataProvider */,
@@ -4279,6 +4283,15 @@
 			path = BackToClassTransactionAfterUpdate;
 			sourceTree = "<group>";
 		};
+		D342BCDE1796CFFF0034E88C /* PurchasedNotesDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D342BCDF1796D0210034E88C /* CCPurchasedNotesDataProvider.h */,
+				D342BCE01796D0210034E88C /* CCPurchasedNotesDataProvider.m */,
+			);
+			path = PurchasedNotesDataProvider;
+			sourceTree = "<group>";
+		};
 		D359E6031794383A00869D6C /* Stars */ = {
 			isa = PBXGroup;
 			children = (
@@ -5214,6 +5227,7 @@
 				D342BCD51796AD3D0034E88C /* CCEditClassTransaction.m in Sources */,
 				D342BCD91796B1640034E88C /* CCUpdateClassController.m in Sources */,
 				D342BCDD1796C2890034E88C /* CCBackToClassTransactionAfterUpdate.m in Sources */,
+				D342BCE11796D0210034E88C /* CCPurchasedNotesDataProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
