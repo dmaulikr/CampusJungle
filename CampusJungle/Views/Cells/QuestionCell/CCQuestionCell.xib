@@ -83,10 +83,10 @@
 							<object class="IBUIButton" id="830280483">
 								<reference key="NSNextResponder" ref="197971070"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{261, 27}, {44, 44}}</string>
+								<string key="NSFrame">{{259, 27}, {44, 44}}</string>
 								<reference key="NSSuperview" ref="197971070"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="55867461"/>
+								<reference key="NSNextKeyView" ref="260576713"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -162,7 +162,7 @@
 								<string key="NSFrame">{{87, 41}, {167, 21}}</string>
 								<reference key="NSSuperview" ref="197971070"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="830280483"/>
+								<reference key="NSNextKeyView" ref="173013447"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -297,6 +297,7 @@
 								<string key="NSFrame">{{17, 134}, {277, 21}}</string>
 								<reference key="NSSuperview" ref="197971070"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -324,13 +325,13 @@
 								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
-							<object class="IBUIView" id="55867461">
+							<object class="IBUIView" id="173013447">
 								<reference key="NSNextResponder" ref="197971070"/>
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{264, 31}, {35, 35}}</string>
 								<reference key="NSSuperview" ref="197971070"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="260576713"/>
+								<reference key="NSNextKeyView" ref="830280483"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">3</int>
@@ -439,6 +440,14 @@
 					</object>
 					<int key="connectionID">24</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">indicator</string>
+						<reference key="source" ref="845507076"/>
+						<reference key="destination" ref="173013447"/>
+					</object>
+					<int key="connectionID">26</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -470,6 +479,7 @@
 							<reference ref="830280483"/>
 							<reference ref="308825042"/>
 							<reference ref="11190610"/>
+							<reference ref="173013447"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -529,6 +539,12 @@
 						<reference key="object" ref="910259392"/>
 						<reference key="parent" ref="11190610"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">25</int>
+						<reference key="object" ref="173013447"/>
+						<reference key="parent" ref="845507076"/>
+						<string key="objectName">Upload Indicator View</string>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -542,6 +558,8 @@
 				<string key="19.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="20.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="21.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="25.CustomClassName">MACircleProgressIndicator</string>
+				<string key="25.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="3.CustomClassName">CCQuestionCell</string>
 				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -553,7 +571,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">24</int>
+			<int key="maxID">26</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -574,6 +592,7 @@
 						<string key="createdAtLabel">UILabel</string>
 						<string key="deleteQuestionButton">UIButton</string>
 						<string key="emailAttachmentButton">UIButton</string>
+						<string key="indicator">MACircleProgressIndicator</string>
 						<string key="ownerAvatarImageView">UIImageView</string>
 						<string key="ownerNameLabel">UILabel</string>
 						<string key="questionTextLabel">UILabel</string>
@@ -600,6 +619,10 @@
 							<string key="name">emailAttachmentButton</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
+						<object class="IBToOneOutletInfo" key="indicator">
+							<string key="name">indicator</string>
+							<string key="candidateClassName">MACircleProgressIndicator</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="ownerAvatarImageView">
 							<string key="name">ownerAvatarImageView</string>
 							<string key="candidateClassName">UIImageView</string>
@@ -620,6 +643,14 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/CCQuestionCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">MACircleProgressIndicator</string>
+					<string key="superclassName">UIView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/MACircleProgressIndicator.h</string>
 					</object>
 				</object>
 			</array>
