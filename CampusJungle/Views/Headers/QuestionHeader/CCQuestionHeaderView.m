@@ -9,7 +9,7 @@
 #import "CCQuestionHeaderView.h"
 #import "CCViewPositioningHelper.h"
 
-static const NSInteger kBottomSpace = 8;
+static const NSInteger kBottomSpace = 10;
 
 @interface CCQuestionHeaderView ()
 

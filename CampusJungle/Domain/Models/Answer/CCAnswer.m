@@ -11,6 +11,13 @@
 
 @implementation CCAnswer
 
++ (CCAnswer *)answerWithText:(NSString *)text
+{
+    CCAnswer *answer = [CCAnswer new];
+    [answer setText:text];
+    return answer;
+}
+
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager
 {
     [self configureRequestMapping:objectManager];

@@ -24,6 +24,9 @@
 		700F947A178F0FDA00A6FBBA /* CCSelectableCellsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9479178F0FDA00A6FBBA /* CCSelectableCellsDataSource.m */; };
 		701253F1179694A50085247A /* CCQuestionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 701253F0179694A50085247A /* CCQuestionHeaderView.m */; };
 		701253F3179694B80085247A /* CCQuestionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 701253F2179694B80085247A /* CCQuestionHeaderView.xib */; };
+		701253F81796CF620085247A /* CCAddAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 701253F61796CF620085247A /* CCAddAnswerViewController.m */; };
+		701253F91796CF620085247A /* CCAddAnswerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 701253F71796CF620085247A /* CCAddAnswerViewController.xib */; };
+		701253FD1796D1680085247A /* CCAddAnswerTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 701253FC1796D1680085247A /* CCAddAnswerTransaction.m */; };
 		7012AC7617954DB4002DA5E9 /* CCAnswer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7012AC7517954DB4002DA5E9 /* CCAnswer.m */; };
 		7012AC7A1795508E002DA5E9 /* CCAnswersApiProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7012AC791795508E002DA5E9 /* CCAnswersApiProvider.m */; };
 		7012AC80179558C9002DA5E9 /* CCAnswersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7012AC7E179558C9002DA5E9 /* CCAnswersViewController.m */; };
@@ -547,6 +550,11 @@
 		701253EF179694A50085247A /* CCQuestionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCQuestionHeaderView.h; sourceTree = "<group>"; };
 		701253F0179694A50085247A /* CCQuestionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCQuestionHeaderView.m; sourceTree = "<group>"; };
 		701253F2179694B80085247A /* CCQuestionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCQuestionHeaderView.xib; sourceTree = "<group>"; };
+		701253F51796CF620085247A /* CCAddAnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddAnswerViewController.h; sourceTree = "<group>"; };
+		701253F61796CF620085247A /* CCAddAnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddAnswerViewController.m; sourceTree = "<group>"; };
+		701253F71796CF620085247A /* CCAddAnswerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAddAnswerViewController.xib; sourceTree = "<group>"; };
+		701253FB1796D1680085247A /* CCAddAnswerTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddAnswerTransaction.h; sourceTree = "<group>"; };
+		701253FC1796D1680085247A /* CCAddAnswerTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddAnswerTransaction.m; sourceTree = "<group>"; };
 		7012AC7417954DB4002DA5E9 /* CCAnswer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnswer.h; sourceTree = "<group>"; };
 		7012AC7517954DB4002DA5E9 /* CCAnswer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAnswer.m; sourceTree = "<group>"; };
 		7012AC781795508E002DA5E9 /* CCAnswersApiProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnswersApiProvider.h; sourceTree = "<group>"; };
@@ -1471,6 +1479,25 @@
 			path = QuestionHeader;
 			sourceTree = "<group>";
 		};
+		701253F41796CF4D0085247A /* AddAnswerController */ = {
+			isa = PBXGroup;
+			children = (
+				701253F51796CF620085247A /* CCAddAnswerViewController.h */,
+				701253F61796CF620085247A /* CCAddAnswerViewController.m */,
+				701253F71796CF620085247A /* CCAddAnswerViewController.xib */,
+			);
+			path = AddAnswerController;
+			sourceTree = "<group>";
+		};
+		701253FA1796D0EA0085247A /* AddAnswerTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				701253FB1796D1680085247A /* CCAddAnswerTransaction.h */,
+				701253FC1796D1680085247A /* CCAddAnswerTransaction.m */,
+			);
+			path = AddAnswerTransaction;
+			sourceTree = "<group>";
+		};
 		7012AC7317954DAB002DA5E9 /* Answer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1673,6 +1700,7 @@
 		70A29C34178778AB001BC8DD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				701253F41796CF4D0085247A /* AddAnswerController */,
 				70B2D0A217941A01001B0C2C /* AddForumController */,
 				700F9427178EA06000A6FBBA /* AddLocationController */,
 				70B2D0D01794483A001B0C2C /* AddQuestionController */,
@@ -3114,6 +3142,7 @@
 		70B2D0D61794488F001B0C2C /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
+				701253FA1796D0EA0085247A /* AddAnswerTransaction */,
 				70B2D0D717944894001B0C2C /* AddClassTransaction */,
 				70B2D0DA17944894001B0C2C /* AddForumTransaction */,
 				70B2D0DD17944894001B0C2C /* AddLocationTransaction */,
@@ -4911,6 +4940,7 @@
 				7012ACA017957C03002DA5E9 /* CCSideMenuSectionHeader.xib in Resources */,
 				7012ACA617957C4B002DA5E9 /* CCLoadPreviousItemsSectionHeader.xib in Resources */,
 				701253F3179694B80085247A /* CCQuestionHeaderView.xib in Resources */,
+				701253F91796CF620085247A /* CCAddAnswerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5214,6 +5244,8 @@
 				D342BCD51796AD3D0034E88C /* CCEditClassTransaction.m in Sources */,
 				D342BCD91796B1640034E88C /* CCUpdateClassController.m in Sources */,
 				D342BCDD1796C2890034E88C /* CCBackToClassTransactionAfterUpdate.m in Sources */,
+				701253F81796CF620085247A /* CCAddAnswerViewController.m in Sources */,
+				701253FD1796D1680085247A /* CCAddAnswerTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

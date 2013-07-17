@@ -35,9 +35,15 @@
 {
     [super viewDidLoad];
     [self setupTableView];
+    [self addObservers];
     
     [self setTitle:@"Answers"];
     self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHelper plusButtonWithTarget:self action:@selector(addAnswerButtonDidPressed:)];
+}
+
+- (void)dealloc
+{
+    [self removeObservers];
 }
 
 - (void)setupTableView
@@ -53,11 +59,26 @@
     [self configTableWithProvider:self.dataProvider cellClass:[CCAnswerCell class]];
 }
 
+- (void)addObservers
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadAnswers) name:CCNotificationsNames.reloadAnswers object:nil];
+}
+
+- (void)removeObservers
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:CCNotificationsNames.reloadAnswers object:nil];
+}
+
 #pragma mark -
 #pragma mark Actions
 - (BOOL)isNeedToLeftSelected
 {
     return NO;
+}
+
+- (void)reloadAnswers
+{
+    [self.dataProvider loadItems];
 }
 
 - (void)didSelectedCellWithObject:(id)cellObject
@@ -67,7 +88,7 @@
 
 - (void)addAnswerButtonDidPressed:(id)sender
 {
-    
+    [self.addAnswerTransaction performWithObject:self.question];
 }
 
 #pragma mark -

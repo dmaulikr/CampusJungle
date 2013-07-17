@@ -8,6 +8,7 @@
 
 #import "CCAnswersTransaction.h"
 #import "CCAnswersViewController.h"
+#import "CCAddAnswerTransaction.h"
 
 @implementation CCAnswersTransaction
 
@@ -16,8 +17,12 @@
     NSParameterAssert(self.navigation);
     NSParameterAssert(object);
     
+    CCAddAnswerTransaction *addAnswerTransaction = [CCAddAnswerTransaction new];
+    addAnswerTransaction.navigation = self.navigation;
+    
     CCAnswersViewController *answersController = [CCAnswersViewController new];
     [answersController setQuestion:object];
+    answersController.addAnswerTransaction = addAnswerTransaction;
     [self.navigation pushViewController:answersController animated:YES];
 }
 
