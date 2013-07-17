@@ -10,7 +10,7 @@
 #import "CCNavigationBarViewHelper.h"
 #import "CCQuestion.h"
 
-#import "CCAnswersDataSource.h"
+#import "CCBaseReverseDataSource.h"
 #import "CCAnswersDataProvider.h"
 #import "CCAnswersApiProviderProtocol.h"
 #import "CCAnswerCell.h"
@@ -23,7 +23,7 @@
 
 @property (nonatomic, strong) CCQuestion *question;
 @property (nonatomic, strong) CCAnswersDataProvider *dataProvider;
-@property (nonatomic, strong) CCAnswersDataSource *dataSource;
+@property (nonatomic, strong) CCBaseReverseDataSource *dataSource;
 @property (nonatomic, strong) id<CCAnswersApiProviderProtocol> ioc_answersApiProvider;
 @property (nonatomic, strong) CCQuestionHeaderView *tableHeaderView;
 
@@ -51,7 +51,7 @@
     self.tableHeaderView = [[CCQuestionHeaderView alloc] initWithQuestionText:self.question.text bottomDividerVisibile:YES];
     self.mainTable.tableHeaderView = self.tableHeaderView;
     
-    self.dataSource = [CCAnswersDataSource new];
+    self.dataSource = [CCBaseReverseDataSource new];
     self.dataSource.delegate = self;
     
     self.dataProvider = [CCAnswersDataProvider new];

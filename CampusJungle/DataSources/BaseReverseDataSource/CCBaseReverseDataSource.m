@@ -1,22 +1,22 @@
 //
-//  CCAnswersDataSource.m
+//  CCBaseReverseDataSource.m
 //  CampusJungle
 //
-//  Created by Yury Grinenko on 16.07.13.
+//  Created by Yury Grinenko on 17.07.13.
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCAnswersDataSource.h"
-#import "CCLoadPreviousItemsSectionHeader.h"
+#import "CCBaseReverseDataSource.h"
 #import "CCTableCellProtocol.h"
+#import "CCLoadPreviousItemsSectionHeader.h"
 
-@interface CCAnswersDataSource ()
+@interface CCBaseReverseDataSource ()
 
 @property (nonatomic, strong) CCLoadPreviousItemsSectionHeader *headerView;
 
 @end
 
-@implementation CCAnswersDataSource
+@implementation CCBaseReverseDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -62,7 +62,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-
+    
 }
 
 @end

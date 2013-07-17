@@ -7,11 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CCPaginationDataProvider.h"
+#import "CCBaseReverseDataProvider.h"
 
-@interface CCAnswersDataProvider : CCPaginationDataProvider
+@interface CCAnswersDataProvider : CCBaseReverseDataProvider
 
 @property (nonatomic, strong) NSString *questionId;
-- (void)deleteItem:(id)item;
 
 @end
