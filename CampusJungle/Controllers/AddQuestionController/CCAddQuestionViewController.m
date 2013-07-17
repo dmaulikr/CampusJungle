@@ -9,15 +9,19 @@
 #import "CCAddQuestionViewController.h"
 #import "CCForum.h"
 #import "CCQuestion.h"
-
 #import "CCStringHelper.h"
 #import "CCStandardErrorHandler.h"
+#import "CCQuestionsApiProviderProtocol.h"
+#import "CCUploadProcessManagerProtocol.h"
+#import "CCUserSessionProtocol.h"
 
 @interface CCAddQuestionViewController () <UITextViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UITextView *questionTextView;
 @property (nonatomic, weak) IBOutlet UIImageView *textViewBackgroundImageView;
-
+@property (nonatomic, strong) id <CCQuestionsApiProviderProtocol> ioc_questionAPIProvider;
+@property (nonatomic, strong) id <CCUploadProcessManagerProtocol> ioc_uploadManager;
+@property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
 @property (nonatomic, strong) CCForum *forum;
 
 @end
@@ -45,23 +49,72 @@
 {
     if ([self validInputData]) {
         CCQuestion *question = [CCQuestion new];
+        question.text = self.questionTextView.text;
+        question.forumId = self.forum.forumId;
         [self addQuestion:question];
     }
 }
 
+- (CCQuestion *)prepareQuestion
+{
+    CCQuestion *question = [CCQuestion new];
+    question.text = self.questionTextView.text;
+    question.forumId = self.forum.forumId;
+    return question;
+}
+
 - (IBAction)uploadPhotosButtonDidPressed:(id)sender
 {
-    
+    [self.imagesUploadTransaction performWithObject:^(NSArray *arrayOfImages){
+        CCQuestion *question = [self prepareQuestion];
+        CCUser *currentUser = [self.ioc_userSession currentUser];
+        question.ownerAvatar = currentUser.avatar;
+        question.ownerFirstName = currentUser.firstName;
+        question.ownerLastName = currentUser.lastName;
+        question.createdDate = [NSDate date];
+        __weak id weakSelf = self;
+        id <CCUploadProcessManagerProtocol> uploadManager = self.ioc_uploadManager;
+        [[uploadManager uploadingQuestions] addObject:question];
+        [self.ioc_questionAPIProvider postUploadInfoWithImages:question
+                                                    withImages:arrayOfImages successHandler:^(id result) {
+                                    [[uploadManager uploadingQuestions] removeObject:question];
+                                                         [uploadManager reloadDelegate];
+        } errorHandler:^(NSError *error) {
+            [[uploadManager uploadingQuestions] removeObject:question];
+            [uploadManager reloadDelegate];
+            [CCStandardErrorHandler showErrorWithError:error];
+        } progress:^(double finished) {
+            [[weakSelf backToListTransaction] perform];
+            question.uploadProgress = [NSNumber numberWithDouble:finished];
+        }];
+        
+    }];
 }
 
 - (IBAction)uploadImagesFromDropboxButtonDidPressed:(id)sender
 {
-    
+    [self.imagesDropboxUploadTransaction performWithObject:^(NSArray *arrayOfUrls){
+        CCQuestion *question = [self prepareQuestion];
+        question.arrayOfImageUrls = arrayOfUrls;
+        [self.ioc_questionAPIProvider postQuestion:question successHandler:^(RKMappingResult *result) {
+            [self.backToListTransaction perform];
+        } errorHandler:^(NSError *error) {
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
+    }];
 }
 
 - (IBAction)uploadPdfFromDropboxButtonDidPressed:(id)sender
 {
-    
+    [self.pdfDropboxUploadTransaction performWithObject:^(NSArray *arrayOfUrls){
+        CCQuestion *question = [self prepareQuestion];
+        question.pdfUrl = arrayOfUrls.lastObject;
+        [self.ioc_questionAPIProvider postQuestion:question successHandler:^(RKMappingResult *result) {
+            [self.backToListTransaction perform];
+        } errorHandler:^(NSError *error) {
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
+    }];
 }
 
 - (BOOL)validInputData
@@ -84,7 +137,11 @@
 #pragma mark Requests
 - (void)addQuestion:(CCQuestion *)question
 {
-    
+    [self.ioc_questionAPIProvider postQuestion:question successHandler:^(RKMappingResult *result) {
+        [self.backToListTransaction perform];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
 }
 
 

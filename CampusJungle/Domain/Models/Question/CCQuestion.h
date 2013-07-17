@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CCRestKitMappableModel.h"
+#import "CCUploadIndicatorDelegateProtocol.h"
 
 @interface CCQuestion : NSObject <CCRestKitMappableModel>
 
@@ -22,6 +23,12 @@
 @property (nonatomic, strong) NSString *ownerFirstName;
 @property (nonatomic, strong) NSString *ownerLastName;
 @property (nonatomic, strong) NSString *ownerAvatar;
+
+@property (nonatomic, strong) NSNumber *uploadProgress;
+@property (nonatomic, strong) NSArray *arrayOfImageUrls;
+@property (nonatomic, strong) NSArray *arrayOfImages;
+@property (nonatomic, strong) NSString *pdfUrl;
+@property (nonatomic, weak) id<CCUploadIndicatorDelegateProtocol> delegate;
 
 + (NSDictionary *)responseMappingDictionary;
 + (NSDictionary *)requestMappingDictionary;

@@ -8,6 +8,10 @@
 
 #import "CCAddQuestionTransaction.h"
 #import "CCAddQuestionViewController.h"
+#import "CCDropboxImagesSelectionTransaction.h"
+#import "CCSelectPdfFromDropboxTransaction.h"
+#import "CCImagesUploadingScreenTransaction.h"
+#import "CCUploadImagesController.h"
 
 @implementation CCAddQuestionTransaction
 
@@ -16,7 +20,22 @@
     NSParameterAssert(self.navigation);
     NSParameterAssert(object);
     
+    CCImagesUploadingScreenTransaction *imagesUploadTransaction = [CCImagesUploadingScreenTransaction new];
+    imagesUploadTransaction.uploadImagesControllerClass = [CCUploadImagesController class];
+    imagesUploadTransaction.naviation = self.navigation;
+    
+    CCDropboxImagesSelectionTransaction *dropboxImagesTransaction = [CCDropboxImagesSelectionTransaction new];
+    dropboxImagesTransaction.navigation = self.navigation;
+
+    CCSelectPdfFromDropboxTransaction *dropboxPDFTransaction = [CCSelectPdfFromDropboxTransaction new];
+    dropboxPDFTransaction.navigation = self.navigation;
+    
     CCAddQuestionViewController *addQuestionController = [CCAddQuestionViewController new];
+    
+    addQuestionController.imagesDropboxUploadTransaction = dropboxImagesTransaction;
+    addQuestionController.imagesUploadTransaction = imagesUploadTransaction;
+    addQuestionController.pdfDropboxUploadTransaction = dropboxPDFTransaction;
+    addQuestionController.backToListTransaction = self.backToListTransaction;
     [addQuestionController setForum:object];
     [self.navigation pushViewController:addQuestionController animated:YES];
 }

@@ -18,6 +18,8 @@
 #import "NSString+CJStringValidator.h"
 #import "CCStuffUploadInfo.h"
 #import "CCAlertDefines.h"
+#import "CCStuffAPIProviderProtocol.h"
+#import "CCUploadProcessManagerProtocol.h"
 
 @interface CCStuffCreationController () <CCAvatarSelectionProtocol, CCCellSelectionProtocol>
 
@@ -25,13 +27,14 @@
 @property (nonatomic, strong) IBOutlet UITextField *decriptionField;
 @property (nonatomic, strong) IBOutlet UITextField *priceField;
 @property (nonatomic, strong) IBOutlet UIButton *collegeSelectionButton;
-
+@property (nonatomic, strong) id <CCStuffAPIProviderProtocol> ioc_stuffAPIProvider;
 @property (nonatomic, strong) NSArray *arrayOfColleges;
 
 @property (nonatomic, strong) CCAvatarSelectionActionSheet *thumbSelection;
 
 @property (nonatomic, strong) CCCollege *selectedCollege;
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
+@property (nonatomic, strong) id <CCUploadProcessManagerProtocol> ioc_uploadingManager;
 
 @end
 
@@ -93,7 +96,16 @@
 - (IBAction)didPressedDropboxImagesSelectionButton
 {
     if([self isFieldsValid]){
-        [self.selectFilesFromDropboxTransaction performWithObject:[self createUploadInfo]];
+        [self.selectFilesFromDropboxTransaction performWithObject:^(NSArray *arrayOfUrls){
+            CCStuffUploadInfo *stuffInfo = [self createUploadInfo];
+            stuffInfo.arrayOfURLs = arrayOfUrls;
+            [self.ioc_stuffAPIProvider postDropboxUploadInfo:stuffInfo
+                                              successHandler:^(id result) {
+                [self.backToListTransaction perform];
+            } errorHandler:^(NSError *error) {
+                [CCStandardErrorHandler showErrorWithError:error];
+            }];
+        }];
     }
 }
 
@@ -124,7 +136,26 @@
 - (void)didPressedImagesUploadingButton
 {
     if([self isFieldsValid]){
-        [self.imagesUploadTransaction performWithObject:[self createUploadInfo]];
+        [self.imagesUploadTransaction performWithObject:^(NSArray *arrayOfImages){
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.labelText = @"Preparing for upload";
+            __weak id weakSelf = self;
+            CCStuffUploadInfo *uploadInfo = [weakSelf createUploadInfo];
+            uploadInfo.arrayOfImages = arrayOfImages;
+            id <CCUploadProcessManagerProtocol> uploadManager = self.ioc_uploadingManager;
+            [[uploadManager uploadingStuff] addObject:uploadInfo];
+            [self.ioc_stuffAPIProvider postUploadInfoWithImages:uploadInfo successHandler:^(id result) {
+                [[uploadManager uploadingStuff] removeObject:uploadInfo];
+                [uploadManager reloadDelegate];
+            } errorHandler:^(NSError *error) {
+                [[uploadManager uploadingStuff] removeObject:uploadInfo];
+                [uploadManager reloadDelegate];
+            } progress:^(double finished) {
+                [[weakSelf backToListTransaction] perform];
+                uploadInfo.uploadProgress = [NSNumber numberWithDouble:finished];
+            }];
+
+        }];
     }
 }
 

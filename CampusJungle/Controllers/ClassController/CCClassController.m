@@ -25,6 +25,7 @@
 @property (nonatomic, weak) IBOutlet UIView *headerView;
 @property (nonatomic, strong) CCClassTableController *classContentTable;
 @property (nonatomic, strong) id<CCClassesApiProviderProtocol> ioc_classesApiProvider;
+@property (nonatomic, weak) IBOutlet UITextView *timeTable;
 
 @property (nonatomic, strong) CCClass *currentClass;
 
@@ -55,7 +56,22 @@
     self.classContentTable.tableHeaderView = self.headerView;
     self.classContentTable.classID = self.currentClass.classID;
     self.classContentTable.delegate = self;
+    [self fillTimeTable];
     [self.view addSubview:self.classContentTable.view];
+}
+
+- (void)fillTimeTable
+{
+    NSString *timeTableString = @"";
+    for(NSDictionary *time in self.currentClass.timetable){
+        NSString *lessonRepresentation = [NSString stringWithFormat:@"%@ %@",time[@"day"],time[@"time"]];
+        if(timeTableString.length){
+            timeTableString = [timeTableString stringByAppendingFormat:@"\n%@",lessonRepresentation];
+        } else {
+            timeTableString = lessonRepresentation;
+        }
+    }
+    self.timeTable.text = timeTableString;
 }
 
 - (void)viewWillAppear:(BOOL)animated

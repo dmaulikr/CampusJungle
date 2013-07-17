@@ -9,7 +9,7 @@
 #import "CCMyStuffTransaction.h"
 #import "CCMyStuffController.h"
 #import "CCCreateStuffTransaction.h"
-#import "CCBackToListOfNotesTransaction.h"
+#import "CCBackToListTransaction.h"
 #import "CCStuffDetailsTransaction.h"
 
 @implementation CCMyStuffTransaction
@@ -24,7 +24,7 @@
     myStuffController.createStuffTransaction = creationStuffTransaction;
 
     
-    CCBackToListOfNotesTransaction *backToListTransaction = [CCBackToListOfNotesTransaction new];
+    CCBackToListTransaction *backToListTransaction = [CCBackToListTransaction new];
     backToListTransaction.navigation = self.navigation;
     backToListTransaction.listController = myStuffController;
     

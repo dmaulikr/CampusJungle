@@ -10,7 +10,7 @@
 #import "CCCreateNoteViewController.h"
 #import "CCDropboxImagesSelectionTransaction.h"
 #import "CCSelectPdfFromDropboxTransaction.h"
-#import "CCImagesForNotesUploadingScreenTransaction.h"
+#import "CCImagesUploadingScreenTransaction.h"
 #import "CCUploadImagesController.h"
 
 @implementation CCCreateNotesTransaction
@@ -21,8 +21,8 @@
     NSParameterAssert(self.backToListTransaction);
     
     CCCreateNoteViewController *createNotesController = [CCCreateNoteViewController new];
-    
-    CCImagesForNotesUploadingScreenTransaction *imagesUploadTransaction = [CCImagesForNotesUploadingScreenTransaction new];
+    createNotesController.backToListTransaction = self.backToListTransaction;
+    CCImagesUploadingScreenTransaction *imagesUploadTransaction = [CCImagesUploadingScreenTransaction new];
     imagesUploadTransaction.uploadImagesControllerClass = [CCUploadImagesController class];
     imagesUploadTransaction.naviation = self.navigation;
     imagesUploadTransaction.backToListTransaction = self.backToListTransaction;
@@ -39,7 +39,6 @@
     createNotesController.pdfDropboxUploadTransaction = dropboxPDFTransaction;
     
     [self.navigation pushViewController:createNotesController animated:YES];
-
 }
 
 @end

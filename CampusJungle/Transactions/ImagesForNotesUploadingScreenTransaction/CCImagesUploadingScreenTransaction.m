@@ -6,18 +6,18 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCImagesForNotesUploadingScreenTransaction.h"
+#import "CCImagesUploadingScreenTransaction.h"
 #import "CCUploadImagesController.h"
 
-@implementation CCImagesForNotesUploadingScreenTransaction
+@implementation CCImagesUploadingScreenTransaction
 
 - (void)performWithObject:(id)object
 {
     NSParameterAssert(self.naviation);
-    NSParameterAssert(self.backToListTransaction);
     
-    CCUploadImagesController *uploadImagesController = [self.uploadImagesControllerClass new];
-    uploadImagesController.uploadInfo = object;
+    CCUploadImagesController *uploadImagesController = [CCUploadImagesController new];
+
+    uploadImagesController.imagesUploading = object;
     uploadImagesController.backToListTransaction = self.backToListTransaction;
     
     [self.naviation pushViewController:uploadImagesController animated:YES];

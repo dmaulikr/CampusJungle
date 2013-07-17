@@ -21,6 +21,8 @@
 
 @interface CCQuestionCell : CCBaseCell
 
+@property (nonatomic, strong) CCQuestion * cellObject;
+
 - (void)setCellObject:(CCQuestion *)object;
 - (void)setDelegate:(id<CCQuestionCellDelegate>)delegate;
 

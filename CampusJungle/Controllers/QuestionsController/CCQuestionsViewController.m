@@ -66,9 +66,11 @@
     return NO;
 }
 
-- (void)didSelectedCellWithObject:(id)cellObject
+- (void)didSelectedCellWithObject:(CCQuestion *)question
 {
-    [self.answersTransaction performWithObject:cellObject];
+    if (![question uploadProgress]){
+        [self.answersTransaction performWithObject:question];
+    }
 }
 
 #pragma mark -
@@ -84,6 +86,12 @@
             [CCStandardErrorHandler showErrorWithError:error];
         }];
     }];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.dataProvider loadItems];
 }
 
 @end

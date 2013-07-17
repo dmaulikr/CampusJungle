@@ -10,7 +10,7 @@
 #import "CCTransaction.h"
 #import "CCBaseViewController.h"
 
-@interface CCBackToListOfNotesTransaction : NSObject <CCTransaction>
+@interface CCBackToListTransaction : NSObject <CCTransaction>
 
 @property (nonatomic, strong) UINavigationController *navigation;
 @property (nonatomic, strong) CCBaseViewController *listController;

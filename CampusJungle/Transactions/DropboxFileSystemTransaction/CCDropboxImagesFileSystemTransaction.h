@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "CCTransactionWithObject.h"
 #import "CCTransaction.h" 
+#import "CCTypesDefinition.h"
 
 @interface CCDropboxImagesFileSystemTransaction : NSObject<CCTransactionWithObject>
 
 @property (nonatomic, strong) UINavigationController *navigation;
 @property (nonatomic, strong) id <CCTransaction> backToListTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> imagesSortingTransaction;
+@property (nonatomic, copy) DropboxUploadingBlock uploadingBlock;
 
 @end

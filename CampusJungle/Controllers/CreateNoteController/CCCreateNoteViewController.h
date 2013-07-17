@@ -8,12 +8,14 @@
 
 #import "CCBaseViewController.h"
 #import "CCTransactionWithObject.h"
+#import "CCTransaction.h"
 
 @interface CCCreateNoteViewController : CCBaseViewController
 
 @property (nonatomic, strong) id <CCTransactionWithObject> imagesDropboxUploadTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> pdfDropboxUploadTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> imagesUploadTransaction;
+@property (nonatomic, strong) id <CCTransaction> backToListTransaction;
 
 - (IBAction)thumbDidPressed;
 - (IBAction)collegeSelectionButtonDidPressed;

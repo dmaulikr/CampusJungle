@@ -42,7 +42,6 @@
         NSDictionary *objectForTransaction = @{
                                                @"path" : [self.dropboxDataProvider.dropboxPath stringByAppendingPathComponent:fileInfo.fileData.filename],
                                                @"sellected" : self.arrayOfSelectedFiles,
-                                               @"noteInfo" : self.uploadInfo
                                                };
         [self.dropboxFileSystemTransaction performWithObject:objectForTransaction];
     } else {
@@ -68,10 +67,12 @@
     [self.mainTable reloadData];
 }
 
-
-- (void)saveResultToUploadInfo:(NSArray *)selectedFiles
+- (void)sendFiles
 {
-    self.uploadInfo.pdfUrl = [[CCDropboxFileInfo arrayOfDirectLinksFromArrayOfInfo:selectedFiles] lastObject];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self.ioc_dropboxAPI checkAllDirectURLForArray:self.arrayOfSelectedFiles successHandler:^(NSArray *selectedFiles) {
+        self.uploadingBlock([CCDropboxFileInfo arrayOfDirectLinksFromArrayOfInfo:selectedFiles]);
+    }];
 }
 
 @end

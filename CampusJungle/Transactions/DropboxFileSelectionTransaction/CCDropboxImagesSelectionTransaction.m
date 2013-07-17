@@ -16,7 +16,6 @@
 - (void)performWithObject:(id)object
 {
     NSParameterAssert(self.navigation);
-    NSParameterAssert(self.backToListTransaction);
     
     CCDropboxImagesFileSystemTransaction *fileSystemTransaction = [self fileSystemTransaction];
     CCImagesSortingTransaction *sortingTransaction = [CCImagesSortingTransaction new];
@@ -24,17 +23,19 @@
     fileSystemTransaction.imagesSortingTransaction = sortingTransaction;
     sortingTransaction.navigation = self.navigation;
     sortingTransaction.backToListTransaction = self.backToListTransaction;
+    sortingTransaction.uploadingBlock = object;
     
     fileSystemTransaction.backToListTransaction = self.backToListTransaction;
     fileSystemTransaction.navigation = self.navigation;
+    fileSystemTransaction.uploadingBlock = object;
     
     CCDropboxImagesSelectionViewController *dropboxController = [self viewController];
+    dropboxController.uploadingBlock = object;
     dropboxController.imageSortingTransaction = sortingTransaction;
     dropboxController.backToListTransaction = self.backToListTransaction;
     dropboxController.arrayOfSelectedFiles = [NSMutableArray new];
     dropboxController.dropboxPath = @"/";
     dropboxController.dropboxFileSystemTransaction = fileSystemTransaction;
-    dropboxController.uploadInfo = object;
     [self.navigation pushViewController:dropboxController animated:YES];
 }
 

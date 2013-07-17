@@ -8,10 +8,12 @@
 
 #import "CCQuestionsDataProvider.h"
 #import "CCQuestionsApiProviderProtocol.h"
+#import "CCUploadProcessManagerProtocol.h"
 
 @interface CCQuestionsDataProvider ()
 
 @property (nonatomic, strong) id<CCQuestionsApiProviderProtocol> ioc_questionsApiProvider;
+@property (nonatomic, strong) id <CCUploadProcessManagerProtocol> ioc_uploadManager;
 
 @end
 
@@ -19,8 +21,16 @@
 
 - (void)loadItemsForPageNumber:(long)numberOfPage successHandler:(successWithObject)successHandler
 {
-    [self.ioc_questionsApiProvider loadQuestionsForForumWithId:self.forumId filterString:self.searchQuery pageNumber:numberOfPage successHandler:^(RKMappingResult *result) {
-        successHandler(result);
+    [self.ioc_questionsApiProvider loadQuestionsForForumWithId:self.forumId filterString:self.searchQuery pageNumber:numberOfPage successHandler:^(NSMutableDictionary *result) {
+        if([[self.ioc_uploadManager uploadingQuestions] count]){
+            [self.ioc_uploadManager setCurrentDataProvider:self];
+            NSMutableArray *allQuestions = [NSMutableArray arrayWithArray:[self.ioc_uploadManager uploadingQuestions]];
+            [allQuestions addObjectsFromArray:result[@"items"]];
+            result[@"items"] = allQuestions;
+            successHandler(result);
+        } else {
+            successHandler(result);
+        }
     } errorHandler:^(NSError *error) {
         [self showErrorWhileLoading:error];
     }];

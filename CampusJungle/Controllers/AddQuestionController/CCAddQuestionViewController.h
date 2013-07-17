@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CCBaseViewController.h"
 #import "CCTransactionWithObject.h"
+#import "CCTransaction.h"
 
 @class CCForum;
 
@@ -17,6 +18,7 @@
 @property (nonatomic, strong) id <CCTransactionWithObject> imagesDropboxUploadTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> pdfDropboxUploadTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> imagesUploadTransaction;
+@property (nonatomic, strong) id <CCTransaction> backToListTransaction;
 
 - (void)setForum:(CCForum *)forum;
 

@@ -83,10 +83,10 @@
 							<object class="IBUIButton" id="830280483">
 								<reference key="NSNextResponder" ref="197971070"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{259, 27}, {44, 44}}</string>
+								<string key="NSFrame">{{261, 27}, {44, 44}}</string>
 								<reference key="NSSuperview" ref="197971070"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="260576713"/>
+								<reference key="NSNextKeyView" ref="55867461"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -323,6 +323,23 @@
 									<int key="NSfFlags">16</int>
 								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+							</object>
+							<object class="IBUIView" id="55867461">
+								<reference key="NSNextResponder" ref="197971070"/>
+								<int key="NSvFlags">292</int>
+								<string key="NSFrame">{{264, 31}, {35, 35}}</string>
+								<reference key="NSSuperview" ref="197971070"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="260576713"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<object class="NSColor" key="IBUIBackgroundColor">
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MQA</bytes>
+									<object class="NSColorSpace" key="NSCustomColorSpace">
+										<int key="NSID">2</int>
+									</object>
+								</object>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 						</array>
 						<string key="NSFrameSize">{314, 161}</string>
