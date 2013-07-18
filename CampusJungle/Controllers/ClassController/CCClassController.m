@@ -26,7 +26,6 @@
 @property (nonatomic, weak) IBOutlet UILabel *semester;
 @property (nonatomic, strong) CCClassTableController *classContentTable;
 @property (nonatomic, strong) id<CCClassesApiProviderProtocol> ioc_classesApiProvider;
-@property (nonatomic, weak) IBOutlet UITextView *timeTable;
 @property (nonatomic, weak) IBOutlet UIImageView *classImage;
 
 @property (nonatomic, strong) CCClass *currentClass;
@@ -76,20 +75,6 @@
     [button addTarget:self action:@selector(leaveClassButtonDidPress) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)fillTimeTable
-{
-    NSString *timeTableString = @"";
-    for(NSDictionary *time in self.currentClass.timetable){
-        NSString *lessonRepresentation = [NSString stringWithFormat:@"%@ %@",time[@"day"],time[@"time"]];
-        if(timeTableString.length){
-            timeTableString = [timeTableString stringByAppendingFormat:@"\n%@",lessonRepresentation];
-        } else {
-            timeTableString = lessonRepresentation;
-        }
-    }
-    self.timeTable.text = timeTableString;
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -110,7 +95,6 @@
     self.classNumber.text = self.currentClass.callNumber;
     self.semester.text = self.currentClass.semester.capitalizedString;
     [self.classImage setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,self.currentClass.classImageURL]] placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
-    [self fillTimeTable];
     self.title = self.currentClass.subject;
 }
 
