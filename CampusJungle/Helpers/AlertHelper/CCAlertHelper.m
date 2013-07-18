@@ -14,11 +14,16 @@
 
 + (void)showConfirmWithSuccess:(successHandler)success
 {
+    [self showWithMessage:CCAlertsMessages.confirmationMessage success:success];
+}
+
++ (void)showWithMessage:(NSString *)message success:(successHandler)success
+{
     GIAlertButton *noButton = [GIAlertButton cancelButtonWithTitle:CCAlertsButtons.noButton action:nil];
     GIAlertButton *yesButton = [GIAlertButton buttonWithTitle:CCAlertsButtons.yesButton action:success];
     
     GIAlert *alert = [GIAlert alertWithTitle:CCAlertsMessages.confirmation
-                                     message:CCAlertsMessages.confirmationMessage
+                                     message:message
                                      buttons:@[noButton, yesButton]];
     [alert show];
 }
