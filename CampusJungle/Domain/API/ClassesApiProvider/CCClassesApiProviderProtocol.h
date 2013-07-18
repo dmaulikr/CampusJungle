@@ -9,7 +9,7 @@
 #import "CCClass.h"
 #import "CCTypesDefinition.h"
 
-@protocol CCClassesApiProviderProtocol <AppleGuiceInjectable,AppleGuiceSingleton>
+@protocol CCClassesApiProviderProtocol <AppleGuiceInjectable>
 
 - (void)createClass:(CCClass *)class successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 - (void)getAllClasesSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;

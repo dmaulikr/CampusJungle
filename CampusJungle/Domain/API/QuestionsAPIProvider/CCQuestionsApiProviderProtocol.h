@@ -10,7 +10,7 @@
 #import "CCQuestion.h"
 #import "CCTypesDefinition.h"
 
-@protocol CCQuestionsApiProviderProtocol <NSObject>
+@protocol CCQuestionsApiProviderProtocol <AppleGuiceInjectable>
 
 - (void)loadQuestionsForForumWithId:(NSString *)forumId filterString:(NSString *)filterString pageNumber:(NSInteger)pageNumber successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 - (void)postQuestion:(CCQuestion *)question successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
