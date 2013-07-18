@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "CCTableBaseViewController.h"
+#import "CCTransactionWithObject.h"
 
 @class CCAnswer;
 
 @interface CCCommentsViewController : CCTableBaseViewController
+
+@property (nonatomic, strong) id<CCTransactionWithObject> addCommentTransaction;
 
 - (void)setAnswer:(CCAnswer *)answer;
 

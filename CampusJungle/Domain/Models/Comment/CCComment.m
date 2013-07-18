@@ -11,6 +11,13 @@
 
 @implementation CCComment
 
++ (CCComment *)commentWithText:(NSString *)text
+{
+    CCComment *comment = [CCComment new];
+    comment.text = text;
+    return comment;
+}
+
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager
 {
     [self configureRequestMapping:objectManager];

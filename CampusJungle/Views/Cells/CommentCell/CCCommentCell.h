@@ -11,8 +11,15 @@
 
 @class CCComment;
 
+@protocol CCCommentCellDelegate <NSObject>
+
+- (void)deleteComment:(CCComment *)comment;
+
+@end
+
 @interface CCCommentCell : CCBaseCell
 
 - (void)setCellObject:(CCComment *)comment;
+- (void)setDelegate:(id<CCCommentCellDelegate>)delegate;
 
 @end

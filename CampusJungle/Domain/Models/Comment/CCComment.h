@@ -19,4 +19,6 @@
 @property (nonatomic, strong) NSString *ownerFirstName;
 @property (nonatomic, strong) NSString *ownerLastName;
 
++ (CCComment *)commentWithText:(NSString *)text;
+
 @end

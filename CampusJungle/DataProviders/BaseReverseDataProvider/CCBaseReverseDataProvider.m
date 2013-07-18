@@ -10,6 +10,26 @@
 
 @implementation CCBaseReverseDataProvider
 
+- (void)loadItems
+{
+    self.currentPage = firstPage;
+    self.isCurrentlyLoad = YES;
+    __weak CCPaginationDataProvider *weakSelf = self;
+    [self loadItemsForPageNumber:self.currentPage successHandler:^(id responseObject) {
+        NSDictionary *response = [self reverseItemsArrayInPaginationDictionary:responseObject];
+        weakSelf.totalNumber = [response[CCResponseKeys.count] longValue];
+        weakSelf.arrayOfItems = response[CCResponseKeys.items];
+        weakSelf.isEverythingLoaded = [self checkIsComplete];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.tableViewWillReloadData object:nil];
+        [weakSelf.targetTable reloadData];
+        [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.tableViewDidReloadData object:nil];
+        
+        weakSelf.isCurrentlyLoad = NO;
+    }];
+    self.currentPage++;
+}
+
 - (void)loadMoreItems
 {
     if (!self.isCurrentlyLoad && !self.isEverythingLoaded) {

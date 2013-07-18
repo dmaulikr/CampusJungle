@@ -12,4 +12,6 @@ extern const struct CCNotificationsNames {
     __unsafe_unretained NSString *tableViewWillReloadData;
     __unsafe_unretained NSString *reloadClassLocations;
     __unsafe_unretained NSString *reloadAnswers;
+    __unsafe_unretained NSString *reloadComments;
+    __unsafe_unretained NSString *reloadCellWithAnswer;
 } CCNotificationsNames;

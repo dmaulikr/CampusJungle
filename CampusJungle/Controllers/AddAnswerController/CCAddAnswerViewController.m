@@ -103,10 +103,11 @@
 #pragma mark Requests
 - (void)addAnswer:(CCAnswer *)answer
 {
+    __weak CCAddAnswerViewController *weakSelf = self;
     [self.ioc_answerApiProvider postAnswer:answer successHandler:^(RKMappingResult *object) {
         [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadAnswers object:nil];
         [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.addedAnswer duration:CCProgressHudsConstants.loaderDuration];
-        [self.backTransaction perform];
+        [weakSelf.backTransaction perform];
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
     }];

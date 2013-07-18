@@ -8,6 +8,7 @@
 
 #import "CCCommentsTransaction.h"
 #import "CCCommentsViewController.h"
+#import "CCAddCommentTransaction.h"
 
 @implementation CCCommentsTransaction
 
@@ -16,8 +17,12 @@
     NSParameterAssert(self.navigation);
     NSParameterAssert(object);
     
+    CCAddCommentTransaction *addCommentTransaction = [CCAddCommentTransaction new];
+    addCommentTransaction.navigation = self.navigation;
+    
     CCCommentsViewController *commentsController = [CCCommentsViewController new];
     [commentsController setAnswer:object];
+    commentsController.addCommentTransaction = addCommentTransaction;
     
     [self.navigation pushViewController:commentsController animated:YES];
 }
