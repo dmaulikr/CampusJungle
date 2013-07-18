@@ -15,6 +15,7 @@
 #import "CCAddForumTransaction.h"
 #import "CCForumDetailsTransaction.h"
 #import "CCEditClassTransaction.h"
+#import "CCProfessorUploadsTransaction.h"
 
 @implementation CCClassTransaction
 
@@ -36,6 +37,10 @@
     classNotesTransaction.navigation = centralNavigation;
     classController.classMarketTransaction = classNotesTransaction;
 
+    CCProfessorUploadsTransaction *professorUploadsTransaction = [CCProfessorUploadsTransaction new];
+    professorUploadsTransaction.navigation = centralNavigation;
+    classController.professorUploadsTransaction = professorUploadsTransaction;
+    
     CCOtherUserProfileTransaction *otherUserProfileTransaction = [CCOtherUserProfileTransaction new];
     otherUserProfileTransaction.navigation = centralNavigation;
     

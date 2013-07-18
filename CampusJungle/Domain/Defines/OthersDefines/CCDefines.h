@@ -63,6 +63,10 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *loadComments;
     __unsafe_unretained NSString *postComment;
     __unsafe_unretained NSString *deleteComment;
+    __unsafe_unretained NSString *getUploads;
+    __unsafe_unretained NSString *postUploads;
+    __unsafe_unretained NSString *removeUploads;
+    __unsafe_unretained NSString *getAttachmentFromUploads;
 } CCAPIDefines;
 
 

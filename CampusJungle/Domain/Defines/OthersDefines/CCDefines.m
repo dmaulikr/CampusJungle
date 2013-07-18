@@ -65,6 +65,10 @@ const struct CCAPIDefines CCAPIDefines = {
     .loadComments = @"/api/answers/%@/comments",
     .postComment = @"/api/answers/%@/comments",
     .deleteComment = @"/api/comments/%@",
+    .getUploads = @"/api/classes/%@/professors_uploads/index",
+    .postUploads = @"/api/classes/%@/professors_uploads"
+    .removeUploads = @"/api/professors_uploads/%@",
+    .getAttachmentFromUploads = @"/api/professors_uploads/%@",
 };
 
 const struct CCUserDefines CCUserDefines = {

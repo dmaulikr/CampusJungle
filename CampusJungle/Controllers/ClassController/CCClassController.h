@@ -23,6 +23,7 @@
 @property (nonatomic, strong) id <CCTransactionWithObject> forumDetailsTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> editClassTransaction;
 @property (nonatomic, strong) id <CCTransaction> newsFeedTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> professorUploadsTransaction;
 
 - (id)initWithClass:(CCClass *)classObject;
 - (IBAction)classMarketButtonDidPressed;
