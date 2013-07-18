@@ -57,9 +57,10 @@
     }
     CCClass *class = [self prepareClass];
     class.classID = self.currentClass.classID;
+    __weak CCUpdateClassController *weakSelf = self;
     [self.ioc_apiClassesProvider updateClass:class successHandler:^(CCClass *newClass) {
         [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadSideMenu object:nil];
-        [self.backToClassScreenTransaction performWithObject:newClass];
+        [weakSelf.backTransaction performWithObject:newClass];
     } errorHandler:^(NSError *error) {
          [CCStandardErrorHandler showErrorWithError:error];
     }];

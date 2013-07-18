@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "CCTransactionWithObject.h"
 #import "CCClassController.h"
+#import "CCBackTransactionAfterClassUpdate.h"
 
 @interface CCEditClassTransaction : NSObject <CCTransactionWithObject>
 
 @property (nonatomic, strong) UINavigationController *navigation;
-@property (nonatomic, weak) CCClassController *classController;
+@property (nonatomic, weak) id<CCClassUpdateProtocol> classDataController;
 
 @end

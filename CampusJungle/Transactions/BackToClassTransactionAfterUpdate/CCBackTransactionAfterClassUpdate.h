@@ -1,5 +1,5 @@
 //
-//  CCBackToClassTransactionAfterUpdate.h
+//  CCBackTransactionAfterClassUpdate.h
 //  CampusJungle
 //
 //  Created by Vlad Korzun on 17.07.13.
@@ -10,9 +10,15 @@
 #import "CCClassController.h"
 #import "CCTransactionWithObject.h"
 
-@interface CCBackToClassTransactionAfterUpdate : NSObject<CCTransactionWithObject>
+@protocol CCClassUpdateProtocol <NSObject>
+
+- (void)updateWithClass:(CCClass *)classObject;
+
+@end
+
+@interface CCBackTransactionAfterClassUpdate : NSObject<CCTransactionWithObject>
 
 @property (nonatomic, strong) UINavigationController *navigation;
-@property (nonatomic, weak) CCClassController *classControler;
+@property (nonatomic, weak) id<CCClassUpdateProtocol> previousController;
 
 @end

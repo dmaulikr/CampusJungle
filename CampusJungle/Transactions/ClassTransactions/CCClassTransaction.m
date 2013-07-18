@@ -30,7 +30,7 @@
     
     CCEditClassTransaction *editTransaction = [CCEditClassTransaction new];
     editTransaction.navigation = centralNavigation;
-    editTransaction.classController = classController;
+    editTransaction.classDataController = classController;
     classController.editClassTransaction = editTransaction;
     
     CCShowNotesForClassTransaction *classNotesTransaction = [CCShowNotesForClassTransaction new];

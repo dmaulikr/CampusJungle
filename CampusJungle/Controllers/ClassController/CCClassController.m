@@ -47,11 +47,6 @@
     return self;
 }
 
-- (void)updateWithClass:(CCClass *)updatedClass
-{
-    self.currentClass = updatedClass;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -155,7 +150,15 @@
 
 - (IBAction)timetableButtonDidPressed:(id)sender
 {
-    [self.timetableTransaction performWithObject:self.currentClass];
+    NSDictionary *paramsDictionary = @{@"class" : self.currentClass, @"controller" : self};
+    [self.timetableTransaction performWithObject:paramsDictionary];
+}
+
+#pragma mark -
+#pragma mark CCClassUpdateProtocol
+- (void)updateWithClass:(CCClass *)updatedClass
+{
+    self.currentClass = updatedClass;
 }
 
 #pragma mark -

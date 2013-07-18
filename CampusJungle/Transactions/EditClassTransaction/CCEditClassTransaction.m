@@ -8,20 +8,22 @@
 
 #import "CCEditClassTransaction.h"
 #import "CCUpdateClassController.h"
-#import "CCBackToClassTransactionAfterUpdate.h"
+#import "CCBackTransactionAfterClassUpdate.h"
 
 @implementation CCEditClassTransaction
 
 - (void)performWithObject:(id)object
 {
     NSParameterAssert(self.navigation);
+    NSParameterAssert(self.classDataController);
+    
     CCUpdateClassController *updateClassController = [CCUpdateClassController new];
     
-    CCBackToClassTransactionAfterUpdate *backTransaction = [CCBackToClassTransactionAfterUpdate new];
+    CCBackTransactionAfterClassUpdate *backTransaction = [CCBackTransactionAfterClassUpdate new];
     backTransaction.navigation = self.navigation;
-    backTransaction.classControler = self.classController;
+    backTransaction.previousController = self.classDataController;
     
-    updateClassController.backToClassScreenTransaction = backTransaction;
+    updateClassController.backTransaction = backTransaction;
     updateClassController.currentClass = object;
     [self.navigation pushViewController:updateClassController animated:YES];
 

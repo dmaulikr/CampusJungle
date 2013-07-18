@@ -10,12 +10,15 @@
 #import "CCTableBaseViewController.h"
 
 #import "CCTransactionWithObject.h"
+#import "CCBackTransactionAfterClassUpdate.h"
 
 @class CCClass;
+@protocol CCClassUpdateProtocol;
 
-@interface CCTimetableViewController : CCTableBaseViewController
+@interface CCTimetableViewController : CCTableBaseViewController <CCClassUpdateProtocol>
 
 @property (nonatomic, strong) id<CCTransactionWithObject> editClassTransaction;
+@property (nonatomic, weak) id<CCClassUpdateProtocol> previousController;
 
 - (void)setClassObject:(CCClass *)classObject;
 

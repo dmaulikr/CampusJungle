@@ -375,7 +375,7 @@
 		D3039B79176880F800621CAC /* pending@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B77176880F800621CAC /* pending@2x.png */; };
 		D342BCD51796AD3D0034E88C /* CCEditClassTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BCD41796AD3D0034E88C /* CCEditClassTransaction.m */; };
 		D342BCD91796B1640034E88C /* CCUpdateClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BCD81796B1640034E88C /* CCUpdateClassController.m */; };
-		D342BCDD1796C2890034E88C /* CCBackToClassTransactionAfterUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BCDC1796C2890034E88C /* CCBackToClassTransactionAfterUpdate.m */; };
+		D342BCDD1796C2890034E88C /* CCBackTransactionAfterClassUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BCDC1796C2890034E88C /* CCBackTransactionAfterClassUpdate.m */; };
 		D342BCE11796D0210034E88C /* CCPurchasedNotesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BCE01796D0210034E88C /* CCPurchasedNotesDataProvider.m */; };
 		D342BCE41797F70B0034E88C /* leaveClass.png in Resources */ = {isa = PBXBuildFile; fileRef = D342BCE21797F70B0034E88C /* leaveClass.png */; };
 		D342BCE51797F70B0034E88C /* leaveClass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D342BCE31797F70B0034E88C /* leaveClass@2x.png */; };
@@ -1205,8 +1205,8 @@
 		D342BCD41796AD3D0034E88C /* CCEditClassTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEditClassTransaction.m; sourceTree = "<group>"; };
 		D342BCD71796B1640034E88C /* CCUpdateClassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUpdateClassController.h; sourceTree = "<group>"; };
 		D342BCD81796B1640034E88C /* CCUpdateClassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUpdateClassController.m; sourceTree = "<group>"; };
-		D342BCDB1796C2890034E88C /* CCBackToClassTransactionAfterUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBackToClassTransactionAfterUpdate.h; sourceTree = "<group>"; };
-		D342BCDC1796C2890034E88C /* CCBackToClassTransactionAfterUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBackToClassTransactionAfterUpdate.m; sourceTree = "<group>"; };
+		D342BCDB1796C2890034E88C /* CCBackTransactionAfterClassUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBackTransactionAfterClassUpdate.h; sourceTree = "<group>"; };
+		D342BCDC1796C2890034E88C /* CCBackTransactionAfterClassUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBackTransactionAfterClassUpdate.m; sourceTree = "<group>"; };
 		D342BCDF1796D0210034E88C /* CCPurchasedNotesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPurchasedNotesDataProvider.h; sourceTree = "<group>"; };
 		D342BCE01796D0210034E88C /* CCPurchasedNotesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPurchasedNotesDataProvider.m; sourceTree = "<group>"; };
 		D342BCE21797F70B0034E88C /* leaveClass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaveClass.png; sourceTree = "<group>"; };
@@ -3313,7 +3313,7 @@
 				70B2D0E017944894001B0C2C /* AllClassesTransaction */,
 				7012AC8217955A41002DA5E9 /* AnswersTransaction */,
 				70B2D0E317944894001B0C2C /* ApplyFiltersTransaction */,
-				D342BCDA1796C2640034E88C /* BackToClassTransactionAfterUpdate */,
+				D342BCDA1796C2640034E88C /* BackTransactionAfterClassUpdate */,
 				70B2D0E617944894001B0C2C /* BackToListOfNotesTransaction */,
 				70B2D0E917944894001B0C2C /* BackToNotesTransaction */,
 				70B2D0EC17944894001B0C2C /* BackToStuffTransaction */,
@@ -4457,12 +4457,13 @@
 			path = UpdateClassController;
 			sourceTree = "<group>";
 		};
-		D342BCDA1796C2640034E88C /* BackToClassTransactionAfterUpdate */ = {
+		D342BCDA1796C2640034E88C /* BackTransactionAfterClassUpdate */ = {
 			isa = PBXGroup;
 			children = (
-				D342BCDB1796C2890034E88C /* CCBackToClassTransactionAfterUpdate.h */,
-				D342BCDC1796C2890034E88C /* CCBackToClassTransactionAfterUpdate.m */,
+				D342BCDB1796C2890034E88C /* CCBackTransactionAfterClassUpdate.h */,
+				D342BCDC1796C2890034E88C /* CCBackTransactionAfterClassUpdate.m */,
 			);
+			name = BackTransactionAfterClassUpdate;
 			path = BackToClassTransactionAfterUpdate;
 			sourceTree = "<group>";
 		};
@@ -5109,10 +5110,8 @@
 				D342BCE41797F70B0034E88C /* leaveClass.png in Resources */,
 				D342BCE51797F70B0034E88C /* leaveClass@2x.png in Resources */,
 				701254611797E3C80085247A /* CCAddCommentViewController.xib in Resources */,
-
 				7012546B1797F7A70085247A /* CCTimetableViewController.xib in Resources */,
 				701254751798081B0085247A /* CCDailyTimetableCell.xib in Resources */,
-
 				D342BCE817980B290034E88C /* leave_class_icon.png in Resources */,
 				D342BCE917980B290034E88C /* leave_class_icon@2x.png in Resources */,
 			);
@@ -5406,7 +5405,7 @@
 				701253F1179694A50085247A /* CCQuestionHeaderView.m in Sources */,
 				D342BCD51796AD3D0034E88C /* CCEditClassTransaction.m in Sources */,
 				D342BCD91796B1640034E88C /* CCUpdateClassController.m in Sources */,
-				D342BCDD1796C2890034E88C /* CCBackToClassTransactionAfterUpdate.m in Sources */,
+				D342BCDD1796C2890034E88C /* CCBackTransactionAfterClassUpdate.m in Sources */,
 				701253F81796CF620085247A /* CCAddAnswerViewController.m in Sources */,
 				701253FD1796D1680085247A /* CCAddAnswerTransaction.m in Sources */,
 				D342BCE11796D0210034E88C /* CCPurchasedNotesDataProvider.m in Sources */,

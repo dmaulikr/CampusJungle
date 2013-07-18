@@ -43,8 +43,9 @@
 							<object class="IBUIImageView" id="411264238">
 								<reference key="NSNextResponder" ref="645812130"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{80, -10}, {1, 70}}</string>
+								<string key="NSFrame">{{80, -12}, {2, 73}}</string>
 								<reference key="NSSuperview" ref="645812130"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="773093733"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor">
@@ -57,8 +58,9 @@
 							<object class="IBUIImageView" id="381947657">
 								<reference key="NSNextResponder" ref="645812130"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{10, 49}, {300, 1}}</string>
+								<string key="NSFrame">{{10, 48}, {300, 2}}</string>
 								<reference key="NSSuperview" ref="645812130"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="115776912"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor">
@@ -73,6 +75,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{27, 0}, {45, 50}}</string>
 								<reference key="NSSuperview" ref="645812130"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="411264238"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -108,6 +111,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{100, 0}, {200, 50}}</string>
 								<reference key="NSSuperview" ref="645812130"/>
+								<reference key="NSWindow"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -128,6 +132,7 @@
 						</array>
 						<string key="NSFrameSize">{320, 49}</string>
 						<reference key="NSSuperview" ref="844054711"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="381947657"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -143,6 +148,7 @@
 				</array>
 				<string key="NSFrameSize">{320, 50}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="645812130"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -243,7 +249,40 @@
 			<nil key="sourceID"/>
 			<int key="maxID">14</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">CCBaseCell</string>
+					<string key="superclassName">UITableViewCell</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/CCBaseCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">CCDailyTimetableCell</string>
+					<string key="superclassName">CCBaseCell</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="dayLabel">UILabel</string>
+						<string key="timeLabel">UILabel</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="dayLabel">
+							<string key="name">dayLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="timeLabel">
+							<string key="name">timeLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/CCDailyTimetableCell.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>

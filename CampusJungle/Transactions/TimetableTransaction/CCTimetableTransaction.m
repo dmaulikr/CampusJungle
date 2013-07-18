@@ -8,6 +8,7 @@
 
 #import "CCTimetableTransaction.h"
 #import "CCTimetableViewController.h"
+#import "CCEditClassTransaction.h"
 
 @implementation CCTimetableTransaction
 
@@ -16,9 +17,18 @@
     NSParameterAssert(self.navigation);
     NSParameterAssert(object);
     
-    CCTimetableViewController *timetableController = [CCTimetableViewController new];
-    [timetableController setClassObject:object];
+    id classObject = [object valueForKey:@"class"];
+    id previousController = [object valueForKey:@"controller"];
     
+    CCEditClassTransaction *editTransaction = [CCEditClassTransaction new];
+    editTransaction.navigation = self.navigation;
+    
+    CCTimetableViewController *timetableController = [CCTimetableViewController new];
+    [timetableController setClassObject:classObject];
+    timetableController.previousController = previousController;
+    timetableController.editClassTransaction = editTransaction;
+    
+    editTransaction.classDataController = timetableController;
     [self.navigation pushViewController:timetableController animated:YES];
 }
 
