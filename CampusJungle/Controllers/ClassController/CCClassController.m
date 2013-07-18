@@ -23,6 +23,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *professor;
 @property (nonatomic, weak) IBOutlet UIImageView *avatarImage;
 @property (nonatomic, weak) IBOutlet UIView *headerView;
+@property (nonatomic, weak) IBOutlet UILabel *semester;
 @property (nonatomic, strong) CCClassTableController *classContentTable;
 @property (nonatomic, strong) id<CCClassesApiProviderProtocol> ioc_classesApiProvider;
 @property (nonatomic, weak) IBOutlet UITextView *timeTable;
@@ -55,7 +56,8 @@
 {
     [super viewDidLoad];
     [self loadInfo];
-    [self setRightNavigationItemWithTitle:@"Leave class" selector:@selector(leaveClassButtonDidPress)];
+    [self setUpLeaveButton];
+   
     [self setButtonsTextColorInView:self.headerView];
     CCClassmatesDataProvider *classmateDataprovider = [CCClassmatesDataProvider new];
     classmateDataprovider.classID = self.currentClass.classID;
@@ -66,6 +68,20 @@
     self.classContentTable.delegate = self;
     [self.view addSubview:self.classContentTable.view];
 }
+
+
+- (void)setUpLeaveButton
+{
+    UIImage *leaveClassImage = [UIImage imageNamed:@"leaveClass"];
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, leaveClassImage.size.width + 10, leaveClassImage.size.height)];
+    [button setImage:leaveClassImage forState:UIControlStateNormal];
+    [button setBackgroundImage:nil forState:UIControlStateNormal];
+    [button setBackgroundImage:nil forState:UIControlStateHighlighted];
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = barButtonItem;
+    [button addTarget:self action:@selector(leaveClassButtonDidPress) forControlEvents:UIControlEventTouchUpInside];
+}
+
 
 - (void)fillTimeTable
 {
@@ -99,6 +115,7 @@
     self.navigationController.navigationItem.title = self.currentClass.subject;
     self.professor.text = self.currentClass.professor;
     self.classNumber.text = self.currentClass.callNumber;
+    self.semester.text = self.currentClass.semester.capitalizedString;
     [self.classImage setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,self.currentClass.classImageURL]] placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
     [self fillTimeTable];
     self.title = self.currentClass.subject;
@@ -127,7 +144,7 @@
 
 - (IBAction)leaveClassButtonDidPress
 {
-    [CCAlertHelper showConfirmWithSuccess:^{
+    [CCAlertHelper showWithMessage:@"Are you sure that you want to leave class?" success:^{
         [self.ioc_classesApiProvider leaveClassWithID:self.currentClass.classID SuccessHandler:^(id result) {
             [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadSideMenu object:nil];
             [self.newsFeedTransaction perform];

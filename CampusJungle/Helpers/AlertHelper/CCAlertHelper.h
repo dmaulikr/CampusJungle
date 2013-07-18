@@ -12,5 +12,6 @@
 @interface CCAlertHelper : NSObject
 
 + (void)showConfirmWithSuccess:(successHandler)success;
++ (void)showWithMessage:(NSString *)message success:(successHandler)success;
 
 @end
