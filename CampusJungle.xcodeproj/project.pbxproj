@@ -49,6 +49,9 @@
 		701254541796FA530085247A /* CCCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 701254531796FA530085247A /* CCCommentCell.m */; };
 		701254561796FA640085247A /* CCCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 701254551796FA640085247A /* CCCommentCell.xib */; };
 		7012545A179700E60085247A /* CCDateFormatterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 70125459179700E60085247A /* CCDateFormatterHelper.m */; };
+		701254601797E3C80085247A /* CCAddCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7012545E1797E3C80085247A /* CCAddCommentViewController.m */; };
+		701254611797E3C80085247A /* CCAddCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7012545F1797E3C80085247A /* CCAddCommentViewController.xib */; };
+		701254651797E4FB0085247A /* CCAddCommentTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 701254641797E4FB0085247A /* CCAddCommentTransaction.m */; };
 		7012AC7617954DB4002DA5E9 /* CCAnswer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7012AC7517954DB4002DA5E9 /* CCAnswer.m */; };
 		7012AC7A1795508E002DA5E9 /* CCAnswersApiProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7012AC791795508E002DA5E9 /* CCAnswersApiProvider.m */; };
 		7012AC80179558C9002DA5E9 /* CCAnswersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7012AC7E179558C9002DA5E9 /* CCAnswersViewController.m */; };
@@ -612,6 +615,11 @@
 		70125458179700E60085247A /* CCDateFormatterHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDateFormatterHelper.h; sourceTree = "<group>"; };
 		70125459179700E60085247A /* CCDateFormatterHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDateFormatterHelper.m; sourceTree = "<group>"; };
 		7012545B179701340085247A /* CCDateFormatterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDateFormatterProtocol.h; sourceTree = "<group>"; };
+		7012545D1797E3C80085247A /* CCAddCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddCommentViewController.h; sourceTree = "<group>"; };
+		7012545E1797E3C80085247A /* CCAddCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddCommentViewController.m; sourceTree = "<group>"; };
+		7012545F1797E3C80085247A /* CCAddCommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAddCommentViewController.xib; sourceTree = "<group>"; };
+		701254631797E4FB0085247A /* CCAddCommentTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddCommentTransaction.h; sourceTree = "<group>"; };
+		701254641797E4FB0085247A /* CCAddCommentTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddCommentTransaction.m; sourceTree = "<group>"; };
 		7012AC7417954DB4002DA5E9 /* CCAnswer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnswer.h; sourceTree = "<group>"; };
 		7012AC7517954DB4002DA5E9 /* CCAnswer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAnswer.m; sourceTree = "<group>"; };
 		7012AC781795508E002DA5E9 /* CCAnswersApiProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnswersApiProvider.h; sourceTree = "<group>"; };
@@ -1719,6 +1727,25 @@
 			path = DateFormatterHelper;
 			sourceTree = "<group>";
 		};
+		7012545C1797E3AF0085247A /* AddCommentController */ = {
+			isa = PBXGroup;
+			children = (
+				7012545D1797E3C80085247A /* CCAddCommentViewController.h */,
+				7012545E1797E3C80085247A /* CCAddCommentViewController.m */,
+				7012545F1797E3C80085247A /* CCAddCommentViewController.xib */,
+			);
+			path = AddCommentController;
+			sourceTree = "<group>";
+		};
+		701254621797E4E90085247A /* AddCommentTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				701254631797E4FB0085247A /* CCAddCommentTransaction.h */,
+				701254641797E4FB0085247A /* CCAddCommentTransaction.m */,
+			);
+			path = AddCommentTransaction;
+			sourceTree = "<group>";
+		};
 		7012AC7317954DAB002DA5E9 /* Answer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1915,6 +1942,7 @@
 			isa = PBXGroup;
 			children = (
 				701253F41796CF4D0085247A /* AddAnswerController */,
+				7012545C1797E3AF0085247A /* AddCommentController */,
 				70B2D0A217941A01001B0C2C /* AddForumController */,
 				700F9427178EA06000A6FBBA /* AddLocationController */,
 				70B2D0D01794483A001B0C2C /* AddQuestionController */,
@@ -3213,6 +3241,7 @@
 			children = (
 				701253FA1796D0EA0085247A /* AddAnswerTransaction */,
 				70B2D0D717944894001B0C2C /* AddClassTransaction */,
+				701254621797E4E90085247A /* AddCommentTransaction */,
 				70B2D0DA17944894001B0C2C /* AddForumTransaction */,
 				70B2D0DD17944894001B0C2C /* AddLocationTransaction */,
 				70B2D1CF179448A9001B0C2C /* AddQuestionTransaction */,
@@ -5006,6 +5035,7 @@
 				701254461796F5F00085247A /* CCCommentsViewController.xib in Resources */,
 				7012544C1796F6FC0085247A /* CCAnswerHeader.xib in Resources */,
 				701254561796FA640085247A /* CCCommentCell.xib in Resources */,
+				701254611797E3C80085247A /* CCAddCommentViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5321,6 +5351,8 @@
 				701254501796F9650085247A /* CCCommentsTransaction.m in Sources */,
 				701254541796FA530085247A /* CCCommentCell.m in Sources */,
 				7012545A179700E60085247A /* CCDateFormatterHelper.m in Sources */,
+				701254601797E3C80085247A /* CCAddCommentViewController.m in Sources */,
+				701254651797E4FB0085247A /* CCAddCommentTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,6 +24,7 @@ static const CGFloat kMinCellHeight = 90;
 @property (nonatomic, weak) IBOutlet UILabel *createdDateLabel;
 @property (nonatomic, weak) IBOutlet UIButton *deleteCommentButton;
 
+@property (nonatomic, weak) id<CCCommentCellDelegate> delegate;
 @property (nonatomic, strong) id<CCUserSessionProtocol> ioc_userSessionProvider;
 @property (nonatomic, strong) id<CCDateFormatterProtocol> ioc_dateFormatterHelper;
 @property (nonatomic, strong) CCComment *comment;
@@ -78,7 +79,9 @@ static const CGFloat kMinCellHeight = 90;
 #pragma mark Actions
 - (void)deleteCommentButtonDidPressed:(id)sender
 {
-    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(deleteComment:)]) {
+        [self.delegate deleteComment:self.comment];
+    }
 }
 
 @end

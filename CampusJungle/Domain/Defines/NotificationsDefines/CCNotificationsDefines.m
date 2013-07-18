@@ -14,4 +14,6 @@ const struct CCNotificationsNames CCNotificationsNames = {
     .tableViewWillReloadData = @"TABLE_VIEW_WILL_RELOAD_DATA",
     .reloadClassLocations = @"RELOAD_CLASS_LOCATIONS",
     .reloadAnswers = @"RELOAD_ANSWERS",
+    .reloadComments = @"RELOAD_COMMENTS",
+    .reloadCellWithAnswer = @"RELOAD_CELL_WITH_ANSWER",
 };

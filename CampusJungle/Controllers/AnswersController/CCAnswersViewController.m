@@ -62,11 +62,13 @@
 - (void)addObservers
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadAnswers) name:CCNotificationsNames.reloadAnswers object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadCellWithAnswer:) name:CCNotificationsNames.reloadCellWithAnswer object:nil];
 }
 
 - (void)removeObservers
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:CCNotificationsNames.reloadAnswers object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:CCNotificationsNames.reloadCellWithAnswer object:nil];
 }
 
 #pragma mark -
@@ -89,6 +91,16 @@
 - (void)addAnswerButtonDidPressed:(id)sender
 {
     [self.addAnswerTransaction performWithObject:self.question];
+}
+
+- (void)reloadCellWithAnswer:(NSNotification *)notification
+{
+    CCAnswer *answer = [notification.userInfo valueForKey:@"answer"];
+    NSInteger answerIndex = [self.dataProvider.arrayOfItems indexOfObject:answer];
+    if (answerIndex != NSNotFound) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:answerIndex inSection:0];
+        [self.mainTable reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
 }
 
 #pragma mark -
