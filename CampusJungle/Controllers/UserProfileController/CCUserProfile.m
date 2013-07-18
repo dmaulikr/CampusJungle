@@ -240,12 +240,11 @@
 
 - (void)exitEditProfileButtonDidPressed:(id)sender
 {
+    [self setEditing:NO animated:YES];
     [self.arrayOfEducations removeAllObjects];
     [self.arrayOfEducations addObjectsFromArray:self.arrayOfEducationsBackup];
     [self setupTableView];
-    
     [self.mainTable reloadData];
-    [self setEditing:NO animated:YES];
 }
 
 - (IBAction)avatarDidPressed

@@ -55,21 +55,6 @@
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
-							<object class="IBUIImageView" id="381947657">
-								<reference key="NSNextResponder" ref="645812130"/>
-								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{10, 48}, {300, 2}}</string>
-								<reference key="NSSuperview" ref="645812130"/>
-								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="115776912"/>
-								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<object class="NSColor" key="IBUIBackgroundColor">
-									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC41MDk4MDM5MjE2IDAuMjU0OTAxOTYwOCAwAA</bytes>
-								</object>
-								<bool key="IBUIUserInteractionEnabled">NO</bool>
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-							</object>
 							<object class="IBUILabel" id="115776912">
 								<reference key="NSNextResponder" ref="645812130"/>
 								<int key="NSvFlags">292</int>
@@ -133,7 +118,7 @@
 						<string key="NSFrameSize">{320, 49}</string>
 						<reference key="NSSuperview" ref="844054711"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="381947657"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -203,7 +188,6 @@
 							<reference ref="411264238"/>
 							<reference ref="115776912"/>
 							<reference ref="773093733"/>
-							<reference ref="381947657"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -224,12 +208,6 @@
 						<reference key="object" ref="773093733"/>
 						<reference key="parent" ref="844054711"/>
 					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">14</int>
-						<reference key="object" ref="381947657"/>
-						<reference key="parent" ref="844054711"/>
-						<string key="objectName">Horizontal Divider Image View</string>
-					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -238,7 +216,6 @@
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="10.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="11.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="14.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="3.CustomClassName">CCDailyTimetableCell</string>
 				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

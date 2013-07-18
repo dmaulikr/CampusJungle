@@ -10,18 +10,32 @@
 #import "CCEducation.h"
 #import "CCViewPositioningHelper.h"
 
+static const NSInteger kCollegeNameLabelDefaultWidth = 212;
+static const NSInteger kDateLabelDefaultOriginX = 240;
+static const NSInteger kDefaultCellHeight = 63;
+
+static const CGFloat kAnimationDuration = 0.3;
+static const CGFloat kSubviewsAnimationOffset = 32;
+
+typedef void(^SimpleBlock)();
+typedef void(^AnimationBlock)(SimpleBlock);
+
 @interface CCEducationCell()
 
 @property (nonatomic, strong) IBOutlet UILabel *collegeName;
 @property (nonatomic, strong) IBOutlet UILabel *graduationDate;
 @property (nonatomic, strong) IBOutlet UILabel *status;
-
-#define offsetForDate 27
-#define offsetForCollegeName 10
+@property (nonatomic, assign) BOOL isEditable;
 
 @end
 
 @implementation CCEducationCell
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.isEditable = NO;
+}
 
 - (void)setCellObject:(id)cellObject
 {
@@ -29,41 +43,53 @@
     self.collegeName.text = [(CCEducation *)cellObject collegeName];
     self.graduationDate.text = [(CCEducation *)cellObject graduationDate];
     self.status.text = [(CCEducation *)cellObject status];
-    [self.collegeName sizeToFit];
-    [CCViewPositioningHelper setOriginX:5 toView:self.collegeName];
 }
-
-- (void)prepareForReuse
-{
-    [CCViewPositioningHelper setWidth:230 toView:self.collegeName];
-    [CCViewPositioningHelper setOriginX:5 toView:self.collegeName];
-}
-
 
 - (void)layoutSubviews
 {
-    if(self.editing){
-        self.collegeName.transform = CGAffineTransformMakeTranslation(-offsetForCollegeName, 0);
-        self.graduationDate.transform = CGAffineTransformMakeTranslation(-offsetForDate, 0);
-        self.status.transform = CGAffineTransformMakeTranslation(-offsetForDate, 0);
-    } else {
-        self.collegeName.transform = CGAffineTransformMakeTranslation(0, 0);
-        self.graduationDate.transform = CGAffineTransformMakeTranslation(0, 0);
-        self.status.transform = CGAffineTransformMakeTranslation(0, 0);
-    }
     [super layoutSubviews];
+    
+    AnimationBlock animationBlock = ^(SimpleBlock block) {
+        [UIView animateWithDuration:kAnimationDuration animations:^{
+            block();
+        }];
+    };
+    
+    __weak CCEducationCell *weakSelf = self;
+    if ([self isEditing] && !self.isEditable) {
+        animationBlock(^{
+            [CCViewPositioningHelper setWidth:kCollegeNameLabelDefaultWidth - kSubviewsAnimationOffset toView:weakSelf.collegeName];
+            [CCViewPositioningHelper setOriginX:kDateLabelDefaultOriginX - kSubviewsAnimationOffset toView:weakSelf.graduationDate];
+            [CCViewPositioningHelper setOriginX:kDateLabelDefaultOriginX - kSubviewsAnimationOffset toView:weakSelf.status];
+        });
+        self.isEditable = YES;
+    }
+    else if (![self isEditing] && self.isEditable) {
+        animationBlock(^{
+            [CCViewPositioningHelper setWidth:kCollegeNameLabelDefaultWidth toView:weakSelf.collegeName];
+            [CCViewPositioningHelper setOriginX:kDateLabelDefaultOriginX toView:weakSelf.graduationDate];
+            [CCViewPositioningHelper setOriginX:kDateLabelDefaultOriginX toView:weakSelf.status];
+        });
+        self.isEditable = NO;
+    }
+}
+
+- (void)willTransitionToState:(UITableViewCellStateMask)state
+{
+    static const NSInteger kDeleteConfirmationCellState = 3;
+    
+    [super willTransitionToState:state];
+    __weak CCEducationCell *weakSelf = self;
+    CGFloat alpha = (state == kDeleteConfirmationCellState) ? 0 : 1;
+    [UIView animateWithDuration:kAnimationDuration animations:^{
+        [weakSelf.graduationDate setAlpha:alpha];
+        [weakSelf.status setAlpha:alpha];
+    }];
 }
 
 + (CGFloat)heightForCellWithObject:(id)object
 {
-    CCEducation *education = object;
-    UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:15];
-    
-    CGSize requiredSize = [education.collegeName sizeWithFont:font constrainedToSize:CGSizeMake(230, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
-    
-    return MAX(60, requiredSize.height + 5);
+    return kDefaultCellHeight;
 }
-
-
 
 @end

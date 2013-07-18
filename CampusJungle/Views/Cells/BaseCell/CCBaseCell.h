@@ -11,8 +11,10 @@
 
 @interface CCBaseCell : UITableViewCell
 
-- (void)setSelectionColor;
+@property (nonatomic, strong) UIImageView *bottomDivider;
 
+- (void)addBottomDivider;
+- (void)setSelectionColor;
 + (CGFloat)heightForCellWithObject:(id)object;
 
 @end
