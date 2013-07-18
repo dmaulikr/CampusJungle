@@ -15,6 +15,7 @@
 #import "CCAddForumTransaction.h"
 #import "CCForumDetailsTransaction.h"
 #import "CCEditClassTransaction.h"
+#import "CCTimetableTransaction.h"
 
 @implementation CCClassAddedTransaction
 
@@ -50,12 +51,16 @@
     CCForumDetailsTransaction *forumDetailsTransaction = [CCForumDetailsTransaction new];
     forumDetailsTransaction.navigation = self.navigation;
     
+    CCTimetableTransaction *timetableTransaction = [CCTimetableTransaction new];
+    timetableTransaction.navigation = self.navigation;
+    
     classController.otherUserProfileTransaction = otherUserProfileTransaction;
     classController.newsFeedTransaction = self.inboxTransaction;
     classController.locationTransaction = locationsTransactions;
     classController.addLocationTransaction = addLocationTransaction;
     classController.addForumTransaction = addForumTransaction;
     classController.forumDetailsTransaction = forumDetailsTransaction;
+    classController.timetableTransaction = timetableTransaction;
     
     [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.joinClass duration:CCProgressHudsConstants.loaderDuration];
     UIViewController *viewController = [[self.navigation viewControllers] lastObject];

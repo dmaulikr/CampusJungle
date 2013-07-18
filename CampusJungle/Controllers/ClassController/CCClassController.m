@@ -104,11 +104,12 @@
     self.title = self.currentClass.subject;
 }
 
+#pragma mark -
+#pragma mark Actions
 - (IBAction)editButtonDidPressed
 {
     [self editClass];
 }
-
 
 - (void)editClass
 {
@@ -135,6 +136,11 @@
             [CCStandardErrorHandler showErrorWithError:error];
         }];
     }];
+}
+
+- (IBAction)timetableButtonDidPressed:(id)sender
+{
+    [self.timetableTransaction performWithObject:self.currentClass];
 }
 
 #pragma mark -

@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CCBaseViewController.h"
+#import "CCTableBaseViewController.h"
 
-@interface CCTimetableViewController : CCBaseViewController
+#import "CCTransactionWithObject.h"
+
+@class CCClass;
+
+@interface CCTimetableViewController : CCTableBaseViewController
+
+@property (nonatomic, strong) id<CCTransactionWithObject> editClassTransaction;
+
+- (void)setClassObject:(CCClass *)classObject;
 
 @end
