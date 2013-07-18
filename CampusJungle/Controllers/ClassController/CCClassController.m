@@ -30,6 +30,8 @@
 
 @property (nonatomic, strong) CCClass *currentClass;
 
+- (IBAction)editButtonDidPressed;
+
 @end
 
 @implementation CCClassController
@@ -53,7 +55,7 @@
 {
     [super viewDidLoad];
     [self loadInfo];
-    [self setRightNavigationItemWithTitle:@"Edit" selector:@selector(editClass)];
+    [self setRightNavigationItemWithTitle:@"Leave class" selector:@selector(leaveClassButtonDidPress)];
     [self setButtonsTextColorInView:self.headerView];
     CCClassmatesDataProvider *classmateDataprovider = [CCClassmatesDataProvider new];
     classmateDataprovider.classID = self.currentClass.classID;
@@ -101,6 +103,12 @@
     [self fillTimeTable];
     self.title = self.currentClass.subject;
 }
+
+- (IBAction)editButtonDidPressed
+{
+    [self editClass];
+}
+
 
 - (void)editClass
 {
