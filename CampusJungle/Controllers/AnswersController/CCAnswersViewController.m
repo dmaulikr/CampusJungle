@@ -10,7 +10,7 @@
 #import "CCNavigationBarViewHelper.h"
 #import "CCQuestion.h"
 
-#import "CCAnswersDataSource.h"
+#import "CCBaseReverseDataSource.h"
 #import "CCAnswersDataProvider.h"
 #import "CCAnswersApiProviderProtocol.h"
 #import "CCAnswerCell.h"
@@ -23,7 +23,7 @@
 
 @property (nonatomic, strong) CCQuestion *question;
 @property (nonatomic, strong) CCAnswersDataProvider *dataProvider;
-@property (nonatomic, strong) CCAnswersDataSource *dataSource;
+@property (nonatomic, strong) CCBaseReverseDataSource *dataSource;
 @property (nonatomic, strong) id<CCAnswersApiProviderProtocol> ioc_answersApiProvider;
 @property (nonatomic, strong) CCQuestionHeaderView *tableHeaderView;
 
@@ -35,22 +35,38 @@
 {
     [super viewDidLoad];
     [self setupTableView];
+    [self addObservers];
     
     [self setTitle:@"Answers"];
     self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHelper plusButtonWithTarget:self action:@selector(addAnswerButtonDidPressed:)];
 }
 
+- (void)dealloc
+{
+    [self removeObservers];
+}
+
 - (void)setupTableView
 {
-    self.tableHeaderView = [[CCQuestionHeaderView alloc] initWithQuestionText:self.question.text];
+    self.tableHeaderView = [[CCQuestionHeaderView alloc] initWithQuestionText:self.question.text bottomDividerVisibile:YES];
     self.mainTable.tableHeaderView = self.tableHeaderView;
     
-    self.dataSource = [CCAnswersDataSource new];
+    self.dataSource = [CCBaseReverseDataSource new];
     self.dataSource.delegate = self;
     
     self.dataProvider = [CCAnswersDataProvider new];
     self.dataProvider.questionId = self.question.questionId;
     [self configTableWithProvider:self.dataProvider cellClass:[CCAnswerCell class]];
+}
+
+- (void)addObservers
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadAnswers) name:CCNotificationsNames.reloadAnswers object:nil];
+}
+
+- (void)removeObservers
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:CCNotificationsNames.reloadAnswers object:nil];
 }
 
 #pragma mark -
@@ -60,14 +76,19 @@
     return NO;
 }
 
+- (void)reloadAnswers
+{
+    [self.dataProvider loadItems];
+}
+
 - (void)didSelectedCellWithObject:(id)cellObject
 {
-    // go comments
+    [self.showCommentsTransaction performWithObject:cellObject];
 }
 
 - (void)addAnswerButtonDidPressed:(id)sender
 {
-    
+    [self.addAnswerTransaction performWithObject:self.question];
 }
 
 #pragma mark -

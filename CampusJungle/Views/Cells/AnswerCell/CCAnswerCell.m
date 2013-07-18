@@ -11,10 +11,11 @@
 
 #import "CCUserSessionProtocol.h"
 #import "CCViewPositioningHelper.h"
+#import "CCDateFormatterProtocol.h"
 
 static const NSInteger kTextLabelOriginY = 55;
 static const NSInteger kDefaultTextLabelWidth = 286;
-static const NSInteger kBottomSpace = 25;
+static const NSInteger kBottomSpace = 35;
 static const CGFloat kMinCellHeight = 113;
 
 @interface CCAnswerCell ()
@@ -28,6 +29,7 @@ static const CGFloat kMinCellHeight = 113;
 @property (nonatomic, weak) IBOutlet UILabel *commentsCountLabel;
 
 @property (nonatomic, strong) id<CCUserSessionProtocol> ioc_userSessionProvider;
+@property (nonatomic, strong) id<CCDateFormatterProtocol> ioc_dateFormatterHelper;
 @property (nonatomic, strong) CCAnswer *answer;
 @property (nonatomic, weak) id<CCAnswerCellDelegate> delegate;
 
@@ -59,8 +61,8 @@ static const CGFloat kMinCellHeight = 113;
 - (void)fillLabels
 {
     [self.userNameLabel setText:[NSString stringWithFormat:@"%@ %@", self.answer.ownerFirstName, self.answer.ownerLastName]];
-    [self.createdDateLabel setText:[NSString stringWithFormat:@"%@", self.answer.createdDate]];
-    [self.answerTextLabel setText:self.answerTextLabel.text];
+    [self.createdDateLabel setText:[self.ioc_dateFormatterHelper formatedDateStringFromDate:self.answer.createdDate]];
+    [self.answerTextLabel setText:self.answer.text];
     [self.answerTextLabel sizeToFit];
     
     [self.likesNumberLabel setText:[NSString stringWithFormat:@"%i", self.answer.likesCount]];
@@ -83,7 +85,7 @@ static const CGFloat kMinCellHeight = 113;
 
 + (CGFloat)heightForCellWithObject:(CCAnswer *)answer
 {
-    UIFont *font = [UIFont fontWithName:@"Avenir-Medium" size:15];
+    UIFont *font = [UIFont fontWithName:@"Avenir-MediumOblique" size:15];
     CGSize requiredSize = [answer.text sizeWithFont:font constrainedToSize:CGSizeMake(kDefaultTextLabelWidth, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
     return MAX(kMinCellHeight, kTextLabelOriginY + requiredSize.height + kBottomSpace);
 }

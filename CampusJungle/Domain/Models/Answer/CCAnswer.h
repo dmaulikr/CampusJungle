@@ -22,4 +22,6 @@
 @property (nonatomic, assign) NSInteger likesCount;
 @property (nonatomic, assign) BOOL isLiked;
 
++ (CCAnswer *)answerWithText:(NSString *)text;
+
 @end

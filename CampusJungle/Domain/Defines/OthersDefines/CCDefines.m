@@ -61,7 +61,10 @@ const struct CCAPIDefines CCAPIDefines = {
     .deleteAnswer = @"/api/answers/%@",
     .likeAnswer = @"/api/answers/%@/like",
     .updateClass = @"/api/classes/%@",
-    .purchasedNotes = @"/api/users/me/purchases/notes"
+    .purchasedNotes = @"/api/users/me/purchases/notes",
+    .loadComments = @"/api/answers/%@/comments",
+    .postComment = @"/api/answers/%@/comments",
+    .deleteComment = @"/api/comments/%@",
 };
 
 const struct CCUserDefines CCUserDefines = {

@@ -11,6 +11,13 @@
 
 @implementation CCAnswer
 
++ (CCAnswer *)answerWithText:(NSString *)text
+{
+    CCAnswer *answer = [CCAnswer new];
+    [answer setText:text];
+    return answer;
+}
+
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager
 {
     [self configureRequestMapping:objectManager];
@@ -21,12 +28,12 @@
 {
     RKObjectMapping *paginationAnswersResponseMapping = [CCRestKitConfigurator paginationMapping];
     
-    RKObjectMapping *questionsMapping = [RKObjectMapping mappingForClass:[CCAnswer class]];
-    [questionsMapping addAttributeMappingsFromDictionary:[CCAnswer responseMappingDictionary]];
+    RKObjectMapping *answersMapping = [RKObjectMapping mappingForClass:[CCAnswer class]];
+    [answersMapping addAttributeMappingsFromDictionary:[CCAnswer responseMappingDictionary]];
     
     RKRelationshipMapping *relationShipResponseAnswersMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
                                                                                                            toKeyPath:CCResponseKeys.items
-                                                                                                         withMapping:questionsMapping];
+                                                                                                         withMapping:answersMapping];
     
     [paginationAnswersResponseMapping addPropertyMapping:relationShipResponseAnswersMapping];
     
