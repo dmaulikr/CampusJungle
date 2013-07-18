@@ -69,11 +69,10 @@
     [self.view addSubview:self.classContentTable.view];
 }
 
-
 - (void)setUpLeaveButton
 {
-    UIImage *leaveClassImage = [UIImage imageNamed:@"leaveClass"];
-    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, leaveClassImage.size.width + 10, leaveClassImage.size.height)];
+    UIImage *leaveClassImage = [UIImage imageNamed:@"leave_class_icon"];
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, leaveClassImage.size.width  - 10, leaveClassImage.size.height - 10)];
     [button setImage:leaveClassImage forState:UIControlStateNormal];
     [button setBackgroundImage:nil forState:UIControlStateNormal];
     [button setBackgroundImage:nil forState:UIControlStateHighlighted];
@@ -81,7 +80,6 @@
     self.navigationItem.rightBarButtonItem = barButtonItem;
     [button addTarget:self action:@selector(leaveClassButtonDidPress) forControlEvents:UIControlEventTouchUpInside];
 }
-
 
 - (void)fillTimeTable
 {
@@ -125,7 +123,6 @@
 {
     [self editClass];
 }
-
 
 - (void)editClass
 {
