@@ -10,7 +10,7 @@
 #import "CCUser.h"
 #import "CCTypesDefinition.h"
 
-@protocol CCAPIProviderProtocol <AppleGuiceInjectable,AppleGuiceSingleton>
+@protocol CCAPIProviderProtocol <AppleGuiceInjectable>
 
 - (void)putUser:(NSDictionary *)userInfo successHandler:(successHandlerWithRKResult)successHandler errorHandler:(RKErrorHandler)errorHandler;
 

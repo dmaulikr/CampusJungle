@@ -11,7 +11,7 @@
 #import "CCNoteUploadInfo.h"
 #import "CCTypesDefinition.h"
 
-@protocol CCNotesAPIProviderProtolcol  <AppleGuiceInjectable,AppleGuiceSingleton>
+@protocol CCNotesAPIProviderProtolcol  <AppleGuiceInjectable>
 
 - (void)postDropboxUploadInfo:(CCNoteUploadInfo *)noteInfo successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 
