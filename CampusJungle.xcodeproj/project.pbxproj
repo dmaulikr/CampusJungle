@@ -52,6 +52,8 @@
 		701254601797E3C80085247A /* CCAddCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7012545E1797E3C80085247A /* CCAddCommentViewController.m */; };
 		701254611797E3C80085247A /* CCAddCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7012545F1797E3C80085247A /* CCAddCommentViewController.xib */; };
 		701254651797E4FB0085247A /* CCAddCommentTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 701254641797E4FB0085247A /* CCAddCommentTransaction.m */; };
+		7012546A1797F7A70085247A /* CCTimetableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 701254681797F7A70085247A /* CCTimetableViewController.m */; };
+		7012546B1797F7A70085247A /* CCTimetableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 701254691797F7A70085247A /* CCTimetableViewController.xib */; };
 		7012AC7617954DB4002DA5E9 /* CCAnswer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7012AC7517954DB4002DA5E9 /* CCAnswer.m */; };
 		7012AC7A1795508E002DA5E9 /* CCAnswersApiProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7012AC791795508E002DA5E9 /* CCAnswersApiProvider.m */; };
 		7012AC80179558C9002DA5E9 /* CCAnswersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7012AC7E179558C9002DA5E9 /* CCAnswersViewController.m */; };
@@ -620,6 +622,9 @@
 		7012545F1797E3C80085247A /* CCAddCommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAddCommentViewController.xib; sourceTree = "<group>"; };
 		701254631797E4FB0085247A /* CCAddCommentTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddCommentTransaction.h; sourceTree = "<group>"; };
 		701254641797E4FB0085247A /* CCAddCommentTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddCommentTransaction.m; sourceTree = "<group>"; };
+		701254671797F7A70085247A /* CCTimetableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTimetableViewController.h; sourceTree = "<group>"; };
+		701254681797F7A70085247A /* CCTimetableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTimetableViewController.m; sourceTree = "<group>"; };
+		701254691797F7A70085247A /* CCTimetableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCTimetableViewController.xib; sourceTree = "<group>"; };
 		7012AC7417954DB4002DA5E9 /* CCAnswer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnswer.h; sourceTree = "<group>"; };
 		7012AC7517954DB4002DA5E9 /* CCAnswer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAnswer.m; sourceTree = "<group>"; };
 		7012AC781795508E002DA5E9 /* CCAnswersApiProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnswersApiProvider.h; sourceTree = "<group>"; };
@@ -1746,6 +1751,16 @@
 			path = AddCommentTransaction;
 			sourceTree = "<group>";
 		};
+		701254661797F7940085247A /* TimetableController */ = {
+			isa = PBXGroup;
+			children = (
+				701254671797F7A70085247A /* CCTimetableViewController.h */,
+				701254681797F7A70085247A /* CCTimetableViewController.m */,
+				701254691797F7A70085247A /* CCTimetableViewController.xib */,
+			);
+			path = TimetableController;
+			sourceTree = "<group>";
+		};
 		7012AC7317954DAB002DA5E9 /* Answer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1993,6 +2008,7 @@
 				70A29CCA178778AB001BC8DD /* StuffCreationController */,
 				70A29CCE178778AB001BC8DD /* StuffDetailsController */,
 				70A29CD2178778AB001BC8DD /* TabBarController */,
+				701254661797F7940085247A /* TimetableController */,
 				70A29CC7178778AB001BC8DD /* TableBasedController */,
 				D342BCD61796B1380034E88C /* UpdateClassController */,
 				70A29CD8178778AB001BC8DD /* UploadImagesController */,
@@ -5036,6 +5052,7 @@
 				7012544C1796F6FC0085247A /* CCAnswerHeader.xib in Resources */,
 				701254561796FA640085247A /* CCCommentCell.xib in Resources */,
 				701254611797E3C80085247A /* CCAddCommentViewController.xib in Resources */,
+				7012546B1797F7A70085247A /* CCTimetableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5353,6 +5370,7 @@
 				7012545A179700E60085247A /* CCDateFormatterHelper.m in Sources */,
 				701254601797E3C80085247A /* CCAddCommentViewController.m in Sources */,
 				701254651797E4FB0085247A /* CCAddCommentTransaction.m in Sources */,
+				7012546A1797F7A70085247A /* CCTimetableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
