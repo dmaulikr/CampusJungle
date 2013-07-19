@@ -13,7 +13,7 @@
 
 - (void)createClass:(CCClass *)class successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 - (void)getAllClasesSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
-- (void)getClassesOfCollege:(NSString*)collegeID successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)getClassesOfCollege:(NSString *)collegeID searchString:(NSString *)searchString successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 - (void)joinClass:(NSString*)classID SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 - (void)getClassesInCollegesWithSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 

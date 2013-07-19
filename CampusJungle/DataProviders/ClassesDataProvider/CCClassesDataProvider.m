@@ -7,15 +7,28 @@
 //
 
 #import "CCClassesDataProvider.h"
+#import "CCClassesApiProviderProtocol.h"
+#import "CCStandardErrorHandler.h"
+
+@interface CCClassesDataProvider ()
+
+@property (nonatomic, strong) id<CCClassesApiProviderProtocol> ioc_classesApiProvider;
+
+@end
 
 @implementation CCClassesDataProvider
 
-- (void) loadItems
+- (void)loadItems
 {
-    self.arrayOfItems = self.arrayOfClasses;
-    self.totalNumber = self.arrayOfItems.count;
-    [self.targetTable reloadData];
-    self.isEverythingLoaded = YES;
+    __weak CCClassesDataProvider *weakSelf = self;
+    [self.ioc_classesApiProvider getClassesOfCollege:self.collegeId searchString:self.searchQuery successHandler:^(id response) {
+        weakSelf.arrayOfItems = response;
+        weakSelf.totalNumber = [weakSelf.arrayOfItems count];
+        [weakSelf.targetTable reloadData];
+        weakSelf.isEverythingLoaded = YES;
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
 }
 
 @end
