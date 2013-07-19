@@ -24,8 +24,8 @@
 
 - (void)showWithTitle:(NSString *)title takePhotoButtonTitle:(NSString *)takePhotoButtonTitle takeFromGalleryButtonTitle:(NSString *)takeFromGalleryButtonTitle
 {
-    self.takePhotoButtonTitle = takePhotoButtonTitle ? takePhotoButtonTitle : @"Take a photo";
-    self.takeFromGalleryButtonTitle = takeFromGalleryButtonTitle ? takeFromGalleryButtonTitle : @"Take from gallery";
+    self.takePhotoButtonTitle = takePhotoButtonTitle ? takePhotoButtonTitle : CCAvatarActionSheetButtonsTitles.takePhotoButtonTitle;
+    self.takeFromGalleryButtonTitle = takeFromGalleryButtonTitle ? takeFromGalleryButtonTitle : CCAvatarActionSheetButtonsTitles.selectFromGalleryButtonTitle;
     self.actionSheet = [[CCBaseActionSheet alloc] initWithTitle:title buttonsArray:[self buttonsArray]];
     [self.actionSheet show];
 }
@@ -48,7 +48,7 @@
         [weakSelf.actionSheet dismiss];
         [self selectAvatarFromGallery];
     }];
-    CCShareItemButton *cancelButton = [CCShareItemButton buttonWithTitle:@"Cancel" actionBlock:^{
+    CCShareItemButton *cancelButton = [CCShareItemButton buttonWithTitle:CCAvatarActionSheetButtonsTitles.cancelButtonTitle actionBlock:^{
         [weakSelf.actionSheet dismiss];
     }];
 

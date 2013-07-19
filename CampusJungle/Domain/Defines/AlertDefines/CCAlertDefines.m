@@ -55,6 +55,8 @@ const struct CCAlertsTitles CCAlertsTitles = {
 };
 
 const struct CCValidationMessages CCValidationMessages = {
+    .emptyEmail = @"Email can't be blank",
+    .emptyPassword = @"Password can't be blank",
     .emailNotValid = @"Email is not valid",
     .passNotValid = @"Password is to short",
     .firstNameCantBeBlank = @"First name can't be blank",
@@ -63,12 +65,12 @@ const struct CCValidationMessages CCValidationMessages = {
     .fullPriceCantBeBlank = @"Full access price can't be blank",
     .fullPriceCantBeLowerThenPriceForReview = @"Full access price can't be lower than price for review",
     .descriptionCantBeBlank = @"Description can't be blank",
-    .filterCanNotBeEmpty = @"Filter can't be empty",
-    .emptyName = @"Name can't be empty",
-    .emptyDescription = @"Description can't be empty",
-    .emptyQuestionText = @"Question text can't be empty",
-    .emptyAnswerText = @"Answer text can't be empty",
-    .emptyCommentText = @"Comment text can't be empty",
+    .filterCanNotBeEmpty = @"Filter can't be blank",
+    .emptyName = @"Name can't be blank",
+    .emptyDescription = @"Description can't be blank",
+    .emptyQuestionText = @"Question text can't be blank",
+    .emptyAnswerText = @"Answer text can't be blank",
+    .emptyCommentText = @"Comment text can't be blank",
     .emptyUploadText = @"Place enter upload description",
     .emptyUploadName = @"Please enter upload name",
 };
