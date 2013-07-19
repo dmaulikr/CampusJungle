@@ -19,7 +19,7 @@
 #import "CCShareItemBlocksDefines.h"
 
 #import "CCStandardErrorHandler.h"
-#import "CCShareItemActionSheet.h"
+#import "CCBaseActionSheet.h"
 
 #import "CCLocationsApiProviderProtocol.h"
 
@@ -33,7 +33,7 @@
 
 @property (nonatomic, strong) id<CCLocationsApiProviderProtocol> ioc_locationsApiProvider;
 @property (nonatomic, strong) CLLocationManager *locationManager;
-@property (nonatomic, strong) CCShareItemActionSheet *shareItemActionSheet;
+@property (nonatomic, strong) CCBaseActionSheet *shareItemActionSheet;
 
 @end
 
@@ -110,7 +110,7 @@
 - (void)createShareItemActionSheet
 {
     NSArray *shareItemActionSheetButtons = [self shareItemActionSheetButtons];
-    self.shareItemActionSheet = [[CCShareItemActionSheet alloc] initWithTitle:@"Share Options" buttonsArray:shareItemActionSheetButtons];    
+    self.shareItemActionSheet = [[CCBaseActionSheet alloc] initWithTitle:@"Share Options" buttonsArray:shareItemActionSheetButtons];    
 }
 
 - (NSArray *)shareItemActionSheetButtons

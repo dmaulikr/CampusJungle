@@ -165,13 +165,13 @@
 		70066C7517996C6900B7A4E7 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70066C7317996C6900B7A4E7 /* Icon@2x.png */; };
 		70066C7B1799730800B7A4E7 /* CCCityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70066C7A1799730800B7A4E7 /* CCCityCell.xib */; };
 		70066C7D1799731F00B7A4E7 /* CCStateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70066C7C1799731F00B7A4E7 /* CCStateCell.xib */; };
+		70066C811799825E00B7A4E7 /* CCBaseActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 70066C801799825E00B7A4E7 /* CCBaseActionSheet.m */; };
+		70066C831799828E00B7A4E7 /* CCBaseActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70066C821799828D00B7A4E7 /* CCBaseActionSheet.xib */; };
 		700F942B178EA07C00A6FBBA /* CCAddLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9429178EA07C00A6FBBA /* CCAddLocationViewController.m */; };
 		700F942C178EA07C00A6FBBA /* CCAddLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 700F942A178EA07C00A6FBBA /* CCAddLocationViewController.xib */; };
 		700F9434178EBC5800A6FBBA /* CCPlacemarkAddressHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9433178EBC5800A6FBBA /* CCPlacemarkAddressHelper.m */; };
 		700F9439178ED4A800A6FBBA /* CCUserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9437178ED4A800A6FBBA /* CCUserProfile.m */; };
 		700F943A178ED4A800A6FBBA /* CCUserProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 700F9438178ED4A800A6FBBA /* CCUserProfile.xib */; };
-		700F943F178EDE1600A6FBBA /* CCShareItemActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F943D178EDE1600A6FBBA /* CCShareItemActionSheet.m */; };
-		700F9440178EDE1600A6FBBA /* CCShareItemActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 700F943E178EDE1600A6FBBA /* CCShareItemActionSheet.xib */; };
 		700F9444178EE98C00A6FBBA /* CCKeyboardHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9443178EE98C00A6FBBA /* CCKeyboardHelper.m */; };
 		700F9449178EECD600A6FBBA /* CCShareItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9448178EECD600A6FBBA /* CCShareItemButton.m */; };
 		700F945B178EFA6000A6FBBA /* CCSelectClassmatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9459178EFA6000A6FBBA /* CCSelectClassmatesViewController.m */; };
@@ -763,6 +763,9 @@
 		70066C7317996C6900B7A4E7 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		70066C7A1799730800B7A4E7 /* CCCityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCCityCell.xib; sourceTree = "<group>"; };
 		70066C7C1799731F00B7A4E7 /* CCStateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCStateCell.xib; sourceTree = "<group>"; };
+		70066C7F1799825E00B7A4E7 /* CCBaseActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBaseActionSheet.h; sourceTree = "<group>"; };
+		70066C801799825E00B7A4E7 /* CCBaseActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBaseActionSheet.m; sourceTree = "<group>"; };
+		70066C821799828D00B7A4E7 /* CCBaseActionSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCBaseActionSheet.xib; sourceTree = "<group>"; };
 		700F9428178EA07C00A6FBBA /* CCAddLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddLocationViewController.h; sourceTree = "<group>"; };
 		700F9429178EA07C00A6FBBA /* CCAddLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddLocationViewController.m; sourceTree = "<group>"; };
 		700F942A178EA07C00A6FBBA /* CCAddLocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAddLocationViewController.xib; sourceTree = "<group>"; };
@@ -771,9 +774,6 @@
 		700F9436178ED4A800A6FBBA /* CCUserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUserProfile.h; sourceTree = "<group>"; };
 		700F9437178ED4A800A6FBBA /* CCUserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUserProfile.m; sourceTree = "<group>"; };
 		700F9438178ED4A800A6FBBA /* CCUserProfile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCUserProfile.xib; sourceTree = "<group>"; };
-		700F943C178EDE1600A6FBBA /* CCShareItemActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCShareItemActionSheet.h; sourceTree = "<group>"; };
-		700F943D178EDE1600A6FBBA /* CCShareItemActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCShareItemActionSheet.m; sourceTree = "<group>"; };
-		700F943E178EDE1600A6FBBA /* CCShareItemActionSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCShareItemActionSheet.xib; sourceTree = "<group>"; };
 		700F9442178EE98C00A6FBBA /* CCKeyboardHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCKeyboardHelper.h; sourceTree = "<group>"; };
 		700F9443178EE98C00A6FBBA /* CCKeyboardHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCKeyboardHelper.m; sourceTree = "<group>"; };
 		700F9447178EECD600A6FBBA /* CCShareItemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCShareItemButton.h; sourceTree = "<group>"; };
@@ -1722,6 +1722,16 @@
 			path = AppIcons;
 			sourceTree = "<group>";
 		};
+		70066C7E1799824D00B7A4E7 /* BaseActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				70066C7F1799825E00B7A4E7 /* CCBaseActionSheet.h */,
+				70066C801799825E00B7A4E7 /* CCBaseActionSheet.m */,
+				70066C821799828D00B7A4E7 /* CCBaseActionSheet.xib */,
+			);
+			path = BaseActionSheet;
+			sourceTree = "<group>";
+		};
 		700F9427178EA06000A6FBBA /* AddLocationController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1750,16 +1760,6 @@
 				700F9438178ED4A800A6FBBA /* CCUserProfile.xib */,
 			);
 			path = UserProfileController;
-			sourceTree = "<group>";
-		};
-		700F943B178EDDF300A6FBBA /* ShareItemActionSheet */ = {
-			isa = PBXGroup;
-			children = (
-				700F943C178EDE1600A6FBBA /* CCShareItemActionSheet.h */,
-				700F943D178EDE1600A6FBBA /* CCShareItemActionSheet.m */,
-				700F943E178EDE1600A6FBBA /* CCShareItemActionSheet.xib */,
-			);
-			path = ShareItemActionSheet;
 			sourceTree = "<group>";
 		};
 		700F9441178EE97800A6FBBA /* KeyboardHelper */ = {
@@ -3258,7 +3258,7 @@
 				70A29E3517877D2B001BC8DD /* ActionSheetPickerCollegesDelegate */,
 				70A29E3817877D2B001BC8DD /* ActionSheetPickerDelegate */,
 				70A29E3B17877D2B001BC8DD /* AvatarSelectionActionSheet */,
-				700F943B178EDDF300A6FBBA /* ShareItemActionSheet */,
+				70066C7E1799824D00B7A4E7 /* BaseActionSheet */,
 			);
 			path = ActionSheets;
 			sourceTree = "<group>";
@@ -5200,7 +5200,6 @@
 				D3949719178D51BE00C39A7E /* CCPrivateMessageController.xib in Resources */,
 				700F942C178EA07C00A6FBBA /* CCAddLocationViewController.xib in Resources */,
 				700F943A178ED4A800A6FBBA /* CCUserProfile.xib in Resources */,
-				700F9440178EDE1600A6FBBA /* CCShareItemActionSheet.xib in Resources */,
 				700F945C178EFA6000A6FBBA /* CCSelectClassmatesViewController.xib in Resources */,
 				700F9461178EFA6F00A6FBBA /* CCSelectGroupsViewController.xib in Resources */,
 				D3DF8C3217900AAA00B072B7 /* CCMessageDetailsController.xib in Resources */,
@@ -5408,6 +5407,7 @@
 				70066C7B1799730800B7A4E7 /* CCCityCell.xib in Resources */,
 				70066C7D1799731F00B7A4E7 /* CCStateCell.xib in Resources */,
 				D342BD361799801D0034E88C /* CCInitialUserInfoController.xib in Resources */,
+				70066C831799828E00B7A4E7 /* CCBaseActionSheet.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5566,7 +5566,6 @@
 				700F942B178EA07C00A6FBBA /* CCAddLocationViewController.m in Sources */,
 				700F9434178EBC5800A6FBBA /* CCPlacemarkAddressHelper.m in Sources */,
 				700F9439178ED4A800A6FBBA /* CCUserProfile.m in Sources */,
-				700F943F178EDE1600A6FBBA /* CCShareItemActionSheet.m in Sources */,
 				700F9444178EE98C00A6FBBA /* CCKeyboardHelper.m in Sources */,
 				700F9449178EECD600A6FBBA /* CCShareItemButton.m in Sources */,
 				700F945B178EFA6000A6FBBA /* CCSelectClassmatesViewController.m in Sources */,
@@ -5735,6 +5734,7 @@
 				D342BD0D179933CA0034E88C /* CCProfessorUploadsAPIProvider.m in Sources */,
 				70066B3D1799381600B7A4E7 /* CCButtonsHelper.m in Sources */,
 				D342BD351799801D0034E88C /* CCInitialUserInfoController.m in Sources */,
+				70066C811799825E00B7A4E7 /* CCBaseActionSheet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

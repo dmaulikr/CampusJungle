@@ -10,8 +10,10 @@
 #import "CCUserSessionProtocol.h"
 #import "CCButtonsHelper.h"
 #import "CCAPIProviderProtocol.h"
+#import "NSString+CJStringValidator.h"
+#import "CCAvatarSelectionActionSheet.h"
 
-@interface CCInitialUserInfoController ()
+@interface CCInitialUserInfoController ()<CCAvatarSelectionProtocol>
 
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
 @property (nonatomic, weak) IBOutlet UITextField *firstNameFiled;
@@ -22,6 +24,7 @@
 @property (nonatomic, strong) CCUser *currentUser;
 @property (nonatomic) BOOL isAvatarChanged;
 @property (nonatomic, strong) id <CCAPIProviderProtocol> ioc_apiProvider;
+@property (nonatomic, strong) CCAvatarSelectionActionSheet *avatarSelectionSheet;
 
 - (IBAction)avatarButtonDidPressed;
 
@@ -35,7 +38,9 @@
     [self setUpInfo];
     [self setRightNavigationItemWithTitle:@"Done" selector:@selector(done)];
     [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:[[UIView alloc] init]]];
-
+    self.avatarSelectionSheet = [CCAvatarSelectionActionSheet new];
+    self.avatarSelectionSheet.delegate = self;
+    self.title = @"User Info";
 }
 
 - (void)setUpInfo
@@ -65,11 +70,14 @@
         if(!self.currentUser.avatar.length){
             self.currentUser.avatar = nil;
         }
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [self.ioc_apiProvider updateUser:self.currentUser
                          withAvatarImage:avatar successHandler:^(CCUser *result) {
                              [self.ioc_userSession setCurrentUser:result];
                              [self.loginTrnasaction perform];
+                             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                          } errorHandler:^(NSError *error) {
+                             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                              [CCStandardErrorHandler showErrorWithError:error];
                          }];
     }
@@ -78,11 +86,30 @@
 - (IBAction)avatarButtonDidPressed
 {
 
+    [self.avatarSelectionSheet showWithTitle:@"Select Photo" takePhotoButtonTitle:nil takeFromGalleryButtonTitle:nil];
 }
 
 - (BOOL)validate
 {
+    if (![self.firstNameFiled.text isMinLength:1]) {
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:CCAlertsMessages.firstNameNotValid];
+        return NO;
+    }
+    if (![self.lastNameField.text isMinLength:1]) {
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:CCAlertsMessages.lastNameNotValid];
+        return NO;
+    }
+    if (![self.emailField.text isEmail]) {
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:CCAlertsMessages.emailNotValid];
+        return NO;
+    }
     return YES;
+}
+
+- (void)didSelectAvatar:(UIImage *)avatar
+{
+    self.avatar.image = avatar;
+    self.isAvatarChanged = YES;
 }
 
 @end

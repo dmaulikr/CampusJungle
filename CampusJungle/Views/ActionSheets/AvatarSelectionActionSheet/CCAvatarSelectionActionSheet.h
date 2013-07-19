@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "CCAvatarSelectionProtocol.h"
 
-@interface CCAvatarSelectionActionSheet : NSObject<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface CCAvatarSelectionActionSheet : NSObject <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property (nonatomic, strong) UIViewController <CCAvatarSelectionProtocol> *delegate;
-@property (nonatomic, strong) NSString *title;
 
-- (void)selectAvatar;
+- (void)showWithTitle:(NSString *)title takePhotoButtonTitle:(NSString *)takePhotoButtonTitle takeFromGalleryButtonTitle:(NSString *)takeFromGalleryButtonTitle;
+- (void)dismiss;
 
 @end

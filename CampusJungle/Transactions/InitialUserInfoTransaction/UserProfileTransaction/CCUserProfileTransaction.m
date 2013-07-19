@@ -32,7 +32,7 @@
     userProfileController.logoutTransaction = logoutTransaction;
     
     userProfileController.arrayOfEducations = [NSMutableArray new];
-    
+    userProfileController.sidePanelController = self.menuController;
     UINavigationController *centralNavigation = [[UINavigationController alloc] initWithRootViewController:userProfileController];
     
     self.menuController.centerPanel = centralNavigation;

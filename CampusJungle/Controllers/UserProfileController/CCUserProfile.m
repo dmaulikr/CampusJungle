@@ -40,6 +40,11 @@
 
 @property (nonatomic, weak) IBOutlet UIButton *facebookButton;
 
+@property (nonatomic, weak) IBOutlet UIButton *logoutButton;
+@property (nonatomic, weak) IBOutlet UIButton *changePassButton;
+@property (nonatomic, weak) IBOutlet UIButton *myNotesButton;
+@property (nonatomic, weak) IBOutlet UIButton *mystuffButton;
+
 @property (nonatomic, strong) CCEducationsDataProvider *dataProvider;
 
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
@@ -103,8 +108,7 @@
     
     [self setButtonsTextColorInView:self.tableFooterView];
     [self setButtonsTextColorInView:self.tableHeaderView];
-    [self.avatarButton setBackgroundImage:[UIImage imageNamed:@"avatar_placeholder"] forState:UIControlStateNormal];
-    [self.avatarButton setBackgroundImage:[UIImage imageNamed:@"avatar_placeholder"] forState:UIControlStateHighlighted];
+    [CCButtonsHelper removeBackgroundImageInButton:self.avatarButton];
 }
 
 - (void)setupImageViews
@@ -116,7 +120,6 @@
 {
     self.avatarSelectionSheet = [CCAvatarSelectionActionSheet new];
     self.avatarSelectionSheet.delegate = self;
-    self.avatarSelectionSheet.title = @"Select Avatar";
 }
 
 - (void)setupUserInfo
@@ -250,7 +253,7 @@
 - (IBAction)avatarDidPressed
 {
     if (self.isEditable){
-        [self.avatarSelectionSheet selectAvatar];
+        [self.avatarSelectionSheet showWithTitle:@"Select Photo" takePhotoButtonTitle:nil takeFromGalleryButtonTitle:nil];
     }
 }
 
@@ -306,6 +309,8 @@
 #pragma mark Profile Edit Mode Methods
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated
 {
+
+    self.sidePanelController.allowLeftSwipe = !editing;
     [super setEditing:editing animated:animated];
     float duration = animated ? animationDuration : 0;
     
@@ -341,6 +346,11 @@
     self.lastNameLabel.alpha = 0;
     self.emailLabel.alpha = 0;
     
+    self.myNotesButton.alpha = 0;
+    self.mystuffButton.alpha = 0;
+    self.logoutButton.alpha = 0;
+    self.changePassButton.alpha = 0;
+    
     self.firstNameTextField.alpha = 1;
     self.lastNameTextField.alpha = 1;
     self.emailTextField.alpha = 1;
@@ -358,6 +368,11 @@
     self.firstNameLabel.alpha = 1;
     self.lastNameLabel.alpha = 1;
     self.emailLabel.alpha = 1;
+    
+    self.myNotesButton.alpha = 1;
+    self.mystuffButton.alpha = 1;
+    self.logoutButton.alpha = 1;
+    self.changePassButton.alpha = 1;
     
     self.firstNameTextField.alpha = 0;
     self.lastNameTextField.alpha = 0;

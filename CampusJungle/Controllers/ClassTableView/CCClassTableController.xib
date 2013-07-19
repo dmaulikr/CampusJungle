@@ -305,10 +305,10 @@
 						<int key="objectID">4</int>
 						<reference key="object" ref="1029920628"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="161219126"/>
 							<reference ref="49927648"/>
 							<reference ref="497133059"/>
 							<reference ref="637381226"/>
+							<reference ref="161219126"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Search Header View</string>

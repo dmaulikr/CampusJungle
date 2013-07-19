@@ -1,12 +1,13 @@
 //
-//  CCShareItemActionSheet.m
+//  CCBaseActionSheet.m
 //  CampusJungle
 //
-//  Created by Yury Grinenko on 11.07.13.
+//  Created by Yury Grinenko on 19.07.13.
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCShareItemActionSheet.h"
+#import "CCBaseActionSheet.h"
+
 #import "CCViewPositioningHelper.h"
 
 static const CGFloat kAnimationDuration = 0.3;
@@ -14,26 +15,26 @@ static const CGFloat kButtonHeight = 38.0;
 static const CGFloat kHorizontalIndent = 25.0;
 static const CGFloat kVerticalIndent = 10.0;
 
-@interface CCShareItemActionSheet ()
+@interface CCBaseActionSheet ()
 
-@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
-@property (nonatomic, weak) IBOutlet UIView *buttonsContainerView;
-@property (nonatomic, weak) IBOutlet UIImageView *backgroundImageView;
+@property (nonatomic, strong) IBOutlet UILabel *sheetTitleLabel;
+@property (nonatomic, strong) IBOutlet UIView *buttonsContainerView;
+@property (nonatomic, strong) IBOutlet UIImageView *backgroundImageView;
 
 @property (nonatomic, strong) UIView *screenBlockingView;
-
+@property (nonatomic, strong) NSString *titleString;
 @property (nonatomic, strong) NSArray *buttonsArray;
 
 @end
 
-@implementation CCShareItemActionSheet
+@implementation CCBaseActionSheet
 
 - (id)initWithTitle:(NSString *)title buttonsArray:(NSArray *)buttonsArray
 {
     self = [super init];
     if (self) {
+        [self setTitleString:title];
         [self setButtonsArray:buttonsArray];
-        [self.titleLabel setText:title];
     }
     return self;
 }
@@ -44,6 +45,7 @@ static const CGFloat kVerticalIndent = 10.0;
 {
     [self addScreenBlockingView];
     [[self keyWindow] addSubview:self.view];
+    [self.sheetTitleLabel setText:self.titleString];
     [self layoutButtons];
     [self calculateSelfSize];
     [self makeAppearAnimation];
@@ -58,7 +60,6 @@ static const CGFloat kVerticalIndent = 10.0;
         [self.screenBlockingView removeFromSuperview];
         self.buttonsArray = nil;
     });
-
 }
 
 - (void)addScreenBlockingView
