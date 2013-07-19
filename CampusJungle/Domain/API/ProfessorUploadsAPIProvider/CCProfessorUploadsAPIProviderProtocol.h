@@ -18,12 +18,12 @@
                    successHandler:(successWithObject)successHandler
                      errorHandler:(errorHandler)errorHandler;
 
-- (void)postQuestion:(CCProfessorUpload *)profesorUploads
+- (void)postUploadInfo:(CCProfessorUpload *)profesorUploads
       ForClassWithId:(NSString *)classId
       successHandler:(successHandlerWithRKResult)successHandler
         errorHandler:(errorHandler)errorHandler;
 
-- (void)deleteQuestion:(CCProfessorUpload *)profesorUploads
+- (void)deleteUploadInfo:(CCProfessorUpload *)profesorUploads
         successHandler:(successHandlerWithRKResult)successHandler
           errorHandler:(errorHandler)errorHandler;
 

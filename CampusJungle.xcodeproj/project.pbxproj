@@ -246,8 +246,6 @@
 		70A29CE3178778AB001BC8DD /* CCCitySelectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29C3C178778AB001BC8DD /* CCCitySelectionController.xib */; };
 		70A29CE4178778AB001BC8DD /* CCClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29C3F178778AB001BC8DD /* CCClassController.m */; };
 		70A29CE5178778AB001BC8DD /* CCClassController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29C40178778AB001BC8DD /* CCClassController.xib */; };
-		70A29CE6178778AB001BC8DD /* CCClassesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29C43178778AB001BC8DD /* CCClassesController.m */; };
-		70A29CE7178778AB001BC8DD /* CCClassesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29C44178778AB001BC8DD /* CCClassesController.xib */; };
 		70A29CE8178778AB001BC8DD /* CCClassesOfCollegeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29C47178778AB001BC8DD /* CCClassesOfCollegeController.m */; };
 		70A29CE9178778AB001BC8DD /* CCClassesOfCollegeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29C48178778AB001BC8DD /* CCClassesOfCollegeController.xib */; };
 		70A29CEA178778AB001BC8DD /* CCCollegeSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29C4B178778AB001BC8DD /* CCCollegeSearchController.m */; };
@@ -390,7 +388,6 @@
 		70B2D19217944894001B0C2C /* CCAddClassTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0D917944894001B0C2C /* CCAddClassTransaction.m */; };
 		70B2D19317944894001B0C2C /* CCAddForumTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0DC17944894001B0C2C /* CCAddForumTransaction.m */; };
 		70B2D19417944895001B0C2C /* CCAddLocationTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0DF17944894001B0C2C /* CCAddLocationTransaction.m */; };
-		70B2D19517944895001B0C2C /* CCAllClassesTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0E217944894001B0C2C /* CCAllClassesTransaction.m */; };
 		70B2D19617944895001B0C2C /* CCApplyFiltersTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0E517944894001B0C2C /* CCApplyFiltersTransaction.m */; };
 		70B2D19717944895001B0C2C /* CCBackToListTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0E817944894001B0C2C /* CCBackToListTransaction.m */; };
 		70B2D19817944895001B0C2C /* CCBackToNoteTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0EB17944894001B0C2C /* CCBackToNoteTransaction.m */; };
@@ -903,9 +900,6 @@
 		70A29C3E178778AB001BC8DD /* CCClassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassController.h; sourceTree = "<group>"; };
 		70A29C3F178778AB001BC8DD /* CCClassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassController.m; sourceTree = "<group>"; };
 		70A29C40178778AB001BC8DD /* CCClassController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCClassController.xib; sourceTree = "<group>"; };
-		70A29C42178778AB001BC8DD /* CCClassesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassesController.h; sourceTree = "<group>"; };
-		70A29C43178778AB001BC8DD /* CCClassesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassesController.m; sourceTree = "<group>"; };
-		70A29C44178778AB001BC8DD /* CCClassesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCClassesController.xib; sourceTree = "<group>"; };
 		70A29C46178778AB001BC8DD /* CCClassesOfCollegeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassesOfCollegeController.h; sourceTree = "<group>"; };
 		70A29C47178778AB001BC8DD /* CCClassesOfCollegeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassesOfCollegeController.m; sourceTree = "<group>"; };
 		70A29C48178778AB001BC8DD /* CCClassesOfCollegeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCClassesOfCollegeController.xib; sourceTree = "<group>"; };
@@ -1178,8 +1172,6 @@
 		70B2D0DC17944894001B0C2C /* CCAddForumTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddForumTransaction.m; sourceTree = "<group>"; };
 		70B2D0DE17944894001B0C2C /* CCAddLocationTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddLocationTransaction.h; sourceTree = "<group>"; };
 		70B2D0DF17944894001B0C2C /* CCAddLocationTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddLocationTransaction.m; sourceTree = "<group>"; };
-		70B2D0E117944894001B0C2C /* CCAllClassesTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAllClassesTransaction.h; sourceTree = "<group>"; };
-		70B2D0E217944894001B0C2C /* CCAllClassesTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAllClassesTransaction.m; sourceTree = "<group>"; };
 		70B2D0E417944894001B0C2C /* CCApplyFiltersTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCApplyFiltersTransaction.h; sourceTree = "<group>"; };
 		70B2D0E517944894001B0C2C /* CCApplyFiltersTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCApplyFiltersTransaction.m; sourceTree = "<group>"; };
 		70B2D0E717944894001B0C2C /* CCBackToListTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBackToListTransaction.h; sourceTree = "<group>"; };
@@ -2303,7 +2295,6 @@
 				70A29C39178778AB001BC8DD /* CitySelectionController */,
 				70A29C3D178778AB001BC8DD /* ClassController */,
 				D39496FB178C27DE00C39A7E /* ClassTableView */,
-				70A29C41178778AB001BC8DD /* ClassesController */,
 				70A29C45178778AB001BC8DD /* ClassesOfCollegeController */,
 				D39496F4178C27B100C39A7E /* ClassTabbarController */,
 				70A29C49178778AB001BC8DD /* CollegeSearchController */,
@@ -2384,16 +2375,6 @@
 				70A29C40178778AB001BC8DD /* CCClassController.xib */,
 			);
 			path = ClassController;
-			sourceTree = "<group>";
-		};
-		70A29C41178778AB001BC8DD /* ClassesController */ = {
-			isa = PBXGroup;
-			children = (
-				70A29C42178778AB001BC8DD /* CCClassesController.h */,
-				70A29C43178778AB001BC8DD /* CCClassesController.m */,
-				70A29C44178778AB001BC8DD /* CCClassesController.xib */,
-			);
-			path = ClassesController;
 			sourceTree = "<group>";
 		};
 		70A29C45178778AB001BC8DD /* ClassesOfCollegeController */ = {
@@ -3602,7 +3583,6 @@
 				70B2D0DD17944894001B0C2C /* AddLocationTransaction */,
 				D342BD001798192D0034E88C /* AddProfessorUploadsTransaction */,
 				70B2D1CF179448A9001B0C2C /* AddQuestionTransaction */,
-				70B2D0E017944894001B0C2C /* AllClassesTransaction */,
 				7012AC8217955A41002DA5E9 /* AnswersTransaction */,
 				70B2D0E317944894001B0C2C /* ApplyFiltersTransaction */,
 				D342BCDA1796C2640034E88C /* BackTransactionAfterClassUpdate */,
@@ -3692,15 +3672,6 @@
 				70B2D0DF17944894001B0C2C /* CCAddLocationTransaction.m */,
 			);
 			path = AddLocationTransaction;
-			sourceTree = "<group>";
-		};
-		70B2D0E017944894001B0C2C /* AllClassesTransaction */ = {
-			isa = PBXGroup;
-			children = (
-				70B2D0E117944894001B0C2C /* CCAllClassesTransaction.h */,
-				70B2D0E217944894001B0C2C /* CCAllClassesTransaction.m */,
-			);
-			path = AllClassesTransaction;
 			sourceTree = "<group>";
 		};
 		70B2D0E317944894001B0C2C /* ApplyFiltersTransaction */ = {
@@ -5154,7 +5125,6 @@
 				70A29CE1178778AB001BC8DD /* CCBaseViewController.xib in Resources */,
 				70A29CE3178778AB001BC8DD /* CCCitySelectionController.xib in Resources */,
 				70A29CE5178778AB001BC8DD /* CCClassController.xib in Resources */,
-				70A29CE7178778AB001BC8DD /* CCClassesController.xib in Resources */,
 				70A29CE9178778AB001BC8DD /* CCClassesOfCollegeController.xib in Resources */,
 				70A29CEC178778AB001BC8DD /* CCCollegeSelectionController.xib in Resources */,
 				70A29CEE178778AB001BC8DD /* CCCollegesListController.xib in Resources */,
@@ -5450,7 +5420,6 @@
 				70A29CE0178778AB001BC8DD /* CCBaseViewController.m in Sources */,
 				70A29CE2178778AB001BC8DD /* CCCitySelectionController.m in Sources */,
 				70A29CE4178778AB001BC8DD /* CCClassController.m in Sources */,
-				70A29CE6178778AB001BC8DD /* CCClassesController.m in Sources */,
 				70A29CE8178778AB001BC8DD /* CCClassesOfCollegeController.m in Sources */,
 				70A29CEA178778AB001BC8DD /* CCCollegeSearchController.m in Sources */,
 				70A29CEB178778AB001BC8DD /* CCCollegeSelectionController.m in Sources */,
@@ -5589,7 +5558,6 @@
 				70B2D19217944894001B0C2C /* CCAddClassTransaction.m in Sources */,
 				70B2D19317944894001B0C2C /* CCAddForumTransaction.m in Sources */,
 				70B2D19417944895001B0C2C /* CCAddLocationTransaction.m in Sources */,
-				70B2D19517944895001B0C2C /* CCAllClassesTransaction.m in Sources */,
 				70B2D19617944895001B0C2C /* CCApplyFiltersTransaction.m in Sources */,
 				70B2D19717944895001B0C2C /* CCBackToListTransaction.m in Sources */,
 				70B2D19817944895001B0C2C /* CCBackToNoteTransaction.m in Sources */,

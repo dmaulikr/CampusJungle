@@ -25,7 +25,7 @@
     [self loadItemsWithParams:params path:path successHandler:successHandler errorHandler:errorHandler];
 }
 
-- (void)postQuestion:(CCProfessorUpload *)profesorUploads
+- (void)postUploadInfo:(CCProfessorUpload *)profesorUploads
       ForClassWithId:(NSString *)classId
       successHandler:(successHandlerWithRKResult)successHandler
         errorHandler:(errorHandler)errorHandler
@@ -40,7 +40,7 @@
                     progress:^(double a){}];
 }
 
-- (void)deleteQuestion:(CCProfessorUpload *)profesorUploads
+- (void)deleteUploadInfo:(CCProfessorUpload *)profesorUploads
         successHandler:(successHandlerWithRKResult)successHandler
           errorHandler:(errorHandler)errorHandler
 {

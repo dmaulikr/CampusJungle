@@ -43,8 +43,8 @@
 + (void)configureQuestionsRequest:(RKObjectManager *)objectManager
 {
     RKObjectMapping *questionMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
-    [questionMapping addAttributeMappingsFromDictionary:[self requestMappingDictionary]];
-    RKRequestDescriptor *questionRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:questionMapping objectClass:[self class] rootKeyPath:nil];
+    [questionMapping addAttributeMappingsFromDictionary:[CCProfessorUpload requestMappingDictionary]];
+    RKRequestDescriptor *questionRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:questionMapping objectClass:[CCProfessorUpload class] rootKeyPath:nil];
     [objectManager addRequestDescriptor:questionRequestDescriptor];
 }
 
@@ -53,6 +53,7 @@
     return @{
              @"id" : @"uploadId",
              @"text" : @"text",
+             @"name" : @"name",
              @"owner_id" : @"ownerID",
              @"attachment" : @"attachment",
              @"answers_count" : @"answersCount",
@@ -67,6 +68,7 @@
 {
     return @{
              @"text" : @"text",
+             @"name" : @"name",
              @"arrayOfImageUrls" : @"images_urls",
              @"pdfUrl" : @"pdf_url",
              };
