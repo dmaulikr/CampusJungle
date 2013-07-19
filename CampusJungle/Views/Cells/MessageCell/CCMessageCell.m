@@ -31,7 +31,6 @@
     
     self.timeLabel.text = [self.ioc_dateFormatterHelper formatedDateStringFromDate:[(CCMessage *)cellObject createdAt]];
     self.userName.text = [NSString stringWithFormat:@"%@ %@", [(CCMessage *)cellObject userFirstName],[(CCMessage *)cellObject userLastName]];
-    [CCViewPositioningHelper setOriginX:5 toView:self.messageLabel];
     [self setSelectionColor];
 }
 

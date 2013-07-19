@@ -17,6 +17,12 @@
 
 @implementation CCDailyTimetableCell
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    [self addBottomDivider];
+}
+
 - (void)setDay:(NSString *)day time:(NSString *)time
 {
     [self.dayLabel setText:day];

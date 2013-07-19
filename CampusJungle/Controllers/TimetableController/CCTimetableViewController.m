@@ -26,11 +26,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self setTitle:@"Timetable"];
+    [self setRightNavigationItemWithTitle:@"Edit" selector:@selector(editButtonDidPressed:)];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     [self setupLabels];
     [self calculateTimetable];
     [self.mainTable reloadData];
-    
-    [self setTitle:@"Timetable"];
 }
 
 - (void)setupLabels
@@ -60,6 +66,20 @@
     }
 }
 
+#pragma mark -
+#pragma mark Actions
+- (void)editButtonDidPressed:(id)sender
+{
+    [self.editClassTransaction performWithObject:self.classObject];
+}
+
+#pragma mark -
+#pragma mark CCClassUpdateProtocol
+- (void)updateWithClass:(CCClass *)classObject
+{
+    self.classObject = classObject;
+    [self.previousController updateWithClass:classObject];
+}
 
 #pragma mark -
 #pragma mark UITableViewDataSource

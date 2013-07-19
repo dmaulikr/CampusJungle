@@ -12,8 +12,9 @@
 #import "CCTableBaseViewController.h"
 
 @class CCClass;
+@protocol CCClassUpdateProtocol;
 
-@interface CCClassController : CCBaseViewController
+@interface CCClassController : CCBaseViewController <CCClassUpdateProtocol>
 
 @property (nonatomic, strong) id <CCTransactionWithObject> classMarketTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> otherUserProfileTransaction;
@@ -28,7 +29,5 @@
 
 - (id)initWithClass:(CCClass *)classObject;
 - (IBAction)classMarketButtonDidPressed;
-
-- (void)updateWithClass:(CCClass *)updatedClass;
 
 @end

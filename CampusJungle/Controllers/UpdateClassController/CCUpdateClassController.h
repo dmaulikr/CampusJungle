@@ -12,6 +12,6 @@
 @interface CCUpdateClassController : CCCreateClassController
 
 @property (nonatomic, strong) CCClass *currentClass;
-@property (nonatomic, strong) id <CCTransactionWithObject> backToClassScreenTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> backTransaction;
 
 @end
