@@ -8,32 +8,43 @@
 
 #import "CCCityCell.h"
 #import "CCCity.h"
+#import "CCViewPositioningHelper.h"
+
+static const NSInteger kMinCellHeight = 44;
+static const NSInteger kDefaultTextLabelWidth = 293;
+static const NSInteger kTextLabelOriginY = 10;
+static const NSInteger kBottomSpace = 5;
 
 @interface CCCityCell()
 
-@property (nonatomic, strong) UILabel *label;
+@property (nonatomic, weak) IBOutlet UILabel *cityNameLabel;
 
 @end
 
 @implementation CCCityCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (void)awakeFromNib
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        self.label = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 300, 30)];
-        self.label.backgroundColor = [UIColor clearColor];
-        self.label.textColor = [UIColor colorWithRed:130./255 green:65./255 blue:0 alpha:1];
-        [self addSubview:self.label];
-        [self setSelectionColor];
-    }
-    return self;
+    [super awakeFromNib];
+    [self setSelectionColor];
+}
+
+- (void)prepareForReuse
+{
+    [CCViewPositioningHelper setWidth:kDefaultTextLabelWidth toView:self.cityNameLabel];
 }
 
 - (void)setCellObject:(id)cellObject
 {
     _cellObject = cellObject;
-    self.label.text = [(CCCity *)cellObject name];
+    self.cityNameLabel.text = [(CCCity *)cellObject name];
+}
+
++ (CGFloat)heightForCellWithObject:(CCCity *)city
+{
+    UIFont *font = [UIFont fontWithName:@"Avenir-Heavy" size:15];
+    CGSize requiredSize = [city.name sizeWithFont:font constrainedToSize:CGSizeMake(kDefaultTextLabelWidth, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
+    return MAX(kMinCellHeight, requiredSize.height + kTextLabelOriginY + kBottomSpace);
 }
 
 @end

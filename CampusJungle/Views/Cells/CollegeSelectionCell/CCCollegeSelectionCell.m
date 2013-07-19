@@ -8,6 +8,12 @@
 
 #import "CCCollegeSelectionCell.h"
 #import "CCCollege.h"
+#import "CCViewPositioningHelper.h"
+
+static const NSInteger kMinCellHeight = 44;
+static const NSInteger kDefaultTextLabelWidth = 293;
+static const NSInteger kTextLabelOriginY = 10;
+static const NSInteger kBottomSpace = 5;
 
 @interface CCCollegeSelectionCell()
 
@@ -18,20 +24,29 @@
 
 @implementation CCCollegeSelectionCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (void)awakeFromNib
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        self = [[NSBundle mainBundle] loadNibNamed:@"CCCollegeSelectionCell" owner:self options:nil][0];
-        [self setSelectionColor];
-    }
-    return self;
+    [super awakeFromNib];
+    [self setSelectionColor];
+}
+
+- (void)prepareForReuse
+{
+    [CCViewPositioningHelper setWidth:kDefaultTextLabelWidth toView:self.collegeName];
 }
 
 - (void)setCellObject:(id)cellObject
 {
     _cellObject = cellObject;
     self.collegeName.text = [(CCCollege *)cellObject name];
+    [self.collegeName sizeToFit];
+}
+
++ (CGFloat)heightForCellWithObject:(CCCollege *)college
+{
+    UIFont *font = [UIFont fontWithName:@"Avenir-Heavy" size:15];
+    CGSize requiredSize = [college.name sizeWithFont:font constrainedToSize:CGSizeMake(kDefaultTextLabelWidth, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
+    return MAX(kMinCellHeight, requiredSize.height + kTextLabelOriginY + kBottomSpace);
 }
 
 @end
