@@ -76,6 +76,7 @@
 
 - (void)loadUserClasses
 {
+    [self setupLabels];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     __weak CCSideMenuController *weakSelf = self;
     [self.ioc_classesAPI getClassesInCollegesWithSuccessHandler:^(NSArray *educationsArray) {

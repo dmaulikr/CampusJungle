@@ -386,10 +386,10 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self.ioc_apiProvider updateUser:updatedUser withAvatarImage:avatarImage successHandler:^(CCUser *user) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        successHandler();
         self.isNeedToUploadAvatar = NO;
         [self saveUser:user];
         [self setupUserInfo];
+        successHandler();
     } errorHandler:^(NSError *error) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [CCStandardErrorHandler showErrorWithError:error];
