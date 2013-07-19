@@ -14,6 +14,7 @@
 #import "CCMessagesDataProvider.h"
 #import "CCMessageCell.h"
 #import "CCOfferCell.h"
+#import "CCUserSessionProtocol.h"
 
 #define MessagesState 0
 #define InvtesState 1
@@ -22,6 +23,7 @@
 @interface CCInboxController ()
 
 - (IBAction)segmentedControlDidChangeValue:(UISegmentedControl *)control;
+@property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
 
 @end
 
@@ -36,7 +38,9 @@
                                      @"personal" : @"YES",
                                      @"direction" : @"received"
                                      };
-    [self configTableWithProvider:messagesDataProvider cellClass:[CCMessageCell class] cellReuseIdentifier:NSStringFromClass([CCMessageCell class])];
+    if([self.ioc_userSession currentUser]){
+        [self configTableWithProvider:messagesDataProvider cellClass:[CCMessageCell class] cellReuseIdentifier:NSStringFromClass([CCMessageCell class])];
+    }
     self.mainTable.tableFooterView = [UIView new];
 }
 

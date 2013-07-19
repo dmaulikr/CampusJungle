@@ -13,6 +13,8 @@
 #import "CCQuestionsApiProviderProtocol.h"
 #import "CCUploadProcessManagerProtocol.h"
 #import "CCUserSessionProtocol.h"
+#import "CCProfessorUploadsAPIProviderProtocol.h"
+#import "CCStandardErrorHandler.h"
 
 @interface CCAddProfessorUploadsController ()
 
@@ -21,6 +23,7 @@
 @property (nonatomic, weak) IBOutlet UITextField *uploadNameLabel;
 @property (nonatomic, strong) id <CCQuestionsApiProviderProtocol> ioc_questionAPIProvider;
 @property (nonatomic, strong) id <CCUploadProcessManagerProtocol> ioc_uploadManager;
+@property (nonatomic, strong) id <CCProfessorUploadsAPIProviderProtocol> ioc_professorAPIProvider;
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
 
 - (IBAction)uploadPhotosButtonDidPressed:(id)sender;
@@ -41,8 +44,16 @@
 - (IBAction)uploadImagesFromDropboxButtonDidPressed:(id)sender
 {
     if([self validInputData]){
+        CCProfessorUpload *professorUpload = [self prepareProfessorUpload];
         [self.imagesDropboxUploadTransaction performWithObject:^(NSArray *arrayOfUrls){
-
+            professorUpload.arrayOfImageUrls = arrayOfUrls;
+            [self.ioc_professorAPIProvider postUploadInfo:professorUpload
+                                           ForClassWithId:_currentClass.classID
+                                           successHandler:^(RKMappingResult *result) {
+                                               [self.backToListTransaction perform];
+                                           } errorHandler:^(NSError *error) {
+                                               [CCStandardErrorHandler showErrorWithError:error];
+                                           }];
         }];
     }
 }
@@ -50,8 +61,16 @@
 - (IBAction)uploadPdfFromDropboxButtonDidPressed:(id)sender
 {
     if([self validInputData]){
+        CCProfessorUpload *professorUpload = [self prepareProfessorUpload];
         [self.pdfDropboxUploadTransaction performWithObject:^(NSArray *arrayOfUrls){
-
+            professorUpload.pdfUrl = [arrayOfUrls lastObject];
+            [self.ioc_professorAPIProvider postUploadInfo:professorUpload
+                                           ForClassWithId:_currentClass.classID
+                                           successHandler:^(RKMappingResult *result) {
+                                               [self.backToListTransaction perform];
+                                           } errorHandler:^(NSError *error) {
+                                               [CCStandardErrorHandler showErrorWithError:error];
+                                           }];
         }];
     }
 }
@@ -59,16 +78,24 @@
 - (IBAction)uploadPhotosButtonDidPressed:(id)sender
 {
     if([self validInputData]){
+        CCProfessorUpload *professorUpload = [self prepareProfessorUpload];
         [self.imagesUploadTransaction performWithObject:^(NSArray *arrayOfImages){
-        
+            
         }];
     }
 }
 
 - (CCProfessorUpload *)prepareProfessorUpload
 {
-    
-
+    CCProfessorUpload *professorUpload = [CCProfessorUpload new];
+    professorUpload.name = self.uploadNameLabel.text;
+    professorUpload.text = self.uploadTextView.text;
+    CCUser *currentUser = [self.ioc_userSession currentUser];
+    professorUpload.ownerAvatar = currentUser.avatar;
+    professorUpload.ownerFirstName = currentUser.firstName;
+    professorUpload.ownerLastName = currentUser.lastName;
+    professorUpload.createdDate = [NSDate date];
+    return professorUpload;
 }
 
 - (void)setupImageViews

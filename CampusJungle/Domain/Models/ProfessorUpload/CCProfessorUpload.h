@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "CCUploadIndicatorDelegateProtocol.h"
+#import "CCRestKitMappableModel.h"
 
-@interface CCProfessorUpload : NSObject
+@interface CCProfessorUpload : NSObject<CCRestKitMappableModel>
 
 @property (nonatomic, strong) NSString *uploadID;
+@property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSString *attachment;
 @property (nonatomic, strong) NSString *ownerID;

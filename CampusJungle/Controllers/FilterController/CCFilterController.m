@@ -36,6 +36,7 @@
     [self configTableWithProvider:dataProvider cellClass:[CCMarketFilterClassesCell class]];
     [self.mainTable registerClass:[CCFilterSectionHeader class] forHeaderFooterViewReuseIdentifier:CCTableDefines.tableHeaderIdentifier];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Apply" style:UIBarButtonItemStyleBordered target:self action:@selector(applyFilters)];
+    self.title = @"Filter";
 }
 
 - (void)applyFilters

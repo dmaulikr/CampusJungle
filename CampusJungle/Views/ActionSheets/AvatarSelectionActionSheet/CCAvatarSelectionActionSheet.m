@@ -19,7 +19,7 @@
     }];
     
     
-    [testSheet addButtonWithTitle:@"Make photo" handler:^{
+    [testSheet addButtonWithTitle:@"Take a photo" handler:^{
         [self makePhotoForAvatar];
     }];
     [testSheet setCancelButtonWithTitle:nil handler:^{

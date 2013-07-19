@@ -41,6 +41,7 @@
     [super drawRect:rect];
     [self.backgroundView setBackgroundColor:[UIColor brownColor]];
     [CCButtonsHelper removeBackgroundImageInButton:self.backgroungButton];
+    [self.backgroungButton setBackgroundImage:[UIImage imageNamed:@"side_menu_section_header"] forState:UIControlStateNormal];
 }
 
 - (IBAction)sectionDidPressed
