@@ -10,6 +10,6 @@
 
 @interface CCClassesDataProvider : CCBaseDataProvider
 
-@property (nonatomic, strong) NSArray *arrayOfClasses;
+@property (nonatomic ,strong) NSString *collegeId;
 
 @end

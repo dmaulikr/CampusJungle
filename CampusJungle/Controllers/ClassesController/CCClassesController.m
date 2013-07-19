@@ -50,7 +50,7 @@
     [self.ioc_apiClassesProvider getAllClasesSuccessHandler:^(NSArray *arrayOfClasses) {
         self.dataProvider.targetTable = self.table;
         self.dataProvider = [CCClassesDataProvider new];
-        self.dataProvider.arrayOfClasses = arrayOfClasses;
+//        self.dataProvider.arrayOfClasses = arrayOfClasses;
         [self configTableWithProvider:self.dataProvider cellClass:[CCOrdinaryCell class]];
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];

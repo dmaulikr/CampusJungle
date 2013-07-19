@@ -46,13 +46,19 @@
 }
 
 
-- (void)getClassesOfCollege:(NSString*)collegeID successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+- (void)getClassesOfCollege:(NSString *)collegeID searchString:(NSString *)searchString successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [self setAuthorizationToken];
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    if ([searchString length] > 0) {
+        [params setObject:searchString forKey:@"keywords"];
+    }
+
     NSString *path = [NSString stringWithFormat:CCAPIDefines.classesOfCollege,collegeID];
     [objectManager getObjectsAtPath:path
-                         parameters:nil
+                         parameters:params
                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                 successHandler([mappingResult array]);
                             } failure:^(RKObjectRequestOperation *operation, NSError *error) {

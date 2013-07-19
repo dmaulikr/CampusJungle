@@ -38,13 +38,14 @@
 {
     [super viewDidLoad];
     [self addButton];
-    [self.ioc_apiClassesProvider getClassesOfCollege:self.collegeID successHandler:^(id response) {
-        self.dataProvider = [CCClassesDataProvider new];
-        self.dataProvider.arrayOfClasses = response;
-        [self configTableWithProvider:self.dataProvider cellClass:[CCOrdinaryCell class]];
-    } errorHandler:^(NSError *error) {
-        [CCStandardErrorHandler showErrorWithError:error];
-    }];
+    [self setupTableView];
+}
+
+- (void)setupTableView
+{
+    self.dataProvider = [CCClassesDataProvider new];
+    self.dataProvider.collegeId = self.collegeID;
+    [self configTableWithProvider:self.dataProvider cellClass:[CCOrdinaryCell class]];
 }
 
 - (void)addButton
