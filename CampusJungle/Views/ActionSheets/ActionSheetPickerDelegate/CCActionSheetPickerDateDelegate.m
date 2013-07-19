@@ -42,7 +42,7 @@
 
 - (void)initializeStartParameters
 {
-    self.selectedDay = @"Sunday";
+    self.selectedDay = daysOfTheWeek[0];
     self.selectedHour = @"01";
     self.selectedMinutes = @"00";
     self.selectedTimeOfTheDay = @"AM";
