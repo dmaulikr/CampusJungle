@@ -24,7 +24,7 @@ const struct CCAlertsMessages CCAlertsMessages = {
     .lastNameNotValid = @"Last name can't be empty",
     .createCollege = @"In order to join class you should select your college first",
     .dropboxLinkingFaild = @"Dropbox linking failed",
-    .emptyField = @"Please fill in all fields",
+    .emptyField = @"You should fill all mandatory fields",
     .setEmailFirst = @"Set your email in user profile first",
     .confirmation = @"Confirmation",
     .confirmationMessage = @"Are you sure?",
@@ -71,6 +71,7 @@ const struct CCValidationMessages CCValidationMessages = {
     .emptyQuestionText = @"Question text can't be blank",
     .emptyAnswerText = @"Answer text can't be blank",
     .emptyCommentText = @"Comment text can't be blank",
-    .emptyUploadText = @"Place enter upload description",
+    .emptyUploadText = @"Please enter upload description",
     .emptyUploadName = @"Please enter upload name",
+    .emptyMessageText = @"Message can't be blank",
 };
