@@ -8,6 +8,12 @@
 
 #import "CCAddProfessorUploadsTransaction.h"
 #import "CCAddProfessorUploadsController.h"
+#import "CCImagesUploadingScreenTransaction.h"
+#import "CCUploadImagesController.h"
+#import "CCDropboxImagesSelectionTransaction.h"
+#import "CCSelectPdfFromDropboxTransaction.h"
+
+
 
 @implementation CCAddProfessorUploadsTransaction
 
@@ -17,6 +23,20 @@
     CCAddProfessorUploadsController *addProfessorUploadsController = [CCAddProfessorUploadsController new];
     
     addProfessorUploadsController.currentClass = object;
+    
+    CCImagesUploadingScreenTransaction *imagesUploadTransaction = [CCImagesUploadingScreenTransaction new];
+    imagesUploadTransaction.uploadImagesControllerClass = [CCUploadImagesController class];
+    imagesUploadTransaction.naviation = self.navigation;
+    
+    CCDropboxImagesSelectionTransaction *dropboxImagesTransaction = [CCDropboxImagesSelectionTransaction new];
+    dropboxImagesTransaction.navigation = self.navigation;
+    
+    CCSelectPdfFromDropboxTransaction *dropboxPDFTransaction = [CCSelectPdfFromDropboxTransaction new];
+    dropboxPDFTransaction.navigation = self.navigation;
+    
+    addProfessorUploadsController.imagesDropboxUploadTransaction = dropboxImagesTransaction;
+    addProfessorUploadsController.pdfDropboxUploadTransaction = dropboxPDFTransaction;
+    addProfessorUploadsController.imagesUploadTransaction = imagesUploadTransaction;
     
     [self.navigation pushViewController:addProfessorUploadsController animated:YES];
 }

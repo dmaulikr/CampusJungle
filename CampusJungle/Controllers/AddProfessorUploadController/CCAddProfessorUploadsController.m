@@ -7,8 +7,7 @@
 //
 
 #import "CCAddProfessorUploadsController.h"
-#import "CCForum.h"
-#import "CCQuestion.h"
+#import "CCProfessorUpload.h"
 #import "CCStringHelper.h"
 #import "CCStandardErrorHandler.h"
 #import "CCQuestionsApiProviderProtocol.h"
@@ -16,11 +15,16 @@
 #import "CCUserSessionProtocol.h"
 
 @interface CCAddProfessorUploadsController ()
-@property (nonatomic, weak) IBOutlet UITextView *questionTextView;
+
+@property (nonatomic, weak) IBOutlet UITextView *uploadTextView;
 @property (nonatomic, weak) IBOutlet UIImageView *textViewBackgroundImageView;
+@property (nonatomic, weak) IBOutlet UITextField *uploadNameLabel;
 @property (nonatomic, strong) id <CCQuestionsApiProviderProtocol> ioc_questionAPIProvider;
 @property (nonatomic, strong) id <CCUploadProcessManagerProtocol> ioc_uploadManager;
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
+
+- (IBAction)uploadPhotosButtonDidPressed:(id)sender;
+
 @end
 
 @implementation CCAddProfessorUploadsController
@@ -36,28 +40,35 @@
 
 - (IBAction)uploadImagesFromDropboxButtonDidPressed:(id)sender
 {
-    [self.imagesDropboxUploadTransaction performWithObject:^(NSArray *arrayOfUrls){
-//        CCQuestion *question = [self prepareQuestion];
-//        question.arrayOfImageUrls = arrayOfUrls;
-//        [self.ioc_questionAPIProvider postQuestion:question successHandler:^(RKMappingResult *result) {
-//            [self.backToListTransaction perform];
-//        } errorHandler:^(NSError *error) {
-//            [CCStandardErrorHandler showErrorWithError:error];
-//        }];
-    }];
+    if([self validInputData]){
+        [self.imagesDropboxUploadTransaction performWithObject:^(NSArray *arrayOfUrls){
+
+        }];
+    }
 }
 
 - (IBAction)uploadPdfFromDropboxButtonDidPressed:(id)sender
 {
-    [self.pdfDropboxUploadTransaction performWithObject:^(NSArray *arrayOfUrls){
-//        CCQuestion *question = [self prepareQuestion];
-//        question.pdfUrl = arrayOfUrls.lastObject;
-//        [self.ioc_questionAPIProvider postQuestion:question successHandler:^(RKMappingResult *result) {
-//            [self.backToListTransaction perform];
-//        } errorHandler:^(NSError *error) {
-//            [CCStandardErrorHandler showErrorWithError:error];
-//        }];
-    }];
+    if([self validInputData]){
+        [self.pdfDropboxUploadTransaction performWithObject:^(NSArray *arrayOfUrls){
+
+        }];
+    }
+}
+
+- (IBAction)uploadPhotosButtonDidPressed:(id)sender
+{
+    if([self validInputData]){
+        [self.imagesUploadTransaction performWithObject:^(NSArray *arrayOfImages){
+        
+        }];
+    }
+}
+
+- (CCProfessorUpload *)prepareProfessorUpload
+{
+    
+
 }
 
 - (void)setupImageViews
@@ -65,5 +76,17 @@
     [self.textViewBackgroundImageView setImage:[[UIImage imageNamed:@"text_box"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)]];
 }
 
+- (BOOL)validInputData
+{
+    if (![self.uploadNameLabel.text length]) {
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.emptyUploadName];
+        return NO;
+    }
+    if (![self.uploadTextView.text length]) {
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.emptyUploadText];
+        return NO;
+    }
+    return YES;
+}
 
 @end

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CCTypesDefinition.h"
 
-@protocol CCDropboxAPIProviderProtocol <AppleGuiceInjectable>
+@protocol CCDropboxAPIProviderProtocol <AppleGuiceInjectable, AppleGuiceSingleton>
 
 - (void)createSession;
 

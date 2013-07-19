@@ -60,61 +60,66 @@
     CCQuestion *question = [CCQuestion new];
     question.text = self.questionTextView.text;
     question.forumId = self.forum.forumId;
+    CCUser *currentUser = [self.ioc_userSession currentUser];
+    question.ownerAvatar = currentUser.avatar;
+    question.ownerFirstName = currentUser.firstName;
+    question.ownerLastName = currentUser.lastName;
+    question.createdDate = [NSDate date];
     return question;
 }
 
 - (IBAction)uploadPhotosButtonDidPressed:(id)sender
 {
-    [self.imagesUploadTransaction performWithObject:^(NSArray *arrayOfImages){
-        CCQuestion *question = [self prepareQuestion];
-        CCUser *currentUser = [self.ioc_userSession currentUser];
-        question.ownerAvatar = currentUser.avatar;
-        question.ownerFirstName = currentUser.firstName;
-        question.ownerLastName = currentUser.lastName;
-        question.createdDate = [NSDate date];
-        __weak id weakSelf = self;
-        id <CCUploadProcessManagerProtocol> uploadManager = self.ioc_uploadManager;
-        [[uploadManager uploadingQuestions] addObject:question];
-        [self.ioc_questionAPIProvider postUploadInfoWithImages:question
+    if ([self validInputData]) {
+        [self.imagesUploadTransaction performWithObject:^(NSArray *arrayOfImages){
+            CCQuestion *question = [self prepareQuestion];
+            __weak id weakSelf = self;
+            id <CCUploadProcessManagerProtocol> uploadManager = self.ioc_uploadManager;
+            [[uploadManager uploadingQuestions] addObject:question];
+            [self.ioc_questionAPIProvider postUploadInfoWithImages:question
                                                     withImages:arrayOfImages successHandler:^(id result) {
                                     [[uploadManager uploadingQuestions] removeObject:question];
                                                          [uploadManager reloadDelegate];
-        } errorHandler:^(NSError *error) {
-            [[uploadManager uploadingQuestions] removeObject:question];
-            [uploadManager reloadDelegate];
-            [CCStandardErrorHandler showErrorWithError:error];
-        } progress:^(double finished) {
-            [[weakSelf backToListTransaction] perform];
-            question.uploadProgress = [NSNumber numberWithDouble:finished];
-        }];
-        
-    }];
+                                                    } errorHandler:^(NSError *error) {
+                                                        [[uploadManager uploadingQuestions] removeObject:question];
+                                                        [uploadManager reloadDelegate];
+                                                        [CCStandardErrorHandler showErrorWithError:error];
+                                                    } progress:^(double finished) {
+                                                        [[weakSelf backToListTransaction] perform];
+                                                        question.uploadProgress = [NSNumber numberWithDouble:finished];
+                                                    }];
+            }];
+        }
 }
 
 - (IBAction)uploadImagesFromDropboxButtonDidPressed:(id)sender
 {
-    [self.imagesDropboxUploadTransaction performWithObject:^(NSArray *arrayOfUrls){
-        CCQuestion *question = [self prepareQuestion];
-        question.arrayOfImageUrls = arrayOfUrls;
-        [self.ioc_questionAPIProvider postQuestion:question successHandler:^(RKMappingResult *result) {
+    if ([self validInputData]) {
+        [self.imagesDropboxUploadTransaction performWithObject:^(NSArray *arrayOfUrls){
+            CCQuestion *question = [self prepareQuestion];
+            question.arrayOfImageUrls = arrayOfUrls;
+            [self.ioc_questionAPIProvider postQuestion:question successHandler:^(RKMappingResult *result) {
             [self.backToListTransaction perform];
-        } errorHandler:^(NSError *error) {
-            [CCStandardErrorHandler showErrorWithError:error];
+            } errorHandler:^(NSError *error) {
+                [CCStandardErrorHandler showErrorWithError:error];
+            }];
         }];
-    }];
+    }
 }
 
 - (IBAction)uploadPdfFromDropboxButtonDidPressed:(id)sender
 {
-    [self.pdfDropboxUploadTransaction performWithObject:^(NSArray *arrayOfUrls){
-        CCQuestion *question = [self prepareQuestion];
-        question.pdfUrl = arrayOfUrls.lastObject;
-        [self.ioc_questionAPIProvider postQuestion:question successHandler:^(RKMappingResult *result) {
-            [self.backToListTransaction perform];
-        } errorHandler:^(NSError *error) {
-            [CCStandardErrorHandler showErrorWithError:error];
+    if([self validInputData]){
+        [self.pdfDropboxUploadTransaction performWithObject:^(NSArray *arrayOfUrls){
+            CCQuestion *question = [self prepareQuestion];
+            question.pdfUrl = arrayOfUrls.lastObject;
+            [self.ioc_questionAPIProvider postQuestion:question successHandler:^(RKMappingResult *result) {
+                [self.backToListTransaction perform];
+            } errorHandler:^(NSError *error) {
+                [CCStandardErrorHandler showErrorWithError:error];
+            }];
         }];
-    }];
+    }
 }
 
 - (BOOL)validInputData

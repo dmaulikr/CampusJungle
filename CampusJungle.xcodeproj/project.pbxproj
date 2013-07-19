@@ -388,6 +388,7 @@
 		D342BCFF179817740034E88C /* CCAddProfessorUploadsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D342BCFD179817740034E88C /* CCAddProfessorUploadsController.xib */; };
 		D342BD031798194E0034E88C /* CCAddProfessorUploadsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BD021798194E0034E88C /* CCAddProfessorUploadsTransaction.m */; };
 		D342BD071798264E0034E88C /* CCProfessorUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BD061798264E0034E88C /* CCProfessorUpload.m */; };
+		D342BD0D179933CA0034E88C /* CCProfessorUploadsAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BD0C179933CA0034E88C /* CCProfessorUploadsAPIProvider.m */; };
 		D347BBD017817F2300E54EFC /* menuButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBCE17817F0200E54EFC /* menuButton.png */; };
 		D347BBD117817F2300E54EFC /* menuButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBCF17817F0F00E54EFC /* menuButton@2x.png */; };
 		D359E6081794383A00869D6C /* star_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D359E6041794383A00869D6C /* star_icon.png */; };
@@ -1232,6 +1233,9 @@
 		D342BD021798194E0034E88C /* CCAddProfessorUploadsTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddProfessorUploadsTransaction.m; sourceTree = "<group>"; };
 		D342BD051798264E0034E88C /* CCProfessorUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProfessorUpload.h; sourceTree = "<group>"; };
 		D342BD061798264E0034E88C /* CCProfessorUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCProfessorUpload.m; sourceTree = "<group>"; };
+		D342BD0B179933CA0034E88C /* CCProfessorUploadsAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProfessorUploadsAPIProvider.h; sourceTree = "<group>"; };
+		D342BD0C179933CA0034E88C /* CCProfessorUploadsAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCProfessorUploadsAPIProvider.m; sourceTree = "<group>"; };
+		D342BD0E179933F10034E88C /* CCProfessorUploadsAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCProfessorUploadsAPIProviderProtocol.h; sourceTree = "<group>"; };
 		D347BBCE17817F0200E54EFC /* menuButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuButton.png; sourceTree = "<group>"; };
 		D347BBCF17817F0F00E54EFC /* menuButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menuButton@2x.png"; sourceTree = "<group>"; };
 		D347BBD21781B7AE00E54EFC /* separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = separator.png; sourceTree = "<group>"; };
@@ -3109,6 +3113,7 @@
 				70B2D06C17940245001B0C2C /* MarketAPIProvider */,
 				70B2D07017940245001B0C2C /* MessagesAPIProvider */,
 				70B2D07417940245001B0C2C /* NotesAPIProvider */,
+				D342BD0A179933A50034E88C /* ProfessorUploadsAPIProvider */,
 				70B2D0B417942F01001B0C2C /* QuestionsAPIProvider */,
 				70B2D07817940245001B0C2C /* SignUpAPIProvider */,
 				70B2D07C17940245001B0C2C /* StuffAPIProvider */,
@@ -4547,6 +4552,16 @@
 			path = ProfessorUpload;
 			sourceTree = "<group>";
 		};
+		D342BD0A179933A50034E88C /* ProfessorUploadsAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D342BD0B179933CA0034E88C /* CCProfessorUploadsAPIProvider.h */,
+				D342BD0C179933CA0034E88C /* CCProfessorUploadsAPIProvider.m */,
+				D342BD0E179933F10034E88C /* CCProfessorUploadsAPIProviderProtocol.h */,
+			);
+			path = ProfessorUploadsAPIProvider;
+			sourceTree = "<group>";
+		};
 		D359E6031794383A00869D6C /* Stars */ = {
 			isa = PBXGroup;
 			children = (
@@ -5504,17 +5519,16 @@
 				7012545A179700E60085247A /* CCDateFormatterHelper.m in Sources */,
 				701254601797E3C80085247A /* CCAddCommentViewController.m in Sources */,
 				701254651797E4FB0085247A /* CCAddCommentTransaction.m in Sources */,
-
 				D342BCEF179810760034E88C /* CCProfessorUploadsController.m in Sources */,
 				D342BCF4179814310034E88C /* CCProfessorUploadsTransaction.m in Sources */,
 				D342BCFE179817740034E88C /* CCAddProfessorUploadsController.m in Sources */,
 				D342BD031798194E0034E88C /* CCAddProfessorUploadsTransaction.m in Sources */,
 				D342BD071798264E0034E88C /* CCProfessorUpload.m in Sources */,
-
 				7012546A1797F7A70085247A /* CCTimetableViewController.m in Sources */,
 				7012546F179803740085247A /* CCTimetableTransaction.m in Sources */,
 				701254731798080E0085247A /* CCDailyTimetableCell.m in Sources */,
 				7012547917982B9E0085247A /* CCTimeStringsSortingHelper.m in Sources */,
+				D342BD0D179933CA0034E88C /* CCProfessorUploadsAPIProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

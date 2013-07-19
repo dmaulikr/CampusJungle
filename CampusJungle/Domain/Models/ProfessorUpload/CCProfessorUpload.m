@@ -30,7 +30,7 @@
     
     [paginationProfessorUploadResponseMapping addPropertyMapping:relationShipResponseQuestionsMapping];
     
-    NSString *pathPattern = [NSString stringWithFormat:CCAPIDefines.getUploads, @":classID"];
+    NSString *pathPattern = [NSString stringWithFormat:CCAPIDefines.loadUploads, @":classID"];
     RKResponseDescriptor *responseQuestionsDescriptor =
     [RKResponseDescriptor responseDescriptorWithMapping:paginationProfessorUploadResponseMapping
                                             pathPattern:pathPattern
