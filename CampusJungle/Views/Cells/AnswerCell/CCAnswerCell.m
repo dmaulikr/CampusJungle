@@ -41,8 +41,16 @@ static const CGFloat kMinCellHeight = 113;
 {
     [super awakeFromNib];
     [self setSelectionColor];
+    
     [self.deleteAnswerButton addTarget:self action:@selector(deleteAnswerButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.likeButton addTarget:self action:@selector(likeAnswerButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    [CCButtonsHelper removeBackgroundImageInButton:self.deleteAnswerButton];
+    [CCButtonsHelper removeBackgroundImageInButton:self.likeButton];
 }
 
 - (void)prepareForReuse

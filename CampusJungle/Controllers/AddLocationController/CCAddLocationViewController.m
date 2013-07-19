@@ -12,6 +12,7 @@
 #import "CCPlacemarkAddressHelper.h"
 #import "CCKeyboardHelper.h"
 #import "CCStringHelper.h"
+#import "CCButtonsHelper.h"
 
 #import "CCLocation.h"
 #import "CCShareItemButton.h"
@@ -42,9 +43,15 @@
 {
     [super viewDidLoad];
     [self setupMapView];
+    [self setupButtons];
     
     [self setRightNavigationItemWithTitle:@"Add" selector:@selector(addButtonDidPressed:)];
     [self setTitle:@"Add Location"];
+}
+
+- (void)setupButtons
+{
+    [CCButtonsHelper removeBackgroundImageInButton:self.detectUserLocationButton];
 }
 
 - (void)setupMapView

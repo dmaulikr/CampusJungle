@@ -39,6 +39,11 @@ static const CGFloat kMinCellHeight = 90;
     [self.deleteCommentButton addTarget:self action:@selector(deleteCommentButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)layoutSubviews
+{
+    [CCButtonsHelper removeBackgroundImageInButton:self.deleteCommentButton];
+}
+
 - (void)prepareForReuse
 {
     [CCViewPositioningHelper setWidth:kDefaultTextLabelWidth toView:self.commentTextLabel];

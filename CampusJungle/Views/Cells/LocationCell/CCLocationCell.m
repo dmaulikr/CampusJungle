@@ -34,7 +34,14 @@ static const NSInteger kMinCellHeight = 85;
 {
     [super awakeFromNib];
     [self setSelectionColor];
+    
     [self.deleteLocationButton addTarget:self action:@selector(deleteLocationButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    [CCButtonsHelper removeBackgroundImageInButton:self.deleteLocationButton];
 }
 
 - (void)prepareForReuse

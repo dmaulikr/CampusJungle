@@ -49,9 +49,18 @@ static const CGFloat kMinCellHeight = 133;
 {
     [super awakeFromNib];
     [self setSelectionColor];
+    
     [self.deleteQuestionButton addTarget:self action:@selector(deleteQuestionButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.emailAttachmentButton addTarget:self action:@selector(emailAttachmentButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.viewAttachmentButton addTarget:self action:@selector(viewAttachmentButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    [CCButtonsHelper removeBackgroundImageInButton:self.deleteQuestionButton];
+    [CCButtonsHelper removeBackgroundImageInButton:self.emailAttachmentButton];
+    [CCButtonsHelper removeBackgroundImageInButton:self.viewAttachmentButton];
 }
 
 - (void)prepareForReuse

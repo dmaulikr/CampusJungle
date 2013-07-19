@@ -13,6 +13,7 @@
 #import "CCViewPositioningHelper.h"
 #import "CCAlertHelper.h"
 #import "CCLocation.h"
+#import "CCButtonsHelper.h"
 
 #import "CCClassmatesDataProvider.h"
 #import "CCClassLocationsDataProvider.h"
@@ -71,8 +72,7 @@ static const NSInteger kNavBarHeight = 44;
     [self.sectionHeaderView addSubview:tabbarController.view];
     [(CCClassControllerTableDataSource *)self.dataSource setViewForSectionHeader:self.sectionHeaderView];
     self.mainTable.tableHeaderView = self.tableHeaderView;
-    [self.addButton setBackgroundImage:nil forState:UIControlStateNormal];
-    [self.addButton setBackgroundImage:nil forState:UIControlStateHighlighted];
+    [CCButtonsHelper removeBackgroundImageInButton:self.addButton];
 }
 
 - (void)viewWillAppear:(BOOL)animated

@@ -16,6 +16,7 @@
 #import "CCClassesApiProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
 #import "CCAlertHelper.h"
+#import "CCButtonsHelper.h"
 
 @interface CCClassController () <CCClassTableDelegate>
 
@@ -24,9 +25,17 @@
 @property (nonatomic, weak) IBOutlet UIImageView *avatarImage;
 @property (nonatomic, weak) IBOutlet UIView *headerView;
 @property (nonatomic, weak) IBOutlet UILabel *semester;
+@property (nonatomic, weak) IBOutlet UIImageView *classImage;
+
+@property (nonatomic, weak) IBOutlet UIButton *editButton;
+@property (nonatomic, weak) IBOutlet UIButton *feedbackButton;
+@property (nonatomic, weak) IBOutlet UIButton *profUploadsButton;
+@property (nonatomic, weak) IBOutlet UIButton *announcementButton;
+@property (nonatomic, weak) IBOutlet UIButton *marketButton;
+@property (nonatomic, weak) IBOutlet UIButton *timetableButton;
+
 @property (nonatomic, strong) CCClassTableController *classContentTable;
 @property (nonatomic, strong) id<CCClassesApiProviderProtocol> ioc_classesApiProvider;
-@property (nonatomic, weak) IBOutlet UIImageView *classImage;
 
 @property (nonatomic, strong) CCClass *currentClass;
 
@@ -41,7 +50,7 @@
     self = [super init];
     if (self) {
         self.currentClass = classObject;
-        [self.navigationItem setTitle:classObject.subject];
+        [self.navigationItem setTitle:classObject.className];
     }
     return self;
 }
@@ -50,12 +59,28 @@
 {
     [super viewDidLoad];
     [self loadInfo];
+    [self setupButtons];
+    [self setupTableView];
+}
+
+- (void)setupButtons
+{
     [self setUpLeaveButton];
-   
     [self setButtonsTextColorInView:self.headerView];
+    
+    [CCButtonsHelper removeBackgroundImageInButton:self.editButton];
+    [CCButtonsHelper removeBackgroundImageInButton:self.timetableButton];
+    [CCButtonsHelper removeBackgroundImageInButton:self.announcementButton];
+    [CCButtonsHelper removeBackgroundImageInButton:self.marketButton];
+    [CCButtonsHelper removeBackgroundImageInButton:self.profUploadsButton];
+    [CCButtonsHelper removeBackgroundImageInButton:self.feedbackButton];
+}
+
+- (void)setupTableView
+{
     CCClassmatesDataProvider *classmateDataprovider = [CCClassmatesDataProvider new];
     classmateDataprovider.classID = self.currentClass.classID;
-   
+    
     self.classContentTable = [CCClassTableController new];
     self.classContentTable.tableHeaderView = self.headerView;
     self.classContentTable.classID = self.currentClass.classID;
@@ -68,8 +93,7 @@
     UIImage *leaveClassImage = [UIImage imageNamed:@"leave_class_icon"];
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, leaveClassImage.size.width  - 10, leaveClassImage.size.height - 10)];
     [button setImage:leaveClassImage forState:UIControlStateNormal];
-    [button setBackgroundImage:nil forState:UIControlStateNormal];
-    [button setBackgroundImage:nil forState:UIControlStateHighlighted];
+    [CCButtonsHelper removeBackgroundImageInButton:button];
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.rightBarButtonItem = barButtonItem;
     [button addTarget:self action:@selector(leaveClassButtonDidPress) forControlEvents:UIControlEventTouchUpInside];
@@ -91,9 +115,9 @@
 - (void)loadInfo
 {
     self.navigationController.navigationItem.title = self.currentClass.subject;
-    self.professor.text = self.currentClass.professor;
-    self.classNumber.text = self.currentClass.callNumber;
-    self.semester.text = self.currentClass.semester.capitalizedString;
+    self.professor.text = [NSString stringWithFormat:@"Prof. %@", self.currentClass.professor];
+    self.classNumber.text = [NSString stringWithFormat:@"Class ID: %@", self.currentClass.callNumber];
+    self.semester.text = [NSString stringWithFormat:@"Semester: %@", self.currentClass.semester.capitalizedString];
     [self.classImage setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,self.currentClass.classImageURL]] placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
     self.title = self.currentClass.subject;
 }

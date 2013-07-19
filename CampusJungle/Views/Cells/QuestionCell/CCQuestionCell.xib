@@ -90,7 +90,6 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<string key="IBUINormalTitle">Delete</string>
 								<reference key="IBUIHighlightedTitleColor" ref="93250961"/>
 								<object class="NSColor" key="IBUINormalTitleColor">
 									<int key="NSColorSpace">1</int>
@@ -99,6 +98,15 @@
 								<object class="NSColor" key="IBUINormalTitleShadowColor" id="188956037">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MC41AA</bytes>
+								</object>
+								<object class="NSCustomResource" key="IBUIHighlightedImage" id="23091751">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">close_button_active.png</string>
+								</object>
+								<reference key="IBUISelectedImage" ref="23091751"/>
+								<object class="NSCustomResource" key="IBUINormalImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">close_button.png</string>
 								</object>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<int key="type">2</int>
@@ -231,14 +239,21 @@
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<int key="IBUIContentHorizontalAlignment">0</int>
 										<int key="IBUIContentVerticalAlignment">0</int>
-										<int key="IBUIButtonType">1</int>
-										<string key="IBUINormalTitle">Email attachment</string>
 										<reference key="IBUIHighlightedTitleColor" ref="93250961"/>
 										<object class="NSColor" key="IBUINormalTitleColor">
 											<int key="NSColorSpace">1</int>
 											<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 										</object>
 										<reference key="IBUINormalTitleShadowColor" ref="188956037"/>
+										<object class="NSCustomResource" key="IBUIHighlightedImage" id="763066680">
+											<string key="NSClassName">NSImage</string>
+											<string key="NSResourceName">email_button_active.png</string>
+										</object>
+										<reference key="IBUISelectedImage" ref="763066680"/>
+										<object class="NSCustomResource" key="IBUINormalImage">
+											<string key="NSClassName">NSImage</string>
+											<string key="NSResourceName">email_button.png</string>
+										</object>
 										<object class="IBUIFontDescription" key="IBUIFontDescription" id="776386983">
 											<int key="type">2</int>
 											<double key="pointSize">12</double>
@@ -260,14 +275,21 @@
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<int key="IBUIContentHorizontalAlignment">0</int>
 										<int key="IBUIContentVerticalAlignment">0</int>
-										<int key="IBUIButtonType">1</int>
-										<string key="IBUINormalTitle">View attachment</string>
 										<reference key="IBUIHighlightedTitleColor" ref="93250961"/>
 										<object class="NSColor" key="IBUINormalTitleColor">
 											<int key="NSColorSpace">1</int>
 											<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 										</object>
 										<reference key="IBUINormalTitleShadowColor" ref="188956037"/>
+										<object class="NSCustomResource" key="IBUIHighlightedImage" id="312301581">
+											<string key="NSClassName">NSImage</string>
+											<string key="NSResourceName">view_button_active.png</string>
+										</object>
+										<reference key="IBUISelectedImage" ref="312301581"/>
+										<object class="NSCustomResource" key="IBUINormalImage">
+											<string key="NSClassName">NSImage</string>
+											<string key="NSResourceName">view_button.png</string>
+										</object>
 										<reference key="IBUIFontDescription" ref="776386983"/>
 										<reference key="IBUIFont" ref="111556890"/>
 									</object>
@@ -287,6 +309,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{17, 134}, {277, 21}}</string>
 								<reference key="NSSuperview" ref="197971070"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -536,8 +559,11 @@
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="10.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="16.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<real value="0.0" key="16.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="18.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<real value="2" key="18.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="19.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<real value="2" key="19.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="20.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="21.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="25.CustomClassName">MACircleProgressIndicator</string>
@@ -560,6 +586,14 @@
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="close_button.png">{15, 15}</string>
+			<string key="close_button_active.png">{15, 15}</string>
+			<string key="email_button.png">{30, 20}</string>
+			<string key="email_button_active.png">{30, 21}</string>
+			<string key="view_button.png">{30, 16}</string>
+			<string key="view_button_active.png">{30, 16}</string>
+		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>
 </archive>

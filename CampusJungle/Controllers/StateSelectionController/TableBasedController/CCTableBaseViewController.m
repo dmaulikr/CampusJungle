@@ -8,6 +8,7 @@
 
 #import "CCTableBaseViewController.h"
 #import "CCDefines.h"
+#import "CCButtonsHelper.h"
 
 @interface CCTableBaseViewController () <UISearchBarDelegate>
 
@@ -58,8 +59,7 @@
 {
     for(UIButton *button in view.subviews){
         if([button isKindOfClass:[UIButton class]]){
-            [button setBackgroundImage:nil forState:UIControlStateNormal];
-            [button setBackgroundImage:nil forState:UIControlStateHighlighted];
+            [CCButtonsHelper removeBackgroundImageInButton:button];
         } else {
             [self setNilButtonBackgroundForView:button];
         }

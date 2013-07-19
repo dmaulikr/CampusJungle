@@ -9,6 +9,7 @@
 #import "CCSideMenuSectionHeader.h"
 #import "CCViewPositioningHelper.h"
 #import "CCSideMenuDataSource.h"
+#import "CCButtonsHelper.h"
 
 static const NSInteger kDefaultTextLabelWidth = 155;
 static const NSInteger kMinCellHeight = 44;
@@ -41,8 +42,7 @@ static const NSInteger kMinCellHeight = 44;
 
 - (void)setupButtons
 {
-    [self.addClassesButton setBackgroundImage:nil forState:UIControlStateNormal];
-    [self.addClassesButton setBackgroundImage:nil forState:UIControlStateHighlighted];
+    [CCButtonsHelper removeBackgroundImageInButton:self.addClassesButton];
 }
 
 - (void)setText:(NSString *)text
