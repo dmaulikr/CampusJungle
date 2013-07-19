@@ -71,12 +71,11 @@
 {
     self.thumbSelectionSheet = [CCAvatarSelectionActionSheet new];
     self.thumbSelectionSheet.delegate = self;
-    self.thumbSelectionSheet.title = @"Select Thumbnail";
 }
 
 - (IBAction)thumbDidPressed
 {
-    [self.thumbSelectionSheet selectAvatar];
+    [self.thumbSelectionSheet showWithTitle:@"Select Class Thumbnail" takePhotoButtonTitle:nil takeFromGalleryButtonTitle:nil];
 }
 
 - (void)didSelectAvatar:(UIImage *)avatar

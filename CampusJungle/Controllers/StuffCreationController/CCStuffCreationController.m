@@ -46,7 +46,6 @@
     
     self.thumbSelection = [CCAvatarSelectionActionSheet new];
     self.thumbSelection.delegate = self;
-    self.thumbSelection.title = @"Select thumbnail";
     self.tapRecognizer.enabled = YES;
     [self loadColleges];
 }
@@ -72,7 +71,7 @@
 
 - (IBAction)thumbDidPressed
 {
-    [self.thumbSelection selectAvatar];
+    [self.thumbSelection showWithTitle:@"Select Stuff Thumbnail" takePhotoButtonTitle:nil takeFromGalleryButtonTitle:nil];
 }
 
 - (void)didSelectAvatar:(UIImage *)avatar

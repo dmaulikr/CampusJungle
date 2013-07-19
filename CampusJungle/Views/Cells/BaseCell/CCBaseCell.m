@@ -37,7 +37,7 @@ static const NSInteger kDividerHeight = 1;
 - (void)addBottomDivider
 {
     self.bottomDivider = [[UIImageView alloc] initWithFrame:CGRectMake(kDividerPadding, self.bounds.size.height - kDividerHeight, self.bounds.size.width - 2 * kDividerPadding, kDividerHeight)];
-    [self.bottomDivider setBackgroundColor:[UIColor colorWithRed:130.0/255.0 green:65.0/255.0 blue:0.0 alpha:1]];
+    [self.bottomDivider setBackgroundColor:BASE_DIVIDER_COLOR];
     [self.bottomDivider setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin];
     [self addSubview:self.bottomDivider];
 }

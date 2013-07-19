@@ -21,6 +21,7 @@
     CCShareItemButton *button = [CCShareItemButton new];
     button.actionBlock = actionBlock;
     [button setTitle:title forState:UIControlStateNormal];
+    [button setTitleColor:BASE_TEXT_COLOR forState:UIControlStateNormal];
     [button addTarget:button action:@selector(performTransaction:) forControlEvents:UIControlEventTouchUpInside];
     return button;
 }

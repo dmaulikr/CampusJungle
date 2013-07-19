@@ -21,4 +21,7 @@
     #import <TPKeyboardAvoiding/TPKeyboardAvoidingTableView.h>
     #import "CCConstantsDefines.h"
 
+    #define BASE_DIVIDER_COLOR [UIColor colorWithRed:130.0/255.0 green:65.0/255.0 blue:0.0 alpha:1]
+    #define BASE_TEXT_COLOR [UIColor colorWithRed:241.0/255.0 green:217.0/255.0 blue:161.0/255.0 alpha:1]
+
 #endif

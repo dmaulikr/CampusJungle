@@ -116,7 +116,6 @@
 {
     self.avatarSelectionSheet = [CCAvatarSelectionActionSheet new];
     self.avatarSelectionSheet.delegate = self;
-    self.avatarSelectionSheet.title = @"Select Avatar";
 }
 
 - (void)setupUserInfo
@@ -250,7 +249,7 @@
 - (IBAction)avatarDidPressed
 {
     if (self.isEditable){
-        [self.avatarSelectionSheet selectAvatar];
+        [self.avatarSelectionSheet showWithTitle:@"Select Photo" takePhotoButtonTitle:nil takeFromGalleryButtonTitle:nil];
     }
 }
 
