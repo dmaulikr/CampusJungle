@@ -42,6 +42,7 @@
 
 - (void)initializeStartParameters
 {
+
     self.selectedDay = @"Sunday";
     self.selectedHour = @"01";
     self.selectedMinutes = @"00";

@@ -161,6 +161,8 @@
 		70066C6E179943C800B7A4E7 /* location_button_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70066C6A179943C800B7A4E7 /* location_button_active@2x.png */; };
 		70066C6F179943C800B7A4E7 /* location_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 70066C6B179943C800B7A4E7 /* location_button.png */; };
 		70066C70179943C800B7A4E7 /* location_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70066C6C179943C800B7A4E7 /* location_button@2x.png */; };
+		70066C7417996C6900B7A4E7 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 70066C7217996C6900B7A4E7 /* Icon.png */; };
+		70066C7517996C6900B7A4E7 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70066C7317996C6900B7A4E7 /* Icon@2x.png */; };
 		700F942B178EA07C00A6FBBA /* CCAddLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9429178EA07C00A6FBBA /* CCAddLocationViewController.m */; };
 		700F942C178EA07C00A6FBBA /* CCAddLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 700F942A178EA07C00A6FBBA /* CCAddLocationViewController.xib */; };
 		700F9434178EBC5800A6FBBA /* CCPlacemarkAddressHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 700F9433178EBC5800A6FBBA /* CCPlacemarkAddressHelper.m */; };
@@ -756,6 +758,8 @@
 		70066C6A179943C800B7A4E7 /* location_button_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_button_active@2x.png"; sourceTree = "<group>"; };
 		70066C6B179943C800B7A4E7 /* location_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_button.png; sourceTree = "<group>"; };
 		70066C6C179943C800B7A4E7 /* location_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_button@2x.png"; sourceTree = "<group>"; };
+		70066C7217996C6900B7A4E7 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		70066C7317996C6900B7A4E7 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		700F9428178EA07C00A6FBBA /* CCAddLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddLocationViewController.h; sourceTree = "<group>"; };
 		700F9429178EA07C00A6FBBA /* CCAddLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddLocationViewController.m; sourceTree = "<group>"; };
 		700F942A178EA07C00A6FBBA /* CCAddLocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAddLocationViewController.xib; sourceTree = "<group>"; };
@@ -1706,6 +1710,15 @@
 			);
 			name = Controls;
 			path = Images/Controls;
+			sourceTree = "<group>";
+		};
+		70066C7117996C6900B7A4E7 /* AppIcons */ = {
+			isa = PBXGroup;
+			children = (
+				70066C7217996C6900B7A4E7 /* Icon.png */,
+				70066C7317996C6900B7A4E7 /* Icon@2x.png */,
+			);
+			path = AppIcons;
 			sourceTree = "<group>";
 		};
 		700F9427178EA06000A6FBBA /* AddLocationController */ = {
@@ -4699,6 +4712,7 @@
 		A7D53A361758A85700FE9FCD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				70066C7117996C6900B7A4E7 /* AppIcons */,
 				D3A318A8177C4DAB0004C4E8 /* Images */,
 				70066B3E17993C3200B7A4E7 /* Controls */,
 				D3039B75176880F800621CAC /* Icons */,
@@ -5396,6 +5410,8 @@
 				70066C6E179943C800B7A4E7 /* location_button_active@2x.png in Resources */,
 				70066C6F179943C800B7A4E7 /* location_button.png in Resources */,
 				70066C70179943C800B7A4E7 /* location_button@2x.png in Resources */,
+				70066C7417996C6900B7A4E7 /* Icon.png in Resources */,
+				70066C7517996C6900B7A4E7 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
