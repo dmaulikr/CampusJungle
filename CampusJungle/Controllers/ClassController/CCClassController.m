@@ -117,8 +117,11 @@
 {
     self.navigationController.navigationItem.title = self.currentClass.subject;
     self.professor.text = [NSString stringWithFormat:@"Prof. %@", self.currentClass.professor];
-    self.classNumber.text = [NSString stringWithFormat:@"Class ID: %@", self.currentClass.callNumber];
-    self.semester.text = [NSString stringWithFormat:@"Semester: %@", self.currentClass.semester.capitalizedString];
+    
+    NSString *classId = [self.currentClass.callNumber length] > 0 ? self.currentClass.callNumber : @"unknown";
+    self.classNumber.text = [NSString stringWithFormat:@"Class ID: %@", classId];
+    NSString *semester = [self.currentClass.semester length] > 0 ? self.currentClass.semester : @"unknown";
+    self.semester.text = [NSString stringWithFormat:@"Semester: %@", semester.capitalizedString];
     [self.classImage setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,self.currentClass.classImageURL]] placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
     self.title = self.currentClass.subject;
 }
