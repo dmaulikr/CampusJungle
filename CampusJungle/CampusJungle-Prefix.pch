@@ -11,6 +11,8 @@
 #warning "This project uses features only available in iOS SDK 3.0 and later."
 #endif
 
+#define DefineFontColor [UIColor colorWithRed:130.0/255.0 green:65.0/255.0 blue:0.0 alpha:1]
+
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
