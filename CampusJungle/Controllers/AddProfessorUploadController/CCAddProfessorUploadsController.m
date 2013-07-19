@@ -37,26 +37,26 @@
 - (IBAction)uploadImagesFromDropboxButtonDidPressed:(id)sender
 {
     [self.imagesDropboxUploadTransaction performWithObject:^(NSArray *arrayOfUrls){
-        CCQuestion *question = [self prepareQuestion];
-        question.arrayOfImageUrls = arrayOfUrls;
-        [self.ioc_questionAPIProvider postQuestion:question successHandler:^(RKMappingResult *result) {
-            [self.backToListTransaction perform];
-        } errorHandler:^(NSError *error) {
-            [CCStandardErrorHandler showErrorWithError:error];
-        }];
+//        CCQuestion *question = [self prepareQuestion];
+//        question.arrayOfImageUrls = arrayOfUrls;
+//        [self.ioc_questionAPIProvider postQuestion:question successHandler:^(RKMappingResult *result) {
+//            [self.backToListTransaction perform];
+//        } errorHandler:^(NSError *error) {
+//            [CCStandardErrorHandler showErrorWithError:error];
+//        }];
     }];
 }
 
 - (IBAction)uploadPdfFromDropboxButtonDidPressed:(id)sender
 {
     [self.pdfDropboxUploadTransaction performWithObject:^(NSArray *arrayOfUrls){
-        CCQuestion *question = [self prepareQuestion];
-        question.pdfUrl = arrayOfUrls.lastObject;
-        [self.ioc_questionAPIProvider postQuestion:question successHandler:^(RKMappingResult *result) {
-            [self.backToListTransaction perform];
-        } errorHandler:^(NSError *error) {
-            [CCStandardErrorHandler showErrorWithError:error];
-        }];
+//        CCQuestion *question = [self prepareQuestion];
+//        question.pdfUrl = arrayOfUrls.lastObject;
+//        [self.ioc_questionAPIProvider postQuestion:question successHandler:^(RKMappingResult *result) {
+//            [self.backToListTransaction perform];
+//        } errorHandler:^(NSError *error) {
+//            [CCStandardErrorHandler showErrorWithError:error];
+//        }];
     }];
 }
 

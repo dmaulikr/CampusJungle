@@ -16,6 +16,7 @@
 #import "CCForumDetailsTransaction.h"
 #import "CCEditClassTransaction.h"
 #import "CCProfessorUploadsTransaction.h"
+#import "CCTimetableTransaction.h"
 
 @implementation CCClassTransaction
 
@@ -56,12 +57,16 @@
     CCForumDetailsTransaction *forumDetailsTransaction = [CCForumDetailsTransaction new];
     forumDetailsTransaction.navigation = centralNavigation;
     
+    CCTimetableTransaction *timetableTransaction = [CCTimetableTransaction new];
+    timetableTransaction.navigation = centralNavigation;
+    
     classController.otherUserProfileTransaction = otherUserProfileTransaction;
     classController.newsFeedTransaction = self.newsFeedTransaction;
     classController.locationTransaction = showLocationsTransaction;
     classController.addLocationTransaction = addLocationTransaction;
     classController.addForumTransaction = addForumTransaction;
     classController.forumDetailsTransaction = forumDetailsTransaction;
+    classController.timetableTransaction = timetableTransaction;
     
     [self.menuController setCenterPanel:centralNavigation];
 }

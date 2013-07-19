@@ -28,7 +28,8 @@
 - (id)initWithDate:(NSDictionary *)date
 {
     if (self = [super init]) {
-        daysOfTheWeek = @[@"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", @"Saturday" ,@"Sunday"];
+        NSDateFormatter *dateFormatter = [NSDateFormatter new];
+        daysOfTheWeek = [dateFormatter weekdaySymbols];
         timeOftheDay = @[@"AM", @"PM"];
         if(date){
             self.beginTime = date;
@@ -41,8 +42,8 @@
 
 - (void)initializeStartParameters
 {
-    self.selectedDay = @"Monday";
-    self.selectedHour = @"00";
+    self.selectedDay = @"Sunday";
+    self.selectedHour = @"01";
     self.selectedMinutes = @"00";
     self.selectedTimeOfTheDay = @"AM";
 }
@@ -72,10 +73,10 @@
     return separatedTime;
 }
 
-- (void)setSlectedItems
+- (void)setSelectedItems
 {
     [self.picker selectRow:[daysOfTheWeek indexOfObject:self.selectedDay] inComponent:0 animated:NO];
-    [self.picker selectRow:[self.selectedHour integerValue] inComponent:1 animated:NO];
+    [self.picker selectRow:[self.selectedHour integerValue] - 1 inComponent:1 animated:NO];
     [self.picker selectRow:[self.selectedMinutes integerValue] inComponent:2 animated:NO];
     [self.picker selectRow:[timeOftheDay indexOfObject:self.selectedTimeOfTheDay] inComponent:3 animated:NO];
 
@@ -135,11 +136,11 @@
     
     switch (component) {
         case 0: return [daysOfTheWeek objectAtIndex:row];
-        case 1: return  [NSString stringWithFormat:@"%d",row];
-        case 2: return  [NSString stringWithFormat:@"%d",row];
+        case 1: return  [NSString stringWithFormat:@"%02d", row + 1];
+        case 2: return  [NSString stringWithFormat:@"%02d", row];
         case 3: {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self setSlectedItems];
+                [self setSelectedItems];
             });
             return [timeOftheDay objectAtIndex:row];
         }
@@ -150,7 +151,7 @@
 - (void)configurePickerView:(UIPickerView *)pickerView
 {
     self.picker = pickerView;
-    [self setSlectedItems];
+    [self setSelectedItems];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
@@ -161,11 +162,11 @@
             return;
             
         case 1:
-            self.selectedHour = [self addNullIfNeeded:row];
+            self.selectedHour = [self stringValueOfRow:row + 1];
             return;
             
         case 2:
-            self.selectedMinutes = [self addNullIfNeeded:row];
+            self.selectedMinutes = [self stringValueOfRow:row];
             return;
         case 3:
             self.selectedTimeOfTheDay = [timeOftheDay objectAtIndex:row];
@@ -173,15 +174,9 @@
     }
 }
 
-- (NSString*)addNullIfNeeded:(NSInteger)row
+- (NSString *)stringValueOfRow:(NSInteger)row
 {
-    NSString *formatString = @"%d";
-
-    if (row < 10) {
-       formatString = @"0%d";
-    }
-    NSString *string = [NSString stringWithFormat:formatString, row];
-    return string;
+    return [NSString stringWithFormat:@"%02d", row];
 }
 
 @end
