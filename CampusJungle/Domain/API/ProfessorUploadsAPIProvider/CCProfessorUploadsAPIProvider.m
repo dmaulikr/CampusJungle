@@ -18,9 +18,9 @@
                      errorHandler:(errorHandler)errorHandler
 {
     NSString *path = [NSString stringWithFormat:CCAPIDefines.loadUploads,classId];
-    NSDictionary *params = nil;
+    NSMutableDictionary *params = [@{@"page_number" : @(pageNumber)} mutableCopy];
     if(filterString){
-        params = @{@"keywords":filterString};
+        [params addEntriesFromDictionary:@{@"keywords":filterString}];
     }
     [self loadItemsWithParams:params path:path successHandler:successHandler errorHandler:errorHandler];
 }
@@ -46,9 +46,11 @@
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [self setAuthorizationToken];
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.deleteUploads,profesorUploads.uploadId];
     [objectManager deleteObject:profesorUploads
-                           path:CCAPIDefines.deleteUploads
-                     parameters:nil success:
+                           path:path
+                     parameters:nil
+                        success:
      ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                          successHandler(mappingResult);
                      } failure:
@@ -71,7 +73,7 @@
                       onPath:path
               successHandler:successHandler
                 errorHandler:errorHandler
-                    progress:^(double a){}];
+                    progress:progressBlock];
 }
 
 @end

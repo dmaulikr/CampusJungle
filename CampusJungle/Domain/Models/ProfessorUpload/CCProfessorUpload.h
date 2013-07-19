@@ -12,10 +12,11 @@
 
 @interface CCProfessorUpload : NSObject<CCRestKitMappableModel>
 
-@property (nonatomic, strong) NSString *uploadID;
+@property (nonatomic, strong) NSString *uploadId;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSString *attachment;
+@property (nonatomic, strong) NSString *classID;
 @property (nonatomic, strong) NSString *ownerID;
 @property (nonatomic, strong) NSString *ownerFirstName;
 @property (nonatomic, strong) NSString *ownerLastName;

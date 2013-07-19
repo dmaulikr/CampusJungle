@@ -37,6 +37,7 @@
     addProfessorUploadsController.imagesDropboxUploadTransaction = dropboxImagesTransaction;
     addProfessorUploadsController.pdfDropboxUploadTransaction = dropboxPDFTransaction;
     addProfessorUploadsController.imagesUploadTransaction = imagesUploadTransaction;
+    addProfessorUploadsController.backToListTransaction = self.backToListTransaction;
     
     [self.navigation pushViewController:addProfessorUploadsController animated:YES];
 }

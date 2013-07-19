@@ -564,6 +564,9 @@
 		D36146D8176314A100907414 /* page_white_acrobat_import.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146C4176314A100907414 /* page_white_acrobat_import.png */; };
 		D36146D9176314A100907414 /* page_white_acrobat_import@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146C5176314A100907414 /* page_white_acrobat_import@2x.png */; };
 		D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36186471743B13E00B501BC /* SystemConfiguration.framework */; };
+		D3819B571799CB4300C93005 /* CCProfessorUploadDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3819B561799CB4300C93005 /* CCProfessorUploadDataProvider.m */; };
+		D3819B5B1799CF3500C93005 /* CCProfessorUploadsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3819B5A1799CF3500C93005 /* CCProfessorUploadsCell.m */; };
+		D3819B5D1799CF8300C93005 /* CCProfessorUploadsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3819B5C1799CF8300C93005 /* CCProfessorUploadsCell.xib */; };
 		D394968E1785C36800C39A7E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D394968D1785C36800C39A7E /* Default.png */; };
 		D39496901785C36C00C39A7E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D394968F1785C36C00C39A7E /* Default-568h@2x.png */; };
 		D39496921785C37300C39A7E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D39496911785C37300C39A7E /* Default@2x.png */; };
@@ -1465,6 +1468,11 @@
 		D36146C4176314A100907414 /* page_white_acrobat_import.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_white_acrobat_import.png; sourceTree = "<group>"; };
 		D36146C5176314A100907414 /* page_white_acrobat_import@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "page_white_acrobat_import@2x.png"; sourceTree = "<group>"; };
 		D36186471743B13E00B501BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D3819B551799CB4300C93005 /* CCProfessorUploadDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProfessorUploadDataProvider.h; sourceTree = "<group>"; };
+		D3819B561799CB4300C93005 /* CCProfessorUploadDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCProfessorUploadDataProvider.m; sourceTree = "<group>"; };
+		D3819B591799CF3500C93005 /* CCProfessorUploadsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProfessorUploadsCell.h; sourceTree = "<group>"; };
+		D3819B5A1799CF3500C93005 /* CCProfessorUploadsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCProfessorUploadsCell.m; sourceTree = "<group>"; };
+		D3819B5C1799CF8300C93005 /* CCProfessorUploadsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCProfessorUploadsCell.xib; sourceTree = "<group>"; };
 		D394968D1785C36800C39A7E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D394968F1785C36C00C39A7E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D39496911785C37300C39A7E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2742,8 +2750,8 @@
 				70A29D6117877B94001BC8DD /* DropboxImageDataProvider */,
 				70A29D6417877B94001BC8DD /* DropboxPDFDataProvider */,
 				70A29D6717877B94001BC8DD /* EducationsDataProvider */,
-				70A29D6A17877B94001BC8DD /* FiltersDataProvider */,
 				70F42A77178D5A1C00E763F3 /* ForumsDataProvider */,
+				70A29D6A17877B94001BC8DD /* FiltersDataProvider */,
 				70F42A78178D5A1C00E763F3 /* GroupsDataProvider */,
 				70A29D6D17877B94001BC8DD /* ImageSortingDataProvider */,
 				70A29D7017877B94001BC8DD /* MarketNotesProvider */,
@@ -2755,6 +2763,7 @@
 				D39496E9178B29E400C39A7E /* OffersDataProvider */,
 				70A29D7F17877B94001BC8DD /* PaginationDataProvider */,
 				70A29D8217877B94001BC8DD /* PhotosDataProvider */,
+				D3819B541799C9BD00C93005 /* ProfessorUploadsDataProvider */,
 				D342BCDE1796CFFF0034E88C /* PurchasedNotesDataProvider */,
 				70B2D26817944F6E001B0C2C /* QuestionsDataProvider */,
 				D3949738178EC45000C39A7E /* ReviewsDataProvider */,
@@ -4254,6 +4263,7 @@
 				70B2D20B17944E39001B0C2C /* OfferCell */,
 				70B2D20F17944E39001B0C2C /* OrdinaryCell */,
 				70B2D21317944E39001B0C2C /* PhotoCell */,
+				D3819B581799CF0A00C93005 /* ProfessorUploadsCell */,
 				70B2D26217944E4A001B0C2C /* QuestionCell */,
 				70B2D21717944E39001B0C2C /* ReviewCell */,
 				70B2D21B17944E39001B0C2C /* SideMenuCells */,
@@ -4883,6 +4893,25 @@
 			path = DropboxIcons;
 			sourceTree = "<group>";
 		};
+		D3819B541799C9BD00C93005 /* ProfessorUploadsDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3819B551799CB4300C93005 /* CCProfessorUploadDataProvider.h */,
+				D3819B561799CB4300C93005 /* CCProfessorUploadDataProvider.m */,
+			);
+			path = ProfessorUploadsDataProvider;
+			sourceTree = "<group>";
+		};
+		D3819B581799CF0A00C93005 /* ProfessorUploadsCell */ = {
+			isa = PBXGroup;
+			children = (
+				D3819B591799CF3500C93005 /* CCProfessorUploadsCell.h */,
+				D3819B5A1799CF3500C93005 /* CCProfessorUploadsCell.m */,
+				D3819B5C1799CF8300C93005 /* CCProfessorUploadsCell.xib */,
+			);
+			path = ProfessorUploadsCell;
+			sourceTree = "<group>";
+		};
 		D39496DB178B191F00C39A7E /* OfferController */ = {
 			isa = PBXGroup;
 			children = (
@@ -5408,6 +5437,7 @@
 				70066C7D1799731F00B7A4E7 /* CCStateCell.xib in Resources */,
 				D342BD361799801D0034E88C /* CCInitialUserInfoController.xib in Resources */,
 				70066C831799828E00B7A4E7 /* CCBaseActionSheet.xib in Resources */,
+				D3819B5D1799CF8300C93005 /* CCProfessorUploadsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5735,6 +5765,8 @@
 				70066B3D1799381600B7A4E7 /* CCButtonsHelper.m in Sources */,
 				D342BD351799801D0034E88C /* CCInitialUserInfoController.m in Sources */,
 				70066C811799825E00B7A4E7 /* CCBaseActionSheet.m in Sources */,
+				D3819B571799CB4300C93005 /* CCProfessorUploadDataProvider.m in Sources */,
+				D3819B5B1799CF3500C93005 /* CCProfessorUploadsCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,5 +14,6 @@
 
 @property (nonatomic, strong) id <CCTransactionWithObject> addUploadsTransaction;
 @property (nonatomic, strong) CCClass *currentClass;
+@property (nonatomic, strong) id<CCTransactionWithObject> viewAttachmentTransaction;
 
 @end
