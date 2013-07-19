@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CCButtonsHelper.h"
 #define defaultCellHeight 44.0
 
 @interface CCBaseCell : UITableViewCell

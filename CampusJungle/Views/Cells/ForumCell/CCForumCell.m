@@ -38,6 +38,12 @@ static const NSInteger kMinCellHeight = 88;
     [self.deleteForumButton addTarget:self action:@selector(deleteForumButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    [CCButtonsHelper removeBackgroundImageInButton:self.deleteForumButton];
+}
+
 - (void)prepareForReuse
 {
     [CCViewPositioningHelper setWidth:kDefaultDescriptionLabelWidth toView:self.descriptionLabel];

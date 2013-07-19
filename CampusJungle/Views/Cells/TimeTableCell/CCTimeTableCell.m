@@ -7,6 +7,7 @@
 //
 
 #import "CCTimeTableCell.h"
+#import "CCButtonsHelper.h"
 
 @interface CCTimeTableCell()
 
@@ -30,9 +31,7 @@
     } else {
         self.removeButton.hidden = NO;
     }
-    [self.removeButton setBackgroundImage:nil forState:UIControlStateHighlighted];
-    [self.removeButton setBackgroundImage:nil forState:UIControlStateNormal];
-    
+    [CCButtonsHelper removeBackgroundImageInButton:self.removeButton];    
 }
 
 - (IBAction)didPressedRemoveButton

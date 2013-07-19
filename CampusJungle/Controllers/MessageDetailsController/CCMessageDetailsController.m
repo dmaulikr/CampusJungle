@@ -10,6 +10,7 @@
 #import "CCStuffAPIProviderProtocol.h"
 #import "CCAPIProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
+#import "CCButtonsHelper.h"
 
 #import "CCUser.h"
 
@@ -42,8 +43,7 @@
 
 - (void)setupButtons
 {
-    [self.senderDetailsButton setBackgroundImage:nil forState:UIControlStateHighlighted];
-    [self.senderDetailsButton setBackgroundImage:nil forState:UIControlStateNormal];
+    [CCButtonsHelper removeBackgroundImageInButton:self.senderDetailsButton];
 }
 
 - (void)loadInfo

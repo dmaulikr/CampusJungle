@@ -11,6 +11,7 @@
 #import "CCOrdinaryCell.h"
 #import "CCMenuDefines.h"
 #import "CCUserSessionProtocol.h"
+#import "CCButtonsHelper.h"
 #import "CCClassesApiProviderProtocol.h"
 
 @interface CCSideMenuController () <CCCellSelectionProtocol, CCSideMenuDelegate>
@@ -70,8 +71,7 @@
 
 - (void)setupButtons
 {
-    [self.userProfileButton setBackgroundImage:nil forState:UIControlStateNormal];
-    [self.userProfileButton setBackgroundImage:nil forState:UIControlStateHighlighted];
+    [CCButtonsHelper removeBackgroundImageInButton:self.userProfileButton];
 }
 
 - (void)loadUserClasses

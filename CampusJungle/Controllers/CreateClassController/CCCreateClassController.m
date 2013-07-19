@@ -20,6 +20,8 @@
 #import "CCClassCreationDataSource.h"
 #import "CCAvatarSelectionActionSheet.h"
 
+#import "CCButtonsHelper.h"
+
 @interface CCCreateClassController () <UITextFieldDelegate,  DatePickerDelegateProtocol,CCAvatarSelectionProtocol>
 {
     NSString *timetableDay;
@@ -62,8 +64,7 @@
     [self configTableWithProvider:self.tableDataProvider cellClass:[CCTimeTableCell class]];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleBordered target:self action:@selector(createClass:)];
     self.thumbView.image = [UIImage imageNamed:@"avatar_placeholder"];
-    [self.thumbButton setBackgroundImage:nil forState:UIControlStateNormal];
-    [self.thumbButton setBackgroundImage:nil forState:UIControlStateHighlighted];
+    [CCButtonsHelper removeBackgroundImageInButton:self.thumbButton];
 }
 
 - (void)configAvatarSelectionSheet

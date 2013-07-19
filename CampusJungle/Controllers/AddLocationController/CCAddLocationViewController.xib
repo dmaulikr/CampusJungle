@@ -119,7 +119,7 @@
 							<object class="IBUITextField" id="683946471">
 								<reference key="NSNextResponder" ref="510328670"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{17, 300}, {233, 30}}</string>
+								<string key="NSFrame">{{17, 300}, {244, 30}}</string>
 								<reference key="NSSuperview" ref="510328670"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="628267748"/>
@@ -178,7 +178,7 @@
 							<object class="IBUIButton" id="628267748">
 								<reference key="NSNextResponder" ref="510328670"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{255, 297}, {47, 37}}</string>
+								<string key="NSFrame">{{262, 300}, {44, 30}}</string>
 								<reference key="NSSuperview" ref="510328670"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="561638687"/>
@@ -187,8 +187,6 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<int key="IBUIButtonType">1</int>
-								<string key="IBUINormalTitle">Detect</string>
 								<object class="NSColor" key="IBUIHighlightedTitleColor">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MQA</bytes>
@@ -200,6 +198,15 @@
 								<object class="NSColor" key="IBUINormalTitleShadowColor">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MC41AA</bytes>
+								</object>
+								<object class="NSCustomResource" key="IBUIHighlightedImage" id="1028821580">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">location_button_active.png</string>
+								</object>
+								<reference key="IBUISelectedImage" ref="1028821580"/>
+								<object class="NSCustomResource" key="IBUINormalImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">location_button.png</string>
 								</object>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<int key="type">2</int>
@@ -428,6 +435,7 @@
 				<string key="18.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="19.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="20.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<real value="2" key="20.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
@@ -441,7 +449,7 @@
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">CCAddLocationViewController</string>
-					<string key="superclassName">CCViewController</string>
+					<string key="superclassName">CCBaseViewController</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="addressTextField">UITextField</string>
 						<string key="descriptionTextField">UITextField</string>
@@ -477,11 +485,11 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">CCViewController</string>
+					<string key="className">CCBaseViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CCViewController.h</string>
+						<string key="minorKey">./Classes/CCBaseViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -498,6 +506,10 @@
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="location_button.png">{30, 30}</string>
+			<string key="location_button_active.png">{30, 30}</string>
+		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>
 </archive>

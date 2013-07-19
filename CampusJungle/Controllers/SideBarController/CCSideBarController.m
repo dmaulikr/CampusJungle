@@ -7,6 +7,7 @@
 //
 
 #import "CCSideBarController.h"
+#import "CCButtonsHelper.h"
 
 @interface CCSideBarController()
 
@@ -56,8 +57,7 @@
     UIImage *image = [UIImage imageNamed:@"menuButton"];
     button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
     
-    [button setBackgroundImage:nil forState:UIControlStateNormal];
-    [button setBackgroundImage:nil forState:UIControlStateHighlighted];
+    [CCButtonsHelper removeBackgroundImageInButton:button];
     [button setImage:image forState:UIControlStateNormal];
     [button addTarget:self action:@selector(toggleLeftPanel:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:button];

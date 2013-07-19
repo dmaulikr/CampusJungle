@@ -8,6 +8,7 @@
 
 #import "CCFilterSectionHeader.h"
 #import "CCClass.h"
+#import "CCButtonsHelper.h"
 
 @interface CCFilterSectionHeader()
 
@@ -38,11 +39,8 @@
 - (void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];
-    //self.contentView.backgroundColor = [UIColor brownColor];
-    //self.backgroundColor = [UIColor brownColor];
     [self.backgroundView setBackgroundColor:[UIColor brownColor]];
-    [self.backgroungButton setBackgroundImage:nil forState:UIControlStateNormal];
-    [self.backgroungButton setBackgroundImage:nil forState:UIControlStateHighlighted];
+    [CCButtonsHelper removeBackgroundImageInButton:self.backgroungButton];
 }
 
 - (IBAction)sectionDidPressed
