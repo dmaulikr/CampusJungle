@@ -182,7 +182,7 @@
         [self.logoutTransaction perform];
     }];
     
-    GIAlert *alert = [GIAlert alertWithTitle:nil
+    GIAlert *alert = [GIAlert alertWithTitle:CCAlertsMessages.confirmation
                                      message:CCAlertsMessages.confimAlert
                                      buttons:@[noButton, yesButton,]];
     [alert show];

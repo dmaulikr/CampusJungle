@@ -94,6 +94,7 @@
 												<int key="NSvFlags">292</int>
 												<string key="NSFrame">{{32, 183}, {275, 30}}</string>
 												<reference key="NSSuperview" ref="365560244"/>
+												<reference key="NSNextKeyView"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="IBUIOpaque">NO</bool>
 												<bool key="IBUIClipsSubviews">YES</bool>
@@ -162,6 +163,7 @@
 												<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 												<float key="IBUIMinimumFontSize">17</float>
 												<object class="IBUITextInputTraits" key="IBUITextInputTraits">
+													<int key="IBUIAutocapitalizationType">3</int>
 													<int key="IBUIReturnKeyType">4</int>
 													<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 												</object>
@@ -190,6 +192,7 @@
 												<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 												<float key="IBUIMinimumFontSize">17</float>
 												<object class="IBUITextInputTraits" key="IBUITextInputTraits">
+													<int key="IBUIAutocapitalizationType">1</int>
 													<int key="IBUIReturnKeyType">4</int>
 													<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 												</object>

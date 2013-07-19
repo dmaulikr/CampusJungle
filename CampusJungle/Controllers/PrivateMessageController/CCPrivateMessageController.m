@@ -9,14 +9,13 @@
 #import "CCPrivateMessageController.h"
 #import "CCStandardErrorHandler.h"
 #import "CCMessageAPIProviderProtocol.h"
+#import "CCStringHelper.h"
 
 @interface CCPrivateMessageController ()
 
 @property (nonatomic, weak) IBOutlet UIImageView *backgroundImage;
 @property (nonatomic, weak) IBOutlet UITextView *inputField;
 @property (nonatomic, strong) id <CCMessageAPIProviderProtocol> ioc_messageAPIProvider;
-
-- (IBAction)sendButtonDidPress;
 
 @end
 
@@ -28,11 +27,13 @@
     self.backgroundImage.image = [[UIImage imageNamed:@"text_box"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
     self.tapRecognizer.enabled = YES;
     self.title = @"Private Message";
+    [self setRightNavigationItemWithTitle:@"Send" selector:@selector(sendButtonDidPressed:)];
+    [(UIScrollView *)self.view setScrollEnabled:NO];
 }
 
-- (IBAction)sendButtonDidPress
+- (void)sendButtonDidPressed:(id)sender
 {
-    if(self.inputField.text.length){
+    if (self.inputField.text.length > 0){
         [self.ioc_messageAPIProvider sendMessage:self.inputField.text
                                           toUser:self.recipient.uid
                                   successHandler:^(id result) {
@@ -42,17 +43,23 @@
                             [CCStandardErrorHandler showErrorWithError:error];
                                                                         }];
     } else {
-        [CCStandardErrorHandler showErrorWithTitle:nil message:@"Message can not be empty"];
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.emptyMessageText];
     }
 }
 
-- (BOOL)textView:(UITextView *)txtView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
-    if( [text rangeOfCharacterFromSet:[NSCharacterSet newlineCharacterSet]].location == NSNotFound ) {
+#pragma mark -
+#pragma mark UITextViewDelegate
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if ([text rangeOfCharacterFromSet:[NSCharacterSet newlineCharacterSet]].location == NSNotFound ) {
         return YES;
     }
-    
-    [self sendButtonDidPress];
+    [textView resignFirstResponder];
     return NO;
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    textView.text = [CCStringHelper trimSpacesFromString:textView.text];
 }
 
 @end

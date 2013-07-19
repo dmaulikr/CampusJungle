@@ -99,10 +99,14 @@
     return 1;
 }
 
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
 {
-    
-    return [NSString stringWithFormat:@"%d",(self.currentYear + row)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44)];
+    [label setTextAlignment:NSTextAlignmentCenter];
+    [label setBackgroundColor:[UIColor clearColor]];
+    [label setFont:[UIFont fontWithName:@"Avenir-Heavy" size:19]];
+    [label setText:[NSString stringWithFormat:@"%d year", self.currentYear + row]];
+    return label;
 }
 
 - (void)setUpPickerLayer

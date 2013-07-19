@@ -204,3 +204,9 @@ const struct CCProgressHudsConstants CCProgressHudsConstants = {
 const struct CCHeaderViewsTitles CCHeaderViewsTitles = {
     .answersHeaderViewTitle = @"Tap to load previous answers",
 };
+
+const struct CCAvatarActionSheetButtonsTitles CCAvatarActionSheetButtonsTitles = {
+    .takePhotoButtonTitle = @"Take a photo",
+    .selectFromGalleryButtonTitle = @"Select from gallery",
+    .cancelButtonTitle = @"Cancel",
+};

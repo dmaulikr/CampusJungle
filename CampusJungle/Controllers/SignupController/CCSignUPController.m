@@ -49,8 +49,16 @@
 
 - (BOOL)isFormValid
 {
+    if ([self.emailField.text length] == 0) {
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.emptyEmail];
+        return NO;
+    }
     if (![self.emailField.text isEmail]){
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.emailNotValid];
+        return NO;
+    }
+    if ([self.passField.text length] == 0) {
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.emptyPassword];
         return NO;
     }
     if (![self.passField.text isMinLength:CCUserDefines.minimumPasswordLength]){

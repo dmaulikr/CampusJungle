@@ -206,6 +206,12 @@ extern const struct CCHeaderViewsTitles {
     __unsafe_unretained NSString *answersHeaderViewTitle;
 } CCHeaderViewsTitles;
 
+extern const struct CCAvatarActionSheetButtonsTitles {
+    __unsafe_unretained NSString *takePhotoButtonTitle;
+    __unsafe_unretained NSString *selectFromGalleryButtonTitle;
+    __unsafe_unretained NSString *cancelButtonTitle;
+} CCAvatarActionSheetButtonsTitles;
+
 enum CCClassTabbarButtonsIdentifiers {
     CCClassTabbarButtonsIdentifierClassmate = 1,
     CCClassTabbarButtonsIdentifierGroup = 2,
