@@ -503,6 +503,10 @@
 		70F42A7E178D5A3800E763F3 /* CCGroupsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F42A7D178D5A3800E763F3 /* CCGroupsDataProvider.m */; };
 		70FDD628179D243800871727 /* CCGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD626179D243800871727 /* CCGroupViewController.m */; };
 		70FDD629179D243800871727 /* CCGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FDD627179D243800871727 /* CCGroupViewController.xib */; };
+		70FDD62D179D284F00871727 /* CCGroupTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD62C179D284F00871727 /* CCGroupTransaction.m */; };
+		70FDD632179D2ACB00871727 /* CCAddGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD630179D2ACB00871727 /* CCAddGroupViewController.m */; };
+		70FDD633179D2ACB00871727 /* CCAddGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FDD631179D2ACB00871727 /* CCAddGroupViewController.xib */; };
+		70FDD637179D2B6400871727 /* CCAddGroupTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD636179D2B6400871727 /* CCAddGroupTransaction.m */; };
 		A784C599173A865E005E4921 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C598173A865E005E4921 /* UIKit.framework */; };
 		A784C59B173A865E005E4921 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C59A173A865E005E4921 /* Foundation.framework */; };
 		A784C59D173A865E005E4921 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C59C173A865E005E4921 /* CoreGraphics.framework */; };
@@ -1390,6 +1394,13 @@
 		70FDD625179D243800871727 /* CCGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupViewController.h; sourceTree = "<group>"; };
 		70FDD626179D243800871727 /* CCGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupViewController.m; sourceTree = "<group>"; };
 		70FDD627179D243800871727 /* CCGroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupViewController.xib; sourceTree = "<group>"; };
+		70FDD62B179D284F00871727 /* CCGroupTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupTransaction.h; sourceTree = "<group>"; };
+		70FDD62C179D284F00871727 /* CCGroupTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupTransaction.m; sourceTree = "<group>"; };
+		70FDD62F179D2ACB00871727 /* CCAddGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddGroupViewController.h; sourceTree = "<group>"; };
+		70FDD630179D2ACB00871727 /* CCAddGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddGroupViewController.m; sourceTree = "<group>"; };
+		70FDD631179D2ACB00871727 /* CCAddGroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAddGroupViewController.xib; sourceTree = "<group>"; };
+		70FDD635179D2B6400871727 /* CCAddGroupTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddGroupTransaction.h; sourceTree = "<group>"; };
+		70FDD636179D2B6400871727 /* CCAddGroupTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddGroupTransaction.m; sourceTree = "<group>"; };
 		9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		A784C595173A865E005E4921 /* CampusJungle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusJungle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A784C598173A865E005E4921 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -2322,6 +2333,7 @@
 				701253F41796CF4D0085247A /* AddAnswerController */,
 				7012545C1797E3AF0085247A /* AddCommentController */,
 				70B2D0A217941A01001B0C2C /* AddForumController */,
+				70FDD62E179D2AB400871727 /* AddGroupController */,
 				700F9427178EA06000A6FBBA /* AddLocationController */,
 				D342BCFA179817270034E88C /* AddProfessorUploadController */,
 				70B2D0D01794483A001B0C2C /* AddQuestionController */,
@@ -3618,6 +3630,7 @@
 				70B2D0D717944894001B0C2C /* AddClassTransaction */,
 				701254621797E4E90085247A /* AddCommentTransaction */,
 				70B2D0DA17944894001B0C2C /* AddForumTransaction */,
+				70FDD634179D2B5200871727 /* AddGroupTransaction */,
 				70B2D0DD17944894001B0C2C /* AddLocationTransaction */,
 				D342BD001798192D0034E88C /* AddProfessorUploadsTransaction */,
 				70B2D1CF179448A9001B0C2C /* AddQuestionTransaction */,
@@ -3645,6 +3658,7 @@
 				D342BCD21796ACF60034E88C /* EditClassTransaction */,
 				70B2D11C17944894001B0C2C /* EducationSettingSettingUpTransaction */,
 				70B2D11F17944894001B0C2C /* ForumDetailsTransaction */,
+				70FDD62A179D283900871727 /* GroupTransaction */,
 				70B2D12217944894001B0C2C /* ImagesForNotesUploadingScreenTransaction */,
 				70B2D12517944894001B0C2C /* ImagesSortingTransaction */,
 				70B2D12817944894001B0C2C /* InboxTransaction */,
@@ -4619,6 +4633,34 @@
 			path = GroupController;
 			sourceTree = "<group>";
 		};
+		70FDD62A179D283900871727 /* GroupTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				70FDD62B179D284F00871727 /* CCGroupTransaction.h */,
+				70FDD62C179D284F00871727 /* CCGroupTransaction.m */,
+			);
+			path = GroupTransaction;
+			sourceTree = "<group>";
+		};
+		70FDD62E179D2AB400871727 /* AddGroupController */ = {
+			isa = PBXGroup;
+			children = (
+				70FDD62F179D2ACB00871727 /* CCAddGroupViewController.h */,
+				70FDD630179D2ACB00871727 /* CCAddGroupViewController.m */,
+				70FDD631179D2ACB00871727 /* CCAddGroupViewController.xib */,
+			);
+			path = AddGroupController;
+			sourceTree = "<group>";
+		};
+		70FDD634179D2B5200871727 /* AddGroupTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				70FDD635179D2B6400871727 /* CCAddGroupTransaction.h */,
+				70FDD636179D2B6400871727 /* CCAddGroupTransaction.m */,
+			);
+			path = AddGroupTransaction;
+			sourceTree = "<group>";
+		};
 		A784C58C173A865E005E4921 = {
 			isa = PBXGroup;
 			children = (
@@ -5455,6 +5497,7 @@
 				70066C831799828E00B7A4E7 /* CCBaseActionSheet.xib in Resources */,
 				D3819B5D1799CF8300C93005 /* CCProfessorUploadsCell.xib in Resources */,
 				70FDD629179D243800871727 /* CCGroupViewController.xib in Resources */,
+				70FDD633179D2ACB00871727 /* CCAddGroupViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5785,6 +5828,9 @@
 				D3819B571799CB4300C93005 /* CCProfessorUploadDataProvider.m in Sources */,
 				D3819B5B1799CF3500C93005 /* CCProfessorUploadsCell.m in Sources */,
 				70FDD628179D243800871727 /* CCGroupViewController.m in Sources */,
+				70FDD62D179D284F00871727 /* CCGroupTransaction.m in Sources */,
+				70FDD632179D2ACB00871727 /* CCAddGroupViewController.m in Sources */,
+				70FDD637179D2B6400871727 /* CCAddGroupTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

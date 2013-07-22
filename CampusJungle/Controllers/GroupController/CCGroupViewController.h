@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "CCBaseViewController.h"
 
+@class CCGroup;
+
 @interface CCGroupViewController : CCBaseViewController
+
+- (void)setGroup:(CCGroup *)group;
 
 @end

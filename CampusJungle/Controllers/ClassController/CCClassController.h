@@ -23,6 +23,8 @@
 @property (nonatomic, strong) id <CCTransactionWithObject> addForumTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> forumDetailsTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> editClassTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> groupDetailsTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> addGroupTransaction;
 @property (nonatomic, strong) id <CCTransaction> newsFeedTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> professorUploadsTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> timetableTransaction;

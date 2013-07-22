@@ -276,7 +276,7 @@ static const NSInteger kNavBarHeight = 44;
             [self.delegate showProfileOfUser:cellObject];
             break;
         case CCClassTabbarButtonsIdentifierGroup:
-            // go group details
+            [self.delegate showDetailsOfGroup:cellObject];
             break;
         case CCClassTabbarButtonsIdentifierLocations:
             [self.delegate showLocation:cellObject onMapWithLocations:self.locationsArray];
@@ -293,10 +293,9 @@ static const NSInteger kNavBarHeight = 44;
     switch (identifier) {
         case CCClassTabbarButtonsIdentifierClassmate:
             // go add classmate
-
             break;
         case CCClassTabbarButtonsIdentifierGroup:
-            // go add group
+            [self.delegate addGroup];
             break;
         case CCClassTabbarButtonsIdentifierLocations:
             [self.delegate addLocation];

@@ -11,9 +11,18 @@
 
 @implementation CCGroup
 
++ (CCGroup *)createWithName:(NSString *)name description:(NSString *)description
+{
+    CCGroup *group = [CCGroup new];
+    group.name = name;
+    group.description = description;
+    return group;
+}
+
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager
 {
     [self configureGroupsResponse:objectManager];
+    [self configureGroupRequest:objectManager];
 }
 
 + (void)configureGroupsResponse:(RKObjectManager *)objectManager
@@ -35,6 +44,15 @@
                                                                                                       keyPath:nil
                                                                                                   statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     [objectManager addResponseDescriptor:classGroupsResponseDescriptor];
+}
+
++ (void)configureGroupRequest:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *groupMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    [groupMapping addAttributeMappingsFromDictionary:[CCGroup requestMappingDictionary]];
+    RKRequestDescriptor *groupRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:groupMapping objectClass:[CCGroup class] rootKeyPath:nil];
+    [objectManager addRequestDescriptor:groupRequestDescriptor];
+
 }
 
 + (NSDictionary *)responseMappingDictionary

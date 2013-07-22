@@ -24,4 +24,6 @@
 
 @property (nonatomic, assign) BOOL isSelected;
 
++ (CCGroup *)createWithName:(NSString *)name description:(NSString *)description;
+
 @end
