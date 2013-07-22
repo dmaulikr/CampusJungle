@@ -66,6 +66,7 @@
              @"owner_first_name" : @"ownerFirstName",
              @"owner_last_name" : @"ownerLastName",
              @"owner_avatar" : @"ownerAvatar",
+             
              };
 }
 

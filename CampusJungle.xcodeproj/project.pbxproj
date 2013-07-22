@@ -576,6 +576,14 @@
 		D38532CB179D3A3D0075F870 /* CCAnnouncementsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D38532C9179D3A3D0075F870 /* CCAnnouncementsController.m */; };
 		D38532CC179D3A3D0075F870 /* CCAnnouncementsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38532CA179D3A3D0075F870 /* CCAnnouncementsController.xib */; };
 		D38532D0179D3CA30075F870 /* CCAnnouncementTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D38532CF179D3CA30075F870 /* CCAnnouncementTransaction.m */; };
+		D38532D5179D50170075F870 /* CCAddAnnouncementController.m in Sources */ = {isa = PBXBuildFile; fileRef = D38532D3179D50170075F870 /* CCAddAnnouncementController.m */; };
+		D38532D6179D50170075F870 /* CCAddAnnouncementController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38532D4179D50170075F870 /* CCAddAnnouncementController.xib */; };
+		D38532DA179D55630075F870 /* CCAddAnnouncementTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D38532D9179D55630075F870 /* CCAddAnnouncementTransaction.m */; };
+		D38532DE179D672A0075F870 /* CCAnnouncementAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D38532DD179D672A0075F870 /* CCAnnouncementAPIProvider.m */; };
+		D38532E3179D67DF0075F870 /* CCAnnouncement.m in Sources */ = {isa = PBXBuildFile; fileRef = D38532E2179D67DF0075F870 /* CCAnnouncement.m */; };
+		D38532E7179DD3C00075F870 /* CCAnnouncementDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D38532E6179DD3C00075F870 /* CCAnnouncementDataProvider.m */; };
+		D38532EB179DDA0D0075F870 /* CCAnnouncementCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D38532EA179DDA0D0075F870 /* CCAnnouncementCell.m */; };
+		D38532ED179DDA470075F870 /* CCAnnouncementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38532EC179DDA470075F870 /* CCAnnouncementCell.xib */; };
 		D394968E1785C36800C39A7E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D394968D1785C36800C39A7E /* Default.png */; };
 		D39496901785C36C00C39A7E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D394968F1785C36C00C39A7E /* Default-568h@2x.png */; };
 		D39496921785C37300C39A7E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D39496911785C37300C39A7E /* Default@2x.png */; };
@@ -1497,6 +1505,21 @@
 		D38532CA179D3A3D0075F870 /* CCAnnouncementsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAnnouncementsController.xib; sourceTree = "<group>"; };
 		D38532CE179D3CA30075F870 /* CCAnnouncementTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnnouncementTransaction.h; sourceTree = "<group>"; };
 		D38532CF179D3CA30075F870 /* CCAnnouncementTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAnnouncementTransaction.m; sourceTree = "<group>"; };
+		D38532D2179D50170075F870 /* CCAddAnnouncementController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddAnnouncementController.h; sourceTree = "<group>"; };
+		D38532D3179D50170075F870 /* CCAddAnnouncementController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddAnnouncementController.m; sourceTree = "<group>"; };
+		D38532D4179D50170075F870 /* CCAddAnnouncementController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAddAnnouncementController.xib; sourceTree = "<group>"; };
+		D38532D8179D55630075F870 /* CCAddAnnouncementTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddAnnouncementTransaction.h; sourceTree = "<group>"; };
+		D38532D9179D55630075F870 /* CCAddAnnouncementTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddAnnouncementTransaction.m; sourceTree = "<group>"; };
+		D38532DC179D672A0075F870 /* CCAnnouncementAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnnouncementAPIProvider.h; sourceTree = "<group>"; };
+		D38532DD179D672A0075F870 /* CCAnnouncementAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAnnouncementAPIProvider.m; sourceTree = "<group>"; };
+		D38532DF179D675F0075F870 /* CCAnnouncementAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCAnnouncementAPIProviderProtocol.h; sourceTree = "<group>"; };
+		D38532E1179D67DF0075F870 /* CCAnnouncement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnnouncement.h; sourceTree = "<group>"; };
+		D38532E2179D67DF0075F870 /* CCAnnouncement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAnnouncement.m; sourceTree = "<group>"; };
+		D38532E5179DD3C00075F870 /* CCAnnouncementDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnnouncementDataProvider.h; sourceTree = "<group>"; };
+		D38532E6179DD3C00075F870 /* CCAnnouncementDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAnnouncementDataProvider.m; sourceTree = "<group>"; };
+		D38532E9179DDA0D0075F870 /* CCAnnouncementCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnnouncementCell.h; sourceTree = "<group>"; };
+		D38532EA179DDA0D0075F870 /* CCAnnouncementCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAnnouncementCell.m; sourceTree = "<group>"; };
+		D38532EC179DDA470075F870 /* CCAnnouncementCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAnnouncementCell.xib; sourceTree = "<group>"; };
 		D394968D1785C36800C39A7E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D394968F1785C36C00C39A7E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D39496911785C37300C39A7E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2338,6 +2361,7 @@
 		70A29C34178778AB001BC8DD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D38532D1179D4FE50075F870 /* AddAnnouncementController */,
 				701253F41796CF4D0085247A /* AddAnswerController */,
 				7012545C1797E3AF0085247A /* AddCommentController */,
 				70B2D0A217941A01001B0C2C /* AddForumController */,
@@ -2763,6 +2787,7 @@
 		70A29D4B17877B94001BC8DD /* DataProviders */ = {
 			isa = PBXGroup;
 			children = (
+				D38532E4179DD3AB0075F870 /* AnnouncementDataProvider */,
 				7012AC8617955E1E002DA5E9 /* AnswersDataProvider */,
 				70A29D4C17877B94001BC8DD /* BaseDataProvider */,
 				701254071796F1A20085247A /* BaseReverseDataProvider */,
@@ -3065,6 +3090,7 @@
 			isa = PBXGroup;
 			children = (
 				70B2D0B917943886001B0C2C /* CCRestKitMappableModel.h */,
+				D38532E0179D67CF0075F870 /* Announcement */,
 				7012AC7317954DAB002DA5E9 /* Answer */,
 				70A29DD817877CB4001BC8DD /* Authorization */,
 				70A29DDB17877CB5001BC8DD /* AuthorizationResponse */,
@@ -3404,6 +3430,7 @@
 		70B2D04F17940245001B0C2C /* API */ = {
 			isa = PBXGroup;
 			children = (
+				D38532DB179D67150075F870 /* AnnouncementAPIProvider */,
 				7012AC771795507E002DA5E9 /* AnswersAPIProvider */,
 				70B2D05017940245001B0C2C /* APIProvider */,
 				70B2D05417940245001B0C2C /* ClassesApiProvider */,
@@ -3635,12 +3662,13 @@
 		70B2D0D61794488F001B0C2C /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
+				D38532D7179D54530075F870 /* AddAnnouncementTransaction */,
 				701253FA1796D0EA0085247A /* AddAnswerTransaction */,
 				70B2D0D717944894001B0C2C /* AddClassTransaction */,
 				701254621797E4E90085247A /* AddCommentTransaction */,
 				70B2D0DA17944894001B0C2C /* AddForumTransaction */,
-				70FDD634179D2B5200871727 /* AddGroupTransaction */,
 				70B2D0DD17944894001B0C2C /* AddLocationTransaction */,
+				70FDD634179D2B5200871727 /* AddGroupTransaction */,
 				D342BD001798192D0034E88C /* AddProfessorUploadsTransaction */,
 				70B2D1CF179448A9001B0C2C /* AddQuestionTransaction */,
 				D38532CD179D3C840075F870 /* AnnouncementTransaction */,
@@ -3665,8 +3693,8 @@
 				70B2D11017944894001B0C2C /* DropboxFileSelectionTransaction */,
 				70B2D11317944894001B0C2C /* DropboxFileSystemTransaction */,
 				70B2D11917944894001B0C2C /* DropboxPDFFileSystemTransaction */,
-				D342BCD21796ACF60034E88C /* EditClassTransaction */,
 				70B2D11C17944894001B0C2C /* EducationSettingSettingUpTransaction */,
+				D342BCD21796ACF60034E88C /* EditClassTransaction */,
 				70B2D11F17944894001B0C2C /* ForumDetailsTransaction */,
 				70FDD62A179D283900871727 /* GroupTransaction */,
 				70B2D12217944894001B0C2C /* ImagesForNotesUploadingScreenTransaction */,
@@ -4272,6 +4300,7 @@
 		70B2D1D317944E39001B0C2C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				D38532E8179DD9F50075F870 /* AnnouncementCell */,
 				7012AC8E17955F95002DA5E9 /* AnswerCell */,
 				70B2D1D417944E39001B0C2C /* BaseCell */,
 				70B2D1D717944E39001B0C2C /* CityCell */,
@@ -4999,6 +5028,63 @@
 			path = AnnouncementTransaction;
 			sourceTree = "<group>";
 		};
+		D38532D1179D4FE50075F870 /* AddAnnouncementController */ = {
+			isa = PBXGroup;
+			children = (
+				D38532D2179D50170075F870 /* CCAddAnnouncementController.h */,
+				D38532D3179D50170075F870 /* CCAddAnnouncementController.m */,
+				D38532D4179D50170075F870 /* CCAddAnnouncementController.xib */,
+			);
+			path = AddAnnouncementController;
+			sourceTree = "<group>";
+		};
+		D38532D7179D54530075F870 /* AddAnnouncementTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D38532D8179D55630075F870 /* CCAddAnnouncementTransaction.h */,
+				D38532D9179D55630075F870 /* CCAddAnnouncementTransaction.m */,
+			);
+			path = AddAnnouncementTransaction;
+			sourceTree = "<group>";
+		};
+		D38532DB179D67150075F870 /* AnnouncementAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D38532DC179D672A0075F870 /* CCAnnouncementAPIProvider.h */,
+				D38532DD179D672A0075F870 /* CCAnnouncementAPIProvider.m */,
+				D38532DF179D675F0075F870 /* CCAnnouncementAPIProviderProtocol.h */,
+			);
+			path = AnnouncementAPIProvider;
+			sourceTree = "<group>";
+		};
+		D38532E0179D67CF0075F870 /* Announcement */ = {
+			isa = PBXGroup;
+			children = (
+				D38532E1179D67DF0075F870 /* CCAnnouncement.h */,
+				D38532E2179D67DF0075F870 /* CCAnnouncement.m */,
+			);
+			path = Announcement;
+			sourceTree = "<group>";
+		};
+		D38532E4179DD3AB0075F870 /* AnnouncementDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D38532E5179DD3C00075F870 /* CCAnnouncementDataProvider.h */,
+				D38532E6179DD3C00075F870 /* CCAnnouncementDataProvider.m */,
+			);
+			path = AnnouncementDataProvider;
+			sourceTree = "<group>";
+		};
+		D38532E8179DD9F50075F870 /* AnnouncementCell */ = {
+			isa = PBXGroup;
+			children = (
+				D38532E9179DDA0D0075F870 /* CCAnnouncementCell.h */,
+				D38532EA179DDA0D0075F870 /* CCAnnouncementCell.m */,
+				D38532EC179DDA470075F870 /* CCAnnouncementCell.xib */,
+			);
+			path = AnnouncementCell;
+			sourceTree = "<group>";
+		};
 		D39496DB178B191F00C39A7E /* OfferController */ = {
 			isa = PBXGroup;
 			children = (
@@ -5529,6 +5615,8 @@
 				70FDD629179D243800871727 /* CCGroupViewController.xib in Resources */,
 				70FDD633179D2ACB00871727 /* CCAddGroupViewController.xib in Resources */,
 				D38532CC179D3A3D0075F870 /* CCAnnouncementsController.xib in Resources */,
+				D38532D6179D50170075F870 /* CCAddAnnouncementController.xib in Resources */,
+				D38532ED179DDA470075F870 /* CCAnnouncementCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5864,6 +5952,12 @@
 				70FDD637179D2B6400871727 /* CCAddGroupTransaction.m in Sources */,
 				D38532CB179D3A3D0075F870 /* CCAnnouncementsController.m in Sources */,
 				D38532D0179D3CA30075F870 /* CCAnnouncementTransaction.m in Sources */,
+				D38532D5179D50170075F870 /* CCAddAnnouncementController.m in Sources */,
+				D38532DA179D55630075F870 /* CCAddAnnouncementTransaction.m in Sources */,
+				D38532DE179D672A0075F870 /* CCAnnouncementAPIProvider.m in Sources */,
+				D38532E3179D67DF0075F870 /* CCAnnouncement.m in Sources */,
+				D38532E7179DD3C00075F870 /* CCAnnouncementDataProvider.m in Sources */,
+				D38532EB179DDA0D0075F870 /* CCAnnouncementCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

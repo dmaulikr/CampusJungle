@@ -75,6 +75,10 @@ const struct CCAPIDefines CCAPIDefines = {
     .leaveGroup = @"/api/groups/%@/leave",
     .destroyGroup = @"/api/groups/%@",
     .loadGroupMembers = @"/api/groups/%@/members",
+    .loadAnnouncements = @"/api/classes/%@/announcements",
+    .postAnnouncements = @"/api/classes/%@/announcements",
+    .deleteAnouncements = @"/api/announcements/%@",
+    
 };
 
 const struct CCUserDefines CCUserDefines = {
@@ -204,7 +208,7 @@ const struct CCLocationPlacesTypes CCLocationPlacesTypes = {
 };
 
 const struct CCProgressHudsConstants CCProgressHudsConstants = {
-    .loaderDuration = 5,
+    .loaderDuration = 4,
 };
 
 const struct CCHeaderViewsTitles CCHeaderViewsTitles = {

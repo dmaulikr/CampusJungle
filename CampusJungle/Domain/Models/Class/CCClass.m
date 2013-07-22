@@ -113,7 +113,8 @@
       @"college_name" : @"collegeName",
       @"college_id" : @"collegeID",
       @"name" : @"className",
-      @"image" : @"classImageURL"
+      @"image" : @"classImageURL",
+      @"is_current_user_professor" : @"isProfessor",
       };
 }
 

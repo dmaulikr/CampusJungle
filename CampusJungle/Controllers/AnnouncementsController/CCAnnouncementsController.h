@@ -8,9 +8,11 @@
 
 #import "CCTableBaseViewController.h"
 #import "CCClass.h"
+#import "CCTransactionWithObject.h"
 
 @interface CCAnnouncementsController : CCTableBaseViewController
 
 @property (nonatomic, strong) CCClass *currentClass;
+@property (nonatomic, strong) id <CCTransactionWithObject> addAnnouncementTransaction;
 
 @end

@@ -74,4 +74,5 @@ const struct CCValidationMessages CCValidationMessages = {
     .emptyUploadText = @"Please enter upload message",
     .emptyUploadName = @"Please enter upload name",
     .emptyMessageText = @"Message can't be blank",
+    .emptyTopic = @"Please enter topic",
 };
