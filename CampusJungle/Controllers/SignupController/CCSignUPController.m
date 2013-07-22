@@ -11,6 +11,7 @@
 #import "CCSignUPAPIProtocol.h"
 #import "CCTransaction.h"
 #import "CCStandardErrorHandler.h"
+#import "NSString+CCValidationHelper.h"
 
 @interface CCSignUPController ()
 
@@ -53,7 +54,7 @@
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.emptyEmail];
         return NO;
     }
-    if (![self.emailField.text isEmail]){
+    if (![self.emailField.text isValidEmail]){
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.emailNotValid];
         return NO;
     }

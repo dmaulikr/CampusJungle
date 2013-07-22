@@ -594,6 +594,7 @@
 		D38532E7179DD3C00075F870 /* CCAnnouncementDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D38532E6179DD3C00075F870 /* CCAnnouncementDataProvider.m */; };
 		D38532EB179DDA0D0075F870 /* CCAnnouncementCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D38532EA179DDA0D0075F870 /* CCAnnouncementCell.m */; };
 		D38532ED179DDA470075F870 /* CCAnnouncementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38532EC179DDA470075F870 /* CCAnnouncementCell.xib */; };
+		D38532F3179DED210075F870 /* NSString+CCValidationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D38532F2179DED210075F870 /* NSString+CCValidationHelper.m */; };
 		D394968E1785C36800C39A7E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D394968D1785C36800C39A7E /* Default.png */; };
 		D39496901785C36C00C39A7E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D394968F1785C36C00C39A7E /* Default-568h@2x.png */; };
 		D39496921785C37300C39A7E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D39496911785C37300C39A7E /* Default@2x.png */; };
@@ -1546,6 +1547,8 @@
 		D38532E9179DDA0D0075F870 /* CCAnnouncementCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnnouncementCell.h; sourceTree = "<group>"; };
 		D38532EA179DDA0D0075F870 /* CCAnnouncementCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAnnouncementCell.m; sourceTree = "<group>"; };
 		D38532EC179DDA470075F870 /* CCAnnouncementCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAnnouncementCell.xib; sourceTree = "<group>"; };
+		D38532F1179DED210075F870 /* NSString+CCValidationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CCValidationHelper.h"; sourceTree = "<group>"; };
+		D38532F2179DED210075F870 /* NSString+CCValidationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CCValidationHelper.m"; sourceTree = "<group>"; };
 		D394968D1785C36800C39A7E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D394968F1785C36C00C39A7E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D39496911785C37300C39A7E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2350,6 +2353,7 @@
 				7012547617982B650085247A /* TimeStringsSortingHelper */,
 				709308111785806000E71AB0 /* UIImageViewHelper */,
 				70B2D26C179456CD001B0C2C /* UserNameHelper */,
+				D38532F0179DED180075F870 /* VailidationHelper */,
 				709308161785808400E71AB0 /* ViewPositioningHelper */,
 			);
 			path = Helpers;
@@ -5175,6 +5179,15 @@
 			path = AnnouncementCell;
 			sourceTree = "<group>";
 		};
+		D38532F0179DED180075F870 /* VailidationHelper */ = {
+			isa = PBXGroup;
+			children = (
+				D38532F1179DED210075F870 /* NSString+CCValidationHelper.h */,
+				D38532F2179DED210075F870 /* NSString+CCValidationHelper.m */,
+			);
+			path = VailidationHelper;
+			sourceTree = "<group>";
+		};
 		D39496DB178B191F00C39A7E /* OfferController */ = {
 			isa = PBXGroup;
 			children = (
@@ -6044,6 +6057,7 @@
 				D38532EB179DDA0D0075F870 /* CCAnnouncementCell.m in Sources */,
 				70FDD65B179DC08E00871727 /* CCGroupMessageViewController.m in Sources */,
 				70FDD660179DC0D800871727 /* CCGroupMessageTransaction.m in Sources */,
+				D38532F3179DED210075F870 /* NSString+CCValidationHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
