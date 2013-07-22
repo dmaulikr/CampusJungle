@@ -58,7 +58,7 @@ static const NSInteger kCellHeight = 112;
 
 - (void)fillImageView
 {
-    NSURL *groupImageUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL, self.cellObject.image]];
+    NSURL *groupImageUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", CCAPIDefines.baseURL, self.cellObject.image]];
     [self.groupImageView setImageWithURL:groupImageUrl placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
 }
 
