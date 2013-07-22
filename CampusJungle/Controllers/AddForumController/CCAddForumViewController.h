@@ -10,12 +10,13 @@
 #import "CCBaseViewController.h"
 #import "CCTransaction.h"
 
-@class CCClass;
+@class CCClass, CCGroup;
 
 @interface CCAddForumViewController : CCBaseViewController
 
 @property (nonatomic, strong) id<CCTransaction> backTransaction;
 
 - (void)setClass:(CCClass *)classObject;
+- (void)setGroup:(CCGroup *)group;
 
 @end

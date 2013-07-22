@@ -17,6 +17,6 @@
 @property (nonatomic, strong) id<CCTransactionWithObject> selectGroupToShareTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> selectUsersToShareTransaction;
 @property (nonatomic, strong) id<CCTransaction> backTransaction;
-@property (nonatomic, strong) id locationToAddobject;
+@property (nonatomic, strong) id locationToAddObject;
 
 @end

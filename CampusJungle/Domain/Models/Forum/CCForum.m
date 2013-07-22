@@ -29,13 +29,19 @@
     
     [paginationForumsResponseMapping addPropertyMapping:relationshipResponseForumsMapping];
     
-    NSString *pathPattern = [NSString stringWithFormat:CCAPIDefines.loadForums, @":classID"];
-    
-    RKResponseDescriptor *classGroupsResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginationForumsResponseMapping
-                                                                                                  pathPattern:pathPattern
+    NSString *classPathPattern = [NSString stringWithFormat:CCAPIDefines.loadClassForums, @":classID"];
+    RKResponseDescriptor *classForumsResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginationForumsResponseMapping
+                                                                                                  pathPattern:classPathPattern
                                                                                                       keyPath:nil
                                                                                                   statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
-    [objectManager addResponseDescriptor:classGroupsResponseDescriptor];
+    
+    NSString *groupPathPattern = [NSString stringWithFormat:CCAPIDefines.loadGroupForums, @":groupID"];
+    RKResponseDescriptor *groupForumsResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginationForumsResponseMapping
+                                                                                                  pathPattern:groupPathPattern
+                                                                                                      keyPath:nil
+                                                                                                  statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [objectManager addResponseDescriptor:classForumsResponseDescriptor];
+    [objectManager addResponseDescriptor:groupForumsResponseDescriptor];
 }
 
 + (void)configureForumsRequest:(RKObjectManager *)objectManager
@@ -53,6 +59,7 @@
              @"description" : @"description",
              @"name" : @"name",
              @"owner_id" : @"ownerId",
+             @"class_id" : @"classId",
              @"questions_count" : @"questionsCount",
              };
 }

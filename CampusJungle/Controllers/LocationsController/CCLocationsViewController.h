@@ -10,7 +10,7 @@
 #import "CCTableBaseViewController.h"
 #import "CCTransactionWithObject.h"
 
-@class CCLocation, CCClass;
+@class CCLocation, CCClass, CCGroup;
 
 @interface CCLocationsViewController : CCTableBaseViewController
 
@@ -20,5 +20,6 @@
 - (void)setSelectedLocation:(CCLocation *)selectedLocation;
 - (void)setSearchString:(NSString *)searchString;
 - (void)setClass:(CCClass *)classObject;
+- (void)setGroup:(CCGroup *)group;
 
 @end

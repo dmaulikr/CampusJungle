@@ -9,6 +9,7 @@
 #import "CCAddForumViewController.h"
 #import "CCClass.h"
 #import "CCForum.h"
+#import "CCGroup.h"
 #import "CCStandardErrorHandler.h"
 
 #import "CCForumsApiProviderProtocol.h"
@@ -21,6 +22,7 @@
 @property (nonatomic, weak) IBOutlet UITextField *descriptionTextField;
 
 @property (nonatomic, strong) CCClass *classObject;
+@property (nonatomic, strong) CCGroup *group;
 @property (nonatomic, strong) id<CCForumsApiProviderProtocol> ioc_forumsApiProvider;
 @property (nonatomic, strong) id<CCUserSessionProtocol> ioc_userSessionProvider;
 
@@ -47,13 +49,12 @@
 {
     if ([self validateInputData]) {
         CCForum *forumToAdd = [self createForumObject];
-        __weak CCAddForumViewController *weakSelf = self;
-        [self.ioc_forumsApiProvider postForum:forumToAdd successHandler:^(RKMappingResult *object) {
-            [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.addedForum duration:CCProgressHudsConstants.loaderDuration];
-            [weakSelf.backTransaction perform];
-        } errorHandler:^(NSError *error) {
-            [CCStandardErrorHandler showErrorWithError:error];
-        }];
+        if (self.classObject) {
+            [self addToClassForum:forumToAdd];
+        }
+        else {
+            [self addToGroupForum:forumToAdd];
+        }
     }
 }
 
@@ -73,10 +74,16 @@
 - (CCForum *)createForumObject
 {
     CCForum *forum = [CCForum new];
-    forum.classId = self.classObject.classID;
     forum.ownerId = self.ioc_userSessionProvider.currentUser.uid;
     forum.name = self.nameTextField.text;
     forum.description = self.descriptionTextField.text;
+    if (self.classObject) {
+        forum.classId = self.classObject.classID;
+    }
+    else {
+        forum.groupId = self.group.groupId;
+    }
+
     return forum;
 }
 
@@ -96,6 +103,30 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     textField.text = [CCStringHelper trimSpacesFromString:textField.text];
+}
+
+#pragma mark -
+#pragma mark Requests
+- (void)addToClassForum:(CCForum *)forum
+{
+    __weak CCAddForumViewController *weakSelf = self;
+    [self.ioc_forumsApiProvider postInClassForum:forum successHandler:^(RKMappingResult *object) {
+        [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.addedForum duration:CCProgressHudsConstants.loaderDuration];
+        [weakSelf.backTransaction perform];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
+}
+
+- (void)addToGroupForum:(CCForum *)forum
+{
+    __weak CCAddForumViewController *weakSelf = self;
+    [self.ioc_forumsApiProvider postInGroupForum:forum successHandler:^(RKMappingResult *object) {
+        [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.addedForum duration:CCProgressHudsConstants.loaderDuration];
+        [weakSelf.backTransaction perform];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
 }
 
 @end

@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *description;
 @property (nonatomic, strong) NSString *classId;
+@property (nonatomic, strong) NSString *groupId;
 @property (nonatomic, assign) NSInteger questionsCount;
 
 @end

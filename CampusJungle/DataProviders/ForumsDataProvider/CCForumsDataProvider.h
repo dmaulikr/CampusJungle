@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "CCPaginationDataProvider.h"
 
+@class CCGroup;
+
 @interface CCForumsDataProvider : CCPaginationDataProvider
 
 @property (nonatomic, strong) NSString *classId;
+@property (nonatomic, strong) NSString *groupId;
 
 @end

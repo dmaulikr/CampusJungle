@@ -9,7 +9,8 @@
 #import "CCLocationsViewController.h"
 #import "CCLocation.h"
 #import "CCClass.h"
-#import "CCClassLocationsDataProvider.h"
+#import "CCGroup.h"
+#import "CCLocationsDataProvider.h"
 #import "CCLocationsDataSource.h"
 #import "CCNavigationBarViewHelper.h"
 #import "CCAlertHelper.h"
@@ -26,10 +27,12 @@
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 
 @property (nonatomic, strong) CCClass *classObject;
+@property (nonatomic, strong) CCGroup *group;
+
 @property (nonatomic, strong) NSMutableArray *locationsArray;
 @property (nonatomic, strong) CCLocation *selectedLocation;
 @property (nonatomic, strong) NSString *searchString;
-@property (nonatomic, strong) CCClassLocationsDataProvider *dataProvider;
+@property (nonatomic, strong) CCLocationsDataProvider *dataProvider;
 @property (nonatomic, strong) CCLocationsDataSource *dataSource;
 @property (nonatomic, assign) Class dataSourceClass;
 
@@ -94,8 +97,9 @@
 {
     self.dataSource = [CCLocationsDataSource new];
     self.dataSourceClass = [CCLocationsDataSource class];
-    self.dataProvider = [[CCClassLocationsDataProvider alloc] initWithDelegate:self];
+    self.dataProvider = [[CCLocationsDataProvider alloc] initWithDelegate:self];
     self.dataProvider.classId = self.classObject.classID;
+    self.dataProvider.groupId = self.group.groupId;
     [self configTableWithProvider:self.dataProvider cellClass:[CCLocationCell class]];
 }
 
@@ -130,7 +134,8 @@
 
 - (void)addLocation
 {
-    [self.addLocationTransaction performWithObject:self.classObject];
+    id object = self.classObject ? self.classObject : self.group;
+    [self.addLocationTransaction performWithObject:object];
 }
 
 #pragma mark -

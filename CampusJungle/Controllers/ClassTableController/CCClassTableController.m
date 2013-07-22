@@ -16,7 +16,7 @@
 #import "CCButtonsHelper.h"
 
 #import "CCClassmatesDataProvider.h"
-#import "CCClassLocationsDataProvider.h"
+#import "CCLocationsDataProvider.h"
 #import "CCGroupsDataProvider.h"
 #import "CCForumsDataProvider.h"
 
@@ -42,7 +42,7 @@ static const NSInteger kNavBarHeight = 44;
 @property (nonatomic, strong) CCClassTabbarControllerViewController *classTabbarController;
 
 @property (nonatomic, strong) CCClassmatesDataProvider *classmatesProvider;
-@property (nonatomic, strong) CCClassLocationsDataProvider *locationsProvider;
+@property (nonatomic, strong) CCLocationsDataProvider *locationsProvider;
 @property (nonatomic, strong) CCForumsDataProvider *forumsProvider;
 @property (nonatomic, strong) CCGroupsDataProvider *groupsProvider;
 @property (nonatomic, strong) CCBaseDataProvider *activeDataProvider;
@@ -130,7 +130,7 @@ static const NSInteger kNavBarHeight = 44;
 {
     self.sectionName.text = CCClassTabbarButtonsTitles.locations;
     if (!self.locationsProvider) {
-        self.locationsProvider = [[CCClassLocationsDataProvider alloc] initWithDelegate:self];
+        self.locationsProvider = [[CCLocationsDataProvider alloc] initWithDelegate:self];
         self.locationsProvider.classId = self.classID;
         self.locationsProvider.cellReuseIdentifier = CCTableDefines.locationsCellIdentifier;
     }

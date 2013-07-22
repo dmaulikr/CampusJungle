@@ -12,9 +12,10 @@
 
 @protocol CCLocationDataProviderDelegate;
 
-@interface CCClassLocationsDataProvider : CCPaginationDataProvider
+@interface CCLocationsDataProvider : CCPaginationDataProvider
 
 @property (nonatomic, strong) NSString *classId;
+@property (nonatomic, strong) NSString *groupId;
 
 - (id)initWithDelegate:(id<CCLocationDataProviderDelegate>)delegate;
 

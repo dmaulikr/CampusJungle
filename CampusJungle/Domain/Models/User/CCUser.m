@@ -146,23 +146,26 @@
                                                                                                              withMapping:userEducationResponseMapping];
     [userResponseMapping addPropertyMapping:relationShipResponseEducationsMapping];
     
-    RKObjectMapping *paginationCollegesResponseMapping = [CCRestKitConfigurator paginationMapping];
-    RKRelationshipMapping* relationShipResponseCollegesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
+    RKObjectMapping *paginationClassmatesResponseMapping = [CCRestKitConfigurator paginationMapping];
+    RKRelationshipMapping *relationshipResponseClassmatesMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
                                                                                                              toKeyPath:CCResponseKeys.items
                                                                                                            withMapping:userResponseMapping];
-    [paginationCollegesResponseMapping addPropertyMapping:relationShipResponseCollegesMapping];
+    [paginationClassmatesResponseMapping addPropertyMapping:relationshipResponseClassmatesMapping];
     
     NSString *pathPattern = [NSString stringWithFormat:CCAPIDefines.classmates,@":classID"];
-    
-    RKResponseDescriptor *responseClassesOfCollegeDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginationCollegesResponseMapping
+    RKResponseDescriptor *classmatesResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginationClassmatesResponseMapping
                                                                                                        pathPattern:pathPattern
                                                                                                            keyPath:nil
                                                                                                        statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     NSString *userResponceMappingPath = [NSString stringWithFormat:CCAPIDefines.getUser,@":UserID"];
     RKResponseDescriptor *userResponceDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userResponseMapping pathPattern:userResponceMappingPath keyPath:@"user" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
-    [objectManager addResponseDescriptor:responseClassesOfCollegeDescriptor];
+    NSString *groupmatesResponceMappingPath = [NSString stringWithFormat:CCAPIDefines.loadGroupMembers,@":groupID"];
+    RKResponseDescriptor *groupmatesResponceDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginationClassmatesResponseMapping pathPattern:groupmatesResponceMappingPath keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    [objectManager addResponseDescriptor:classmatesResponseDescriptor];
     [objectManager addResponseDescriptor:userResponceDescriptor];
+    [objectManager addResponseDescriptor:groupmatesResponceDescriptor];
 }
 
 + (NSDictionary *)responseMappingDictionary

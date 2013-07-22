@@ -15,6 +15,7 @@
 #import "CCButtonsHelper.h"
 
 #import "CCLocation.h"
+#import "CCClass.h"
 #import "CCShareItemButton.h"
 #import "CCShareItemBlocksDefines.h"
 
@@ -125,12 +126,12 @@
         [weakSelf createLocationSharedWithItems:nil sharedWithAll:YES];
     }];
     CCShareItemButton *shareWithGroupButton = [CCShareItemButton buttonWithTitle:CCShareItemActionSheetDefines.shareWithGroupsButtonTitle actionBlock:^{
-        NSDictionary *params = @{@"object" : weakSelf.locationToAddobject, @"successBlock" : successBlock};
+        NSDictionary *params = @{@"object" : weakSelf.locationToAddObject, @"successBlock" : successBlock};
         [weakSelf.selectGroupToShareTransaction performWithObject:params];
         [weakSelf.shareItemActionSheet dismiss];
     }];
     CCShareItemButton *shareWithClassmatesButton = [CCShareItemButton buttonWithTitle:CCShareItemActionSheetDefines.shareWithClassmatesButtonTitle actionBlock:^{
-        NSDictionary *params = @{@"object" : weakSelf.locationToAddobject, @"successBlock" : successBlock};
+        NSDictionary *params = @{@"object" : weakSelf.locationToAddObject, @"successBlock" : successBlock};
         [weakSelf.selectUsersToShareTransaction performWithObject:params];
         [weakSelf.shareItemActionSheet dismiss];
     }];
@@ -274,10 +275,32 @@
 #pragma mark Requests
 - (void)createLocationSharedWithItems:(NSArray *)itemsArray sharedWithAll:(BOOL)sharedWithAll
 {
-    __weak CCAddLocationViewController *weakSelf = self;
     CLLocationCoordinate2D coordinates = [self coordinatesFromMap];
-    CCLocation *location = [CCLocation createWithCoordinates:coordinates name:self.nameTextField.text description:self.descriptionTextField.text address:self.addressTextField.text place:self.locationToAddobject visibleItems:itemsArray sharedWithAll:sharedWithAll];
-    [self.ioc_locationsApiProvider postLocation:location successHandler:^(RKMappingResult *result) {
+    CCLocation *location = [CCLocation createWithCoordinates:coordinates name:self.nameTextField.text description:self.descriptionTextField.text address:self.addressTextField.text place:self.locationToAddObject visibleItems:itemsArray sharedWithAll:sharedWithAll];
+    if ([self.locationToAddObject isKindOfClass:[CCClass class]]) {
+        [self addToClassLocation:location];
+    }
+    else {
+        [self addToGroupLocation:location];
+    }
+}
+
+- (void)addToClassLocation:(CCLocation *)location
+{
+    __weak CCAddLocationViewController *weakSelf = self;
+    [self.ioc_locationsApiProvider postToClassLocation:location successHandler:^(RKMappingResult *result) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadClassLocations object:nil];
+        [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.addedLocation duration:CCProgressHudsConstants.loaderDuration];
+        [weakSelf.backTransaction perform];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
+}
+
+- (void)addToGroupLocation:(CCLocation *)location
+{
+    __weak CCAddLocationViewController *weakSelf = self;
+    [self.ioc_locationsApiProvider postToGroupLocation:location successHandler:^(RKMappingResult *result) {
         [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadClassLocations object:nil];
         [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.addedLocation duration:CCProgressHudsConstants.loaderDuration];
         [weakSelf.backTransaction perform];

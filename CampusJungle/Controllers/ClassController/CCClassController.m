@@ -10,7 +10,6 @@
 #import "CCClass.h"
 #import "CCLocation.h"
 #import "CCGroup.h"
-#import "CCClassmatesDataProvider.h"
 #import "CCUserCell.h"
 #import "CCClassTableController.h"
 #import "GIAlert.h"
@@ -40,9 +39,6 @@
 
 @property (nonatomic, strong) CCClass *currentClass;
 
-- (IBAction)editButtonDidPressed;
-- (IBAction)professorUploadsButtonDidPressed;
-
 @end
 
 @implementation CCClassController
@@ -52,7 +48,6 @@
     self = [super init];
     if (self) {
         self.currentClass = classObject;
-        [self.navigationItem setTitle:classObject.className];
     }
     return self;
 }
@@ -80,9 +75,6 @@
 
 - (void)setupTableView
 {
-    CCClassmatesDataProvider *classmateDataprovider = [CCClassmatesDataProvider new];
-    classmateDataprovider.classID = self.currentClass.classID;
-    
     self.classContentTable = [CCClassTableController new];
     self.classContentTable.tableHeaderView = self.headerView;
     self.classContentTable.classID = self.currentClass.classID;
@@ -116,7 +108,7 @@
 
 - (void)loadInfo
 {
-    self.navigationController.navigationItem.title = self.currentClass.subject;
+    [self setTitle:self.currentClass.className];
     self.professor.text = [NSString stringWithFormat:@"Prof. %@", self.currentClass.professor];
     
     NSString *classId = [self.currentClass.callNumber length] > 0 ? self.currentClass.callNumber : @"unknown";

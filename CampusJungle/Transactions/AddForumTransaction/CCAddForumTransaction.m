@@ -10,6 +10,7 @@
 #import "CCAddForumViewController.h"
 
 #import "CCBackTransaction.h"
+#import "CCClass.h"
 
 @implementation CCAddForumTransaction
 
@@ -22,7 +23,12 @@
     backTransaction.navigation = self.navigation;
     
     CCAddForumViewController *addForumController = [CCAddForumViewController new];
-    [addForumController setClass:object];
+    if ([object isKindOfClass:[CCClass class]]) {
+        [addForumController setClass:object];
+    }
+    else {
+        [addForumController setGroup:object];
+    }
     addForumController.backTransaction = backTransaction;
     
     [self.navigation pushViewController:addForumController animated:YES];
