@@ -38,7 +38,8 @@ const struct CCAlertsMessages CCAlertsMessages = {
     .emptyLocationDescription = @"Please enter location description",
     .educationRemoving = @"All classes from deleted colleges will be deleted. Continue?",
     .noSelectedItems = @"Select some items first",
-
+    .leaveGroup = @"Are you sure that you want to leave group?",
+    .leaveGroupByOwner = @"You're an owner of the group. If you leave the group, it'll be removed. Still want to leave group?",
 };
 
 const struct CCAlertsButtons CCAlertsButtons = {

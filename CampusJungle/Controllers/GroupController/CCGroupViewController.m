@@ -14,13 +14,21 @@
 
 #import "CCGroupTableController.h"
 #import "CCGroupsApiProviderProtocol.h"
+#import "CCUserSessionProtocol.h"
 
 @interface CCGroupViewController () <CCGroupTableDelegate>
 
 @property (nonatomic, weak) IBOutlet UIView *headerView;
+@property (nonatomic, weak) IBOutlet UIImageView *avatarImageView;
+@property (nonatomic, weak) IBOutlet UILabel *subjectLabel;
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *ownerLabel;
+@property (nonatomic, weak) IBOutlet UIButton *editButton;
+@property (nonatomic, weak) IBOutlet UIButton *messageGroupButton;
 
 @property (nonatomic, strong) CCGroupTableController *groupTableController;
 @property (nonatomic, strong) id<CCGroupsApiProviderProtocol> ioc_groupsApiProvider;
+@property (nonatomic, strong) id<CCUserSessionProtocol> ioc_userSessionProvider;
 
 @property (nonatomic, strong) CCGroup *group;
 
@@ -49,15 +57,20 @@
     [self.groupTableController viewWillDisappear:animated];
 }
 
-
 - (void)loadInfo
 {
-    
+    [self.nameLabel setText:self.group.name];
+    [self.ownerLabel setText:[NSString stringWithFormat:@"Owner: %@ %@", self.group.ownerFirstName, self.group.ownerLastName]];
+    [self.subjectLabel setText:self.group.description];
+    [self.avatarImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", CCAPIDefines.baseURL, self.group.image]] placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
+    [self setTitle:self.group.name];
 }
 
 - (void)setupButtons
 {
     [self setupLeaveButton];
+    [CCButtonsHelper removeBackgroundImageInButton:self.editButton];
+    [CCButtonsHelper removeBackgroundImageInButton:self.messageGroupButton];
 }
 
 - (void)setupLeaveButton
@@ -70,7 +83,6 @@
     self.navigationItem.rightBarButtonItem = barButtonItem;
     [button addTarget:self action:@selector(leaveGroupButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
 }
-
 
 - (void)setupTableView
 {
@@ -86,14 +98,36 @@
 - (void)leaveGroupButtonDidPressed:(id)sender
 {
     __weak CCGroupViewController *weakSelf = self;
-    [CCAlertHelper showWithMessage:@"Are you sure that you want to leave group?" success:^{
-        [weakSelf.ioc_groupsApiProvider leaveGroup:weakSelf.group successHandler:^(RKMappingResult *result) {
-            [SVProgressHUD showSuccessWithStatus:@"You've successfully leave group" duration:CCProgressHudsConstants.loaderDuration];
-            [weakSelf.backTransaction perform];
-        } errorHandler:^(NSError *error) {
-            [CCStandardErrorHandler showErrorWithError:error];
+    if ([self.group.ownerId isEqualToString:self.ioc_userSessionProvider.currentUser.uid]) {
+        [CCAlertHelper showWithMessage:CCAlertsMessages.leaveGroupByOwner success:^{
+            [weakSelf.ioc_groupsApiProvider destroyGroup:weakSelf.group successHandler:^(RKMappingResult *result) {
+                [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.leaveGroup duration:CCProgressHudsConstants.loaderDuration];
+                [weakSelf.backTransaction perform];
+            } errorHandler:^(NSError *error) {
+                [CCStandardErrorHandler showErrorWithError:error];
+            }];
         }];
-    }];
+    }
+    else {
+        [CCAlertHelper showWithMessage:CCAlertsMessages.leaveGroup success:^{
+            [weakSelf.ioc_groupsApiProvider leaveGroup:weakSelf.group successHandler:^(RKMappingResult *result) {
+                [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.leaveGroup duration:CCProgressHudsConstants.loaderDuration];
+                [weakSelf.backTransaction perform];
+            } errorHandler:^(NSError *error) {
+                [CCStandardErrorHandler showErrorWithError:error];
+            }];
+        }];
+    }
+}
+
+- (IBAction)editButtonDidPressed:(id)sender
+{
+    
+}
+
+- (IBAction)messageGroupButtonDidPressed:(id)sender
+{
+    [self.groupMessageTransaction performWithObject:self.group];
 }
 
 #pragma mark -

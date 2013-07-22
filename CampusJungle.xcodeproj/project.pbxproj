@@ -514,6 +514,9 @@
 		70FDD650179D4D6200871727 /* CCGroupTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD64E179D4D6200871727 /* CCGroupTabbarViewController.m */; };
 		70FDD651179D4D6200871727 /* CCGroupTabbarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FDD64F179D4D6200871727 /* CCGroupTabbarViewController.xib */; };
 		70FDD656179D55F800871727 /* CCGroupmatesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD655179D55F800871727 /* CCGroupmatesDataProvider.m */; };
+		70FDD65B179DC08E00871727 /* CCGroupMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD659179DC08E00871727 /* CCGroupMessageViewController.m */; };
+		70FDD65C179DC08E00871727 /* CCGroupMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FDD65A179DC08E00871727 /* CCGroupMessageViewController.xib */; };
+		70FDD660179DC0D800871727 /* CCGroupMessageTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD65F179DC0D800871727 /* CCGroupMessageTransaction.m */; };
 		A784C599173A865E005E4921 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C598173A865E005E4921 /* UIKit.framework */; };
 		A784C59B173A865E005E4921 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C59A173A865E005E4921 /* Foundation.framework */; };
 		A784C59D173A865E005E4921 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C59C173A865E005E4921 /* CoreGraphics.framework */; };
@@ -1422,6 +1425,11 @@
 		70FDD652179D4DE100871727 /* CCGroupTabbarDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCGroupTabbarDelegate.h; sourceTree = "<group>"; };
 		70FDD654179D55F800871727 /* CCGroupmatesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupmatesDataProvider.h; sourceTree = "<group>"; };
 		70FDD655179D55F800871727 /* CCGroupmatesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupmatesDataProvider.m; sourceTree = "<group>"; };
+		70FDD658179DC08E00871727 /* CCGroupMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupMessageViewController.h; sourceTree = "<group>"; };
+		70FDD659179DC08E00871727 /* CCGroupMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupMessageViewController.m; sourceTree = "<group>"; };
+		70FDD65A179DC08E00871727 /* CCGroupMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupMessageViewController.xib; sourceTree = "<group>"; };
+		70FDD65E179DC0D800871727 /* CCGroupMessageTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupMessageTransaction.h; sourceTree = "<group>"; };
+		70FDD65F179DC0D800871727 /* CCGroupMessageTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupMessageTransaction.m; sourceTree = "<group>"; };
 		9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		A784C595173A865E005E4921 /* CampusJungle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusJungle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A784C598173A865E005E4921 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -2380,6 +2388,7 @@
 				70A29C7A178778AB001BC8DD /* EducationCreationController */,
 				70A29C7E178778AB001BC8DD /* FilterController */,
 				70FDD624179D242100871727 /* GroupController */,
+				70FDD657179DC07900871727 /* GroupMessage */,
 				70FDD64C179D4D4B00871727 /* GroupTabbarController */,
 				70FDD645179D48AE00871727 /* GroupTableController */,
 				70A29C82178778AB001BC8DD /* ImageSortingController */,
@@ -3687,6 +3696,7 @@
 				D342BCD21796ACF60034E88C /* EditClassTransaction */,
 				70B2D11C17944894001B0C2C /* EducationSettingSettingUpTransaction */,
 				70B2D11F17944894001B0C2C /* ForumDetailsTransaction */,
+				70FDD65D179DC0C600871727 /* GroupMessageTransaction */,
 				70FDD62A179D283900871727 /* GroupTransaction */,
 				70B2D12217944894001B0C2C /* ImagesForNotesUploadingScreenTransaction */,
 				70B2D12517944894001B0C2C /* ImagesSortingTransaction */,
@@ -4732,6 +4742,25 @@
 			path = GroupmatesDataDrovider;
 			sourceTree = "<group>";
 		};
+		70FDD657179DC07900871727 /* GroupMessage */ = {
+			isa = PBXGroup;
+			children = (
+				70FDD658179DC08E00871727 /* CCGroupMessageViewController.h */,
+				70FDD659179DC08E00871727 /* CCGroupMessageViewController.m */,
+				70FDD65A179DC08E00871727 /* CCGroupMessageViewController.xib */,
+			);
+			path = GroupMessage;
+			sourceTree = "<group>";
+		};
+		70FDD65D179DC0C600871727 /* GroupMessageTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				70FDD65E179DC0D800871727 /* CCGroupMessageTransaction.h */,
+				70FDD65F179DC0D800871727 /* CCGroupMessageTransaction.m */,
+			);
+			path = GroupMessageTransaction;
+			sourceTree = "<group>";
+		};
 		A784C58C173A865E005E4921 = {
 			isa = PBXGroup;
 			children = (
@@ -5576,13 +5605,11 @@
 				D3819B5D1799CF8300C93005 /* CCProfessorUploadsCell.xib in Resources */,
 				70FDD629179D243800871727 /* CCGroupViewController.xib in Resources */,
 				70FDD633179D2ACB00871727 /* CCAddGroupViewController.xib in Resources */,
-
 				70FDD644179D487100871727 /* CCClassTableController.xib in Resources */,
 				70FDD64B179D48AE00871727 /* CCGroupTableController.xib in Resources */,
 				70FDD651179D4D6200871727 /* CCGroupTabbarViewController.xib in Resources */,
-
 				D38532CC179D3A3D0075F870 /* CCAnnouncementsController.xib in Resources */,
-
+				70FDD65C179DC08E00871727 /* CCGroupMessageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5915,15 +5942,14 @@
 				70FDD62D179D284F00871727 /* CCGroupTransaction.m in Sources */,
 				70FDD632179D2ACB00871727 /* CCAddGroupViewController.m in Sources */,
 				70FDD637179D2B6400871727 /* CCAddGroupTransaction.m in Sources */,
-
 				70FDD643179D487100871727 /* CCClassTableController.m in Sources */,
 				70FDD64A179D48AE00871727 /* CCGroupTableController.m in Sources */,
 				70FDD650179D4D6200871727 /* CCGroupTabbarViewController.m in Sources */,
 				70FDD656179D55F800871727 /* CCGroupmatesDataProvider.m in Sources */,
-
 				D38532CB179D3A3D0075F870 /* CCAnnouncementsController.m in Sources */,
 				D38532D0179D3CA30075F870 /* CCAnnouncementTransaction.m in Sources */,
-
+				70FDD65B179DC08E00871727 /* CCGroupMessageViewController.m in Sources */,
+				70FDD660179DC0D800871727 /* CCGroupMessageTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
