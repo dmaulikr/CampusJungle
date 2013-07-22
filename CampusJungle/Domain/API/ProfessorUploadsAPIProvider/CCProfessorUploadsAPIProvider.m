@@ -76,4 +76,20 @@
                     progress:progressBlock];
 }
 
+- (void)emailAttachmentOfUpload:(CCProfessorUpload *)upload
+                 successHandler:(successWithObject)successHandler
+                   errorHandler:(errorHandler)errorHandler
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [self setAuthorizationToken];
+    
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.emailUploadsAttachment, upload.uploadId];
+    [objectManager putObject:nil path:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        successHandler(mappingResult);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        errorHandler(error);
+    }];
+}
+
+
 @end

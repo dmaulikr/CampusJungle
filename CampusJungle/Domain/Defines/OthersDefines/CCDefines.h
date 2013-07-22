@@ -66,6 +66,7 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *loadUploads;
     __unsafe_unretained NSString *postUploads;
     __unsafe_unretained NSString *deleteUploads;
+    __unsafe_unretained NSString *emailUploadsAttachment;
     __unsafe_unretained NSString *getAttachmentFromUploads;
     __unsafe_unretained NSString *createGroup;
     __unsafe_unretained NSString *updateGroup;

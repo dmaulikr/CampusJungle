@@ -34,4 +34,8 @@
           errorHandler:(errorHandler)errorHandler
               progress:(progressBlock)progressBlock;
 
+- (void)emailAttachmentOfUpload:(CCProfessorUpload *)upload
+                 successHandler:(successWithObject)successHandler
+                   errorHandler:(errorHandler)errorHandler;
+
 @end

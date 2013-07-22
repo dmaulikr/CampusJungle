@@ -137,7 +137,7 @@ static const CGFloat kMinCellHeight = 63;
 
 - (void)emailAttachmentButtonDidPressed:(id)sender
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(emailAttachmentOfUploads)]) {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(emailAttachmentOfUploads:)]) {
         [self.delegate emailAttachmentOfUploads:self.professorUpload];
     }
 }
