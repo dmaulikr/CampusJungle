@@ -80,7 +80,24 @@
     if([self validInputData]){
         CCProfessorUpload *professorUpload = [self prepareProfessorUpload];
         [self.imagesUploadTransaction performWithObject:^(NSArray *arrayOfImages){
-            
+            __weak id weakSelf = self;
+            id <CCUploadProcessManagerProtocol> uploadManager = self.ioc_uploadManager;
+            [[uploadManager uploadingProfessorUploads] addObject:professorUpload];
+            [self.ioc_professorAPIProvider
+             postUploadInfo:professorUpload
+             ForClassWithId:_currentClass.classID
+                 withImages:arrayOfImages
+             successHandler:^(id result) {
+                    [[uploadManager uploadingProfessorUploads] removeObject:professorUpload];
+                    [uploadManager reloadDelegate];
+             } errorHandler:^(NSError *error) {
+                 [[uploadManager uploadingProfessorUploads] removeObject:professorUpload];
+                 [uploadManager reloadDelegate];
+                 [CCStandardErrorHandler showErrorWithError:error];
+             } progress:^(double finished) {
+                 [[weakSelf backToListTransaction] perform];
+                 professorUpload.uploadProgress = @(finished);
+             }];
         }];
     }
 }
@@ -95,6 +112,7 @@
     professorUpload.ownerFirstName = currentUser.firstName;
     professorUpload.ownerLastName = currentUser.lastName;
     professorUpload.createdDate = [NSDate date];
+    professorUpload.classID = self.currentClass.classID;
     return professorUpload;
 }
 

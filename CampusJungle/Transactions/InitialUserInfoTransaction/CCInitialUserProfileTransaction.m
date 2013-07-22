@@ -9,15 +9,18 @@
 #import "CCInitialUserProfileTransaction.h"
 #import "CCUserProfile.h"
 #import "CCUserProfileTransaction.h"
+#import "CCInitialUserInfoController.h"
 
 @implementation CCInitialUserProfileTransaction
 
 - (void)perform
 {
     NSParameterAssert(self.loginTransaction);
-    NSParameterAssert(self.baseViewController);
+    NSParameterAssert(self.navigation);
     
-    [self.loginTransaction perform];
+    CCInitialUserInfoController *initialController = [CCInitialUserInfoController new];
+    initialController.loginTrnasaction = self.loginTransaction;
+    [self.navigation pushViewController:initialController animated:YES];
 }
 
 @end

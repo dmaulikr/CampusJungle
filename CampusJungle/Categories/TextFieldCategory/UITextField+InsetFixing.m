@@ -28,7 +28,7 @@
         [self setFont:[UIFont fontWithName:@"Avenir-MediumOblique" size:15]];
 
         if(![self.textColor isEqual:[UIColor colorWithRed:130.0/255.0 green:65.0/255.0 blue:0.0 alpha:1]]){
-            [self setTextColor:[UIColor colorWithRed:130.0/255.0 green:65.0/255.0 blue:0.0 alpha:1]];  
+            [self setTextColor:[UIColor colorWithRed:130.0/255.0 green:65.0/255.0 blue:0.0 alpha:1]];
         }
         margin = searchMargin;
     }

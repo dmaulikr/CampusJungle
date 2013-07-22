@@ -37,6 +37,10 @@
                                                 keyPath:nil
                                             statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
+    NSString *uplaodingResponse = [NSString stringWithFormat:CCAPIDefines.postUploads,@":classID"];
+    RKResponseDescriptor *responseOnCreation = [RKResponseDescriptor responseDescriptorWithMapping:professorUploadMapping pathPattern:uplaodingResponse keyPath:@"upload" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    [objectManager addResponseDescriptor:responseOnCreation];
     [objectManager addResponseDescriptor:responseQuestionsDescriptor];
 }
 
@@ -53,8 +57,9 @@
     return @{
              @"id" : @"uploadId",
              @"text" : @"text",
-             @"name" : @"name",
-             @"owner_id" : @"ownerID",
+             @"description" : @"name",
+             @"klass_id" : @"classID",
+             @"sender_id" : @"ownerID",
              @"attachment" : @"attachment",
              @"answers_count" : @"answersCount",
              @"created_at" : @"createdDate",
@@ -68,7 +73,8 @@
 {
     return @{
              @"text" : @"text",
-             @"name" : @"name",
+             @"name" : @"description",
+             @"classID" : @"klass_id",
              @"arrayOfImageUrls" : @"images_urls",
              @"pdfUrl" : @"pdf_url",
              };

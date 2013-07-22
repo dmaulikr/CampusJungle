@@ -37,7 +37,7 @@
     signUpTransaction.initialUserProfileTransaction = initialUserTransaction;
     
     initialUserTransaction.loginTransaction = loginTransaction;
-    
+    initialUserTransaction.navigation = navigation;
     initialUserTransaction.baseViewController = sidePanel;
     welcomeController.initialUserInfoTransaction = initialUserTransaction;
     
