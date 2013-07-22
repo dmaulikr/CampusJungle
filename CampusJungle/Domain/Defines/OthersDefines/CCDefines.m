@@ -69,6 +69,11 @@ const struct CCAPIDefines CCAPIDefines = {
     .postUploads = @"/api/classes/%@/professors_uploads",
     .deleteUploads = @"/api/professors_uploads/%@",
     .getAttachmentFromUploads = @"/api/professors_uploads/%@",
+    .createGroup = @"/api/users/me/classes/%@/groups",
+    .updateGroup = @"/api/groups/%@",
+    .leaveGroup = @"/api/groups/%@/leave",
+    .destroyGroup = @"/api/groups/%@",
+    .loadGroupMembers = @"/api/groups/%@/members",
 };
 
 const struct CCUserDefines CCUserDefines = {

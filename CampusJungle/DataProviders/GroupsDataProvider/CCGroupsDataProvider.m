@@ -24,7 +24,6 @@
     } errorHandler:^(NSError *error) {
         [self showErrorWhileLoading:error];
     }];
-
 }
 
 @end
