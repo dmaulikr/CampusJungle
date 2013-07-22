@@ -19,6 +19,7 @@
 #import "CCTimetableTransaction.h"
 #import "CCGroupTransaction.h"
 #import "CCAddGroupTransaction.h"
+#import "CCAnnouncementTransaction.h"
 
 @implementation CCClassTransaction
 
@@ -30,6 +31,10 @@
     
     CCClassController *classController = [[CCClassController alloc] initWithClass:object];
     UINavigationController *centralNavigation = [[UINavigationController alloc] initWithRootViewController:classController];
+    
+    CCAnnouncementTransaction *announcement = [CCAnnouncementTransaction new];
+    announcement.navigation = centralNavigation; 
+    classController.announcementTransaction = announcement;
     
     CCEditClassTransaction *editTransaction = [CCEditClassTransaction new];
     editTransaction.navigation = centralNavigation;

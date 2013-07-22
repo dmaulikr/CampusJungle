@@ -209,5 +209,9 @@
     [self.professorUploadsTransaction performWithObject:self.currentClass];
 }
 
+- (IBAction)announcementButtonDidPressed
+{
+    [self.announcementTransaction performWithObject:self.currentClass];
+}
 
 @end

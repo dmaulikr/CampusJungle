@@ -31,7 +31,7 @@
                     result = [result firstObject];
                     if([[self.ioc_uploadManager uploadingProfessorUploads] count]){
                         [self.ioc_uploadManager setCurrentDataProvider:self];
-                        NSMutableArray *allUploads = [NSMutableArray arrayWithArray:[self.ioc_uploadManager uploadingProfessorUploads]];
+                        NSMutableArray *allUploads = [NSMutableArray arrayWithArray:[self arrayOfFiltredUploads]];
                         [allUploads addObjectsFromArray:result[@"items"]];
                         result[@"items"] = allUploads;
                         successHandler(result);
@@ -42,6 +42,18 @@
                     [self showErrorWhileLoading:error];
                 }];
     
+}
+
+- (NSArray *)arrayOfFiltredUploads
+{
+    NSMutableArray *arrayOfFiltredItems = [NSMutableArray new];
+    NSArray *sourceArray = [self.ioc_uploadManager uploadingProfessorUploads];
+    for(CCProfessorUpload *upload in sourceArray){
+        if([upload.classID isEqualToString:self.classID]){
+            [arrayOfFiltredItems addObject:upload];
+        }
+    }
+    return arrayOfFiltredItems;
 }
 
 @end

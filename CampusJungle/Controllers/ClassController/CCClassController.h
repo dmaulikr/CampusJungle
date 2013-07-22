@@ -16,6 +16,7 @@
 
 @interface CCClassController : CCBaseViewController <CCClassUpdateProtocol>
 
+
 @property (nonatomic, strong) id<CCTransactionWithObject> classMarketTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> otherUserProfileTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> locationTransaction;
@@ -28,6 +29,7 @@
 @property (nonatomic, strong) id<CCTransaction> newsFeedTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> professorUploadsTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> timetableTransaction;
+@property (nonatomic, strong) id<CCTransactionWithObject> announcementTransaction;
 
 - (id)initWithClass:(CCClass *)classObject;
 - (IBAction)classMarketButtonDidPressed;
