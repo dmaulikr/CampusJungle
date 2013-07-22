@@ -501,6 +501,8 @@
 		70C0FCB6178484D0005EF95E /* UITextField+InsetFixing.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C0FCB5178484D0005EF95E /* UITextField+InsetFixing.m */; };
 		70F42A7B178D5A2900E763F3 /* CCForumsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F42A7A178D5A2900E763F3 /* CCForumsDataProvider.m */; };
 		70F42A7E178D5A3800E763F3 /* CCGroupsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F42A7D178D5A3800E763F3 /* CCGroupsDataProvider.m */; };
+		70FDD628179D243800871727 /* CCGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD626179D243800871727 /* CCGroupViewController.m */; };
+		70FDD629179D243800871727 /* CCGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FDD627179D243800871727 /* CCGroupViewController.xib */; };
 		A784C599173A865E005E4921 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C598173A865E005E4921 /* UIKit.framework */; };
 		A784C59B173A865E005E4921 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C59A173A865E005E4921 /* Foundation.framework */; };
 		A784C59D173A865E005E4921 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C59C173A865E005E4921 /* CoreGraphics.framework */; };
@@ -1385,6 +1387,9 @@
 		70F42A7C178D5A3800E763F3 /* CCGroupsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupsDataProvider.h; sourceTree = "<group>"; };
 		70F42A7D178D5A3800E763F3 /* CCGroupsDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupsDataProvider.m; sourceTree = "<group>"; };
 		70F42A7F178D5D3C00E763F3 /* CCClassTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassTableDelegate.h; sourceTree = "<group>"; };
+		70FDD625179D243800871727 /* CCGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupViewController.h; sourceTree = "<group>"; };
+		70FDD626179D243800871727 /* CCGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupViewController.m; sourceTree = "<group>"; };
+		70FDD627179D243800871727 /* CCGroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupViewController.xib; sourceTree = "<group>"; };
 		9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		A784C595173A865E005E4921 /* CampusJungle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusJungle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A784C598173A865E005E4921 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -2337,6 +2342,7 @@
 				70A29C77178778AB001BC8DD /* DropboxPdfSelectionController */,
 				70A29C7A178778AB001BC8DD /* EducationCreationController */,
 				70A29C7E178778AB001BC8DD /* FilterController */,
+				70FDD624179D242100871727 /* GroupController */,
 				70A29C82178778AB001BC8DD /* ImageSortingController */,
 				70A29C86178778AB001BC8DD /* ImageSortingForStuffController */,
 				70A29C89178778AB001BC8DD /* InboxConroller */,
@@ -4603,6 +4609,16 @@
 			path = GroupsDataProvider;
 			sourceTree = "<group>";
 		};
+		70FDD624179D242100871727 /* GroupController */ = {
+			isa = PBXGroup;
+			children = (
+				70FDD625179D243800871727 /* CCGroupViewController.h */,
+				70FDD626179D243800871727 /* CCGroupViewController.m */,
+				70FDD627179D243800871727 /* CCGroupViewController.xib */,
+			);
+			path = GroupController;
+			sourceTree = "<group>";
+		};
 		A784C58C173A865E005E4921 = {
 			isa = PBXGroup;
 			children = (
@@ -5438,6 +5454,7 @@
 				D342BD361799801D0034E88C /* CCInitialUserInfoController.xib in Resources */,
 				70066C831799828E00B7A4E7 /* CCBaseActionSheet.xib in Resources */,
 				D3819B5D1799CF8300C93005 /* CCProfessorUploadsCell.xib in Resources */,
+				70FDD629179D243800871727 /* CCGroupViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5767,6 +5784,7 @@
 				70066C811799825E00B7A4E7 /* CCBaseActionSheet.m in Sources */,
 				D3819B571799CB4300C93005 /* CCProfessorUploadDataProvider.m in Sources */,
 				D3819B5B1799CF3500C93005 /* CCProfessorUploadsCell.m in Sources */,
+				70FDD628179D243800871727 /* CCGroupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

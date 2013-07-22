@@ -28,11 +28,12 @@
 #import "CCStandardErrorHandler.h"
 #import "CCLocationsApiProviderProtocol.h"
 #import "CCForumsApiProviderProtocol.h"
+#import "CCGroupsApiProviderProtocol.h"
 
 static const NSInteger kTabbarHeight = 52;
 static const NSInteger kNavBarHeight = 44;
 
-@interface CCClassTableController () <CCClassTabbarControllerDelegateProtocol, CCLocationDataProviderDelegate, CCLocationCellDelegate, CCForumCellDelegate>
+@interface CCClassTableController () <CCClassTabbarControllerDelegateProtocol, CCLocationDataProviderDelegate, CCLocationCellDelegate, CCForumCellDelegate, CCGroupCellDelegate>
 
 @property (nonatomic, weak) IBOutlet UIView *sectionHeaderView;
 @property (nonatomic, weak) IBOutlet UIButton *addButton;
@@ -48,6 +49,7 @@ static const NSInteger kNavBarHeight = 44;
 
 @property (nonatomic, strong) id<CCLocationsApiProviderProtocol> ioc_locationsApiProvider;
 @property (nonatomic, strong) id<CCForumsApiProviderProtocol> ioc_forumsApiProvider;
+@property (nonatomic, strong) id<CCGroupsApiProviderProtocol> ioc_groupsApiProvider;
 
 @property (nonatomic, strong) NSMutableArray *locationsArray;
 @property (nonatomic, assign) CGPoint tableViewContentOffsetBeforeReload;
@@ -238,6 +240,21 @@ static const NSInteger kNavBarHeight = 44;
         [weakSelf.ioc_forumsApiProvider deleteForum:forum successHandler:^(RKMappingResult *object) {
             [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteForum duration:CCProgressHudsConstants.loaderDuration];
             [weakSelf.forumsProvider loadItems];
+        } errorHandler:^(NSError *error) {
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
+    }];
+}
+
+#pragma mark -
+#pragma mark CCGroupCellDelegate
+- (void)deleteGroup:(CCGroup *)group
+{
+    __weak CCClassTableController *weakSelf = self;
+    [CCAlertHelper showConfirmWithSuccess:^{
+        [weakSelf.ioc_groupsApiProvider destroyGroup:group successHandler:^(RKMappingResult *object) {
+            [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteGroup duration:CCProgressHudsConstants.loaderDuration];
+            [weakSelf.groupsProvider loadItems];
         } errorHandler:^(NSError *error) {
             [CCStandardErrorHandler showErrorWithError:error];
         }];

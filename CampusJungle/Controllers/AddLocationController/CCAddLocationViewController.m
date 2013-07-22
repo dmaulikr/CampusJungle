@@ -110,7 +110,7 @@
 - (void)createShareItemActionSheet
 {
     NSArray *shareItemActionSheetButtons = [self shareItemActionSheetButtons];
-    self.shareItemActionSheet = [[CCBaseActionSheet alloc] initWithTitle:@"Share Options" buttonsArray:shareItemActionSheetButtons];    
+    self.shareItemActionSheet = [[CCBaseActionSheet alloc] initWithTitle:CCShareItemActionSheetDefines.title buttonsArray:shareItemActionSheetButtons];
 }
 
 - (NSArray *)shareItemActionSheetButtons
@@ -120,16 +120,16 @@
         [weakSelf createLocationSharedWithItems:itemsArray sharedWithAll:NO];
     };
     
-    CCShareItemButton *shareWithClassButton = [CCShareItemButton buttonWithTitle:@"Share with Class" actionBlock:^{
+    CCShareItemButton *shareWithClassButton = [CCShareItemButton buttonWithTitle:CCShareItemActionSheetDefines.shareWithClassButtonTitle actionBlock:^{
         [weakSelf.shareItemActionSheet dismiss];
         [weakSelf createLocationSharedWithItems:nil sharedWithAll:YES];
     }];
-    CCShareItemButton *shareWithGroupButton = [CCShareItemButton buttonWithTitle:@"Share with Group" actionBlock:^{
+    CCShareItemButton *shareWithGroupButton = [CCShareItemButton buttonWithTitle:CCShareItemActionSheetDefines.shareWithGroupsButtonTitle actionBlock:^{
         NSDictionary *params = @{@"object" : weakSelf.locationToAddobject, @"successBlock" : successBlock};
         [weakSelf.selectGroupToShareTransaction performWithObject:params];
         [weakSelf.shareItemActionSheet dismiss];
     }];
-    CCShareItemButton *shareWithClassmatesButton = [CCShareItemButton buttonWithTitle:@"Share with Classmates" actionBlock:^{
+    CCShareItemButton *shareWithClassmatesButton = [CCShareItemButton buttonWithTitle:CCShareItemActionSheetDefines.shareWithClassmatesButtonTitle actionBlock:^{
         NSDictionary *params = @{@"object" : weakSelf.locationToAddobject, @"successBlock" : successBlock};
         [weakSelf.selectUsersToShareTransaction performWithObject:params];
         [weakSelf.shareItemActionSheet dismiss];

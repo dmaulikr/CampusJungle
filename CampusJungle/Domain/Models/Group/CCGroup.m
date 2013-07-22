@@ -46,16 +46,17 @@
              @"owner_id" : @"ownerId",
              @"klass_id" : @"classId",
              @"image_retina" : @"image",
+             @"owner_first_name" : @"ownerFirstName",
+             @"owner_last_name" : @"ownerLastName",
+             @"members_count" : @"membersCount"
              };
 }
 
 + (NSDictionary *)requestMappingDictionary
 {
     return @{
-             @"groupId" : @"id",
              @"description" : @"description",
              @"name" : @"name",
-             @"ownerId" : @"owner_id",
              @"classId" : @"class_id",
              @"image" : @"image",
              };

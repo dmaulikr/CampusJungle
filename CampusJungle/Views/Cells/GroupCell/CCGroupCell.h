@@ -11,8 +11,16 @@
 
 @class CCGroup;
 
+@protocol CCGroupCellDelegate <NSObject>
+
+- (void)deleteGroup:(CCGroup *)group;
+
+@end
+
 @interface CCGroupCell : CCBaseCell
 
 @property (nonatomic, strong) CCGroup *cellObject;
+
+- (void)setDelegate:(id<CCGroupCellDelegate>)delegate;
 
 @end

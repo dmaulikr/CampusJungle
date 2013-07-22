@@ -215,3 +215,10 @@ const struct CCAvatarActionSheetButtonsTitles CCAvatarActionSheetButtonsTitles =
     .selectFromGalleryButtonTitle = @"Select from gallery",
     .cancelButtonTitle = @"Cancel",
 };
+
+const struct CCShareItemActionSheetDefines CCShareItemActionSheetDefines = {
+    .title = @"Share Options",
+    .shareWithClassButtonTitle = @"Share with Class",
+    .shareWithGroupsButtonTitle = @"Share with Groups",
+    .shareWithClassmatesButtonTitle = @"Share with Classmate",
+};

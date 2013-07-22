@@ -217,6 +217,13 @@ extern const struct CCAvatarActionSheetButtonsTitles {
     __unsafe_unretained NSString *cancelButtonTitle;
 } CCAvatarActionSheetButtonsTitles;
 
+extern const struct CCShareItemActionSheetDefines {
+    __unsafe_unretained NSString *title;
+    __unsafe_unretained NSString *shareWithClassButtonTitle;
+    __unsafe_unretained NSString *shareWithGroupsButtonTitle;
+    __unsafe_unretained NSString *shareWithClassmatesButtonTitle;
+} CCShareItemActionSheetDefines;
+
 enum CCClassTabbarButtonsIdentifiers {
     CCClassTabbarButtonsIdentifierClassmate = 1,
     CCClassTabbarButtonsIdentifierGroup = 2,
