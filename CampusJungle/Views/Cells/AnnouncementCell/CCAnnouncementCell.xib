@@ -81,7 +81,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{266, 6}, {44, 44}}</string>
 								<reference key="NSSuperview" ref="608098703"/>
-								<reference key="NSNextKeyView" ref="128492191"/>
+								<reference key="NSNextKeyView" ref="512923753"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -179,7 +179,7 @@
 									<int key="NSfFlags">16</int>
 								</object>
 							</object>
-							<object class="IBUILabel" id="128492191">
+							<object class="IBUILabel" id="512923753">
 								<reference key="NSNextResponder" ref="608098703"/>
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{14, 54}, {296, 23}}</string>
@@ -274,7 +274,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">topicLabel</string>
 						<reference key="source" ref="865768864"/>
-						<reference key="destination" ref="128492191"/>
+						<reference key="destination" ref="512923753"/>
 					</object>
 					<int key="connectionID">99</int>
 				</object>
@@ -306,7 +306,7 @@
 							<reference ref="44940044"/>
 							<reference ref="195727478"/>
 							<reference ref="213252487"/>
-							<reference ref="128492191"/>
+							<reference ref="512923753"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -336,7 +336,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">98</int>
-						<reference key="object" ref="128492191"/>
+						<reference key="object" ref="512923753"/>
 						<reference key="parent" ref="865768864"/>
 					</object>
 				</array>
@@ -367,8 +367,8 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="close_button.png">{15, 15}</string>
-			<string key="close_button_active.png">{15, 15}</string>
+			<string key="close_button.png">{16, 16}</string>
+			<string key="close_button_active.png">{16, 16}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>

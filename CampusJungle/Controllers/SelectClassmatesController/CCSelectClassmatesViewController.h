@@ -11,13 +11,14 @@
 #import "CCShareItemBlocksDefines.h"
 #import "CCTransaction.h"
 
-@class CCClass;
+@class CCClass, CCGroup;
 
 @interface CCSelectClassmatesViewController : CCTableBaseViewController
 
 @property (nonatomic, strong) id<CCTransaction> backTransaction;
 
 - (void)setClass:(CCClass *)classObject;
+- (void)setGroup:(CCGroup *)group;
 - (void)setSuccessBlock:(ShareItemButtonSuccessBlock)successBlock;
 - (void)setCancelBlock:(ShareItemButtonCancelBlock)cancelBlock;
 

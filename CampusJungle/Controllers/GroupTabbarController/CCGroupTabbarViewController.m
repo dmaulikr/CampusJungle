@@ -1,18 +1,16 @@
 //
-//  CCClassTabbarControllerViewController.m
+//  CCGroupTabbarViewController.m
 //  CampusJungle
 //
-//  Created by Vlad Korzun on 08.07.13.
+//  Created by Yury Grinenko on 22.07.13.
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCClassTabbarControllerViewController.h"
-#import "CCDefines.h"
+#import "CCGroupTabbarViewController.h"
 
-@interface CCClassTabbarControllerViewController ()
+@interface CCGroupTabbarViewController ()
 
-@property (nonatomic, weak) IBOutlet UIButton *classmatesButton;
-@property (nonatomic, weak) IBOutlet UIButton *groupsButton;
+@property (nonatomic, weak) IBOutlet UIButton *groupmatesButton;
 @property (nonatomic, weak) IBOutlet UIButton *locationButton;
 @property (nonatomic, weak) IBOutlet UIButton *forumsButton;
 
@@ -21,20 +19,19 @@
 
 @end
 
-@implementation CCClassTabbarControllerViewController
+@implementation CCGroupTabbarViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.buttons = @[self.classmatesButton,self.groupsButton,self.locationButton,self.forumsButton];
-    self.classmatesButton.tag = CCClassTabbarButtonsIdentifierClassmate;
-    self.groupsButton.tag = CCClassTabbarButtonsIdentifierGroup;
+    self.buttons = @[self.groupmatesButton, self.locationButton, self.forumsButton];
+    self.groupmatesButton.tag = CCClassTabbarButtonsIdentifierClassmate;
     self.locationButton.tag = CCClassTabbarButtonsIdentifierLocations;
     self.forumsButton.tag = CCClassTabbarButtonsIdentifierForums;
     for (UIButton *button in self.buttons){
         [self configButton:button];
     }
-    [self didSelectButton:self.classmatesButton];
+    [self didSelectButton:self.groupmatesButton];
 }
 
 - (void)configButton:(UIButton *)button
@@ -45,6 +42,8 @@
     [button setBackgroundImage:[button backgroundImageForState:UIControlStateSelected] forState:UIControlStateSelected | UIControlStateHighlighted];
 }
 
+#pragma mark -
+#pragma mark Actions
 - (IBAction)didSelectButton:(UIButton *)sender
 {
     if (self.currentlySelected != sender){

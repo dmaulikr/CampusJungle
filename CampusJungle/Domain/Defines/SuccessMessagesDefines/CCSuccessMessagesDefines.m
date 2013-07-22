@@ -26,4 +26,6 @@ const struct CCSuccessMessages CCSuccessMessages = {
     .deleteGroup = @"Group was successfully removed",
     .createAnnouncement = @"You've successfully added announcement",
     .removeAnnouncement = @"Announcement was successfully removed",
+    .leaveGroup = @"You've successfully leave group",
+    .sentGroupMessage = @"You've successfully sent group message",
 };

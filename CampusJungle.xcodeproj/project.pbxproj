@@ -233,7 +233,7 @@
 		7022F4991786C7100055221C /* SelectionBackGround@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE2178454C200E54EFC /* SelectionBackGround@2x.png */; };
 		7022F49A1786C7110055221C /* SelectionBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE3178454C200E54EFC /* SelectionBackGround.png */; };
 		703DA4DD178B455600464DD3 /* CCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4DC178B455600464DD3 /* CCLocation.m */; };
-		703DA4E2178B457200464DD3 /* CCClassLocationsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4E0178B457200464DD3 /* CCClassLocationsDataProvider.m */; };
+		703DA4E2178B457200464DD3 /* CCLocationsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4E0178B457200464DD3 /* CCLocationsDataProvider.m */; };
 		703DA4F0178C3D3C00464DD3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 703DA4EE178C3D3000464DD3 /* MapKit.framework */; };
 		703DA4F8178C5C9900464DD3 /* CCMapHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4F7178C5C9900464DD3 /* CCMapHelper.m */; };
 		703DA4FE178C6A5900464DD3 /* CCLocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4FC178C6A5900464DD3 /* CCLocationsViewController.m */; };
@@ -507,6 +507,16 @@
 		70FDD632179D2ACB00871727 /* CCAddGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD630179D2ACB00871727 /* CCAddGroupViewController.m */; };
 		70FDD633179D2ACB00871727 /* CCAddGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FDD631179D2ACB00871727 /* CCAddGroupViewController.xib */; };
 		70FDD637179D2B6400871727 /* CCAddGroupTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD636179D2B6400871727 /* CCAddGroupTransaction.m */; };
+		70FDD643179D487100871727 /* CCClassTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD640179D487100871727 /* CCClassTableController.m */; };
+		70FDD644179D487100871727 /* CCClassTableController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FDD641179D487100871727 /* CCClassTableController.xib */; };
+		70FDD64A179D48AE00871727 /* CCGroupTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD647179D48AE00871727 /* CCGroupTableController.m */; };
+		70FDD64B179D48AE00871727 /* CCGroupTableController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FDD648179D48AE00871727 /* CCGroupTableController.xib */; };
+		70FDD650179D4D6200871727 /* CCGroupTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD64E179D4D6200871727 /* CCGroupTabbarViewController.m */; };
+		70FDD651179D4D6200871727 /* CCGroupTabbarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FDD64F179D4D6200871727 /* CCGroupTabbarViewController.xib */; };
+		70FDD656179D55F800871727 /* CCGroupmatesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD655179D55F800871727 /* CCGroupmatesDataProvider.m */; };
+		70FDD65B179DC08E00871727 /* CCGroupMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD659179DC08E00871727 /* CCGroupMessageViewController.m */; };
+		70FDD65C179DC08E00871727 /* CCGroupMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FDD65A179DC08E00871727 /* CCGroupMessageViewController.xib */; };
+		70FDD660179DC0D800871727 /* CCGroupMessageTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD65F179DC0D800871727 /* CCGroupMessageTransaction.m */; };
 		A784C599173A865E005E4921 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C598173A865E005E4921 /* UIKit.framework */; };
 		A784C59B173A865E005E4921 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C59A173A865E005E4921 /* Foundation.framework */; };
 		A784C59D173A865E005E4921 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C59C173A865E005E4921 /* CoreGraphics.framework */; };
@@ -595,8 +605,6 @@
 		D39496EC178B2A0400C39A7E /* CCOffersDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496EB178B2A0400C39A7E /* CCOffersDataProvider.m */; };
 		D39496F9178C27B100C39A7E /* CCClassTabbarControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496F7178C27B100C39A7E /* CCClassTabbarControllerViewController.m */; };
 		D39496FA178C27B100C39A7E /* CCClassTabbarControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39496F8178C27B100C39A7E /* CCClassTabbarControllerViewController.xib */; };
-		D39496FF178C27DE00C39A7E /* CCClassTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = D39496FD178C27DE00C39A7E /* CCClassTableController.m */; };
-		D3949700178C27DE00C39A7E /* CCClassTableController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39496FE178C27DE00C39A7E /* CCClassTableController.xib */; };
 		D3949709178C401400C39A7E /* CCOfferDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949707178C401400C39A7E /* CCOfferDetailsController.m */; };
 		D394970A178C401400C39A7E /* CCOfferDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3949708178C401400C39A7E /* CCOfferDetailsController.xib */; };
 		D3949718178D51BE00C39A7E /* CCPrivateMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3949716178D51BE00C39A7E /* CCPrivateMessageController.m */; };
@@ -902,8 +910,8 @@
 		7012ACA517957C4B002DA5E9 /* CCLoadPreviousItemsSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCLoadPreviousItemsSectionHeader.xib; sourceTree = "<group>"; };
 		703DA4DB178B455600464DD3 /* CCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocation.h; sourceTree = "<group>"; };
 		703DA4DC178B455600464DD3 /* CCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocation.m; sourceTree = "<group>"; };
-		703DA4DF178B457200464DD3 /* CCClassLocationsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassLocationsDataProvider.h; sourceTree = "<group>"; };
-		703DA4E0178B457200464DD3 /* CCClassLocationsDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassLocationsDataProvider.m; sourceTree = "<group>"; };
+		703DA4DF178B457200464DD3 /* CCLocationsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationsDataProvider.h; sourceTree = "<group>"; };
+		703DA4E0178B457200464DD3 /* CCLocationsDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocationsDataProvider.m; sourceTree = "<group>"; };
 		703DA4E1178B457200464DD3 /* CCLocationDataProviderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationDataProviderDelegate.h; sourceTree = "<group>"; };
 		703DA4EE178C3D3000464DD3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		703DA4F6178C5C9900464DD3 /* CCMapHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMapHelper.h; sourceTree = "<group>"; };
@@ -1401,7 +1409,6 @@
 		70F42A7A178D5A2900E763F3 /* CCForumsDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCForumsDataProvider.m; sourceTree = "<group>"; };
 		70F42A7C178D5A3800E763F3 /* CCGroupsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupsDataProvider.h; sourceTree = "<group>"; };
 		70F42A7D178D5A3800E763F3 /* CCGroupsDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupsDataProvider.m; sourceTree = "<group>"; };
-		70F42A7F178D5D3C00E763F3 /* CCClassTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassTableDelegate.h; sourceTree = "<group>"; };
 		70FDD625179D243800871727 /* CCGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupViewController.h; sourceTree = "<group>"; };
 		70FDD626179D243800871727 /* CCGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupViewController.m; sourceTree = "<group>"; };
 		70FDD627179D243800871727 /* CCGroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupViewController.xib; sourceTree = "<group>"; };
@@ -1412,6 +1419,25 @@
 		70FDD631179D2ACB00871727 /* CCAddGroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAddGroupViewController.xib; sourceTree = "<group>"; };
 		70FDD635179D2B6400871727 /* CCAddGroupTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddGroupTransaction.h; sourceTree = "<group>"; };
 		70FDD636179D2B6400871727 /* CCAddGroupTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddGroupTransaction.m; sourceTree = "<group>"; };
+		70FDD63F179D487100871727 /* CCClassTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassTableController.h; sourceTree = "<group>"; };
+		70FDD640179D487100871727 /* CCClassTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassTableController.m; sourceTree = "<group>"; };
+		70FDD641179D487100871727 /* CCClassTableController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCClassTableController.xib; sourceTree = "<group>"; };
+		70FDD642179D487100871727 /* CCClassTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassTableDelegate.h; sourceTree = "<group>"; };
+		70FDD646179D48AE00871727 /* CCGroupTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupTableController.h; sourceTree = "<group>"; };
+		70FDD647179D48AE00871727 /* CCGroupTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupTableController.m; sourceTree = "<group>"; };
+		70FDD648179D48AE00871727 /* CCGroupTableController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupTableController.xib; sourceTree = "<group>"; };
+		70FDD649179D48AE00871727 /* CCGroupTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupTableDelegate.h; sourceTree = "<group>"; };
+		70FDD64D179D4D6200871727 /* CCGroupTabbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupTabbarViewController.h; sourceTree = "<group>"; };
+		70FDD64E179D4D6200871727 /* CCGroupTabbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupTabbarViewController.m; sourceTree = "<group>"; };
+		70FDD64F179D4D6200871727 /* CCGroupTabbarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupTabbarViewController.xib; sourceTree = "<group>"; };
+		70FDD652179D4DE100871727 /* CCGroupTabbarDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCGroupTabbarDelegate.h; sourceTree = "<group>"; };
+		70FDD654179D55F800871727 /* CCGroupmatesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupmatesDataProvider.h; sourceTree = "<group>"; };
+		70FDD655179D55F800871727 /* CCGroupmatesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupmatesDataProvider.m; sourceTree = "<group>"; };
+		70FDD658179DC08E00871727 /* CCGroupMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupMessageViewController.h; sourceTree = "<group>"; };
+		70FDD659179DC08E00871727 /* CCGroupMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupMessageViewController.m; sourceTree = "<group>"; };
+		70FDD65A179DC08E00871727 /* CCGroupMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupMessageViewController.xib; sourceTree = "<group>"; };
+		70FDD65E179DC0D800871727 /* CCGroupMessageTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupMessageTransaction.h; sourceTree = "<group>"; };
+		70FDD65F179DC0D800871727 /* CCGroupMessageTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupMessageTransaction.m; sourceTree = "<group>"; };
 		9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		A784C595173A865E005E4921 /* CampusJungle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusJungle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A784C598173A865E005E4921 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -1536,9 +1562,6 @@
 		D39496F6178C27B100C39A7E /* CCClassTabbarControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassTabbarControllerViewController.h; sourceTree = "<group>"; };
 		D39496F7178C27B100C39A7E /* CCClassTabbarControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassTabbarControllerViewController.m; sourceTree = "<group>"; };
 		D39496F8178C27B100C39A7E /* CCClassTabbarControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCClassTabbarControllerViewController.xib; sourceTree = "<group>"; };
-		D39496FC178C27DE00C39A7E /* CCClassTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassTableController.h; sourceTree = "<group>"; };
-		D39496FD178C27DE00C39A7E /* CCClassTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassTableController.m; sourceTree = "<group>"; };
-		D39496FE178C27DE00C39A7E /* CCClassTableController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCClassTableController.xib; sourceTree = "<group>"; };
 		D3949706178C401400C39A7E /* CCOfferDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCOfferDetailsController.h; sourceTree = "<group>"; };
 		D3949707178C401400C39A7E /* CCOfferDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCOfferDetailsController.m; sourceTree = "<group>"; };
 		D3949708178C401400C39A7E /* CCOfferDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCOfferDetailsController.xib; sourceTree = "<group>"; };
@@ -2272,13 +2295,14 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
-		703DA4DE178B457200464DD3 /* ClassLocationsDataProvider */ = {
+		703DA4DE178B457200464DD3 /* LocationsDataProvider */ = {
 			isa = PBXGroup;
 			children = (
-				703DA4DF178B457200464DD3 /* CCClassLocationsDataProvider.h */,
-				703DA4E0178B457200464DD3 /* CCClassLocationsDataProvider.m */,
+				703DA4DF178B457200464DD3 /* CCLocationsDataProvider.h */,
+				703DA4E0178B457200464DD3 /* CCLocationsDataProvider.m */,
 				703DA4E1178B457200464DD3 /* CCLocationDataProviderDelegate.h */,
 			);
+			name = LocationsDataProvider;
 			path = ClassLocationsDataProvider;
 			sourceTree = "<group>";
 		};
@@ -2374,9 +2398,9 @@
 				70A29C35178778AB001BC8DD /* BaseController */,
 				70A29C39178778AB001BC8DD /* CitySelectionController */,
 				70A29C3D178778AB001BC8DD /* ClassController */,
-				D39496FB178C27DE00C39A7E /* ClassTableСontroller */,
 				70A29C45178778AB001BC8DD /* ClassesOfCollegeController */,
 				D39496F4178C27B100C39A7E /* ClassTabbarController */,
+				70FDD63E179D487100871727 /* ClassTableController */,
 				70A29C49178778AB001BC8DD /* CollegeSearchController */,
 				70A29C4C178778AB001BC8DD /* CollegeSelectionController */,
 				70A29C50178778AB001BC8DD /* CollegesListController */,
@@ -2388,6 +2412,9 @@
 				70A29C7A178778AB001BC8DD /* EducationCreationController */,
 				70A29C7E178778AB001BC8DD /* FilterController */,
 				70FDD624179D242100871727 /* GroupController */,
+				70FDD657179DC07900871727 /* GroupMessage */,
+				70FDD64C179D4D4B00871727 /* GroupTabbarController */,
+				70FDD645179D48AE00871727 /* GroupTableController */,
 				70A29C82178778AB001BC8DD /* ImageSortingController */,
 				70A29C86178778AB001BC8DD /* ImageSortingForStuffController */,
 				70A29C89178778AB001BC8DD /* InboxConroller */,
@@ -2793,7 +2820,6 @@
 				701254071796F1A20085247A /* BaseReverseDataProvider */,
 				70A29D4F17877B94001BC8DD /* CitiesDataProvider */,
 				70A29D5217877B94001BC8DD /* ClassesDataProvider */,
-				703DA4DE178B457200464DD3 /* ClassLocationsDataProvider */,
 				70A29D5517877B94001BC8DD /* ClassmatesDataProvider */,
 				70A29D5817877B94001BC8DD /* CollegeSearchingDataProvider */,
 				70A29D5B17877B94001BC8DD /* CollegeSellectionDataProvider */,
@@ -2804,8 +2830,10 @@
 				70A29D6717877B94001BC8DD /* EducationsDataProvider */,
 				70F42A77178D5A1C00E763F3 /* ForumsDataProvider */,
 				70A29D6A17877B94001BC8DD /* FiltersDataProvider */,
+				70FDD653179D55E000871727 /* GroupmatesDataDrovider */,
 				70F42A78178D5A1C00E763F3 /* GroupsDataProvider */,
 				70A29D6D17877B94001BC8DD /* ImageSortingDataProvider */,
+				703DA4DE178B457200464DD3 /* LocationsDataProvider */,
 				70A29D7017877B94001BC8DD /* MarketNotesProvider */,
 				70A29D7317877B94001BC8DD /* MarketStuffDataProvider */,
 				D3949726178D618A00C39A7E /* MessagesDataProvider */,
@@ -3696,6 +3724,7 @@
 				70B2D11C17944894001B0C2C /* EducationSettingSettingUpTransaction */,
 				D342BCD21796ACF60034E88C /* EditClassTransaction */,
 				70B2D11F17944894001B0C2C /* ForumDetailsTransaction */,
+				70FDD65D179DC0C600871727 /* GroupMessageTransaction */,
 				70FDD62A179D283900871727 /* GroupTransaction */,
 				70B2D12217944894001B0C2C /* ImagesForNotesUploadingScreenTransaction */,
 				70B2D12517944894001B0C2C /* ImagesSortingTransaction */,
@@ -4700,6 +4729,67 @@
 			path = AddGroupTransaction;
 			sourceTree = "<group>";
 		};
+		70FDD63E179D487100871727 /* ClassTableController */ = {
+			isa = PBXGroup;
+			children = (
+				70FDD63F179D487100871727 /* CCClassTableController.h */,
+				70FDD640179D487100871727 /* CCClassTableController.m */,
+				70FDD641179D487100871727 /* CCClassTableController.xib */,
+				70FDD642179D487100871727 /* CCClassTableDelegate.h */,
+			);
+			path = ClassTableController;
+			sourceTree = "<group>";
+		};
+		70FDD645179D48AE00871727 /* GroupTableController */ = {
+			isa = PBXGroup;
+			children = (
+				70FDD646179D48AE00871727 /* CCGroupTableController.h */,
+				70FDD647179D48AE00871727 /* CCGroupTableController.m */,
+				70FDD648179D48AE00871727 /* CCGroupTableController.xib */,
+				70FDD649179D48AE00871727 /* CCGroupTableDelegate.h */,
+			);
+			path = GroupTableController;
+			sourceTree = "<group>";
+		};
+		70FDD64C179D4D4B00871727 /* GroupTabbarController */ = {
+			isa = PBXGroup;
+			children = (
+				70FDD64D179D4D6200871727 /* CCGroupTabbarViewController.h */,
+				70FDD64E179D4D6200871727 /* CCGroupTabbarViewController.m */,
+				70FDD64F179D4D6200871727 /* CCGroupTabbarViewController.xib */,
+				70FDD652179D4DE100871727 /* CCGroupTabbarDelegate.h */,
+			);
+			path = GroupTabbarController;
+			sourceTree = "<group>";
+		};
+		70FDD653179D55E000871727 /* GroupmatesDataDrovider */ = {
+			isa = PBXGroup;
+			children = (
+				70FDD654179D55F800871727 /* CCGroupmatesDataProvider.h */,
+				70FDD655179D55F800871727 /* CCGroupmatesDataProvider.m */,
+			);
+			path = GroupmatesDataDrovider;
+			sourceTree = "<group>";
+		};
+		70FDD657179DC07900871727 /* GroupMessage */ = {
+			isa = PBXGroup;
+			children = (
+				70FDD658179DC08E00871727 /* CCGroupMessageViewController.h */,
+				70FDD659179DC08E00871727 /* CCGroupMessageViewController.m */,
+				70FDD65A179DC08E00871727 /* CCGroupMessageViewController.xib */,
+			);
+			path = GroupMessage;
+			sourceTree = "<group>";
+		};
+		70FDD65D179DC0C600871727 /* GroupMessageTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				70FDD65E179DC0D800871727 /* CCGroupMessageTransaction.h */,
+				70FDD65F179DC0D800871727 /* CCGroupMessageTransaction.m */,
+			);
+			path = GroupMessageTransaction;
+			sourceTree = "<group>";
+		};
 		A784C58C173A865E005E4921 = {
 			isa = PBXGroup;
 			children = (
@@ -5127,18 +5217,6 @@
 			path = CollegesListController/ClassTabbarController;
 			sourceTree = "<group>";
 		};
-		D39496FB178C27DE00C39A7E /* ClassTableСontroller */ = {
-			isa = PBXGroup;
-			children = (
-				D39496FC178C27DE00C39A7E /* CCClassTableController.h */,
-				D39496FD178C27DE00C39A7E /* CCClassTableController.m */,
-				D39496FE178C27DE00C39A7E /* CCClassTableController.xib */,
-				70F42A7F178D5D3C00E763F3 /* CCClassTableDelegate.h */,
-			);
-			name = "ClassTableСontroller";
-			path = ClassTableView;
-			sourceTree = "<group>";
-		};
 		D3949705178C3FED00C39A7E /* OfferDetailsController */ = {
 			isa = PBXGroup;
 			children = (
@@ -5398,7 +5476,6 @@
 				D39496E0178B193A00C39A7E /* CCOfferControllerViewController.xib in Resources */,
 				703DA4FF178C6A5900464DD3 /* CCLocationsViewController.xib in Resources */,
 				D39496FA178C27B100C39A7E /* CCClassTabbarControllerViewController.xib in Resources */,
-				D3949700178C27DE00C39A7E /* CCClassTableController.xib in Resources */,
 				D394970A178C401400C39A7E /* CCOfferDetailsController.xib in Resources */,
 				D3949719178D51BE00C39A7E /* CCPrivateMessageController.xib in Resources */,
 				700F942C178EA07C00A6FBBA /* CCAddLocationViewController.xib in Resources */,
@@ -5614,9 +5691,13 @@
 				D3819B5D1799CF8300C93005 /* CCProfessorUploadsCell.xib in Resources */,
 				70FDD629179D243800871727 /* CCGroupViewController.xib in Resources */,
 				70FDD633179D2ACB00871727 /* CCAddGroupViewController.xib in Resources */,
+				70FDD644179D487100871727 /* CCClassTableController.xib in Resources */,
+				70FDD64B179D48AE00871727 /* CCGroupTableController.xib in Resources */,
+				70FDD651179D4D6200871727 /* CCGroupTabbarViewController.xib in Resources */,
 				D38532CC179D3A3D0075F870 /* CCAnnouncementsController.xib in Resources */,
 				D38532D6179D50170075F870 /* CCAddAnnouncementController.xib in Resources */,
 				D38532ED179DDA470075F870 /* CCAnnouncementCell.xib in Resources */,
+				70FDD65C179DC08E00871727 /* CCGroupMessageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5759,13 +5840,12 @@
 				D39496E8178B252700C39A7E /* CCOffer.m in Sources */,
 				D39496EC178B2A0400C39A7E /* CCOffersDataProvider.m in Sources */,
 				703DA4DD178B455600464DD3 /* CCLocation.m in Sources */,
-				703DA4E2178B457200464DD3 /* CCClassLocationsDataProvider.m in Sources */,
+				703DA4E2178B457200464DD3 /* CCLocationsDataProvider.m in Sources */,
 				703DA4F8178C5C9900464DD3 /* CCMapHelper.m in Sources */,
 				703DA4FE178C6A5900464DD3 /* CCLocationsViewController.m in Sources */,
 				70F42A7B178D5A2900E763F3 /* CCForumsDataProvider.m in Sources */,
 				70F42A7E178D5A3800E763F3 /* CCGroupsDataProvider.m in Sources */,
 				D39496F9178C27B100C39A7E /* CCClassTabbarControllerViewController.m in Sources */,
-				D39496FF178C27DE00C39A7E /* CCClassTableController.m in Sources */,
 				D3949709178C401400C39A7E /* CCOfferDetailsController.m in Sources */,
 				D3949718178D51BE00C39A7E /* CCPrivateMessageController.m in Sources */,
 				D3949725178D5C1400C39A7E /* CCMessage.m in Sources */,
@@ -5950,6 +6030,10 @@
 				70FDD62D179D284F00871727 /* CCGroupTransaction.m in Sources */,
 				70FDD632179D2ACB00871727 /* CCAddGroupViewController.m in Sources */,
 				70FDD637179D2B6400871727 /* CCAddGroupTransaction.m in Sources */,
+				70FDD643179D487100871727 /* CCClassTableController.m in Sources */,
+				70FDD64A179D48AE00871727 /* CCGroupTableController.m in Sources */,
+				70FDD650179D4D6200871727 /* CCGroupTabbarViewController.m in Sources */,
+				70FDD656179D55F800871727 /* CCGroupmatesDataProvider.m in Sources */,
 				D38532CB179D3A3D0075F870 /* CCAnnouncementsController.m in Sources */,
 				D38532D0179D3CA30075F870 /* CCAnnouncementTransaction.m in Sources */,
 				D38532D5179D50170075F870 /* CCAddAnnouncementController.m in Sources */,
@@ -5958,6 +6042,8 @@
 				D38532E3179D67DF0075F870 /* CCAnnouncement.m in Sources */,
 				D38532E7179DD3C00075F870 /* CCAnnouncementDataProvider.m in Sources */,
 				D38532EB179DDA0D0075F870 /* CCAnnouncementCell.m in Sources */,
+				70FDD65B179DC08E00871727 /* CCGroupMessageViewController.m in Sources */,
+				70FDD660179DC0D800871727 /* CCGroupMessageTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -38,7 +38,9 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *makeOffer;
     __unsafe_unretained NSString *recivedOffers;
     __unsafe_unretained NSString *classLocations;
+    __unsafe_unretained NSString *groupLocations;
     __unsafe_unretained NSString *postClassLocation;
+    __unsafe_unretained NSString *postGroupLocation;
     __unsafe_unretained NSString *deleteLocation;
     __unsafe_unretained NSString *getStuff;
     __unsafe_unretained NSString *getUser;
@@ -47,8 +49,10 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *postReview;
     __unsafe_unretained NSString *loadReviews;
     __unsafe_unretained NSString *loadGroups;
-    __unsafe_unretained NSString *loadForums;
-    __unsafe_unretained NSString *postForum;
+    __unsafe_unretained NSString *loadClassForums;
+    __unsafe_unretained NSString *loadGroupForums;
+    __unsafe_unretained NSString *postInClassForum;
+    __unsafe_unretained NSString *postInGroupForum;
     __unsafe_unretained NSString *deleteForum;
     __unsafe_unretained NSString *loadQuestions;
     __unsafe_unretained NSString *postQuestion;
@@ -201,6 +205,7 @@ extern const struct CCProgressHudsConstants {
 
 extern const struct CCClassTabbarButtonsTitles {
     __unsafe_unretained NSString *classmates;
+    __unsafe_unretained NSString *groupmates;
     __unsafe_unretained NSString *groups;
     __unsafe_unretained NSString *locations;
     __unsafe_unretained NSString *forums;
@@ -224,8 +229,10 @@ extern const struct CCAvatarActionSheetButtonsTitles {
 extern const struct CCShareItemActionSheetDefines {
     __unsafe_unretained NSString *title;
     __unsafe_unretained NSString *shareWithClassButtonTitle;
+    __unsafe_unretained NSString *shareWithGroupButtonTitle;
     __unsafe_unretained NSString *shareWithGroupsButtonTitle;
     __unsafe_unretained NSString *shareWithClassmatesButtonTitle;
+    __unsafe_unretained NSString *shareWithGroupmatesButtonTitle;
 } CCShareItemActionSheetDefines;
 
 enum CCClassTabbarButtonsIdentifiers {

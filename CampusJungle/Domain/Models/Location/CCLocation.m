@@ -73,13 +73,19 @@
     
     [paginationLocationsResponseMapping addPropertyMapping:relationshipResponseLocationsMapping];
     
-    NSString *pathPattern = [NSString stringWithFormat:CCAPIDefines.classLocations, @":classID"];
-    
+    NSString *classPathPattern = [NSString stringWithFormat:CCAPIDefines.classLocations, @":classID"];
     RKResponseDescriptor *classLocationsResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginationLocationsResponseMapping
-                                                                                                     pathPattern:pathPattern
+                                                                                                     pathPattern:classPathPattern
                                                                                                          keyPath:nil
                                                                                                      statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    NSString *groupPathPattern = [NSString stringWithFormat:CCAPIDefines.groupLocations, @":groupID"];
+    RKResponseDescriptor *groupLocationsResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginationLocationsResponseMapping
+                                                                                                     pathPattern:groupPathPattern
+                                                                                                         keyPath:nil
+                                                                                                     statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+
     [objectManager addResponseDescriptor:classLocationsResponseDescriptor];
+    [objectManager addResponseDescriptor:groupLocationsResponseDescriptor];
 }
 
 + (void)configureLocationsRequest:(RKObjectManager *)objectManager

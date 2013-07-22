@@ -78,12 +78,19 @@
     }];
 }
 
-- (void)membersOfGroup:(CCGroup *)group successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+- (void)loadMembersOfGroup:(CCGroup *)group filterString:(NSString *)filterString pageNumber:(NSNumber *)pageNumber successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [self setAuthorizationToken];
+    
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    [params setObject:pageNumber.stringValue forKey:@"page_number"];
+    if ([filterString length] > 0) {
+        [params setObject:filterString forKey:@"keywords"];
+    }
+    
     NSString *path = [NSString stringWithFormat:CCAPIDefines.loadGroupMembers, group.groupId];
-    [objectManager getObjectsAtPath:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    [objectManager getObjectsAtPath:path parameters:params success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         successHandler(mappingResult.firstObject);
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         errorHandler(error);

@@ -19,6 +19,7 @@
     
     id location = [object valueForKey:@"location"];
     id classObject = [object valueForKey:@"class"];
+    id group = [object valueForKey:@"group"];
     NSString *searchString = [object valueForKey:@"searchString"];
     NSArray *locationsArray = [object valueForKey:@"array"];
     
@@ -28,6 +29,7 @@
     CCLocationsViewController *locationsController = [[CCLocationsViewController alloc] initWithLocationsArray:locationsArray];
     [locationsController setSelectedLocation:location];
     [locationsController setClass:classObject];
+    [locationsController setGroup:group];
     [locationsController setSearchString:searchString];
     locationsController.addLocationTransaction = addLocationTransaction;
     [self.navigation pushViewController:locationsController animated:YES];

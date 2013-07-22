@@ -43,7 +43,7 @@
 							<object class="IBUILabel" id="794606179">
 								<reference key="NSNextResponder" ref="151596461"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{90, 12}, {219, 21}}</string>
+								<string key="NSFrame">{{90, 15}, {219, 21}}</string>
 								<reference key="NSSuperview" ref="151596461"/>
 								<reference key="NSWindow"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -80,7 +80,7 @@
 							<object class="IBUIImageView" id="427774541">
 								<reference key="NSNextResponder" ref="151596461"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{39, 0}, {43, 43}}</string>
+								<string key="NSFrame">{{39, 4}, {43, 43}}</string>
 								<reference key="NSSuperview" ref="151596461"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="794606179"/>
@@ -92,7 +92,7 @@
 							<object class="IBUIImageView" id="761114761">
 								<reference key="NSNextResponder" ref="151596461"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{8, 11}, {21, 21}}</string>
+								<string key="NSFrame">{{8, 15}, {21, 21}}</string>
 								<reference key="NSSuperview" ref="151596461"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="427774541"/>
@@ -101,7 +101,7 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 						</array>
-						<string key="NSFrameSize">{320, 43}</string>
+						<string key="NSFrameSize">{320, 52}</string>
 						<reference key="NSSuperview" ref="388108801"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="761114761"/>
@@ -117,7 +117,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 				</array>
-				<string key="NSFrameSize">{320, 44}</string>
+				<string key="NSFrameSize">{320, 53}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="151596461"/>
@@ -125,6 +125,7 @@
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<int key="IBUISelectionStyle">0</int>
 				<reference key="IBUIContentView" ref="151596461"/>
+				<real value="53" key="IBUIRowHeight"/>
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">

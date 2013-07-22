@@ -14,7 +14,9 @@
 @protocol CCForumsApiProviderProtocol <AppleGuiceInjectable>
 
 - (void)loadForumsForClassWithId:(NSString *)classId filterString:(NSString *)filterString pageNumber:(NSInteger)pageNumber successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
-- (void)postForum:(CCForum *)forum successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)loadForumsForGroupWithId:(NSString *)classId filterString:(NSString *)filterString pageNumber:(NSInteger)pageNumber successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)postInClassForum:(CCForum *)forum successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)postInGroupForum:(CCForum *)forum successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 - (void)deleteForum:(CCForum *)forum successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 
 @end

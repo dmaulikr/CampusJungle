@@ -12,6 +12,8 @@
 #define UNCHECKED_IMAGE [UIImage imageNamed:@"checkbox.png"]
 #define CHECKED_IMAGE [UIImage imageNamed:@"checkbox_active.png"]
 
+static const NSInteger kDefaultCellHeight = 53;
+
 @interface CCUserSelectionCell ()
 
 @property (nonatomic, weak) IBOutlet UIImageView *checkedImageView;
@@ -39,6 +41,11 @@
     CCUser *user = self.cellObject;
     user.isSelected = !user.isSelected;
     [self setCellChecked:user.isSelected];
+}
+
++ (CGFloat)heightForCellWithObject:(id)object
+{
+    return kDefaultCellHeight;
 }
 
 @end

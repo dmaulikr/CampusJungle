@@ -30,7 +30,7 @@
     backTransaction.navigation = self.navigation;
     
     CCAddLocationViewController *addLocationController = [CCAddLocationViewController new];
-    addLocationController.locationToAddobject = object;
+    addLocationController.locationToAddObject = object;
     addLocationController.selectGroupToShareTransaction = selectGroupToShareTransaction;
     addLocationController.selectUsersToShareTransaction = selectClassmatesToShareTransaction;
     addLocationController.backTransaction = backTransaction;

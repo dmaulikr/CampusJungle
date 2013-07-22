@@ -19,11 +19,20 @@
 
 - (void)loadItemsForPageNumber:(long)numberOfPage successHandler:(successWithObject)successHandler
 {
-    [self.ioc_forumsApiProvider loadForumsForClassWithId:self.classId filterString:self.searchQuery pageNumber:numberOfPage successHandler:^(RKMappingResult *result) {
-        successHandler(result);
-    } errorHandler:^(NSError *error) {
-        [self showErrorWhileLoading:error];
-    }];
+    if (self.groupId) {
+        [self.ioc_forumsApiProvider loadForumsForGroupWithId:self.groupId filterString:self.searchQuery pageNumber:numberOfPage successHandler:^(RKMappingResult *result) {
+            successHandler(result);
+        } errorHandler:^(NSError *error) {
+            [self showErrorWhileLoading:error];
+        }];
+    }
+    else {
+        [self.ioc_forumsApiProvider loadForumsForClassWithId:self.classId filterString:self.searchQuery pageNumber:numberOfPage successHandler:^(RKMappingResult *result) {
+            successHandler(result);
+        } errorHandler:^(NSError *error) {
+            [self showErrorWhileLoading:error];
+        }];
+    }
 }
 
 @end

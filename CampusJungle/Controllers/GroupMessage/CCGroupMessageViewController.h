@@ -1,8 +1,8 @@
 //
-//  CCAddForumViewController.h
+//  CCGroupMessageViewController.h
 //  CampusJungle
 //
-//  Created by Yury Grinenko on 15.07.13.
+//  Created by Yury Grinenko on 22.07.13.
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
@@ -10,13 +10,12 @@
 #import "CCBaseViewController.h"
 #import "CCTransaction.h"
 
-@class CCClass, CCGroup;
+@class CCGroup;
 
-@interface CCAddForumViewController : CCBaseViewController
+@interface CCGroupMessageViewController : CCBaseViewController
 
 @property (nonatomic, strong) id<CCTransaction> backTransaction;
 
-- (void)setClass:(CCClass *)classObject;
 - (void)setGroup:(CCGroup *)group;
 
 @end
