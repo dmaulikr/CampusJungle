@@ -16,11 +16,14 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *description;
 @property (nonatomic, strong) NSString *ownerId;
+@property (nonatomic, strong) NSString *ownerFirstName;
+@property (nonatomic, strong) NSString *ownerLastName;
 @property (nonatomic, strong) NSString *image;
-
-@property (nonatomic, strong) NSArray *members;
+@property (nonatomic, assign) NSInteger membersCount;
 @property (nonatomic, strong) NSArray *locations;
 
 @property (nonatomic, assign) BOOL isSelected;
+
++ (CCGroup *)createWithName:(NSString *)name description:(NSString *)description;
 
 @end

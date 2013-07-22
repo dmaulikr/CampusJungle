@@ -68,6 +68,11 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *deleteUploads;
     __unsafe_unretained NSString *emailUploadsAttachment;
     __unsafe_unretained NSString *getAttachmentFromUploads;
+    __unsafe_unretained NSString *createGroup;
+    __unsafe_unretained NSString *updateGroup;
+    __unsafe_unretained NSString *leaveGroup;
+    __unsafe_unretained NSString *destroyGroup;
+    __unsafe_unretained NSString *loadGroupMembers;
 } CCAPIDefines;
 
 
@@ -212,6 +217,13 @@ extern const struct CCAvatarActionSheetButtonsTitles {
     __unsafe_unretained NSString *selectFromGalleryButtonTitle;
     __unsafe_unretained NSString *cancelButtonTitle;
 } CCAvatarActionSheetButtonsTitles;
+
+extern const struct CCShareItemActionSheetDefines {
+    __unsafe_unretained NSString *title;
+    __unsafe_unretained NSString *shareWithClassButtonTitle;
+    __unsafe_unretained NSString *shareWithGroupsButtonTitle;
+    __unsafe_unretained NSString *shareWithClassmatesButtonTitle;
+} CCShareItemActionSheetDefines;
 
 enum CCClassTabbarButtonsIdentifiers {
     CCClassTabbarButtonsIdentifierClassmate = 1,

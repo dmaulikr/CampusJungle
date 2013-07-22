@@ -17,6 +17,8 @@
 #import "CCEditClassTransaction.h"
 #import "CCProfessorUploadsTransaction.h"
 #import "CCTimetableTransaction.h"
+#import "CCGroupTransaction.h"
+#import "CCAddGroupTransaction.h"
 
 @implementation CCClassTransaction
 
@@ -60,6 +62,12 @@
     CCTimetableTransaction *timetableTransaction = [CCTimetableTransaction new];
     timetableTransaction.navigation = centralNavigation;
     
+    CCGroupTransaction *groupDetailsTransaction = [CCGroupTransaction new];
+    groupDetailsTransaction.navigation = centralNavigation;
+    
+    CCAddGroupTransaction *addGroupTransaction = [CCAddGroupTransaction new];
+    addGroupTransaction.navigation = centralNavigation;
+    
     classController.otherUserProfileTransaction = otherUserProfileTransaction;
     classController.newsFeedTransaction = self.newsFeedTransaction;
     classController.locationTransaction = showLocationsTransaction;
@@ -67,6 +75,8 @@
     classController.addForumTransaction = addForumTransaction;
     classController.forumDetailsTransaction = forumDetailsTransaction;
     classController.timetableTransaction = timetableTransaction;
+    classController.groupDetailsTransaction = groupDetailsTransaction;
+    classController.addGroupTransaction = addGroupTransaction;
     
     [self.menuController setCenterPanel:centralNavigation];
 }

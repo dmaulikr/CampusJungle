@@ -17,6 +17,8 @@
 #import "CCEditClassTransaction.h"
 #import "CCProfessorUploadsTransaction.h"
 #import "CCTimetableTransaction.h"
+#import "CCGroupTransaction.h"
+#import "CCAddGroupTransaction.h"
 
 @implementation CCClassAddedTransaction
 
@@ -60,6 +62,12 @@
     CCTimetableTransaction *timetableTransaction = [CCTimetableTransaction new];
     timetableTransaction.navigation = self.navigation;
     
+    CCGroupTransaction *groupDetailsTransaction = [CCGroupTransaction new];
+    groupDetailsTransaction.navigation = self.navigation;
+    
+    CCAddGroupTransaction *addGroupTransaction = [CCAddGroupTransaction new];
+    addGroupTransaction.navigation = self.navigation;
+    
     classController.otherUserProfileTransaction = otherUserProfileTransaction;
     classController.newsFeedTransaction = self.inboxTransaction;
     classController.locationTransaction = locationsTransactions;
@@ -67,6 +75,8 @@
     classController.addForumTransaction = addForumTransaction;
     classController.forumDetailsTransaction = forumDetailsTransaction;
     classController.timetableTransaction = timetableTransaction;
+    classController.groupDetailsTransaction = groupDetailsTransaction;
+    classController.addGroupTransaction = addGroupTransaction;
     
     [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.joinClass duration:CCProgressHudsConstants.loaderDuration];
     UIViewController *viewController = [[self.navigation viewControllers] lastObject];

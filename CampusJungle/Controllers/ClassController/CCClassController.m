@@ -9,6 +9,7 @@
 #import "CCClassController.h"
 #import "CCClass.h"
 #import "CCLocation.h"
+#import "CCGroup.h"
 #import "CCClassmatesDataProvider.h"
 #import "CCUserCell.h"
 #import "CCClassTableController.h"
@@ -191,6 +192,11 @@
     [self.forumDetailsTransaction performWithObject:forum];
 }
 
+- (void)showDetailsOfGroup:(CCGroup *)group
+{
+    [self.groupDetailsTransaction performWithObject:group];
+}
+
 - (void)addLocation
 {
     [self.addLocationTransaction performWithObject:self.currentClass];
@@ -199,6 +205,11 @@
 - (void)addForum
 {
     [self.addForumTransaction performWithObject:self.currentClass];
+}
+
+- (void)addGroup
+{
+    [self.addGroupTransaction performWithObject:self.currentClass];
 }
 
 - (IBAction)professorUploadsButtonDidPressed

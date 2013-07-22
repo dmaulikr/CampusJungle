@@ -20,12 +20,10 @@
 
 @implementation CCGroupSelectionCell
 
-- (void)setCellObject:(id)cellObject
+- (void)setCellObject:(CCGroup *)cellObject
 {
     [super setCellObject:cellObject];
-    
-    CCGroup *group = cellObject;
-    [self setCellChecked:group.isSelected];
+    [self setCellChecked:cellObject.isSelected];
 }
 
 - (void)setCellChecked:(BOOL)checked

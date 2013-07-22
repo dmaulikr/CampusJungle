@@ -13,9 +13,7 @@
 
 - (void)showErrorWhileLoading:(NSError *)error
 {
-    
     [CCStandardErrorHandler showErrorWithError:error];
-
 }
 
 - (BOOL)isEmpty

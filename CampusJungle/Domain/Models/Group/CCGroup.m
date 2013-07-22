@@ -11,9 +11,18 @@
 
 @implementation CCGroup
 
++ (CCGroup *)createWithName:(NSString *)name description:(NSString *)description
+{
+    CCGroup *group = [CCGroup new];
+    group.name = name;
+    group.description = description;
+    return group;
+}
+
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager
 {
     [self configureGroupsResponse:objectManager];
+    [self configureGroupRequest:objectManager];
 }
 
 + (void)configureGroupsResponse:(RKObjectManager *)objectManager
@@ -37,6 +46,15 @@
     [objectManager addResponseDescriptor:classGroupsResponseDescriptor];
 }
 
++ (void)configureGroupRequest:(RKObjectManager *)objectManager
+{
+    RKObjectMapping *groupMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
+    [groupMapping addAttributeMappingsFromDictionary:[CCGroup requestMappingDictionary]];
+    RKRequestDescriptor *groupRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:groupMapping objectClass:[CCGroup class] rootKeyPath:nil];
+    [objectManager addRequestDescriptor:groupRequestDescriptor];
+
+}
+
 + (NSDictionary *)responseMappingDictionary
 {
     return @{
@@ -46,16 +64,17 @@
              @"owner_id" : @"ownerId",
              @"klass_id" : @"classId",
              @"image_retina" : @"image",
+             @"owner_first_name" : @"ownerFirstName",
+             @"owner_last_name" : @"ownerLastName",
+             @"members_count" : @"membersCount"
              };
 }
 
 + (NSDictionary *)requestMappingDictionary
 {
     return @{
-             @"groupId" : @"id",
              @"description" : @"description",
              @"name" : @"name",
-             @"ownerId" : @"owner_id",
              @"classId" : @"class_id",
              @"image" : @"image",
              };

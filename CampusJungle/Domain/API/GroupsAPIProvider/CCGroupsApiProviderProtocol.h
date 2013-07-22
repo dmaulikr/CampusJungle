@@ -9,8 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "CCTypesDefinition.h"
 
+@class CCGroup;
+
 @protocol CCGroupsApiProviderProtocol <AppleGuiceInjectable>
 
 - (void)loadGroupsForClassWithId:(NSString *)classId filterString:(NSString *)filterString pageNumber:(NSInteger)pageNumber successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)createGroup:(CCGroup *)group successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)updateGroup:(CCGroup *)group successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)leaveGroup:(CCGroup *)group successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)destroyGroup:(CCGroup *)group successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)membersOfGroup:(CCGroup *)group successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 
 @end

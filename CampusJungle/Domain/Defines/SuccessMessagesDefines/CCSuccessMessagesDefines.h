@@ -20,4 +20,6 @@ extern const struct CCSuccessMessages {
     __unsafe_unretained NSString *addedAnswer;
     __unsafe_unretained NSString *deleteComment;
     __unsafe_unretained NSString *addedComment;
+    __unsafe_unretained NSString *addedGroup;
+    __unsafe_unretained NSString *deleteGroup;
 } CCSuccessMessages;

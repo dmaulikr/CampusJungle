@@ -70,6 +70,11 @@ const struct CCAPIDefines CCAPIDefines = {
     .deleteUploads = @"/api/professors_uploads/%@",
     .emailUploadsAttachment = @"professors_uploads/%@/send_attachment",
     .getAttachmentFromUploads = @"/api/professors_uploads/%@",
+    .createGroup = @"/api/users/me/classes/%@/groups",
+    .updateGroup = @"/api/groups/%@",
+    .leaveGroup = @"/api/groups/%@/leave",
+    .destroyGroup = @"/api/groups/%@",
+    .loadGroupMembers = @"/api/groups/%@/members",
 };
 
 const struct CCUserDefines CCUserDefines = {
@@ -210,4 +215,11 @@ const struct CCAvatarActionSheetButtonsTitles CCAvatarActionSheetButtonsTitles =
     .takePhotoButtonTitle = @"Take a photo",
     .selectFromGalleryButtonTitle = @"Select from gallery",
     .cancelButtonTitle = @"Cancel",
+};
+
+const struct CCShareItemActionSheetDefines CCShareItemActionSheetDefines = {
+    .title = @"Share Options",
+    .shareWithClassButtonTitle = @"Share with Class",
+    .shareWithGroupsButtonTitle = @"Share with Groups",
+    .shareWithClassmatesButtonTitle = @"Share with Classmate",
 };
