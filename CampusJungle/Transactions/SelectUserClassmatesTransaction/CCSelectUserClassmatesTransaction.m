@@ -9,6 +9,7 @@
 #import "CCSelectUserClassmatesTransaction.h"
 #import "CCSelectClassmatesViewController.h"
 #import "CCBackTransaction.h"
+#import "CCClass.h"
 
 @implementation CCSelectUserClassmatesTransaction
 
@@ -20,13 +21,18 @@
     CCBackTransaction *backTransaction = [CCBackTransaction new];
     backTransaction.navigation = self.navigation;
     
-    id classObject = [object valueForKey:@"object"];
+    id sourceObject = [object valueForKey:@"object"];
     id successBlock = [object valueForKey:@"successBlock"];
     
     CCSelectClassmatesViewController *selectClassmateController = [CCSelectClassmatesViewController new];
     selectClassmateController.backTransaction = backTransaction;
     [selectClassmateController setSuccessBlock:successBlock];
-    [selectClassmateController setClass:classObject];
+    if ([object isKindOfClass:[CCClass class]]) {
+        [selectClassmateController setClass:sourceObject];
+    }
+    else {
+        [selectClassmateController setGroup:sourceObject];
+    }
     [self.navigation pushViewController:selectClassmateController animated:YES];
 }
 

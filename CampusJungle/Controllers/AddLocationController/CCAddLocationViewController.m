@@ -71,6 +71,14 @@
 
 #pragma mark -
 #pragma mark Actions
+- (BOOL)isClassLocation
+{
+    if ([self.locationToAddObject isKindOfClass:[CCClass class]]) {
+        return YES;
+    }
+    return NO;
+}
+
 - (void)findAddress
 {
     if ([self.addressTextField.text length] == 0) {
@@ -110,11 +118,17 @@
 
 - (void)createShareItemActionSheet
 {
-    NSArray *shareItemActionSheetButtons = [self shareItemActionSheetButtons];
+    NSArray *shareItemActionSheetButtons = @[];
+    if ([self isClassLocation]) {
+        shareItemActionSheetButtons = [self shareItemActionSheetButtonsForClassLocation];
+    }
+    else {
+        shareItemActionSheetButtons = [self shareItemActionSheetButtonsForGroupLocation];
+    }
     self.shareItemActionSheet = [[CCBaseActionSheet alloc] initWithTitle:CCShareItemActionSheetDefines.title buttonsArray:shareItemActionSheetButtons];
 }
 
-- (NSArray *)shareItemActionSheetButtons
+- (NSArray *)shareItemActionSheetButtonsForClassLocation
 {
    __weak CCAddLocationViewController *weakSelf = self;
     ShareItemButtonSuccessBlock successBlock = ^(NSArray *itemsArray) {
@@ -137,6 +151,26 @@
     }];
     
     return @[shareWithClassButton, shareWithGroupButton, shareWithClassmatesButton];
+}
+
+- (NSArray *)shareItemActionSheetButtonsForGroupLocation
+{
+    __weak CCAddLocationViewController *weakSelf = self;
+    ShareItemButtonSuccessBlock successBlock = ^(NSArray *itemsArray) {
+        [weakSelf createLocationSharedWithItems:itemsArray sharedWithAll:NO];
+    };
+    
+    CCShareItemButton *shareWithGroupButton = [CCShareItemButton buttonWithTitle:CCShareItemActionSheetDefines.shareWithGroupButtonTitle actionBlock:^{
+        [weakSelf.shareItemActionSheet dismiss];
+        [weakSelf createLocationSharedWithItems:nil sharedWithAll:YES];
+    }];
+    CCShareItemButton *shareWithGroupmatesButton = [CCShareItemButton buttonWithTitle:CCShareItemActionSheetDefines.shareWithGroupmatesButtonTitle actionBlock:^{
+        NSDictionary *params = @{@"object" : weakSelf.locationToAddObject, @"successBlock" : successBlock};
+        [weakSelf.selectUsersToShareTransaction performWithObject:params];
+        [weakSelf.shareItemActionSheet dismiss];
+    }];
+    
+    return @[shareWithGroupButton, shareWithGroupmatesButton];
 }
 
 - (IBAction)detectCurrentPositionButtonDidPressed:(id)sender
@@ -193,6 +227,18 @@
 - (void)setRightNavigationBarButtonEnabled:(BOOL)enabled
 {
     [self.navigationItem.rightBarButtonItem setEnabled:enabled];
+}
+
+- (void)createLocationSharedWithItems:(NSArray *)itemsArray sharedWithAll:(BOOL)sharedWithAll
+{
+    CLLocationCoordinate2D coordinates = [self coordinatesFromMap];
+    CCLocation *location = [CCLocation createWithCoordinates:coordinates name:self.nameTextField.text description:self.descriptionTextField.text address:self.addressTextField.text place:self.locationToAddObject visibleItems:itemsArray sharedWithAll:sharedWithAll];
+    if ([self isClassLocation]) {
+        [self addToClassLocation:location];
+    }
+    else {
+        [self addToGroupLocation:location];
+    }
 }
 
 #pragma mark -
@@ -273,18 +319,6 @@
 
 #pragma mark -
 #pragma mark Requests
-- (void)createLocationSharedWithItems:(NSArray *)itemsArray sharedWithAll:(BOOL)sharedWithAll
-{
-    CLLocationCoordinate2D coordinates = [self coordinatesFromMap];
-    CCLocation *location = [CCLocation createWithCoordinates:coordinates name:self.nameTextField.text description:self.descriptionTextField.text address:self.addressTextField.text place:self.locationToAddObject visibleItems:itemsArray sharedWithAll:sharedWithAll];
-    if ([self.locationToAddObject isKindOfClass:[CCClass class]]) {
-        [self addToClassLocation:location];
-    }
-    else {
-        [self addToGroupLocation:location];
-    }
-}
-
 - (void)addToClassLocation:(CCLocation *)location
 {
     __weak CCAddLocationViewController *weakSelf = self;

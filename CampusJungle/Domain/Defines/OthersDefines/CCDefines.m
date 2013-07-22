@@ -226,5 +226,7 @@ const struct CCShareItemActionSheetDefines CCShareItemActionSheetDefines = {
     .title = @"Share Options",
     .shareWithClassButtonTitle = @"Share with Class",
     .shareWithGroupsButtonTitle = @"Share with Groups",
-    .shareWithClassmatesButtonTitle = @"Share with Classmate",
+    .shareWithGroupButtonTitle = @"Share with Group",
+    .shareWithClassmatesButtonTitle = @"Share with Classmates",
+    .shareWithGroupmatesButtonTitle = @"Share with Groupmates",
 };
