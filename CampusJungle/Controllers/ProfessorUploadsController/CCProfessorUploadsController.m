@@ -73,7 +73,12 @@
 
 - (void)emailAttachmentOfUploads:(CCProfessorUpload *)upload
 {
-
+    [self.ioc_professorUploadsAPIProvider emailAttachmentOfUpload:upload
+                                                   successHandler:^(id result) {
+                                                       [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.uploadsAttachmentEmailed duration:CCProgressHudsConstants.loaderDuration];
+                                                   } errorHandler:^(NSError *error) {
+                                                       [CCStandardErrorHandler showErrorWithError:error];
+                                                   }];
 }
 
 - (void)viewAttachmentOfUplads:(CCProfessorUpload *)upload
