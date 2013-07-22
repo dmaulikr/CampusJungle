@@ -573,6 +573,9 @@
 		D3819B571799CB4300C93005 /* CCProfessorUploadDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3819B561799CB4300C93005 /* CCProfessorUploadDataProvider.m */; };
 		D3819B5B1799CF3500C93005 /* CCProfessorUploadsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3819B5A1799CF3500C93005 /* CCProfessorUploadsCell.m */; };
 		D3819B5D1799CF8300C93005 /* CCProfessorUploadsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3819B5C1799CF8300C93005 /* CCProfessorUploadsCell.xib */; };
+		D38532CB179D3A3D0075F870 /* CCAnnouncementsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D38532C9179D3A3D0075F870 /* CCAnnouncementsController.m */; };
+		D38532CC179D3A3D0075F870 /* CCAnnouncementsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38532CA179D3A3D0075F870 /* CCAnnouncementsController.xib */; };
+		D38532D0179D3CA30075F870 /* CCAnnouncementTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D38532CF179D3CA30075F870 /* CCAnnouncementTransaction.m */; };
 		D394968E1785C36800C39A7E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D394968D1785C36800C39A7E /* Default.png */; };
 		D39496901785C36C00C39A7E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D394968F1785C36C00C39A7E /* Default-568h@2x.png */; };
 		D39496921785C37300C39A7E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D39496911785C37300C39A7E /* Default@2x.png */; };
@@ -1489,6 +1492,11 @@
 		D3819B591799CF3500C93005 /* CCProfessorUploadsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProfessorUploadsCell.h; sourceTree = "<group>"; };
 		D3819B5A1799CF3500C93005 /* CCProfessorUploadsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCProfessorUploadsCell.m; sourceTree = "<group>"; };
 		D3819B5C1799CF8300C93005 /* CCProfessorUploadsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCProfessorUploadsCell.xib; sourceTree = "<group>"; };
+		D38532C8179D3A3D0075F870 /* CCAnnouncementsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnnouncementsController.h; sourceTree = "<group>"; };
+		D38532C9179D3A3D0075F870 /* CCAnnouncementsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAnnouncementsController.m; sourceTree = "<group>"; };
+		D38532CA179D3A3D0075F870 /* CCAnnouncementsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAnnouncementsController.xib; sourceTree = "<group>"; };
+		D38532CE179D3CA30075F870 /* CCAnnouncementTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnnouncementTransaction.h; sourceTree = "<group>"; };
+		D38532CF179D3CA30075F870 /* CCAnnouncementTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAnnouncementTransaction.m; sourceTree = "<group>"; };
 		D394968D1785C36800C39A7E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D394968F1785C36C00C39A7E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D39496911785C37300C39A7E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -2337,6 +2345,7 @@
 				700F9427178EA06000A6FBBA /* AddLocationController */,
 				D342BCFA179817270034E88C /* AddProfessorUploadController */,
 				70B2D0D01794483A001B0C2C /* AddQuestionController */,
+				D38532C7179D3A180075F870 /* AnnouncementsController */,
 				7012AC7C179558B5002DA5E9 /* AnswersController */,
 				70A29C35178778AB001BC8DD /* BaseController */,
 				70A29C39178778AB001BC8DD /* CitySelectionController */,
@@ -3634,6 +3643,7 @@
 				70B2D0DD17944894001B0C2C /* AddLocationTransaction */,
 				D342BD001798192D0034E88C /* AddProfessorUploadsTransaction */,
 				70B2D1CF179448A9001B0C2C /* AddQuestionTransaction */,
+				D38532CD179D3C840075F870 /* AnnouncementTransaction */,
 				7012AC8217955A41002DA5E9 /* AnswersTransaction */,
 				70B2D0E317944894001B0C2C /* ApplyFiltersTransaction */,
 				D342BCDA1796C2640034E88C /* BackTransactionAfterClassUpdate */,
@@ -4970,6 +4980,25 @@
 			path = ProfessorUploadsCell;
 			sourceTree = "<group>";
 		};
+		D38532C7179D3A180075F870 /* AnnouncementsController */ = {
+			isa = PBXGroup;
+			children = (
+				D38532C8179D3A3D0075F870 /* CCAnnouncementsController.h */,
+				D38532C9179D3A3D0075F870 /* CCAnnouncementsController.m */,
+				D38532CA179D3A3D0075F870 /* CCAnnouncementsController.xib */,
+			);
+			path = AnnouncementsController;
+			sourceTree = "<group>";
+		};
+		D38532CD179D3C840075F870 /* AnnouncementTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D38532CE179D3CA30075F870 /* CCAnnouncementTransaction.h */,
+				D38532CF179D3CA30075F870 /* CCAnnouncementTransaction.m */,
+			);
+			path = AnnouncementTransaction;
+			sourceTree = "<group>";
+		};
 		D39496DB178B191F00C39A7E /* OfferController */ = {
 			isa = PBXGroup;
 			children = (
@@ -5498,6 +5527,7 @@
 				D3819B5D1799CF8300C93005 /* CCProfessorUploadsCell.xib in Resources */,
 				70FDD629179D243800871727 /* CCGroupViewController.xib in Resources */,
 				70FDD633179D2ACB00871727 /* CCAddGroupViewController.xib in Resources */,
+				D38532CC179D3A3D0075F870 /* CCAnnouncementsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5831,6 +5861,8 @@
 				70FDD62D179D284F00871727 /* CCGroupTransaction.m in Sources */,
 				70FDD632179D2ACB00871727 /* CCAddGroupViewController.m in Sources */,
 				70FDD637179D2B6400871727 /* CCAddGroupTransaction.m in Sources */,
+				D38532CB179D3A3D0075F870 /* CCAnnouncementsController.m in Sources */,
+				D38532D0179D3CA30075F870 /* CCAnnouncementTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

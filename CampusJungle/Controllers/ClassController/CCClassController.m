@@ -42,6 +42,7 @@
 
 - (IBAction)editButtonDidPressed;
 - (IBAction)professorUploadsButtonDidPressed;
+- (IBAction)announcementButtonDidPressed;
 
 @end
 
@@ -217,5 +218,9 @@
     [self.professorUploadsTransaction performWithObject:self.currentClass];
 }
 
+- (IBAction)announcementButtonDidPressed
+{
+    [self.announcementTransaction performWithObject:self.currentClass];
+}
 
 @end

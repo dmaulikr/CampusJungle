@@ -27,7 +27,8 @@
 @property (nonatomic, strong) id <CCTransactionWithObject> addGroupTransaction;
 @property (nonatomic, strong) id <CCTransaction> newsFeedTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> professorUploadsTransaction;
-@property (nonatomic, strong) id<CCTransactionWithObject> timetableTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> timetableTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> announcementTransaction;
 
 - (id)initWithClass:(CCClass *)classObject;
 - (IBAction)classMarketButtonDidPressed;

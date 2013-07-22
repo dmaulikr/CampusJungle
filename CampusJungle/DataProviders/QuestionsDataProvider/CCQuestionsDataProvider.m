@@ -24,7 +24,7 @@
     [self.ioc_questionsApiProvider loadQuestionsForForumWithId:self.forumId filterString:self.searchQuery pageNumber:numberOfPage successHandler:^(NSMutableDictionary *result) {
         if([[self.ioc_uploadManager uploadingQuestions] count]){
             [self.ioc_uploadManager setCurrentDataProvider:self];
-            NSMutableArray *allQuestions = [NSMutableArray arrayWithArray:[self.ioc_uploadManager uploadingQuestions]];
+            NSMutableArray *allQuestions = [NSMutableArray arrayWithArray:[self arrayOfFiltredUploads]];
             [allQuestions addObjectsFromArray:result[@"items"]];
             result[@"items"] = allQuestions;
             successHandler(result);
@@ -34,6 +34,18 @@
     } errorHandler:^(NSError *error) {
         [self showErrorWhileLoading:error];
     }];
+}
+
+- (NSArray *)arrayOfFiltredUploads
+{
+    NSMutableArray *arrayOfFiltredItems = [NSMutableArray new];
+    NSArray *sourceArray = [self.ioc_uploadManager uploadingQuestions];
+    for(CCQuestion *question in sourceArray){
+        if([question.forumId isEqualToString:self.forumId]){
+            [arrayOfFiltredItems addObject:question];
+        }
+    }
+    return arrayOfFiltredItems;
 }
 
 @end

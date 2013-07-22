@@ -19,6 +19,7 @@
 #import "CCTimetableTransaction.h"
 #import "CCGroupTransaction.h"
 #import "CCAddGroupTransaction.h"
+#import "CCAnnouncementTransaction.h"
 
 @implementation CCClassAddedTransaction
 
@@ -34,6 +35,10 @@
     editTransaction.navigation = self.navigation;
     editTransaction.classDataController = classController;
     classController.editClassTransaction = editTransaction;
+    
+    CCAnnouncementTransaction *announcement = [CCAnnouncementTransaction new];
+    announcement.navigation = self.navigation;
+    classController.announcementTransaction = announcement;
     
     CCShowNotesForClassTransaction *classNotesTransaction = [CCShowNotesForClassTransaction new];
     classController.classMarketTransaction =classNotesTransaction;
