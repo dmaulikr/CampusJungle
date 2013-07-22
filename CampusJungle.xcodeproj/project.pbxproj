@@ -2341,7 +2341,7 @@
 				70A29C35178778AB001BC8DD /* BaseController */,
 				70A29C39178778AB001BC8DD /* CitySelectionController */,
 				70A29C3D178778AB001BC8DD /* ClassController */,
-				D39496FB178C27DE00C39A7E /* ClassTableView */,
+				D39496FB178C27DE00C39A7E /* ClassTableСontroller */,
 				70A29C45178778AB001BC8DD /* ClassesOfCollegeController */,
 				D39496F4178C27B100C39A7E /* ClassTabbarController */,
 				70A29C49178778AB001BC8DD /* CollegeSearchController */,
@@ -5012,7 +5012,7 @@
 			path = CollegesListController/ClassTabbarController;
 			sourceTree = "<group>";
 		};
-		D39496FB178C27DE00C39A7E /* ClassTableView */ = {
+		D39496FB178C27DE00C39A7E /* ClassTableСontroller */ = {
 			isa = PBXGroup;
 			children = (
 				D39496FC178C27DE00C39A7E /* CCClassTableController.h */,
@@ -5020,6 +5020,7 @@
 				D39496FE178C27DE00C39A7E /* CCClassTableController.xib */,
 				70F42A7F178D5D3C00E763F3 /* CCClassTableDelegate.h */,
 			);
+			name = "ClassTableСontroller";
 			path = ClassTableView;
 			sourceTree = "<group>";
 		};
