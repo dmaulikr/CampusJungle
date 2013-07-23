@@ -102,6 +102,7 @@ static const NSInteger kNavBarHeight = 44;
 - (void)setGroupmatesConfiguration
 {
     self.sectionName.text = CCClassTabbarButtonsTitles.groupmates;
+    self.searchBar.placeholder = CCSearchBarPlaceholders.searchGroupmates;
     if (!self.groupmatesProvider) {
         self.groupmatesProvider = [CCGroupmatesDataProvider new];
         self.groupmatesProvider.group = self.group;
@@ -115,6 +116,7 @@ static const NSInteger kNavBarHeight = 44;
 - (void)setForumsConfiguration
 {
     self.sectionName.text = CCClassTabbarButtonsTitles.forums;
+    self.searchBar.placeholder = CCSearchBarPlaceholders.searchForums;
     if (!self.forumsProvider) {
         self.forumsProvider = [CCForumsDataProvider new];
         self.forumsProvider.groupId = self.group.groupId;
@@ -128,6 +130,7 @@ static const NSInteger kNavBarHeight = 44;
 - (void)setLocationConfiguration
 {
     self.sectionName.text = CCClassTabbarButtonsTitles.locations;
+    self.searchBar.placeholder = CCSearchBarPlaceholders.searchLocations;
     if (!self.locationsProvider) {
         self.locationsProvider = [[CCLocationsDataProvider alloc] initWithDelegate:self];
         self.locationsProvider.groupId = self.group.groupId;
@@ -141,6 +144,7 @@ static const NSInteger kNavBarHeight = 44;
 - (void)setGroupMessagesConfiguration
 {
     self.sectionName.text = CCClassTabbarButtonsTitles.groupMessages;
+    self.searchBar.placeholder = CCSearchBarPlaceholders.searchMessages;
     if (!self.messagesProvider) {
         self.messagesProvider = [CCMessagesDataProvider new];
         self.messagesProvider.filters = @{@"group_id" : self.group.groupId, @"direction" : @"all"};

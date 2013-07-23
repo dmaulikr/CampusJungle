@@ -237,6 +237,15 @@ extern const struct CCShareItemActionSheetDefines {
     __unsafe_unretained NSString *shareWithGroupmatesButtonTitle;
 } CCShareItemActionSheetDefines;
 
+extern const struct CCSearchBarPlaceholders {
+    __unsafe_unretained NSString *searchGroupmates;
+    __unsafe_unretained NSString *searchForums;
+    __unsafe_unretained NSString *searchLocations;
+    __unsafe_unretained NSString *searchMessages;
+    __unsafe_unretained NSString *searchClassmates;
+    __unsafe_unretained NSString *searchGroups;
+} CCSearchBarPlaceholders;
+
 enum CCClassTabbarButtonsIdentifiers {
     CCClassTabbarButtonsIdentifierClassmate = 1,
     CCClassTabbarButtonsIdentifierGroup = 2,

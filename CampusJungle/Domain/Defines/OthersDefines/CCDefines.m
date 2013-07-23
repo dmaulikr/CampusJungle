@@ -236,3 +236,12 @@ const struct CCShareItemActionSheetDefines CCShareItemActionSheetDefines = {
     .shareWithClassmatesButtonTitle = @"Share with Classmates",
     .shareWithGroupmatesButtonTitle = @"Share with Groupmates",
 };
+
+const struct CCSearchBarPlaceholders CCSearchBarPlaceholders = {
+    .searchGroupmates = @"Search Groupmates",
+    .searchForums = @"Search Forums",
+    .searchLocations = @"Search Locations",
+    .searchMessages = @"Search Messages",
+    .searchClassmates = @"Search Classmates",
+    .searchGroups = @"Search Groups",
+};
