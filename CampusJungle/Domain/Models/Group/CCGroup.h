@@ -21,6 +21,8 @@
 @property (nonatomic, strong) NSString *image;
 @property (nonatomic, assign) NSInteger membersCount;
 @property (nonatomic, strong) NSArray *locations;
+@property (nonatomic, strong) NSArray *usersIds;
+@property (nonatomic, strong) UIImage *selectedLogo;
 
 @property (nonatomic, assign) BOOL isSelected;
 

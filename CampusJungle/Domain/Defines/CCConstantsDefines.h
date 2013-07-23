@@ -10,4 +10,5 @@
 #import "CCAlertDefines.h"
 #import "CCMenuDefines.h"
 #import "CCNotificationsDefines.h"
+#import "CCProcessingMessages.h"
 #import "CCSuccessMessagesDefines.h"

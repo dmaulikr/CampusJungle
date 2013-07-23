@@ -16,6 +16,7 @@
 #import "CCForumDetailsTransaction.h"
 #import "CCBackTransaction.h"
 #import "CCGroupMessageTransaction.h"
+#import "CCEditGroupTransaction.h"
 
 @implementation CCGroupTransaction
 
@@ -46,6 +47,9 @@
     CCGroupMessageTransaction *groupMessageTransaction = [CCGroupMessageTransaction new];
     groupMessageTransaction.navigation = self.navigation;
     
+    CCEditGroupTransaction *editGroupTransaction = [CCEditGroupTransaction new];
+    editGroupTransaction.navigation = self.navigation;
+    
     CCGroupViewController *groupController = [CCGroupViewController new];
     groupController.locationTransaction = locationsTransaction;
     groupController.addLocationTransaction = addLocationTransaction;
@@ -54,6 +58,7 @@
     groupController.addForumTransaction = addForumTransaction;
     groupController.backTransaction = backTransaction;
     groupController.groupMessageTransaction = groupMessageTransaction;
+    groupController.editGroupTransaction = editGroupTransaction;
     
     [groupController setGroup:object];
     [self.navigation pushViewController:groupController animated:YES];

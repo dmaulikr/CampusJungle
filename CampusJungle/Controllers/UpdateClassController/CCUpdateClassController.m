@@ -35,7 +35,7 @@
     self.semesterTextField.text = self.currentClass.semester;
     self.classIdTextField.text = self.currentClass.callNumber;
     [self.thumbView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,self.currentClass.classImageURL]] placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
-    self.title = @"Edit class";
+    self.title = @"Edit Class";
 }
 
 - (NSArray *)formatAllTimesToRequairedFormatFromArray:(NSArray *)array

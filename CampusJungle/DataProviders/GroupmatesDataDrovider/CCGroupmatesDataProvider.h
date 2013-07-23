@@ -14,5 +14,7 @@
 @interface CCGroupmatesDataProvider : CCPaginationDataProvider
 
 @property (nonatomic, strong) CCGroup *group;
+- (void)setItemsPerPage:(NSInteger)itemsPerPage;
+- (void)setNeedToSelectAllItems:(BOOL)selected;
 
 @end

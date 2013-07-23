@@ -44,13 +44,15 @@
 
 - (void)updateGroup:(CCGroup *)group successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];
-    [self setAuthorizationToken];
     NSString *path = [NSString stringWithFormat:CCAPIDefines.updateGroup, group.groupId];
-    [objectManager putObject:group path:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        successHandler(mappingResult);
-    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+    [self putInfoWithObject:group thumbnail:group.selectedLogo images:nil onPath:path successHandler:^(RKMappingResult *mappingResult) {
+         successHandler(mappingResult);
+    }
+    errorHandler:^(NSError *error) {
         errorHandler(error);
+    }
+    progress:^(double finished) {
+           
     }];
 }
 
@@ -78,7 +80,7 @@
     }];
 }
 
-- (void)loadMembersOfGroup:(CCGroup *)group filterString:(NSString *)filterString pageNumber:(NSNumber *)pageNumber successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+- (void)loadMembersOfGroup:(CCGroup *)group filterString:(NSString *)filterString pageNumber:(NSNumber *)pageNumber itemsPerPage:(NSNumber *)itemsPerPage successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [self setAuthorizationToken];
@@ -87,6 +89,9 @@
     [params setObject:pageNumber.stringValue forKey:@"page_number"];
     if ([filterString length] > 0) {
         [params setObject:filterString forKey:@"keywords"];
+    }
+    if (itemsPerPage) {
+        [params setObject:itemsPerPage forKey:@"per_page"];
     }
     
     NSString *path = [NSString stringWithFormat:CCAPIDefines.loadGroupMembers, group.groupId];

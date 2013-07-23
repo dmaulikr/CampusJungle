@@ -24,4 +24,5 @@ extern const struct CCSuccessMessages {
     __unsafe_unretained NSString *deleteGroup;
     __unsafe_unretained NSString *leaveGroup;
     __unsafe_unretained NSString *sentGroupMessage;
+    __unsafe_unretained NSString *updatedGroup;
 } CCSuccessMessages;

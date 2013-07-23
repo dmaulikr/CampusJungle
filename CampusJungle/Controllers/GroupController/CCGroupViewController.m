@@ -15,8 +15,9 @@
 #import "CCGroupTableController.h"
 #import "CCGroupsApiProviderProtocol.h"
 #import "CCUserSessionProtocol.h"
+#import "CCEditGroupViewController.h"
 
-@interface CCGroupViewController () <CCGroupTableDelegate>
+@interface CCGroupViewController () <CCGroupTableDelegate, CCEditGroupDelegate>
 
 @property (nonatomic, weak) IBOutlet UIView *headerView;
 @property (nonatomic, weak) IBOutlet UIImageView *avatarImageView;
@@ -71,6 +72,9 @@
     [self setupLeaveButton];
     [CCButtonsHelper removeBackgroundImageInButton:self.editButton];
     [CCButtonsHelper removeBackgroundImageInButton:self.messageGroupButton];
+    if (![self.ioc_userSessionProvider.currentUser.uid isEqualToString:self.group.ownerId]) {
+        [self.editButton setHidden:YES];
+    }
 }
 
 - (void)setupLeaveButton
@@ -122,7 +126,8 @@
 
 - (IBAction)editButtonDidPressed:(id)sender
 {
-    
+    NSDictionary *params = @{@"group" : self.group, @"delegate" : self};
+    [self.editGroupTransaction performWithObject:params];
 }
 
 - (IBAction)messageGroupButtonDidPressed:(id)sender
@@ -156,6 +161,16 @@
 - (void)addForum
 {
     [self.addForumTransaction performWithObject:self.group];
+}
+
+#pragma mark -
+#pragma mark CCEditGroupDelegate
+- (void)updateWithGroup:(CCGroup *)group
+{
+    self.group.name = group.name;
+    self.group.description = group.description;
+    self.group.image = group.image;
+    [self loadInfo];
 }
 
 @end

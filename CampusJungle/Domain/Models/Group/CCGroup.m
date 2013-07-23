@@ -38,12 +38,19 @@
     [paginationGroupsResponseMapping addPropertyMapping:relationshipResponseGroupsMapping];
     
     NSString *pathPattern = [NSString stringWithFormat:CCAPIDefines.loadGroups, @":classID"];
-    
     RKResponseDescriptor *classGroupsResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginationGroupsResponseMapping
                                                                                                   pathPattern:pathPattern
                                                                                                       keyPath:nil
                                                                                                   statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    NSString *updatePathPattern = [NSString stringWithFormat:CCAPIDefines.updateGroup, @":groupID"];
+    RKResponseDescriptor *groupUpdateResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:groupsResponseMapping
+                                                                                                  pathPattern:updatePathPattern
+                                                                                                      keyPath:@"group"
+                                                                                                  statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+
+    
     [objectManager addResponseDescriptor:classGroupsResponseDescriptor];
+    [objectManager addResponseDescriptor:groupUpdateResponseDescriptor];
 }
 
 + (void)configureGroupRequest:(RKObjectManager *)objectManager
@@ -75,8 +82,7 @@
     return @{
              @"description" : @"description",
              @"name" : @"name",
-             @"classId" : @"class_id",
-             @"image" : @"image",
+             @"usersIds" : @"users_ids",
              };
 }
 

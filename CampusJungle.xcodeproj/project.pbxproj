@@ -517,6 +517,10 @@
 		70FDD65B179DC08E00871727 /* CCGroupMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD659179DC08E00871727 /* CCGroupMessageViewController.m */; };
 		70FDD65C179DC08E00871727 /* CCGroupMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FDD65A179DC08E00871727 /* CCGroupMessageViewController.xib */; };
 		70FDD660179DC0D800871727 /* CCGroupMessageTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD65F179DC0D800871727 /* CCGroupMessageTransaction.m */; };
+		70FDD665179E786C00871727 /* CCEditGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD663179E786C00871727 /* CCEditGroupViewController.m */; };
+		70FDD666179E786C00871727 /* CCEditGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FDD664179E786C00871727 /* CCEditGroupViewController.xib */; };
+		70FDD66A179E790C00871727 /* CCEditGroupTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD669179E790C00871727 /* CCEditGroupTransaction.m */; };
+		70FDD66E179E93C300871727 /* CCProcessingMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD66D179E93C300871727 /* CCProcessingMessages.m */; };
 		A784C599173A865E005E4921 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C598173A865E005E4921 /* UIKit.framework */; };
 		A784C59B173A865E005E4921 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C59A173A865E005E4921 /* Foundation.framework */; };
 		A784C59D173A865E005E4921 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C59C173A865E005E4921 /* CoreGraphics.framework */; };
@@ -1430,6 +1434,13 @@
 		70FDD65A179DC08E00871727 /* CCGroupMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupMessageViewController.xib; sourceTree = "<group>"; };
 		70FDD65E179DC0D800871727 /* CCGroupMessageTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupMessageTransaction.h; sourceTree = "<group>"; };
 		70FDD65F179DC0D800871727 /* CCGroupMessageTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupMessageTransaction.m; sourceTree = "<group>"; };
+		70FDD662179E786C00871727 /* CCEditGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEditGroupViewController.h; sourceTree = "<group>"; };
+		70FDD663179E786C00871727 /* CCEditGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEditGroupViewController.m; sourceTree = "<group>"; };
+		70FDD664179E786C00871727 /* CCEditGroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCEditGroupViewController.xib; sourceTree = "<group>"; };
+		70FDD668179E790C00871727 /* CCEditGroupTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEditGroupTransaction.h; sourceTree = "<group>"; };
+		70FDD669179E790C00871727 /* CCEditGroupTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEditGroupTransaction.m; sourceTree = "<group>"; };
+		70FDD66C179E93C300871727 /* CCProcessingMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProcessingMessages.h; sourceTree = "<group>"; };
+		70FDD66D179E93C300871727 /* CCProcessingMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCProcessingMessages.m; sourceTree = "<group>"; };
 		9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		A784C595173A865E005E4921 /* CampusJungle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusJungle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A784C598173A865E005E4921 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -2385,6 +2396,7 @@
 				70A29C58178778AB001BC8DD /* CreateNoteController */,
 				70A29C73178778AB001BC8DD /* DropboxImagesSelectionController */,
 				70A29C77178778AB001BC8DD /* DropboxPdfSelectionController */,
+				70FDD661179E785A00871727 /* EditGroupController */,
 				70A29C7A178778AB001BC8DD /* EducationCreationController */,
 				70A29C7E178778AB001BC8DD /* FilterController */,
 				70FDD624179D242100871727 /* GroupController */,
@@ -3039,6 +3051,7 @@
 				70A29DCB17877CB4001BC8DD /* MenuDefines */,
 				70A29DCE17877CB4001BC8DD /* NotificationsDefines */,
 				70A29DD117877CB4001BC8DD /* OthersDefines */,
+				70FDD66B179E93B200871727 /* ProcessingMessages */,
 				70A29DD417877CB4001BC8DD /* SuccessMessagesDefines */,
 			);
 			path = Defines;
@@ -3694,6 +3707,7 @@
 				70B2D11317944894001B0C2C /* DropboxFileSystemTransaction */,
 				70B2D11917944894001B0C2C /* DropboxPDFFileSystemTransaction */,
 				D342BCD21796ACF60034E88C /* EditClassTransaction */,
+				70FDD667179E78FE00871727 /* EditGroupTransaction */,
 				70B2D11C17944894001B0C2C /* EducationSettingSettingUpTransaction */,
 				70B2D11F17944894001B0C2C /* ForumDetailsTransaction */,
 				70FDD65D179DC0C600871727 /* GroupMessageTransaction */,
@@ -4761,6 +4775,34 @@
 			path = GroupMessageTransaction;
 			sourceTree = "<group>";
 		};
+		70FDD661179E785A00871727 /* EditGroupController */ = {
+			isa = PBXGroup;
+			children = (
+				70FDD662179E786C00871727 /* CCEditGroupViewController.h */,
+				70FDD663179E786C00871727 /* CCEditGroupViewController.m */,
+				70FDD664179E786C00871727 /* CCEditGroupViewController.xib */,
+			);
+			path = EditGroupController;
+			sourceTree = "<group>";
+		};
+		70FDD667179E78FE00871727 /* EditGroupTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				70FDD668179E790C00871727 /* CCEditGroupTransaction.h */,
+				70FDD669179E790C00871727 /* CCEditGroupTransaction.m */,
+			);
+			path = EditGroupTransaction;
+			sourceTree = "<group>";
+		};
+		70FDD66B179E93B200871727 /* ProcessingMessages */ = {
+			isa = PBXGroup;
+			children = (
+				70FDD66C179E93C300871727 /* CCProcessingMessages.h */,
+				70FDD66D179E93C300871727 /* CCProcessingMessages.m */,
+			);
+			path = ProcessingMessages;
+			sourceTree = "<group>";
+		};
 		A784C58C173A865E005E4921 = {
 			isa = PBXGroup;
 			children = (
@@ -5610,6 +5652,7 @@
 				70FDD651179D4D6200871727 /* CCGroupTabbarViewController.xib in Resources */,
 				D38532CC179D3A3D0075F870 /* CCAnnouncementsController.xib in Resources */,
 				70FDD65C179DC08E00871727 /* CCGroupMessageViewController.xib in Resources */,
+				70FDD666179E786C00871727 /* CCEditGroupViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5950,6 +5993,9 @@
 				D38532D0179D3CA30075F870 /* CCAnnouncementTransaction.m in Sources */,
 				70FDD65B179DC08E00871727 /* CCGroupMessageViewController.m in Sources */,
 				70FDD660179DC0D800871727 /* CCGroupMessageTransaction.m in Sources */,
+				70FDD665179E786C00871727 /* CCEditGroupViewController.m in Sources */,
+				70FDD66A179E790C00871727 /* CCEditGroupTransaction.m in Sources */,
+				70FDD66E179E93C300871727 /* CCProcessingMessages.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
