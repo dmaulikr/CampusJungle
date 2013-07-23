@@ -18,7 +18,7 @@
 #import "CCAvatarSelectionActionSheet.h"
 #import "CCKeyboardHelper.h"
 
-@interface CCEditGroupViewController () <UITextFieldDelegate, CCAvatarSelectionProtocol>
+@interface CCEditGroupViewController () <UITextFieldDelegate, CCAvatarSelectionProtocol, CCGroupmatesDataProviderDelegate>
 
 @property (nonatomic, weak) IBOutlet UIView *tableHeaderView;
 @property (nonatomic, weak) IBOutlet UITextField *nameTextField;
@@ -50,6 +50,7 @@
     
     [self setTitle:@"Edit Group"];
     [self setRightNavigationItemWithTitle:@"Save" selector:@selector(saveButtonDidPressed:)];
+    [self.navigationItem.rightBarButtonItem setEnabled:NO];
 }
 
 - (void)setupTextFields
@@ -76,6 +77,7 @@
     [self.dataProvider setNeedToSelectAllItems:YES];
     [self.dataProvider setGroup:self.group];
     [self.dataProvider setItemsPerPage:INT_MAX];
+    [self.dataProvider setDelegate:self];
     [self configTableWithProvider:self.dataProvider cellClass:[CCUserSelectionCell class]];
 }
 
@@ -152,6 +154,13 @@
 {
     self.updatedGroup.selectedLogo = avatar;
     [self.logoImageView setImage:avatar];
+}
+
+#pragma mark -
+#pragma mark CCGroupmatesDataProviderDelegate
+- (void)didReceiveGroupmates
+{
+    [self.navigationItem.rightBarButtonItem setEnabled:YES];
 }
 
 #pragma mark -

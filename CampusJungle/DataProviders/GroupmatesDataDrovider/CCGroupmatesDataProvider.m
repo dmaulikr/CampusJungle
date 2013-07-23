@@ -12,6 +12,7 @@
 @interface CCGroupmatesDataProvider ()
 
 @property (nonatomic, strong) id<CCGroupsApiProviderProtocol> ioc_groupsApiProvider;
+@property (nonatomic, weak) id<CCGroupmatesDataProviderDelegate> delegate;
 @property (nonatomic, assign) NSInteger itemsPerPage;
 @property (nonatomic, assign) BOOL needToSelectAllItems;
 
@@ -25,6 +26,9 @@
     [self.ioc_groupsApiProvider loadMembersOfGroup:self.group filterString:self.searchQuery pageNumber:@(numberOfPage) itemsPerPage:@(self.itemsPerPage) successHandler:^(NSDictionary *result) {
         if (weakSelf.needToSelectAllItems) {
             result = [self selectItemsInPaginationDictionary:result];
+        }
+        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(didReceiveGroupmates)]) {
+            [weakSelf.delegate didReceiveGroupmates];
         }
         successHandler(result);
     } errorHandler:^(NSError *error) {
