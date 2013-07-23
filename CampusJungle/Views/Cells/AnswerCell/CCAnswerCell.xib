@@ -190,7 +190,6 @@
 										<int key="NSvFlags">292</int>
 										<string key="NSFrame">{{55, 0}, {30, 30}}</string>
 										<reference key="NSSuperview" ref="647446829"/>
-										<reference key="NSNextKeyView"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIOpaque">NO</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -483,10 +482,10 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="close_button.png">{16, 16}</string>
-			<string key="close_button_active.png">{16, 16}</string>
-			<string key="like_button.png">{16, 16}</string>
-			<string key="like_button_active.png">{16, 16}</string>
+			<string key="close_button.png">{15, 15}</string>
+			<string key="close_button_active.png">{15, 15}</string>
+			<string key="like_button.png">{21, 18}</string>
+			<string key="like_button_active.png">{21, 17}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>

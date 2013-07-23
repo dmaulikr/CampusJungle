@@ -10,6 +10,11 @@
 #import "CCViewPositioningHelper.h"
 #import "CCDateFormatterProtocol.h"
 
+static const NSInteger kMinCellHeight = 90;
+static const NSInteger kDefaultTextLabelWidth = 286;
+static const NSInteger kTextLabelOriginY = 61;
+static const NSInteger kBottomSpacing = 5;
+
 @interface CCMessageCell()
 
 @property (nonatomic, weak) IBOutlet UILabel *messageLabel;
@@ -22,31 +27,28 @@
 
 @implementation CCMessageCell
 
-- (void)setCellObject:(id)cellObject
+- (void)setCellObject:(CCMessage *)cellObject
 {
     _cellObject = cellObject;
     
-    self.messageLabel.text = [(CCMessage *)cellObject text];
+    self.messageLabel.text = [cellObject text];
     [self.messageLabel sizeToFit];
     
-    self.timeLabel.text = [self.ioc_dateFormatterHelper formatedDateStringFromDate:[(CCMessage *)cellObject createdAt]];
-    self.userName.text = [NSString stringWithFormat:@"%@ %@", [(CCMessage *)cellObject userFirstName],[(CCMessage *)cellObject userLastName]];
+    self.timeLabel.text = [self.ioc_dateFormatterHelper formatedDateStringFromDate:[cellObject createdAt]];
+    self.userName.text = [NSString stringWithFormat:@"%@ %@", [cellObject userFirstName], [cellObject userLastName]];
     [self setSelectionColor];
 }
 
 - (void)prepareForReuse
 {
-    [CCViewPositioningHelper setWidth:300 toView:self.messageLabel];
-    [CCViewPositioningHelper setOriginX:10 toView:self.messageLabel];
+    [CCViewPositioningHelper setWidth:kDefaultTextLabelWidth toView:self.messageLabel];
 }
 
-+ (CGFloat)heightForCellWithObject:(id)object
++ (CGFloat)heightForCellWithObject:(CCMessage *)message
 {
-    CCMessage *review = object;
-    UIFont *font = [UIFont systemFontOfSize:17];
-    CGSize requiredSize = [review.text sizeWithFont:font constrainedToSize:CGSizeMake(300, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
-    
-    return MAX(44, requiredSize.height + 50);
+    UIFont *font = [UIFont fontWithName:@"Avenir-MediumOblique" size:15];
+    CGSize requiredSize = [message.text sizeWithFont:font constrainedToSize:CGSizeMake(kDefaultTextLabelWidth, font.lineHeight * 2) lineBreakMode:NSLineBreakByWordWrapping];
+    return MAX(kMinCellHeight, requiredSize.height + kTextLabelOriginY + kBottomSpacing);
 }
 
 @end
