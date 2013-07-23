@@ -12,6 +12,7 @@
 #import "CCAPIProviderProtocol.h"
 #import "NSString+CJStringValidator.h"
 #import "CCAvatarSelectionActionSheet.h"
+#import "NSString+CCValidationHelper.h"
 
 @interface CCInitialUserInfoController ()<CCAvatarSelectionProtocol>
 
@@ -99,7 +100,7 @@
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:CCAlertsMessages.lastNameNotValid];
         return NO;
     }
-    if (![self.emailField.text isEmail]) {
+    if (![self.emailField.text isValidEmail]) {
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:CCAlertsMessages.emailNotValid];
         return NO;
     }

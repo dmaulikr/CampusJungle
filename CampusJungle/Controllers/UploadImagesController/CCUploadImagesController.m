@@ -15,16 +15,18 @@
 #import "CCStandardErrorHandler.h"
 #import "MBProgressHUD.h"
 #import "CCUploadProcessManagerProtocol.h"
+#import "CCAvatarSelectionActionSheet.h"
 
 #define animationDuration 0.3
 #define maxNumberOfImages 6
 
-@interface CCUploadImagesController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface CCUploadImagesController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, CCAvatarSelectionProtocol>
 
 @property (nonatomic, weak) IBOutlet UIView *tableFooterView;
 @property (nonatomic, strong) id <CCNotesAPIProviderProtolcol> ioc_notesAPIProvider;
 @property (nonatomic, weak) IBOutlet UIButton *addButton;
 @property (nonatomic, strong) id <CCUploadProcessManagerProtocol> ioc_uploadingManager;
+@property (nonatomic, strong) CCAvatarSelectionActionSheet *avatarSelectionSheet;
 
 @end
 
@@ -34,6 +36,7 @@
 {
     [super viewDidLoad];
     self.title = @"Select Images";
+    [self setupActionSheets];
     self.dataSourceClass = [CCImageSortingDataSource class];
     self.mainTable.editing = YES;
     self.mainTable.tableFooterView = self.tableFooterView;
@@ -43,56 +46,25 @@
     [self configTableWithProvider:self.dataProvider cellClass:[CCImageCell class]];
 }
 
+- (void)setupActionSheets
+{
+    self.avatarSelectionSheet = [CCAvatarSelectionActionSheet new];
+    self.avatarSelectionSheet.delegate = self;
+    self.avatarSelectionSheet.rejectCrop = YES;
+}
+
 - (IBAction)addImageButtonDidPressed
 {
-    UIActionSheet *testSheet = [UIActionSheet actionSheetWithTitle:@"Select Avatar"];
-    [testSheet addButtonWithTitle:@"Select from gallery" handler:^{
-        [self selectAvatarFromGallery];
-    }];
-    [testSheet addButtonWithTitle:@"Make photo" handler:^{
-        [self makePhotoForAvatar];
-    }];
-    [testSheet setCancelButtonWithTitle:nil handler:nil];
-    [testSheet showInView:self.view];
-
+    [self.avatarSelectionSheet showWithTitle:@"Select image" takePhotoButtonTitle:@"Take a photo" takeFromGalleryButtonTitle:@"Select from gallery"];
 }
 
-- (void)selectAvatarFromGallery
+- (void)didSelectAvatar:(UIImage *)avatar
 {
-    UIImagePickerController * picker = [UIImagePickerController new];
-    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    picker.delegate = self;
-    
-    [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateNormal];
-    [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateHighlighted];
-    [self presentViewController:picker animated:YES completion:nil];
-}
-
-- (void)makePhotoForAvatar
-{
-    UIImagePickerController * picker = [UIImagePickerController new];
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    picker.delegate = self;
-    
-    [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateNormal];
-    [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateHighlighted];
-    [self presentViewController:picker animated:YES completion:nil];
-}
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    UIImage *fixedImage = [CCUIImageHelper fixOrientationOfImage:info[UIImagePickerControllerOriginalImage]];
+    UIImage *fixedImage = [CCUIImageHelper fixOrientationOfImage:avatar];
     [self.dataProvider.arrayOfImages addObject:fixedImage];
     [self.dataProvider loadItems];
     [self setCustomButton];
-    [self dismissViewControllerAnimated:YES completion:nil];
     [self didUpdate];
-}
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-{
-    [self setCustomButton];
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)setCustomButton

@@ -26,6 +26,7 @@
     [super viewDidLoad];
     [self configTableWithProvider:self.tableProvider cellClass:[CCStuffCell class]];
     self.title = @"Stuff";
+    self.searchBar.placeholder = @"Search Stuff";
 }
 
 - (void)didSelectedCellWithObject:(id)cellObject

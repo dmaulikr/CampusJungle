@@ -12,6 +12,7 @@
 #import "CCUserSessionProtocol.h"
 #import "CCStandardErrorHandler.h"
 #import "UITextField+InsetFixing.h"
+#import "NSString+CCValidationHelper.h"
 
 
 @interface CCLoginController ()
@@ -56,7 +57,7 @@
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.emptyEmail];
         return NO;
     }
-    if (![self.emailField.text isEmail]){
+    if (![self.emailField.text isValidEmail]){
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.emailNotValid];
         return NO;
     }

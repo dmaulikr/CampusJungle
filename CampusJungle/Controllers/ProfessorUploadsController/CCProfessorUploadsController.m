@@ -27,7 +27,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHelper plusButtonWithTarget:self action:@selector(addUploads)];
+    if([self.currentClass.isProfessor boolValue]){
+        self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHelper plusButtonWithTarget:self action:@selector(addUploads)];
+    }
     self.title = @"Prof. Uploads";
     [self setupTableView];
 }

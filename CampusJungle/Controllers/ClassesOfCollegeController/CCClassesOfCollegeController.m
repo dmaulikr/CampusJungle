@@ -56,7 +56,6 @@
 - (void)addNewClass
 {
     [self.addNewClassTransaction performWithObject:self.collegeID];
-    
 }
 
 - (void)didSelectedCellWithObject:(id)cellObject

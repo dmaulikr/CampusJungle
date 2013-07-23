@@ -77,6 +77,9 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *leaveGroup;
     __unsafe_unretained NSString *destroyGroup;
     __unsafe_unretained NSString *loadGroupMembers;
+    __unsafe_unretained NSString *loadAnnouncements;
+    __unsafe_unretained NSString *postAnnouncements;
+    __unsafe_unretained NSString *deleteAnouncements;
 } CCAPIDefines;
 
 

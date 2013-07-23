@@ -16,4 +16,6 @@
 - (void)showWithTitle:(NSString *)title takePhotoButtonTitle:(NSString *)takePhotoButtonTitle takeFromGalleryButtonTitle:(NSString *)takeFromGalleryButtonTitle;
 - (void)dismiss;
 
+@property (nonatomic) BOOL rejectCrop;
+
 @end

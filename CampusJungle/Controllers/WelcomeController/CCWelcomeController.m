@@ -24,6 +24,8 @@
 @property (nonatomic, strong) IBOutlet UIButton *facebookButton;
 @property (nonatomic, strong) IBOutlet UIButton *twitterButton;
 
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+
 @end
 
 @implementation CCWelcomeController
@@ -65,6 +67,12 @@
 - (void)applicationDidEnterForeground
 {
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.scrollView flashScrollIndicators];
 }
 
 - (IBAction)facebookLoginButtonDidPressed

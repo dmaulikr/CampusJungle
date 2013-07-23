@@ -59,7 +59,7 @@
 {
     UIImagePickerController *picker = [UIImagePickerController new];
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    picker.allowsEditing = YES;
+    picker.allowsEditing = !self.rejectCrop;
     picker.delegate = self;
     [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateNormal];
     [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateHighlighted];
@@ -68,18 +68,24 @@
 
 - (void)makePhotoForAvatar
 {
-    UIImagePickerController * picker = [UIImagePickerController new];
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    picker.allowsEditing = YES;
-    picker.delegate = self;
-    [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateNormal];
-    [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateHighlighted];
-    [self.delegate presentViewController:picker animated:YES completion:nil];
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        UIImagePickerController * picker = [UIImagePickerController new];
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        picker.allowsEditing = !self.rejectCrop;
+        picker.delegate = self;
+        [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateNormal];
+        [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateHighlighted];
+        [self.delegate presentViewController:picker animated:YES completion:nil];
+    }
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    [self.delegate didSelectAvatar:info[UIImagePickerControllerEditedImage]];
+    if(self.rejectCrop){
+        [self.delegate didSelectAvatar:info[UIImagePickerControllerOriginalImage]];
+    } else {
+        [self.delegate didSelectAvatar:info[UIImagePickerControllerEditedImage]];
+    }
     [self setButtonAppearance];
     [self.delegate dismissViewControllerAnimated:YES completion:nil];
 }

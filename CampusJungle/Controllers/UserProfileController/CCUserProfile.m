@@ -19,6 +19,7 @@
 #import "CCAvatarSelectionActionSheet.h"
 #import "CCAvatarSelectionProtocol.h"
 #import "GIAlert.h"
+#import "NSString+CCValidationHelper.h"
 
 #define animationDuration 0.4
 
@@ -285,7 +286,7 @@
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:CCAlertsMessages.lastNameNotValid];
         return NO;
     }
-    if (![self.emailTextField.text isEmail]) {
+    if (![self.emailTextField.text isValidEmail]) {
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:CCAlertsMessages.emailNotValid];
         return NO;
     }

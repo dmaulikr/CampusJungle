@@ -8,6 +8,7 @@
 
 #import "CCAnnouncementTransaction.h"
 #import "CCAnnouncementsController.h"
+#import "CCAddAnnouncementTransaction.h"
 
 @implementation CCAnnouncementTransaction
 
@@ -16,6 +17,11 @@
     NSParameterAssert(self.navigation);
     CCAnnouncementsController *announcementsController = [CCAnnouncementsController new];
     announcementsController.currentClass = object;
+    
+    CCAddAnnouncementTransaction *addAnnnouncementTransaction = [CCAddAnnouncementTransaction new];
+    addAnnnouncementTransaction.navigation = self.navigation;
+    announcementsController.addAnnouncementTransaction = addAnnnouncementTransaction;
+    
     [self.navigation pushViewController:announcementsController animated:YES];
 }
 
