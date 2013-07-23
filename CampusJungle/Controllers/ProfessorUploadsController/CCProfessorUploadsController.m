@@ -66,7 +66,7 @@
                                                 successHandler:^(RKMappingResult *result) {
                                                     [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteUploads
                                                                                 duration:CCProgressHudsConstants.loaderDuration];
-                                                    [weakSelf.dataProvider loadItems];
+                                                    [weakSelf.dataProvider deleteItem:upload];
                                                 } errorHandler:^(NSError *error) {
                                                     [CCStandardErrorHandler showErrorWithError:error];
                                                 }];

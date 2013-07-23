@@ -12,7 +12,7 @@
 #define UNCHECKED_IMAGE [UIImage imageNamed:@"checkbox.png"]
 #define CHECKED_IMAGE [UIImage imageNamed:@"checkbox_active.png"]
 
-static const NSInteger kDefaultCellHeight = 53;
+static const NSInteger kDefaultCellHeight = 54;
 
 @interface CCUserSelectionCell ()
 

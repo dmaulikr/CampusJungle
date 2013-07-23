@@ -16,5 +16,6 @@
 @property (nonatomic, strong) NSString *reviewerID;
 @property (nonatomic, strong) NSString *reviewedID;
 @property (nonatomic, strong) NSNumber *rank;
+@property (nonatomic, strong) NSDate *createdDate;
 
 @end

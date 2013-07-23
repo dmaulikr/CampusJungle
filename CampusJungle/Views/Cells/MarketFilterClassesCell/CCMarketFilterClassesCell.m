@@ -18,16 +18,6 @@
 
 @implementation CCMarketFilterClassesCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        self = [[NSBundle mainBundle] loadNibNamed:@"CCMarketFilterClassesCell" owner:self options:nil][0];
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
-    return self;
-}
-
 - (void)setCellObject:(id)cellObject
 {
     _cellObject = cellObject;
@@ -37,13 +27,7 @@
 
 - (void)becomeSelected:(BOOL)selected
 {
-    if(selected){
-        self.checkmark.hidden = NO;
-        //[self setAccessoryType:UITableViewCellAccessoryCheckmark];
-    } else {
-        self.checkmark.hidden = YES;
-//        [self setAccessoryType:UITableViewCellAccessoryNone];
-    }
+    [self.checkmark setHidden:!selected];
 }
 
 @end

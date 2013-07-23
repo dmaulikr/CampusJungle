@@ -656,19 +656,19 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="announcement_button.png">{16, 16}</string>
-			<string key="announcement_button_active.png">{16, 16}</string>
-			<string key="avatar_placeholder.png">{16, 16}</string>
-			<string key="class_feedback_button.png">{16, 16}</string>
-			<string key="class_feedback_button_active.png">{16, 16}</string>
-			<string key="class_market_button.png">{16, 16}</string>
-			<string key="class_market_button_active.png">{16, 16}</string>
-			<string key="edit_class_button.png">{16, 16}</string>
-			<string key="edit_class_button_active.png">{16, 16}</string>
-			<string key="prof_upload_button.png">{16, 16}</string>
-			<string key="prof_upload_button_active.png">{16, 16}</string>
-			<string key="timetable_button.png">{16, 16}</string>
-			<string key="timetable_button_active.png">{16, 16}</string>
+			<string key="announcement_button.png">{44, 32}</string>
+			<string key="announcement_button_active.png">{44, 33}</string>
+			<string key="avatar_placeholder.png">{104, 99}</string>
+			<string key="class_feedback_button.png">{36, 44}</string>
+			<string key="class_feedback_button_active.png">{36, 44}</string>
+			<string key="class_market_button.png">{31, 44}</string>
+			<string key="class_market_button_active.png">{31, 44}</string>
+			<string key="edit_class_button.png">{31, 44}</string>
+			<string key="edit_class_button_active.png">{32, 44}</string>
+			<string key="prof_upload_button.png">{35, 44}</string>
+			<string key="prof_upload_button_active.png">{34, 44}</string>
+			<string key="timetable_button.png">{38, 44}</string>
+			<string key="timetable_button_active.png">{37, 44}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>

@@ -230,7 +230,7 @@ static const NSInteger kNavBarHeight = 44;
     [CCAlertHelper showConfirmWithSuccess:^{
         [weakSelf.ioc_locationsApiProvider deleteLocation:location successHandler:^(RKMappingResult *object) {
             [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteLocation duration:CCProgressHudsConstants.loaderDuration];
-            [weakSelf.locationsProvider loadItems];
+            [weakSelf.locationsProvider deleteItem:location];
         } errorHandler:^(NSError *error) {
             [CCStandardErrorHandler showErrorWithError:error];
         }];
@@ -245,7 +245,7 @@ static const NSInteger kNavBarHeight = 44;
     [CCAlertHelper showConfirmWithSuccess:^{
         [weakSelf.ioc_forumsApiProvider deleteForum:forum successHandler:^(RKMappingResult *object) {
             [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteForum duration:CCProgressHudsConstants.loaderDuration];
-            [weakSelf.forumsProvider loadItems];
+            [weakSelf.forumsProvider deleteItem:forum];
         } errorHandler:^(NSError *error) {
             [CCStandardErrorHandler showErrorWithError:error];
         }];
@@ -260,7 +260,7 @@ static const NSInteger kNavBarHeight = 44;
     [CCAlertHelper showWithMessage:CCAlertsMessages.deleteMessage success:^{
         [weakSelf.ioc_messagesApiProvider deleteMessageWithId:message.messageID successHandler:^(RKMappingResult *result) {
             [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteMessage duration:CCProgressHudsConstants.loaderDuration];
-            [weakSelf.messagesProvider loadItems];
+            [weakSelf.messagesProvider deleteItem:message];
         } errorHandler:^(NSError *error) {
             [CCStandardErrorHandler showErrorWithError:error];
         }];

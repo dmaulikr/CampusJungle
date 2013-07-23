@@ -10,6 +10,8 @@
 #import "CCUser.h"
 #import "CCDefines.h"
 
+static const NSInteger kDefaultCellHeight = 54;
+
 @interface CCUserCell()
 
 @property (nonatomic, weak) IBOutlet UILabel *userName;
@@ -40,7 +42,7 @@
 
 + (CGFloat)heightForCellWithObject:(id)object
 {
-    return 50.;
+    return kDefaultCellHeight;
 }
 
 @end

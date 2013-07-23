@@ -9,13 +9,21 @@
 #import "CCReviewCell.h"
 #import "DYRateView.h"
 #import "CCViewPositioningHelper.h"
+#import "CCDateFormatterProtocol.h"
 #import "CCReview.h"
+
+static const NSInteger kDefaultTextLabelWidth = 286;
+static const NSInteger kMinCellHeight = 75;
+static const NSInteger kTextLabelOriginY = 44;
+static const NSInteger kBottomSpace = 10;
 
 @interface CCReviewCell()
 
 @property (nonatomic, weak) IBOutlet UILabel *reviewLabel;
 @property (nonatomic, weak) IBOutlet UIView *rateContainer;
+@property (nonatomic, weak) IBOutlet UILabel *createdDateLabel;
 @property (nonatomic, strong) DYRateView *rateView;
+@property (nonatomic, strong) id<CCDateFormatterProtocol> ioc_dateFormatterHelper;
 
 @end
 
@@ -32,16 +40,21 @@
 - (void)setCellObject:(id)cellObject
 {
     _cellObject = cellObject;
+    [self fillLabels];
     self.rateView.rate = [[(CCReview *)cellObject rank] integerValue];
-    self.reviewLabel.text = [(CCReview *)cellObject text];
+}
+
+- (void)fillLabels
+{
+    CCReview *review = (CCReview *)self.cellObject;
+    self.reviewLabel.text = review.text;
     [self.reviewLabel sizeToFit];
-    [CCViewPositioningHelper setOriginX:5 toView:self.reviewLabel];
+    [self.createdDateLabel setText:[self.ioc_dateFormatterHelper formatedDateStringFromDate:review.createdDate]];
 }
 
 - (void)prepareForReuse
 {
-    [CCViewPositioningHelper setWidth:300 toView:self.reviewLabel];
-    [CCViewPositioningHelper setOriginX:10 toView:self.reviewLabel];
+    [CCViewPositioningHelper setWidth:kDefaultTextLabelWidth toView:self.reviewLabel];
 }
 
 - (void)configStars
@@ -64,10 +77,9 @@
 + (CGFloat)heightForCellWithObject:(id)object
 {
     CCReview *review = object;
-    UIFont *font = [UIFont systemFontOfSize:17];
-    CGSize requiredSize = [review.text sizeWithFont:font constrainedToSize:CGSizeMake(300, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
-    
-    return MAX(60, requiredSize.height + 40);
+    UIFont *font = [UIFont fontWithName:@"Avenir-Medium" size:15];
+    CGSize requiredSize = [review.text sizeWithFont:font constrainedToSize:CGSizeMake(kDefaultTextLabelWidth, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
+    return MAX(kMinCellHeight, kTextLabelOriginY + requiredSize.height + kBottomSpace);
 }
 
 @end

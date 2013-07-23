@@ -47,6 +47,7 @@
              @"reviewer_id" : @"reviewerID",
              @"reviewed_id" : @"reviewedID",
              @"rank" : @"rank",
+             @"created_at" : @"createdDate"
              };
 }
 

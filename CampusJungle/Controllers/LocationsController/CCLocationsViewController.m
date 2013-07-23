@@ -146,7 +146,7 @@
     [CCAlertHelper showConfirmWithSuccess:^{
         [weakSelf.ioc_locationsApiProvider deleteLocation:location successHandler:^(RKMappingResult *object) {
             [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteLocation duration:CCProgressHudsConstants.loaderDuration];
-            [weakSelf.dataProvider loadItems];
+            [weakSelf.dataProvider deleteItem:location];
         } errorHandler:^(NSError *error) {
             [CCStandardErrorHandler showErrorWithError:error];
         }];
