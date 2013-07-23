@@ -17,6 +17,7 @@
 #import "CCBackTransaction.h"
 #import "CCGroupMessageTransaction.h"
 #import "CCEditGroupTransaction.h"
+#import "CCMessageDetailsTransaction.h"
 
 @implementation CCGroupTransaction
 
@@ -25,6 +26,8 @@
     NSParameterAssert(object);
     NSParameterAssert(self.navigation);
     
+    id group = [object valueForKey:@"group"];
+    id classController = [object valueForKey:@"controller"];
     
     CCShowLocationsTransaction *locationsTransaction = [CCShowLocationsTransaction new];
     locationsTransaction.navigation = self.navigation;
@@ -49,6 +52,10 @@
     
     CCEditGroupTransaction *editGroupTransaction = [CCEditGroupTransaction new];
     editGroupTransaction.navigation = self.navigation;
+    editGroupTransaction.classController = classController;
+    
+    CCMessageDetailsTransaction *messageDetailsTransaction = [CCMessageDetailsTransaction new];
+    messageDetailsTransaction.navigation = self.navigation;
     
     CCGroupViewController *groupController = [CCGroupViewController new];
     groupController.locationTransaction = locationsTransaction;
@@ -59,8 +66,9 @@
     groupController.backTransaction = backTransaction;
     groupController.groupMessageTransaction = groupMessageTransaction;
     groupController.editGroupTransaction = editGroupTransaction;
+    groupController.messageDetailsTransaction = messageDetailsTransaction;
     
-    [groupController setGroup:object];
+    [groupController setGroup:group];
     [self.navigation pushViewController:groupController animated:YES];
 }
 

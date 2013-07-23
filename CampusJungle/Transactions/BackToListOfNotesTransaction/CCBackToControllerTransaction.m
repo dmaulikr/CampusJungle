@@ -13,10 +13,10 @@
 - (void)perform
 {
     NSParameterAssert(self.navigation);
-    NSParameterAssert(self.listController);
+    NSParameterAssert(self.targetController);
     
-    if([self.navigation.viewControllers containsObject:self.listController]){
-        [self.navigation popToViewController:self.listController animated:YES];
+    if([self.navigation.viewControllers containsObject:self.targetController]){
+        [self.navigation popToViewController:self.targetController animated:YES];
     }
 }
 

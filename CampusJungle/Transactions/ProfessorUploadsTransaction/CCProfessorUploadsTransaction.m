@@ -28,7 +28,7 @@
     professorUploads.viewAttachmentTransaction = viewPdfTransaction;
     
     backToListTransaction.navigation = self.navigation;
-    backToListTransaction.listController = professorUploads;
+    backToListTransaction.targetController = professorUploads;
     addProfessorUploadsTransaction.backToListTransaction = backToListTransaction;
     
     addProfessorUploadsTransaction.navigation = self.navigation;

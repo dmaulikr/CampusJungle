@@ -103,7 +103,7 @@ static const NSInteger kNavBarHeight = 44;
 - (void)setClassmatesConfiguration
 {
     self.sectionName.text = CCClassTabbarButtonsTitles.classmates;
-    self.searchBar.placeholder = @"Search Classmates";
+    self.searchBar.placeholder = CCSearchBarPlaceholders.searchClassmates;
     if (!self.classmatesProvider) {
         self.classmatesProvider = [CCClassmatesDataProvider new];
         self.classmatesProvider.classID = self.classID;
@@ -117,7 +117,7 @@ static const NSInteger kNavBarHeight = 44;
 - (void)setForumsConfiguration
 {
     self.sectionName.text = CCClassTabbarButtonsTitles.forums;
-    self.searchBar.placeholder = @"Search Forums";
+    self.searchBar.placeholder = CCSearchBarPlaceholders.searchForums;
     if (!self.forumsProvider) {
         self.forumsProvider = [CCForumsDataProvider new];
         self.forumsProvider.classId = self.classID;
@@ -131,7 +131,7 @@ static const NSInteger kNavBarHeight = 44;
 - (void)setLocationConfiguration
 {
     self.sectionName.text = CCClassTabbarButtonsTitles.locations;
-    self.searchBar.placeholder = @"Search Location";
+    self.searchBar.placeholder = CCSearchBarPlaceholders.searchLocations;
     if (!self.locationsProvider) {
         self.locationsProvider = [[CCLocationsDataProvider alloc] initWithDelegate:self];
         self.locationsProvider.classId = self.classID;
@@ -145,7 +145,7 @@ static const NSInteger kNavBarHeight = 44;
 - (void)setGroupsConfiguration
 {
     self.sectionName.text = CCClassTabbarButtonsTitles.groups;
-    self.searchBar.placeholder = @"Search Groups";
+    self.searchBar.placeholder = CCSearchBarPlaceholders.searchGroups;
     if (!self.groupsProvider) {
         self.groupsProvider = [CCGroupsDataProvider new];
         self.groupsProvider.classId = self.classID;

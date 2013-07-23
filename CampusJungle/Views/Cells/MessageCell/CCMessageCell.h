@@ -7,10 +7,18 @@
 //
 
 #import "CCBaseCell.h"
-#import "CCMessage.h"
+
+@class CCMessage;
+
+@protocol CCMessageCellDelegate <NSObject>
+
+- (void)deleteMessage:(CCMessage *)message;
+
+@end
 
 @interface CCMessageCell : CCBaseCell
 
-@property (nonatomic, strong) id cellObject;
+- (void)setCellObject:(CCMessage *)cellObject;
+- (void)setDelegate:(id<CCMessageCellDelegate>)delegate;
 
 @end

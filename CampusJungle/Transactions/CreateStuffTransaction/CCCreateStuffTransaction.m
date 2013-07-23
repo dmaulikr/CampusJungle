@@ -24,7 +24,7 @@
     
     CCBackToControllerTransaction *backToControllerTransaction = [CCBackToControllerTransaction new];
     backToControllerTransaction.navigation = self.navigation;
-    backToControllerTransaction.listController = stuffCreationController;
+    backToControllerTransaction.targetController = stuffCreationController;
     stuffCreationController.backToSlefTransaction = backToControllerTransaction;
     
     CCDropboxImagesSelectionTransaction *dropboxSelection = [CCDropboxImagesSelectionTransaction new];

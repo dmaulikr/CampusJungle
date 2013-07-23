@@ -20,9 +20,12 @@
 
 - (void)loadItemsForPageNumber:(long)numberOfPage successHandler:(successWithObject)successHandler
 {
-    if(self.filters){
+    if (self.filters){
         NSDictionary *params = self.filters.mutableCopy;
         [params setValue:@(numberOfPage) forKey:@"page_number"];
+        if ([self.searchQuery length] > 0) {
+            [params setValue:self.searchQuery forKey:@"keywords"];
+        }
         [self.ioc_messagesAPIProvider loadMyMessagesWithParams:params successHandler:^(RKMappingResult *result) {
             successHandler(result.firstObject);
         } errorHandler:^(NSError *error) {

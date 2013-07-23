@@ -40,7 +40,7 @@
     questionsController.viewQuestionAttachmentTransaction = viewPdfTransaction;
     
     addQuestionTransaction.backToListTransaction = backToListTransaction;
-    backToListTransaction.listController = questionsController;
+    backToListTransaction.targetController = questionsController;
     
     [self.navigation pushViewController:questionsController animated:YES];
 }

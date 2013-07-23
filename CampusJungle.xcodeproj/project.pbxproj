@@ -521,6 +521,7 @@
 		70FDD666179E786C00871727 /* CCEditGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FDD664179E786C00871727 /* CCEditGroupViewController.xib */; };
 		70FDD66A179E790C00871727 /* CCEditGroupTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD669179E790C00871727 /* CCEditGroupTransaction.m */; };
 		70FDD66E179E93C300871727 /* CCProcessingMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD66D179E93C300871727 /* CCProcessingMessages.m */; };
+		70FDD676179ECE8F00871727 /* NSDateFormatter+Locale.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD675179ECE8F00871727 /* NSDateFormatter+Locale.m */; };
 		A784C599173A865E005E4921 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C598173A865E005E4921 /* UIKit.framework */; };
 		A784C59B173A865E005E4921 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C59A173A865E005E4921 /* Foundation.framework */; };
 		A784C59D173A865E005E4921 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A784C59C173A865E005E4921 /* CoreGraphics.framework */; };
@@ -1450,6 +1451,8 @@
 		70FDD669179E790C00871727 /* CCEditGroupTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEditGroupTransaction.m; sourceTree = "<group>"; };
 		70FDD66C179E93C300871727 /* CCProcessingMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProcessingMessages.h; sourceTree = "<group>"; };
 		70FDD66D179E93C300871727 /* CCProcessingMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCProcessingMessages.m; sourceTree = "<group>"; };
+		70FDD674179ECE8F00871727 /* NSDateFormatter+Locale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+Locale.h"; sourceTree = "<group>"; };
+		70FDD675179ECE8F00871727 /* NSDateFormatter+Locale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+Locale.m"; sourceTree = "<group>"; };
 		9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		A784C595173A865E005E4921 /* CampusJungle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusJungle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A784C598173A865E005E4921 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -4679,6 +4682,7 @@
 		70C0FCB2178484C7005EF95E /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				70FDD673179ECE7F00871727 /* DateFormatterCategory */,
 				70C0FCB3178484D0005EF95E /* TextFieldCategory */,
 			);
 			path = Categories;
@@ -4836,6 +4840,15 @@
 				70FDD66D179E93C300871727 /* CCProcessingMessages.m */,
 			);
 			path = ProcessingMessages;
+			sourceTree = "<group>";
+		};
+		70FDD673179ECE7F00871727 /* DateFormatterCategory */ = {
+			isa = PBXGroup;
+			children = (
+				70FDD674179ECE8F00871727 /* NSDateFormatter+Locale.h */,
+				70FDD675179ECE8F00871727 /* NSDateFormatter+Locale.m */,
+			);
+			path = DateFormatterCategory;
 			sourceTree = "<group>";
 		};
 		A784C58C173A865E005E4921 = {
@@ -6106,6 +6119,7 @@
 				70FDD66A179E790C00871727 /* CCEditGroupTransaction.m in Sources */,
 				70FDD66E179E93C300871727 /* CCProcessingMessages.m in Sources */,
 				D38532F3179DED210075F870 /* NSString+CCValidationHelper.m in Sources */,
+				70FDD676179ECE8F00871727 /* NSDateFormatter+Locale.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6187,8 +6201,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusJungle/CampusJungle-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CampusJungle/CampusJungle-Info.plist";

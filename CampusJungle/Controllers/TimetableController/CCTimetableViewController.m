@@ -10,6 +10,7 @@
 #import "CCClass.h"
 #import "CCDailyTimetableCell.h"
 #import "CCTimeStringsSortingHelper.h"
+#import "NSDateFormatter+Locale.h"
 
 @interface CCTimetableViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -46,7 +47,7 @@
 
 - (void)calculateTimetable
 {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] initWithSafeLocale];
     self.shortDaysOfWeek = [dateFormatter shortWeekdaySymbols];
     NSArray *longDaysOfWeek = [dateFormatter weekdaySymbols];
     

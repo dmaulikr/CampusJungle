@@ -7,6 +7,7 @@
 //
 
 #import "CCTimeStringsSortingHelper.h"
+#import "NSDateFormatter+Locale.h"
 
 @implementation CCTimeStringsSortingHelper
 
@@ -26,7 +27,7 @@
 
 + (NSArray *)sortArrayOfDateStrings:(NSArray *)dateStrings
 {
-    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] initWithSafeLocale];
     [dateFormatter setDateFormat:@"hh:mm a"];
     
     NSMutableArray *datesArray = [NSMutableArray array];

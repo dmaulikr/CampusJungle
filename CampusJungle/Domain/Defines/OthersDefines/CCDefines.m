@@ -82,7 +82,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .loadAnnouncements = @"/api/classes/%@/announcements",
     .postAnnouncements = @"/api/classes/%@/announcements",
     .deleteAnouncements = @"/api/announcements/%@",
-    
+    .deleteMessage = @"/api/messages/%@",
 };
 
 const struct CCUserDefines CCUserDefines = {
@@ -163,6 +163,7 @@ const struct CCTableDefines CCTableDefines = {
     .locationsCellIdentifier = @"LocationCellIdentifier",
     .forumsCellIdentifier = @"ForumCellIdentifier",
     .groupsCellIdentifier = @"GroupCellIdentifier",
+    .messageCellIdentifier = @"MessageCellIdentifier",
 };
 
 const struct CCResponseKeys CCResponseKeys = {
@@ -205,6 +206,7 @@ const struct CCClassTabbarButtonsTitles CCClassTabbarButtonsTitles = {
     .groups = @"Groups",
     .locations = @"Locations",
     .forums = @"Forums",
+    .groupMessages = @"Group Messages",
 };
 
 const struct CCLocationPlacesTypes CCLocationPlacesTypes = {
@@ -233,4 +235,13 @@ const struct CCShareItemActionSheetDefines CCShareItemActionSheetDefines = {
     .shareWithGroupButtonTitle = @"Share with Group",
     .shareWithClassmatesButtonTitle = @"Share with Classmates",
     .shareWithGroupmatesButtonTitle = @"Share with Groupmates",
+};
+
+const struct CCSearchBarPlaceholders CCSearchBarPlaceholders = {
+    .searchGroupmates = @"Search Groupmates",
+    .searchForums = @"Search Forums",
+    .searchLocations = @"Search Locations",
+    .searchMessages = @"Search Messages",
+    .searchClassmates = @"Search Classmates",
+    .searchGroups = @"Search Groups",
 };

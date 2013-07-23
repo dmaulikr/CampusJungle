@@ -12,5 +12,6 @@
 @interface CCEditGroupTransaction : NSObject <CCTransactionWithObject>
 
 @property (nonatomic, strong) UINavigationController *navigation;
+@property (nonatomic, strong) UIViewController *classController;
 
 @end

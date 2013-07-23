@@ -21,6 +21,7 @@
 @interface CCEditGroupViewController : CCTableBaseViewController
 
 @property (nonatomic, strong) id<CCTransaction> backTransaction;
+@property (nonatomic, strong) id<CCTransaction> backToClassDetailsTransaction;
 
 - (void)setGroup:(CCGroup *)group;
 - (void)setDelegate:(id<CCEditGroupDelegate>)delegate;

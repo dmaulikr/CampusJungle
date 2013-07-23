@@ -11,6 +11,7 @@
 #import "CCButtonsHelper.h"
 #import "CCAlertHelper.h"
 #import "CCStandardErrorHandler.h"
+#import "CCViewPositioningHelper.h"
 
 #import "CCGroupTableController.h"
 #import "CCGroupsApiProviderProtocol.h"
@@ -24,8 +25,6 @@
 @property (nonatomic, weak) IBOutlet UILabel *subjectLabel;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *ownerLabel;
-@property (nonatomic, weak) IBOutlet UIButton *editButton;
-@property (nonatomic, weak) IBOutlet UIButton *messageGroupButton;
 
 @property (nonatomic, strong) CCGroupTableController *groupTableController;
 @property (nonatomic, strong) id<CCGroupsApiProviderProtocol> ioc_groupsApiProvider;
@@ -43,6 +42,7 @@
     
     [self loadInfo];
     [self setupButtons];
+    [self setupTableHeaderView];
     [self setupTableView];
 }
 
@@ -69,12 +69,17 @@
 
 - (void)setupButtons
 {
-    [self setupLeaveButton];
-    [CCButtonsHelper removeBackgroundImageInButton:self.editButton];
-    [CCButtonsHelper removeBackgroundImageInButton:self.messageGroupButton];
-    if (![self.ioc_userSessionProvider.currentUser.uid isEqualToString:self.group.ownerId]) {
-        [self.editButton setHidden:YES];
+    if ([self.ioc_userSessionProvider.currentUser.uid isEqualToString:self.group.ownerId]) {
+        [self setupEditGroupButton];
     }
+    else {
+        [self setupLeaveButton];
+    }
+}
+
+- (void)setupEditGroupButton
+{
+    [self setRightNavigationItemWithTitle:@"Edit" selector:@selector(editButtonDidPressed:)];
 }
 
 - (void)setupLeaveButton
@@ -86,6 +91,12 @@
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.rightBarButtonItem = barButtonItem;
     [button addTarget:self action:@selector(leaveGroupButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)setupTableHeaderView
+{
+    [self.subjectLabel sizeToFit];
+    [CCViewPositioningHelper setHeight:[CCViewPositioningHelper bottomOfView:self.subjectLabel] + 15 toView:self.headerView];
 }
 
 - (void)setupTableView
@@ -102,37 +113,20 @@
 - (void)leaveGroupButtonDidPressed:(id)sender
 {
     __weak CCGroupViewController *weakSelf = self;
-    if ([self.group.ownerId isEqualToString:self.ioc_userSessionProvider.currentUser.uid]) {
-        [CCAlertHelper showWithMessage:CCAlertsMessages.leaveGroupByOwner success:^{
-            [weakSelf.ioc_groupsApiProvider destroyGroup:weakSelf.group successHandler:^(RKMappingResult *result) {
-                [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.leaveGroup duration:CCProgressHudsConstants.loaderDuration];
-                [weakSelf.backTransaction perform];
-            } errorHandler:^(NSError *error) {
-                [CCStandardErrorHandler showErrorWithError:error];
-            }];
+    [CCAlertHelper showWithMessage:CCAlertsMessages.leaveGroup success:^{
+        [weakSelf.ioc_groupsApiProvider leaveGroup:weakSelf.group successHandler:^(RKMappingResult *result) {
+            [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.leaveGroup duration:CCProgressHudsConstants.loaderDuration];
+            [weakSelf.backTransaction perform];
+        } errorHandler:^(NSError *error) {
+            [CCStandardErrorHandler showErrorWithError:error];
         }];
-    }
-    else {
-        [CCAlertHelper showWithMessage:CCAlertsMessages.leaveGroup success:^{
-            [weakSelf.ioc_groupsApiProvider leaveGroup:weakSelf.group successHandler:^(RKMappingResult *result) {
-                [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.leaveGroup duration:CCProgressHudsConstants.loaderDuration];
-                [weakSelf.backTransaction perform];
-            } errorHandler:^(NSError *error) {
-                [CCStandardErrorHandler showErrorWithError:error];
-            }];
-        }];
-    }
+    }];
 }
 
 - (IBAction)editButtonDidPressed:(id)sender
 {
     NSDictionary *params = @{@"group" : self.group, @"delegate" : self};
     [self.editGroupTransaction performWithObject:params];
-}
-
-- (IBAction)messageGroupButtonDidPressed:(id)sender
-{
-    [self.groupMessageTransaction performWithObject:self.group];
 }
 
 #pragma mark -
@@ -153,6 +147,11 @@
     [self.forumDetailsTransaction performWithObject:forum];
 }
 
+- (void)showDetailsOfGroupMessage:(CCMessage *)message
+{
+    [self.messageDetailsTransaction performWithObject:message];
+}
+
 - (void)addLocation
 {
     [self.addLocationTransaction performWithObject:self.group];
@@ -161,6 +160,11 @@
 - (void)addForum
 {
     [self.addForumTransaction performWithObject:self.group];
+}
+
+- (void)sendGroupMessage
+{
+    [self.groupMessageTransaction performWithObject:self.group];
 }
 
 #pragma mark -

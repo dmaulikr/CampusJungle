@@ -26,7 +26,7 @@
     
     CCBackToControllerTransaction *backToListTransaction = [CCBackToControllerTransaction new];
     backToListTransaction.navigation = self.navigation;
-    backToListTransaction.listController = myStuffController;
+    backToListTransaction.targetController = myStuffController;
     
     creationStuffTransaction.backToListTransaction = backToListTransaction;
     

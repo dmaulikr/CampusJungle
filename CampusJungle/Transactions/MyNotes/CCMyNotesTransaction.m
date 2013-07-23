@@ -25,7 +25,7 @@
     
     CCBackToControllerTransaction *backToListOfNotes = [CCBackToControllerTransaction new];
     backToListOfNotes.navigation = self.navigation;
-    backToListOfNotes.listController = myNotesController;
+    backToListOfNotes.targetController = myNotesController;
     
     createNoteTransaction.backToListTransaction = backToListOfNotes;
     

@@ -17,8 +17,9 @@
 #import "CCUserSelectionCell.h"
 #import "CCAvatarSelectionActionSheet.h"
 #import "CCKeyboardHelper.h"
+#import "CCAlertHelper.h"
 
-@interface CCEditGroupViewController () <UITextFieldDelegate, CCAvatarSelectionProtocol>
+@interface CCEditGroupViewController () <UITextFieldDelegate, CCAvatarSelectionProtocol, CCGroupmatesDataProviderDelegate>
 
 @property (nonatomic, weak) IBOutlet UIView *tableHeaderView;
 @property (nonatomic, weak) IBOutlet UITextField *nameTextField;
@@ -50,6 +51,7 @@
     
     [self setTitle:@"Edit Group"];
     [self setRightNavigationItemWithTitle:@"Save" selector:@selector(saveButtonDidPressed:)];
+    [self.navigationItem.rightBarButtonItem setEnabled:NO];
 }
 
 - (void)setupTextFields
@@ -76,6 +78,7 @@
     [self.dataProvider setNeedToSelectAllItems:YES];
     [self.dataProvider setGroup:self.group];
     [self.dataProvider setItemsPerPage:INT_MAX];
+    [self.dataProvider setDelegate:self];
     [self configTableWithProvider:self.dataProvider cellClass:[CCUserSelectionCell class]];
 }
 
@@ -103,6 +106,14 @@
 {
     [CCKeyboardHelper hideKeyboard];
     [self.logoSelectionSheet showWithTitle:@"Select Group Logo" takePhotoButtonTitle:nil takeFromGalleryButtonTitle:nil];
+}
+
+- (IBAction)deleteGroupButtonDidPressed:(id)sender
+{
+    [CCKeyboardHelper hideKeyboard];
+    [CCAlertHelper showWithMessage:CCAlertsMessages.deleteGroup success:^{
+        [self destroyGroup];
+    }];
 }
 
 - (NSArray *)selectedUsersIdsArray
@@ -146,12 +157,30 @@
     }];
 }
 
+- (void)destroyGroup
+{
+    __weak CCEditGroupViewController *weakSelf = self;
+    [self.ioc_groupsApiProvider destroyGroup:self.group successHandler:^(id result) {
+        [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteGroup duration:CCProgressHudsConstants.loaderDuration];
+        [weakSelf.backToClassDetailsTransaction perform];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
+}
+
 #pragma mark -
 #pragma mark CCAvatarSelectionProtocol
 - (void)didSelectAvatar:(UIImage *)avatar
 {
     self.updatedGroup.selectedLogo = avatar;
     [self.logoImageView setImage:avatar];
+}
+
+#pragma mark -
+#pragma mark CCGroupmatesDataProviderDelegate
+- (void)didReceiveGroupmates
+{
+    [self.navigationItem.rightBarButtonItem setEnabled:YES];
 }
 
 #pragma mark -

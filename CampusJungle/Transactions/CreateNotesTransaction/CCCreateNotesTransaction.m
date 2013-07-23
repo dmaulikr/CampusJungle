@@ -26,7 +26,7 @@
     
     CCBackToControllerTransaction *backToSelfTransaction = [CCBackToControllerTransaction new];
     backToSelfTransaction.navigation = self.navigation;
-    backToSelfTransaction.listController = createNotesController;
+    backToSelfTransaction.targetController = createNotesController;
     createNotesController.backToSelfController = backToSelfTransaction;
     
     CCImagesUploadingScreenTransaction *imagesUploadTransaction = [CCImagesUploadingScreenTransaction new];

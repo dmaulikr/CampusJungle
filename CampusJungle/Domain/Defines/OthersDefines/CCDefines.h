@@ -80,6 +80,7 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *loadAnnouncements;
     __unsafe_unretained NSString *postAnnouncements;
     __unsafe_unretained NSString *deleteAnouncements;
+    __unsafe_unretained NSString *deleteMessage;
 } CCAPIDefines;
 
 
@@ -153,6 +154,7 @@ extern const struct CCTableDefines {
     __unsafe_unretained NSString *locationsCellIdentifier;
     __unsafe_unretained NSString *forumsCellIdentifier;
     __unsafe_unretained NSString *groupsCellIdentifier;
+    __unsafe_unretained NSString *messageCellIdentifier;
 } CCTableDefines;
 
 extern const struct CCLinkUserKeys {
@@ -209,6 +211,7 @@ extern const struct CCClassTabbarButtonsTitles {
     __unsafe_unretained NSString *groups;
     __unsafe_unretained NSString *locations;
     __unsafe_unretained NSString *forums;
+    __unsafe_unretained NSString *groupMessages;
 } CCClassTabbarButtonsTitles;
 
 extern const struct CCLocationPlacesTypes {
@@ -234,6 +237,15 @@ extern const struct CCShareItemActionSheetDefines {
     __unsafe_unretained NSString *shareWithClassmatesButtonTitle;
     __unsafe_unretained NSString *shareWithGroupmatesButtonTitle;
 } CCShareItemActionSheetDefines;
+
+extern const struct CCSearchBarPlaceholders {
+    __unsafe_unretained NSString *searchGroupmates;
+    __unsafe_unretained NSString *searchForums;
+    __unsafe_unretained NSString *searchLocations;
+    __unsafe_unretained NSString *searchMessages;
+    __unsafe_unretained NSString *searchClassmates;
+    __unsafe_unretained NSString *searchGroups;
+} CCSearchBarPlaceholders;
 
 enum CCClassTabbarButtonsIdentifiers {
     CCClassTabbarButtonsIdentifierClassmate = 1,
