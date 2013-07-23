@@ -27,7 +27,7 @@
     CCSelectClassmatesViewController *selectClassmateController = [CCSelectClassmatesViewController new];
     selectClassmateController.backTransaction = backTransaction;
     [selectClassmateController setSuccessBlock:successBlock];
-    if ([object isKindOfClass:[CCClass class]]) {
+    if ([sourceObject isKindOfClass:[CCClass class]]) {
         [selectClassmateController setClass:sourceObject];
     }
     else {
