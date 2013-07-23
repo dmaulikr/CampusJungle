@@ -25,7 +25,6 @@
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *ownerLabel;
 @property (nonatomic, weak) IBOutlet UIButton *editButton;
-@property (nonatomic, weak) IBOutlet UIButton *messageGroupButton;
 
 @property (nonatomic, strong) CCGroupTableController *groupTableController;
 @property (nonatomic, strong) id<CCGroupsApiProviderProtocol> ioc_groupsApiProvider;
@@ -71,7 +70,6 @@
 {
     [self setupLeaveButton];
     [CCButtonsHelper removeBackgroundImageInButton:self.editButton];
-    [CCButtonsHelper removeBackgroundImageInButton:self.messageGroupButton];
     if (![self.ioc_userSessionProvider.currentUser.uid isEqualToString:self.group.ownerId]) {
         [self.editButton setHidden:YES];
     }
@@ -130,11 +128,6 @@
     [self.editGroupTransaction performWithObject:params];
 }
 
-- (IBAction)messageGroupButtonDidPressed:(id)sender
-{
-    [self.groupMessageTransaction performWithObject:self.group];
-}
-
 #pragma mark -
 #pragma mark CCGroupTableDelegate
 - (void)showProfileOfUser:(CCUser *)user
@@ -153,6 +146,11 @@
     [self.forumDetailsTransaction performWithObject:forum];
 }
 
+- (void)showDetailsOfGroupMessage:(CCMessage *)message
+{
+    [self.messageDetailsTransaction performWithObject:message];
+}
+
 - (void)addLocation
 {
     [self.addLocationTransaction performWithObject:self.group];
@@ -161,6 +159,11 @@
 - (void)addForum
 {
     [self.addForumTransaction performWithObject:self.group];
+}
+
+- (void)sendGroupMessage
+{
+    [self.groupMessageTransaction performWithObject:self.group];
 }
 
 #pragma mark -

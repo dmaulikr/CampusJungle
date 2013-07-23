@@ -153,6 +153,7 @@ extern const struct CCTableDefines {
     __unsafe_unretained NSString *locationsCellIdentifier;
     __unsafe_unretained NSString *forumsCellIdentifier;
     __unsafe_unretained NSString *groupsCellIdentifier;
+    __unsafe_unretained NSString *messageCellIdentifier;
 } CCTableDefines;
 
 extern const struct CCLinkUserKeys {
@@ -209,6 +210,7 @@ extern const struct CCClassTabbarButtonsTitles {
     __unsafe_unretained NSString *groups;
     __unsafe_unretained NSString *locations;
     __unsafe_unretained NSString *forums;
+    __unsafe_unretained NSString *groupMessages;
 } CCClassTabbarButtonsTitles;
 
 extern const struct CCLocationPlacesTypes {

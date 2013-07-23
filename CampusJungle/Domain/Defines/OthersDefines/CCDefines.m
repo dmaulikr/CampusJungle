@@ -163,6 +163,7 @@ const struct CCTableDefines CCTableDefines = {
     .locationsCellIdentifier = @"LocationCellIdentifier",
     .forumsCellIdentifier = @"ForumCellIdentifier",
     .groupsCellIdentifier = @"GroupCellIdentifier",
+    .messageCellIdentifier = @"MessageCellIdentifier",
 };
 
 const struct CCResponseKeys CCResponseKeys = {
@@ -205,6 +206,7 @@ const struct CCClassTabbarButtonsTitles CCClassTabbarButtonsTitles = {
     .groups = @"Groups",
     .locations = @"Locations",
     .forums = @"Forums",
+    .groupMessages = @"Group Messages",
 };
 
 const struct CCLocationPlacesTypes CCLocationPlacesTypes = {

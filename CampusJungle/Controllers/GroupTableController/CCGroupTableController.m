@@ -20,10 +20,12 @@
 #import "CCGroupmatesDataProvider.h"
 #import "CCLocationsDataProvider.h"
 #import "CCForumsDataProvider.h"
+#import "CCMessagesDataProvider.h"
 
 #import "CCUserCell.h"
 #import "CCLocationCell.h"
 #import "CCForumCell.h"
+#import "CCMessageCell.h"
 
 #import "CCStandardErrorHandler.h"
 #import "CCLocationsApiProviderProtocol.h"
@@ -44,6 +46,7 @@ static const NSInteger kNavBarHeight = 44;
 @property (nonatomic, strong) CCGroupmatesDataProvider *groupmatesProvider;
 @property (nonatomic, strong) CCLocationsDataProvider *locationsProvider;
 @property (nonatomic, strong) CCForumsDataProvider *forumsProvider;
+@property (nonatomic, strong) CCMessagesDataProvider *messagesProvider;
 @property (nonatomic, strong) CCBaseDataProvider *activeDataProvider;
 
 @property (nonatomic, strong) id<CCLocationsApiProviderProtocol> ioc_locationsApiProvider;
@@ -135,6 +138,19 @@ static const NSInteger kNavBarHeight = 44;
     self.activeDataProvider = self.locationsProvider;
 }
 
+- (void)setGroupMessagesConfiguration
+{
+    self.sectionName.text = CCClassTabbarButtonsTitles.groupMessages;
+    if (!self.messagesProvider) {
+        self.messagesProvider = [CCMessagesDataProvider new];
+        self.messagesProvider.filters = @{@"group_id" : self.group.groupId, @"direction" : @"all"};
+        self.messagesProvider.cellReuseIdentifier = CCTableDefines.messageCellIdentifier;
+    }
+    [self fillSearchBarFromDataProvider:self.messagesProvider];
+    [self configTableWithProvider:self.messagesProvider cellClass:[CCMessageCell class] cellReuseIdentifier:CCTableDefines.messageCellIdentifier];
+    self.activeDataProvider = self.messagesProvider;
+}
+
 #pragma mark -
 #pragma mark Overriding base methods
 - (void)tableViewWillReloadData
@@ -174,6 +190,9 @@ static const NSInteger kNavBarHeight = 44;
             break;
         case CCClassTabbarButtonsIdentifierForums:
             [self setForumsConfiguration];
+            break;
+        case CCClassTabbarButtonsIdentifierGroup:
+            [self setGroupMessagesConfiguration];
             break;
     }
 }
@@ -246,6 +265,9 @@ static const NSInteger kNavBarHeight = 44;
         case CCClassTabbarButtonsIdentifierForums:
             [self.delegate showDetailsOfForum:cellObject];
             break;
+        case CCClassTabbarButtonsIdentifierGroup:
+            [self.delegate showDetailsOfGroupMessage:cellObject];
+            break;
     }
 }
 
@@ -261,6 +283,9 @@ static const NSInteger kNavBarHeight = 44;
             break;
         case CCClassTabbarButtonsIdentifierForums:
             [self.delegate addForum];
+            break;
+        case CCClassTabbarButtonsIdentifierGroup:
+            [self.delegate sendGroupMessage];
             break;
     }
 }

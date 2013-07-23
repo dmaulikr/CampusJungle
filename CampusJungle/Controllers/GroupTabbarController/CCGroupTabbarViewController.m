@@ -13,6 +13,7 @@
 @property (nonatomic, weak) IBOutlet UIButton *groupmatesButton;
 @property (nonatomic, weak) IBOutlet UIButton *locationButton;
 @property (nonatomic, weak) IBOutlet UIButton *forumsButton;
+@property (nonatomic, weak) IBOutlet UIButton *messagesButton;
 
 @property (nonatomic, strong) NSArray *buttons;
 @property (nonatomic, weak) UIButton *currentlySelected;
@@ -24,10 +25,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.buttons = @[self.groupmatesButton, self.locationButton, self.forumsButton];
+    self.buttons = @[self.groupmatesButton, self.locationButton, self.forumsButton, self.messagesButton];
     self.groupmatesButton.tag = CCClassTabbarButtonsIdentifierClassmate;
     self.locationButton.tag = CCClassTabbarButtonsIdentifierLocations;
     self.forumsButton.tag = CCClassTabbarButtonsIdentifierForums;
+    self.messagesButton.tag = CCClassTabbarButtonsIdentifierGroup;
     for (UIButton *button in self.buttons){
         [self configButton:button];
     }

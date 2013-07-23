@@ -8,6 +8,7 @@
 
 #import "CCMessageDetailsController.h"
 #import "CCStuffAPIProviderProtocol.h"
+#import "CCUserSessionProtocol.h"
 #import "CCAPIProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
 #import "CCButtonsHelper.h"
@@ -18,14 +19,14 @@
 
 @property (nonatomic, weak) IBOutlet UITextView *messageText;
 @property (nonatomic, weak) IBOutlet UIImageView *senderAvatar;
+@property (nonatomic, weak) IBOutlet UIImageView *messageBackgroundImageView;
 @property (nonatomic, weak) IBOutlet UILabel *senderName;
 @property (nonatomic, weak) IBOutlet UIButton *senderDetailsButton;
+@property (nonatomic, weak) IBOutlet UIButton *replyButton;
 
-@property (nonatomic ,strong) id <CCAPIProviderProtocol> ioc_APIProvider;
+@property (nonatomic ,strong) id<CCAPIProviderProtocol> ioc_APIProvider;
+@property (nonatomic, strong) id<CCUserSessionProtocol> ioc_userSessionProvider;
 @property (nonatomic, strong) CCUser *sender;
-
-- (IBAction)senderButtonDidPressed;
-- (IBAction)answerButtonDidPressed;
 
 @end
 
@@ -37,13 +38,22 @@
     self.title = @"Message";
     [self loadMessageInfo];
     [self loadInfo];
+    [self setupImageViews];
     [self setupButtons];
-    
 }
 
 - (void)setupButtons
 {
     [CCButtonsHelper removeBackgroundImageInButton:self.senderDetailsButton];
+    if ([self.ioc_userSessionProvider.currentUser.uid isEqualToString:self.message.senderID]) {
+        [self.replyButton setHidden:YES];
+        [self.senderDetailsButton setHidden:YES];
+    }
+}
+
+- (void)setupImageViews
+{
+    [self.messageBackgroundImageView setImage:[[UIImage imageNamed:@"text_box"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)]];
 }
 
 - (void)loadInfo
