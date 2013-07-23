@@ -10,6 +10,8 @@
 #import "CCUser.h"
 #import "CCDefines.h"
 
+static const NSInteger kDefaultCellHeight = 54;
+
 @interface CCUserCell()
 
 @property (nonatomic, weak) IBOutlet UILabel *userName;
@@ -36,6 +38,11 @@
     NSString *avatarPath = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,currentUser.avatar];
     [self.avatar setImageWithURL:[NSURL URLWithString:avatarPath] placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
     
+}
+
++ (CGFloat)heightForCellWithObject:(id)object
+{
+    return kDefaultCellHeight;
 }
 
 @end
