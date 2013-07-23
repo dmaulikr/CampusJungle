@@ -186,7 +186,8 @@
 
 - (void)showDetailsOfGroup:(CCGroup *)group
 {
-    [self.groupDetailsTransaction performWithObject:group];
+    NSDictionary *params = @{@"group" : group, @"controller" : self};
+    [self.groupDetailsTransaction performWithObject:params];
 }
 
 - (void)addLocation

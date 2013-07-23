@@ -1,5 +1,5 @@
 //
-//  CCEditGroupTransaction.h
+//  CCBackToControllerTransaction.h
 //  CampusJungle
 //
 //  Created by Yury Grinenko on 23.07.13.
@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CCTransactionWithObject.h"
+#import "CCTransaction.h"
 
-@interface CCEditGroupTransaction : NSObject <CCTransactionWithObject>
+@interface CCBackToControllerTransaction : NSObject <CCTransaction>
 
 @property (nonatomic, strong) UINavigationController *navigation;
-@property (nonatomic, strong) UIViewController *classController;
+@property (nonatomic, strong) UIViewController *targetController;
 
 @end

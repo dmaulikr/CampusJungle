@@ -17,6 +17,7 @@
 #import "CCUserSelectionCell.h"
 #import "CCAvatarSelectionActionSheet.h"
 #import "CCKeyboardHelper.h"
+#import "CCAlertHelper.h"
 
 @interface CCEditGroupViewController () <UITextFieldDelegate, CCAvatarSelectionProtocol, CCGroupmatesDataProviderDelegate>
 
@@ -107,6 +108,14 @@
     [self.logoSelectionSheet showWithTitle:@"Select Group Logo" takePhotoButtonTitle:nil takeFromGalleryButtonTitle:nil];
 }
 
+- (IBAction)deleteGroupButtonDidPressed:(id)sender
+{
+    [CCKeyboardHelper hideKeyboard];
+    [CCAlertHelper showWithMessage:CCAlertsMessages.deleteGroup success:^{
+        [self destroyGroup];
+    }];
+}
+
 - (NSArray *)selectedUsersIdsArray
 {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isSelected == YES"];
@@ -144,6 +153,17 @@
         [weakSelf.backTransaction perform];
     } errorHandler:^(NSError *error) {
         [SVProgressHUD dismiss];
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
+}
+
+- (void)destroyGroup
+{
+    __weak CCEditGroupViewController *weakSelf = self;
+    [self.ioc_groupsApiProvider destroyGroup:self.group successHandler:^(id result) {
+        [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteGroup duration:CCProgressHudsConstants.loaderDuration];
+        [weakSelf.backToClassDetailsTransaction perform];
+    } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
     }];
 }
