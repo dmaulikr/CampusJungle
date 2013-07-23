@@ -87,7 +87,7 @@
     [CCAlertHelper showConfirmWithSuccess:^{
         [self.ioc_questionsApiProvider deleteQuestion:question successHandler:^(RKMappingResult *object) {
             [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteQuestion duration:CCProgressHudsConstants.loaderDuration];
-            [weakSelf.dataProvider loadItems];
+            [weakSelf.dataProvider deleteItem:question];
         } errorHandler:^(NSError *error) {
             [CCStandardErrorHandler showErrorWithError:error];
         }];

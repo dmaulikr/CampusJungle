@@ -62,7 +62,7 @@
 - (void)deleteAnnouncement:(CCAnnouncement *)announcement
 {
     [self.ioc_announcementAPIProvider deleteAnnouncement:announcement successHandler:^(RKMappingResult *result) {
-        [self.dataProvider loadItems];
+        [self.dataProvider deleteItem:announcement];
         [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.removeAnnouncement duration:CCProgressHudsConstants.loaderDuration];
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];

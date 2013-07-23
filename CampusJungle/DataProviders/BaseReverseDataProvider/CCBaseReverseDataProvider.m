@@ -66,15 +66,4 @@
     return mutableResponse;
 }
 
-- (void)deleteItem:(id)item
-{
-    NSInteger itemIndex = [self.arrayOfItems indexOfObject:item];
-    NSIndexPath *itemIndexPath = [NSIndexPath indexPathForRow:itemIndex inSection:0];
-    
-    NSMutableArray *mutableArrayOfItems = [self.arrayOfItems mutableCopy];
-    [mutableArrayOfItems removeObject:item];
-    self.arrayOfItems = [NSArray arrayWithArray:mutableArrayOfItems];
-    [self.targetTable deleteRowsAtIndexPaths:@[itemIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
-
 @end

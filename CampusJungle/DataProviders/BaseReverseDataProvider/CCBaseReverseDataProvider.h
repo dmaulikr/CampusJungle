@@ -12,6 +12,5 @@
 @interface CCBaseReverseDataProvider : CCPaginationDataProvider
 
 - (NSDictionary *)reverseItemsArrayInPaginationDictionary:(NSDictionary *)sourceDictionary;
-- (void)deleteItem:(id)item;
 
 @end

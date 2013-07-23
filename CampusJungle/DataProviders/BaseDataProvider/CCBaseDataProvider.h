@@ -26,5 +26,6 @@
 - (void)loadMoreItems;
 - (void)showErrorWhileLoading:(NSError *)error;
 - (BOOL)isEmpty;
+- (void)deleteItem:(id)item;
 
 @end
