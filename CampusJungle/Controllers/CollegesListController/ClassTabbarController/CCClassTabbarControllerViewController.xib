@@ -377,16 +377,16 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="classmates_icon.png">{16, 16}</string>
-			<string key="classmates_icon_active.png">{16, 16}</string>
-			<string key="forums_icon.png">{16, 16}</string>
-			<string key="forums_icon_active.png">{16, 16}</string>
-			<string key="groups_icon.png">{16, 16}</string>
-			<string key="groups_icon_active.png">{16, 16}</string>
-			<string key="locations_icon.png">{16, 16}</string>
-			<string key="locations_icon_active.png">{16, 16}</string>
-			<string key="tab_bar_background.png">{16, 16}</string>
-			<string key="tab_bar_button_background.png">{16, 16}</string>
+			<string key="classmates_icon.png">{57, 40}</string>
+			<string key="classmates_icon_active.png">{57, 40}</string>
+			<string key="forums_icon.png">{37, 43}</string>
+			<string key="forums_icon_active.png">{37, 43}</string>
+			<string key="groups_icon.png">{72, 49}</string>
+			<string key="groups_icon_active.png">{75, 52}</string>
+			<string key="locations_icon.png">{48, 43}</string>
+			<string key="locations_icon_active.png">{48, 43}</string>
+			<string key="tab_bar_background.png">{323, 52}</string>
+			<string key="tab_bar_button_background.png">{72, 49}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>
