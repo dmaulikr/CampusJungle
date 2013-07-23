@@ -38,4 +38,9 @@
     
 }
 
++ (CGFloat)heightForCellWithObject:(id)object
+{
+    return 50.;
+}
+
 @end

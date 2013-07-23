@@ -72,6 +72,7 @@
 {
     return @{
       @"id" : @"stuffID",
+      @"name" : @"name",
       @"owner_id" : @"ownerID",
       @"college_id" : @"collegeID",
       @"class_id" : @"classID",
@@ -87,6 +88,7 @@
 {
     return @{
       @"collegeID" : @"class_id",
+      @"name" : @"name",
       @"stuffDescription" : @"description",
       @"price" : @"price",
       @"arrayOfURLs" :@"images",

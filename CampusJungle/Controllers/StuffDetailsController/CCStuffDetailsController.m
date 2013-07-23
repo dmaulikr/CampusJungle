@@ -17,7 +17,7 @@
 @interface CCStuffDetailsController ()<CCCellSelectionProtocol>
 
 @property (nonatomic, weak) IBOutlet UIImageView *thumb;
-@property (nonatomic, weak) IBOutlet UILabel *stuffDescription;
+@property (nonatomic, weak) IBOutlet UITextView *descriptionView;
 @property (nonatomic, weak) IBOutlet UICollectionView *stuffPhotos;
 @property (nonatomic, strong) CCCommonCollectionDataSource *dataSource;
 @property (nonatomic, strong) CCPhotosDataProvider *dataProvider;
@@ -35,7 +35,7 @@
 {
     [super viewDidLoad];
     self.tapRecognizer.enabled = NO;
-    self.stuffDescription.text = self.stuff.description;
+    self.descriptionView.text = self.stuff.description;
     
     self.dataProvider = [CCPhotosDataProvider new];
     self.dataProvider.photos = self.stuff.photos;

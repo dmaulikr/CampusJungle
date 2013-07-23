@@ -15,6 +15,7 @@
 @property (nonatomic, strong) id <CCTransactionWithObject> selectFilesFromDropboxTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> imagesUploadTransaction;
 @property (nonatomic, strong) id <CCTransaction> backToListTransaction;
+@property (nonatomic, strong) id <CCTransaction> backToSlefTransaction;
 
 - (IBAction)thumbDidPressed;
 - (IBAction)collegeSelectionButtonDidPressed;

@@ -12,6 +12,7 @@
 #import "CCUserSessionProtocol.h"
 #import "CCNavigationBarViewHelper.h"
 #import "CCStuffCell.h"
+#import "CCStuff.h"
 
 @interface CCMyStuffController ()
 
@@ -47,7 +48,9 @@
 
 - (void)didSelectedCellWithObject:(id)cellObject
 {
-    [self.stuffDetailsTransaction performWithObject:cellObject];
+    if([cellObject isKindOfClass:[CCStuff class]]){
+        [self.stuffDetailsTransaction performWithObject:cellObject];
+    }
 }
 
 - (BOOL)isNeedToLeftSelected

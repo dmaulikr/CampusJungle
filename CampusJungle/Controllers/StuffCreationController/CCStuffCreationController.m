@@ -27,10 +27,16 @@
 @property (nonatomic, strong) IBOutlet UITextField *decriptionField;
 @property (nonatomic, strong) IBOutlet UITextField *priceField;
 @property (nonatomic, strong) IBOutlet UIButton *collegeSelectionButton;
+@property (nonatomic, strong) IBOutlet UITextField *nameField;
 @property (nonatomic, strong) id <CCStuffAPIProviderProtocol> ioc_stuffAPIProvider;
 @property (nonatomic, strong) NSArray *arrayOfColleges;
 
 @property (nonatomic, strong) CCAvatarSelectionActionSheet *thumbSelection;
+@property (nonatomic, strong) NSArray *arrayOfURLs;
+@property (nonatomic, strong) NSArray *arrayOfImages;
+
+@property (nonatomic, weak) IBOutlet UIButton *imageDropboxButton;
+@property (nonatomic, weak) IBOutlet UIButton *imageButton;
 
 @property (nonatomic, strong) CCCollege *selectedCollege;
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
@@ -48,6 +54,7 @@
     self.thumbSelection.delegate = self;
     self.tapRecognizer.enabled = YES;
     [self loadColleges];
+    self.title = @"New Stuff";
 }
 
 - (void)setSelectedCollege:(CCCollege *)selectedCollege
@@ -56,6 +63,10 @@
     [self.collegeSelectionButton setTitle:selectedCollege.name forState:UIControlStateNormal];
 }
 
+- (void)showDoneButton
+{
+    [self setRightNavigationItemWithTitle:@"Done" selector:@selector(upload)];
+}
 
 - (void)loadColleges
 {
@@ -68,6 +79,52 @@
         }
     }];
 }
+
+- (void)upload
+{
+    if([self isFieldsValid]){
+        CCStuffUploadInfo *uploadInfo = [self createUploadInfo];
+        if(self.arrayOfImages){
+            [self uploadWithImages];
+        } else if(self.arrayOfURLs){
+            uploadInfo.arrayOfURLs = self.arrayOfURLs;
+            [self uploadWithUrls:uploadInfo];
+        } 
+    }
+}
+
+- (void)uploadWithImages
+{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"Preparing for upload";
+    __weak id weakSelf = self;
+    CCStuffUploadInfo *uploadInfo = [weakSelf createUploadInfo];
+    uploadInfo.arrayOfImages = self.arrayOfImages;
+    id <CCUploadProcessManagerProtocol> uploadManager = self.ioc_uploadingManager;
+    [[uploadManager uploadingStuff] addObject:uploadInfo];
+    [self.ioc_stuffAPIProvider postUploadInfoWithImages:uploadInfo successHandler:^(id result) {
+        [[uploadManager uploadingStuff] removeObject:uploadInfo];
+        [uploadManager reloadDelegate];
+    } errorHandler:^(NSError *error) {
+        [[uploadManager uploadingStuff] removeObject:uploadInfo];
+        [uploadManager reloadDelegate];
+    } progress:^(double finished) {
+        [[weakSelf backToListTransaction] perform];
+        [weakSelf setBackToListTransaction:nil];
+        uploadInfo.uploadProgress = [NSNumber numberWithDouble:finished];
+    }];
+}
+
+- (void)uploadWithUrls:(CCStuffUploadInfo *)uploadInfo
+{
+    [self.ioc_stuffAPIProvider postDropboxUploadInfo:uploadInfo
+                                      successHandler:^(id result) {
+                                          [self.backToListTransaction perform];
+                                      } errorHandler:^(NSError *error) {
+                                          [CCStandardErrorHandler showErrorWithError:error];
+                                      }];
+}
+
 
 - (IBAction)thumbDidPressed
 {
@@ -96,20 +153,26 @@
 {
     if([self isFieldsValid]){
         [self.selectFilesFromDropboxTransaction performWithObject:^(NSArray *arrayOfUrls){
-            CCStuffUploadInfo *stuffInfo = [self createUploadInfo];
-            stuffInfo.arrayOfURLs = arrayOfUrls;
-            [self.ioc_stuffAPIProvider postDropboxUploadInfo:stuffInfo
-                                              successHandler:^(id result) {
-                [self.backToListTransaction perform];
-            } errorHandler:^(NSError *error) {
-                [CCStandardErrorHandler showErrorWithError:error];
-            }];
+            [self.backToSlefTransaction perform];
+            [self showDoneButton];
+            self.arrayOfURLs = arrayOfUrls;
+            [self unableUploadButtons];
         }];
     }
 }
 
+- (void)unableUploadButtons
+{
+    self.imageButton.enabled = NO;
+    self.imageDropboxButton.enabled = NO;
+}
+
 - (BOOL)isFieldsValid
 {
+    if(self.nameField.text.isEmpty){
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.emptyName];
+        return NO;
+    }
     if ([self.decriptionField.text isEmpty]){
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.descriptionCantBeBlank];
         return NO;
@@ -127,6 +190,7 @@
     uploadInfo.stuffDescription = self.decriptionField.text;
     uploadInfo.collegeName = self.collegeSelectionButton.titleLabel.text;
     uploadInfo.thumbnail = self.thumbImage.image;
+    uploadInfo.name = self.nameField.text;
     uploadInfo.price = [NSNumber numberWithInteger: self.priceField.text.integerValue];
     uploadInfo.collegeID = self.selectedCollege.collegeID.stringValue;
     return uploadInfo;
@@ -136,26 +200,23 @@
 {
     if([self isFieldsValid]){
         [self.imagesUploadTransaction performWithObject:^(NSArray *arrayOfImages){
-            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            hud.labelText = @"Preparing for upload";
-            __weak id weakSelf = self;
-            CCStuffUploadInfo *uploadInfo = [weakSelf createUploadInfo];
-            uploadInfo.arrayOfImages = arrayOfImages;
-            id <CCUploadProcessManagerProtocol> uploadManager = self.ioc_uploadingManager;
-            [[uploadManager uploadingStuff] addObject:uploadInfo];
-            [self.ioc_stuffAPIProvider postUploadInfoWithImages:uploadInfo successHandler:^(id result) {
-                [[uploadManager uploadingStuff] removeObject:uploadInfo];
-                [uploadManager reloadDelegate];
-            } errorHandler:^(NSError *error) {
-                [[uploadManager uploadingStuff] removeObject:uploadInfo];
-                [uploadManager reloadDelegate];
-            } progress:^(double finished) {
-                [[weakSelf backToListTransaction] perform];
-                uploadInfo.uploadProgress = [NSNumber numberWithDouble:finished];
-            }];
-
+            [self.backToSlefTransaction perform];
+            [self showDoneButton];
+            self.arrayOfImages = arrayOfImages;
+            [self unableUploadButtons];
         }];
     }
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if(textField == self.priceField){
+        [self.view endEditing:YES];
+    } else {
+        [[self.view viewWithTag:textField.tag+1] becomeFirstResponder];
+        return YES;
+    }
+    return YES;
+}
+
 
 @end

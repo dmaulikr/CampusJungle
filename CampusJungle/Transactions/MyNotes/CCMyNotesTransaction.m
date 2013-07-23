@@ -10,7 +10,7 @@
 #import "CCMyNotesViewController.h"
 #import "CCCreateNotesTransaction.h"
 #import "CCNoteDetailTransaction.h"
-#import "CCBackToListTransaction.h"
+#import "CCBackToControllerTransaction.h"
 
 @implementation CCMyNotesTransaction
 
@@ -23,7 +23,7 @@
     createNoteTransaction.navigation = self.navigation;
     myNotesController.addNewNoteTransaction = createNoteTransaction;
     
-    CCBackToListTransaction *backToListOfNotes = [CCBackToListTransaction new];
+    CCBackToControllerTransaction *backToListOfNotes = [CCBackToControllerTransaction new];
     backToListOfNotes.navigation = self.navigation;
     backToListOfNotes.listController = myNotesController;
     

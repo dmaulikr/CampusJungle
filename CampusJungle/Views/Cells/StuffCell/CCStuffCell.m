@@ -46,11 +46,11 @@
         [self removeIndicator];
     }
     _cellObject = cellObject;
-    CCStuff *note = cellObject;
+    CCStuff *stuff = cellObject;
     
-    self.noteDescription.text = note.description;
-    if(note.thumbnailRetina.length){
-        NSString *thumbURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,note.thumbnailRetina];
+    self.noteDescription.text = stuff.name;
+    if(stuff.thumbnailRetina.length){
+        NSString *thumbURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,stuff.thumbnailRetina];
         [self.thumbImage setImageWithURL:[NSURL URLWithString:thumbURL]];
     } else {
         self.thumbImage.image = [UIImage imageNamed:@"stuff_placeholder_icon_active"];
@@ -76,6 +76,11 @@
 - (void)removeIndicator
 {
     self.indicator.hidden = YES;
+}
+
++ (CGFloat)heightForCellWithObject:(id)object
+{
+    return 50.;
 }
 
 

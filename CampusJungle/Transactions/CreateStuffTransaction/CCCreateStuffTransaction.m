@@ -9,7 +9,7 @@
 #import "CCCreateStuffTransaction.h"
 #import "CCStuffCreationController.h"
 #import "CCImagesUploadingScreenTransaction.h"
-
+#import "CCBackToControllerTransaction.h"
 #import "CCDropboxImagesSelectionTransaction.h"
 
 
@@ -21,9 +21,16 @@
 
     CCStuffCreationController *stuffCreationController = [CCStuffCreationController new];
     stuffCreationController.backToListTransaction = self.backToListTransaction;
+    
+    CCBackToControllerTransaction *backToControllerTransaction = [CCBackToControllerTransaction new];
+    backToControllerTransaction.navigation = self.navigation;
+    backToControllerTransaction.listController = stuffCreationController;
+    stuffCreationController.backToSlefTransaction = backToControllerTransaction;
+    
     CCDropboxImagesSelectionTransaction *dropboxSelection = [CCDropboxImagesSelectionTransaction new];
+    
     dropboxSelection.navigation = self.navigation;
-    dropboxSelection.backToListTransaction = self.backToListTransaction;
+    dropboxSelection.backToListTransaction = backToControllerTransaction;
     
     CCImagesUploadingScreenTransaction *imagesUploadTransaction = [CCImagesUploadingScreenTransaction new];
     

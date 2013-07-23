@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CCTableCellProtocol.h"
+#import "CCBaseCell.h"
 
-@interface CCImageCell : UITableViewCell<CCTableCellProtocol>
+@interface CCImageCell : CCBaseCell<CCTableCellProtocol>
 
 @property (nonatomic, strong) id cellObject;
 

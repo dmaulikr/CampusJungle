@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) NSString *collegeID;
 @property (nonatomic, strong) NSString *stuffID;
+@property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *stuffDescription;
 @property (nonatomic, strong) NSNumber *price;
 @property (nonatomic, strong) NSString *thumbnail;

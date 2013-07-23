@@ -12,6 +12,7 @@
 @interface CCNote : NSObject <CCRestKitMappableModel>
 
 @property (nonatomic, strong) NSString *noteID;
+@property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *ownerID;
 @property (nonatomic, strong) NSNumber *collegeID;
 @property (nonatomic, strong) NSString *noteDescription;

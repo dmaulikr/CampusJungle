@@ -77,7 +77,7 @@
 - (void)dropboxLinked
 {
     if(![self.ioc_dropboxAPI isLinked]){
-        [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:CCAlertsMessages.dropboxLinkingFaild];
+        [self.backToListTransaction perform];
     } else {
         [self.ioc_dropboxAPI createRestCliet];
         [self loadTable];

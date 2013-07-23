@@ -9,7 +9,7 @@
 #import "CCProfessorUploadsTransaction.h"
 #import "CCProfessorUploadsController.h"
 #import "CCAddProfessorUploadsTransaction.h"
-#import "CCBackToListTransaction.h"
+#import "CCBackToControllerTransaction.h"
 #import "CCViewPDFTransaction.h"
 
 @implementation CCProfessorUploadsTransaction
@@ -20,7 +20,7 @@
     CCProfessorUploadsController *professorUploads = [CCProfessorUploadsController new];
     
     CCAddProfessorUploadsTransaction *addProfessorUploadsTransaction = [CCAddProfessorUploadsTransaction new];
-    CCBackToListTransaction *backToListTransaction = [CCBackToListTransaction new];
+    CCBackToControllerTransaction *backToListTransaction = [CCBackToControllerTransaction new];
     
     CCViewPDFTransaction *viewPdfTransaction = [CCViewPDFTransaction new];
     viewPdfTransaction.navigation = self.navigation;

@@ -92,6 +92,7 @@
 {
     return @{
       @"id" : @"noteID",
+      @"name" : @"name",
       @"owner_id" : @"ownerID",
       @"college_id" : @"collegeID",
       @"class_id" : @"classID",
@@ -110,6 +111,7 @@
 {
     return @{
       @"classID" : @"class_id",
+      @"name" : @"name",
       @"noteDescription" : @"description",
       @"price" : @"price",
       @"fullPrice" : @"full_access_price",

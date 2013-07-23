@@ -48,7 +48,7 @@
     _cellObject = cellObject;
     CCNote *note = (CCNote *)cellObject;
    
-    self.noteDescription.text = note.description;
+    self.noteDescription.text = note.name;
     if(note.thumbnailRetina.length){
         NSString *thumbURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,note.thumbnailRetina];
         [self.thumbImage setImageWithURL:[NSURL URLWithString:thumbURL]];
@@ -76,6 +76,11 @@
 - (void)removeIndicator
 {
     self.indicator.hidden = YES;
+}
+
++ (CGFloat)heightForCellWithObject:(id)object
+{
+    return 50.;
 }
 
 @end

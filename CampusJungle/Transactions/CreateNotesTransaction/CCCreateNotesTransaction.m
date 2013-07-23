@@ -12,6 +12,7 @@
 #import "CCSelectPdfFromDropboxTransaction.h"
 #import "CCImagesUploadingScreenTransaction.h"
 #import "CCUploadImagesController.h"
+#import "CCBackToControllerTransaction.h"
 
 @implementation CCCreateNotesTransaction
 
@@ -22,6 +23,12 @@
     
     CCCreateNoteViewController *createNotesController = [CCCreateNoteViewController new];
     createNotesController.backToListTransaction = self.backToListTransaction;
+    
+    CCBackToControllerTransaction *backToSelfTransaction = [CCBackToControllerTransaction new];
+    backToSelfTransaction.navigation = self.navigation;
+    backToSelfTransaction.listController = createNotesController;
+    createNotesController.backToSelfController = backToSelfTransaction;
+    
     CCImagesUploadingScreenTransaction *imagesUploadTransaction = [CCImagesUploadingScreenTransaction new];
     imagesUploadTransaction.uploadImagesControllerClass = [CCUploadImagesController class];
     imagesUploadTransaction.naviation = self.navigation;
@@ -29,7 +36,7 @@
     createNotesController.imagesUploadTransaction = imagesUploadTransaction;
     
     CCDropboxImagesSelectionTransaction *dropboxImagesTransaction = [CCDropboxImagesSelectionTransaction new];
-    dropboxImagesTransaction.backToListTransaction = self.backToListTransaction;
+    dropboxImagesTransaction.backToListTransaction = backToSelfTransaction;
     dropboxImagesTransaction.navigation = self.navigation;
     createNotesController.imagesDropboxUploadTransaction = dropboxImagesTransaction;
     

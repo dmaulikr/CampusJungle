@@ -69,4 +69,9 @@
     }];
 }
 
+- (BOOL)isNeedToLeftSelected
+{
+    return NO;
+}
+
 @end

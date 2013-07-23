@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCBackToListTransaction.h"
+#import "CCBackToControllerTransaction.h"
 
-@implementation CCBackToListTransaction
+@implementation CCBackToControllerTransaction
 
 - (void)perform
 {
