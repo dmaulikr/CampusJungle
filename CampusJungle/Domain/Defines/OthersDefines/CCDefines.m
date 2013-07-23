@@ -82,7 +82,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .loadAnnouncements = @"/api/classes/%@/announcements",
     .postAnnouncements = @"/api/classes/%@/announcements",
     .deleteAnouncements = @"/api/announcements/%@",
-    
+    .deleteMessage = @"/api/messages/%@",
 };
 
 const struct CCUserDefines CCUserDefines = {

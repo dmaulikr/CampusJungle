@@ -47,4 +47,17 @@
     [self loadItemsWithParams:params path:CCAPIDefines.loadMyMessages successHandler:successHandler errorHandler:errorHandler];
 }
 
+- (void)deleteMessageWithId:(NSString *)messageId successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    [self setAuthorizationToken];
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.deleteMessage, messageId];
+    
+    [objectManager deleteObject:nil path:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        successHandler(mappingResult);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        errorHandler(error);
+    }];
+}
+
 @end

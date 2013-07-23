@@ -80,6 +80,7 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *loadAnnouncements;
     __unsafe_unretained NSString *postAnnouncements;
     __unsafe_unretained NSString *deleteAnouncements;
+    __unsafe_unretained NSString *deleteMessage;
 } CCAPIDefines;
 
 

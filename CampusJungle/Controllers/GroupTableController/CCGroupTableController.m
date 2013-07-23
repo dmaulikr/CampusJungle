@@ -14,6 +14,7 @@
 #import "CCAlertHelper.h"
 #import "CCLocation.h"
 #import "CCGroup.h"
+#import "CCMessage.h"
 #import "CCButtonsHelper.h"
 #import "CCGroupTabbarDelegate.h"
 
@@ -30,11 +31,12 @@
 #import "CCStandardErrorHandler.h"
 #import "CCLocationsApiProviderProtocol.h"
 #import "CCForumsApiProviderProtocol.h"
+#import "CCMessageAPIProviderProtocol.h"
 
 static const NSInteger kTabbarHeight = 52;
 static const NSInteger kNavBarHeight = 44;
 
-@interface CCGroupTableController () <CCGroupTabbarDelegate, CCLocationDataProviderDelegate, CCLocationCellDelegate, CCForumCellDelegate>
+@interface CCGroupTableController () <CCGroupTabbarDelegate, CCLocationDataProviderDelegate, CCLocationCellDelegate, CCForumCellDelegate, CCMessageCellDelegate>
 
 @property (nonatomic, weak) IBOutlet UIView *sectionHeaderView;
 @property (nonatomic, weak) IBOutlet UIButton *addButton;
@@ -51,6 +53,7 @@ static const NSInteger kNavBarHeight = 44;
 
 @property (nonatomic, strong) id<CCLocationsApiProviderProtocol> ioc_locationsApiProvider;
 @property (nonatomic, strong) id<CCForumsApiProviderProtocol> ioc_forumsApiProvider;
+@property (nonatomic, strong) id<CCMessageAPIProviderProtocol> ioc_messagesApiProvider;
 
 @property (nonatomic, strong) NSMutableArray *locationsArray;
 @property (nonatomic, assign) CGPoint tableViewContentOffsetBeforeReload;
@@ -243,6 +246,21 @@ static const NSInteger kNavBarHeight = 44;
         [weakSelf.ioc_forumsApiProvider deleteForum:forum successHandler:^(RKMappingResult *object) {
             [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteForum duration:CCProgressHudsConstants.loaderDuration];
             [weakSelf.forumsProvider loadItems];
+        } errorHandler:^(NSError *error) {
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
+    }];
+}
+
+#pragma mark -
+#pragma mark CCMessageCellDelegate
+- (void)deleteMessage:(CCMessage *)message
+{
+    __weak CCGroupTableController *weakSelf = self;
+    [CCAlertHelper showWithMessage:CCAlertsMessages.deleteMessage success:^{
+        [weakSelf.ioc_messagesApiProvider deleteMessageWithId:message.messageID successHandler:^(RKMappingResult *result) {
+            [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteMessage duration:CCProgressHudsConstants.loaderDuration];
+            [weakSelf.messagesProvider loadItems];
         } errorHandler:^(NSError *error) {
             [CCStandardErrorHandler showErrorWithError:error];
         }];

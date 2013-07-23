@@ -40,6 +40,7 @@ const struct CCAlertsMessages CCAlertsMessages = {
     .noSelectedItems = @"Select some items first",
     .leaveGroup = @"Are you sure that you want to leave group?",
     .deleteGroup = @"Are you sure that you want to delete group?",
+    .deleteMessage = @"Are you sure you want to delete message?"
 };
 
 const struct CCAlertsButtons CCAlertsButtons = {
