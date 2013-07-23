@@ -39,6 +39,7 @@ extern const struct CCAlertsMessages {
     __unsafe_unretained NSString *leaveGroup;
     __unsafe_unretained NSString *deleteGroup;
     __unsafe_unretained NSString *deleteMessage;
+    __unsafe_unretained NSString *deleteNote;
 } CCAlertsMessages;
 
 extern const struct CCAlertsButtons {

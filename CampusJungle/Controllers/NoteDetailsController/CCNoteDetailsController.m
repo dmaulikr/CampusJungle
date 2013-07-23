@@ -16,6 +16,7 @@
 #import "GIAlert.h"
 #import "CCReviewsDataProvider.h"
 #import "CCReviewCell.h"
+#import "CCAlertHelper.h"
 
 @interface CCNoteDetailsController ()
 
@@ -89,6 +90,8 @@
     [self.fullAccessButton setTitle:fullAccessTitle forState:UIControlStateNormal];
 }
 
+#pragma mark -
+#pragma mark Actions
 - (IBAction)viewPDFButtonDidPressed
 {
     [self.ioc_notesAPIProvider fetchAttachmentURLForNoteWithID:self.note.noteID successHandler:^(id result){
@@ -148,10 +151,13 @@
 
 - (IBAction)removeNoteButtonDidPressed
 {
-    [self.ioc_notesAPIProvider removeNoteWithID:self.note.noteID successHandler:^(id result) {
-        [self.backToListTransaction perform];
-    } errorHandler:^(NSError *error) {
-        [CCStandardErrorHandler showErrorWithError:error];
+    __weak CCNoteDetailsController *weakSelf = self;
+    [CCAlertHelper showWithMessage:CCAlertsMessages.deleteNote success:^{
+        [weakSelf.ioc_notesAPIProvider removeNoteWithID:self.note.noteID successHandler:^(id result) {
+            [weakSelf.backToListTransaction perform];
+        } errorHandler:^(NSError *error) {
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
     }];
 }
 
