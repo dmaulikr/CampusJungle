@@ -24,6 +24,14 @@
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
 @property (nonatomic, strong) CCForum *forum;
 
+@property (nonatomic, weak) IBOutlet UIButton *imageDropboxButton;
+@property (nonatomic, weak) IBOutlet UIButton *pdfDropboxButton;
+@property (nonatomic, weak) IBOutlet UIButton *imageButton;
+
+@property (nonatomic, strong) NSString *pdfURL;
+@property (nonatomic, strong) NSArray *arrayOfURLs;
+@property (nonatomic, strong) NSArray *arrayOfImages;
+
 @end
 
 @implementation CCAddQuestionViewController
@@ -48,10 +56,18 @@
 - (void)addButtonDidPressed:(id)sender
 {
     if ([self validInputData]) {
-        CCQuestion *question = [CCQuestion new];
-        question.text = self.questionTextView.text;
-        question.forumId = self.forum.forumId;
-        [self addQuestion:question];
+        CCQuestion *question = [self prepareQuestion];
+        if(self.pdfURL){
+            question.pdfUrl = self.pdfURL;
+            [self uploadQuestion:question];
+        } else if(self.arrayOfURLs){
+            question.arrayOfImageUrls = self.arrayOfURLs;
+            [self uploadQuestion:question];
+        } else if(self.arrayOfImages){
+            [self uploadQuestionWithImages:question];
+        } else {
+           [self uploadQuestion:question]; 
+        }
     }
 }
 
@@ -68,41 +84,53 @@
     return question;
 }
 
+- (void)uploadQuestionWithImages:(CCQuestion *)question
+{
+    __weak id weakSelf = self;
+    id <CCUploadProcessManagerProtocol> uploadManager = self.ioc_uploadManager;
+    [[uploadManager uploadingQuestions] addObject:question];
+    [self.ioc_questionAPIProvider postUploadInfoWithImages:question
+                                                withImages:self.arrayOfImages successHandler:^(id result) {
+                                                    [[uploadManager uploadingQuestions] removeObject:question];
+                                                    [uploadManager reloadDelegate];
+                                                } errorHandler:^(NSError *error) {
+                                                    [[uploadManager uploadingQuestions] removeObject:question];
+                                                    [uploadManager reloadDelegate];
+                                                    [CCStandardErrorHandler showErrorWithError:error];
+                                                } progress:^(double finished) {
+                                                    [[weakSelf backToListTransaction] perform];
+                                                    question.uploadProgress = [NSNumber numberWithDouble:finished];
+                                                }];
+
+}
+
+- (void)uploadQuestion:(CCQuestion *)question
+{
+    [self.ioc_questionAPIProvider postQuestion:question successHandler:^(RKMappingResult *result) {
+        [self.backToListTransaction perform];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
+}
+
 - (IBAction)uploadPhotosButtonDidPressed:(id)sender
 {
     if ([self validInputData]) {
         [self.imagesUploadTransaction performWithObject:^(NSArray *arrayOfImages){
-            CCQuestion *question = [self prepareQuestion];
-            __weak id weakSelf = self;
-            id <CCUploadProcessManagerProtocol> uploadManager = self.ioc_uploadManager;
-            [[uploadManager uploadingQuestions] addObject:question];
-            [self.ioc_questionAPIProvider postUploadInfoWithImages:question
-                                                    withImages:arrayOfImages successHandler:^(id result) {
-                                    [[uploadManager uploadingQuestions] removeObject:question];
-                                                         [uploadManager reloadDelegate];
-                                                    } errorHandler:^(NSError *error) {
-                                                        [[uploadManager uploadingQuestions] removeObject:question];
-                                                        [uploadManager reloadDelegate];
-                                                        [CCStandardErrorHandler showErrorWithError:error];
-                                                    } progress:^(double finished) {
-                                                        [[weakSelf backToListTransaction] perform];
-                                                        question.uploadProgress = [NSNumber numberWithDouble:finished];
-                                                    }];
-            }];
-        }
+            self.arrayOfImages = arrayOfImages;
+            [self.backToSelfController perform];
+            [self unableUploadButtons];
+        }];
+    }
 }
 
 - (IBAction)uploadImagesFromDropboxButtonDidPressed:(id)sender
 {
     if ([self validInputData]) {
         [self.imagesDropboxUploadTransaction performWithObject:^(NSArray *arrayOfUrls){
-            CCQuestion *question = [self prepareQuestion];
-            question.arrayOfImageUrls = arrayOfUrls;
-            [self.ioc_questionAPIProvider postQuestion:question successHandler:^(RKMappingResult *result) {
-            [self.backToListTransaction perform];
-            } errorHandler:^(NSError *error) {
-                [CCStandardErrorHandler showErrorWithError:error];
-            }];
+            self.arrayOfURLs = arrayOfUrls;
+            [self.backToSelfController perform];
+            [self unableUploadButtons];
         }];
     }
 }
@@ -111,13 +139,9 @@
 {
     if([self validInputData]){
         [self.pdfDropboxUploadTransaction performWithObject:^(NSArray *arrayOfUrls){
-            CCQuestion *question = [self prepareQuestion];
-            question.pdfUrl = arrayOfUrls.lastObject;
-            [self.ioc_questionAPIProvider postQuestion:question successHandler:^(RKMappingResult *result) {
-                [self.backToListTransaction perform];
-            } errorHandler:^(NSError *error) {
-                [CCStandardErrorHandler showErrorWithError:error];
-            }];
+            self.pdfURL = arrayOfUrls.lastObject;
+            [self.backToSelfController perform];
+            [self unableUploadButtons];
         }];
     }
 }
@@ -158,5 +182,11 @@
     }];
 }
 
+- (void)unableUploadButtons
+{
+    self.imageButton.enabled = NO;
+    self.imageDropboxButton.enabled = NO;
+    self.pdfDropboxButton.enabled = NO;
+}
 
 @end

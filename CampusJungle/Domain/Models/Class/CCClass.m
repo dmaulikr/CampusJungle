@@ -17,7 +17,7 @@
 
 - (NSString *)description
 {
-    return self.subject;
+    return self.className;
 }
 
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager

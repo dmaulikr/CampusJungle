@@ -13,7 +13,6 @@
 - (void)perform
 {
     NSParameterAssert(self.navigation);
-    NSParameterAssert(self.targetController);
     
     if([self.navigation.viewControllers containsObject:self.targetController]){
         [self.navigation popToViewController:self.targetController animated:YES];

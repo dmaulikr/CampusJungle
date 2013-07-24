@@ -42,7 +42,7 @@
     
     CCSelectPdfFromDropboxTransaction *dropboxPDFTransaction = [CCSelectPdfFromDropboxTransaction new];
     dropboxPDFTransaction.navigation = self.navigation;
-    dropboxPDFTransaction.backToListTransaction = self.backToListTransaction;
+    dropboxPDFTransaction.backToListTransaction = backToSelfTransaction;
     createNotesController.pdfDropboxUploadTransaction = dropboxPDFTransaction;
     
     [self.navigation pushViewController:createNotesController animated:YES];

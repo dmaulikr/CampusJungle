@@ -12,6 +12,7 @@
 #import "CCSelectPdfFromDropboxTransaction.h"
 #import "CCImagesUploadingScreenTransaction.h"
 #import "CCUploadImagesController.h"
+#import "CCBackToControllerTransaction.h"
 
 @implementation CCAddQuestionTransaction
 
@@ -31,6 +32,14 @@
     dropboxPDFTransaction.navigation = self.navigation;
     
     CCAddQuestionViewController *addQuestionController = [CCAddQuestionViewController new];
+    
+    CCBackToControllerTransaction *backToUploadTransaction = [CCBackToControllerTransaction new];
+    backToUploadTransaction.navigation = self.navigation;
+    backToUploadTransaction.targetController = addQuestionController;
+    
+    addQuestionController.backToSelfController = backToUploadTransaction;
+    dropboxImagesTransaction.backToListTransaction = backToUploadTransaction;
+    dropboxPDFTransaction.backToListTransaction = backToUploadTransaction;
     
     addQuestionController.imagesDropboxUploadTransaction = dropboxImagesTransaction;
     addQuestionController.imagesUploadTransaction = imagesUploadTransaction;

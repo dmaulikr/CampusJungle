@@ -13,6 +13,6 @@
 @interface CCBackToControllerTransaction : NSObject <CCTransaction>
 
 @property (nonatomic, strong) UINavigationController *navigation;
-@property (nonatomic, strong) CCBaseViewController *targetController;
+@property (nonatomic, weak) CCBaseViewController *targetController;
 
 @end
