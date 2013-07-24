@@ -24,6 +24,8 @@
 
 - (void)showWithTitle:(NSString *)title takePhotoButtonTitle:(NSString *)takePhotoButtonTitle takeFromGalleryButtonTitle:(NSString *)takeFromGalleryButtonTitle
 {
+    UIViewController *mainController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    [mainController.view endEditing:YES];
     self.takePhotoButtonTitle = takePhotoButtonTitle ? takePhotoButtonTitle : CCAvatarActionSheetButtonsTitles.takePhotoButtonTitle;
     self.takeFromGalleryButtonTitle = takeFromGalleryButtonTitle ? takeFromGalleryButtonTitle : CCAvatarActionSheetButtonsTitles.selectFromGalleryButtonTitle;
     self.actionSheet = [[CCBaseActionSheet alloc] initWithTitle:title buttonsArray:[self buttonsArray]];
