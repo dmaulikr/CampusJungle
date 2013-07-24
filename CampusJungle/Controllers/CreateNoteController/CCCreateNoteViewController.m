@@ -202,7 +202,7 @@
 {
     if([self isFieldsValid]){
         [self.imagesDropboxUploadTransaction performWithObject:^(NSArray *arrayOfUrls){
-            [self.navigationController popToViewController:self animated:YES];
+            [self.backToSelfController perform];
             [self showDoneButton];
             self.arrayOfURLs = arrayOfUrls;
             [self unableUploadButtons];
@@ -225,7 +225,6 @@
 - (IBAction)UploadPhotosDidPressed
 {
     if([self isFieldsValid]){
-        
         [self.imagesUploadTransaction performWithObject:^(NSArray *arrayOfImages){
             [self.backToSelfController perform];
             [self showDoneButton];

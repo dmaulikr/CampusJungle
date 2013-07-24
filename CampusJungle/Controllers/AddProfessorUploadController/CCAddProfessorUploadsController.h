@@ -18,5 +18,6 @@
 @property (nonatomic, strong) id <CCTransactionWithObject> pdfDropboxUploadTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> imagesUploadTransaction;
 @property (nonatomic, strong) id <CCTransaction> backToListTransaction;
+@property (nonatomic, strong) id <CCTransaction> backToSelfTransaction;
 
 @end
