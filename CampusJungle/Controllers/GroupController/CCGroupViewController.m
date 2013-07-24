@@ -162,6 +162,11 @@
     [self.addForumTransaction performWithObject:self.group];
 }
 
+- (void)addGroupmates
+{
+    [self.sendGroupInviteTransaction performWithObject:self.group];
+}
+
 - (void)sendGroupMessage
 {
     [self.groupMessageTransaction performWithObject:self.group];

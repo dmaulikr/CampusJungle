@@ -232,6 +232,9 @@
 		7012ACA617957C4B002DA5E9 /* CCLoadPreviousItemsSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7012ACA517957C4B002DA5E9 /* CCLoadPreviousItemsSectionHeader.xib */; };
 		7022F4991786C7100055221C /* SelectionBackGround@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE2178454C200E54EFC /* SelectionBackGround@2x.png */; };
 		7022F49A1786C7110055221C /* SelectionBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE3178454C200E54EFC /* SelectionBackGround.png */; };
+		70256325179FD71100B48AA2 /* CCGroupInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70256323179FD71100B48AA2 /* CCGroupInviteViewController.m */; };
+		70256326179FD71100B48AA2 /* CCGroupInviteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70256324179FD71100B48AA2 /* CCGroupInviteViewController.xib */; };
+		7025632A179FD75D00B48AA2 /* CCSendGroupInviteTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70256329179FD75D00B48AA2 /* CCSendGroupInviteTransaction.m */; };
 		703DA4DD178B455600464DD3 /* CCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4DC178B455600464DD3 /* CCLocation.m */; };
 		703DA4E2178B457200464DD3 /* CCLocationsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4E0178B457200464DD3 /* CCLocationsDataProvider.m */; };
 		703DA4F0178C3D3C00464DD3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 703DA4EE178C3D3000464DD3 /* MapKit.framework */; };
@@ -914,6 +917,11 @@
 		7012ACA217957C37002DA5E9 /* CCLoadPreviousItemsSectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLoadPreviousItemsSectionHeader.h; sourceTree = "<group>"; };
 		7012ACA317957C37002DA5E9 /* CCLoadPreviousItemsSectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLoadPreviousItemsSectionHeader.m; sourceTree = "<group>"; };
 		7012ACA517957C4B002DA5E9 /* CCLoadPreviousItemsSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCLoadPreviousItemsSectionHeader.xib; sourceTree = "<group>"; };
+		70256322179FD71100B48AA2 /* CCGroupInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupInviteViewController.h; sourceTree = "<group>"; };
+		70256323179FD71100B48AA2 /* CCGroupInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupInviteViewController.m; sourceTree = "<group>"; };
+		70256324179FD71100B48AA2 /* CCGroupInviteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupInviteViewController.xib; sourceTree = "<group>"; };
+		70256328179FD75D00B48AA2 /* CCSendGroupInviteTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSendGroupInviteTransaction.h; sourceTree = "<group>"; };
+		70256329179FD75D00B48AA2 /* CCSendGroupInviteTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSendGroupInviteTransaction.m; sourceTree = "<group>"; };
 		703DA4DB178B455600464DD3 /* CCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocation.h; sourceTree = "<group>"; };
 		703DA4DC178B455600464DD3 /* CCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocation.m; sourceTree = "<group>"; };
 		703DA4DF178B457200464DD3 /* CCLocationsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationsDataProvider.h; sourceTree = "<group>"; };
@@ -2303,6 +2311,25 @@
 			path = LoadPreviousItemsSectionHeader;
 			sourceTree = "<group>";
 		};
+		70256321179FD70200B48AA2 /* GroupInviteController */ = {
+			isa = PBXGroup;
+			children = (
+				70256322179FD71100B48AA2 /* CCGroupInviteViewController.h */,
+				70256323179FD71100B48AA2 /* CCGroupInviteViewController.m */,
+				70256324179FD71100B48AA2 /* CCGroupInviteViewController.xib */,
+			);
+			path = GroupInviteController;
+			sourceTree = "<group>";
+		};
+		70256327179FD74900B48AA2 /* SendGroupInviteTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				70256328179FD75D00B48AA2 /* CCSendGroupInviteTransaction.h */,
+				70256329179FD75D00B48AA2 /* CCSendGroupInviteTransaction.m */,
+			);
+			path = SendGroupInviteTransaction;
+			sourceTree = "<group>";
+		};
 		703DA4DA178B455600464DD3 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -2431,6 +2458,7 @@
 				70A29C7A178778AB001BC8DD /* EducationCreationController */,
 				70A29C7E178778AB001BC8DD /* FilterController */,
 				70FDD624179D242100871727 /* GroupController */,
+				70256321179FD70200B48AA2 /* GroupInviteController */,
 				70FDD657179DC07900871727 /* GroupMessage */,
 				70FDD64C179D4D4B00871727 /* GroupTabbarController */,
 				70FDD645179D48AE00871727 /* GroupTableController */,
@@ -3772,6 +3800,7 @@
 				70B2D16717944894001B0C2C /* SelectPdfFromDropbox */,
 				70B2D16A17944894001B0C2C /* SelectUserClassmatesTransaction */,
 				70B2D16D17944894001B0C2C /* SelectUserGroupsTransaction */,
+				70256327179FD74900B48AA2 /* SendGroupInviteTransaction */,
 				70B2D17017944894001B0C2C /* ShowLocationsTransaction */,
 				70B2D17317944894001B0C2C /* ShowNotesForClassTransaction */,
 				70B2D17617944894001B0C2C /* SignupTransaction */,
@@ -5769,6 +5798,7 @@
 				D38532ED179DDA470075F870 /* CCAnnouncementCell.xib in Resources */,
 				70FDD65C179DC08E00871727 /* CCGroupMessageViewController.xib in Resources */,
 				70FDD666179E786C00871727 /* CCEditGroupViewController.xib in Resources */,
+				70256326179FD71100B48AA2 /* CCGroupInviteViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6120,6 +6150,8 @@
 				70FDD66E179E93C300871727 /* CCProcessingMessages.m in Sources */,
 				D38532F3179DED210075F870 /* NSString+CCValidationHelper.m in Sources */,
 				70FDD676179ECE8F00871727 /* NSDateFormatter+Locale.m in Sources */,
+				70256325179FD71100B48AA2 /* CCGroupInviteViewController.m in Sources */,
+				7025632A179FD75D00B48AA2 /* CCSendGroupInviteTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,6 +18,7 @@
 - (void)showDetailsOfGroupMessage:(CCMessage *)message;
 - (void)addLocation;
 - (void)addForum;
+- (void)addGroupmates;
 - (void)sendGroupMessage;
 
 @end
