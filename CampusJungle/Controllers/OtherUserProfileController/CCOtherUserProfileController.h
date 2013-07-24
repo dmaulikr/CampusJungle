@@ -8,9 +8,10 @@
 
 #import "CCBaseViewController.h"
 #import "CCUser.h"
+#import "CCTableBaseViewController.h"
 #import "CCTransactionWithObject.h"
 
-@interface CCOtherUserProfileController : CCBaseViewController
+@interface CCOtherUserProfileController : CCTableBaseViewController
 
 @property (nonatomic, strong) CCUser *currentUser;
 @property (nonatomic, strong) id <CCTransactionWithObject> sendMessageTransaction;
