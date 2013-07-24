@@ -51,4 +51,9 @@
     return view.frame.origin.y + view.frame.size.height;
 }
 
++ (CGFloat)rightSideOfView:(UIView *)view
+{
+    return view.frame.origin.x + view.frame.size.width;
+}
+
 @end

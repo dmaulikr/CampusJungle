@@ -85,6 +85,11 @@ const struct CCAPIDefines CCAPIDefines = {
     .deleteAnouncements = @"/api/announcements/%@",
     .deleteMessage = @"/api/messages/%@",
     .sendGroupInvite = @"/api/groups/%@/invites",
+    .loadGroupInvites = @"/api/users/me/group_invites",
+    .resendGroupInvite = @"/api/group_invites/%@/resend",
+    .acceptGroupInvite = @"/api/group_invites/%@/accept",
+    .rejectGroupInvite = @"/api/group_invites/%@/reject",
+    .deleteGroupInvite = @"/api/group_invites/%@",
 };
 
 const struct CCUserDefines CCUserDefines = {
