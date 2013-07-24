@@ -102,4 +102,20 @@
     }];
 }
 
+- (void)loadClassmatesToInviteInGroup:(CCGroup *)group pageNumber:(NSNumber *)pageNumber successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [self setAuthorizationToken];
+    
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    [params setObject:pageNumber.stringValue forKey:@"page_number"];
+    
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.loadClassmatesToInviteInGroup, group.groupId];
+    [objectManager getObjectsAtPath:path parameters:params success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        successHandler(mappingResult.firstObject);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        errorHandler(error);
+    }];
+}
+
 @end

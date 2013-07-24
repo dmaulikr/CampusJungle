@@ -79,10 +79,12 @@ const struct CCAPIDefines CCAPIDefines = {
     .leaveGroup = @"/api/groups/%@/leave",
     .destroyGroup = @"/api/groups/%@",
     .loadGroupMembers = @"/api/groups/%@/members",
+    .loadClassmatesToInviteInGroup = @"/api/groups/%@/classmates_to_invite",
     .loadAnnouncements = @"/api/classes/%@/announcements",
     .postAnnouncements = @"/api/classes/%@/announcements",
     .deleteAnouncements = @"/api/announcements/%@",
     .deleteMessage = @"/api/messages/%@",
+    .sendGroupInvite = @"/api/groups/%@/invites",
 };
 
 const struct CCUserDefines CCUserDefines = {

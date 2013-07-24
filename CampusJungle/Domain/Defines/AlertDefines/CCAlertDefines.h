@@ -76,6 +76,7 @@ extern const struct CCValidationMessages {
     __unsafe_unretained NSString *emptyUploadText;
     __unsafe_unretained NSString *emptyTopic;
     __unsafe_unretained NSString *emptyMessageText;
+    __unsafe_unretained NSString *noUsersSelected;
     
 } CCValidationMessages;
 
