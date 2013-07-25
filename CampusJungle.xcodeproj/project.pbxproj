@@ -512,6 +512,9 @@
 		70B2D26B17944F80001B0C2C /* CCQuestionsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D26A17944F80001B0C2C /* CCQuestionsDataProvider.m */; };
 		70B2D26F179456D9001B0C2C /* CCUserNameHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D26E179456D9001B0C2C /* CCUserNameHelper.m */; };
 		70C0FCB6178484D0005EF95E /* UITextField+InsetFixing.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C0FCB5178484D0005EF95E /* UITextField+InsetFixing.m */; };
+		70DA30CD17A12D56004EE6DC /* CCStuffCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DA30CC17A12D56004EE6DC /* CCStuffCollectionViewDataSource.m */; };
+		70DA30D117A12F19004EE6DC /* CCStuffHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DA30D017A12F19004EE6DC /* CCStuffHeader.m */; };
+		70DA30D317A12F3C004EE6DC /* CCStuffHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70DA30D217A12F3C004EE6DC /* CCStuffHeader.xib */; };
 		70F42A7B178D5A2900E763F3 /* CCForumsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F42A7A178D5A2900E763F3 /* CCForumsDataProvider.m */; };
 		70F42A7E178D5A3800E763F3 /* CCGroupsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F42A7D178D5A3800E763F3 /* CCGroupsDataProvider.m */; };
 		70FDD628179D243800871727 /* CCGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FDD626179D243800871727 /* CCGroupViewController.m */; };
@@ -1445,6 +1448,11 @@
 		70B2D26E179456D9001B0C2C /* CCUserNameHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUserNameHelper.m; sourceTree = "<group>"; };
 		70C0FCB4178484D0005EF95E /* UITextField+InsetFixing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+InsetFixing.h"; sourceTree = "<group>"; };
 		70C0FCB5178484D0005EF95E /* UITextField+InsetFixing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+InsetFixing.m"; sourceTree = "<group>"; };
+		70DA30CB17A12D56004EE6DC /* CCStuffCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStuffCollectionViewDataSource.h; sourceTree = "<group>"; };
+		70DA30CC17A12D56004EE6DC /* CCStuffCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStuffCollectionViewDataSource.m; sourceTree = "<group>"; };
+		70DA30CF17A12F19004EE6DC /* CCStuffHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStuffHeader.h; sourceTree = "<group>"; };
+		70DA30D017A12F19004EE6DC /* CCStuffHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStuffHeader.m; sourceTree = "<group>"; };
+		70DA30D217A12F3C004EE6DC /* CCStuffHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCStuffHeader.xib; sourceTree = "<group>"; };
 		70F42A79178D5A2900E763F3 /* CCForumsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCForumsDataProvider.h; sourceTree = "<group>"; };
 		70F42A7A178D5A2900E763F3 /* CCForumsDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCForumsDataProvider.m; sourceTree = "<group>"; };
 		70F42A7C178D5A3800E763F3 /* CCGroupsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupsDataProvider.h; sourceTree = "<group>"; };
@@ -2021,6 +2029,7 @@
 				701254261796F38B0085247A /* MarketFilterDataSource */,
 				701254291796F38B0085247A /* SelectableCellsDataSource */,
 				7012542C1796F38B0085247A /* SideMenuDataSource */,
+				70DA30CA17A12D48004EE6DC /* StuffCollectionViewDataSource */,
 				7012542F1796F38B0085247A /* UserEducationsTableDataSource */,
 			);
 			path = DataSources;
@@ -2307,6 +2316,7 @@
 				7012ACA117957C26002DA5E9 /* LoadPreviousItemsSectionHeader */,
 				701253EE179694950085247A /* QuestionHeader */,
 				7012AC9917957C03002DA5E9 /* SideMenuSectionHeader */,
+				70DA30CE17A12EA3004EE6DC /* StuffHeader */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -4808,6 +4818,25 @@
 			path = TextFieldCategory;
 			sourceTree = "<group>";
 		};
+		70DA30CA17A12D48004EE6DC /* StuffCollectionViewDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				70DA30CB17A12D56004EE6DC /* CCStuffCollectionViewDataSource.h */,
+				70DA30CC17A12D56004EE6DC /* CCStuffCollectionViewDataSource.m */,
+			);
+			path = StuffCollectionViewDataSource;
+			sourceTree = "<group>";
+		};
+		70DA30CE17A12EA3004EE6DC /* StuffHeader */ = {
+			isa = PBXGroup;
+			children = (
+				70DA30CF17A12F19004EE6DC /* CCStuffHeader.h */,
+				70DA30D017A12F19004EE6DC /* CCStuffHeader.m */,
+				70DA30D217A12F3C004EE6DC /* CCStuffHeader.xib */,
+			);
+			path = StuffHeader;
+			sourceTree = "<group>";
+		};
 		70F42A77178D5A1C00E763F3 /* ForumsDataProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -5886,6 +5915,7 @@
 				7025634717A01EE700B48AA2 /* arrow_left@2x.png in Resources */,
 				7025634817A01EE700B48AA2 /* arrow_right.png in Resources */,
 				7025634917A01EE700B48AA2 /* arrow_right@2x.png in Resources */,
+				70DA30D317A12F3C004EE6DC /* CCStuffHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6244,6 +6274,8 @@
 				7025633717A003F400B48AA2 /* CCGroupInvitesDataProvider.m in Sources */,
 				7025633B17A0058800B48AA2 /* CCGroupInviteCell.m in Sources */,
 				7025633F17A0063100B48AA2 /* CCGroupInvite.m in Sources */,
+				70DA30CD17A12D56004EE6DC /* CCStuffCollectionViewDataSource.m in Sources */,
+				70DA30D117A12F19004EE6DC /* CCStuffHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,4 +24,6 @@
 
 - (void)getStuffWithID:(NSString *)stuffID successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 
+- (void)deleteStuffWithId:(NSString *)stuffId successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
+
 @end

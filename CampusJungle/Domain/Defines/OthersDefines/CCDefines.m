@@ -45,6 +45,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .postGroupLocation = @"/api/groups/%@/locations",
     .deleteLocation = @"/api/locations/%@",
     .getStuff = @"/api/stuff/%@",
+    .deleteStuff = @"/api/users/me/stuff/%@",
     .getUser = @"/api/users/%@",
     .postMessage = @"/api/messages",
     .loadMyMessages = @"/api/users/me/messages",

@@ -39,9 +39,10 @@
 
 - (void)createNewStuff
 {
-    if([[[self.ioc_userSession currentUser] educations] count]){
+    if ([[[self.ioc_userSession currentUser] educations] count]) {
         [self.createStuffTransaction perform];
-    } else {
+    }
+    else {
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:@"You have to join college first"];
     }
 }

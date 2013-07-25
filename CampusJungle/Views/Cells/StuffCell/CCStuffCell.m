@@ -16,9 +16,13 @@
 #import "CCStuffUploadInfo.h"
 #import "CCStuff.h"
 
-@interface CCStuffCell()<CCUploadIndicatorDelegateProtocol>
+static const NSInteger kCellHeight = 112;
 
-@property (nonatomic, weak) IBOutlet UILabel *noteDescription;
+@interface CCStuffCell() <CCUploadIndicatorDelegateProtocol>
+
+@property (nonatomic, weak) IBOutlet UILabel *priceLabel;
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbImage;
 @property (nonatomic, weak) IBOutlet MACircleProgressIndicator *indicator;
 
@@ -26,33 +30,44 @@
 
 @implementation CCStuffCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (void)awakeFromNib
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        self = [[[NSBundle mainBundle] loadNibNamed:@"CCStuffCell"
-                                              owner:self
-                                            options:nil] objectAtIndex:0];
-        [self setSelectionColor];
-    }
-    return self;
+    [super awakeFromNib];
+    [self setSelectionColor];
 }
 
 - (void)setCellObject:(id)cellObject
 {
-    if([cellObject isKindOfClass:[CCStuffUploadInfo class]]){
+    if ([cellObject isKindOfClass:[CCStuffUploadInfo class]]) {
         [self setUpUploadingIndicatorWithObject:cellObject];
-    } else {
+    }
+    else {
         [self removeIndicator];
     }
-    _cellObject = cellObject;
-    CCStuff *stuff = cellObject;
     
-    self.noteDescription.text = stuff.name;
-    if(stuff.thumbnailRetina.length){
-        NSString *thumbURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,stuff.thumbnailRetina];
+    _cellObject = cellObject;
+    
+    [self fillLabels];
+    [self fillImageView];
+}
+
+- (void)fillLabels
+{
+    CCStuff *stuff = self.cellObject;
+    
+    [self.descriptionLabel setText:stuff.description];
+    [self.nameLabel setText:stuff.name];
+    [self.priceLabel setText:[NSString stringWithFormat:@"Price: %@", stuff.price]];
+}
+
+- (void)fillImageView
+{
+    CCStuff *stuff = self.cellObject;
+    if (stuff.thumbnailRetina.length) {
+        NSString *thumbURL = [NSString stringWithFormat:@"%@%@", CCAPIDefines.baseURL, stuff.thumbnailRetina];
         [self.thumbImage setImageWithURL:[NSURL URLWithString:thumbURL]];
-    } else {
+    }
+    else {
         self.thumbImage.image = [UIImage imageNamed:@"stuff_placeholder_icon_active"];
     }
 }
@@ -60,7 +75,7 @@
 - (void)setUpUploadingIndicatorWithObject:(CCNoteUploadInfo *)object
 {
     self.indicator.color = [UIColor brownColor];
-    if([_cellObject  isKindOfClass:[CCStuffUploadInfo class]]){
+    if ([_cellObject  isKindOfClass:[CCStuffUploadInfo class]]) {
         [(CCStuffUploadInfo *)_cellObject setDelegate:nil];
     }
     object.delegate = self;
@@ -80,7 +95,7 @@
 
 + (CGFloat)heightForCellWithObject:(id)object
 {
-    return 50.;
+    return kCellHeight;
 }
 
 

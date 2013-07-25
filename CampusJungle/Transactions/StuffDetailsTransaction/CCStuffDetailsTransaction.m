@@ -10,6 +10,7 @@
 #import "CCStuffDetailsController.h"
 #import "CCPhotoBrowserTransaction.h"
 #import "CCOfferCreationTransaction.h"
+#import "CCBackTransaction.h"
 
 @implementation CCStuffDetailsTransaction
 
@@ -22,12 +23,16 @@
     
     CCOfferCreationTransaction *offerCreationTransaction = [CCOfferCreationTransaction new];
     offerCreationTransaction.navigation = self.navigation;
-    stuffDetailsController.createOfferTarnasaction = offerCreationTransaction;
     
     CCPhotoBrowserTransaction *photoBrowserTransaction = [CCPhotoBrowserTransaction new];
     photoBrowserTransaction.navigation = self.navigation;
     
+    CCBackTransaction *backTransaction = [CCBackTransaction new];
+    backTransaction.navigation = self.navigation;
+    
     stuffDetailsController.photoBrowserTransaction = photoBrowserTransaction;
+    stuffDetailsController.backTransaction = backTransaction;
+    stuffDetailsController.createOfferTarnasaction = offerCreationTransaction;
     [self.navigation pushViewController:stuffDetailsController animated:YES];
     
 }
