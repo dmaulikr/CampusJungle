@@ -11,11 +11,15 @@
 #import "CCDefines.h"
 #import "CCPhotoCell.h"
 
-@interface CCPhotoBrowserController ()<CCCellSelectionProtocol>
+@interface CCPhotoBrowserController () <CCCellSelectionProtocol>
+
+
+@property (nonatomic, weak) IBOutlet UICollectionView *photoBrowser;
+@property (nonatomic, weak) IBOutlet UINavigationItem *navigationBarItem;
 
 @property (nonatomic, strong) CCCommonCollectionDataSource *dataSource;
-@property (nonatomic, weak) IBOutlet UICollectionView *photoBrowser;
 @property (nonatomic) BOOL isInAction;
+
 @end
 
 @implementation CCPhotoBrowserController
@@ -23,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self addRightNavBarButton];
     [self configCollection:self.photoBrowser WithProvider:self.dataProvider cellClass:[CCPhotoCell class]];
 }
 
@@ -32,6 +37,15 @@
     NSArray *photos = self.dataProvider.arrayOfItems;
     NSInteger index = [photos indexOfObject:self.firstPhoto];
     [self.photoBrowser setContentOffset:CGPointMake( index * self.view.frame.size.width, 0) animated:NO];
+}
+
+- (void)addRightNavBarButton
+{
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+                                                                           style:UIBarButtonItemStyleBordered
+                                                                          target:self
+                                                                          action:@selector(doneButtonDidPressed:)];
+    [self.navigationBarItem setRightBarButtonItem:rightBarButtonItem animated:YES];
 }
 
 - (void)configCollection:(UICollectionView *)collectionView WithProvider:(CCBaseDataProvider *)provider cellClass:(Class)cellCass
@@ -49,6 +63,8 @@
     [provider loadItems];
 }
 
+#pragma mark -
+#pragma mark Actions
 - (void)didSelectedCellWithObject:(id)cellObject
 {
 
@@ -80,7 +96,7 @@
     }
 }
 
-- (IBAction)doneButtonDidPressed
+- (void)doneButtonDidPressed:(id)sender
 {
     [self.closeTransaction perform];
 }
