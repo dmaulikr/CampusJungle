@@ -371,4 +371,13 @@
                  errorHandler:errorHandler];
 }
 
+- (void)getCommonClassesForUserWitID:(NSString *)userID successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.getCommonClasses,userID];
+    [self loadItemsWithParams:nil
+                         path:path
+               successHandler:successHandler
+                 errorHandler:errorHandler];
+}
+
 @end

@@ -88,9 +88,15 @@
             [self uploadWithImages];
         } else if(self.arrayOfURLs){
             uploadInfo.arrayOfURLs = self.arrayOfURLs;
-            [self uploadWithUrls:uploadInfo];
+            [self uploadWithImages];
         } 
     }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.view endEditing:YES];
 }
 
 - (void)uploadWithImages
@@ -100,6 +106,7 @@
     __weak id weakSelf = self;
     CCStuffUploadInfo *uploadInfo = [weakSelf createUploadInfo];
     uploadInfo.arrayOfImages = self.arrayOfImages;
+    uploadInfo.arrayOfURLs = self.arrayOfURLs;
     id <CCUploadProcessManagerProtocol> uploadManager = self.ioc_uploadingManager;
     [[uploadManager uploadingStuff] addObject:uploadInfo];
     [self.ioc_stuffAPIProvider postUploadInfoWithImages:uploadInfo successHandler:^(id result) {

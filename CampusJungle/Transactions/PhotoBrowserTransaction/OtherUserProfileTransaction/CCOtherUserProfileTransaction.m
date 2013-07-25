@@ -9,6 +9,8 @@
 #import "CCOtherUserProfileTransaction.h"
 #import "CCOtherUserProfileController.h"
 #import "CCPrivateMessageTransaction.h"
+#import "CCInboxTransaction.h"
+#import "CCPushToClassControllerTransaction.h"
 
 @implementation CCOtherUserProfileTransaction
 
@@ -22,6 +24,15 @@
     CCPrivateMessageTransaction *privateMessageTransaction = [CCPrivateMessageTransaction new];
     privateMessageTransaction.navigation = self.navigation;
     otherUserProfileController.sendMessageTransaction = privateMessageTransaction;
+    
+    CCInboxTransaction *inboxTransaction = [CCInboxTransaction new];
+    inboxTransaction.menuController = (JASidePanelController *)[[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    
+    CCPushToClassControllerTransaction *pushToClassTransaction = [CCPushToClassControllerTransaction new];
+    pushToClassTransaction.inboxTransaction = inboxTransaction;
+    pushToClassTransaction.navigation = self.navigation;
+    otherUserProfileController.classTransaction = pushToClassTransaction;
+    
     
     [self.navigation pushViewController:otherUserProfileController animated:YES];
 

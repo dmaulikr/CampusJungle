@@ -85,7 +85,9 @@ static const NSInteger kCellHeight = 112;
 
 - (void)uploadProgressDidUpdate
 {
-    self.indicator.value = [(CCStuffUploadInfo *)self.cellObject uploadProgress].floatValue;
+    if([self.cellObject respondsToSelector:@selector(uploadProgress)]){
+        self.indicator.value = [(CCStuffUploadInfo *)self.cellObject uploadProgress].floatValue;
+    }
 }
 
 - (void)removeIndicator
@@ -97,6 +99,5 @@ static const NSInteger kCellHeight = 112;
 {
     return kCellHeight;
 }
-
 
 @end

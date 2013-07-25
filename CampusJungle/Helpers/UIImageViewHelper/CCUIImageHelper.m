@@ -112,4 +112,21 @@
     return imageCopy;
 }
 
++ (UIImage *)scaleImageWithName:(NSString *)name withScale:(CGFloat)scale
+{
+    UIImage * image = [UIImage imageNamed:name];
+    return [self scaleImage:image withScale:scale];
+}
+
+
+
++ (UIImage *)scaleImage:(UIImage *)image withScale:(CGFloat)scale
+{
+    UIImage *scaledImage =
+    [UIImage imageWithCGImage:[image CGImage]
+                        scale:(image.scale * scale)
+                  orientation:(image.imageOrientation)];
+    return scaledImage;
+}
+
 @end

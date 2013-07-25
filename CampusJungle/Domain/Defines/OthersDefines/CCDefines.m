@@ -85,6 +85,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .postAnnouncements = @"/api/classes/%@/announcements",
     .deleteAnouncements = @"/api/announcements/%@",
     .deleteMessage = @"/api/messages/%@",
+    .getCommonClasses = @"/api/users/%@/common_classes",
     .sendGroupInvite = @"/api/groups/%@/invites",
     .loadGroupInvites = @"/api/users/me/group_invites",
     .resendGroupInvite = @"/api/group_invites/%@/resend",
