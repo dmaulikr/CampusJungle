@@ -70,7 +70,9 @@
 
 - (void)uploadProgressDidUpdate
 {
-    self.indicator.value = [(CCStuffUploadInfo *)self.cellObject uploadProgress].floatValue;
+    if([self.cellObject respondsToSelector:@selector(uploadProgress)]){
+        self.indicator.value = [(CCStuffUploadInfo *)self.cellObject uploadProgress].floatValue;
+    }
 }
 
 - (void)removeIndicator
@@ -82,6 +84,5 @@
 {
     return 50.;
 }
-
 
 @end

@@ -8,10 +8,9 @@
 
 #import "CCTransactionWithObject.h"
 #import "CCTransaction.h"
+#import "CCPushToClassControllerTransaction.h"
 
-@interface CCClassAddedTransaction : NSObject <CCTransactionWithObject>
+@interface CCClassAddedTransaction : CCPushToClassControllerTransaction <CCTransactionWithObject>
 
-@property (nonatomic, strong) UINavigationController *navigation;
-@property (nonatomic, strong) id <CCTransaction> inboxTransaction;
 
 @end

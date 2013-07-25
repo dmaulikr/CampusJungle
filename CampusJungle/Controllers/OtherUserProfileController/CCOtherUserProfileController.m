@@ -8,6 +8,9 @@
 
 #import "CCOtherUserProfileController.h"
 #import "DYRateView.h"
+#import "CCUIImageHelper.h"
+#import "CCCommonClassesDataProvider.h"
+#import "CCOrdinaryCell.h"
 
 @interface CCOtherUserProfileController ()
 
@@ -34,28 +37,31 @@
     self.title = @"Profile";
     [self configStars];
     self.rateView.rate = self.currentUser.rank.floatValue;
+    CCCommonClassesDataProvider *dataProvider = [CCCommonClassesDataProvider new];
+    dataProvider.userID = self.currentUser.uid;
+    [self configTableWithProvider:dataProvider cellClass:[CCOrdinaryCell class]];
 }
 
 - (void)configStars
 {
-    self.rateView = [[DYRateView alloc] initWithFrame:self.rateContainer.bounds fullStar:[self scaledImageWithName:@"star_icon_active"] emptyStar:[self scaledImageWithName:@"star_icon"]];
+    self.rateView = [[DYRateView alloc] initWithFrame:self.rateContainer.bounds fullStar:[CCUIImageHelper scaleImageWithName:@"star_icon_active" withScale:2.0] emptyStar:[CCUIImageHelper scaleImageWithName:@"star_icon" withScale:2.0]];
     [self.rateContainer addSubview:self.rateView];
     self.rateView.alignment = RateViewAlignmentCenter;
-}
-
-- (UIImage *)scaledImageWithName:(NSString *)name
-{
-    UIImage *originalImage = [UIImage imageNamed:name];
-    UIImage *scaledImage =
-    [UIImage imageWithCGImage:[originalImage CGImage]
-                        scale:(originalImage.scale * 2.0)
-                  orientation:(originalImage.imageOrientation)];
-    return scaledImage;
 }
 
 - (IBAction)sendMessage
 {
     [self.sendMessageTransaction performWithObject:self.currentUser];
+}
+
+- (BOOL)isNeedToLeftSelected
+{
+    return NO;
+}
+
+- (void)didSelectedCellWithObject:(id)cellObject
+{
+    [self.classTransaction performWithObject:cellObject];
 }
 
 @end

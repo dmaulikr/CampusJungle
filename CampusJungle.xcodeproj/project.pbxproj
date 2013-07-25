@@ -585,6 +585,8 @@
 		D36146D8176314A100907414 /* page_white_acrobat_import.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146C4176314A100907414 /* page_white_acrobat_import.png */; };
 		D36146D9176314A100907414 /* page_white_acrobat_import@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146C5176314A100907414 /* page_white_acrobat_import@2x.png */; };
 		D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36186471743B13E00B501BC /* SystemConfiguration.framework */; };
+		D37122CA17A1220200A7DF04 /* CCCommonClassesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D37122C917A1220200A7DF04 /* CCCommonClassesDataProvider.m */; };
+		D37122CE17A1304500A7DF04 /* CCPushToClassControllerTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D37122CD17A1304500A7DF04 /* CCPushToClassControllerTransaction.m */; };
 		D3819B571799CB4300C93005 /* CCProfessorUploadDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3819B561799CB4300C93005 /* CCProfessorUploadDataProvider.m */; };
 		D3819B5B1799CF3500C93005 /* CCProfessorUploadsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3819B5A1799CF3500C93005 /* CCProfessorUploadsCell.m */; };
 		D3819B5D1799CF8300C93005 /* CCProfessorUploadsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3819B5C1799CF8300C93005 /* CCProfessorUploadsCell.xib */; };
@@ -1536,6 +1538,10 @@
 		D36146C4176314A100907414 /* page_white_acrobat_import.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_white_acrobat_import.png; sourceTree = "<group>"; };
 		D36146C5176314A100907414 /* page_white_acrobat_import@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "page_white_acrobat_import@2x.png"; sourceTree = "<group>"; };
 		D36186471743B13E00B501BC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D37122C817A1220200A7DF04 /* CCCommonClassesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCommonClassesDataProvider.h; sourceTree = "<group>"; };
+		D37122C917A1220200A7DF04 /* CCCommonClassesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCommonClassesDataProvider.m; sourceTree = "<group>"; };
+		D37122CC17A1304500A7DF04 /* CCPushToClassControllerTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPushToClassControllerTransaction.h; sourceTree = "<group>"; };
+		D37122CD17A1304500A7DF04 /* CCPushToClassControllerTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPushToClassControllerTransaction.m; sourceTree = "<group>"; };
 		D3819B551799CB4300C93005 /* CCProfessorUploadDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProfessorUploadDataProvider.h; sourceTree = "<group>"; };
 		D3819B561799CB4300C93005 /* CCProfessorUploadDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCProfessorUploadDataProvider.m; sourceTree = "<group>"; };
 		D3819B591799CF3500C93005 /* CCProfessorUploadsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProfessorUploadsCell.h; sourceTree = "<group>"; };
@@ -2842,6 +2848,7 @@
 				70A29D5517877B94001BC8DD /* ClassmatesDataProvider */,
 				70A29D5817877B94001BC8DD /* CollegeSearchingDataProvider */,
 				70A29D5B17877B94001BC8DD /* CollegeSellectionDataProvider */,
+				D37122C717A121E700A7DF04 /* CommonClassesDataProvider */,
 				7012543D1796F3BA0085247A /* CommentsDataProvider */,
 				70A29D5E17877B94001BC8DD /* DropboxDataProvider */,
 				70A29D6117877B94001BC8DD /* DropboxImageDataProvider */,
@@ -3765,6 +3772,7 @@
 				70B2D15217944894001B0C2C /* PhotoBrowserTransaction */,
 				70B2D15817944894001B0C2C /* PrivateMessageTransaction */,
 				D342BCF1179814110034E88C /* ProfessorUploadsTransaction */,
+				D37122CB17A1302200A7DF04 /* PushToClassControllerTransaction */,
 				70B2D15B17944894001B0C2C /* RateControllerTransaction */,
 				70B2D15E17944894001B0C2C /* SearchCollegeTransaction */,
 				70B2D16117944894001B0C2C /* SelectCollegeClassesTransaction */,
@@ -5141,6 +5149,24 @@
 			path = DropboxIcons;
 			sourceTree = "<group>";
 		};
+		D37122C717A121E700A7DF04 /* CommonClassesDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D37122C817A1220200A7DF04 /* CCCommonClassesDataProvider.h */,
+				D37122C917A1220200A7DF04 /* CCCommonClassesDataProvider.m */,
+			);
+			path = CommonClassesDataProvider;
+			sourceTree = "<group>";
+		};
+		D37122CB17A1302200A7DF04 /* PushToClassControllerTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D37122CC17A1304500A7DF04 /* CCPushToClassControllerTransaction.h */,
+				D37122CD17A1304500A7DF04 /* CCPushToClassControllerTransaction.m */,
+			);
+			path = PushToClassControllerTransaction;
+			sourceTree = "<group>";
+		};
 		D3819B541799C9BD00C93005 /* ProfessorUploadsDataProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -6120,6 +6146,8 @@
 				70FDD66E179E93C300871727 /* CCProcessingMessages.m in Sources */,
 				D38532F3179DED210075F870 /* NSString+CCValidationHelper.m in Sources */,
 				70FDD676179ECE8F00871727 /* NSDateFormatter+Locale.m in Sources */,
+				D37122CA17A1220200A7DF04 /* CCCommonClassesDataProvider.m in Sources */,
+				D37122CE17A1304500A7DF04 /* CCPushToClassControllerTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

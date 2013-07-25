@@ -24,16 +24,12 @@
 
 - (void)postDropboxUploadInfo:(CCStuffUploadInfo *)stuffInfo successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];
-    [self setAuthorizationToken];
     NSString *path = [NSString stringWithFormat:CCAPIDefines.createStuff,stuffInfo.collegeID];
-    [objectManager postObject:stuffInfo path:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        successHandler(mappingResult.firstObject);
-    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        errorHandler(error);
+    
+    [self postInfoWithObject:stuffInfo thumbnail:stuffInfo.thumbnail images:nil onPath:path successHandler:successHandler errorHandler:errorHandler progress:^(double finished) {
+        
     }];
      
-    successHandler(nil);
 }
 
 - (void)postUploadInfoWithImages:(CCStuffUploadInfo *)uploadInfo successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler progress:(progressBlock)progressBlock

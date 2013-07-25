@@ -71,6 +71,12 @@
                                                                                                    keyPath:@"classes"
                                                                                                statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
+    NSString *commonClassesPathPattern = [NSString stringWithFormat:CCAPIDefines.getCommonClasses,@":userID"];
+    RKResponseDescriptor *responseCommonClassesDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:classResponseMapping
+                                                                                               pathPattern:commonClassesPathPattern
+                                                                                                   keyPath:@"classes"
+                                                                                               statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [objectManager addResponseDescriptor:responseCommonClassesDescriptor];
     [objectManager addResponseDescriptor:responseAddClassDescriptor];
     [objectManager addResponseDescriptor:responseClassesOfCollegeDescriptor];
     [objectManager addResponseDescriptor:responseNewClassDescriptor];

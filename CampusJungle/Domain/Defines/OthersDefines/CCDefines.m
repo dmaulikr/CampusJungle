@@ -83,6 +83,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .postAnnouncements = @"/api/classes/%@/announcements",
     .deleteAnouncements = @"/api/announcements/%@",
     .deleteMessage = @"/api/messages/%@",
+    .getCommonClasses = @"/api/users/%@/common_classes",
 };
 
 const struct CCUserDefines CCUserDefines = {

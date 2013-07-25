@@ -20,6 +20,8 @@
 #import "CCAvatarSelectionProtocol.h"
 #import "GIAlert.h"
 #import "NSString+CCValidationHelper.h"
+#import "DYRateView.h"
+#import "CCUIImageHelper.h"
 
 #define animationDuration 0.4
 
@@ -46,6 +48,9 @@
 @property (nonatomic, weak) IBOutlet UIButton *myNotesButton;
 @property (nonatomic, weak) IBOutlet UIButton *mystuffButton;
 
+@property (nonatomic, weak) IBOutlet UIView *rateContainer;
+@property (nonatomic, strong) DYRateView *rateView;
+
 @property (nonatomic, strong) CCEducationsDataProvider *dataProvider;
 
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
@@ -68,6 +73,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self configStars];
     [self loadUser];
     [self setupTableView];
     [self setupButtons];
@@ -81,6 +87,13 @@
 {
     [super viewWillAppear:animated];
     [self.mainTable reloadData];
+}
+
+- (void)configStars
+{
+    self.rateView = [[DYRateView alloc] initWithFrame:self.rateContainer.bounds fullStar:[CCUIImageHelper scaleImageWithName:@"star_icon_active" withScale:2.0] emptyStar:[CCUIImageHelper scaleImageWithName:@"star_icon" withScale:2.0]];
+    [self.rateContainer addSubview:self.rateView];
+    self.rateView.alignment = RateViewAlignmentCenter;
 }
 
 - (void)delloc
@@ -139,6 +152,7 @@
         NSString *avatarURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,[[self.ioc_userSession currentUser] avatar]];
         [self.avatarImageView setImageWithURL:[NSURL URLWithString:avatarURL]];
     }
+    self.rateView.rate = [[[self.ioc_userSession currentUser] rank] floatValue];
 }
 
 - (void)setupNavigationBar
