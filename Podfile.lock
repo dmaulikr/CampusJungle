@@ -10,6 +10,7 @@ PODS:
   - Dropbox-iOS-SDK (1.3.4)
   - DYRateView (0.0.2)
   - Facebook-iOS-SDK (3.5.1)
+  - GSRadioButtonSetController (1.0.0)
   - JASidePanels (1.3.1)
   - JSONKit (1.5pre)
   - libffi (3.0.13)
@@ -58,6 +59,7 @@ DEPENDENCIES:
   - Dropbox-iOS-SDK
   - DYRateView
   - Facebook-iOS-SDK
+  - GSRadioButtonSetController
   - JASidePanels
   - JSONKit
   - MACircleProgressIndicator (~> 1.0.0)
@@ -83,6 +85,7 @@ SPEC CHECKSUMS:
   Dropbox-iOS-SDK: 0531d0061c45b662f1748a1cbe59e2f358bdcaba
   DYRateView: ed57ab9f1ff4298bdd808591ffa654df2d43c7da
   Facebook-iOS-SDK: 0dbd897e842cefeb012ec2eb8eba659ba6b96b12
+  GSRadioButtonSetController: f9083ccbc8cd9dd25477db39e88894c531a04072
   JASidePanels: bdc86395baee77fef838f5c7f3637300a7ff8c1f
   JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
   libffi: 64ef39353e747bb2b25e1026afd96a157bf9231c
@@ -92,14 +95,14 @@ SPEC CHECKSUMS:
   NSData+Base64: 36c4e5b6479259c1a68866ccd2a8dd385c9744f7
   OAuthCore: 4164eec5e28c68f794953446e68f91054ffe570c
   RestKit: ceca63bc91172098c710c469facd2560e8a59164
-  SHOmniAuth: afd6278ea528acc0569bdee94c2185b03457b357
-  SHOmniAuthTwitter: f9966ce5804386453618102e610d0fbf940db660
+  SHOmniAuth: 7e554527fb5d5bd6296439347f009a77677d088d
+  SHOmniAuthTwitter: c653744abf7a1a2e888389b12d33449a973ce526
   SOCKit: ed67aeeca4a697b63a933229e53f4670d5b9300f
   SVProgressHUD-Fork: d18cc33c8d6966400ffba70f81d95c8feeb92de8
   TestFlightSDK: 6c97c15d0fb4735bac761ec563ba7dfe11541cbf
   TPKeyboardAvoiding: 7289409b17dc2193a3f324672283c542f17c1bb1
   TransitionKit: 1624e84f252d5cd26900be28ccb73c69fbe63f8a
-  TWReverseAuth: d0e6e2d534377f1832c2553ff4e9d677d549e45a
+  TWReverseAuth: c0244d8d66ffdadf98137f86aaf649b3cbc97a76
   UIAlertView-Blocks: 7689ad7dd941417e7a7da81507482bc6f4f15bcd
 
 COCOAPODS: 0.18.1

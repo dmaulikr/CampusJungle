@@ -20,6 +20,8 @@
 #import "CCGroupTransaction.h"
 #import "CCAddGroupTransaction.h"
 #import "CCAnnouncementTransaction.h"
+#import "CCVoteResultsTransaction.h"
+#import "CCVoteScreenTransaction.h"
 
 @implementation CCClassTransaction
 
@@ -31,6 +33,14 @@
     
     CCClassController *classController = [[CCClassController alloc] initWithClass:object];
     UINavigationController *centralNavigation = [[UINavigationController alloc] initWithRootViewController:classController];
+    
+    CCVoteResultsTransaction *voteResultsTransaction = [CCVoteResultsTransaction new];
+    voteResultsTransaction.navigation = centralNavigation;
+    classController.voteResultTransaction = voteResultsTransaction;
+    
+    CCVoteScreenTransaction *voteScreenTransaction = [CCVoteScreenTransaction new];
+    voteScreenTransaction.navigation = centralNavigation;
+    classController.voteScreenTransaction = voteScreenTransaction;
     
     CCAnnouncementTransaction *announcement = [CCAnnouncementTransaction new];
     announcement.navigation = centralNavigation; 

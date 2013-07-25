@@ -600,6 +600,12 @@
 		D36186481743B13E00B501BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36186471743B13E00B501BC /* SystemConfiguration.framework */; };
 		D37122CA17A1220200A7DF04 /* CCCommonClassesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D37122C917A1220200A7DF04 /* CCCommonClassesDataProvider.m */; };
 		D37122CE17A1304500A7DF04 /* CCPushToClassControllerTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D37122CD17A1304500A7DF04 /* CCPushToClassControllerTransaction.m */; };
+		D37122D317A13FE500A7DF04 /* CCVoteScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = D37122D117A13FE500A7DF04 /* CCVoteScreenController.m */; };
+		D37122D417A13FE500A7DF04 /* CCVoteScreenController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D37122D217A13FE500A7DF04 /* CCVoteScreenController.xib */; };
+		D37122D917A140F100A7DF04 /* CCVoteResultsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D37122D817A140F100A7DF04 /* CCVoteResultsTransaction.m */; };
+		D37122DC17A1410800A7DF04 /* CCVoteScreenTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D37122DB17A1410800A7DF04 /* CCVoteScreenTransaction.m */; };
+		D37122E117A1446500A7DF04 /* CCVoteResultScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = D37122DF17A1446500A7DF04 /* CCVoteResultScreenController.m */; };
+		D37122E217A1446500A7DF04 /* CCVoteResultScreenController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D37122E017A1446500A7DF04 /* CCVoteResultScreenController.xib */; };
 		D3819B571799CB4300C93005 /* CCProfessorUploadDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3819B561799CB4300C93005 /* CCProfessorUploadDataProvider.m */; };
 		D3819B5B1799CF3500C93005 /* CCProfessorUploadsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3819B5A1799CF3500C93005 /* CCProfessorUploadsCell.m */; };
 		D3819B5D1799CF8300C93005 /* CCProfessorUploadsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3819B5C1799CF8300C93005 /* CCProfessorUploadsCell.xib */; };
@@ -1576,6 +1582,16 @@
 		D37122C917A1220200A7DF04 /* CCCommonClassesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCommonClassesDataProvider.m; sourceTree = "<group>"; };
 		D37122CC17A1304500A7DF04 /* CCPushToClassControllerTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPushToClassControllerTransaction.h; sourceTree = "<group>"; };
 		D37122CD17A1304500A7DF04 /* CCPushToClassControllerTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPushToClassControllerTransaction.m; sourceTree = "<group>"; };
+		D37122D017A13FE500A7DF04 /* CCVoteScreenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCVoteScreenController.h; sourceTree = "<group>"; };
+		D37122D117A13FE500A7DF04 /* CCVoteScreenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCVoteScreenController.m; sourceTree = "<group>"; };
+		D37122D217A13FE500A7DF04 /* CCVoteScreenController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCVoteScreenController.xib; sourceTree = "<group>"; };
+		D37122D717A140F100A7DF04 /* CCVoteResultsTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCVoteResultsTransaction.h; sourceTree = "<group>"; };
+		D37122D817A140F100A7DF04 /* CCVoteResultsTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCVoteResultsTransaction.m; sourceTree = "<group>"; };
+		D37122DA17A1410800A7DF04 /* CCVoteScreenTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCVoteScreenTransaction.h; sourceTree = "<group>"; };
+		D37122DB17A1410800A7DF04 /* CCVoteScreenTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCVoteScreenTransaction.m; sourceTree = "<group>"; };
+		D37122DE17A1446500A7DF04 /* CCVoteResultScreenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCVoteResultScreenController.h; sourceTree = "<group>"; };
+		D37122DF17A1446500A7DF04 /* CCVoteResultScreenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCVoteResultScreenController.m; sourceTree = "<group>"; };
+		D37122E017A1446500A7DF04 /* CCVoteResultScreenController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCVoteResultScreenController.xib; sourceTree = "<group>"; };
 		D3819B551799CB4300C93005 /* CCProfessorUploadDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProfessorUploadDataProvider.h; sourceTree = "<group>"; };
 		D3819B561799CB4300C93005 /* CCProfessorUploadDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCProfessorUploadDataProvider.m; sourceTree = "<group>"; };
 		D3819B591799CF3500C93005 /* CCProfessorUploadsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProfessorUploadsCell.h; sourceTree = "<group>"; };
@@ -2581,6 +2597,8 @@
 				D342BCD61796B1380034E88C /* UpdateClassController */,
 				70A29CD8178778AB001BC8DD /* UploadImagesController */,
 				700F9435178ED4A800A6FBBA /* UserProfileController */,
+				D37122DD17A1444300A7DF04 /* VoteResultScreenControler */,
+				D37122CF17A13FB500A7DF04 /* VoteScreenController */,
 				70A29CDC178778AB001BC8DD /* WelcomeController */,
 			);
 			path = Controllers;
@@ -3902,6 +3920,8 @@
 				70B2D18917944894001B0C2C /* ViewLatestNotesTransaction */,
 				70B2D18C17944894001B0C2C /* ViewNotesTransaction */,
 				70B2D18F17944894001B0C2C /* ViewStuffInMarketTransaction */,
+				D37122D517A1406900A7DF04 /* VoteResultsScreenTransaction */,
+				D37122D617A1406900A7DF04 /* VoteScreenTransaction */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -5278,6 +5298,44 @@
 			path = PushToClassControllerTransaction;
 			sourceTree = "<group>";
 		};
+		D37122CF17A13FB500A7DF04 /* VoteScreenController */ = {
+			isa = PBXGroup;
+			children = (
+				D37122D017A13FE500A7DF04 /* CCVoteScreenController.h */,
+				D37122D117A13FE500A7DF04 /* CCVoteScreenController.m */,
+				D37122D217A13FE500A7DF04 /* CCVoteScreenController.xib */,
+			);
+			path = VoteScreenController;
+			sourceTree = "<group>";
+		};
+		D37122D517A1406900A7DF04 /* VoteResultsScreenTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D37122D717A140F100A7DF04 /* CCVoteResultsTransaction.h */,
+				D37122D817A140F100A7DF04 /* CCVoteResultsTransaction.m */,
+			);
+			path = VoteResultsScreenTransaction;
+			sourceTree = "<group>";
+		};
+		D37122D617A1406900A7DF04 /* VoteScreenTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D37122DA17A1410800A7DF04 /* CCVoteScreenTransaction.h */,
+				D37122DB17A1410800A7DF04 /* CCVoteScreenTransaction.m */,
+			);
+			path = VoteScreenTransaction;
+			sourceTree = "<group>";
+		};
+		D37122DD17A1444300A7DF04 /* VoteResultScreenControler */ = {
+			isa = PBXGroup;
+			children = (
+				D37122DE17A1446500A7DF04 /* CCVoteResultScreenController.h */,
+				D37122DF17A1446500A7DF04 /* CCVoteResultScreenController.m */,
+				D37122E017A1446500A7DF04 /* CCVoteResultScreenController.xib */,
+			);
+			path = VoteResultScreenControler;
+			sourceTree = "<group>";
+		};
 		D3819B541799C9BD00C93005 /* ProfessorUploadsDataProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -5912,6 +5970,8 @@
 				7025634717A01EE700B48AA2 /* arrow_left@2x.png in Resources */,
 				7025634817A01EE700B48AA2 /* arrow_right.png in Resources */,
 				7025634917A01EE700B48AA2 /* arrow_right@2x.png in Resources */,
+				D37122D417A13FE500A7DF04 /* CCVoteScreenController.xib in Resources */,
+				D37122E217A1446500A7DF04 /* CCVoteResultScreenController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6272,6 +6332,10 @@
 				7025633717A003F400B48AA2 /* CCGroupInvitesDataProvider.m in Sources */,
 				7025633B17A0058800B48AA2 /* CCGroupInviteCell.m in Sources */,
 				7025633F17A0063100B48AA2 /* CCGroupInvite.m in Sources */,
+				D37122D317A13FE500A7DF04 /* CCVoteScreenController.m in Sources */,
+				D37122D917A140F100A7DF04 /* CCVoteResultsTransaction.m in Sources */,
+				D37122DC17A1410800A7DF04 /* CCVoteScreenTransaction.m in Sources */,
+				D37122E117A1446500A7DF04 /* CCVoteResultScreenController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,7 @@
 
 - (NSString *)description
 {
-    return self.noteDescription;
+    return self.name;
 }
 
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager

@@ -20,6 +20,8 @@
 #import "CCGroupTransaction.h"
 #import "CCAddGroupTransaction.h"
 #import "CCAnnouncementTransaction.h"
+#import "CCVoteResultsTransaction.h"
+#import "CCVoteScreenTransaction.h"
 
 @implementation CCPushToClassControllerTransaction
 
@@ -30,6 +32,14 @@
     
     CCClassController *classController = [[CCClassController alloc] initWithClass:object];
     [self.navigation pushViewController:classController animated:YES];
+    
+    CCVoteResultsTransaction *voteResultsTransaction = [CCVoteResultsTransaction new];
+    voteResultsTransaction.navigation = self.navigation;
+    classController.voteResultTransaction = voteResultsTransaction;
+    
+    CCVoteScreenTransaction *voteScreenTransaction = [CCVoteScreenTransaction new];
+    voteScreenTransaction.navigation = self.navigation;
+    classController.voteScreenTransaction = voteScreenTransaction;
     
     CCEditClassTransaction *editTransaction = [CCEditClassTransaction new];
     editTransaction.navigation = self.navigation;

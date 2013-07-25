@@ -10,12 +10,12 @@
 #import "CCTransactionWithObject.h"
 #import "CCTransaction.h"
 #import "CCTableBaseViewController.h"
+#import "CCBackTransactionAfterClassUpdate.h"
 
 @class CCClass;
 @protocol CCClassUpdateProtocol;
 
 @interface CCClassController : CCBaseViewController <CCClassUpdateProtocol>
-
 
 @property (nonatomic, strong) id<CCTransactionWithObject> classMarketTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> otherUserProfileTransaction;
@@ -30,6 +30,10 @@
 @property (nonatomic, strong) id<CCTransactionWithObject> professorUploadsTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> timetableTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> announcementTransaction;
+@property (nonatomic, strong) id<CCTransactionWithObject> voteScreenTransaction;
+@property (nonatomic, strong) id<CCTransactionWithObject> voteResultTransaction;
+
+
 
 - (id)initWithClass:(CCClass *)classObject;
 - (IBAction)classMarketButtonDidPressed;
