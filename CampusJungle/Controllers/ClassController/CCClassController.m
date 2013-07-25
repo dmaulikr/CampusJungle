@@ -39,6 +39,9 @@
 
 @property (nonatomic, strong) CCClass *currentClass;
 
+
+- (IBAction)classFeedBackButtonDidPressed;
+
 @end
 
 @implementation CCClassController
@@ -80,6 +83,11 @@
     self.classContentTable.classID = self.currentClass.classID;
     self.classContentTable.delegate = self;
     [self.view addSubview:self.classContentTable.view];
+}
+
+- (IBAction)classFeedBackButtonDidPressed
+{
+    [self.voteResultTransaction performWithObject:self.currentClass];
 }
 
 - (void)setUpLeaveButton
