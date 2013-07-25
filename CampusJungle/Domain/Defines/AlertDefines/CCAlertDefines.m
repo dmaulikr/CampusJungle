@@ -42,6 +42,7 @@ const struct CCAlertsMessages CCAlertsMessages = {
     .deleteGroup = @"Are you sure that you want to delete group?",
     .deleteMessage = @"Are you sure you want to delete message?",
     .deleteNote = @"Are you sure you want to delete note?",
+    .deleteStuff = @"Are you sure you want to delete stuff?",
 };
 
 const struct CCAlertsButtons CCAlertsButtons = {

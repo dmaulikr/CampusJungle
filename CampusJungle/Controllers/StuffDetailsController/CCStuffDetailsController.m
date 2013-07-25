@@ -9,23 +9,22 @@
 #import "CCStuffDetailsController.h"
 #import "CCDefines.h"
 #import "CCBaseDataProvider.h"
-#import "CCCommonCollectionDataSource.h"
+#import "CCStuffCollectionViewDataSource.h"
 #import "CCPhotosDataProvider.h"
 #import "CCPhotoCell.h"
+#import "CCStuffHeader.h"
 #import "CCUserSessionProtocol.h"
+#import "CCStuffAPIProviderProtocol.h"
+#import "CCAlertHelper.h"
 
-@interface CCStuffDetailsController ()<CCCellSelectionProtocol>
+@interface CCStuffDetailsController ()<CCCellSelectionProtocol, CCStuffHeaderDelegate>
 
-@property (nonatomic, weak) IBOutlet UIImageView *thumb;
-@property (nonatomic, weak) IBOutlet UITextView *descriptionView;
 @property (nonatomic, weak) IBOutlet UICollectionView *stuffPhotos;
-@property (nonatomic, strong) CCCommonCollectionDataSource *dataSource;
+
+@property (nonatomic, strong) CCStuffCollectionViewDataSource *dataSource;
 @property (nonatomic, strong) CCPhotosDataProvider *dataProvider;
-@property (nonatomic, weak) IBOutlet UIButton *offerButton;
-@property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
-
-- (IBAction)createOfferButtonDidPress;
-
+@property (nonatomic, strong) id<CCUserSessionProtocol> ioc_userSession;
+@property (nonatomic, strong) id<CCStuffAPIProviderProtocol> ioc_stuffApiProvider;
 
 @end
 
@@ -34,41 +33,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tapRecognizer.enabled = NO;
-    self.descriptionView.text = self.stuff.description;
+    [self setupCollectionView];
     
-    self.dataProvider = [CCPhotosDataProvider new];
-    self.dataProvider.photos = self.stuff.photos;
-    
-    [self configCollection:self.stuffPhotos WithProvider:self.dataProvider cellClass:[CCPhotoCell class]];
-    
-    if(self.stuff.thumbnailRetina.length){
-        NSURL *thumbURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,self.stuff.thumbnailRetina]];
-        [self.thumb setImageWithURL:thumbURL];
-    } else {
-        self.thumb.image = [UIImage imageNamed:@"stuff_placeholder_icon_active"];
-    }
-    if([self isMyStuff]){
-        self.offerButton.hidden = YES;
-    }
-    self.title = @"Stuff";
-    
+    [self.tapRecognizer setEnabled:NO];
+    [self setTitle:@"Stuff Details"];
 }
 
-- (BOOL)isMyStuff
+- (void)setupCollectionView
 {
-    CCUser *currentUser = [self.ioc_userSession currentUser];
-    NSString *currentUserID = currentUser.uid;
-    
-    if([self.stuff.ownerID isEqualToString:currentUserID]){
-        return YES;
-    }
-    return NO;
+    self.dataProvider = [CCPhotosDataProvider new];
+    self.dataProvider.photos = self.stuff.photos;
+    [self configCollection:self.stuffPhotos WithProvider:self.dataProvider cellClass:[CCPhotoCell class]];
 }
 
 - (void)configCollection:(UICollectionView *)collectionView WithProvider:(CCBaseDataProvider *)provider cellClass:(Class)cellCass
 {
-    self.dataSource = [CCCommonCollectionDataSource new];
+    self.dataSource = [CCStuffCollectionViewDataSource new];
+    [self.dataSource setStuff:self.stuff];
+    [self.dataSource setStuffHeaderDelegate:self];
     
     [collectionView registerClass:cellCass forCellWithReuseIdentifier:CCTableDefines.collectionCellIdentifier];
     
@@ -81,6 +63,8 @@
     [provider loadItems];
 }
 
+#pragma mark -
+#pragma mark Actions
 - (void)didSelectedCellWithObject:(id)cellObject
 {
     [self.photoBrowserTransaction performWithObject:@{
@@ -89,9 +73,24 @@
      }];
 }
 
-- (IBAction)createOfferButtonDidPress
+#pragma mark -
+#pragma mark CCStuffHeaderDelegate
+- (void)makeOfferButtonDidPressed:(id)sender
 {
     [self.createOfferTarnasaction performWithObject:self.stuff];
+}
+
+- (void)deleteStuffButtonDidPressed:(id)sender
+{
+    __weak CCStuffDetailsController *weakSelf = self;
+    [CCAlertHelper showWithMessage:CCAlertsMessages.deleteStuff success:^{
+        [weakSelf.ioc_stuffApiProvider deleteStuffWithId:weakSelf.stuff.stuffID successHandler:^(RKMappingResult *result) {
+            [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteStuff duration:CCProgressHudsConstants.loaderDuration];
+            [weakSelf.backTransaction perform];
+        } errorHandler:^(NSError *error) {
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
+    }];
 }
 
 @end

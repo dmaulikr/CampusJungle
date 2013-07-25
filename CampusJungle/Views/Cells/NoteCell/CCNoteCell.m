@@ -14,9 +14,14 @@
 #import "CCNoteUploadInfo.h"
 #import "CCUploadIndicatorDelegateProtocol.h"
 
+static const NSInteger kCellHeight = 130;
+
 @interface CCNoteCell()<CCUploadIndicatorDelegateProtocol>
 
-@property (nonatomic, weak) IBOutlet UILabel *noteDescription;
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *viewPriceLabel;
+@property (nonatomic, weak) IBOutlet UILabel *fullPriceLabel;
+@property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbImage;
 @property (nonatomic, weak) IBOutlet MACircleProgressIndicator *indicator;
 
@@ -24,35 +29,43 @@
 
 @implementation CCNoteCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (void)awakeFromNib
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        self = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class])
-                                              owner:self
-                                            options:nil] objectAtIndex:0];
-        [self setSelectionColor];
-    }
-    return self;
+    [super awakeFromNib];
+    [self setSelectionColor];
 }
 
 - (void)setCellObject:(id)cellObject
 {
-
-    
-    if([cellObject isKindOfClass:[CCNoteUploadInfo class]]){
+    if ([cellObject isKindOfClass:[CCNoteUploadInfo class]]) {
         [self setUpUploadingIndicatorWithObject:cellObject];
-    } else {
+    }
+    else {
         [self removeIndicator];
     }
     _cellObject = cellObject;
-    CCNote *note = (CCNote *)cellObject;
    
-    self.noteDescription.text = note.name;
-    if(note.thumbnailRetina.length){
-        NSString *thumbURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,note.thumbnailRetina];
+    [self setupLabels];
+    [self setupImageView];
+}
+
+- (void)setupLabels
+{
+    CCNote *note = self.cellObject;
+    [self.nameLabel setText:note.name];
+    [self.descriptionLabel setText:note.description];
+    [self.viewPriceLabel setText:[NSString stringWithFormat:@"View-Only Price: %@", note.price]];
+    [self.fullPriceLabel setText:[NSString stringWithFormat:@"Full Access Price: %@", note.fullPrice]];
+}
+
+- (void)setupImageView
+{
+    CCNote *note = self.cellObject;
+    if (note.thumbnailRetina.length) {
+        NSString *thumbURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL, note.thumbnailRetina];
         [self.thumbImage setImageWithURL:[NSURL URLWithString:thumbURL]];
-    } else {
+    }
+    else {
         self.thumbImage.image = [UIImage imageNamed:@"note_placeholder_icon_active"];
     }
 }
@@ -80,7 +93,7 @@
 
 + (CGFloat)heightForCellWithObject:(id)object
 {
-    return 50.;
+    return kCellHeight;
 }
 
 @end

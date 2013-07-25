@@ -9,13 +9,14 @@
 #import "CCBaseViewController.h"
 #import "CCStuff.h"
 #import "CCTransactionWithObject.h"
+#import "CCTransaction.h"
 
 @interface CCStuffDetailsController : CCBaseViewController
 
 @property (nonatomic, strong) CCStuff *stuff;
 
-@property (nonatomic, strong) id <CCTransactionWithObject> photoBrowserTransaction;
-@property (nonatomic, strong) id <CCTransactionWithObject> createOfferTarnasaction;
-
+@property (nonatomic, strong) id<CCTransactionWithObject> photoBrowserTransaction;
+@property (nonatomic, strong) id<CCTransactionWithObject> createOfferTarnasaction;
+@property (nonatomic, strong) id<CCTransaction> backTransaction;
 
 @end
