@@ -298,7 +298,7 @@ static const NSInteger kNavBarHeight = 44;
     NSInteger identifier = [self.groupTabbarController selectedButtonIdentifier];
     switch (identifier) {
         case CCClassTabbarButtonsIdentifierClassmate:
-            // go add groupmate
+            [self.delegate addGroupmates];
             break;
         case CCClassTabbarButtonsIdentifierLocations:
             [self.delegate addLocation];

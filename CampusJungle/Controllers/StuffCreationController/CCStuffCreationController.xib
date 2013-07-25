@@ -48,6 +48,7 @@
 								<int key="NSvFlags">293</int>
 								<string key="NSFrame">{{34, 452}, {253, 44}}</string>
 								<reference key="NSSuperview" ref="412419649"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -100,6 +101,7 @@
 								<float key="IBUIMinimumFontSize">17</float>
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 									<int key="IBUIAutocapitalizationType">2</int>
+									<int key="IBUIReturnKeyType">4</int>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
 								<object class="IBUIFontDescription" key="IBUIFontDescription" id="977414406">
@@ -134,6 +136,7 @@
 								<float key="IBUIMinimumFontSize">17</float>
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 									<int key="IBUIKeyboardType">4</int>
+									<int key="IBUIReturnKeyType">9</int>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
 								<reference key="IBUIFontDescription" ref="977414406"/>
@@ -224,7 +227,7 @@
 							<object class="IBUILabel" id="392049849">
 								<reference key="NSNextResponder" ref="412419649"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{16, 325}, {286, 45}}</string>
+								<string key="NSFrame">{{16, 330}, {286, 45}}</string>
 								<reference key="NSSuperview" ref="412419649"/>
 								<reference key="NSNextKeyView" ref="5280320"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -275,6 +278,7 @@
 								<float key="IBUIMinimumFontSize">17</float>
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 									<int key="IBUIAutocapitalizationType">2</int>
+									<int key="IBUIReturnKeyType">4</int>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
 								<reference key="IBUIFontDescription" ref="977414406"/>

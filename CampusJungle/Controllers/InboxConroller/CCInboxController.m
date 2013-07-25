@@ -7,27 +7,36 @@
 //
 
 #import "CCInboxController.h"
-#import "CCOffersDataProvider.h"
-#import "CCOrdinaryCell.h"
 #import "CCOffer.h"
 #import "CCMessage.h"
-#import "CCMessagesDataProvider.h"
-#import "CCMessageCell.h"
-#import "CCOfferCell.h"
+#import "CCGroupInvite.h"
+
 #import "CCUserSessionProtocol.h"
 #import "CCMessageAPIProviderProtocol.h"
+#import "CCGroupInvitesApiProviderProtocol.h"
 #import "CCAlertHelper.h"
+
+#import "CCMessageCell.h"
+#import "CCOfferCell.h"
+#import "CCGroupInviteCell.h"
+
+#import "CCMessagesDataProvider.h"
+#import "CCOffersDataProvider.h"
+#import "CCGroupInvitesDataProvider.h"
 
 #define MessagesState 0
 #define InvtesState 1
 #define OffersState 2
 
-@interface CCInboxController () <CCMessageCellDelegate>
+@interface CCInboxController () <CCMessageCellDelegate, CCGroupInviteCellDelegate>
 
 @property (nonatomic, strong) id<CCUserSessionProtocol> ioc_userSession;
 @property (nonatomic, strong) id<CCMessageAPIProviderProtocol> ioc_messagesApiProvider;
+@property (nonatomic, strong) id<CCGroupInvitesApiProviderProtocol> ioc_groupInvitesApiProvider;
+
 @property (nonatomic, strong) CCMessagesDataProvider *messagesDataProvider;
 @property (nonatomic, strong) CCOffersDataProvider *offersDataProvider;
+@property (nonatomic, strong) CCGroupInvitesDataProvider *groupInvitesDataProvider;
 
 @end
 
@@ -42,7 +51,7 @@
                                      @"personal" : @"YES",
                                      @"direction" : @"received"
                                      };
-    if([self.ioc_userSession currentUser]){
+    if ([self.ioc_userSession currentUser]){
         [self configTableWithProvider:messagesDataProvider cellClass:[CCMessageCell class] cellReuseIdentifier:NSStringFromClass([CCMessageCell class])];
     }
     self.mainTable.tableFooterView = [UIView new];
@@ -78,7 +87,10 @@
 
 - (void)setInvitesConfiguration
 {
-    [self.mainTable reloadData];
+    if (!self.groupInvitesDataProvider) {
+        self.groupInvitesDataProvider = [CCGroupInvitesDataProvider new];
+    }
+    [self configTableWithProvider:self.groupInvitesDataProvider cellClass:[CCGroupInviteCell class] cellReuseIdentifier:NSStringFromClass([CCGroupInviteCell class])];
 }
 
 - (void)setMessagesConfiguration
@@ -115,6 +127,54 @@
         } errorHandler:^(NSError *error) {
             [CCStandardErrorHandler showErrorWithError:error];
         }];
+    }];
+}
+
+#pragma mark -
+#pragma mark CCGroupInviteCellDelegate
+- (void)acceptGroupInvite:(CCGroupInvite *)groupInvite
+{
+    __weak CCInboxController *weakSelf = self;
+    [self.ioc_groupInvitesApiProvider acceptGroupInviteWithId:groupInvite.groupInviteId successHandler:^(RKMappingResult *result) {
+        [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.acceptGroupInvite duration:CCProgressHudsConstants.loaderDuration];
+        [weakSelf.groupInvitesDataProvider deleteItem:groupInvite];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
+}
+
+- (void)rejectGroupInvite:(CCGroupInvite *)groupInvite
+{
+    __weak CCInboxController *weakSelf = self;
+    [self.ioc_groupInvitesApiProvider rejectGroupInviteWithId:groupInvite.groupInviteId successHandler:^(RKMappingResult *result) {
+        [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.rejectGroupInvite duration:CCProgressHudsConstants.loaderDuration];
+        [weakSelf.groupInvitesDataProvider deleteItem:groupInvite];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
+
+}
+
+- (void)resendGroupInvite:(CCGroupInvite *)groupInvite
+{
+    __weak CCInboxController *weakSelf = self;
+    [self.ioc_groupInvitesApiProvider resendGroupInviteWithId:groupInvite.groupInviteId successHandler:^(RKMappingResult *result) {
+        [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.resendGroupInvite duration:CCProgressHudsConstants.loaderDuration];
+        [weakSelf.groupInvitesDataProvider loadItems];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
+
+}
+
+- (void)deleteGroupInvite:(CCGroupInvite *)groupInvite
+{
+    __weak CCInboxController *weakSelf = self;
+    [self.ioc_groupInvitesApiProvider deleteGroupInviteWithId:groupInvite.groupInviteId successHandler:^(RKMappingResult *result) {
+        [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteGroupInvite duration:CCProgressHudsConstants.loaderDuration];
+        [weakSelf.groupInvitesDataProvider deleteItem:groupInvite];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
     }];
 }
 

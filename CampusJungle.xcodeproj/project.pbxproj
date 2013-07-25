@@ -232,6 +232,19 @@
 		7012ACA617957C4B002DA5E9 /* CCLoadPreviousItemsSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7012ACA517957C4B002DA5E9 /* CCLoadPreviousItemsSectionHeader.xib */; };
 		7022F4991786C7100055221C /* SelectionBackGround@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE2178454C200E54EFC /* SelectionBackGround@2x.png */; };
 		7022F49A1786C7110055221C /* SelectionBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE3178454C200E54EFC /* SelectionBackGround.png */; };
+		70256325179FD71100B48AA2 /* CCGroupInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70256323179FD71100B48AA2 /* CCGroupInviteViewController.m */; };
+		70256326179FD71100B48AA2 /* CCGroupInviteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70256324179FD71100B48AA2 /* CCGroupInviteViewController.xib */; };
+		7025632A179FD75D00B48AA2 /* CCSendGroupInviteTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70256329179FD75D00B48AA2 /* CCSendGroupInviteTransaction.m */; };
+		7025632E179FE3F500B48AA2 /* CCGroupInvitesApiProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7025632D179FE3F500B48AA2 /* CCGroupInvitesApiProvider.m */; };
+		70256333179FF14600B48AA2 /* CCClassmatesToInviteInGroupDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70256332179FF14600B48AA2 /* CCClassmatesToInviteInGroupDataProvider.m */; };
+		7025633717A003F400B48AA2 /* CCGroupInvitesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7025633617A003F400B48AA2 /* CCGroupInvitesDataProvider.m */; };
+		7025633B17A0058800B48AA2 /* CCGroupInviteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7025633A17A0058800B48AA2 /* CCGroupInviteCell.m */; };
+		7025633F17A0063100B48AA2 /* CCGroupInvite.m in Sources */ = {isa = PBXBuildFile; fileRef = 7025633E17A0063100B48AA2 /* CCGroupInvite.m */; };
+		7025634117A0092600B48AA2 /* CCGroupInviteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7025634017A0092500B48AA2 /* CCGroupInviteCell.xib */; };
+		7025634617A01EE700B48AA2 /* arrow_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 7025634217A01EE700B48AA2 /* arrow_left.png */; };
+		7025634717A01EE700B48AA2 /* arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7025634317A01EE700B48AA2 /* arrow_left@2x.png */; };
+		7025634817A01EE700B48AA2 /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 7025634417A01EE700B48AA2 /* arrow_right.png */; };
+		7025634917A01EE700B48AA2 /* arrow_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7025634517A01EE700B48AA2 /* arrow_right@2x.png */; };
 		703DA4DD178B455600464DD3 /* CCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4DC178B455600464DD3 /* CCLocation.m */; };
 		703DA4E2178B457200464DD3 /* CCLocationsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4E0178B457200464DD3 /* CCLocationsDataProvider.m */; };
 		703DA4F0178C3D3C00464DD3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 703DA4EE178C3D3000464DD3 /* MapKit.framework */; };
@@ -916,6 +929,27 @@
 		7012ACA217957C37002DA5E9 /* CCLoadPreviousItemsSectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLoadPreviousItemsSectionHeader.h; sourceTree = "<group>"; };
 		7012ACA317957C37002DA5E9 /* CCLoadPreviousItemsSectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLoadPreviousItemsSectionHeader.m; sourceTree = "<group>"; };
 		7012ACA517957C4B002DA5E9 /* CCLoadPreviousItemsSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCLoadPreviousItemsSectionHeader.xib; sourceTree = "<group>"; };
+		70256322179FD71100B48AA2 /* CCGroupInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupInviteViewController.h; sourceTree = "<group>"; };
+		70256323179FD71100B48AA2 /* CCGroupInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupInviteViewController.m; sourceTree = "<group>"; };
+		70256324179FD71100B48AA2 /* CCGroupInviteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupInviteViewController.xib; sourceTree = "<group>"; };
+		70256328179FD75D00B48AA2 /* CCSendGroupInviteTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSendGroupInviteTransaction.h; sourceTree = "<group>"; };
+		70256329179FD75D00B48AA2 /* CCSendGroupInviteTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSendGroupInviteTransaction.m; sourceTree = "<group>"; };
+		7025632C179FE3F500B48AA2 /* CCGroupInvitesApiProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupInvitesApiProvider.h; sourceTree = "<group>"; };
+		7025632D179FE3F500B48AA2 /* CCGroupInvitesApiProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupInvitesApiProvider.m; sourceTree = "<group>"; };
+		7025632F179FE41700B48AA2 /* CCGroupInvitesApiProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCGroupInvitesApiProviderProtocol.h; sourceTree = "<group>"; };
+		70256331179FF14600B48AA2 /* CCClassmatesToInviteInGroupDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassmatesToInviteInGroupDataProvider.h; sourceTree = "<group>"; };
+		70256332179FF14600B48AA2 /* CCClassmatesToInviteInGroupDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassmatesToInviteInGroupDataProvider.m; sourceTree = "<group>"; };
+		7025633517A003F400B48AA2 /* CCGroupInvitesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupInvitesDataProvider.h; sourceTree = "<group>"; };
+		7025633617A003F400B48AA2 /* CCGroupInvitesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupInvitesDataProvider.m; sourceTree = "<group>"; };
+		7025633917A0058800B48AA2 /* CCGroupInviteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupInviteCell.h; sourceTree = "<group>"; };
+		7025633A17A0058800B48AA2 /* CCGroupInviteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupInviteCell.m; sourceTree = "<group>"; };
+		7025633D17A0063100B48AA2 /* CCGroupInvite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupInvite.h; sourceTree = "<group>"; };
+		7025633E17A0063100B48AA2 /* CCGroupInvite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupInvite.m; sourceTree = "<group>"; };
+		7025634017A0092500B48AA2 /* CCGroupInviteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupInviteCell.xib; sourceTree = "<group>"; };
+		7025634217A01EE700B48AA2 /* arrow_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_left.png; sourceTree = "<group>"; };
+		7025634317A01EE700B48AA2 /* arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_left@2x.png"; sourceTree = "<group>"; };
+		7025634417A01EE700B48AA2 /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_right.png; sourceTree = "<group>"; };
+		7025634517A01EE700B48AA2 /* arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_right@2x.png"; sourceTree = "<group>"; };
 		703DA4DB178B455600464DD3 /* CCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocation.h; sourceTree = "<group>"; };
 		703DA4DC178B455600464DD3 /* CCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocation.m; sourceTree = "<group>"; };
 		703DA4DF178B457200464DD3 /* CCLocationsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationsDataProvider.h; sourceTree = "<group>"; };
@@ -1674,6 +1708,10 @@
 				70066B4E17993C3200B7A4E7 /* announcement_button@2x.png */,
 				70066B4F17993C3200B7A4E7 /* announcement_button_active.png */,
 				70066B5017993C3200B7A4E7 /* announcement_button_active@2x.png */,
+				7025634217A01EE700B48AA2 /* arrow_left.png */,
+				7025634317A01EE700B48AA2 /* arrow_left@2x.png */,
+				7025634417A01EE700B48AA2 /* arrow_right.png */,
+				7025634517A01EE700B48AA2 /* arrow_right@2x.png */,
 				70066B5117993C3200B7A4E7 /* avatar_placeholder.png */,
 				70066B5217993C3200B7A4E7 /* avatar_placeholder@2x.png */,
 				70066B5317993C3200B7A4E7 /* back_button.png */,
@@ -2309,6 +2347,72 @@
 			path = LoadPreviousItemsSectionHeader;
 			sourceTree = "<group>";
 		};
+		70256321179FD70200B48AA2 /* GroupInviteController */ = {
+			isa = PBXGroup;
+			children = (
+				70256322179FD71100B48AA2 /* CCGroupInviteViewController.h */,
+				70256323179FD71100B48AA2 /* CCGroupInviteViewController.m */,
+				70256324179FD71100B48AA2 /* CCGroupInviteViewController.xib */,
+			);
+			path = GroupInviteController;
+			sourceTree = "<group>";
+		};
+		70256327179FD74900B48AA2 /* SendGroupInviteTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				70256328179FD75D00B48AA2 /* CCSendGroupInviteTransaction.h */,
+				70256329179FD75D00B48AA2 /* CCSendGroupInviteTransaction.m */,
+			);
+			path = SendGroupInviteTransaction;
+			sourceTree = "<group>";
+		};
+		7025632B179FE3E400B48AA2 /* GroupInvitesAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				7025632C179FE3F500B48AA2 /* CCGroupInvitesApiProvider.h */,
+				7025632D179FE3F500B48AA2 /* CCGroupInvitesApiProvider.m */,
+				7025632F179FE41700B48AA2 /* CCGroupInvitesApiProviderProtocol.h */,
+			);
+			path = GroupInvitesAPIProvider;
+			sourceTree = "<group>";
+		};
+		70256330179FF13B00B48AA2 /* ClassmatesToInviteInGroupDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				70256331179FF14600B48AA2 /* CCClassmatesToInviteInGroupDataProvider.h */,
+				70256332179FF14600B48AA2 /* CCClassmatesToInviteInGroupDataProvider.m */,
+			);
+			path = ClassmatesToInviteInGroupDataProvider;
+			sourceTree = "<group>";
+		};
+		7025633417A003E600B48AA2 /* GroupInvitesDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				7025633517A003F400B48AA2 /* CCGroupInvitesDataProvider.h */,
+				7025633617A003F400B48AA2 /* CCGroupInvitesDataProvider.m */,
+			);
+			path = GroupInvitesDataProvider;
+			sourceTree = "<group>";
+		};
+		7025633817A0057300B48AA2 /* GroupInviteCell */ = {
+			isa = PBXGroup;
+			children = (
+				7025633917A0058800B48AA2 /* CCGroupInviteCell.h */,
+				7025633A17A0058800B48AA2 /* CCGroupInviteCell.m */,
+				7025634017A0092500B48AA2 /* CCGroupInviteCell.xib */,
+			);
+			path = GroupInviteCell;
+			sourceTree = "<group>";
+		};
+		7025633C17A0062400B48AA2 /* GroupInvite */ = {
+			isa = PBXGroup;
+			children = (
+				7025633D17A0063100B48AA2 /* CCGroupInvite.h */,
+				7025633E17A0063100B48AA2 /* CCGroupInvite.m */,
+			);
+			path = GroupInvite;
+			sourceTree = "<group>";
+		};
 		703DA4DA178B455600464DD3 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -2437,6 +2541,7 @@
 				70A29C7A178778AB001BC8DD /* EducationCreationController */,
 				70A29C7E178778AB001BC8DD /* FilterController */,
 				70FDD624179D242100871727 /* GroupController */,
+				70256321179FD70200B48AA2 /* GroupInviteController */,
 				70FDD657179DC07900871727 /* GroupMessage */,
 				70FDD64C179D4D4B00871727 /* GroupTabbarController */,
 				70FDD645179D48AE00871727 /* GroupTableController */,
@@ -2846,6 +2951,7 @@
 				70A29D4F17877B94001BC8DD /* CitiesDataProvider */,
 				70A29D5217877B94001BC8DD /* ClassesDataProvider */,
 				70A29D5517877B94001BC8DD /* ClassmatesDataProvider */,
+				70256330179FF13B00B48AA2 /* ClassmatesToInviteInGroupDataProvider */,
 				70A29D5817877B94001BC8DD /* CollegeSearchingDataProvider */,
 				70A29D5B17877B94001BC8DD /* CollegeSellectionDataProvider */,
 				D37122C717A121E700A7DF04 /* CommonClassesDataProvider */,
@@ -2856,6 +2962,7 @@
 				70A29D6717877B94001BC8DD /* EducationsDataProvider */,
 				70F42A77178D5A1C00E763F3 /* ForumsDataProvider */,
 				70A29D6A17877B94001BC8DD /* FiltersDataProvider */,
+				7025633417A003E600B48AA2 /* GroupInvitesDataProvider */,
 				70FDD653179D55E000871727 /* GroupmatesDataDrovider */,
 				70F42A78178D5A1C00E763F3 /* GroupsDataProvider */,
 				70A29D6D17877B94001BC8DD /* ImageSortingDataProvider */,
@@ -3158,6 +3265,7 @@
 				70A29DED17877CB5001BC8DD /* FilterSection */,
 				70B2D04B17940161001B0C2C /* Forum */,
 				700F9466178F03F700A6FBBA /* Group */,
+				7025633C17A0062400B48AA2 /* GroupInvite */,
 				703DA4DA178B455600464DD3 /* Location */,
 				D3949722178D5C0000C39A7E /* Message */,
 				70A29DF017877CB5001BC8DD /* Note */,
@@ -3493,6 +3601,7 @@
 				70B2D05817940245001B0C2C /* DropboxAPIProvider */,
 				70B2D05C17940245001B0C2C /* FacebookAPI */,
 				70B2D08C1794026C001B0C2C /* ForumsAPIProvider */,
+				7025632B179FE3E400B48AA2 /* GroupInvitesAPIProvider */,
 				70B2D06017940245001B0C2C /* GroupsAPIProvider */,
 				70B2D06417940245001B0C2C /* LocationsAPIProvider */,
 				70B2D06817940245001B0C2C /* LoginAPIProvider */,
@@ -3780,6 +3889,7 @@
 				70B2D16717944894001B0C2C /* SelectPdfFromDropbox */,
 				70B2D16A17944894001B0C2C /* SelectUserClassmatesTransaction */,
 				70B2D16D17944894001B0C2C /* SelectUserGroupsTransaction */,
+				70256327179FD74900B48AA2 /* SendGroupInviteTransaction */,
 				70B2D17017944894001B0C2C /* ShowLocationsTransaction */,
 				70B2D17317944894001B0C2C /* ShowNotesForClassTransaction */,
 				70B2D17617944894001B0C2C /* SignupTransaction */,
@@ -4372,6 +4482,7 @@
 				70B2D1E317944E39001B0C2C /* EducationCell */,
 				70B2D1E717944E39001B0C2C /* ForumCell */,
 				70B2D1EB17944E39001B0C2C /* GroupCell */,
+				7025633817A0057300B48AA2 /* GroupInviteCell */,
 				70B2D1EF17944E39001B0C2C /* GroupSelectionCell */,
 				70B2D1F317944E39001B0C2C /* ImageCell */,
 				70B2D1F717944E39001B0C2C /* LocationCell */,
@@ -5795,6 +5906,12 @@
 				D38532ED179DDA470075F870 /* CCAnnouncementCell.xib in Resources */,
 				70FDD65C179DC08E00871727 /* CCGroupMessageViewController.xib in Resources */,
 				70FDD666179E786C00871727 /* CCEditGroupViewController.xib in Resources */,
+				70256326179FD71100B48AA2 /* CCGroupInviteViewController.xib in Resources */,
+				7025634117A0092600B48AA2 /* CCGroupInviteCell.xib in Resources */,
+				7025634617A01EE700B48AA2 /* arrow_left.png in Resources */,
+				7025634717A01EE700B48AA2 /* arrow_left@2x.png in Resources */,
+				7025634817A01EE700B48AA2 /* arrow_right.png in Resources */,
+				7025634917A01EE700B48AA2 /* arrow_right@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6148,6 +6265,13 @@
 				70FDD676179ECE8F00871727 /* NSDateFormatter+Locale.m in Sources */,
 				D37122CA17A1220200A7DF04 /* CCCommonClassesDataProvider.m in Sources */,
 				D37122CE17A1304500A7DF04 /* CCPushToClassControllerTransaction.m in Sources */,
+				70256325179FD71100B48AA2 /* CCGroupInviteViewController.m in Sources */,
+				7025632A179FD75D00B48AA2 /* CCSendGroupInviteTransaction.m in Sources */,
+				7025632E179FE3F500B48AA2 /* CCGroupInvitesApiProvider.m in Sources */,
+				70256333179FF14600B48AA2 /* CCClassmatesToInviteInGroupDataProvider.m in Sources */,
+				7025633717A003F400B48AA2 /* CCGroupInvitesDataProvider.m in Sources */,
+				7025633B17A0058800B48AA2 /* CCGroupInviteCell.m in Sources */,
+				7025633F17A0063100B48AA2 /* CCGroupInvite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

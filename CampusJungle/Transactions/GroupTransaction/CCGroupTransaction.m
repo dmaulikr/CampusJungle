@@ -18,6 +18,7 @@
 #import "CCGroupMessageTransaction.h"
 #import "CCEditGroupTransaction.h"
 #import "CCMessageDetailsTransaction.h"
+#import "CCSendGroupInviteTransaction.h"
 
 @implementation CCGroupTransaction
 
@@ -57,6 +58,9 @@
     CCMessageDetailsTransaction *messageDetailsTransaction = [CCMessageDetailsTransaction new];
     messageDetailsTransaction.navigation = self.navigation;
     
+    CCSendGroupInviteTransaction *sendGroupInviteTransaction = [CCSendGroupInviteTransaction new];
+    sendGroupInviteTransaction.navigation = self.navigation;
+    
     CCGroupViewController *groupController = [CCGroupViewController new];
     groupController.locationTransaction = locationsTransaction;
     groupController.addLocationTransaction = addLocationTransaction;
@@ -67,6 +71,7 @@
     groupController.groupMessageTransaction = groupMessageTransaction;
     groupController.editGroupTransaction = editGroupTransaction;
     groupController.messageDetailsTransaction = messageDetailsTransaction;
+    groupController.sendGroupInviteTransaction = sendGroupInviteTransaction;
     
     [groupController setGroup:group];
     [self.navigation pushViewController:groupController animated:YES];

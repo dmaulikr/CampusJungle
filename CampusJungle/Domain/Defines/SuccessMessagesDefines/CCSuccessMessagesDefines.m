@@ -29,5 +29,10 @@ const struct CCSuccessMessages CCSuccessMessages = {
     .leaveGroup = @"You've successfully leave group",
     .sentGroupMessage = @"You've successfully sent group message",
     .updatedGroup = @"You've successfully updated group",
-    .deleteMessage = @"Message was successfully removed"
+    .deleteMessage = @"Message was successfully removed",
+    .groupInvitesSent = @"You've successfully sent group invites",
+    .acceptGroupInvite = @"You've successfully accepted group invite",
+    .rejectGroupInvite = @"You've successfully rejected group invite",
+    .resendGroupInvite = @"You've successfully re-sent group invite",
+    .deleteGroupInvite = @"You've successfully delete group invite",
 };

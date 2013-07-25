@@ -23,6 +23,7 @@
 @property (nonatomic, strong) id<CCTransactionWithObject> editGroupTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> groupMessageTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> messageDetailsTransaction;
+@property (nonatomic, strong) id<CCTransactionWithObject> sendGroupInviteTransaction;
 @property (nonatomic, strong) id<CCTransaction> backTransaction;
 
 - (void)setGroup:(CCGroup *)group;

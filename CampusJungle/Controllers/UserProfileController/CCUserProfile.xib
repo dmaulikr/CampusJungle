@@ -463,7 +463,7 @@
 							<string key="NSResourceName">avatar_placeholder.png</string>
 						</object>
 					</object>
-					<object class="IBUIView" id="838272669">
+					<object class="IBUIView" id="33667457">
 						<reference key="NSNextResponder" ref="845167541"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{116, 119}, {201, 33}}</string>
@@ -632,7 +632,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">rateContainer</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="838272669"/>
+						<reference key="destination" ref="33667457"/>
 					</object>
 					<int key="connectionID">100</int>
 				</object>
@@ -779,7 +779,7 @@
 							<reference ref="793408469"/>
 							<reference ref="666321158"/>
 							<reference ref="1049562121"/>
-							<reference ref="838272669"/>
+							<reference ref="33667457"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Header</string>
@@ -859,7 +859,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">99</int>
-						<reference key="object" ref="838272669"/>
+						<reference key="object" ref="33667457"/>
 						<reference key="parent" ref="845167541"/>
 					</object>
 				</array>
@@ -903,7 +903,7 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="NS.key.0">avatar_placeholder.png</string>
-			<string key="NS.object.0">{104, 99}</string>
+			<string key="NS.object.0">{16, 16}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>
