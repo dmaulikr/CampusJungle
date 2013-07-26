@@ -14,7 +14,7 @@
 @protocol CCAppInviteApiProviderProtocol <AppleGuiceInjectable>
 
 - (void)loadAppInvitesWithPageNumber:(NSInteger)pageNumber successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
-- (void)sendAppInvite:(CCAppInvite *)appInvite successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)sendAppInvites:(NSArray *)array successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 - (void)resendAppInvite:(CCAppInvite *)appInvite successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 - (void)deleteAppInvite:(CCAppInvite *)appInvite successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 

@@ -27,12 +27,12 @@
     }];
 }
 
-- (void)sendAppInvite:(CCAppInvite *)appInvite successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+- (void)sendAppInvites:(NSArray *)array successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [self setAuthorizationToken];
-    NSString *path = CCAPIDefines.sendAppInvite;
-    [objectManager postObject:appInvite path:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    NSString *path = CCAPIDefines.sendAppInvites;
+    [objectManager postObject:array path:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         successHandler(mappingResult.firstObject);
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         errorHandler(error);

@@ -14,9 +14,13 @@
 
 #import "CCAddressBookRecordCell.h"
 #import "CCAppearanceConfigurator.h"
+#import "CCStandardErrorHandler.h"
 
 #import "CCMailComposerDelegate.h"
 #import "CCMessageComposerDelegate.h"
+
+#import "CCAppInviteApiProviderProtocol.h"
+#import "CCAppInvite.h"
 
 typedef enum {
     kEmailMode = 0,
@@ -30,6 +34,8 @@ typedef enum {
 
 @property (nonatomic, strong) CCMailComposerDelegate *mailComposerDelegate;
 @property (nonatomic, strong) CCMessageComposerDelegate *messageComposerDelegate;
+
+@property (nonatomic, strong) id<CCAppInviteApiProviderProtocol> ioc_appInvitesApiProvider;
 
 @end
 
@@ -113,7 +119,7 @@ typedef enum {
     };
     self.mailComposerDelegate = [[CCMailComposerDelegate alloc] initWithSuccessBlock:^{
         completionBlock();
-        [self sendEmailInvitesToRecords:[weakSelf.dataProvider checkedRecords]];
+        [self sendInvitesToRecords:[weakSelf.dataProvider checkedRecords]];
     } errorBlock:^{
         completionBlock();
     } cancelBlock:^{
@@ -140,7 +146,7 @@ typedef enum {
     MFMessageComposeViewController *messageViewController = [[MFMessageComposeViewController alloc] init];
     self.messageComposerDelegate = [[CCMessageComposerDelegate alloc] initWithSuccessBlock:^{
         completionBlock();
-        [self sendSmsInvitesToRecords:[weakSelf.dataProvider checkedRecords]];
+        [self sendInvitesToRecords:[weakSelf.dataProvider checkedRecords]];
     } errorBlock:^{
         completionBlock();
     } cancelBlock:^{
@@ -179,18 +185,20 @@ typedef enum {
 
 #pragma mark -
 #pragma mark Requests
-- (void)sendEmailInvitesToRecords:(NSArray *)recordsArray
+- (void)sendInvitesToRecords:(NSArray *)recordsArray
 {
-    // TODO
-    NSLog(@"records array = %@", recordsArray);
-    [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.appInviteSent duration:CCProgressHudsConstants.loaderDuration];
-}
-
-- (void)sendSmsInvitesToRecords:(NSArray *)recordsArray
-{
-    // TODO
-    NSLog(@"records array = %@", recordsArray);
-    [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.appInviteSent duration:CCProgressHudsConstants.loaderDuration];
+    NSMutableArray *appInvitesArray = [NSMutableArray array];
+    for (CCAddressBookRecord *record in recordsArray) {
+        CCAppInvite *appInvite = [CCAppInvite createWithAddressBookRecord:record];
+        [appInvitesArray addObject:appInvite];
+    }
+    __weak CCAppInviteViewController *weakSelf = self;
+    [self.ioc_appInvitesApiProvider sendAppInvites:appInvitesArray successHandler:^(RKMappingResult *result) {
+        [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.appInviteSent duration:CCProgressHudsConstants.loaderDuration];
+        [weakSelf.backTransaction perform];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
 }
 
 @end
