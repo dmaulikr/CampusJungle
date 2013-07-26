@@ -91,7 +91,7 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *rejectGroupInvite;
     __unsafe_unretained NSString *deleteGroupInvite;
     __unsafe_unretained NSString *loadAppInvites;
-    __unsafe_unretained NSString *sendAppInvites;
+    __unsafe_unretained NSString *sendAppInvite;
     __unsafe_unretained NSString *resendAppInvite;
     __unsafe_unretained NSString *deleteAppInvite;
 } CCAPIDefines;

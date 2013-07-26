@@ -93,7 +93,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .rejectGroupInvite = @"/api/group_invites/%@/reject",
     .deleteGroupInvite = @"/api/group_invites/%@",
     .loadAppInvites = @"/api/users/me/app_invites",
-    .sendAppInvites = @"/api/app_invites",
+    .sendAppInvite = @"/api/app_invites",
     .resendAppInvite = @"/api/app_invites/%@",
     .deleteAppInvite = @"/api/app_invites/%@",
 };

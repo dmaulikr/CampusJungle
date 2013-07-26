@@ -23,6 +23,7 @@
 		70061CDA17A29A7B00848F62 /* CCAddressBookHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 70061CD917A29A7B00848F62 /* CCAddressBookHeader.m */; };
 		70061CDC17A29AA700848F62 /* CCAddressBookHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70061CDB17A29AA700848F62 /* CCAddressBookHeader.xib */; };
 		70061CE017A2CC4A00848F62 /* CCAppInvite.m in Sources */ = {isa = PBXBuildFile; fileRef = 70061CDF17A2CC4A00848F62 /* CCAppInvite.m */; };
+		70061CE417A2D09E00848F62 /* CCAppInviteApiProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70061CE317A2D09E00848F62 /* CCAppInviteApiProvider.m */; };
 		70066B3D1799381600B7A4E7 /* CCButtonsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 70066B3C1799381600B7A4E7 /* CCButtonsHelper.m */; };
 		70066BD417993C3300B7A4E7 /* action_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 70066B3F17993C3200B7A4E7 /* action_button.png */; };
 		70066BD517993C3300B7A4E7 /* action_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70066B4017993C3200B7A4E7 /* action_button@2x.png */; };
@@ -700,6 +701,9 @@
 		70061CDB17A29AA700848F62 /* CCAddressBookHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAddressBookHeader.xib; sourceTree = "<group>"; };
 		70061CDE17A2CC4A00848F62 /* CCAppInvite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAppInvite.h; sourceTree = "<group>"; };
 		70061CDF17A2CC4A00848F62 /* CCAppInvite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAppInvite.m; sourceTree = "<group>"; };
+		70061CE217A2D09E00848F62 /* CCAppInviteApiProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAppInviteApiProvider.h; sourceTree = "<group>"; };
+		70061CE317A2D09E00848F62 /* CCAppInviteApiProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAppInviteApiProvider.m; sourceTree = "<group>"; };
+		70061CE517A2D0C200848F62 /* CCAppInviteApiProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCAppInviteApiProviderProtocol.h; sourceTree = "<group>"; };
 		70066B3B1799381600B7A4E7 /* CCButtonsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCButtonsHelper.h; sourceTree = "<group>"; };
 		70066B3C1799381600B7A4E7 /* CCButtonsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCButtonsHelper.m; sourceTree = "<group>"; };
 		70066B3F17993C3200B7A4E7 /* action_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = action_button.png; sourceTree = "<group>"; };
@@ -1849,6 +1853,16 @@
 				70061CDF17A2CC4A00848F62 /* CCAppInvite.m */,
 			);
 			path = AppInvite;
+			sourceTree = "<group>";
+		};
+		70061CE117A2D08200848F62 /* AppInviteAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				70061CE217A2D09E00848F62 /* CCAppInviteApiProvider.h */,
+				70061CE317A2D09E00848F62 /* CCAppInviteApiProvider.m */,
+				70061CE517A2D0C200848F62 /* CCAppInviteApiProviderProtocol.h */,
+			);
+			path = AppInviteAPIProvider;
 			sourceTree = "<group>";
 		};
 		70066B3A1799380B00B7A4E7 /* ButtonsHelper */ = {
@@ -3778,6 +3792,7 @@
 				D38532DB179D67150075F870 /* AnnouncementAPIProvider */,
 				7012AC771795507E002DA5E9 /* AnswersAPIProvider */,
 				70B2D05017940245001B0C2C /* APIProvider */,
+				70061CE117A2D08200848F62 /* AppInviteAPIProvider */,
 				70B2D05417940245001B0C2C /* ClassesApiProvider */,
 				701254021796E8940085247A /* CommentsAPIProvider */,
 				70B2D05817940245001B0C2C /* DropboxAPIProvider */,
@@ -6496,6 +6511,7 @@
 				70061CD617A293C200848F62 /* CCAppInviteDataProvider.m in Sources */,
 				70061CDA17A29A7B00848F62 /* CCAddressBookHeader.m in Sources */,
 				70061CE017A2CC4A00848F62 /* CCAppInvite.m in Sources */,
+				70061CE417A2D09E00848F62 /* CCAppInviteApiProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
