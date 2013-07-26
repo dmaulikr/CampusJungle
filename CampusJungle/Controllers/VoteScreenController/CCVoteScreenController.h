@@ -8,9 +8,11 @@
 
 #import "CCBaseViewController.h"
 #import "CCClass.h"
+#import "CCTransactionWithObject.h"
 
 @interface CCVoteScreenController : CCBaseViewController
 
 @property (nonatomic, strong) CCClass *currentClass;
+@property (nonatomic, strong) id <CCTransactionWithObject> voteResultTransaction;
 
 @end

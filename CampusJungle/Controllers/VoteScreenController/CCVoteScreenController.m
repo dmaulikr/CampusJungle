@@ -91,6 +91,9 @@
     [self setbuttonsClear:self.intrestingRadioButtonSetController.buttons];
     [self setbuttonsClear:self.handoutsRadioButtonSetController.buttons];
     [self setbuttonsClear:self.speedRadioButtonSetController.buttons];
+    
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target: nil action: nil];
+    [[self navigationItem] setBackBarButtonItem: newBackButton];
 }
 
 - (void)setbuttonsClear:(NSArray *)array
@@ -156,11 +159,14 @@
                                          },
                                      ]
                              };
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
    [self.ioc_apiProvider postFeedback:params
                               classID:self.currentClass.classID successHandler:^(id result) {
-                                  
+                                  [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                  [self.voteResultTransaction performWithObject:self.currentClass];
                               } errorHandler:^(NSError *error) {
                                   [CCStandardErrorHandler showErrorWithError:error];
+                                  [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                               }];
 }
 

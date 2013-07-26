@@ -16,6 +16,7 @@
     NSParameterAssert(self.navigation);
     CCVoteResultScreenController *voteController = [CCVoteResultScreenController new];
     voteController.currentClass = object;
+    voteController.backToClassTransaction = self.backToClassTransaction;
     [self.navigation pushViewController:voteController animated:YES];
 }
 

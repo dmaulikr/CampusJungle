@@ -12,6 +12,7 @@
 #import "CCStandardErrorHandler.h"
 #import "CCFeedback.h"
 #import "CCScaleView.h"
+#import "CCBackToControllerTransaction.h"
 
 @interface CCVoteResultScreenController ()
 
@@ -43,7 +44,6 @@
     
     NSArray *scaleArray = @[@"Pour",@"Fair",@"Cool",@"Coolest"];
     NSArray *speedArray = @[@"  Too slow",@"Slow",@"Perfect",@"Fast",@"Too fast  "];
-    self.currentEngagementScale.value = 0.5;
     self.currentEngagementScale.arrayOfValues = scaleArray;
     self.currentHandoutsScale.arrayOfValues = scaleArray;
     self.currentIntrestingScale.arrayOfValues = scaleArray;
@@ -59,42 +59,51 @@
     }
     
     [self loadData];
+    self.navigationController.viewControllers = @[[(CCBackToControllerTransaction *)self.backToClassTransaction targetController],self];
 }
 
 - (void)loadData
 {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self.ioc_apiProvider loadFeedbackForClassWithID:self.currentClass.classID
                                       successHandler:^(RKMappingResult *result) {
+                                          [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                                           self.feedback = result.firstObject;
                                           [self setUpFeedBack];
                                       } errorHandler:^(NSError *error) {
                                           [CCStandardErrorHandler showErrorWithError:error];
+                                          [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                                       }];
 }
 
 - (void)setUpFeedBack
 {
     self.currentEngagementScale.value = [self.feedback.current_statistics[@"question1"] floatValue];
-    self.currentHandoutsScale.value = [self.feedback.current_statistics[@"question2"] floatValue];
-    self.currentIntrestingScale.value = [self.feedback.current_statistics[@"question3"] floatValue];
+    self.currentIntrestingScale.value = [self.feedback.current_statistics[@"question2"] floatValue];
+    self.currentHandoutsScale.value = [self.feedback.current_statistics[@"question3"] floatValue];
     self.currentSpeedScale.value = [self.feedback.current_statistics[@"question4"] floatValue];
     
     self.totalEngagementScale.value = [self.feedback.total_statistics[@"question1"] floatValue];
-    self.totalHandoutsScale.value = [self.feedback.total_statistics[@"question2"] floatValue];
-    self.totalIntrestingScale.value = [self.feedback.total_statistics[@"question3"] floatValue];
+    self.totalIntrestingScale.value = [self.feedback.total_statistics[@"question2"] floatValue];
+    self.totalHandoutsScale.value = [self.feedback.total_statistics[@"question3"] floatValue];
     self.totalSpeedScale.value = [self.feedback.total_statistics[@"question4"] floatValue];
 }
 
 - (IBAction)didPressRecalculateButton
 {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self.ioc_apiProvider recalculateFeedbackInClassWithID:self.currentClass.classID
                                             successHandler:^(RKMappingResult *result) {
                                                 self.feedback = result.firstObject;
                                                 [self setUpFeedBack];
+                                                [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                                             }
                                               errorHandler:^(NSError *error) {
                                                   [CCStandardErrorHandler showErrorWithError:error];
+                                                  [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                                               }];
 }
+
+
 
 @end

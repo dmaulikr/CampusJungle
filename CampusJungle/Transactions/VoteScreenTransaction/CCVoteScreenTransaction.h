@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "CCTransactionWithObject.h"
+#import "CCTransaction.h"
 
 @interface CCVoteScreenTransaction : NSObject<CCTransactionWithObject>
 
 @property (nonatomic, strong) UINavigationController *navigation;
+@property (nonatomic, strong) id <CCTransaction> backToClassTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> voteResultTransaction;
 
 @end

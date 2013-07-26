@@ -8,9 +8,11 @@
 
 #import "CCBaseViewController.h"
 #import "CCClass.h"
+#import "CCTransaction.h"
 
 @interface CCVoteResultScreenController : CCBaseViewController
 
 @property (nonatomic, strong) CCClass *currentClass;
+@property (nonatomic, strong) id <CCTransaction> backToClassTransaction;
 
 @end
