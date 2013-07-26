@@ -90,6 +90,10 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *acceptGroupInvite;
     __unsafe_unretained NSString *rejectGroupInvite;
     __unsafe_unretained NSString *deleteGroupInvite;
+    __unsafe_unretained NSString *getFeedback;
+    __unsafe_unretained NSString *postFeedback;
+    __unsafe_unretained NSString *recalculateFeedback;
+    __unsafe_unretained NSString *votingAvailability;
 } CCAPIDefines;
 
 

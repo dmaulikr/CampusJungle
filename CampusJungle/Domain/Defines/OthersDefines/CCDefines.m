@@ -92,6 +92,10 @@ const struct CCAPIDefines CCAPIDefines = {
     .acceptGroupInvite = @"/api/group_invites/%@/accept",
     .rejectGroupInvite = @"/api/group_invites/%@/reject",
     .deleteGroupInvite = @"/api/group_invites/%@",
+    .getFeedback = @"/api/classes/%@/feedback",
+    .postFeedback = @"/api/classes/%@/feedback",
+    .recalculateFeedback = @"/api/classes/%@/feedback/recalculate",
+    .votingAvailability = @"/api/classes/%@/feedback/voting_availability",
 };
 
 const struct CCUserDefines CCUserDefines = {

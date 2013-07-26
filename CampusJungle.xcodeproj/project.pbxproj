@@ -609,6 +609,14 @@
 		D37122DC17A1410800A7DF04 /* CCVoteScreenTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D37122DB17A1410800A7DF04 /* CCVoteScreenTransaction.m */; };
 		D37122E117A1446500A7DF04 /* CCVoteResultScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = D37122DF17A1446500A7DF04 /* CCVoteResultScreenController.m */; };
 		D37122E217A1446500A7DF04 /* CCVoteResultScreenController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D37122E017A1446500A7DF04 /* CCVoteResultScreenController.xib */; };
+		D37122E717A24FB700A7DF04 /* CCVotesAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D37122E617A24FB700A7DF04 /* CCVotesAPIProvider.m */; };
+		D37122F017A25B1A00A7DF04 /* CCFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = D37122EF17A25B1A00A7DF04 /* CCFeedback.m */; };
+		D37122F517A2707200A7DF04 /* CCScaleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D37122F417A2707200A7DF04 /* CCScaleView.m */; };
+		D37122F717A270A700A7DF04 /* CCScaleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D37122F617A270A700A7DF04 /* CCScaleView.xib */; };
+		D37122FD17A2B45900A7DF04 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = D37122F917A2B45900A7DF04 /* check.png */; };
+		D37122FE17A2B45900A7DF04 /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D37122FA17A2B45900A7DF04 /* check@2x.png */; };
+		D37122FF17A2B45900A7DF04 /* check_active.png in Resources */ = {isa = PBXBuildFile; fileRef = D37122FB17A2B45900A7DF04 /* check_active.png */; };
+		D371230017A2B45900A7DF04 /* check_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D37122FC17A2B45900A7DF04 /* check_active@2x.png */; };
 		D3819B571799CB4300C93005 /* CCProfessorUploadDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3819B561799CB4300C93005 /* CCProfessorUploadDataProvider.m */; };
 		D3819B5B1799CF3500C93005 /* CCProfessorUploadsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3819B5A1799CF3500C93005 /* CCProfessorUploadsCell.m */; };
 		D3819B5D1799CF8300C93005 /* CCProfessorUploadsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3819B5C1799CF8300C93005 /* CCProfessorUploadsCell.xib */; };
@@ -1600,6 +1608,18 @@
 		D37122DE17A1446500A7DF04 /* CCVoteResultScreenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCVoteResultScreenController.h; sourceTree = "<group>"; };
 		D37122DF17A1446500A7DF04 /* CCVoteResultScreenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCVoteResultScreenController.m; sourceTree = "<group>"; };
 		D37122E017A1446500A7DF04 /* CCVoteResultScreenController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCVoteResultScreenController.xib; sourceTree = "<group>"; };
+		D37122E517A24FB700A7DF04 /* CCVotesAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCVotesAPIProvider.h; sourceTree = "<group>"; };
+		D37122E617A24FB700A7DF04 /* CCVotesAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCVotesAPIProvider.m; sourceTree = "<group>"; };
+		D37122E917A2526200A7DF04 /* CCVotesAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCVotesAPIProviderProtocol.h; sourceTree = "<group>"; };
+		D37122EE17A25B1A00A7DF04 /* CCFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFeedback.h; sourceTree = "<group>"; };
+		D37122EF17A25B1A00A7DF04 /* CCFeedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFeedback.m; sourceTree = "<group>"; };
+		D37122F317A2707200A7DF04 /* CCScaleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScaleView.h; sourceTree = "<group>"; };
+		D37122F417A2707200A7DF04 /* CCScaleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScaleView.m; sourceTree = "<group>"; };
+		D37122F617A270A700A7DF04 /* CCScaleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCScaleView.xib; sourceTree = "<group>"; };
+		D37122F917A2B45900A7DF04 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		D37122FA17A2B45900A7DF04 /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
+		D37122FB17A2B45900A7DF04 /* check_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check_active.png; sourceTree = "<group>"; };
+		D37122FC17A2B45900A7DF04 /* check_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check_active@2x.png"; sourceTree = "<group>"; };
 		D3819B551799CB4300C93005 /* CCProfessorUploadDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProfessorUploadDataProvider.h; sourceTree = "<group>"; };
 		D3819B561799CB4300C93005 /* CCProfessorUploadDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCProfessorUploadDataProvider.m; sourceTree = "<group>"; };
 		D3819B591799CF3500C93005 /* CCProfessorUploadsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProfessorUploadsCell.h; sourceTree = "<group>"; };
@@ -3290,6 +3310,7 @@
 				701253FE1796E6CF0085247A /* Comment */,
 				70A29DE717877CB5001BC8DD /* DropboxFileInfo */,
 				70A29DEA17877CB5001BC8DD /* Education */,
+				D37122EA17A25AC100A7DF04 /* Feedback */,
 				70A29DED17877CB5001BC8DD /* FilterSection */,
 				70B2D04B17940161001B0C2C /* Forum */,
 				700F9466178F03F700A6FBBA /* Group */,
@@ -3501,6 +3522,7 @@
 				70B2D1D317944E39001B0C2C /* Cells */,
 				7012AC9417957C03002DA5E9 /* Headers */,
 				70A29E9617877D2B001BC8DD /* Pickers */,
+				D37122F217A2705E00A7DF04 /* ScaleView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -3640,6 +3662,7 @@
 				70B2D0B417942F01001B0C2C /* QuestionsAPIProvider */,
 				70B2D07817940245001B0C2C /* SignUpAPIProvider */,
 				70B2D07C17940245001B0C2C /* StuffAPIProvider */,
+				D37122E417A24F8A00A7DF04 /* VotesAPIProvider */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -5365,6 +5388,46 @@
 			path = VoteResultScreenControler;
 			sourceTree = "<group>";
 		};
+		D37122E417A24F8A00A7DF04 /* VotesAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D37122E517A24FB700A7DF04 /* CCVotesAPIProvider.h */,
+				D37122E617A24FB700A7DF04 /* CCVotesAPIProvider.m */,
+				D37122E917A2526200A7DF04 /* CCVotesAPIProviderProtocol.h */,
+			);
+			path = VotesAPIProvider;
+			sourceTree = "<group>";
+		};
+		D37122EA17A25AC100A7DF04 /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				D37122EE17A25B1A00A7DF04 /* CCFeedback.h */,
+				D37122EF17A25B1A00A7DF04 /* CCFeedback.m */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		D37122F217A2705E00A7DF04 /* ScaleView */ = {
+			isa = PBXGroup;
+			children = (
+				D37122F317A2707200A7DF04 /* CCScaleView.h */,
+				D37122F417A2707200A7DF04 /* CCScaleView.m */,
+				D37122F617A270A700A7DF04 /* CCScaleView.xib */,
+			);
+			path = ScaleView;
+			sourceTree = "<group>";
+		};
+		D37122F817A2B45900A7DF04 /* CheckBox */ = {
+			isa = PBXGroup;
+			children = (
+				D37122F917A2B45900A7DF04 /* check.png */,
+				D37122FA17A2B45900A7DF04 /* check@2x.png */,
+				D37122FB17A2B45900A7DF04 /* check_active.png */,
+				D37122FC17A2B45900A7DF04 /* check_active@2x.png */,
+			);
+			path = CheckBox;
+			sourceTree = "<group>";
+		};
 		D3819B541799C9BD00C93005 /* ProfessorUploadsDataProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -5589,6 +5652,7 @@
 		D3A318A8177C4DAB0004C4E8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D37122F817A2B45900A7DF04 /* CheckBox */,
 				D3A318A9177C4DAB0004C4E8 /* Background */,
 			);
 			path = Images;
@@ -6002,6 +6066,11 @@
 				D37122D417A13FE500A7DF04 /* CCVoteScreenController.xib in Resources */,
 				D37122E217A1446500A7DF04 /* CCVoteResultScreenController.xib in Resources */,
 				70DA30D317A12F3C004EE6DC /* CCStuffHeader.xib in Resources */,
+				D37122F717A270A700A7DF04 /* CCScaleView.xib in Resources */,
+				D37122FD17A2B45900A7DF04 /* check.png in Resources */,
+				D37122FE17A2B45900A7DF04 /* check@2x.png in Resources */,
+				D37122FF17A2B45900A7DF04 /* check_active.png in Resources */,
+				D371230017A2B45900A7DF04 /* check_active@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6368,6 +6437,9 @@
 				D37122E117A1446500A7DF04 /* CCVoteResultScreenController.m in Sources */,
 				70DA30CD17A12D56004EE6DC /* CCStuffCollectionViewDataSource.m in Sources */,
 				70DA30D117A12F19004EE6DC /* CCStuffHeader.m in Sources */,
+				D37122E717A24FB700A7DF04 /* CCVotesAPIProvider.m in Sources */,
+				D37122F017A25B1A00A7DF04 /* CCFeedback.m in Sources */,
+				D37122F517A2707200A7DF04 /* CCScaleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

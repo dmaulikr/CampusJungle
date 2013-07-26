@@ -87,7 +87,8 @@
 
 - (IBAction)classFeedBackButtonDidPressed
 {
-    [self.voteResultTransaction performWithObject:self.currentClass];
+  //[self.voteResultTransaction performWithObject:self.currentClass];
+    [self.voteScreenTransaction performWithObject:self.currentClass];
 }
 
 - (void)setUpLeaveButton
