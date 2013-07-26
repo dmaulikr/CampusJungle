@@ -34,7 +34,6 @@
 {
     _cellObject = cellObject;
     CCNote *currentNote = cellObject;
-    
     self.noteDescription.text = currentNote.description;
     NSString *placeholderName;
     

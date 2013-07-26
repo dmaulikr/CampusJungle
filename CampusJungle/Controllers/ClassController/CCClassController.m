@@ -17,6 +17,7 @@
 #import "CCStandardErrorHandler.h"
 #import "CCAlertHelper.h"
 #import "CCButtonsHelper.h"
+#import "CCVotesAPIProviderProtocol.h"
 
 @interface CCClassController () <CCClassTableDelegate>
 
@@ -35,9 +36,13 @@
 @property (nonatomic, weak) IBOutlet UIButton *timetableButton;
 
 @property (nonatomic, strong) CCClassTableController *classContentTable;
-@property (nonatomic, strong) id<CCClassesApiProviderProtocol> ioc_classesApiProvider;
+@property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_classesApiProvider;
+@property (nonatomic, strong) id <CCVotesAPIProviderProtocol> ioc_votesApiProvider;
 
 @property (nonatomic, strong) CCClass *currentClass;
+
+
+- (IBAction)classFeedBackButtonDidPressed;
 
 @end
 
@@ -60,6 +65,12 @@
     [self setupTableView];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self setTitle:self.currentClass.className];
+}
+
 - (void)setupButtons
 {
     [self setUpLeaveButton];
@@ -80,6 +91,28 @@
     self.classContentTable.classID = self.currentClass.classID;
     self.classContentTable.delegate = self;
     [self.view addSubview:self.classContentTable.view];
+}
+
+- (IBAction)classFeedBackButtonDidPressed
+{
+    
+    if(self.currentClass.isProfessor.boolValue){
+        [self.voteResultTransaction performWithObject:self.currentClass];
+    } else {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [self.ioc_votesApiProvider checkVoitingAvailabilityForClassWithID:self.currentClass.classID successHandler:^(RKMappingResult *response) {
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            if([response.firstObject[@"availability"] boolValue]){
+                [self.voteScreenTransaction performWithObject:self.currentClass];
+
+            } else {
+                [self.voteResultTransaction performWithObject:self.currentClass]; 
+            }
+        } errorHandler:^(NSError *error) {
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
+    }
 }
 
 - (void)setUpLeaveButton
