@@ -94,6 +94,11 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *postFeedback;
     __unsafe_unretained NSString *recalculateFeedback;
     __unsafe_unretained NSString *votingAvailability;
+    __unsafe_unretained NSString *loadAppInvites;
+    __unsafe_unretained NSString *sendAppInvite;
+    __unsafe_unretained NSString *resendAppInvite;
+    __unsafe_unretained NSString *deleteAppInvite;
+    
 } CCAPIDefines;
 
 
@@ -259,6 +264,12 @@ extern const struct CCSearchBarPlaceholders {
     __unsafe_unretained NSString *searchClassmates;
     __unsafe_unretained NSString *searchGroups;
 } CCSearchBarPlaceholders;
+
+extern const struct CCAppInvitesDefines {
+    __unsafe_unretained NSString *appInviteSubject;
+    __unsafe_unretained NSString *emailInviteBody;
+    __unsafe_unretained NSString *smsInviteBody;
+} CCAppInvitesDefines;
 
 enum CCClassTabbarButtonsIdentifiers {
     CCClassTabbarButtonsIdentifierClassmate = 1,

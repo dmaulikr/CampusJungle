@@ -32,8 +32,7 @@
 @property (nonatomic, strong) id<CCTransactionWithObject> announcementTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> voteScreenTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> voteResultTransaction;
-
-
+@property (nonatomic, strong) id<CCTransactionWithObject> sendInviteTransaction;
 
 - (id)initWithClass:(CCClass *)classObject;
 - (IBAction)classMarketButtonDidPressed;

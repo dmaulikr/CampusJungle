@@ -12,4 +12,7 @@
 
 + (void)configurate;
 
++ (void)setDefaultTextFieldsAppearance;
++ (void)configurateTextFields;
+
 @end

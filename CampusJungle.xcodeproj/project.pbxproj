@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70061C9917A26FDD00848F62 /* CCAddressBookRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 70061C9817A26FDD00848F62 /* CCAddressBookRecord.m */; };
+		70061C9D17A2706B00848F62 /* CCAddressBookHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 70061C9C17A2706B00848F62 /* CCAddressBookHelper.m */; };
+		70061CA017A270EA00848F62 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70061C9E17A270DC00848F62 /* AddressBook.framework */; };
+		70061CA517A2746D00848F62 /* CCAppInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70061CA317A2746D00848F62 /* CCAppInviteViewController.m */; };
+		70061CA617A2746D00848F62 /* CCAppInviteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70061CA417A2746D00848F62 /* CCAppInviteViewController.xib */; };
+		70061CAA17A276B300848F62 /* CCAppInviteTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70061CA917A276B300848F62 /* CCAppInviteTransaction.m */; };
+		70061CB217A27F1300848F62 /* CCMailComposerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70061CAE17A27F1300848F62 /* CCMailComposerDelegate.m */; };
+		70061CB317A27F1300848F62 /* CCMessageComposerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70061CB117A27F1300848F62 /* CCMessageComposerDelegate.m */; };
+		70061CC817A284B500848F62 /* CCAddressBookRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70061CC717A284B500848F62 /* CCAddressBookRecordCell.m */; };
+		70061CCA17A284EA00848F62 /* CCAddressBookRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70061CC917A284EA00848F62 /* CCAddressBookRecordCell.xib */; };
+		70061CCE17A28D9A00848F62 /* CCAppInviteDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 70061CCD17A28D9A00848F62 /* CCAppInviteDataSource.m */; };
+		70061CD217A28E9D00848F62 /* CCAddressBookService.m in Sources */ = {isa = PBXBuildFile; fileRef = 70061CD117A28E9D00848F62 /* CCAddressBookService.m */; };
+		70061CD617A293C200848F62 /* CCAppInviteDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70061CD517A293C200848F62 /* CCAppInviteDataProvider.m */; };
+		70061CDA17A29A7B00848F62 /* CCAddressBookHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 70061CD917A29A7B00848F62 /* CCAddressBookHeader.m */; };
+		70061CDC17A29AA700848F62 /* CCAddressBookHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70061CDB17A29AA700848F62 /* CCAddressBookHeader.xib */; };
+		70061CE017A2CC4A00848F62 /* CCAppInvite.m in Sources */ = {isa = PBXBuildFile; fileRef = 70061CDF17A2CC4A00848F62 /* CCAppInvite.m */; };
+		70061CE417A2D09E00848F62 /* CCAppInviteApiProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70061CE317A2D09E00848F62 /* CCAppInviteApiProvider.m */; };
 		70066B3D1799381600B7A4E7 /* CCButtonsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 70066B3C1799381600B7A4E7 /* CCButtonsHelper.m */; };
 		70066BD417993C3300B7A4E7 /* action_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 70066B3F17993C3200B7A4E7 /* action_button.png */; };
 		70066BD517993C3300B7A4E7 /* action_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70066B4017993C3200B7A4E7 /* action_button@2x.png */; };
@@ -670,6 +687,37 @@
 
 /* Begin PBXFileReference section */
 		3EA3BC22A4CB480B8934991C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		70061C9717A26FDD00848F62 /* CCAddressBookRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddressBookRecord.h; sourceTree = "<group>"; };
+		70061C9817A26FDD00848F62 /* CCAddressBookRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddressBookRecord.m; sourceTree = "<group>"; };
+		70061C9B17A2706B00848F62 /* CCAddressBookHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddressBookHelper.h; sourceTree = "<group>"; };
+		70061C9C17A2706B00848F62 /* CCAddressBookHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddressBookHelper.m; sourceTree = "<group>"; };
+		70061C9E17A270DC00848F62 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		70061CA217A2746D00848F62 /* CCAppInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAppInviteViewController.h; sourceTree = "<group>"; };
+		70061CA317A2746D00848F62 /* CCAppInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAppInviteViewController.m; sourceTree = "<group>"; };
+		70061CA417A2746D00848F62 /* CCAppInviteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAppInviteViewController.xib; sourceTree = "<group>"; };
+		70061CA817A276B300848F62 /* CCAppInviteTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAppInviteTransaction.h; sourceTree = "<group>"; };
+		70061CA917A276B300848F62 /* CCAppInviteTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAppInviteTransaction.m; sourceTree = "<group>"; };
+		70061CAD17A27F1300848F62 /* CCMailComposerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMailComposerDelegate.h; sourceTree = "<group>"; };
+		70061CAE17A27F1300848F62 /* CCMailComposerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMailComposerDelegate.m; sourceTree = "<group>"; };
+		70061CB017A27F1300848F62 /* CCMessageComposerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessageComposerDelegate.h; sourceTree = "<group>"; };
+		70061CB117A27F1300848F62 /* CCMessageComposerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessageComposerDelegate.m; sourceTree = "<group>"; };
+		70061CC617A284B500848F62 /* CCAddressBookRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddressBookRecordCell.h; sourceTree = "<group>"; };
+		70061CC717A284B500848F62 /* CCAddressBookRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddressBookRecordCell.m; sourceTree = "<group>"; };
+		70061CC917A284EA00848F62 /* CCAddressBookRecordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAddressBookRecordCell.xib; sourceTree = "<group>"; };
+		70061CCC17A28D9A00848F62 /* CCAppInviteDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAppInviteDataSource.h; sourceTree = "<group>"; };
+		70061CCD17A28D9A00848F62 /* CCAppInviteDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAppInviteDataSource.m; sourceTree = "<group>"; };
+		70061CD017A28E9D00848F62 /* CCAddressBookService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddressBookService.h; sourceTree = "<group>"; };
+		70061CD117A28E9D00848F62 /* CCAddressBookService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddressBookService.m; sourceTree = "<group>"; };
+		70061CD417A293C200848F62 /* CCAppInviteDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAppInviteDataProvider.h; sourceTree = "<group>"; };
+		70061CD517A293C200848F62 /* CCAppInviteDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAppInviteDataProvider.m; sourceTree = "<group>"; };
+		70061CD817A29A7B00848F62 /* CCAddressBookHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddressBookHeader.h; sourceTree = "<group>"; };
+		70061CD917A29A7B00848F62 /* CCAddressBookHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddressBookHeader.m; sourceTree = "<group>"; };
+		70061CDB17A29AA700848F62 /* CCAddressBookHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAddressBookHeader.xib; sourceTree = "<group>"; };
+		70061CDE17A2CC4A00848F62 /* CCAppInvite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAppInvite.h; sourceTree = "<group>"; };
+		70061CDF17A2CC4A00848F62 /* CCAppInvite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAppInvite.m; sourceTree = "<group>"; };
+		70061CE217A2D09E00848F62 /* CCAppInviteApiProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAppInviteApiProvider.h; sourceTree = "<group>"; };
+		70061CE317A2D09E00848F62 /* CCAppInviteApiProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAppInviteApiProvider.m; sourceTree = "<group>"; };
+		70061CE517A2D0C200848F62 /* CCAppInviteApiProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCAppInviteApiProviderProtocol.h; sourceTree = "<group>"; };
 		70066B3B1799381600B7A4E7 /* CCButtonsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCButtonsHelper.h; sourceTree = "<group>"; };
 		70066B3C1799381600B7A4E7 /* CCButtonsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCButtonsHelper.m; sourceTree = "<group>"; };
 		70066B3F17993C3200B7A4E7 /* action_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = action_button.png; sourceTree = "<group>"; };
@@ -1704,6 +1752,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70061CA017A270EA00848F62 /* AddressBook.framework in Frameworks */,
 				703DA4F0178C3D3C00464DD3 /* MapKit.framework in Frameworks */,
 				A7FA0E571768D746004D3403 /* libTestFlight.a in Frameworks */,
 				A7FA0E551768D682004D3403 /* libz.dylib in Frameworks */,
@@ -1722,6 +1771,136 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70061C9617A26FDD00848F62 /* AddressBookRecord */ = {
+			isa = PBXGroup;
+			children = (
+				70061C9717A26FDD00848F62 /* CCAddressBookRecord.h */,
+				70061C9817A26FDD00848F62 /* CCAddressBookRecord.m */,
+			);
+			path = AddressBookRecord;
+			sourceTree = "<group>";
+		};
+		70061C9A17A2706B00848F62 /* AddressBookHelper */ = {
+			isa = PBXGroup;
+			children = (
+				70061C9B17A2706B00848F62 /* CCAddressBookHelper.h */,
+				70061C9C17A2706B00848F62 /* CCAddressBookHelper.m */,
+			);
+			path = AddressBookHelper;
+			sourceTree = "<group>";
+		};
+		70061CA117A2745000848F62 /* AppInviteController */ = {
+			isa = PBXGroup;
+			children = (
+				70061CA217A2746D00848F62 /* CCAppInviteViewController.h */,
+				70061CA317A2746D00848F62 /* CCAppInviteViewController.m */,
+				70061CA417A2746D00848F62 /* CCAppInviteViewController.xib */,
+			);
+			path = AppInviteController;
+			sourceTree = "<group>";
+		};
+		70061CA717A276A200848F62 /* AppInviteTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				70061CA817A276B300848F62 /* CCAppInviteTransaction.h */,
+				70061CA917A276B300848F62 /* CCAppInviteTransaction.m */,
+			);
+			path = AppInviteTransaction;
+			sourceTree = "<group>";
+		};
+		70061CAB17A27F1200848F62 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				70061CAC17A27F1300848F62 /* MailComposer */,
+				70061CAF17A27F1300848F62 /* MessageComposer */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		70061CAC17A27F1300848F62 /* MailComposer */ = {
+			isa = PBXGroup;
+			children = (
+				70061CAD17A27F1300848F62 /* CCMailComposerDelegate.h */,
+				70061CAE17A27F1300848F62 /* CCMailComposerDelegate.m */,
+			);
+			path = MailComposer;
+			sourceTree = "<group>";
+		};
+		70061CAF17A27F1300848F62 /* MessageComposer */ = {
+			isa = PBXGroup;
+			children = (
+				70061CB017A27F1300848F62 /* CCMessageComposerDelegate.h */,
+				70061CB117A27F1300848F62 /* CCMessageComposerDelegate.m */,
+			);
+			path = MessageComposer;
+			sourceTree = "<group>";
+		};
+		70061CC517A284A400848F62 /* AddressBookRecordCell */ = {
+			isa = PBXGroup;
+			children = (
+				70061CC617A284B500848F62 /* CCAddressBookRecordCell.h */,
+				70061CC717A284B500848F62 /* CCAddressBookRecordCell.m */,
+				70061CC917A284EA00848F62 /* CCAddressBookRecordCell.xib */,
+			);
+			path = AddressBookRecordCell;
+			sourceTree = "<group>";
+		};
+		70061CCB17A28D8800848F62 /* AppInviteDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				70061CCC17A28D9A00848F62 /* CCAppInviteDataSource.h */,
+				70061CCD17A28D9A00848F62 /* CCAppInviteDataSource.m */,
+			);
+			path = AppInviteDataSource;
+			sourceTree = "<group>";
+		};
+		70061CCF17A28E9D00848F62 /* AddressBookService */ = {
+			isa = PBXGroup;
+			children = (
+				70061CD017A28E9D00848F62 /* CCAddressBookService.h */,
+				70061CD117A28E9D00848F62 /* CCAddressBookService.m */,
+			);
+			path = AddressBookService;
+			sourceTree = "<group>";
+		};
+		70061CD317A293C100848F62 /* AppInviteDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				70061CD417A293C200848F62 /* CCAppInviteDataProvider.h */,
+				70061CD517A293C200848F62 /* CCAppInviteDataProvider.m */,
+			);
+			path = AppInviteDataProvider;
+			sourceTree = "<group>";
+		};
+		70061CD717A29A5100848F62 /* AddressBookHeader */ = {
+			isa = PBXGroup;
+			children = (
+				70061CD817A29A7B00848F62 /* CCAddressBookHeader.h */,
+				70061CD917A29A7B00848F62 /* CCAddressBookHeader.m */,
+				70061CDB17A29AA700848F62 /* CCAddressBookHeader.xib */,
+			);
+			path = AddressBookHeader;
+			sourceTree = "<group>";
+		};
+		70061CDD17A2CC3900848F62 /* AppInvite */ = {
+			isa = PBXGroup;
+			children = (
+				70061CDE17A2CC4A00848F62 /* CCAppInvite.h */,
+				70061CDF17A2CC4A00848F62 /* CCAppInvite.m */,
+			);
+			path = AppInvite;
+			sourceTree = "<group>";
+		};
+		70061CE117A2D08200848F62 /* AppInviteAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				70061CE217A2D09E00848F62 /* CCAppInviteApiProvider.h */,
+				70061CE317A2D09E00848F62 /* CCAppInviteApiProvider.m */,
+				70061CE517A2D0C200848F62 /* CCAppInviteApiProviderProtocol.h */,
+			);
+			path = AppInviteAPIProvider;
+			sourceTree = "<group>";
+		};
 		70066B3A1799380B00B7A4E7 /* ButtonsHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -2061,6 +2240,7 @@
 		7012540F1796F38A0085247A /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				70061CCB17A28D8800848F62 /* AppInviteDataSource */,
 				701254101796F38B0085247A /* BaseReverseDataSource */,
 				701254131796F38B0085247A /* ClassCreationDataSourse */,
 				701254161796F38B0085247A /* ClassTableDataSorce */,
@@ -2353,6 +2533,7 @@
 		7012AC9417957C03002DA5E9 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				70061CD717A29A5100848F62 /* AddressBookHeader */,
 				701254471796F6DA0085247A /* AnswerHeader */,
 				7012AC9517957C03002DA5E9 /* FilterSectionHeader */,
 				7012ACA117957C26002DA5E9 /* LoadPreviousItemsSectionHeader */,
@@ -2510,6 +2691,7 @@
 		7093080D1785806000E71AB0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				70061C9A17A2706B00848F62 /* AddressBookHelper */,
 				70B2D0471793F879001B0C2C /* AlertHelper */,
 				70066B3A1799380B00B7A4E7 /* ButtonsHelper */,
 				70125457179700D60085247A /* DateFormatterHelper */,
@@ -2569,6 +2751,7 @@
 				70B2D0D01794483A001B0C2C /* AddQuestionController */,
 				D38532C7179D3A180075F870 /* AnnouncementsController */,
 				7012AC7C179558B5002DA5E9 /* AnswersController */,
+				70061CA117A2745000848F62 /* AppInviteController */,
 				70A29C35178778AB001BC8DD /* BaseController */,
 				70A29C39178778AB001BC8DD /* CitySelectionController */,
 				70A29C3D178778AB001BC8DD /* ClassController */,
@@ -2994,6 +3177,7 @@
 			children = (
 				D38532E4179DD3AB0075F870 /* AnnouncementDataProvider */,
 				7012AC8617955E1E002DA5E9 /* AnswersDataProvider */,
+				70061CD317A293C100848F62 /* AppInviteDataProvider */,
 				70A29D4C17877B94001BC8DD /* BaseDataProvider */,
 				701254071796F1A20085247A /* BaseReverseDataProvider */,
 				70A29D4F17877B94001BC8DD /* CitiesDataProvider */,
@@ -3300,8 +3484,10 @@
 			isa = PBXGroup;
 			children = (
 				70B2D0B917943886001B0C2C /* CCRestKitMappableModel.h */,
+				70061C9617A26FDD00848F62 /* AddressBookRecord */,
 				D38532E0179D67CF0075F870 /* Announcement */,
 				7012AC7317954DAB002DA5E9 /* Answer */,
+				70061CDD17A2CC3900848F62 /* AppInvite */,
 				70A29DD817877CB4001BC8DD /* Authorization */,
 				70A29DDB17877CB5001BC8DD /* AuthorizationResponse */,
 				70A29DDE17877CB5001BC8DD /* City */,
@@ -3646,6 +3832,7 @@
 				D38532DB179D67150075F870 /* AnnouncementAPIProvider */,
 				7012AC771795507E002DA5E9 /* AnswersAPIProvider */,
 				70B2D05017940245001B0C2C /* APIProvider */,
+				70061CE117A2D08200848F62 /* AppInviteAPIProvider */,
 				70B2D05417940245001B0C2C /* ClassesApiProvider */,
 				701254021796E8940085247A /* CommentsAPIProvider */,
 				70B2D05817940245001B0C2C /* DropboxAPIProvider */,
@@ -3888,6 +4075,7 @@
 				70B2D1CF179448A9001B0C2C /* AddQuestionTransaction */,
 				D38532CD179D3C840075F870 /* AnnouncementTransaction */,
 				7012AC8217955A41002DA5E9 /* AnswersTransaction */,
+				70061CA717A276A200848F62 /* AppInviteTransaction */,
 				70B2D0E317944894001B0C2C /* ApplyFiltersTransaction */,
 				D342BCDA1796C2640034E88C /* BackTransactionAfterClassUpdate */,
 				70B2D0E617944894001B0C2C /* BackToControllerTransaction */,
@@ -4523,6 +4711,7 @@
 		70B2D1D317944E39001B0C2C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				70061CC517A284A400848F62 /* AddressBookRecordCell */,
 				D38532E8179DD9F50075F870 /* AnnouncementCell */,
 				7012AC8E17955F95002DA5E9 /* AnswerCell */,
 				70B2D1D417944E39001B0C2C /* BaseCell */,
@@ -5071,6 +5260,7 @@
 		A784C597173A865E005E4921 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				70061C9E17A270DC00848F62 /* AddressBook.framework */,
 				703DA4EE178C3D3000464DD3 /* MapKit.framework */,
 				A7FA0E561768D746004D3403 /* libTestFlight.a */,
 				A7FA0E541768D682004D3403 /* libz.dylib */,
@@ -5095,6 +5285,7 @@
 				70A29C34178778AB001BC8DD /* Controllers */,
 				70A29D4B17877B94001BC8DD /* DataProviders */,
 				7012540F1796F38A0085247A /* DataSources */,
+				70061CAB17A27F1200848F62 /* Delegates */,
 				70A29DA017877CB4001BC8DD /* Domain */,
 				7093080D1785806000E71AB0 /* Helpers */,
 				A787C77717536F8400824DEA /* Services */,
@@ -5116,6 +5307,7 @@
 		A787C77717536F8400824DEA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				70061CCF17A28E9D00848F62 /* AddressBookService */,
 				D3A31969177C5B330004C4E8 /* AppearanceConfigurator */,
 				D39F1C0E1753821D008E08A2 /* StandardErrorHandler */,
 				A787C77817536F8400824DEA /* UserSession */,
@@ -6071,6 +6263,9 @@
 				D37122FE17A2B45900A7DF04 /* check@2x.png in Resources */,
 				D37122FF17A2B45900A7DF04 /* check_active.png in Resources */,
 				D371230017A2B45900A7DF04 /* check_active@2x.png in Resources */,
+				70061CA617A2746D00848F62 /* CCAppInviteViewController.xib in Resources */,
+				70061CCA17A284EA00848F62 /* CCAddressBookRecordCell.xib in Resources */,
+				70061CDC17A29AA700848F62 /* CCAddressBookHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6440,6 +6635,19 @@
 				D37122E717A24FB700A7DF04 /* CCVotesAPIProvider.m in Sources */,
 				D37122F017A25B1A00A7DF04 /* CCFeedback.m in Sources */,
 				D37122F517A2707200A7DF04 /* CCScaleView.m in Sources */,
+				70061C9917A26FDD00848F62 /* CCAddressBookRecord.m in Sources */,
+				70061C9D17A2706B00848F62 /* CCAddressBookHelper.m in Sources */,
+				70061CA517A2746D00848F62 /* CCAppInviteViewController.m in Sources */,
+				70061CAA17A276B300848F62 /* CCAppInviteTransaction.m in Sources */,
+				70061CB217A27F1300848F62 /* CCMailComposerDelegate.m in Sources */,
+				70061CB317A27F1300848F62 /* CCMessageComposerDelegate.m in Sources */,
+				70061CC817A284B500848F62 /* CCAddressBookRecordCell.m in Sources */,
+				70061CCE17A28D9A00848F62 /* CCAppInviteDataSource.m in Sources */,
+				70061CD217A28E9D00848F62 /* CCAddressBookService.m in Sources */,
+				70061CD617A293C200848F62 /* CCAppInviteDataProvider.m in Sources */,
+				70061CDA17A29A7B00848F62 /* CCAddressBookHeader.m in Sources */,
+				70061CE017A2CC4A00848F62 /* CCAppInvite.m in Sources */,
+				70061CE417A2D09E00848F62 /* CCAppInviteApiProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -36,6 +36,7 @@
     
     [self setRightNavigationItemWithTitle:@"Add" selector:@selector(addForumButtonDidPressed:)];
     [self setTitle:@"Add Forum"];
+    [(UIScrollView *)self.view setScrollEnabled:NO];
 }
 
 - (void)setClass:(CCClass *)classObject

@@ -20,6 +20,12 @@
     [self configurateProgressHuds];
 }
 
++ (void)setDefaultTextFieldsAppearance
+{
+    [[UITextField appearance] setBackground:nil];
+    [[UITextField appearance] setBorderStyle:UITextBorderStyleRoundedRect];
+}
+
 + (void)configurateTextFields
 {
     [[UISearchBar appearance] setTintColor:[UIColor brownColor]];

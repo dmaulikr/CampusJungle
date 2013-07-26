@@ -20,6 +20,8 @@
     #import <MBProgressHUD/MBProgressHUD.h>
     #import <SVProgressHUD-Fork/SVProgressHUD.h>
     #import <MapKit/MapKit.h>
+    #import <AddressBook/AddressBook.h>
+    #import <MessageUI/MessageUI.h>
     #import <TPKeyboardAvoiding/TPKeyboardAvoidingTableView.h>
     #import "CCConstantsDefines.h"
 

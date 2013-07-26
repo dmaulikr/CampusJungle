@@ -132,22 +132,22 @@
 {
    __weak CCAddLocationViewController *weakSelf = self;
     ShareItemButtonSuccessBlock successBlock = ^(NSArray *itemsArray) {
-        [weakSelf createLocationSharedWithItems:itemsArray sharedWithAll:NO];
+        [self createLocationSharedWithItems:itemsArray sharedWithAll:NO];
     };
     
     CCShareItemButton *shareWithClassButton = [CCShareItemButton buttonWithTitle:CCShareItemActionSheetDefines.shareWithClassButtonTitle actionBlock:^{
-        [weakSelf.shareItemActionSheet dismiss];
-        [weakSelf createLocationSharedWithItems:nil sharedWithAll:YES];
+        [self.shareItemActionSheet dismiss];
+        [self createLocationSharedWithItems:nil sharedWithAll:YES];
     }];
     CCShareItemButton *shareWithGroupButton = [CCShareItemButton buttonWithTitle:CCShareItemActionSheetDefines.shareWithGroupsButtonTitle actionBlock:^{
         NSDictionary *params = @{@"object" : weakSelf.locationToAddObject, @"successBlock" : successBlock};
-        [weakSelf.selectGroupToShareTransaction performWithObject:params];
-        [weakSelf.shareItemActionSheet dismiss];
+        [self.selectGroupToShareTransaction performWithObject:params];
+        [self.shareItemActionSheet dismiss];
     }];
     CCShareItemButton *shareWithClassmatesButton = [CCShareItemButton buttonWithTitle:CCShareItemActionSheetDefines.shareWithClassmatesButtonTitle actionBlock:^{
         NSDictionary *params = @{@"object" : weakSelf.locationToAddObject, @"successBlock" : successBlock};
-        [weakSelf.selectUsersToShareTransaction performWithObject:params];
-        [weakSelf.shareItemActionSheet dismiss];
+        [self.selectUsersToShareTransaction performWithObject:params];
+        [self.shareItemActionSheet dismiss];
     }];
     
     return @[shareWithClassButton, shareWithGroupButton, shareWithClassmatesButton];
@@ -157,12 +157,12 @@
 {
     __weak CCAddLocationViewController *weakSelf = self;
     ShareItemButtonSuccessBlock successBlock = ^(NSArray *itemsArray) {
-        [weakSelf createLocationSharedWithItems:itemsArray sharedWithAll:NO];
+        [self createLocationSharedWithItems:itemsArray sharedWithAll:NO];
     };
     
     CCShareItemButton *shareWithGroupButton = [CCShareItemButton buttonWithTitle:CCShareItemActionSheetDefines.shareWithGroupButtonTitle actionBlock:^{
         [weakSelf.shareItemActionSheet dismiss];
-        [weakSelf createLocationSharedWithItems:nil sharedWithAll:YES];
+        [self createLocationSharedWithItems:nil sharedWithAll:YES];
     }];
     CCShareItemButton *shareWithGroupmatesButton = [CCShareItemButton buttonWithTitle:CCShareItemActionSheetDefines.shareWithGroupmatesButtonTitle actionBlock:^{
         NSDictionary *params = @{@"object" : weakSelf.locationToAddObject, @"successBlock" : successBlock};
@@ -321,11 +321,9 @@
 #pragma mark Requests
 - (void)addToClassLocation:(CCLocation *)location
 {
-    __weak CCAddLocationViewController *weakSelf = self;
     [self.ioc_locationsApiProvider postToClassLocation:location successHandler:^(RKMappingResult *result) {
         [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadClassLocations object:nil];
         [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.addedLocation duration:CCProgressHudsConstants.loaderDuration];
-        [weakSelf.backTransaction perform];
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
     }];
@@ -333,11 +331,9 @@
 
 - (void)addToGroupLocation:(CCLocation *)location
 {
-    __weak CCAddLocationViewController *weakSelf = self;
     [self.ioc_locationsApiProvider postToGroupLocation:location successHandler:^(RKMappingResult *result) {
         [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadClassLocations object:nil];
         [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.addedLocation duration:CCProgressHudsConstants.loaderDuration];
-        [weakSelf.backTransaction perform];
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
     }];

@@ -96,6 +96,10 @@ const struct CCAPIDefines CCAPIDefines = {
     .postFeedback = @"/api/classes/%@/feedback",
     .recalculateFeedback = @"/api/classes/%@/feedback/recalculate",
     .votingAvailability = @"/api/classes/%@/feedback/voting_availability",
+    .loadAppInvites = @"/api/users/me/app_invites",
+    .sendAppInvite = @"/api/app_invites",
+    .resendAppInvite = @"/api/app_invites/%@",
+    .deleteAppInvite = @"/api/app_invites/%@",
 };
 
 const struct CCUserDefines CCUserDefines = {
@@ -257,4 +261,10 @@ const struct CCSearchBarPlaceholders CCSearchBarPlaceholders = {
     .searchMessages = @"Search Messages",
     .searchClassmates = @"Search Classmates",
     .searchGroups = @"Search Groups",
+};
+
+const struct CCAppInvitesDefines CCAppInvitesDefines = {
+    .appInviteSubject = @"Campus Jungle Invite",
+    .emailInviteBody = @"",
+    .smsInviteBody = @"",
 };

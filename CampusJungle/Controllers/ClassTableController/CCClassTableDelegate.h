@@ -16,6 +16,7 @@
 - (void)showLocation:(CCLocation *)location onMapWithLocations:(NSArray *)locationsArray;
 - (void)showDetailsOfForum:(CCForum *)forum;
 - (void)showDetailsOfGroup:(CCGroup *)group;
+- (void)sendInvite;
 - (void)addLocation;
 - (void)addForum;
 - (void)addGroup;
