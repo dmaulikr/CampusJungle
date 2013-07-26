@@ -34,4 +34,6 @@ extern const struct CCSuccessMessages {
     __unsafe_unretained NSString *resendGroupInvite;
     __unsafe_unretained NSString *deleteGroupInvite;
     __unsafe_unretained NSString *deleteStuff;
+    __unsafe_unretained NSString *emailDraftSaved;
+    __unsafe_unretained NSString *appInviteSent;
 } CCSuccessMessages;

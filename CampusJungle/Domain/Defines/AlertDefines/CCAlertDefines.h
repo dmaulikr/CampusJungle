@@ -41,6 +41,10 @@ extern const struct CCAlertsMessages {
     __unsafe_unretained NSString *deleteMessage;
     __unsafe_unretained NSString *deleteNote;
     __unsafe_unretained NSString *deleteStuff;
+    __unsafe_unretained NSString *emailSendingError;
+    __unsafe_unretained NSString *unableToSendEmail;
+    __unsafe_unretained NSString *unableToSendSms;
+    __unsafe_unretained NSString *unableToImportContacts;
 } CCAlertsMessages;
 
 extern const struct CCAlertsButtons {

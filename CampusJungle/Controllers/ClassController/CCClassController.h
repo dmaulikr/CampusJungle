@@ -30,6 +30,7 @@
 @property (nonatomic, strong) id<CCTransactionWithObject> professorUploadsTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> timetableTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> announcementTransaction;
+@property (nonatomic, strong) id<CCTransactionWithObject> sendInviteTransaction;
 
 - (id)initWithClass:(CCClass *)classObject;
 - (IBAction)classMarketButtonDidPressed;

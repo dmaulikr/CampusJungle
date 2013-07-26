@@ -254,3 +254,9 @@ const struct CCSearchBarPlaceholders CCSearchBarPlaceholders = {
     .searchClassmates = @"Search Classmates",
     .searchGroups = @"Search Groups",
 };
+
+const struct CCAppInvitesDefines CCAppInvitesDefines = {
+    .appInviteSubject = @"Campus Jungle Invite",
+    .emailInviteBody = @"",
+    .smsInviteBody = @"",
+};

@@ -256,6 +256,12 @@ extern const struct CCSearchBarPlaceholders {
     __unsafe_unretained NSString *searchGroups;
 } CCSearchBarPlaceholders;
 
+extern const struct CCAppInvitesDefines {
+    __unsafe_unretained NSString *appInviteSubject;
+    __unsafe_unretained NSString *emailInviteBody;
+    __unsafe_unretained NSString *smsInviteBody;
+} CCAppInvitesDefines;
+
 enum CCClassTabbarButtonsIdentifiers {
     CCClassTabbarButtonsIdentifierClassmate = 1,
     CCClassTabbarButtonsIdentifierGroup = 2,

@@ -59,7 +59,7 @@ static const NSInteger kCellHeight = 130;
 }
 
 - (void)setupImageView
-{
+{ 
     CCNote *note = self.cellObject;
     if (note.thumbnailRetina.length) {
         NSString *thumbURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL, note.thumbnailRetina];

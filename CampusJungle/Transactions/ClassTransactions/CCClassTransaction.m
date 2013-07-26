@@ -20,6 +20,7 @@
 #import "CCGroupTransaction.h"
 #import "CCAddGroupTransaction.h"
 #import "CCAnnouncementTransaction.h"
+#import "CCAppInviteTransaction.h"
 
 @implementation CCClassTransaction
 
@@ -73,6 +74,9 @@
     CCAddGroupTransaction *addGroupTransaction = [CCAddGroupTransaction new];
     addGroupTransaction.navigation = centralNavigation;
     
+    CCAppInviteTransaction *appInviteTransaction = [CCAppInviteTransaction new];
+    appInviteTransaction.navigation = centralNavigation;
+    
     classController.otherUserProfileTransaction = otherUserProfileTransaction;
     classController.newsFeedTransaction = self.newsFeedTransaction;
     classController.locationTransaction = showLocationsTransaction;
@@ -82,6 +86,7 @@
     classController.timetableTransaction = timetableTransaction;
     classController.groupDetailsTransaction = groupDetailsTransaction;
     classController.addGroupTransaction = addGroupTransaction;
+    classController.sendInviteTransaction = appInviteTransaction;
     
     [self.menuController setCenterPanel:centralNavigation];
 }

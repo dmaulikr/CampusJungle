@@ -205,6 +205,11 @@
     [self.addGroupTransaction performWithObject:self.currentClass];
 }
 
+- (void)sendInvite
+{
+    [self.sendInviteTransaction performWithObject:self.currentClass];
+}
+
 - (IBAction)professorUploadsButtonDidPressed
 {
     [self.professorUploadsTransaction performWithObject:self.currentClass];
