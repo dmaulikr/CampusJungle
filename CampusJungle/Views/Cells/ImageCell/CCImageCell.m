@@ -8,6 +8,8 @@
 
 #import "CCImageCell.h"
 
+static const NSInteger kCellHeight = 272;
+
 @interface CCImageCell()
 
 @property (nonatomic, strong) IBOutlet UIImageView *pageImage;
@@ -15,18 +17,6 @@
 @end
 
 @implementation CCImageCell
-
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        self = [[[NSBundle mainBundle] loadNibNamed:@"CCImageCell"
-                                              owner:self
-                                            options:nil] objectAtIndex:0];
-        
-    }
-    return self;
-}
 
 - (void)setCellObject:(id)cellObject
 {
@@ -41,7 +31,7 @@
 
 + (CGFloat)heightForCellWithObject:(id)object
 {
-    return 272;
+    return kCellHeight;
 }
 
 @end
