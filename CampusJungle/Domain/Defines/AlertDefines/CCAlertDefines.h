@@ -45,6 +45,7 @@ extern const struct CCAlertsMessages {
     __unsafe_unretained NSString *unableToSendEmail;
     __unsafe_unretained NSString *unableToSendSms;
     __unsafe_unretained NSString *unableToImportContacts;
+    __unsafe_unretained NSString *sendFacebookInviteError;
 } CCAlertsMessages;
 
 extern const struct CCAlertsButtons {

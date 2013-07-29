@@ -268,3 +268,8 @@ const struct CCAppInvitesDefines CCAppInvitesDefines = {
     .emailInviteBody = @"",
     .smsInviteBody = @"",
 };
+
+const struct CCAppInvitesFacebookConstants CCAppInvitesFacebookConstants = {
+    .title = @"CampusJungle App Invite",
+    .message = @"Hey! Why not to start using CampusJungle App for iOS?",
+};

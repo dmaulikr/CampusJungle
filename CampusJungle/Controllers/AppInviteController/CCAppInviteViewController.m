@@ -11,6 +11,7 @@
 
 #import "CCAppInviteDataProvider.h"
 #import "CCAppInviteDataSource.h"
+#import "CCFacebookRequestParseHelper.h"
 
 #import "CCAddressBookRecordCell.h"
 #import "CCAppearanceConfigurator.h"
@@ -20,14 +21,18 @@
 #import "CCMessageComposerDelegate.h"
 
 #import "CCAppInviteApiProviderProtocol.h"
+#import "CCFaceBookAPIProtocol.h"
 #import "CCAppInvite.h"
 
 typedef enum {
     kEmailMode = 0,
     kSMSMode = 1,
+    kFacebookMode = 2,
 } InviteMode;
 
 @interface CCAppInviteViewController ()
+
+@property (nonatomic, weak) IBOutlet UISegmentedControl *segmentedControl;
 
 @property (nonatomic, strong) CCAppInviteDataProvider *dataProvider;
 @property (nonatomic, strong) CCClass *classObject;
@@ -36,6 +41,7 @@ typedef enum {
 @property (nonatomic, strong) CCMessageComposerDelegate *messageComposerDelegate;
 
 @property (nonatomic, strong) id<CCAppInviteApiProviderProtocol> ioc_appInvitesApiProvider;
+@property (nonatomic, strong) id<CCFaceBookAPIProtocol> ioc_facebookApiProvider;
 
 @end
 
@@ -87,9 +93,30 @@ typedef enum {
             [self setSmsInviteConfiguration];
             break;
         }
+        case kFacebookMode: {
+            [self.segmentedControl setSelectedSegmentIndex:self.dataProvider.mode];
+            [self sendFacebookRequest];
+            break;
+        }
         default:
             break;
     }
+}
+
+- (void)sendFacebookRequest
+{
+    [FBWebDialogs presentRequestsDialogModallyWithSession:FBSession.activeSession message:CCAppInvitesFacebookConstants.message title:CCAppInvitesFacebookConstants.title parameters:nil handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
+         if (error) {
+             [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCAlertsMessages.sendFacebookInviteError];
+         } else {
+             if (result != FBWebDialogResultDialogNotCompleted) {
+                 NSDictionary *urlParams = [CCFacebookRequestParseHelper parseURLParams:[resultURL query]];
+                 if ([urlParams valueForKey:@"request"]) {
+                     [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.sendFacebookInvite duration:CCProgressHudsConstants.loaderDuration];
+                 }
+             }
+         }
+     }];
 }
 
 - (void)sendButtonDidPressed:(id)sender
@@ -158,6 +185,11 @@ typedef enum {
     
     [CCAppearanceConfigurator setDefaultTextFieldsAppearance];
     [self presentViewController:messageViewController animated:YES completion:nil];
+}
+
+- (void)sendFacebookInvitesToUsers:(NSArray *)users
+{
+    
 }
 
 - (BOOL)checkSelectedItems

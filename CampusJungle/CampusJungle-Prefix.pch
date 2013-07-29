@@ -22,6 +22,7 @@
     #import <MapKit/MapKit.h>
     #import <AddressBook/AddressBook.h>
     #import <MessageUI/MessageUI.h>
+    #import <Facebook-iOS-SDK/FacebookSDK/FacebookSDK.h>
     #import <TPKeyboardAvoiding/TPKeyboardAvoidingTableView.h>
     #import "CCConstantsDefines.h"
 

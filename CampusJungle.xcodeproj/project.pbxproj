@@ -269,6 +269,7 @@
 		703DA4FE178C6A5900464DD3 /* CCLocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4FC178C6A5900464DD3 /* CCLocationsViewController.m */; };
 		703DA4FF178C6A5900464DD3 /* CCLocationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703DA4FD178C6A5900464DD3 /* CCLocationsViewController.xib */; };
 		70438E481785B7A800537712 /* CCNavigationBarViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 70438E471785B7A800537712 /* CCNavigationBarViewHelper.m */; };
+		7070444917A67F3100AC0FDE /* CCFacebookRequestParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7070444817A67F3100AC0FDE /* CCFacebookRequestParseHelper.m */; };
 		709308141785806000E71AB0 /* CCSideMenuDataSourceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 709308101785806000E71AB0 /* CCSideMenuDataSourceHelper.m */; };
 		709308151785806000E71AB0 /* CCUIImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 709308131785806000E71AB0 /* CCUIImageHelper.m */; };
 		709308191785809C00E71AB0 /* CCViewPositioningHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 709308181785809C00E71AB0 /* CCViewPositioningHelper.m */; };
@@ -1028,6 +1029,8 @@
 		703DA4FD178C6A5900464DD3 /* CCLocationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCLocationsViewController.xib; sourceTree = "<group>"; };
 		70438E461785B7A800537712 /* CCNavigationBarViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNavigationBarViewHelper.h; sourceTree = "<group>"; };
 		70438E471785B7A800537712 /* CCNavigationBarViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNavigationBarViewHelper.m; sourceTree = "<group>"; };
+		7070444717A67F3100AC0FDE /* CCFacebookRequestParseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFacebookRequestParseHelper.h; sourceTree = "<group>"; };
+		7070444817A67F3100AC0FDE /* CCFacebookRequestParseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFacebookRequestParseHelper.m; sourceTree = "<group>"; };
 		7093080F1785806000E71AB0 /* CCSideMenuDataSourceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSideMenuDataSourceHelper.h; sourceTree = "<group>"; };
 		709308101785806000E71AB0 /* CCSideMenuDataSourceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSideMenuDataSourceHelper.m; sourceTree = "<group>"; };
 		709308121785806000E71AB0 /* CCUIImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUIImageHelper.h; sourceTree = "<group>"; };
@@ -2688,6 +2691,15 @@
 			path = NavigationBarViewHelper;
 			sourceTree = "<group>";
 		};
+		7070444617A67F2200AC0FDE /* FacebookRequestParseHelper */ = {
+			isa = PBXGroup;
+			children = (
+				7070444717A67F3100AC0FDE /* CCFacebookRequestParseHelper.h */,
+				7070444817A67F3100AC0FDE /* CCFacebookRequestParseHelper.m */,
+			);
+			path = FacebookRequestParseHelper;
+			sourceTree = "<group>";
+		};
 		7093080D1785806000E71AB0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -2695,6 +2707,7 @@
 				70B2D0471793F879001B0C2C /* AlertHelper */,
 				70066B3A1799380B00B7A4E7 /* ButtonsHelper */,
 				70125457179700D60085247A /* DateFormatterHelper */,
+				7070444617A67F2200AC0FDE /* FacebookRequestParseHelper */,
 				700F9441178EE97800A6FBBA /* KeyboardHelper */,
 				703DA4F5178C5C8900464DD3 /* MapHelper */,
 				70438E451785B7A800537712 /* NavigationBarViewHelper */,
@@ -6648,6 +6661,7 @@
 				70061CDA17A29A7B00848F62 /* CCAddressBookHeader.m in Sources */,
 				70061CE017A2CC4A00848F62 /* CCAppInvite.m in Sources */,
 				70061CE417A2D09E00848F62 /* CCAppInviteApiProvider.m in Sources */,
+				7070444917A67F3100AC0FDE /* CCFacebookRequestParseHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

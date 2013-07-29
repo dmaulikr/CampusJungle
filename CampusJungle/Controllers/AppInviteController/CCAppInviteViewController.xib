@@ -156,6 +156,14 @@
 					<int key="connectionID">7</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">segmentedControl</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="468076191"/>
+					</object>
+					<int key="connectionID">9</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">segmentedControlValueDidChange:</string>
 						<reference key="source" ref="468076191"/>
@@ -220,7 +228,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">8</int>
+			<int key="maxID">9</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -235,6 +243,17 @@
 						<string key="NS.key.0">segmentedControlValueDidChange:</string>
 						<object class="IBActionInfo" key="NS.object.0">
 							<string key="name">segmentedControlValueDidChange:</string>
+							<string key="candidateClassName">UISegmentedControl</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">segmentedControl</string>
+						<string key="NS.object.0">UISegmentedControl</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">segmentedControl</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">segmentedControl</string>
 							<string key="candidateClassName">UISegmentedControl</string>
 						</object>
 					</object>

@@ -271,6 +271,11 @@ extern const struct CCAppInvitesDefines {
     __unsafe_unretained NSString *smsInviteBody;
 } CCAppInvitesDefines;
 
+extern const struct CCAppInvitesFacebookConstants {
+    __unsafe_unretained NSString *title;
+    __unsafe_unretained NSString *message;
+} CCAppInvitesFacebookConstants;
+
 enum CCClassTabbarButtonsIdentifiers {
     CCClassTabbarButtonsIdentifierClassmate = 1,
     CCClassTabbarButtonsIdentifierGroup = 2,
