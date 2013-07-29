@@ -276,6 +276,10 @@ extern const struct CCAppInvitesFacebookConstants {
     __unsafe_unretained NSString *message;
 } CCAppInvitesFacebookConstants;
 
+extern const struct CCPushNotificationTypes {
+    
+} CCPushNotificationTypes;
+
 enum CCClassTabbarButtonsIdentifiers {
     CCClassTabbarButtonsIdentifierClassmate = 1,
     CCClassTabbarButtonsIdentifierGroup = 2,

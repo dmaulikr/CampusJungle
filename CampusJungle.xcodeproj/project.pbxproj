@@ -271,6 +271,9 @@
 		70438E481785B7A800537712 /* CCNavigationBarViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 70438E471785B7A800537712 /* CCNavigationBarViewHelper.m */; };
 		7070444917A67F3100AC0FDE /* CCFacebookRequestParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7070444817A67F3100AC0FDE /* CCFacebookRequestParseHelper.m */; };
 		7070444F17A68E6F00AC0FDE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7070444D17A68E6000AC0FDE /* Social.framework */; };
+		7070445317A6B39300AC0FDE /* CCPushNotificationsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7070445217A6B39300AC0FDE /* CCPushNotificationsService.m */; };
+		7070445B17A6B46C00AC0FDE /* CCBadgeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7070445A17A6B46C00AC0FDE /* CCBadgeHelper.m */; };
+		7070446017A6B51C00AC0FDE /* CCPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 7070445E17A6B51C00AC0FDE /* CCPush.m */; };
 		709308141785806000E71AB0 /* CCSideMenuDataSourceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 709308101785806000E71AB0 /* CCSideMenuDataSourceHelper.m */; };
 		709308151785806000E71AB0 /* CCUIImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 709308131785806000E71AB0 /* CCUIImageHelper.m */; };
 		709308191785809C00E71AB0 /* CCViewPositioningHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 709308181785809C00E71AB0 /* CCViewPositioningHelper.m */; };
@@ -1034,6 +1037,13 @@
 		7070444817A67F3100AC0FDE /* CCFacebookRequestParseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFacebookRequestParseHelper.m; sourceTree = "<group>"; };
 		7070444A17A688BE00AC0FDE /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		7070444D17A68E6000AC0FDE /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		7070445117A6B39300AC0FDE /* CCPushNotificationsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPushNotificationsService.h; sourceTree = "<group>"; };
+		7070445217A6B39300AC0FDE /* CCPushNotificationsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPushNotificationsService.m; sourceTree = "<group>"; };
+		7070445917A6B46C00AC0FDE /* CCBadgeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBadgeHelper.h; sourceTree = "<group>"; };
+		7070445A17A6B46C00AC0FDE /* CCBadgeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBadgeHelper.m; sourceTree = "<group>"; };
+		7070445D17A6B51C00AC0FDE /* CCPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPush.h; sourceTree = "<group>"; };
+		7070445E17A6B51C00AC0FDE /* CCPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPush.m; sourceTree = "<group>"; };
+		7070445F17A6B51C00AC0FDE /* CCPushProcessingProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPushProcessingProtocol.h; sourceTree = "<group>"; };
 		7093080F1785806000E71AB0 /* CCSideMenuDataSourceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSideMenuDataSourceHelper.h; sourceTree = "<group>"; };
 		709308101785806000E71AB0 /* CCSideMenuDataSourceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSideMenuDataSourceHelper.m; sourceTree = "<group>"; };
 		709308121785806000E71AB0 /* CCUIImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUIImageHelper.h; sourceTree = "<group>"; };
@@ -2704,11 +2714,47 @@
 			path = FacebookRequestParseHelper;
 			sourceTree = "<group>";
 		};
+		7070445017A6B39300AC0FDE /* PushNotificationsService */ = {
+			isa = PBXGroup;
+			children = (
+				7070445117A6B39300AC0FDE /* CCPushNotificationsService.h */,
+				7070445217A6B39300AC0FDE /* CCPushNotificationsService.m */,
+			);
+			path = PushNotificationsService;
+			sourceTree = "<group>";
+		};
+		7070445817A6B46B00AC0FDE /* BadgeHelper */ = {
+			isa = PBXGroup;
+			children = (
+				7070445917A6B46C00AC0FDE /* CCBadgeHelper.h */,
+				7070445A17A6B46C00AC0FDE /* CCBadgeHelper.m */,
+			);
+			path = BadgeHelper;
+			sourceTree = "<group>";
+		};
+		7070445C17A6B51C00AC0FDE /* Push */ = {
+			isa = PBXGroup;
+			children = (
+				7070445D17A6B51C00AC0FDE /* CCPush.h */,
+				7070445E17A6B51C00AC0FDE /* CCPush.m */,
+				7070445F17A6B51C00AC0FDE /* CCPushProcessingProtocol.h */,
+			);
+			path = Push;
+			sourceTree = "<group>";
+		};
+		7070446117A6B99000AC0FDE /* PushProcessingBehaviours */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PushProcessingBehaviours;
+			sourceTree = "<group>";
+		};
 		7093080D1785806000E71AB0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				70061C9A17A2706B00848F62 /* AddressBookHelper */,
 				70B2D0471793F879001B0C2C /* AlertHelper */,
+				7070445817A6B46B00AC0FDE /* BadgeHelper */,
 				70066B3A1799380B00B7A4E7 /* ButtonsHelper */,
 				70125457179700D60085247A /* DateFormatterHelper */,
 				7070444617A67F2200AC0FDE /* FacebookRequestParseHelper */,
@@ -3526,6 +3572,7 @@
 				70A29DF617877CB5001BC8DD /* PaginationResponse */,
 				70A29DF917877CB5001BC8DD /* Photos */,
 				D342BD04179825950034E88C /* ProfessorUpload */,
+				7070445C17A6B51C00AC0FDE /* Push */,
 				70B2D0B017942DB6001B0C2C /* Question */,
 				D394973C178EC58C00C39A7E /* Review */,
 				70A29DFC17877CB5001BC8DD /* States */,
@@ -5328,6 +5375,8 @@
 			children = (
 				70061CCF17A28E9D00848F62 /* AddressBookService */,
 				D3A31969177C5B330004C4E8 /* AppearanceConfigurator */,
+				7070445017A6B39300AC0FDE /* PushNotificationsService */,
+				7070446117A6B99000AC0FDE /* PushProcessingBehaviours */,
 				D39F1C0E1753821D008E08A2 /* StandardErrorHandler */,
 				A787C77817536F8400824DEA /* UserSession */,
 				A787C77B17536F8400824DEA /* UserSessionProtocol */,
@@ -6668,6 +6717,9 @@
 				70061CE017A2CC4A00848F62 /* CCAppInvite.m in Sources */,
 				70061CE417A2D09E00848F62 /* CCAppInviteApiProvider.m in Sources */,
 				7070444917A67F3100AC0FDE /* CCFacebookRequestParseHelper.m in Sources */,
+				7070445317A6B39300AC0FDE /* CCPushNotificationsService.m in Sources */,
+				7070445B17A6B46C00AC0FDE /* CCBadgeHelper.m in Sources */,
+				7070446017A6B51C00AC0FDE /* CCPush.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,6 +17,7 @@
 #import <DropboxSDK/DropboxSDK.h>
 #import <TestFlightSDK/TestFlight.h>
 #import "CCAppearanceConfigurator.h"
+#import "CCPushNotificationsService.h"
 
 @implementation CCAppDelegate
 
@@ -28,39 +29,33 @@
     }];
 
     [AppleGuice startServiceWithImplementationDiscoveryPolicy:AppleGuiceImplementationDiscoveryPolicyRuntime];
-    
     [CCRestKitConfigurator configure];
+    [CCAppearanceConfigurator configurate];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor blackColor];
-    
-    [CCAppearanceConfigurator configurate];
     
     CCMainTransaction *transaction = [CCMainTransaction new];
     transaction.window = self.window;
     [transaction perform];
     [self.window makeKeyAndVisible];
     
-    // installs HandleExceptions as the Uncaught Exception Handler
-    NSSetUncaughtExceptionHandler(&HandleExceptions);
-    // create the signal action structure
-    struct sigaction newSignalAction;
-    // initialize the signal action structure
-    memset(&newSignalAction, 0, sizeof(newSignalAction));
-    // set SignalHandler as the handler in the signal action structure
-    newSignalAction.sa_handler = &SignalHandler;
-    // set SignalHandler as the handlers for SIGABRT, SIGILL and SIGBUS
-    sigaction(SIGABRT, &newSignalAction, NULL);
-    sigaction(SIGILL, &newSignalAction, NULL);
-    sigaction(SIGBUS, &newSignalAction, NULL);
     [TestFlight takeOff:@"e2dd5801-3102-4ae1-8a41-a7841748b664"];
+    
+    [self processLaunchOptions:launchOptions];
     return YES;
 }
 
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation {
-    
+- (void)processLaunchOptions:(NSDictionary *)launchOptions
+{
+    NSDictionary *userInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    if (userInfo) {
+        [CCPushNotificationsService processRemoteNotification:userInfo];
+    }
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
     if ([[DBSession sharedSession] handleOpenURL:url]) {
        [[NSNotificationCenter defaultCenter] postNotificationName:CCAppDelegateDefines.dropboxLinked object:nil];
         return YES;
@@ -82,15 +77,14 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:CCAppDelegateDefines.notificationOnBackToForeground object:nil ];
 }
 
-
-void HandleExceptions(NSException *exception) {
-    NSLog(@"This is where we save the application data during a exception");
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    [CCPushNotificationsService saveDeviceToken:deviceToken];
 }
 
-void SignalHandler(int sig) {
-    NSLog(@"This is where we save the application data during a signal");
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    [CCPushNotificationsService processRemoteNotification:userInfo];
 }
-
-
 
 @end
