@@ -77,7 +77,7 @@ static const NSInteger kMinCellHeight = 88;
 
 + (CGFloat)heightForCellWithObject:(CCForum *)forum
 {
-    UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:13];
+    UIFont *font = [UIFont fontWithName:@"Avenir-Medium" size:15];
     CGSize requiredSize = [forum.description sizeWithFont:font constrainedToSize:CGSizeMake(kDefaultDescriptionLabelWidth, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
     return MAX(kMinCellHeight, kDescriptionLabelOriginY + requiredSize.height + kBottomSpace);
 }
