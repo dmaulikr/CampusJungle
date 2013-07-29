@@ -15,7 +15,7 @@
     [self configurateTextFields];
     [self configurateNavigationBar];
     [self configurateBarButtons];
-    [self configurateButton];
+    [self configurateButtons];
     [self configurateSegmentController];
     [self configurateProgressHuds];
 }
@@ -58,7 +58,13 @@
     
 }
 
-+ (void)configurateButton
++ (void)setDefaultButtonsAppearance
+{
+    [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateNormal];
+    [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateHighlighted];
+}
+
++ (void)configurateButtons
 {
     UIImage *customButtonBackground = [[UIImage imageNamed:@"button"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 10, 20, 10)];
     

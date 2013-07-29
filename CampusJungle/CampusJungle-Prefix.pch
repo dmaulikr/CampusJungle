@@ -24,6 +24,7 @@
     #import <MessageUI/MessageUI.h>
     #import <Facebook-iOS-SDK/FacebookSDK/FacebookSDK.h>
     #import <TPKeyboardAvoiding/TPKeyboardAvoidingTableView.h>
+    #import <Twitter/Twitter.h>
     #import "CCConstantsDefines.h"
 
     #define BASE_DIVIDER_COLOR [UIColor colorWithRed:130.0/255.0 green:65.0/255.0 blue:0.0 alpha:1]

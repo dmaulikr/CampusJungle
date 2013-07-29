@@ -23,11 +23,13 @@
 #import "CCAppInviteApiProviderProtocol.h"
 #import "CCFaceBookAPIProtocol.h"
 #import "CCAppInvite.h"
+#import "CCAppearanceConfigurator.h"
 
 typedef enum {
     kEmailMode = 0,
     kSMSMode = 1,
     kFacebookMode = 2,
+    kTwitterMode = 3,
 } InviteMode;
 
 @interface CCAppInviteViewController ()
@@ -55,6 +57,12 @@ typedef enum {
     [self setupTableView];
     [self setRightNavigationItemWithTitle:@"Send" selector:@selector(sendButtonDidPressed:)];
     [self setEmailInviteConfiguration];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [CCAppearanceConfigurator configurateButtons];
 }
 
 - (void)setupTableView
@@ -98,6 +106,11 @@ typedef enum {
             [self sendFacebookRequest];
             break;
         }
+        case kTwitterMode: {
+            [self.segmentedControl setSelectedSegmentIndex:self.dataProvider.mode];
+            [self sendTwitterInvites];
+            break;
+        }
         default:
             break;
     }
@@ -117,6 +130,16 @@ typedef enum {
              }
          }
      }];
+}
+
+- (void)sendTwitterInvites
+{
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        [CCAppearanceConfigurator setDefaultButtonsAppearance];
+        SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [self presentViewController:tweetSheet animated:YES completion:nil];
+    }
 }
 
 - (void)sendButtonDidPressed:(id)sender
