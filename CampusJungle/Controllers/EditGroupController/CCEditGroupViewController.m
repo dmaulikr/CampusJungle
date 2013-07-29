@@ -144,7 +144,7 @@
 {
     __weak CCEditGroupViewController *weakSelf = self;
     [SVProgressHUD showWithStatus:CCProcessingMessages.updatingGroup];
-    [self.ioc_groupsApiProvider updateGroup:group successHandler:^(RKMappingResult *result) {
+    [self.ioc_groupsApiProvider updateGroup:group successHandler:^(CCGroup *result) {
         weakSelf.group = (CCGroup *)result;
         [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.updatedGroup duration:CCProgressHudsConstants.loaderDuration];
         if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(updateWithGroup:)]) {

@@ -337,7 +337,6 @@
 		70A29D27178778AB001BC8DD /* MHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29CD4178778AB001BC8DD /* MHTabBarController.m */; };
 		70A29D29178778AB001BC8DD /* CCUploadImagesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29CDA178778AB001BC8DD /* CCUploadImagesController.m */; };
 		70A29D2A178778AB001BC8DD /* CCUploadImagesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29CDB178778AB001BC8DD /* CCUploadImagesController.xib */; };
-		70A29D2B178778AB001BC8DD /* CCWelcomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29CDE178778AB001BC8DD /* CCWelcomeController.m */; };
 		70A29D2C178778AB001BC8DD /* CCWelcomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29CDF178778AB001BC8DD /* CCWelcomeController.xib */; };
 		70A29D8B17877B94001BC8DD /* CCBaseDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29D4E17877B94001BC8DD /* CCBaseDataProvider.m */; };
 		70A29D8C17877B94001BC8DD /* CCCitiesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29D5117877B94001BC8DD /* CCCitiesDataProvider.m */; };
@@ -573,6 +572,7 @@
 		A7D53A431758A85700FE9FCD /* MHTabBarIndicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7D53A3D1758A85700FE9FCD /* MHTabBarIndicator@2x.png */; };
 		A7FA0E551768D682004D3403 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A7FA0E541768D682004D3403 /* libz.dylib */; };
 		A7FA0E571768D746004D3403 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7FA0E561768D746004D3403 /* libTestFlight.a */; };
+		AA28DC920F53DB90D22BE7E7 /* CCWelcomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA28D9F1DF3A0CA781D3DF0A /* CCWelcomeController.m */; };
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
 		D3039B78176880F800621CAC /* pending.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B76176880F800621CAC /* pending.png */; };
 		D3039B79176880F800621CAC /* pending@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B77176880F800621CAC /* pending@2x.png */; };
@@ -1134,8 +1134,6 @@
 		70A29CD9178778AB001BC8DD /* CCUploadImagesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUploadImagesController.h; sourceTree = "<group>"; };
 		70A29CDA178778AB001BC8DD /* CCUploadImagesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUploadImagesController.m; sourceTree = "<group>"; };
 		70A29CDB178778AB001BC8DD /* CCUploadImagesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCUploadImagesController.xib; sourceTree = "<group>"; };
-		70A29CDD178778AB001BC8DD /* CCWelcomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWelcomeController.h; sourceTree = "<group>"; };
-		70A29CDE178778AB001BC8DD /* CCWelcomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWelcomeController.m; sourceTree = "<group>"; };
 		70A29CDF178778AB001BC8DD /* CCWelcomeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCWelcomeController.xib; sourceTree = "<group>"; };
 		70A29D4D17877B94001BC8DD /* CCBaseDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBaseDataProvider.h; sourceTree = "<group>"; };
 		70A29D4E17877B94001BC8DD /* CCBaseDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBaseDataProvider.m; sourceTree = "<group>"; };
@@ -1583,6 +1581,8 @@
 		A7D53A3D1758A85700FE9FCD /* MHTabBarIndicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MHTabBarIndicator@2x.png"; sourceTree = "<group>"; };
 		A7FA0E541768D682004D3403 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A7FA0E561768D746004D3403 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = Pods/TestFlightSDK/libTestFlight.a; sourceTree = "<group>"; };
+		AA28D2BD62E018B18ED55F0F /* CCWelcomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWelcomeController.h; sourceTree = "<group>"; };
+		AA28D9F1DF3A0CA781D3DF0A /* CCWelcomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWelcomeController.m; sourceTree = "<group>"; };
 		D3039B76176880F800621CAC /* pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pending.png; sourceTree = "<group>"; };
 		D3039B77176880F800621CAC /* pending@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pending@2x.png"; sourceTree = "<group>"; };
 		D342BCD31796AD3D0034E88C /* CCEditClassTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEditClassTransaction.h; sourceTree = "<group>"; };
@@ -3165,8 +3165,6 @@
 		70A29CDC178778AB001BC8DD /* WelcomeController */ = {
 			isa = PBXGroup;
 			children = (
-				70A29CDD178778AB001BC8DD /* CCWelcomeController.h */,
-				70A29CDE178778AB001BC8DD /* CCWelcomeController.m */,
 				70A29CDF178778AB001BC8DD /* CCWelcomeController.xib */,
 			);
 			path = WelcomeController;
@@ -3368,6 +3366,8 @@
 			children = (
 				70A29D7D17877B94001BC8DD /* CCMyStuffDataProvider.h */,
 				70A29D7E17877B94001BC8DD /* CCMyStuffDataProvider.m */,
+				AA28D9F1DF3A0CA781D3DF0A /* CCWelcomeController.m */,
+				AA28D2BD62E018B18ED55F0F /* CCWelcomeController.h */,
 			);
 			path = MyStuffDataProvider;
 			sourceTree = "<group>";
@@ -6352,7 +6352,6 @@
 				70A29D25178778AB001BC8DD /* CCStuffDetailsController.m in Sources */,
 				70A29D27178778AB001BC8DD /* MHTabBarController.m in Sources */,
 				70A29D29178778AB001BC8DD /* CCUploadImagesController.m in Sources */,
-				70A29D2B178778AB001BC8DD /* CCWelcomeController.m in Sources */,
 				70A29D8B17877B94001BC8DD /* CCBaseDataProvider.m in Sources */,
 				70A29D8C17877B94001BC8DD /* CCCitiesDataProvider.m in Sources */,
 				70A29D8D17877B94001BC8DD /* CCClassesDataProvider.m in Sources */,
@@ -6648,6 +6647,7 @@
 				70061CDA17A29A7B00848F62 /* CCAddressBookHeader.m in Sources */,
 				70061CE017A2CC4A00848F62 /* CCAppInvite.m in Sources */,
 				70061CE417A2D09E00848F62 /* CCAppInviteApiProvider.m in Sources */,
+				AA28DC920F53DB90D22BE7E7 /* CCWelcomeController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

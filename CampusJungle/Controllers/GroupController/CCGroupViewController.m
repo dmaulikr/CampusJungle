@@ -20,46 +20,42 @@
 
 @interface CCGroupViewController () <CCGroupTableDelegate, CCEditGroupDelegate>
 
-@property (nonatomic, weak) IBOutlet UIView *headerView;
-@property (nonatomic, weak) IBOutlet UIImageView *avatarImageView;
-@property (nonatomic, weak) IBOutlet UILabel *subjectLabel;
-@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
-@property (nonatomic, weak) IBOutlet UILabel *ownerLabel;
+@property(nonatomic, weak) IBOutlet UIView *headerView;
+@property(nonatomic, weak) IBOutlet UIImageView *avatarImageView;
+@property(nonatomic, weak) IBOutlet UILabel *subjectLabel;
+@property(nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property(nonatomic, weak) IBOutlet UILabel *ownerLabel;
 
-@property (nonatomic, strong) CCGroupTableController *groupTableController;
-@property (nonatomic, strong) id<CCGroupsApiProviderProtocol> ioc_groupsApiProvider;
-@property (nonatomic, strong) id<CCUserSessionProtocol> ioc_userSessionProvider;
+@property(nonatomic, strong) CCGroupTableController *groupTableController;
+@property(nonatomic, strong) id <CCGroupsApiProviderProtocol> ioc_groupsApiProvider;
+@property(nonatomic, strong) id <CCUserSessionProtocol> ioc_userSessionProvider;
 
-@property (nonatomic, strong) CCGroup *group;
+@property(nonatomic, strong) CCGroup *group;
 
 @end
 
 @implementation CCGroupViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     [self loadInfo];
     [self setupButtons];
     [self setupTableHeaderView];
     [self setupTableView];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.groupTableController viewWillAppear:animated];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.groupTableController viewWillDisappear:animated];
 }
 
-- (void)loadInfo
-{
+- (void)loadInfo {
     [self.nameLabel setText:self.group.name];
     [self.ownerLabel setText:[NSString stringWithFormat:@"Owner: %@ %@", self.group.ownerFirstName, self.group.ownerLastName]];
     [self.subjectLabel setText:self.group.description];
@@ -67,8 +63,7 @@
     [self setTitle:self.group.name];
 }
 
-- (void)setupButtons
-{
+- (void)setupButtons {
     if ([self.ioc_userSessionProvider.currentUser.uid isEqualToString:self.group.ownerId]) {
         [self setupEditGroupButton];
     }
@@ -77,15 +72,13 @@
     }
 }
 
-- (void)setupEditGroupButton
-{
+- (void)setupEditGroupButton {
     [self setRightNavigationItemWithTitle:@"Edit" selector:@selector(editButtonDidPressed:)];
 }
 
-- (void)setupLeaveButton
-{
+- (void)setupLeaveButton {
     UIImage *leaveClassImage = [UIImage imageNamed:@"leave_class_icon"];
-    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, leaveClassImage.size.width  - 10, leaveClassImage.size.height - 10)];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, leaveClassImage.size.width - 10, leaveClassImage.size.height - 10)];
     [button setImage:leaveClassImage forState:UIControlStateNormal];
     [CCButtonsHelper removeBackgroundImageInButton:button];
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
@@ -93,14 +86,12 @@
     [button addTarget:self action:@selector(leaveGroupButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)setupTableHeaderView
-{
+- (void)setupTableHeaderView {
     [self.subjectLabel sizeToFit];
     [CCViewPositioningHelper setHeight:[CCViewPositioningHelper bottomOfView:self.subjectLabel] + 15 toView:self.headerView];
 }
 
-- (void)setupTableView
-{
+- (void)setupTableView {
     self.groupTableController = [CCGroupTableController new];
     self.groupTableController.tableHeaderView = self.headerView;
     [self.groupTableController setGroup:self.group];
@@ -110,72 +101,61 @@
 
 #pragma mark -
 #pragma mark Actions
-- (void)leaveGroupButtonDidPressed:(id)sender
-{
+- (void)leaveGroupButtonDidPressed:(id)sender {
     __weak CCGroupViewController *weakSelf = self;
     [CCAlertHelper showWithMessage:CCAlertsMessages.leaveGroup success:^{
         [weakSelf.ioc_groupsApiProvider leaveGroup:weakSelf.group successHandler:^(RKMappingResult *result) {
             [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.leaveGroup duration:CCProgressHudsConstants.loaderDuration];
             [weakSelf.backTransaction perform];
-        } errorHandler:^(NSError *error) {
+        }                             errorHandler:^(NSError *error) {
             [CCStandardErrorHandler showErrorWithError:error];
         }];
     }];
 }
 
-- (IBAction)editButtonDidPressed:(id)sender
-{
+- (IBAction)editButtonDidPressed:(id)sender {
     NSDictionary *params = @{@"group" : self.group, @"delegate" : self};
     [self.editGroupTransaction performWithObject:params];
 }
 
 #pragma mark -
 #pragma mark CCGroupTableDelegate
-- (void)showProfileOfUser:(CCUser *)user
-{
+- (void)showProfileOfUser:(CCUser *)user {
     [self.otherUserProfileTransaction performWithObject:user];
 }
 
-- (void)showLocation:(CCLocation *)location onMapWithLocations:(NSArray *)locationsArray
-{
+- (void)showLocation:(CCLocation *)location onMapWithLocations:(NSArray *)locationsArray {
     NSString *searchString = ([self.groupTableController.searchBar.text length] > 0) ? self.groupTableController.searchBar.text : @"";
     [self.locationTransaction performWithObject:@{@"location" : location, @"array" : locationsArray, @"group" : self.group, @"searchString" : searchString}];
 }
 
-- (void)showDetailsOfForum:(CCForum *)forum
-{
+- (void)showDetailsOfForum:(CCForum *)forum {
     [self.forumDetailsTransaction performWithObject:forum];
 }
 
-- (void)showDetailsOfGroupMessage:(CCMessage *)message
-{
+- (void)showDetailsOfGroupMessage:(CCMessage *)message {
     [self.messageDetailsTransaction performWithObject:message];
 }
 
-- (void)addLocation
-{
+- (void)addLocation {
     [self.addLocationTransaction performWithObject:self.group];
 }
 
-- (void)addForum
-{
+- (void)addForum {
     [self.addForumTransaction performWithObject:self.group];
 }
 
-- (void)addGroupmates
-{
+- (void)addGroupmates {
     [self.sendGroupInviteTransaction performWithObject:self.group];
 }
 
-- (void)sendGroupMessage
-{
+- (void)sendGroupMessage {
     [self.groupMessageTransaction performWithObject:self.group];
 }
 
 #pragma mark -
 #pragma mark CCEditGroupDelegate
-- (void)updateWithGroup:(CCGroup *)group
-{
+- (void)updateWithGroup:(CCGroup *)group {
     self.group.name = group.name;
     self.group.description = group.description;
     self.group.image = group.image;
