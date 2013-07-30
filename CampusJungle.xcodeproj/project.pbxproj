@@ -248,6 +248,7 @@
 		7012ACA417957C37002DA5E9 /* CCLoadPreviousItemsSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7012ACA317957C37002DA5E9 /* CCLoadPreviousItemsSectionHeader.m */; };
 		7012ACA617957C4B002DA5E9 /* CCLoadPreviousItemsSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7012ACA517957C4B002DA5E9 /* CCLoadPreviousItemsSectionHeader.xib */; };
 		7021ECD117A7D78B00D45B51 /* apns.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7021ECD017A7D78B00D45B51 /* apns.rb */; };
+		7021ECD517A7E87D00D45B51 /* CCDeviceTokenAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ECD417A7E87D00D45B51 /* CCDeviceTokenAPIProvider.m */; };
 		7022F4991786C7100055221C /* SelectionBackGround@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE2178454C200E54EFC /* SelectionBackGround@2x.png */; };
 		7022F49A1786C7110055221C /* SelectionBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE3178454C200E54EFC /* SelectionBackGround.png */; };
 		70256325179FD71100B48AA2 /* CCGroupInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70256323179FD71100B48AA2 /* CCGroupInviteViewController.m */; };
@@ -1005,6 +1006,9 @@
 		7012ACA317957C37002DA5E9 /* CCLoadPreviousItemsSectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLoadPreviousItemsSectionHeader.m; sourceTree = "<group>"; };
 		7012ACA517957C4B002DA5E9 /* CCLoadPreviousItemsSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCLoadPreviousItemsSectionHeader.xib; sourceTree = "<group>"; };
 		7021ECD017A7D78B00D45B51 /* apns.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = apns.rb; sourceTree = "<group>"; };
+		7021ECD317A7E87D00D45B51 /* CCDeviceTokenAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDeviceTokenAPIProvider.h; sourceTree = "<group>"; };
+		7021ECD417A7E87D00D45B51 /* CCDeviceTokenAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDeviceTokenAPIProvider.m; sourceTree = "<group>"; };
+		7021ECD617A7E89200D45B51 /* CCDeviceTokenAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCDeviceTokenAPIProviderProtocol.h; sourceTree = "<group>"; };
 		70256322179FD71100B48AA2 /* CCGroupInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupInviteViewController.h; sourceTree = "<group>"; };
 		70256323179FD71100B48AA2 /* CCGroupInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupInviteViewController.m; sourceTree = "<group>"; };
 		70256324179FD71100B48AA2 /* CCGroupInviteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupInviteViewController.xib; sourceTree = "<group>"; };
@@ -2605,6 +2609,16 @@
 			path = LoadPreviousItemsSectionHeader;
 			sourceTree = "<group>";
 		};
+		7021ECD217A7E87000D45B51 /* DeviceTokenAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				7021ECD317A7E87D00D45B51 /* CCDeviceTokenAPIProvider.h */,
+				7021ECD417A7E87D00D45B51 /* CCDeviceTokenAPIProvider.m */,
+				7021ECD617A7E89200D45B51 /* CCDeviceTokenAPIProviderProtocol.h */,
+			);
+			path = DeviceTokenAPIProvider;
+			sourceTree = "<group>";
+		};
 		70256321179FD70200B48AA2 /* GroupInviteController */ = {
 			isa = PBXGroup;
 			children = (
@@ -3933,6 +3947,7 @@
 				70061CE117A2D08200848F62 /* AppInviteAPIProvider */,
 				70B2D05417940245001B0C2C /* ClassesApiProvider */,
 				701254021796E8940085247A /* CommentsAPIProvider */,
+				7021ECD217A7E87000D45B51 /* DeviceTokenAPIProvider */,
 				70B2D05817940245001B0C2C /* DropboxAPIProvider */,
 				70B2D05C17940245001B0C2C /* FacebookAPI */,
 				70B2D08C1794026C001B0C2C /* ForumsAPIProvider */,
@@ -6760,6 +6775,7 @@
 				7070446017A6B51C00AC0FDE /* CCPush.m in Sources */,
 				7070446517A6BCA500AC0FDE /* CCPrivateMessageProcessingBehaviour.m in Sources */,
 				7070446917A7B9CF00AC0FDE /* CCNavigationHelper.m in Sources */,
+				7021ECD517A7E87D00D45B51 /* CCDeviceTokenAPIProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

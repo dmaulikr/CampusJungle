@@ -8,4 +8,5 @@
 
 extern const struct CCProcessingMessages {
     __unsafe_unretained NSString *updatingGroup;
+    __unsafe_unretained NSString *logout;
 } CCProcessingMessages;

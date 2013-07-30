@@ -99,6 +99,8 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *sendAppInvites;
     __unsafe_unretained NSString *resendAppInvite;
     __unsafe_unretained NSString *deleteAppInvite;
+    __unsafe_unretained NSString *linkDevice;
+    __unsafe_unretained NSString *unlinkDevice;
     
 } CCAPIDefines;
 

@@ -10,4 +10,5 @@
 
 const struct CCProcessingMessages CCProcessingMessages = {
     .updatingGroup = @"Updating group info...",
+    .logout = @"Logging out..",
 };

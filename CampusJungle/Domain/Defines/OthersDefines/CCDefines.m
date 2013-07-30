@@ -101,6 +101,8 @@ const struct CCAPIDefines CCAPIDefines = {
     .sendAppInvites = @"/api/app_invites",
     .resendAppInvite = @"/api/app_invites/%@",
     .deleteAppInvite = @"/api/app_invites/%@",
+    .linkDevice = @"/api/users/me/devices",
+    .unlinkDevice = @"/api/users/me/devices",
 };
 
 const struct CCUserDefines CCUserDefines = {
