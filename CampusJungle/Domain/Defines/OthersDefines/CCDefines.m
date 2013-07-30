@@ -279,4 +279,13 @@ const struct CCAppInvitesFacebookConstants CCAppInvitesFacebookConstants = {
 
 const struct CCPushNotificationTypes CCPushNotificationTypes = {
     .privateMessage = @"PrivateMessage",
+    .groupMessage = @"GroupMessage",
+    .answer = @"Answer",
+    .comment = @"Comment",
+    .professorUpload = @"ProfessorsUpload",
+    .announcement = @"Announcement",
+    .location = @"Location",
+    .forum = @"Forum",
+    .question = @"Question",
+    .coupon = @"Coupon",
 };

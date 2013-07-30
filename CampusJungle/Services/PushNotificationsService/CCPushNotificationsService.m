@@ -13,7 +13,7 @@
 #import "CCPush.h"
 #import "CCStringHelper.h"
 
-#import "CCPrivateMessageProcessingBehaviour.h"
+#import "CCPushProcessingBehavioursDefines.h"
 
 @interface CCPushNotificationsService () <UIAlertViewDelegate>
 
@@ -40,6 +40,34 @@
     if ([pushType isEqualToString:CCPushNotificationTypes.privateMessage]) {
         [pushNotification setPushProcessingBehavior:[CCPrivateMessageProcessingBehaviour new]];
     }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.groupMessage]) {
+        [pushNotification setPushProcessingBehavior:[CCGroupMessagePushProcessingBehaviour new]];
+    }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.answer]) {
+        [pushNotification setPushProcessingBehavior:[CCAnswerPushProcessingBehaviour new]];
+    }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.comment]) {
+        [pushNotification setPushProcessingBehavior:[CCCommentPushProcessingBehaviour new]];
+    }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.professorUpload]) {
+        [pushNotification setPushProcessingBehavior:[CCProfessorsUploadPushProcessingBehaviour new]];
+    }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.announcement]) {
+        [pushNotification setPushProcessingBehavior:[CCAnnouncementPushProcessingBehaviour new]];
+    }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.location]) {
+        [pushNotification setPushProcessingBehavior:[CCLocationPushProcessingBehaviour new]];
+    }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.forum]) {
+        [pushNotification setPushProcessingBehavior:[CCForumPushProcessingBehaviour new]];
+    }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.question]) {
+        [pushNotification setPushProcessingBehavior:[CCQuestionPushProcessingBehaviour new]];
+    }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.coupon]) {
+        [pushNotification setPushProcessingBehavior:[CCCouponPushProcessingBehaviour new]];
+    }
+    
     [pushNotification proccessPushNotification];
 }
 

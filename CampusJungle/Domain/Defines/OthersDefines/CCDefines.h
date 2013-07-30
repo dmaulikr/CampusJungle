@@ -104,7 +104,6 @@ extern const struct CCAPIDefines {
     
 } CCAPIDefines;
 
-
 extern const struct CCUserDefines {
     __unsafe_unretained NSString *firstName;
     __unsafe_unretained NSString *lastName;
@@ -281,6 +280,15 @@ extern const struct CCAppInvitesFacebookConstants {
 
 extern const struct CCPushNotificationTypes {
     __unsafe_unretained NSString *privateMessage;
+    __unsafe_unretained NSString *groupMessage;
+    __unsafe_unretained NSString *answer;
+    __unsafe_unretained NSString *comment;
+    __unsafe_unretained NSString *professorUpload;
+    __unsafe_unretained NSString *announcement;
+    __unsafe_unretained NSString *location;
+    __unsafe_unretained NSString *forum;
+    __unsafe_unretained NSString *question;
+    __unsafe_unretained NSString *coupon;
 } CCPushNotificationTypes;
 
 enum CCClassTabbarButtonsIdentifiers {
