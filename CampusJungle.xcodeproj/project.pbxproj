@@ -634,6 +634,7 @@
 		D37122FE17A2B45900A7DF04 /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D37122FA17A2B45900A7DF04 /* check@2x.png */; };
 		D37122FF17A2B45900A7DF04 /* check_active.png in Resources */ = {isa = PBXBuildFile; fileRef = D37122FB17A2B45900A7DF04 /* check_active.png */; };
 		D371230017A2B45900A7DF04 /* check_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D37122FC17A2B45900A7DF04 /* check_active@2x.png */; };
+		D3751C7A17A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3751C7917A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.m */; };
 		D3819B571799CB4300C93005 /* CCProfessorUploadDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3819B561799CB4300C93005 /* CCProfessorUploadDataProvider.m */; };
 		D3819B5B1799CF3500C93005 /* CCProfessorUploadsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3819B5A1799CF3500C93005 /* CCProfessorUploadsCell.m */; };
 		D3819B5D1799CF8300C93005 /* CCProfessorUploadsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3819B5C1799CF8300C93005 /* CCProfessorUploadsCell.xib */; };
@@ -681,6 +682,10 @@
 		D3A31981177E226C0004C4E8 /* logoLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A3197F177E226C0004C4E8 /* logoLogin.png */; };
 		D3A3198C177E3C7A0004C4E8 /* sideMenuBackGround@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A3198A177E3C780004C4E8 /* sideMenuBackGround@2x.png */; };
 		D3A3198D177E3C7A0004C4E8 /* sideMenuBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A3198B177E3C790004C4E8 /* sideMenuBackGround.png */; };
+		D3B7320A17A687B900F35C4D /* CCAppInviteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7320917A687B900F35C4D /* CCAppInviteCell.m */; };
+		D3B7320C17A6885F00F35C4D /* CCAppInviteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B7320B17A6885F00F35C4D /* CCAppInviteCell.xib */; };
+		D3B7320E17A714EB00F35C4D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7320D17A714EB00F35C4D /* Security.framework */; };
+		D3B7321017A714F200F35C4D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7320F17A714F200F35C4D /* StoreKit.framework */; };
 		D3DF8C3117900AAA00B072B7 /* CCMessageDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DF8C2F17900AAA00B072B7 /* CCMessageDetailsController.m */; };
 		D3DF8C3217900AAA00B072B7 /* CCMessageDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3DF8C3017900AAA00B072B7 /* CCMessageDetailsController.xib */; };
 /* End PBXBuildFile section */
@@ -1668,6 +1673,8 @@
 		D37122FA17A2B45900A7DF04 /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
 		D37122FB17A2B45900A7DF04 /* check_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check_active.png; sourceTree = "<group>"; };
 		D37122FC17A2B45900A7DF04 /* check_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check_active@2x.png"; sourceTree = "<group>"; };
+		D3751C7817A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCInboxAppInvitesDataProvider.h; sourceTree = "<group>"; };
+		D3751C7917A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCInboxAppInvitesDataProvider.m; sourceTree = "<group>"; };
 		D3819B551799CB4300C93005 /* CCProfessorUploadDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProfessorUploadDataProvider.h; sourceTree = "<group>"; };
 		D3819B561799CB4300C93005 /* CCProfessorUploadDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCProfessorUploadDataProvider.m; sourceTree = "<group>"; };
 		D3819B591799CF3500C93005 /* CCProfessorUploadsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProfessorUploadsCell.h; sourceTree = "<group>"; };
@@ -1741,6 +1748,11 @@
 		D3A3197F177E226C0004C4E8 /* logoLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoLogin.png; sourceTree = "<group>"; };
 		D3A3198A177E3C780004C4E8 /* sideMenuBackGround@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sideMenuBackGround@2x.png"; sourceTree = "<group>"; };
 		D3A3198B177E3C790004C4E8 /* sideMenuBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sideMenuBackGround.png; sourceTree = "<group>"; };
+		D3B7320817A687B900F35C4D /* CCAppInviteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAppInviteCell.h; sourceTree = "<group>"; };
+		D3B7320917A687B900F35C4D /* CCAppInviteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAppInviteCell.m; sourceTree = "<group>"; };
+		D3B7320B17A6885F00F35C4D /* CCAppInviteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAppInviteCell.xib; sourceTree = "<group>"; };
+		D3B7320D17A714EB00F35C4D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D3B7320F17A714F200F35C4D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D3DF8C2E17900AAA00B072B7 /* CCMessageDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessageDetailsController.h; sourceTree = "<group>"; };
 		D3DF8C2F17900AAA00B072B7 /* CCMessageDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessageDetailsController.m; sourceTree = "<group>"; };
 		D3DF8C3017900AAA00B072B7 /* CCMessageDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMessageDetailsController.xib; sourceTree = "<group>"; };
@@ -1752,6 +1764,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3B7321017A714F200F35C4D /* StoreKit.framework in Frameworks */,
+				D3B7320E17A714EB00F35C4D /* Security.framework in Frameworks */,
 				70061CA017A270EA00848F62 /* AddressBook.framework in Frameworks */,
 				703DA4F0178C3D3C00464DD3 /* MapKit.framework in Frameworks */,
 				A7FA0E571768D746004D3403 /* libTestFlight.a in Frameworks */,
@@ -3196,6 +3210,7 @@
 				70FDD653179D55E000871727 /* GroupmatesDataDrovider */,
 				70F42A78178D5A1C00E763F3 /* GroupsDataProvider */,
 				70A29D6D17877B94001BC8DD /* ImageSortingDataProvider */,
+				AA28D80E46C593F397076F50 /* InboxAppInvitesDataProvider */,
 				703DA4DE178B457200464DD3 /* LocationsDataProvider */,
 				70A29D7017877B94001BC8DD /* MarketNotesProvider */,
 				70A29D7317877B94001BC8DD /* MarketStuffDataProvider */,
@@ -4714,6 +4729,7 @@
 				70061CC517A284A400848F62 /* AddressBookRecordCell */,
 				D38532E8179DD9F50075F870 /* AnnouncementCell */,
 				7012AC8E17955F95002DA5E9 /* AnswerCell */,
+				D3B7320717A687A300F35C4D /* AppInviteCell */,
 				70B2D1D417944E39001B0C2C /* BaseCell */,
 				70B2D1D717944E39001B0C2C /* CityCell */,
 				70B2D1DA17944E39001B0C2C /* ClassCell */,
@@ -5260,6 +5276,8 @@
 		A784C597173A865E005E4921 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3B7320F17A714F200F35C4D /* StoreKit.framework */,
+				D3B7320D17A714EB00F35C4D /* Security.framework */,
 				70061C9E17A270DC00848F62 /* AddressBook.framework */,
 				703DA4EE178C3D3000464DD3 /* MapKit.framework */,
 				A7FA0E561768D746004D3403 /* libTestFlight.a */,
@@ -5359,6 +5377,15 @@
 				A7D53A3D1758A85700FE9FCD /* MHTabBarIndicator@2x.png */,
 			);
 			path = MHTabBarController;
+			sourceTree = "<group>";
+		};
+		AA28D80E46C593F397076F50 /* InboxAppInvitesDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3751C7817A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.h */,
+				D3751C7917A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.m */,
+			);
+			path = InboxAppInvitesDataProvider;
 			sourceTree = "<group>";
 		};
 		D3039B75176880F800621CAC /* Icons */ = {
@@ -5880,6 +5907,16 @@
 			path = AppearanceConfigurator;
 			sourceTree = "<group>";
 		};
+		D3B7320717A687A300F35C4D /* AppInviteCell */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7320817A687B900F35C4D /* CCAppInviteCell.h */,
+				D3B7320917A687B900F35C4D /* CCAppInviteCell.m */,
+				D3B7320B17A6885F00F35C4D /* CCAppInviteCell.xib */,
+			);
+			path = AppInviteCell;
+			sourceTree = "<group>";
+		};
 		D3DF8C2D17900A7200B072B7 /* MessageDetailsController */ = {
 			isa = PBXGroup;
 			children = (
@@ -6266,6 +6303,7 @@
 				70061CA617A2746D00848F62 /* CCAppInviteViewController.xib in Resources */,
 				70061CCA17A284EA00848F62 /* CCAddressBookRecordCell.xib in Resources */,
 				70061CDC17A29AA700848F62 /* CCAddressBookHeader.xib in Resources */,
+				D3B7320C17A6885F00F35C4D /* CCAppInviteCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6648,6 +6686,8 @@
 				70061CE017A2CC4A00848F62 /* CCAppInvite.m in Sources */,
 				70061CE417A2D09E00848F62 /* CCAppInviteApiProvider.m in Sources */,
 				AA28DC920F53DB90D22BE7E7 /* CCWelcomeController.m in Sources */,
+				D3751C7A17A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.m in Sources */,
+				D3B7320A17A687B900F35C4D /* CCAppInviteCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

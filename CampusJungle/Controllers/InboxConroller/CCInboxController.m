@@ -19,13 +19,16 @@
 #import "CCMessageCell.h"
 #import "CCOfferCell.h"
 #import "CCGroupInviteCell.h"
+#import "CCOrdinaryCell.h"
 
 #import "CCMessagesDataProvider.h"
 #import "CCOffersDataProvider.h"
 #import "CCGroupInvitesDataProvider.h"
+#import "CCInboxAppInvitesDataProvider.h"
 
 #define MessagesState 0
-#define InvtesState 1
+#define GroupInvitesState 1
+#define AppInviteState 3
 #define OffersState 2
 
 @interface CCInboxController () <CCMessageCellDelegate, CCGroupInviteCellDelegate>
@@ -37,6 +40,11 @@
 @property (nonatomic, strong) CCMessagesDataProvider *messagesDataProvider;
 @property (nonatomic, strong) CCOffersDataProvider *offersDataProvider;
 @property (nonatomic, strong) CCGroupInvitesDataProvider *groupInvitesDataProvider;
+@property (nonatomic, strong) CCInboxAppInvitesDataProvider *appInviteDataProvider;
+
+@property (nonatomic) NSInteger currentState;
+
+@property (nonatomic, weak) IBOutlet UISegmentedControl *mainSegmentedControl;
 
 @end
 
@@ -54,6 +62,7 @@
     if ([self.ioc_userSession currentUser]){
         [self configTableWithProvider:messagesDataProvider cellClass:[CCMessageCell class] cellReuseIdentifier:NSStringFromClass([CCMessageCell class])];
     }
+    
     self.mainTable.tableFooterView = [UIView new];
 }
 
@@ -74,18 +83,30 @@
             [self setMessagesConfiguration];
             break;
         }
-        case InvtesState:{
-            [self setInvitesConfiguration];
+        case GroupInvitesState:{
+            [self setGroupsInvitesConfiguration];
             break;
         }
         case OffersState:{
             [self setOfferConfiguration];
             break;
         }
+        case AppInviteState:{
+            [self setAppInvitesConfiguration];
+            break;
+        }
     }
 }
 
-- (void)setInvitesConfiguration
+- (void)setAppInvitesConfiguration
+{
+    if (!self.appInviteDataProvider) {
+        self.appInviteDataProvider = [CCInboxAppInvitesDataProvider new];
+    }
+    [self configTableWithProvider:self.appInviteDataProvider cellClass:[CCOrdinaryCell class]];
+}
+
+- (void)setGroupsInvitesConfiguration
 {
     if (!self.groupInvitesDataProvider) {
         self.groupInvitesDataProvider = [CCGroupInvitesDataProvider new];
@@ -164,7 +185,6 @@
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
     }];
-
 }
 
 - (void)deleteGroupInvite:(CCGroupInvite *)groupInvite
