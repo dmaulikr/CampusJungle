@@ -42,6 +42,7 @@
                                             pathPattern:creationPathPattern
                                                 keyPath:nil
                                             statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+
     
     [objectManager addResponseDescriptor:responsePostAnnouncementDescriptor];
     [objectManager addResponseDescriptor:responseAnnouncementsDescriptor];

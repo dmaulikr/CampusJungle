@@ -76,6 +76,13 @@
                                                                                                pathPattern:commonClassesPathPattern
                                                                                                    keyPath:@"classes"
                                                                                                statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    NSString *loadClassPathPattern = [NSString stringWithFormat:CCAPIDefines.loadClass, @":classId"];
+    RKResponseDescriptor *loadClassDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:classResponseMapping
+                                                                                                  pathPattern:loadClassPathPattern
+                                                                                                      keyPath:@"class"
+                                                                                                  statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
     [objectManager addResponseDescriptor:responseCommonClassesDescriptor];
     [objectManager addResponseDescriptor:responseAddClassDescriptor];
     [objectManager addResponseDescriptor:responseClassesOfCollegeDescriptor];
@@ -83,6 +90,7 @@
     [objectManager addResponseDescriptor:responseUpdateClassDescriptor];
     [objectManager addResponseDescriptor:responseAllClassesDescriptor];
     [objectManager addRequestDescriptor:classRequestDescriptor];
+    [objectManager addResponseDescriptor:loadClassDescriptor];
 }
 
 

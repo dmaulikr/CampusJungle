@@ -12,9 +12,15 @@
 #import "CCTransactionWithObject.h"
 #import "CCAlertHelper.h"
 
+#import "CCMessageAPIProviderProtocol.h"
+#import "CCStandardErrorHandler.h"
+
+typedef void(^LoadMessageSuccessBlock)(id);
+
 @interface CCPrivateMessageProcessingBehaviour ()
 
 @property (nonatomic, strong) id<CCTransactionWithObject> messageDetailsTransaction;
+@property (nonatomic, strong) id<CCMessageAPIProviderProtocol> ioc_messageApiProvider;
 
 @end
 
@@ -50,8 +56,26 @@
 
 - (void)goMessageDetailsWithUserInfo:(NSDictionary *)userInfo
 {
+    __weak CCPrivateMessageProcessingBehaviour *weakSelf = self;
     NSString *messageid = [userInfo objectForKey:@"message_id"];
-    [self.messageDetailsTransaction performWithObject:messageid];    
+    [self loadMessageWithId:messageid successBlock:^(id message) {
+        [weakSelf.messageDetailsTransaction performWithObject:message];
+    }];
 }
+
+#pragma mark -
+#pragma mark Requests
+- (void)loadMessageWithId:(NSString *)messageId successBlock:(LoadMessageSuccessBlock)successBlock
+{
+    [SVProgressHUD showWithStatus:CCProcessingMessages.loadingMessage];
+    [self.ioc_messageApiProvider loadMessageWithId:messageId successHandler:^(RKMappingResult *result) {
+        [SVProgressHUD dismiss];
+        successBlock(result);
+    } errorHandler:^(NSError *error) {
+        [SVProgressHUD dismiss];
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
+}
+
 
 @end

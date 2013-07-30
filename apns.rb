@@ -12,9 +12,9 @@ sock = TCPSocket.new('gateway.sandbox.push.apple.com', 2195) #development gatewa
 ssl = OpenSSL::SSL::SSLSocket.new(sock, ctx)
 ssl.connect
 
-payload = {"aps" => {"alert" => "Hey! You've received new private message!", "badge" => 1}, "type" => "PrivateMessage", "message_id" => "9"}
+payload = {"aps" => {"alert" => "Hey! You've received new private message!", "badge" => 1}, "type" => "Answer", "question_id" => "17"}
 json = payload.to_json()
-token = "A43B637F7410A989DECEA41C16D420451B66EFEA2A619F7A5302882C033F000B"
+token = "35817936D06100BCD811998EB2E8AB469605C17B5CC4CA53FA2B15DEF045CADD"
 token =  [token.delete(' ')].pack('H*') #something like 2c0cad 01d1465 346786a9 3a07613f2 b03f0b94b6 8dde3993 d9017224 ad068d36
 apnsMessage = "\0\0 #{token}\0#{json.length.chr}#{json}"
 

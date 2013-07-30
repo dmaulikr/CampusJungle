@@ -53,6 +53,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .postReview = @"/api/users/%@/reviews",
     .loadReviews = @"/api/users/%@/reviews",
     .loadGroups = @"/api/users/me/classes/%@/groups",
+    .loadForum = @"/api/forums/%@",
     .loadClassForums = @"/api/classes/%@/forums",
     .loadGroupForums = @"/api/groups/%@/forums",
     .postInClassForum = @"/api/classes/%@/forums",
@@ -103,6 +104,8 @@ const struct CCAPIDefines CCAPIDefines = {
     .deleteAppInvite = @"/api/app_invites/%@",
     .linkDevice = @"/api/users/me/devices",
     .unlinkDevice = @"/api/users/me/devices",
+    .loadQuestion = @"/api/questions/%@",
+    .loadClass = @"/api/users/me/classes/%@",
 };
 
 const struct CCUserDefines CCUserDefines = {

@@ -11,4 +11,8 @@
 const struct CCProcessingMessages CCProcessingMessages = {
     .updatingGroup = @"Updating group info...",
     .logout = @"Logging out..",
+    .loadingMessage = @"Loading message details...",
+    .loadingForum = @"Loading forum details...",
+    .loadingQuestion = @"Loading question details...",
+    .loadingClass = @"Loading class details...",
 };

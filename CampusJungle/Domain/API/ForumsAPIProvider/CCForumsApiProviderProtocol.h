@@ -18,5 +18,6 @@
 - (void)postInClassForum:(CCForum *)forum successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 - (void)postInGroupForum:(CCForum *)forum successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 - (void)deleteForum:(CCForum *)forum successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)loadForumWithId:(NSString *)forumId successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 
 @end

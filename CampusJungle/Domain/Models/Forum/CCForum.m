@@ -40,8 +40,17 @@
                                                                                                   pathPattern:groupPathPattern
                                                                                                       keyPath:nil
                                                                                                   statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    NSString *loadForumPattern = [NSString stringWithFormat:CCAPIDefines.loadForum, @":forumID"];
+    RKResponseDescriptor *loadForumResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:forumsResponseMapping
+                                                                                                  pathPattern:loadForumPattern
+                                                                                                      keyPath:@"forum"
+                                                                                                  statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    
     [objectManager addResponseDescriptor:classForumsResponseDescriptor];
     [objectManager addResponseDescriptor:groupForumsResponseDescriptor];
+    [objectManager addResponseDescriptor:loadForumResponseDescriptor];
 }
 
 + (void)configureForumsRequest:(RKObjectManager *)objectManager
