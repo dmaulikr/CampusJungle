@@ -249,6 +249,18 @@
 		7012ACA617957C4B002DA5E9 /* CCLoadPreviousItemsSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7012ACA517957C4B002DA5E9 /* CCLoadPreviousItemsSectionHeader.xib */; };
 		7021ECD117A7D78B00D45B51 /* apns.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7021ECD017A7D78B00D45B51 /* apns.rb */; };
 		7021ECD517A7E87D00D45B51 /* CCDeviceTokenAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ECD417A7E87D00D45B51 /* CCDeviceTokenAPIProvider.m */; };
+		7021ECDB17A7F3C000D45B51 /* groupmessage_button_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 7021ECD717A7F3C000D45B51 /* groupmessage_button_active.png */; };
+		7021ECDC17A7F3C000D45B51 /* groupmessage_button_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7021ECD817A7F3C000D45B51 /* groupmessage_button_active@2x.png */; };
+		7021ECDD17A7F3C000D45B51 /* groupmessage_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7021ECD917A7F3C000D45B51 /* groupmessage_button.png */; };
+		7021ECDE17A7F3C000D45B51 /* groupmessage_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7021ECDA17A7F3C000D45B51 /* groupmessage_button@2x.png */; };
+		7021ECEB17A7F3F500D45B51 /* groupmates_button_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 7021ECE717A7F3F400D45B51 /* groupmates_button_active.png */; };
+		7021ECEC17A7F3F500D45B51 /* groupmates_button_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7021ECE817A7F3F400D45B51 /* groupmates_button_active@2x.png */; };
+		7021ECED17A7F3F500D45B51 /* groupmates_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7021ECE917A7F3F400D45B51 /* groupmates_button.png */; };
+		7021ECEE17A7F3F500D45B51 /* groupmates_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7021ECEA17A7F3F400D45B51 /* groupmates_button@2x.png */; };
+		7021ECF117A7F40F00D45B51 /* ahead_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7021ECEF17A7F40E00D45B51 /* ahead_arrow.png */; };
+		7021ECF217A7F40F00D45B51 /* ahead_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7021ECF017A7F40F00D45B51 /* ahead_arrow@2x.png */; };
+		7021ECF517A7F42000D45B51 /* back_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7021ECF317A7F41F00D45B51 /* back_arrow.png */; };
+		7021ECF617A7F42000D45B51 /* back_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7021ECF417A7F41F00D45B51 /* back_arrow@2x.png */; };
 		7022F4991786C7100055221C /* SelectionBackGround@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE2178454C200E54EFC /* SelectionBackGround@2x.png */; };
 		7022F49A1786C7110055221C /* SelectionBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE3178454C200E54EFC /* SelectionBackGround.png */; };
 		70256325179FD71100B48AA2 /* CCGroupInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70256323179FD71100B48AA2 /* CCGroupInviteViewController.m */; };
@@ -260,10 +272,6 @@
 		7025633B17A0058800B48AA2 /* CCGroupInviteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7025633A17A0058800B48AA2 /* CCGroupInviteCell.m */; };
 		7025633F17A0063100B48AA2 /* CCGroupInvite.m in Sources */ = {isa = PBXBuildFile; fileRef = 7025633E17A0063100B48AA2 /* CCGroupInvite.m */; };
 		7025634117A0092600B48AA2 /* CCGroupInviteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7025634017A0092500B48AA2 /* CCGroupInviteCell.xib */; };
-		7025634617A01EE700B48AA2 /* arrow_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 7025634217A01EE700B48AA2 /* arrow_left.png */; };
-		7025634717A01EE700B48AA2 /* arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7025634317A01EE700B48AA2 /* arrow_left@2x.png */; };
-		7025634817A01EE700B48AA2 /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 7025634417A01EE700B48AA2 /* arrow_right.png */; };
-		7025634917A01EE700B48AA2 /* arrow_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7025634517A01EE700B48AA2 /* arrow_right@2x.png */; };
 		703DA4DD178B455600464DD3 /* CCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4DC178B455600464DD3 /* CCLocation.m */; };
 		703DA4E2178B457200464DD3 /* CCLocationsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4E0178B457200464DD3 /* CCLocationsDataProvider.m */; };
 		703DA4F0178C3D3C00464DD3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 703DA4EE178C3D3000464DD3 /* MapKit.framework */; };
@@ -1009,6 +1017,18 @@
 		7021ECD317A7E87D00D45B51 /* CCDeviceTokenAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDeviceTokenAPIProvider.h; sourceTree = "<group>"; };
 		7021ECD417A7E87D00D45B51 /* CCDeviceTokenAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDeviceTokenAPIProvider.m; sourceTree = "<group>"; };
 		7021ECD617A7E89200D45B51 /* CCDeviceTokenAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCDeviceTokenAPIProviderProtocol.h; sourceTree = "<group>"; };
+		7021ECD717A7F3C000D45B51 /* groupmessage_button_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groupmessage_button_active.png; sourceTree = "<group>"; };
+		7021ECD817A7F3C000D45B51 /* groupmessage_button_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "groupmessage_button_active@2x.png"; sourceTree = "<group>"; };
+		7021ECD917A7F3C000D45B51 /* groupmessage_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groupmessage_button.png; sourceTree = "<group>"; };
+		7021ECDA17A7F3C000D45B51 /* groupmessage_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "groupmessage_button@2x.png"; sourceTree = "<group>"; };
+		7021ECE717A7F3F400D45B51 /* groupmates_button_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groupmates_button_active.png; sourceTree = "<group>"; };
+		7021ECE817A7F3F400D45B51 /* groupmates_button_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "groupmates_button_active@2x.png"; sourceTree = "<group>"; };
+		7021ECE917A7F3F400D45B51 /* groupmates_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groupmates_button.png; sourceTree = "<group>"; };
+		7021ECEA17A7F3F400D45B51 /* groupmates_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "groupmates_button@2x.png"; sourceTree = "<group>"; };
+		7021ECEF17A7F40E00D45B51 /* ahead_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ahead_arrow.png; sourceTree = "<group>"; };
+		7021ECF017A7F40F00D45B51 /* ahead_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ahead_arrow@2x.png"; sourceTree = "<group>"; };
+		7021ECF317A7F41F00D45B51 /* back_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_arrow.png; sourceTree = "<group>"; };
+		7021ECF417A7F41F00D45B51 /* back_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_arrow@2x.png"; sourceTree = "<group>"; };
 		70256322179FD71100B48AA2 /* CCGroupInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupInviteViewController.h; sourceTree = "<group>"; };
 		70256323179FD71100B48AA2 /* CCGroupInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupInviteViewController.m; sourceTree = "<group>"; };
 		70256324179FD71100B48AA2 /* CCGroupInviteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupInviteViewController.xib; sourceTree = "<group>"; };
@@ -1026,10 +1046,6 @@
 		7025633D17A0063100B48AA2 /* CCGroupInvite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupInvite.h; sourceTree = "<group>"; };
 		7025633E17A0063100B48AA2 /* CCGroupInvite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupInvite.m; sourceTree = "<group>"; };
 		7025634017A0092500B48AA2 /* CCGroupInviteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupInviteCell.xib; sourceTree = "<group>"; };
-		7025634217A01EE700B48AA2 /* arrow_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_left.png; sourceTree = "<group>"; };
-		7025634317A01EE700B48AA2 /* arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_left@2x.png"; sourceTree = "<group>"; };
-		7025634417A01EE700B48AA2 /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_right.png; sourceTree = "<group>"; };
-		7025634517A01EE700B48AA2 /* arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_right@2x.png"; sourceTree = "<group>"; };
 		703DA4DB178B455600464DD3 /* CCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocation.h; sourceTree = "<group>"; };
 		703DA4DC178B455600464DD3 /* CCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocation.m; sourceTree = "<group>"; };
 		703DA4DF178B457200464DD3 /* CCLocationsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationsDataProvider.h; sourceTree = "<group>"; };
@@ -1958,6 +1974,8 @@
 				70066B4817993C3200B7A4E7 /* add_button_disabled@2x.png */,
 				70066B4917993C3200B7A4E7 /* add_icon.png */,
 				70066B4A17993C3200B7A4E7 /* add_icon@2x.png */,
+				7021ECEF17A7F40E00D45B51 /* ahead_arrow.png */,
+				7021ECF017A7F40F00D45B51 /* ahead_arrow@2x.png */,
 				70066B4B17993C3200B7A4E7 /* alert_dialog_shape.png */,
 				70066B4C17993C3200B7A4E7 /* alert_dialog_shape@2x.png */,
 				70066B4D17993C3200B7A4E7 /* announcement_button.png */,
@@ -1966,12 +1984,10 @@
 				70066B5017993C3200B7A4E7 /* announcement_button_active@2x.png */,
 				7070446A17A7C11800AC0FDE /* arrow_button.png */,
 				7070446B17A7C11800AC0FDE /* arrow_button@2x.png */,
-				7025634217A01EE700B48AA2 /* arrow_left.png */,
-				7025634317A01EE700B48AA2 /* arrow_left@2x.png */,
-				7025634417A01EE700B48AA2 /* arrow_right.png */,
-				7025634517A01EE700B48AA2 /* arrow_right@2x.png */,
 				70066B5117993C3200B7A4E7 /* avatar_placeholder.png */,
 				70066B5217993C3200B7A4E7 /* avatar_placeholder@2x.png */,
+				7021ECF317A7F41F00D45B51 /* back_arrow.png */,
+				7021ECF417A7F41F00D45B51 /* back_arrow@2x.png */,
 				70066B5317993C3200B7A4E7 /* back_button.png */,
 				70066B5417993C3200B7A4E7 /* back_button@2x.png */,
 				70066B5517993C3200B7A4E7 /* button.png */,
@@ -2018,6 +2034,14 @@
 				70066B7E17993C3200B7A4E7 /* forums_icon@2x.png */,
 				70066B7F17993C3200B7A4E7 /* forums_icon_active.png */,
 				70066B8017993C3200B7A4E7 /* forums_icon_active@2x.png */,
+				7021ECE717A7F3F400D45B51 /* groupmates_button_active.png */,
+				7021ECE817A7F3F400D45B51 /* groupmates_button_active@2x.png */,
+				7021ECE917A7F3F400D45B51 /* groupmates_button.png */,
+				7021ECEA17A7F3F400D45B51 /* groupmates_button@2x.png */,
+				7021ECD717A7F3C000D45B51 /* groupmessage_button_active.png */,
+				7021ECD817A7F3C000D45B51 /* groupmessage_button_active@2x.png */,
+				7021ECD917A7F3C000D45B51 /* groupmessage_button.png */,
+				7021ECDA17A7F3C000D45B51 /* groupmessage_button@2x.png */,
 				70066B8117993C3200B7A4E7 /* groups_icon.png */,
 				70066B8217993C3200B7A4E7 /* groups_icon@2x.png */,
 				70066B8317993C3200B7A4E7 /* groups_icon_active.png */,
@@ -6369,10 +6393,6 @@
 				70FDD666179E786C00871727 /* CCEditGroupViewController.xib in Resources */,
 				70256326179FD71100B48AA2 /* CCGroupInviteViewController.xib in Resources */,
 				7025634117A0092600B48AA2 /* CCGroupInviteCell.xib in Resources */,
-				7025634617A01EE700B48AA2 /* arrow_left.png in Resources */,
-				7025634717A01EE700B48AA2 /* arrow_left@2x.png in Resources */,
-				7025634817A01EE700B48AA2 /* arrow_right.png in Resources */,
-				7025634917A01EE700B48AA2 /* arrow_right@2x.png in Resources */,
 				D37122D417A13FE500A7DF04 /* CCVoteScreenController.xib in Resources */,
 				D37122E217A1446500A7DF04 /* CCVoteResultScreenController.xib in Resources */,
 				70DA30D317A12F3C004EE6DC /* CCStuffHeader.xib in Resources */,
@@ -6387,6 +6407,18 @@
 				7070446C17A7C11800AC0FDE /* arrow_button.png in Resources */,
 				7070446D17A7C11800AC0FDE /* arrow_button@2x.png in Resources */,
 				7021ECD117A7D78B00D45B51 /* apns.rb in Resources */,
+				7021ECDB17A7F3C000D45B51 /* groupmessage_button_active.png in Resources */,
+				7021ECDC17A7F3C000D45B51 /* groupmessage_button_active@2x.png in Resources */,
+				7021ECDD17A7F3C000D45B51 /* groupmessage_button.png in Resources */,
+				7021ECDE17A7F3C000D45B51 /* groupmessage_button@2x.png in Resources */,
+				7021ECEB17A7F3F500D45B51 /* groupmates_button_active.png in Resources */,
+				7021ECEC17A7F3F500D45B51 /* groupmates_button_active@2x.png in Resources */,
+				7021ECED17A7F3F500D45B51 /* groupmates_button.png in Resources */,
+				7021ECEE17A7F3F500D45B51 /* groupmates_button@2x.png in Resources */,
+				7021ECF117A7F40F00D45B51 /* ahead_arrow.png in Resources */,
+				7021ECF217A7F40F00D45B51 /* ahead_arrow@2x.png in Resources */,
+				7021ECF517A7F42000D45B51 /* back_arrow.png in Resources */,
+				7021ECF617A7F42000D45B51 /* back_arrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

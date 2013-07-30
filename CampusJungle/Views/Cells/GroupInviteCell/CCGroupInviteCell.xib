@@ -173,7 +173,7 @@
 											<object class="IBUIButton" id="488448890">
 												<reference key="NSNextResponder" ref="658635350"/>
 												<int key="NSvFlags">292</int>
-												<string key="NSFrame">{{37, 1}, {73, 44}}</string>
+												<string key="NSFrame">{{27, 1}, {73, 35}}</string>
 												<reference key="NSSuperview" ref="658635350"/>
 												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="259309447"/>
@@ -206,7 +206,7 @@
 											<object class="IBUIButton" id="259309447">
 												<reference key="NSNextResponder" ref="658635350"/>
 												<int key="NSvFlags">292</int>
-												<string key="NSFrame">{{153, 1}, {73, 44}}</string>
+												<string key="NSFrame">{{135, 1}, {73, 35}}</string>
 												<reference key="NSSuperview" ref="658635350"/>
 												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="324725387"/>
@@ -245,7 +245,7 @@
 											<object class="IBUIButton" id="214727539">
 												<reference key="NSNextResponder" ref="324725387"/>
 												<int key="NSvFlags">292</int>
-												<string key="NSFrame">{{37, 1}, {73, 44}}</string>
+												<string key="NSFrame">{{27, 1}, {73, 35}}</string>
 												<reference key="NSSuperview" ref="324725387"/>
 												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="885075398"/>
@@ -268,7 +268,7 @@
 											<object class="IBUIButton" id="885075398">
 												<reference key="NSNextResponder" ref="324725387"/>
 												<int key="NSvFlags">292</int>
-												<string key="NSFrame">{{153, 1}, {73, 44}}</string>
+												<string key="NSFrame">{{135, 1}, {73, 35}}</string>
 												<reference key="NSSuperview" ref="324725387"/>
 												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="337149599"/>
@@ -318,7 +318,7 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">arrow_left.png</string>
+									<string key="NSResourceName">back_arrow.png</string>
 								</object>
 							</object>
 							<object class="IBUIImageView" id="337149599">
@@ -333,7 +333,7 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">arrow_right.png</string>
+									<string key="NSResourceName">ahead_arrow.png</string>
 								</object>
 							</object>
 						</array>
@@ -628,30 +628,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">CCGroupInviteCell</string>
 					<string key="superclassName">CCBaseCell</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="acceptInviteButtonDidPressed:">id</string>
-						<string key="deleteButtonDidPressed:">id</string>
-						<string key="rejectInviteButtonDidPressed:">id</string>
-						<string key="resendInviteButtonDidPressed:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="acceptInviteButtonDidPressed:">
-							<string key="name">acceptInviteButtonDidPressed:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="deleteButtonDidPressed:">
-							<string key="name">deleteButtonDidPressed:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="rejectInviteButtonDidPressed:">
-							<string key="name">rejectInviteButtonDidPressed:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="resendInviteButtonDidPressed:">
-							<string key="name">resendInviteButtonDidPressed:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="groupNameLabel">UILabel</string>
 						<string key="inviteBodyView">UIView</string>
@@ -713,8 +689,8 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="arrow_left.png">{44, 34}</string>
-			<string key="arrow_right.png">{44, 34}</string>
+			<string key="ahead_arrow.png">{44, 32}</string>
+			<string key="back_arrow.png">{44, 32}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>
