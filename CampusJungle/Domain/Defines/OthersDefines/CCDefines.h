@@ -45,6 +45,7 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *getStuff;
     __unsafe_unretained NSString *deleteStuff;
     __unsafe_unretained NSString *getUser;
+    __unsafe_unretained NSString *getMessage;
     __unsafe_unretained NSString *postMessage;
     __unsafe_unretained NSString *loadMyMessages;
     __unsafe_unretained NSString *postReview;

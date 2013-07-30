@@ -47,6 +47,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .getStuff = @"/api/stuff/%@",
     .deleteStuff = @"/api/users/me/stuff/%@",
     .getUser = @"/api/users/%@",
+    .getMessage = @"/api/messages/%@",
     .postMessage = @"/api/messages",
     .loadMyMessages = @"/api/users/me/messages",
     .postReview = @"/api/users/%@/reviews",
