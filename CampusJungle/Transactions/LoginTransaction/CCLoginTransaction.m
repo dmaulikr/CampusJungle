@@ -8,6 +8,7 @@
 
 #import "CCLoginTransaction.h"
 #import "CCUserProfileTransaction.h"
+#import "CCPushNotificationsService.h"
 
 @implementation CCLoginTransaction
 
@@ -17,6 +18,7 @@
     CCUserProfileTransaction *profileTransaction = [CCUserProfileTransaction new];
     profileTransaction.menuController = self.menuController;
     [profileTransaction perform];
+    [CCPushNotificationsService registerForRemoteNotifications];
 }
 
 @end

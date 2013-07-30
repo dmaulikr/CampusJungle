@@ -66,7 +66,7 @@
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     NSString *path = [NSString stringWithFormat:CCAPIDefines.getMessage, messageId];
     [objectManager getObjectsAtPath:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        successHandler(mappingResult);
+        successHandler([mappingResult firstObject]);
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         errorHandler(error);
     }];

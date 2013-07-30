@@ -17,7 +17,12 @@
 {
     NSParameterAssert(self.navigation);
     CCMessageDetailsController *messageDetailsController = [CCMessageDetailsController new];
-    messageDetailsController.message = object;
+    if ([object isKindOfClass:[NSString class]]) {
+        messageDetailsController.messageId = object;
+    }
+    else {
+        messageDetailsController.message = object;
+    }
     
     CCOtherUserProfileTransaction *otherUserProfileTransaction = [CCOtherUserProfileTransaction new];
     otherUserProfileTransaction.navigation = self.navigation;

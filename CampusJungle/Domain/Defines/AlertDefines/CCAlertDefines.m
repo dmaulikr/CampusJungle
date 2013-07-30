@@ -54,7 +54,9 @@ const struct CCAlertsButtons CCAlertsButtons = {
     .okButton = @"Ok",
     .cancelButton= @"Cancel",
     .yesButton = @"Yes",
-    .noButton = @"No"
+    .noButton = @"No",
+    .show = @"See now",
+    .later = @"See later",
 };
 
 const struct CCAlertsTitles CCAlertsTitles = {

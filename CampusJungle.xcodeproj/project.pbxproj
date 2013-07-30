@@ -247,6 +247,7 @@
 		7012ACA017957C03002DA5E9 /* CCSideMenuSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7012AC9C17957C03002DA5E9 /* CCSideMenuSectionHeader.xib */; };
 		7012ACA417957C37002DA5E9 /* CCLoadPreviousItemsSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7012ACA317957C37002DA5E9 /* CCLoadPreviousItemsSectionHeader.m */; };
 		7012ACA617957C4B002DA5E9 /* CCLoadPreviousItemsSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7012ACA517957C4B002DA5E9 /* CCLoadPreviousItemsSectionHeader.xib */; };
+		7021ECD117A7D78B00D45B51 /* apns.rb in Resources */ = {isa = PBXBuildFile; fileRef = 7021ECD017A7D78B00D45B51 /* apns.rb */; };
 		7022F4991786C7100055221C /* SelectionBackGround@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE2178454C200E54EFC /* SelectionBackGround@2x.png */; };
 		7022F49A1786C7110055221C /* SelectionBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE3178454C200E54EFC /* SelectionBackGround.png */; };
 		70256325179FD71100B48AA2 /* CCGroupInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70256323179FD71100B48AA2 /* CCGroupInviteViewController.m */; };
@@ -1003,6 +1004,7 @@
 		7012ACA217957C37002DA5E9 /* CCLoadPreviousItemsSectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLoadPreviousItemsSectionHeader.h; sourceTree = "<group>"; };
 		7012ACA317957C37002DA5E9 /* CCLoadPreviousItemsSectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLoadPreviousItemsSectionHeader.m; sourceTree = "<group>"; };
 		7012ACA517957C4B002DA5E9 /* CCLoadPreviousItemsSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCLoadPreviousItemsSectionHeader.xib; sourceTree = "<group>"; };
+		7021ECD017A7D78B00D45B51 /* apns.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = apns.rb; sourceTree = "<group>"; };
 		70256322179FD71100B48AA2 /* CCGroupInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupInviteViewController.h; sourceTree = "<group>"; };
 		70256323179FD71100B48AA2 /* CCGroupInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupInviteViewController.m; sourceTree = "<group>"; };
 		70256324179FD71100B48AA2 /* CCGroupInviteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupInviteViewController.xib; sourceTree = "<group>"; };
@@ -5334,6 +5336,7 @@
 				D394968F1785C36C00C39A7E /* Default-568h@2x.png */,
 				D394968D1785C36800C39A7E /* Default.png */,
 				A787C72C17536F8400824DEA /* CampusJungle */,
+				7021ECD017A7D78B00D45B51 /* apns.rb */,
 				A787C73017536F8400824DEA /* CampusJungle-Info.plist */,
 				A787C73117536F8400824DEA /* CampusJungle-Prefix.pch */,
 				A787C77417536F8400824DEA /* InfoPlist.strings */,
@@ -6368,6 +6371,7 @@
 				70061CDC17A29AA700848F62 /* CCAddressBookHeader.xib in Resources */,
 				7070446C17A7C11800AC0FDE /* arrow_button.png in Resources */,
 				7070446D17A7C11800AC0FDE /* arrow_button@2x.png in Resources */,
+				7021ECD117A7D78B00D45B51 /* apns.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6837,8 +6841,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yury Grinenko (95C5U2X82L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yury Grinenko (95C5U2X82L)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusJungle/CampusJungle-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CampusJungle/CampusJungle-Info.plist";
@@ -6873,8 +6877,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = CampusJungle;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "80D997AC-E2FC-48AA-A3EB-BB7CADE4469A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "80D997AC-E2FC-48AA-A3EB-BB7CADE4469A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;

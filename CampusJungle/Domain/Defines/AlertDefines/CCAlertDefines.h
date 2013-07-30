@@ -53,6 +53,8 @@ extern const struct CCAlertsButtons {
     __unsafe_unretained NSString *cancelButton;
     __unsafe_unretained NSString *yesButton;
     __unsafe_unretained NSString *noButton;
+    __unsafe_unretained NSString *show;
+    __unsafe_unretained NSString *later;
 } CCAlertsButtons;
 
 extern const struct CCAlertsTitles {

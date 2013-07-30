@@ -21,6 +21,7 @@
 #import "CCInboxController.h"
 #import "CCInboxTransaction.h"
 #import "CCOfferDetailsTransaction.h"
+#import "CCPushNotificationsService.h"
 
 @interface CCMainTransaction()
 
@@ -71,9 +72,10 @@
     
     [inboxTransaction perform];
     
-    if ([self.ioc_userSession currentUser]){
-        
-    } else {
+    if ([self.ioc_userSession currentUser]) {
+        [CCPushNotificationsService registerForRemoteNotifications];
+    }
+    else {
         [self showWelcomeScreenIn:rootController];
     }
 }

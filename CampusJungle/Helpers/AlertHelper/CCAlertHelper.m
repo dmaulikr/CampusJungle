@@ -19,8 +19,13 @@
 
 + (void)showWithMessage:(NSString *)message success:(successHandler)success
 {
-    GIAlertButton *noButton = [GIAlertButton cancelButtonWithTitle:CCAlertsButtons.noButton action:nil];
-    GIAlertButton *yesButton = [GIAlertButton buttonWithTitle:CCAlertsButtons.yesButton action:success];
+    [self showWithMessage:message successButtonTitle:CCAlertsButtons.yesButton cancelButtonTitle:CCAlertsButtons.noButton success:success];
+}
+
++ (void)showWithMessage:(NSString *)message successButtonTitle:(NSString *)successButtonTitle cancelButtonTitle:(NSString *)cancelButtonTitle success:(successHandler)success
+{
+    GIAlertButton *noButton = [GIAlertButton cancelButtonWithTitle:cancelButtonTitle action:nil];
+    GIAlertButton *yesButton = [GIAlertButton buttonWithTitle:successButtonTitle action:success];
     
     GIAlert *alert = [GIAlert alertWithTitle:CCAlertsMessages.confirmation
                                      message:message

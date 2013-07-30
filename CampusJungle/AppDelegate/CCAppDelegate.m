@@ -82,6 +82,11 @@
     [CCPushNotificationsService saveDeviceToken:deviceToken];
 }
 
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    NSLog(@"failed to register for remote notifications");
+}
+
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
     [CCPushNotificationsService processRemoteNotification:userInfo];

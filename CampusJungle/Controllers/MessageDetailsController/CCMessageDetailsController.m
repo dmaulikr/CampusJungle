@@ -12,6 +12,7 @@
 #import "CCAPIProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
 #import "CCButtonsHelper.h"
+#import "CCMessageAPIProviderProtocol.h"
 
 #import "CCUser.h"
 
@@ -25,6 +26,7 @@
 @property (nonatomic, weak) IBOutlet UIButton *replyButton;
 
 @property (nonatomic ,strong) id<CCAPIProviderProtocol> ioc_APIProvider;
+@property (nonatomic, strong) id<CCMessageAPIProviderProtocol> ioc_messagesApiProvider;
 @property (nonatomic, strong) id<CCUserSessionProtocol> ioc_userSessionProvider;
 @property (nonatomic, strong) CCUser *sender;
 
@@ -36,6 +38,17 @@
 {
     [super viewDidLoad];
     self.title = @"Message";
+    
+    if (self.message) {
+        [self fillWithMessage];
+    }
+    else {
+        [self loadMessage];
+    }
+}
+
+- (void)fillWithMessage
+{
     [self loadMessageInfo];
     [self loadInfo];
     [self setupImageViews];
@@ -49,6 +62,12 @@
         [self.replyButton setHidden:YES];
         [self.senderDetailsButton setHidden:YES];
     }
+}
+
+- (void)setControlsEnabled:(BOOL)enabled
+{
+    [self.senderDetailsButton setEnabled:enabled];
+    [self.replyButton setEnabled:enabled];
 }
 
 - (void)setupImageViews
@@ -94,6 +113,24 @@
 - (IBAction)answerButtonDidPressed
 {
     [self.replyTransaction performWithObject:self.sender];
+}
+
+#pragma mark -
+#pragma mark Requests
+- (void)loadMessage
+{
+    [self setControlsEnabled:NO];
+    __weak CCMessageDetailsController *weakSelf = self;
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self.ioc_messagesApiProvider loadMessageWithId:self.messageId successHandler:^(RKMappingResult *result) {
+        [MBProgressHUD hideAllHUDsForView:weakSelf.view animated:YES];
+        weakSelf.message = (CCMessage *)result;
+        [self setControlsEnabled:YES];
+        [self fillWithMessage];
+    } errorHandler:^(NSError *error) {
+        [MBProgressHUD hideAllHUDsForView:weakSelf.view animated:YES];
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
 }
 
 @end

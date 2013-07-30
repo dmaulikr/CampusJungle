@@ -33,7 +33,8 @@
     
     RKResponseDescriptor *responseOnCreateMessage = [RKResponseDescriptor responseDescriptorWithMapping:messageMapping pathPattern:CCAPIDefines.postMessage keyPath:@"message" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
 
-    RKResponseDescriptor *responseOnShowMessage = [RKResponseDescriptor responseDescriptorWithMapping:messageMapping pathPattern:CCAPIDefines.getMessage keyPath:@"message" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    NSString *showMessagePath = [NSString stringWithFormat:CCAPIDefines.getMessage, @":messageId"];
+    RKResponseDescriptor *responseOnShowMessage = [RKResponseDescriptor responseDescriptorWithMapping:messageMapping pathPattern:showMessagePath keyPath:@"message" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
     
     [objectManager addResponseDescriptor:responseInboxPaginationMessages];
