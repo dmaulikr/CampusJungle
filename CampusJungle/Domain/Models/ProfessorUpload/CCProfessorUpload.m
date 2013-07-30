@@ -13,11 +13,11 @@
 
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager
 {
-    [self configureQuestionsResponse:objectManager];
-    [self configureQuestionsRequest:objectManager];
+    [self configureProfessorsUploadResponse:objectManager];
+    [self configureProfessorsUploadRequest:objectManager];
 }
 
-+ (void)configureQuestionsResponse:(RKObjectManager *)objectManager
++ (void)configureProfessorsUploadResponse:(RKObjectManager *)objectManager
 {
     RKObjectMapping *paginationProfessorUploadResponseMapping = [CCRestKitConfigurator paginationMapping];
     
@@ -40,11 +40,20 @@
     NSString *uplaodingResponse = [NSString stringWithFormat:CCAPIDefines.postUploads,@":classID"];
     RKResponseDescriptor *responseOnCreation = [RKResponseDescriptor responseDescriptorWithMapping:professorUploadMapping pathPattern:uplaodingResponse keyPath:@"upload" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
+    NSString *loadUploadPathPattern = [NSString stringWithFormat:CCAPIDefines.loadProfessorsUpload, @":uploadId"];
+    RKResponseDescriptor *loadUploadsDescriptor =
+    [RKResponseDescriptor responseDescriptorWithMapping:professorUploadMapping
+                                            pathPattern:loadUploadPathPattern
+                                                keyPath:@"upload"
+                                            statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+
+    
     [objectManager addResponseDescriptor:responseOnCreation];
     [objectManager addResponseDescriptor:responseQuestionsDescriptor];
+    [objectManager addResponseDescriptor:loadUploadsDescriptor];
 }
 
-+ (void)configureQuestionsRequest:(RKObjectManager *)objectManager
++ (void)configureProfessorsUploadRequest:(RKObjectManager *)objectManager
 {
     RKObjectMapping *questionMapping = [RKObjectMapping mappingForClass:[NSMutableDictionary class]];
     [questionMapping addAttributeMappingsFromDictionary:[CCProfessorUpload requestMappingDictionary]];

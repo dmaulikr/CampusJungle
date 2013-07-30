@@ -38,4 +38,8 @@
                  successHandler:(successWithObject)successHandler
                    errorHandler:(errorHandler)errorHandler;
 
+- (void)loadProfessorsUploadWithId:(NSString *)uploadId
+                    successHandler:(successWithObject)successHandler
+                      errorHandler:(errorHandler)errorHandler;
+
 @end

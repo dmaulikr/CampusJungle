@@ -106,6 +106,7 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *loadClass;
     __unsafe_unretained NSString *loadComment;
     __unsafe_unretained NSString *loadAnswer;
+    __unsafe_unretained NSString *loadProfessorsUpload;
     
 } CCAPIDefines;
 
