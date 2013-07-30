@@ -106,6 +106,8 @@ const struct CCAPIDefines CCAPIDefines = {
     .unlinkDevice = @"/api/users/me/devices",
     .loadQuestion = @"/api/questions/%@",
     .loadClass = @"/api/users/me/classes/%@",
+    .loadComment = @"/api/comments/%@",
+    .loadAnswer = @"/api/answers/%@",
 };
 
 const struct CCUserDefines CCUserDefines = {

@@ -11,6 +11,7 @@
 #import "CCTransactionWithObject.h"
 #import "CCAnnouncementTransaction.h"
 #import "CCAlertHelper.h"
+#import "CCNavigationHelper.h"
 
 typedef void(^LoadClassSuccessBlock)(id);
 
@@ -22,6 +23,16 @@ typedef void(^LoadClassSuccessBlock)(id);
 @end
 
 @implementation CCAnnouncementPushProcessingBehaviour
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.announcementTransaction = [CCAnnouncementTransaction new];
+        [(CCAnnouncementTransaction *)self.announcementTransaction setNavigation:[CCNavigationHelper activeNavigationController]];
+    }
+    return self;
+}
 
 - (void)processWhenAppNotRunningWithUserInfo:(NSDictionary *)userInfo
 {
