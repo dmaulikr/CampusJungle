@@ -12,6 +12,8 @@
 #import "CCPush.h"
 #import "CCStringHelper.h"
 
+#import "CCPrivateMessageProcessingBehaviour.h"
+
 @interface CCPushNotificationsService () <UIAlertViewDelegate>
 
 @property (nonatomic, strong) id<CCUserSessionProtocol> ioc_userSessionProvider;
@@ -33,11 +35,9 @@
     NSString *pushType = [userInfo objectForKey:@"type"];
     CCPush *pushNotification = [[CCPush alloc] initWithUserInfo:userInfo];
     
-// TODO set proper push processing behavour
-// EXAMPLE
-//    if ([pushType isEqualToString:KCPushesTypesStruct.invite]) {
-//        [pushNotification setPushProcessingBehavior:[KCInvitePushProcessingBehavior new]];
-//    }
+    if ([pushType isEqualToString:CCPushNotificationTypes.privateMessage]) {
+        [pushNotification setPushProcessingBehavior:[CCPrivateMessageProcessingBehaviour new]];
+    }
     [pushNotification proccessPushNotification];
 }
 

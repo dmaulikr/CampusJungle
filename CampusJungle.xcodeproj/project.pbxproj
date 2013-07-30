@@ -274,6 +274,10 @@
 		7070445317A6B39300AC0FDE /* CCPushNotificationsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7070445217A6B39300AC0FDE /* CCPushNotificationsService.m */; };
 		7070445B17A6B46C00AC0FDE /* CCBadgeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7070445A17A6B46C00AC0FDE /* CCBadgeHelper.m */; };
 		7070446017A6B51C00AC0FDE /* CCPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 7070445E17A6B51C00AC0FDE /* CCPush.m */; };
+		7070446517A6BCA500AC0FDE /* CCPrivateMessageProcessingBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = 7070446417A6BCA500AC0FDE /* CCPrivateMessageProcessingBehaviour.m */; };
+		7070446917A7B9CF00AC0FDE /* CCNavigationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7070446817A7B9CF00AC0FDE /* CCNavigationHelper.m */; };
+		7070446C17A7C11800AC0FDE /* arrow_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7070446A17A7C11800AC0FDE /* arrow_button.png */; };
+		7070446D17A7C11800AC0FDE /* arrow_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7070446B17A7C11800AC0FDE /* arrow_button@2x.png */; };
 		709308141785806000E71AB0 /* CCSideMenuDataSourceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 709308101785806000E71AB0 /* CCSideMenuDataSourceHelper.m */; };
 		709308151785806000E71AB0 /* CCUIImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 709308131785806000E71AB0 /* CCUIImageHelper.m */; };
 		709308191785809C00E71AB0 /* CCViewPositioningHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 709308181785809C00E71AB0 /* CCViewPositioningHelper.m */; };
@@ -1044,6 +1048,12 @@
 		7070445D17A6B51C00AC0FDE /* CCPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPush.h; sourceTree = "<group>"; };
 		7070445E17A6B51C00AC0FDE /* CCPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPush.m; sourceTree = "<group>"; };
 		7070445F17A6B51C00AC0FDE /* CCPushProcessingProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPushProcessingProtocol.h; sourceTree = "<group>"; };
+		7070446317A6BCA500AC0FDE /* CCPrivateMessageProcessingBehaviour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPrivateMessageProcessingBehaviour.h; sourceTree = "<group>"; };
+		7070446417A6BCA500AC0FDE /* CCPrivateMessageProcessingBehaviour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPrivateMessageProcessingBehaviour.m; sourceTree = "<group>"; };
+		7070446717A7B9CF00AC0FDE /* CCNavigationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNavigationHelper.h; sourceTree = "<group>"; };
+		7070446817A7B9CF00AC0FDE /* CCNavigationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNavigationHelper.m; sourceTree = "<group>"; };
+		7070446A17A7C11800AC0FDE /* arrow_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_button.png; sourceTree = "<group>"; };
+		7070446B17A7C11800AC0FDE /* arrow_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_button@2x.png"; sourceTree = "<group>"; };
 		7093080F1785806000E71AB0 /* CCSideMenuDataSourceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSideMenuDataSourceHelper.h; sourceTree = "<group>"; };
 		709308101785806000E71AB0 /* CCSideMenuDataSourceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSideMenuDataSourceHelper.m; sourceTree = "<group>"; };
 		709308121785806000E71AB0 /* CCUIImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUIImageHelper.h; sourceTree = "<group>"; };
@@ -1948,6 +1958,8 @@
 				70066B4E17993C3200B7A4E7 /* announcement_button@2x.png */,
 				70066B4F17993C3200B7A4E7 /* announcement_button_active.png */,
 				70066B5017993C3200B7A4E7 /* announcement_button_active@2x.png */,
+				7070446A17A7C11800AC0FDE /* arrow_button.png */,
+				7070446B17A7C11800AC0FDE /* arrow_button@2x.png */,
 				7025634217A01EE700B48AA2 /* arrow_left.png */,
 				7025634317A01EE700B48AA2 /* arrow_left@2x.png */,
 				7025634417A01EE700B48AA2 /* arrow_right.png */,
@@ -2745,8 +2757,27 @@
 		7070446117A6B99000AC0FDE /* PushProcessingBehaviours */ = {
 			isa = PBXGroup;
 			children = (
+				7070446217A6BC9600AC0FDE /* PrivateMessageProcessingBehaviour */,
 			);
 			path = PushProcessingBehaviours;
+			sourceTree = "<group>";
+		};
+		7070446217A6BC9600AC0FDE /* PrivateMessageProcessingBehaviour */ = {
+			isa = PBXGroup;
+			children = (
+				7070446317A6BCA500AC0FDE /* CCPrivateMessageProcessingBehaviour.h */,
+				7070446417A6BCA500AC0FDE /* CCPrivateMessageProcessingBehaviour.m */,
+			);
+			path = PrivateMessageProcessingBehaviour;
+			sourceTree = "<group>";
+		};
+		7070446617A7B9C200AC0FDE /* NavigationHelper */ = {
+			isa = PBXGroup;
+			children = (
+				7070446717A7B9CF00AC0FDE /* CCNavigationHelper.h */,
+				7070446817A7B9CF00AC0FDE /* CCNavigationHelper.m */,
+			);
+			path = NavigationHelper;
 			sourceTree = "<group>";
 		};
 		7093080D1785806000E71AB0 /* Helpers */ = {
@@ -2761,6 +2792,7 @@
 				700F9441178EE97800A6FBBA /* KeyboardHelper */,
 				703DA4F5178C5C8900464DD3 /* MapHelper */,
 				70438E451785B7A800537712 /* NavigationBarViewHelper */,
+				7070446617A7B9C200AC0FDE /* NavigationHelper */,
 				700F9431178EBC4B00A6FBBA /* PlacemarkAddressHelper */,
 				70B2D09817941336001B0C2C /* PluralizeHelper */,
 				7093080E1785806000E71AB0 /* SideMenuDataSourceHelper */,
@@ -6334,6 +6366,8 @@
 				70061CA617A2746D00848F62 /* CCAppInviteViewController.xib in Resources */,
 				70061CCA17A284EA00848F62 /* CCAddressBookRecordCell.xib in Resources */,
 				70061CDC17A29AA700848F62 /* CCAddressBookHeader.xib in Resources */,
+				7070446C17A7C11800AC0FDE /* arrow_button.png in Resources */,
+				7070446D17A7C11800AC0FDE /* arrow_button@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6720,6 +6754,8 @@
 				7070445317A6B39300AC0FDE /* CCPushNotificationsService.m in Sources */,
 				7070445B17A6B46C00AC0FDE /* CCBadgeHelper.m in Sources */,
 				7070446017A6B51C00AC0FDE /* CCPush.m in Sources */,
+				7070446517A6BCA500AC0FDE /* CCPrivateMessageProcessingBehaviour.m in Sources */,
+				7070446917A7B9CF00AC0FDE /* CCNavigationHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -275,5 +275,5 @@ const struct CCAppInvitesFacebookConstants CCAppInvitesFacebookConstants = {
 };
 
 const struct CCPushNotificationTypes CCPushNotificationTypes = {
-    
+    .privateMessage = @"PrivateMessage",
 };
