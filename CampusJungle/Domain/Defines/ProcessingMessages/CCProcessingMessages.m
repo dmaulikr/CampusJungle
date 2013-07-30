@@ -16,5 +16,4 @@ const struct CCProcessingMessages CCProcessingMessages = {
     .loadingQuestion = @"Loading question details...",
     .loadingClass = @"Loading class details...",
     .loadingAnswer = @"Loading answer details...",
-    .loadingForum = @"Loading forum details...",
 };

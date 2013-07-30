@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "CCPushProcessingProtocol.h"
+#import "CCPrivateMessageProcessingBehaviour.h"
 
-@interface CCGroupMessagePushProcessingBehaviour : NSObject <CCPushProcessingProtocol>
+@interface CCGroupMessagePushProcessingBehaviour : CCPrivateMessageProcessingBehaviour <CCPushProcessingProtocol>
 
 @end

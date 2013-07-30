@@ -10,19 +10,4 @@
 
 @implementation CCGroupMessagePushProcessingBehaviour
 
-- (void)processWhenAppNotRunningWithUserInfo:(NSDictionary *)userInfo
-{
-    
-}
-
-- (void)processWhenAppInBackgroundWithUserInfo:(NSDictionary *)userInfo
-{
-    
-}
-
-- (void)processWhenAppActiveWithUserInfo:(NSDictionary *)userInfo
-{
-    
-}
-
 @end

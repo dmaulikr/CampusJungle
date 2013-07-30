@@ -14,5 +14,4 @@ extern const struct CCProcessingMessages {
     __unsafe_unretained NSString *loadingQuestion;
     __unsafe_unretained NSString *loadingClass;
     __unsafe_unretained NSString *loadingAnswer;
-    __unsafe_unretained NSString *loadingForum;
 } CCProcessingMessages;
