@@ -18,6 +18,7 @@
 #import <TestFlightSDK/TestFlight.h>
 #import "CCAppearanceConfigurator.h"
 #import "CCPushNotificationsService.h"
+#import "CCBadgeHelper.h"
 
 @implementation CCAppDelegate
 
@@ -70,6 +71,11 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     [FBSession.activeSession close];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    [CCBadgeHelper resetApplicationIconBadge];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application

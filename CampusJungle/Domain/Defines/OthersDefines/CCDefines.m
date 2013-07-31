@@ -108,7 +108,8 @@ const struct CCAPIDefines CCAPIDefines = {
     .loadClass = @"/api/users/me/classes/%@",
     .loadComment = @"/api/comments/%@",
     .loadAnswer = @"/api/answers/%@",
-    .loadProfessorsUpload = @"/api/professors_uploads/%@"
+    .loadProfessorsUpload = @"/api/professors_uploads/%@",
+    .resetUnwatchedEvents = @"/api/users/me/unwatched_events/reset",
 };
 
 const struct CCUserDefines CCUserDefines = {

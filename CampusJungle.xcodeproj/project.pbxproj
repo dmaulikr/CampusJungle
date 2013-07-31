@@ -271,6 +271,7 @@
 		7021ED1A17A7FA7D00D45B51 /* CCLocationPushProcessingBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ED1917A7FA7D00D45B51 /* CCLocationPushProcessingBehaviour.m */; };
 		7021ED1D17A7FA8C00D45B51 /* CCProfessorsUploadPushProcessingBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ED1C17A7FA8C00D45B51 /* CCProfessorsUploadPushProcessingBehaviour.m */; };
 		7021ED2017A7FA9700D45B51 /* CCQuestionPushProcessingBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ED1F17A7FA9700D45B51 /* CCQuestionPushProcessingBehaviour.m */; };
+		7021ED2417A91B1C00D45B51 /* CCUnwatchedEventsApiProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ED2317A91B1C00D45B51 /* CCUnwatchedEventsApiProvider.m */; };
 		7022F4991786C7100055221C /* SelectionBackGround@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE2178454C200E54EFC /* SelectionBackGround@2x.png */; };
 		7022F49A1786C7110055221C /* SelectionBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE3178454C200E54EFC /* SelectionBackGround.png */; };
 		70256325179FD71100B48AA2 /* CCGroupInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70256323179FD71100B48AA2 /* CCGroupInviteViewController.m */; };
@@ -1059,6 +1060,9 @@
 		7021ED1C17A7FA8C00D45B51 /* CCProfessorsUploadPushProcessingBehaviour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCProfessorsUploadPushProcessingBehaviour.m; sourceTree = "<group>"; };
 		7021ED1E17A7FA9700D45B51 /* CCQuestionPushProcessingBehaviour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCQuestionPushProcessingBehaviour.h; sourceTree = "<group>"; };
 		7021ED1F17A7FA9700D45B51 /* CCQuestionPushProcessingBehaviour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCQuestionPushProcessingBehaviour.m; sourceTree = "<group>"; };
+		7021ED2217A91B1C00D45B51 /* CCUnwatchedEventsApiProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUnwatchedEventsApiProvider.h; sourceTree = "<group>"; };
+		7021ED2317A91B1C00D45B51 /* CCUnwatchedEventsApiProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUnwatchedEventsApiProvider.m; sourceTree = "<group>"; };
+		7021ED2517A91B4200D45B51 /* CCUnwatchedEventsApiProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCUnwatchedEventsApiProviderProtocol.h; sourceTree = "<group>"; };
 		70256322179FD71100B48AA2 /* CCGroupInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupInviteViewController.h; sourceTree = "<group>"; };
 		70256323179FD71100B48AA2 /* CCGroupInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupInviteViewController.m; sourceTree = "<group>"; };
 		70256324179FD71100B48AA2 /* CCGroupInviteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupInviteViewController.xib; sourceTree = "<group>"; };
@@ -2779,6 +2783,16 @@
 			path = Question;
 			sourceTree = "<group>";
 		};
+		7021ED2117A91B0B00D45B51 /* UnwatchedEventsAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				7021ED2217A91B1C00D45B51 /* CCUnwatchedEventsApiProvider.h */,
+				7021ED2317A91B1C00D45B51 /* CCUnwatchedEventsApiProvider.m */,
+				7021ED2517A91B4200D45B51 /* CCUnwatchedEventsApiProviderProtocol.h */,
+			);
+			path = UnwatchedEventsAPIProvider;
+			sourceTree = "<group>";
+		};
 		70256321179FD70200B48AA2 /* GroupInviteController */ = {
 			isa = PBXGroup;
 			children = (
@@ -4105,6 +4119,7 @@
 				70B2D0B417942F01001B0C2C /* QuestionsAPIProvider */,
 				70B2D07817940245001B0C2C /* SignUpAPIProvider */,
 				70B2D07C17940245001B0C2C /* StuffAPIProvider */,
+				7021ED2117A91B0B00D45B51 /* UnwatchedEventsAPIProvider */,
 				D37122E417A24F8A00A7DF04 /* VotesAPIProvider */,
 			);
 			path = API;
@@ -6936,6 +6951,7 @@
 				7021ED1A17A7FA7D00D45B51 /* CCLocationPushProcessingBehaviour.m in Sources */,
 				7021ED1D17A7FA8C00D45B51 /* CCProfessorsUploadPushProcessingBehaviour.m in Sources */,
 				7021ED2017A7FA9700D45B51 /* CCQuestionPushProcessingBehaviour.m in Sources */,
+				7021ED2417A91B1C00D45B51 /* CCUnwatchedEventsApiProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
