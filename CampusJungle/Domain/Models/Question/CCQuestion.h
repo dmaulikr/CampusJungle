@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "CCRestKitMappableModel.h"
 #import "CCUploadIndicatorDelegateProtocol.h"
+#import "CCModelIdAccessorProtocol.h"
 
-@interface CCQuestion : NSObject <CCRestKitMappableModel>
+@interface CCQuestion : NSObject <CCRestKitMappableModel, CCModelIdAccessorProtocol>
 
 @property (nonatomic, strong) NSString *questionId;
 @property (nonatomic, strong) NSString *forumId;

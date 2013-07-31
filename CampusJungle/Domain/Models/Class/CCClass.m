@@ -10,6 +10,11 @@
 
 @implementation CCClass
 
+- (NSString *)modelId
+{
+    return self.classID;
+}
+
 - (NSString *)name
 {
     return self.subject;

@@ -11,6 +11,11 @@
 
 @implementation CCMessage
 
+- (NSString *)modelId
+{
+    return self.messageID;
+}
+
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager
 {
     [self configureMessageResponse:objectManager];

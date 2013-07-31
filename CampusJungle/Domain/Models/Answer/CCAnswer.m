@@ -11,6 +11,11 @@
 
 @implementation CCAnswer
 
+- (NSString *)modelId
+{
+    return self.answerId;
+}
+
 + (CCAnswer *)answerWithText:(NSString *)text
 {
     CCAnswer *answer = [CCAnswer new];

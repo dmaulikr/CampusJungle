@@ -11,6 +11,11 @@
 
 @implementation CCCity
 
+- (NSString *)modelId
+{
+    return self.cityID;
+}
+
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager
 {
     [self configureCityResponse:objectManager];

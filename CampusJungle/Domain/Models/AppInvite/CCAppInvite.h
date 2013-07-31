@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "CCRestKitMappableModel.h"
+#import "CCModelIdAccessorProtocol.h"
 
 @class CCAddressBookRecord;
 
-@interface CCAppInvite : NSObject <CCRestKitMappableModel>
+@interface CCAppInvite : NSObject <CCRestKitMappableModel, CCModelIdAccessorProtocol>
 
 @property (nonatomic, strong) NSString *appInviteid;
 @property (nonatomic, strong) NSString *senderId;

@@ -11,6 +11,11 @@
 
 @implementation CCAnnouncement
 
+- (NSString *)modelId
+{
+    return self.announcementID;
+}
+
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager
 {
     [self configureRequestMapping:objectManager];

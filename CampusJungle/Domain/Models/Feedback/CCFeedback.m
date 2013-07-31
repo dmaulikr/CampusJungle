@@ -23,7 +23,6 @@
     
     [feedbackMapping addAttributeMappingsFromDictionary:[CCFeedback responseMappingDictionary]];
     
-   ;
     NSString *feedbackPathPatern = [NSString stringWithFormat:CCAPIDefines.getFeedback,@":classID"];
     RKResponseDescriptor *responseFeedback =
     [RKResponseDescriptor responseDescriptorWithMapping:feedbackMapping

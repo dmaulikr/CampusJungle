@@ -12,6 +12,11 @@
 
 @implementation CCAppInvite
 
+- (NSString *)modelId
+{
+    return self.appInviteid;
+}
+
 + (CCAppInvite *)createWithAddressBookRecord:(CCAddressBookRecord *)record
 {
     CCAppInvite *appInvite = [CCAppInvite new];

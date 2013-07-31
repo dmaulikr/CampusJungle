@@ -19,7 +19,7 @@
     if(![self.collegeName isEqualToString:education.collegeName]){
         return NO;
     }
-    if(![self.collegeID.stringValue isEqualToString:education.collegeID.stringValue]){
+    if(![self.collegeID isEqualToString:education.collegeID]){
         return NO;
     }
     return YES;
@@ -29,8 +29,8 @@
 {
     NSMutableArray *colleges = [NSMutableArray new];
     for(CCEducation *education in educations){
-        if(![CCEducation isID:[education.collegeID stringValue] alreadyExistIn:colleges]){
-            [colleges addObject:[education.collegeID stringValue]];
+        if(![CCEducation isID:education.collegeID alreadyExistIn:colleges]){
+            [colleges addObject:education.collegeID];
         }
     }
     return colleges;
@@ -50,10 +50,10 @@
     return arrayOfColleges;
 }
 
-+ (BOOL)isArrayOfColleges:(NSArray *)arrayOfColleges containCollegeWithID:(NSNumber *)newCollegeID
++ (BOOL)isArrayOfColleges:(NSArray *)arrayOfColleges containCollegeWithID:(NSString *)newCollegeID
 {
     for(CCCollege *college in arrayOfColleges){
-        if([college.collegeID isEqualToNumber:newCollegeID]){
+        if([college.collegeID isEqualToString:newCollegeID]){
             return YES;
         }
     }

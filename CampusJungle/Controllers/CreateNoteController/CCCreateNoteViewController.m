@@ -289,7 +289,7 @@
 {
     NSMutableArray *arrayOfClasses = [NSMutableArray new];
     for (CCClass *currentClass in classes){
-        if([self.selectedCollege.collegeID.stringValue isEqualToString: currentClass.collegeID]){
+        if([self.selectedCollege.collegeID isEqualToString: currentClass.collegeID]){
             [arrayOfClasses addObject:currentClass];
         }
     }

@@ -108,6 +108,8 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *loadAnswer;
     __unsafe_unretained NSString *loadProfessorsUpload;
     __unsafe_unretained NSString *resetUnwatchedEvents;
+    __unsafe_unretained NSString *checkAvailablityOfReport;
+    __unsafe_unretained NSString *postReport;
     
 } CCAPIDefines;
 

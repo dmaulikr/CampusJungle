@@ -6,8 +6,9 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 #import "CCRestKitMappableModel.h"
+#import "CCModelIdAccessorProtocol.h"
 
-@interface CCUser : NSObject <CCRestKitMappableModel>
+@interface CCUser : NSObject <CCRestKitMappableModel, CCModelIdAccessorProtocol>
 
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *lastName;

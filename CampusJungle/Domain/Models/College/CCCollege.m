@@ -11,6 +11,11 @@
 
 @implementation CCCollege
 
+- (NSString *)modelId
+{
+    return self.collegeID;
+}
+
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager
 {
     [self configureCollegeResponse:objectManager];

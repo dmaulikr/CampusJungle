@@ -11,6 +11,11 @@
 
 @implementation CCForum
 
+- (NSString *)modelId
+{
+    return self.forumId;
+}
+
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager
 {
     [self configureForumsRequest:objectManager];

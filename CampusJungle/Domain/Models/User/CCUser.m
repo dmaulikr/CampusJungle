@@ -17,6 +17,11 @@
 
 @implementation CCUser
 
+- (NSString *)modelId
+{
+    return self.uid;
+}
+
 - (void)encodeWithCoder:(NSCoder *)encoder {
     
     [encoder encodeObject:self.firstName forKey:CCUserDefines.firstName];

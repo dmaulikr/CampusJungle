@@ -199,7 +199,7 @@
     uploadInfo.thumbnail = self.thumbImage.image;
     uploadInfo.name = self.nameField.text;
     uploadInfo.price = [NSNumber numberWithInteger: self.priceField.text.integerValue];
-    uploadInfo.collegeID = self.selectedCollege.collegeID.stringValue;
+    uploadInfo.collegeID = self.selectedCollege.collegeID;
     return uploadInfo;
 }
 

@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) NSString *collegeName;
 @property (nonatomic, strong) NSString *graduationDate;
-@property (nonatomic, strong) NSNumber *collegeID;
+@property (nonatomic, strong) NSString *collegeID;
 @property (nonatomic, strong) NSString *status;
 
 + (NSArray *)arrayOfCollegesIDFromEducations:(NSArray *)educations;
