@@ -71,7 +71,7 @@
     [self.navigationItem setLeftBarButtonItem:leftBarButtonItem animated:YES];
 }
 
-- (void)postReportOnContent:(id<CCModelIdAccessorProtocol>)content
+- (void)postReportOnContent:(id<CCModelTypeProtocol>)content
 {
     [CCReportPostingService postReportOnContent:content];
 }

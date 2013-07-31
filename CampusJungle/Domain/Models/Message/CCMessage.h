@@ -10,7 +10,7 @@
 #import "CCRestKitMappableModel.h"
 #import "CCModelIdAccessorProtocol.h"
 
-@interface CCMessage : NSObject <CCRestKitMappableModel, CCModelIdAccessorProtocol>
+@interface CCMessage : NSObject <CCRestKitMappableModel, CCModelTypeProtocol>
 
 @property (nonatomic, strong) NSString *messageID;
 @property (nonatomic, strong) NSString *receiverID;

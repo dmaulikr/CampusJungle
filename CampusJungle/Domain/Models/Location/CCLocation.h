@@ -10,7 +10,7 @@
 #import "CCRestKitMappableModel.h"
 #import "CCModelIdAccessorProtocol.h"
 
-@interface CCLocation : NSObject <CCRestKitMappableModel, CCModelIdAccessorProtocol>
+@interface CCLocation : NSObject <CCRestKitMappableModel, CCModelTypeProtocol>
 
 @property (nonatomic, strong) NSString *locationId;
 @property (nonatomic, strong) NSString *name;

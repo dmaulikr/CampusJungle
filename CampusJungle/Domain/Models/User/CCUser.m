@@ -17,9 +17,9 @@
 
 @implementation CCUser
 
-- (NSString *)modelId
+- (NSString *)modelType
 {
-    return self.uid;
+    return CCModelsTypes.user;
 }
 
 - (void)encodeWithCoder:(NSCoder *)encoder {

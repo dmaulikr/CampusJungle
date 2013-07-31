@@ -10,7 +10,7 @@
 #import "CCRestKitMappableModel.h"
 #import "CCModelIdAccessorProtocol.h"
 
-@interface CCCollege : NSObject <CCRestKitMappableModel, CCModelIdAccessorProtocol>
+@interface CCCollege : NSObject <CCRestKitMappableModel, CCModelTypeProtocol>
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *collegeID;

@@ -278,6 +278,7 @@
 		7021ED3817A940DC00D45B51 /* CCSendReportTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ED3717A940DC00D45B51 /* CCSendReportTransaction.m */; };
 		7021ED3E17A94BC800D45B51 /* CCReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ED3C17A94BC800D45B51 /* CCReportViewController.m */; };
 		7021ED3F17A94BC800D45B51 /* CCReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7021ED3D17A94BC800D45B51 /* CCReportViewController.xib */; };
+		7021ED4317A9694E00D45B51 /* CCModelsTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ED4217A9694E00D45B51 /* CCModelsTypes.m */; };
 		7022F4991786C7100055221C /* SelectionBackGround@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE2178454C200E54EFC /* SelectionBackGround@2x.png */; };
 		7022F49A1786C7110055221C /* SelectionBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE3178454C200E54EFC /* SelectionBackGround.png */; };
 		70256325179FD71100B48AA2 /* CCGroupInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70256323179FD71100B48AA2 /* CCGroupInviteViewController.m */; };
@@ -1098,6 +1099,8 @@
 		7021ED3B17A94BC800D45B51 /* CCReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCReportViewController.h; sourceTree = "<group>"; };
 		7021ED3C17A94BC800D45B51 /* CCReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCReportViewController.m; sourceTree = "<group>"; };
 		7021ED3D17A94BC800D45B51 /* CCReportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCReportViewController.xib; sourceTree = "<group>"; };
+		7021ED4117A9694E00D45B51 /* CCModelsTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCModelsTypes.h; sourceTree = "<group>"; };
+		7021ED4217A9694E00D45B51 /* CCModelsTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCModelsTypes.m; sourceTree = "<group>"; };
 		70256322179FD71100B48AA2 /* CCGroupInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupInviteViewController.h; sourceTree = "<group>"; };
 		70256323179FD71100B48AA2 /* CCGroupInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupInviteViewController.m; sourceTree = "<group>"; };
 		70256324179FD71100B48AA2 /* CCGroupInviteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupInviteViewController.xib; sourceTree = "<group>"; };
@@ -2916,6 +2919,15 @@
 			path = ReportController;
 			sourceTree = "<group>";
 		};
+		7021ED4017A9693D00D45B51 /* ModelsTypes */ = {
+			isa = PBXGroup;
+			children = (
+				7021ED4117A9694E00D45B51 /* CCModelsTypes.h */,
+				7021ED4217A9694E00D45B51 /* CCModelsTypes.m */,
+			);
+			path = ModelsTypes;
+			sourceTree = "<group>";
+		};
 		70256321179FD70200B48AA2 /* GroupInviteController */ = {
 			isa = PBXGroup;
 			children = (
@@ -3823,6 +3835,7 @@
 				70A29DC717877CB4001BC8DD /* AlertDefines */,
 				70A29DCA17877CB4001BC8DD /* CCConstantsDefines.h */,
 				70A29DCB17877CB4001BC8DD /* MenuDefines */,
+				7021ED4017A9693D00D45B51 /* ModelsTypes */,
 				70A29DCE17877CB4001BC8DD /* NotificationsDefines */,
 				70A29DD117877CB4001BC8DD /* OthersDefines */,
 				70FDD66B179E93B200871727 /* ProcessingMessages */,
@@ -5640,11 +5653,6 @@
 		A784C58C173A865E005E4921 = {
 			isa = PBXGroup;
 			children = (
-				D3B7323C17A9167300F35C4D /* CoreMedia.framework */,
-				D3B7323A17A9165900F35C4D /* AudioToolbox.framework */,
-				D3B7323817A9164000F35C4D /* AVFoundation.framework */,
-				D3B7323617A9162A00F35C4D /* CoreVideo.framework */,
-				D3B7323417A9160600F35C4D /* OpenGLES.framework */,
 				D39496911785C37300C39A7E /* Default@2x.png */,
 				D394968F1785C36C00C39A7E /* Default-568h@2x.png */,
 				D394968D1785C36800C39A7E /* Default.png */,
@@ -5672,6 +5680,11 @@
 		A784C597173A865E005E4921 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3B7323C17A9167300F35C4D /* CoreMedia.framework */,
+				D3B7323A17A9165900F35C4D /* AudioToolbox.framework */,
+				D3B7323817A9164000F35C4D /* AVFoundation.framework */,
+				D3B7323617A9162A00F35C4D /* CoreVideo.framework */,
+				D3B7323417A9160600F35C4D /* OpenGLES.framework */,
 				D3B7322417A80D0300F35C4D /* libxml2.dylib */,
 				D3B7320F17A714F200F35C4D /* StoreKit.framework */,
 				D3B7320D17A714EB00F35C4D /* Security.framework */,
@@ -7176,6 +7189,7 @@
 				7021ED3317A93F9400D45B51 /* CCReportPostingService.m in Sources */,
 				7021ED3817A940DC00D45B51 /* CCSendReportTransaction.m in Sources */,
 				7021ED3E17A94BC800D45B51 /* CCReportViewController.m in Sources */,
+				7021ED4317A9694E00D45B51 /* CCModelsTypes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

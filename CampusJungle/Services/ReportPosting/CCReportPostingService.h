@@ -11,6 +11,6 @@
 
 @interface CCReportPostingService : NSObject
 
-+ (void)postReportOnContent:(id<CCModelIdAccessorProtocol>)item;
++ (void)postReportOnContent:(id<CCModelTypeProtocol>)item;
 
 @end

@@ -12,9 +12,9 @@
 
 @implementation CCNote
 
-- (NSString *)modelId
+- (NSString *)modelType
 {
-    return self.noteID;
+    return CCModelsTypes.note;
 }
 
 - (NSString *)description

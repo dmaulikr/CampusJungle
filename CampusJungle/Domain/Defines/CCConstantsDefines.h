@@ -12,3 +12,4 @@
 #import "CCNotificationsDefines.h"
 #import "CCProcessingMessages.h"
 #import "CCSuccessMessagesDefines.h"
+#import "CCModelsTypes.h"

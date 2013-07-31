@@ -14,9 +14,9 @@
 
 @implementation CCStuff
 
-- (NSString *)modelId
+- (NSString *)modelType
 {
-    return self.stuffID;
+    return CCModelsTypes.stuff;
 }
 
 - (NSString *)description

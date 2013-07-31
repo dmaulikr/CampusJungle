@@ -11,7 +11,7 @@
 #import "CCUploadIndicatorDelegateProtocol.h"
 #import "CCModelIdAccessorProtocol.h"
 
-@interface CCQuestion : NSObject <CCRestKitMappableModel, CCModelIdAccessorProtocol>
+@interface CCQuestion : NSObject <CCRestKitMappableModel, CCModelTypeProtocol>
 
 @property (nonatomic, strong) NSString *questionId;
 @property (nonatomic, strong) NSString *forumId;

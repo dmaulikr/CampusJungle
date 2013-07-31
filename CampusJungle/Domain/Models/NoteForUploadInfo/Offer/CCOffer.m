@@ -11,9 +11,9 @@
 
 @implementation CCOffer
 
-- (NSString *)modelId
+- (NSString *)modelType
 {
-    return self.offerID;
+    return CCModelsTypes.offer;
 }
 
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager

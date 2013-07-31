@@ -12,9 +12,9 @@
 
 @implementation CCAppInvite
 
-- (NSString *)modelId
+- (NSString *)modelType
 {
-    return self.appInviteid;
+    return CCModelsTypes.appInvite;
 }
 
 + (CCAppInvite *)createWithAddressBookRecord:(CCAddressBookRecord *)record

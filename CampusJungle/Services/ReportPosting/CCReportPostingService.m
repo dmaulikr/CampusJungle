@@ -38,9 +38,9 @@ typedef void(^ReportAvailableSuccessBlock)();
     return self;
 }
 
-+ (void)postReportOnContent:(id<CCModelIdAccessorProtocol>)item
++ (void)postReportOnContent:(id<CCModelTypeProtocol>)item
 {
-    CCReport *report = [CCReport createWithItemId:[item modelId] itemType:NSStringFromClass([item class])];
+    CCReport *report = [CCReport createWithItemId:[item modelType] itemType:NSStringFromClass([item class])];
     CCReportPostingService *reportService = [[CCReportPostingService alloc] initWithReport:report];
     [reportService postReportIfAvailable];
 }

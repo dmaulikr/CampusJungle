@@ -11,9 +11,9 @@
 
 @implementation CCGroup
 
-- (NSString *)modelId
+- (NSString *)modelType
 {
-    return self.groupId;
+    return CCModelsTypes.group;
 }
 
 + (CCGroup *)createWithName:(NSString *)name description:(NSString *)description

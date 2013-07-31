@@ -11,7 +11,7 @@
 
 @implementation CCReview
 
-- (NSString *)modelId
+- (NSString *)modelType
 {
     return self.reviewID;
 }

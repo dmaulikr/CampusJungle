@@ -12,7 +12,7 @@
 
 @class CCAddressBookRecord;
 
-@interface CCAppInvite : NSObject <CCRestKitMappableModel, CCModelIdAccessorProtocol>
+@interface CCAppInvite : NSObject <CCRestKitMappableModel, CCModelTypeProtocol>
 
 @property (nonatomic, strong) NSString *appInviteid;
 @property (nonatomic, strong) NSString *senderId;

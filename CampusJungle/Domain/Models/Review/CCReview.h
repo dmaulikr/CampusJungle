@@ -10,7 +10,7 @@
 #import "CCRestKitMappableModel.h"
 #import "CCModelIdAccessorProtocol.h"
 
-@interface CCReview : NSObject <CCRestKitMappableModel, CCModelIdAccessorProtocol>
+@interface CCReview : NSObject <CCRestKitMappableModel, CCModelTypeProtocol>
 
 @property (nonatomic, strong) NSString *reviewID;
 @property (nonatomic ,strong) NSString *text;

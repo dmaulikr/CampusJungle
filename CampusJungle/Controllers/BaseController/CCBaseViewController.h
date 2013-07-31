@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-@protocol CCModelIdAccessorProtocol;
+@protocol CCModelTypeProtocol;
 
 @interface CCBaseViewController : UIViewController
 
@@ -15,6 +15,6 @@
 - (void)setButtonsTextColorInView:(UIView *)view;
 - (void)setRightNavigationItemWithTitle:(NSString*)title selector:(SEL)selector;
 - (void)setLeftNavigationItemWithTitle:(NSString *)title selector:(SEL)selector;
-- (void)postReportOnContent:(id<CCModelIdAccessorProtocol>)content;
+- (void)postReportOnContent:(id<CCModelTypeProtocol>)content;
 
 @end
