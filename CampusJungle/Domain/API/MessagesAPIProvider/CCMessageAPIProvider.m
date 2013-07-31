@@ -60,4 +60,16 @@
     }];
 }
 
+- (void)loadMessageWithId:(NSString *)messageId successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    [self setAuthorizationToken];
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.getMessage, messageId];
+    [objectManager getObjectsAtPath:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        successHandler([mappingResult firstObject]);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        errorHandler(error);
+    }];
+}
+
 @end

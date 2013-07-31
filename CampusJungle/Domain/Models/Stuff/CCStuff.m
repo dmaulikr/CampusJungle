@@ -14,6 +14,11 @@
 
 @implementation CCStuff
 
+- (NSString *)modelId
+{
+    return self.stuffID;
+}
+
 - (NSString *)description
 {
     return self.name;

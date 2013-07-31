@@ -22,6 +22,7 @@
 #import "NSString+CCValidationHelper.h"
 #import "DYRateView.h"
 #import "CCUIImageHelper.h"
+#import "CCPushNotificationsService.h"
 
 #define animationDuration 0.4
 
@@ -199,9 +200,17 @@
 
 - (IBAction)logout
 {
+    __weak CCUserProfile *weakSelf = self;
     GIAlertButton *noButton = [GIAlertButton cancelButtonWithTitle:CCAlertsButtons.noButton action:nil];
     GIAlertButton *yesButton = [GIAlertButton buttonWithTitle:CCAlertsButtons.yesButton action:^{
-        [self.logoutTransaction perform];
+        [SVProgressHUD showWithStatus:CCProcessingMessages.logout];
+        [CCPushNotificationsService unlinkDeviceTokenWithSuccessBlock:^{
+            [SVProgressHUD dismiss];
+            [weakSelf.logoutTransaction perform];
+        } errorBlock:^(NSError *error) {
+            [SVProgressHUD dismiss];
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
     }];
     
     GIAlert *alert = [GIAlert alertWithTitle:CCAlertsMessages.confirmation
@@ -223,7 +232,7 @@
 - (void)saveProfile
 {
     if ([self isFieldsValid]){
-        if([self isSomeEducationRemoved]){
+        if ([self isSomeEducationRemoved]) {
             GIAlertButton *noButton = [GIAlertButton cancelButtonWithTitle:CCAlertsButtons.noButton action:nil];
             GIAlertButton *yesButton = [GIAlertButton buttonWithTitle:CCAlertsButtons.yesButton action:^{
                 [self performSaveOperation];

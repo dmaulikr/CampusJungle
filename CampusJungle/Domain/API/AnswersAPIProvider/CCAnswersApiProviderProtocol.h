@@ -17,5 +17,6 @@
 - (void)postAnswer:(CCAnswer *)answer successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 - (void)deleteAnswer:(CCAnswer *)answer successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 - (void)likeAnswer:(CCAnswer *)answer successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)loadAnswerWithId:(NSString *)answerId successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 
 @end

@@ -11,6 +11,11 @@
 
 @implementation CCComment
 
+- (NSString *)modelId
+{
+    return self.commentId;
+}
+
 + (CCComment *)commentWithText:(NSString *)text
 {
     CCComment *comment = [CCComment new];
@@ -44,7 +49,15 @@
                                                 keyPath:nil
                                             statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
+    NSString *loadCommentPathPattern = [NSString stringWithFormat:CCAPIDefines.loadComment, @":commentId"];
+    RKResponseDescriptor *loadCommentDescriptor =
+    [RKResponseDescriptor responseDescriptorWithMapping:commentsMapping
+                                            pathPattern:loadCommentPathPattern
+                                                keyPath:@"comment"
+                                            statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
     [objectManager addResponseDescriptor:responseCommentsDescriptor];
+    [objectManager addResponseDescriptor:loadCommentDescriptor];
 }
 
 + (void)configureRequestMapping:(RKObjectManager *)objectManager

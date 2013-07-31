@@ -1,14 +1,14 @@
 //
-//  CCPrivateMessageProcessingBehaviour.m
+//  CCCouponPushProcessingBehaviour.m
 //  CampusJungle
 //
-//  Created by Yury Grinenko on 29.07.13.
+//  Created by Yury Grinenko on 30.07.13.
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCPrivateMessageProcessingBehaviour.h"
+#import "CCCouponPushProcessingBehaviour.h"
 
-@implementation CCPrivateMessageProcessingBehaviour
+@implementation CCCouponPushProcessingBehaviour
 
 - (void)processWhenAppNotRunningWithUserInfo:(NSDictionary *)userInfo
 {

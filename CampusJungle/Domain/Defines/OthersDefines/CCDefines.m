@@ -47,11 +47,13 @@ const struct CCAPIDefines CCAPIDefines = {
     .getStuff = @"/api/stuff/%@",
     .deleteStuff = @"/api/users/me/stuff/%@",
     .getUser = @"/api/users/%@",
+    .getMessage = @"/api/messages/%@",
     .postMessage = @"/api/messages",
     .loadMyMessages = @"/api/users/me/messages",
     .postReview = @"/api/users/%@/reviews",
     .loadReviews = @"/api/users/%@/reviews",
     .loadGroups = @"/api/users/me/classes/%@/groups",
+    .loadForum = @"/api/forums/%@",
     .loadClassForums = @"/api/classes/%@/forums",
     .loadGroupForums = @"/api/groups/%@/forums",
     .postInClassForum = @"/api/classes/%@/forums",
@@ -102,6 +104,16 @@ const struct CCAPIDefines CCAPIDefines = {
     .deleteAppInvite = @"/api/app_invites/%@",
     .payUsingPayPal = @"/api/%@",
     .payUsingInAppPurchases = @"/api/%@",
+    .linkDevice = @"/api/users/me/devices",
+    .unlinkDevice = @"/api/users/me/devices",
+    .loadQuestion = @"/api/questions/%@",
+    .loadClass = @"/api/users/me/classes/%@",
+    .loadComment = @"/api/comments/%@",
+    .loadAnswer = @"/api/answers/%@",
+    .loadProfessorsUpload = @"/api/professors_uploads/%@",
+    .resetUnwatchedEvents = @"/api/users/me/unwatched_events/reset",
+    .checkAvailablityOfReport = @"/api/reports/availablity_of_report",
+    .postReport = @"/api/reports",
 };
 
 const struct CCUserDefines CCUserDefines = {
@@ -278,6 +290,15 @@ const struct CCAppInvitesFacebookConstants CCAppInvitesFacebookConstants = {
 
 const struct CCPushNotificationTypes CCPushNotificationTypes = {
     .privateMessage = @"PrivateMessage",
+    .groupMessage = @"GroupMessage",
+    .answer = @"Answer",
+    .comment = @"Comment",
+    .professorUpload = @"ProfessorsUpload",
+    .announcement = @"Announcement",
+    .location = @"Location",
+    .forum = @"Forum",
+    .question = @"Question",
+    .coupon = @"Coupon",
 };
 
 const struct CCPayPalDefines CCPayPalDefines = {

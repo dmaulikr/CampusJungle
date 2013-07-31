@@ -9,14 +9,16 @@
 #import "CCPushNotificationsService.h"
 #import "CCBadgeHelper.h"
 #import "CCUserSessionProtocol.h"
+#import "CCDeviceTokenAPIProviderProtocol.h"
 #import "CCPush.h"
 #import "CCStringHelper.h"
 
-#import "CCPrivateMessageProcessingBehaviour.h"
+#import "CCPushProcessingBehavioursDefines.h"
 
 @interface CCPushNotificationsService () <UIAlertViewDelegate>
 
 @property (nonatomic, strong) id<CCUserSessionProtocol> ioc_userSessionProvider;
+@property (nonatomic, strong) id<CCDeviceTokenAPIProviderProtocol> ioc_deviceTokenApiProvider;
 
 @end
 
@@ -38,6 +40,34 @@
     if ([pushType isEqualToString:CCPushNotificationTypes.privateMessage]) {
         [pushNotification setPushProcessingBehavior:[CCPrivateMessageProcessingBehaviour new]];
     }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.groupMessage]) {
+        [pushNotification setPushProcessingBehavior:[CCGroupMessagePushProcessingBehaviour new]];
+    }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.answer]) {
+        [pushNotification setPushProcessingBehavior:[CCAnswerPushProcessingBehaviour new]];
+    }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.comment]) {
+        [pushNotification setPushProcessingBehavior:[CCCommentPushProcessingBehaviour new]];
+    }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.professorUpload]) {
+        [pushNotification setPushProcessingBehavior:[CCProfessorsUploadPushProcessingBehaviour new]];
+    }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.announcement]) {
+        [pushNotification setPushProcessingBehavior:[CCAnnouncementPushProcessingBehaviour new]];
+    }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.location]) {
+        [pushNotification setPushProcessingBehavior:[CCLocationPushProcessingBehaviour new]];
+    }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.forum]) {
+        [pushNotification setPushProcessingBehavior:[CCForumPushProcessingBehaviour new]];
+    }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.question]) {
+        [pushNotification setPushProcessingBehavior:[CCQuestionPushProcessingBehaviour new]];
+    }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.coupon]) {
+        [pushNotification setPushProcessingBehavior:[CCCouponPushProcessingBehaviour new]];
+    }
+    
     [pushNotification proccessPushNotification];
 }
 
@@ -48,7 +78,7 @@
 
 + (BOOL)isUserLogined
 {
-    return [[CCPushNotificationsService new].ioc_userSessionProvider.currentUser.uid length] > 0;
+    return [[self instance].ioc_userSessionProvider.currentUser.uid length] > 0;
 }
 
 + (void)saveDeviceToken:(NSData *)deviceToken
@@ -56,7 +86,8 @@
     NSString *tokenString = [NSString stringWithString:[[deviceToken description] uppercaseString]];
     tokenString = [CCStringHelper removeServiceSymbolsFromDeviceTokenString:tokenString];
     NSLog(@"device token: %@", tokenString);
-    [self sendDeviceToken:tokenString];
+    [[self instance].ioc_userSessionProvider setDeviceToken:tokenString];
+    [self linkDeviceToken:tokenString];
 }
 
 + (void)resetAllPushesCounters
@@ -64,11 +95,43 @@
     [CCBadgeHelper resetApplicationIconBadge];
 }
 
++ (CCPushNotificationsService *)instance
+{
+    return [CCPushNotificationsService new];
+}
+
 #pragma mark -
 #pragma mark Requests
-+ (void)sendDeviceToken:(NSString *)deviceToken
++ (void)linkDeviceToken:(NSString *)deviceToken
 {
-    // TODO
+    [[self instance].ioc_deviceTokenApiProvider linkDeviceToken:deviceToken successHandler:^(RKMappingResult *result) {
+        NSLog(@"linked device token");
+    } errorHandler:^(NSError *error) {
+        NSLog(@"error during linking device token = %@", error);
+    }];
+}
+
++ (void)unlinkDeviceTokenWithSuccessBlock:(LogoutSuccessBlock)successBlock errorBlock:(LogoutErrorBlock)errorBlock
+{
+    NSString *deviceToken = [self instance].ioc_userSessionProvider.deviceToken;
+    if (deviceToken) {
+        [[self instance].ioc_deviceTokenApiProvider unlinkDeviceToken:deviceToken successHandler:^(RKMappingResult *result) {
+            NSLog(@"unlinked device token");
+            if (successBlock) {
+                successBlock();
+            }
+        } errorHandler:^(NSError *error) {
+            if (errorBlock) {
+                errorBlock(error);
+            }
+            NSLog(@"error during unlinking device token = %@", error);
+        }];
+    }
+    else {
+        if (successBlock) {
+            successBlock();
+        }
+    }
 }
 
 + (void)resetPushesCounterWithType:(NSString *)type

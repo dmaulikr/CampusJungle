@@ -10,7 +10,7 @@
 #import "CCTypesDefinition.h"
 #import "CCStuffUploadInfo.h"
 
-@protocol CCStuffAPIProviderProtocol <NSObject>
+@protocol CCStuffAPIProviderProtocol <AppleGuiceInjectable>
 
 - (void)loadMyStuffNumberOfPage:(NSNumber *)pageNumber query:(NSString *)query successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 

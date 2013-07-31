@@ -40,15 +40,10 @@
     [super viewDidAppear:animated];
     NSLog(@"%@", [self.leftBarButton customView]);
     
-    if(self.blockOnViewDidAppear){
+    if (self.blockOnViewDidAppear) {
         self.blockOnViewDidAppear();
         self.blockOnViewDidAppear = nil;
     }
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-        [super viewWillAppear:animated];
 }
 
 - (UIBarButtonItem *)leftButtonForCenterPanel

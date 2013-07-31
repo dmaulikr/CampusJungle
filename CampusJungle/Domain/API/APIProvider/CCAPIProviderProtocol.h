@@ -48,4 +48,6 @@
 
 - (void)loadReviewsForUser:(NSString *)userID successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 
+- (void)loadClassWithId:(NSString *)classId successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
+
 @end

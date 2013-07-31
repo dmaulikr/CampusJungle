@@ -78,4 +78,16 @@
     }];
 }
 
+- (void)loadQuestionWithId:(NSString *)questionId successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [self setAuthorizationToken];
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.loadQuestion, questionId];
+    [objectManager getObject:nil path:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        successHandler(mappingResult.firstObject);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        errorHandler(error);
+    }];
+}
+
 @end

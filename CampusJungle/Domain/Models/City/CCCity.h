@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "CCRestKitMappableModel.h"
+#import "CCModelIdAccessorProtocol.h"
 
-@interface CCCity : NSObject <CCRestKitMappableModel>
+@interface CCCity : NSObject <CCRestKitMappableModel, CCModelIdAccessorProtocol>
 
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSNumber *cityID;
+@property (nonatomic, strong) NSString *cityID;
 
 @end
 

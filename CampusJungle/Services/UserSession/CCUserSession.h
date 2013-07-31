@@ -12,5 +12,6 @@
 @interface CCUserSession : NSObject<CCUserSessionProtocol>
 
 @property (nonatomic, strong) CCUser *currentUser;
+@property (nonatomic, strong) NSString *deviceToken;
 
 @end

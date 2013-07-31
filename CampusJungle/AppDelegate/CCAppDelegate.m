@@ -18,6 +18,7 @@
 #import <TestFlightSDK/TestFlight.h>
 #import "CCAppearanceConfigurator.h"
 #import "CCPushNotificationsService.h"
+#import "CCBadgeHelper.h"
 
 @implementation CCAppDelegate
 
@@ -72,6 +73,11 @@
     [FBSession.activeSession close];
 }
 
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    [CCBadgeHelper resetApplicationIconBadge];
+}
+
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:CCAppDelegateDefines.notificationOnBackToForeground object:nil ];
@@ -80,6 +86,11 @@
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     [CCPushNotificationsService saveDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    NSLog(@"failed to register for remote notifications");
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo

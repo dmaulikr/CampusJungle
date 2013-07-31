@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "CCRestKitMappableModel.h"
+#import "CCModelIdAccessorProtocol.h"
 
-@interface CCComment : NSObject <CCRestKitMappableModel>
+@interface CCComment : NSObject <CCRestKitMappableModel, CCModelIdAccessorProtocol>
 
 @property (nonatomic, strong) NSString *commentId;
 @property (nonatomic, strong) NSString *answerId;

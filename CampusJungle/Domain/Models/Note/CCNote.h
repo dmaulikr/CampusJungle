@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "CCRestKitMappableModel.h"
+#import "CCModelIdAccessorProtocol.h"
 
-@interface CCNote : NSObject <CCRestKitMappableModel>
+@interface CCNote : NSObject <CCRestKitMappableModel, CCModelIdAccessorProtocol>
 
 @property (nonatomic, strong) NSString *noteID;
 @property (nonatomic, strong) NSString *name;

@@ -11,6 +11,11 @@
 
 @implementation CCQuestion
 
+- (NSString *)modelId
+{
+    return self.questionId;
+}
+
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager
 {
     [self configureQuestionsResponse:objectManager];
@@ -27,7 +32,6 @@
     RKRelationshipMapping *relationShipResponseQuestionsMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:CCResponseKeys.items
                                                                                                            toKeyPath:CCResponseKeys.items
                                                                                                          withMapping:questionsMapping];
-    
     [paginationQuestionsResponseMapping addPropertyMapping:relationShipResponseQuestionsMapping];
     
     NSString *pathPattern = [NSString stringWithFormat:CCAPIDefines.loadQuestions, @":forumID"];
@@ -36,8 +40,17 @@
                                             pathPattern:pathPattern
                                                 keyPath:nil
                                             statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+
+    NSString *loadQuestionPathPattern = [NSString stringWithFormat:CCAPIDefines.loadQuestion, @":questionId"];
+    RKResponseDescriptor *loadQuestionDescriptor =
+    [RKResponseDescriptor responseDescriptorWithMapping:questionsMapping
+                                            pathPattern:loadQuestionPathPattern
+                                                keyPath:@"question"
+                                            statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+
     
     [objectManager addResponseDescriptor:responseQuestionsDescriptor];
+    [objectManager addResponseDescriptor:loadQuestionDescriptor];
 }
 
 + (void)configureQuestionsRequest:(RKObjectManager *)objectManager

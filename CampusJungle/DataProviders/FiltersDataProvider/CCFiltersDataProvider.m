@@ -66,7 +66,7 @@
 - (NSString *)collegeNameFromEducations:(NSArray *)educations collegeID:(NSString *)collegeID
 {
     for(CCEducation *education in educations){
-        if ([education.collegeID.stringValue isEqualToString:collegeID]){
+        if ([education.collegeID isEqualToString:collegeID]){
             return education.collegeName;
         }
     }

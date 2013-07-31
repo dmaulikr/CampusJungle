@@ -11,6 +11,11 @@
 
 @implementation CCOffer
 
+- (NSString *)modelId
+{
+    return self.offerID;
+}
+
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager
 {
     [self configureOfferResponse:objectManager];

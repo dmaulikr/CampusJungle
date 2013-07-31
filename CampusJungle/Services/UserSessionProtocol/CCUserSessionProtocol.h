@@ -14,6 +14,7 @@
 @protocol CCUserSessionProtocol<AppleGuiceInjectable,AppleGuiceSingleton>
 
 @property (nonatomic, strong) CCUser *currentUser;
+@property (nonatomic, strong) NSString *deviceToken;
 
 - (CCUser*)loadSavedUser;
 

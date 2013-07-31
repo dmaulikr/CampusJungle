@@ -45,11 +45,13 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *getStuff;
     __unsafe_unretained NSString *deleteStuff;
     __unsafe_unretained NSString *getUser;
+    __unsafe_unretained NSString *getMessage;
     __unsafe_unretained NSString *postMessage;
     __unsafe_unretained NSString *loadMyMessages;
     __unsafe_unretained NSString *postReview;
     __unsafe_unretained NSString *loadReviews;
     __unsafe_unretained NSString *loadGroups;
+    __unsafe_unretained NSString *loadForum;
     __unsafe_unretained NSString *loadClassForums;
     __unsafe_unretained NSString *loadGroupForums;
     __unsafe_unretained NSString *postInClassForum;
@@ -100,9 +102,17 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *deleteAppInvite;
     __unsafe_unretained NSString *payUsingPayPal;
     __unsafe_unretained NSString *payUsingInAppPurchases;
-    
+    __unsafe_unretained NSString *linkDevice;
+    __unsafe_unretained NSString *unlinkDevice;
+    __unsafe_unretained NSString *loadQuestion;
+    __unsafe_unretained NSString *loadClass;
+    __unsafe_unretained NSString *loadComment;
+    __unsafe_unretained NSString *loadAnswer;
+    __unsafe_unretained NSString *loadProfessorsUpload;
+    __unsafe_unretained NSString *resetUnwatchedEvents;
+    __unsafe_unretained NSString *checkAvailablityOfReport;
+    __unsafe_unretained NSString *postReport;
 } CCAPIDefines;
-
 
 extern const struct CCUserDefines {
     __unsafe_unretained NSString *firstName;
@@ -280,6 +290,15 @@ extern const struct CCAppInvitesFacebookConstants {
 
 extern const struct CCPushNotificationTypes {
     __unsafe_unretained NSString *privateMessage;
+    __unsafe_unretained NSString *groupMessage;
+    __unsafe_unretained NSString *answer;
+    __unsafe_unretained NSString *comment;
+    __unsafe_unretained NSString *professorUpload;
+    __unsafe_unretained NSString *announcement;
+    __unsafe_unretained NSString *location;
+    __unsafe_unretained NSString *forum;
+    __unsafe_unretained NSString *question;
+    __unsafe_unretained NSString *coupon;
 } CCPushNotificationTypes;
 
 extern const struct CCPayPalDefines {

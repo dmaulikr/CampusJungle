@@ -11,6 +11,11 @@
 
 @implementation CCReview
 
+- (NSString *)modelId
+{
+    return self.reviewID;
+}
+
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager
 {
     [self configureReviewResponse:objectManager];

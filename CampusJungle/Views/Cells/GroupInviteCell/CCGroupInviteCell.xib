@@ -169,7 +169,7 @@
 											<object class="IBUIButton" id="488448890">
 												<reference key="NSNextResponder" ref="658635350"/>
 												<int key="NSvFlags">292</int>
-												<string key="NSFrame">{{37, 1}, {73, 44}}</string>
+												<string key="NSFrame">{{27, 1}, {73, 35}}</string>
 												<reference key="NSSuperview" ref="658635350"/>
 												<reference key="NSNextKeyView" ref="259309447"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -201,7 +201,7 @@
 											<object class="IBUIButton" id="259309447">
 												<reference key="NSNextResponder" ref="658635350"/>
 												<int key="NSvFlags">292</int>
-												<string key="NSFrame">{{153, 1}, {73, 44}}</string>
+												<string key="NSFrame">{{135, 1}, {73, 35}}</string>
 												<reference key="NSSuperview" ref="658635350"/>
 												<reference key="NSNextKeyView" ref="324725387"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -238,7 +238,7 @@
 											<object class="IBUIButton" id="214727539">
 												<reference key="NSNextResponder" ref="324725387"/>
 												<int key="NSvFlags">292</int>
-												<string key="NSFrame">{{37, 1}, {73, 44}}</string>
+												<string key="NSFrame">{{27, 1}, {73, 35}}</string>
 												<reference key="NSSuperview" ref="324725387"/>
 												<reference key="NSNextKeyView" ref="885075398"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -260,7 +260,7 @@
 											<object class="IBUIButton" id="885075398">
 												<reference key="NSNextResponder" ref="324725387"/>
 												<int key="NSvFlags">292</int>
-												<string key="NSFrame">{{153, 1}, {73, 44}}</string>
+												<string key="NSFrame">{{135, 1}, {73, 35}}</string>
 												<reference key="NSSuperview" ref="324725387"/>
 												<reference key="NSNextKeyView" ref="337149599"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -306,7 +306,7 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">arrow_left.png</string>
+									<string key="NSResourceName">back_arrow.png</string>
 								</object>
 							</object>
 							<object class="IBUIImageView" id="337149599">
@@ -319,7 +319,7 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">arrow_right.png</string>
+									<string key="NSResourceName">ahead_arrow.png</string>
 								</object>
 							</object>
 						</array>
@@ -599,14 +599,82 @@
 			<nil key="sourceID"/>
 			<int key="maxID">38</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">CCBaseCell</string>
+					<string key="superclassName">UITableViewCell</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/CCBaseCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">CCGroupInviteCell</string>
+					<string key="superclassName">CCBaseCell</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="groupNameLabel">UILabel</string>
+						<string key="inviteBodyView">UIView</string>
+						<string key="inviteTextLabel">UILabel</string>
+						<string key="leftArrowImageView">UIImageView</string>
+						<string key="recepientButtonsView">UIView</string>
+						<string key="rightArrowImageView">UIImageView</string>
+						<string key="senderButtonsView">UIView</string>
+						<string key="updatedDateLabel">UILabel</string>
+						<string key="userNameLabel">UILabel</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="groupNameLabel">
+							<string key="name">groupNameLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="inviteBodyView">
+							<string key="name">inviteBodyView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="inviteTextLabel">
+							<string key="name">inviteTextLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="leftArrowImageView">
+							<string key="name">leftArrowImageView</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="recepientButtonsView">
+							<string key="name">recepientButtonsView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="rightArrowImageView">
+							<string key="name">rightArrowImageView</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="senderButtonsView">
+							<string key="name">senderButtonsView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="updatedDateLabel">
+							<string key="name">updatedDateLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="userNameLabel">
+							<string key="name">userNameLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/CCGroupInviteCell.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="arrow_left.png">{44, 34}</string>
-			<string key="arrow_right.png">{44, 34}</string>
+			<string key="ahead_arrow.png">{44, 32}</string>
+			<string key="back_arrow.png">{44, 32}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>

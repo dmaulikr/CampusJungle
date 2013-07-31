@@ -7,12 +7,33 @@
 //
 
 #import "CCBadgeHelper.h"
+#import "CCUnwatchedEventsApiProviderProtocol.h"
+
+typedef void(^ResetEventsCounterSuccessBlock)();
+
+@interface CCBadgeHelper ()
+
+@property (nonatomic, strong) id<CCUnwatchedEventsApiProviderProtocol> ioc_unwatchedEventsApiProvider;
+
+@end
 
 @implementation CCBadgeHelper
 
 + (void)resetApplicationIconBadge
 {
-    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    [self resetUnwatchedEventsCounterWithSuccessBlock:^{
+         [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    }];
+}
+
++ (void)resetUnwatchedEventsCounterWithSuccessBlock:(ResetEventsCounterSuccessBlock)successBlock
+{
+    [[CCBadgeHelper new].ioc_unwatchedEventsApiProvider resetUnwatchedEventsCounterWithSuccessHandler:^(id result) {
+        successBlock();
+        NSLog(@"successfully reseted unwatched events counter");
+    } errorHandler:^(NSError *error) {
+        NSLog(@"error during reseting unwatched events counter = %@", error);
+    }];
 }
 
 @end

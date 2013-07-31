@@ -12,6 +12,11 @@
 
 @implementation CCNote
 
+- (NSString *)modelId
+{
+    return self.noteID;
+}
+
 - (NSString *)description
 {
     return self.name;

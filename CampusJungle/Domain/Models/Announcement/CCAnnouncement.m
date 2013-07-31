@@ -11,6 +11,11 @@
 
 @implementation CCAnnouncement
 
+- (NSString *)modelId
+{
+    return self.announcementID;
+}
+
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager
 {
     [self configureRequestMapping:objectManager];
@@ -42,6 +47,7 @@
                                             pathPattern:creationPathPattern
                                                 keyPath:nil
                                             statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+
     
     [objectManager addResponseDescriptor:responsePostAnnouncementDescriptor];
     [objectManager addResponseDescriptor:responseAnnouncementsDescriptor];

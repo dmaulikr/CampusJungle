@@ -469,17 +469,17 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{116, 119}, {201, 33}}</string>
 						<reference key="NSSuperview" ref="845167541"/>
-						<reference key="NSNextKeyView" ref="1056596572"/>
+						<reference key="NSNextKeyView" ref="321221851"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="274813066"/>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
-					<object class="IBUILabel" id="1056596572">
+					<object class="IBUILabel" id="321221851">
 						<reference key="NSNextResponder" ref="845167541"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{11, 166}, {70, 25}}</string>
 						<reference key="NSSuperview" ref="845167541"/>
-						<reference key="NSNextKeyView" ref="948412394"/>
+						<reference key="NSNextKeyView" ref="885007632"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -493,25 +493,25 @@
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="293015363">
+						<object class="IBUIFontDescription" key="IBUIFontDescription" id="954876842">
 							<string key="name">Avenir-HeavyOblique</string>
 							<string key="family">Avenir</string>
 							<int key="traits">3</int>
 							<double key="pointSize">19</double>
 						</object>
-						<object class="NSFont" key="IBUIFont" id="776106700">
+						<object class="NSFont" key="IBUIFont" id="304418697">
 							<string key="NSName">Avenir-HeavyOblique</string>
 							<double key="NSSize">19</double>
 							<int key="NSfFlags">16</int>
 						</object>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
-					<object class="IBUILabel" id="948412394">
+					<object class="IBUILabel" id="885007632">
 						<reference key="NSNextResponder" ref="845167541"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{79, 166}, {123, 25}}</string>
 						<reference key="NSSuperview" ref="845167541"/>
-						<reference key="NSNextKeyView" ref="691163550"/>
+						<reference key="NSNextKeyView" ref="543475255"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -525,11 +525,11 @@
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
-						<reference key="IBUIFontDescription" ref="293015363"/>
-						<reference key="IBUIFont" ref="776106700"/>
+						<reference key="IBUIFontDescription" ref="954876842"/>
+						<reference key="IBUIFont" ref="304418697"/>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
-					<object class="IBUIButton" id="691163550">
+					<object class="IBUIButton" id="543475255">
 						<reference key="NSNextResponder" ref="845167541"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{210, 160}, {110, 32}}</string>
@@ -718,7 +718,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">walletLabel</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="948412394"/>
+						<reference key="destination" ref="885007632"/>
 					</object>
 					<int key="connectionID">104</int>
 				</object>
@@ -803,7 +803,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">manageWalletButtonDidPressed</string>
-						<reference key="source" ref="691163550"/>
+						<reference key="source" ref="543475255"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
@@ -875,9 +875,9 @@
 							<reference ref="666321158"/>
 							<reference ref="1049562121"/>
 							<reference ref="33667457"/>
-							<reference ref="1056596572"/>
-							<reference ref="948412394"/>
-							<reference ref="691163550"/>
+							<reference ref="321221851"/>
+							<reference ref="885007632"/>
+							<reference ref="543475255"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Header</string>
@@ -962,17 +962,17 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">101</int>
-						<reference key="object" ref="1056596572"/>
+						<reference key="object" ref="321221851"/>
 						<reference key="parent" ref="845167541"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">102</int>
-						<reference key="object" ref="948412394"/>
+						<reference key="object" ref="885007632"/>
 						<reference key="parent" ref="845167541"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">103</int>
-						<reference key="object" ref="691163550"/>
+						<reference key="object" ref="543475255"/>
 						<reference key="parent" ref="845167541"/>
 					</object>
 				</array>
@@ -1019,7 +1019,7 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="NS.key.0">avatar_placeholder.png</string>
-			<string key="NS.object.0">{104, 99}</string>
+			<string key="NS.object.0">{16, 16}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>

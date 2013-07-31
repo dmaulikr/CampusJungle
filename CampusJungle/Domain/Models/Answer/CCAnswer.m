@@ -11,6 +11,11 @@
 
 @implementation CCAnswer
 
+- (NSString *)modelId
+{
+    return self.answerId;
+}
+
 + (CCAnswer *)answerWithText:(NSString *)text
 {
     CCAnswer *answer = [CCAnswer new];
@@ -44,7 +49,16 @@
                                                 keyPath:nil
                                             statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
+    NSString *loadAnswerPathPattern = [NSString stringWithFormat:CCAPIDefines.loadAnswer, @":answerId"];
+    RKResponseDescriptor *loadAnswersDescriptor =
+    [RKResponseDescriptor responseDescriptorWithMapping:answersMapping
+                                            pathPattern:loadAnswerPathPattern
+                                                keyPath:@"answer"
+                                            statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+
+    
     [objectManager addResponseDescriptor:responseAnswersDescriptor];
+    [objectManager addResponseDescriptor:loadAnswersDescriptor];
 }
 
 + (void)configureRequestMapping:(RKObjectManager *)objectManager
