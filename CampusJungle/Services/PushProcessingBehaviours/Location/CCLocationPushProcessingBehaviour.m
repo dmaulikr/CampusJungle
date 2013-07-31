@@ -67,7 +67,7 @@ typedef void(^LoadClassSuccessBlock)(id);
 #pragma mark Requests
 - (void)loadClassWithId:(NSString *)classId successBlock:(LoadClassSuccessBlock)successBlock
 {
-    [SVProgressHUD showWithStatus:CCProcessingMessages.loadingClass];
+    [SVProgressHUD showWithStatus:CCProcessingMessages.loadingLocations];
     [self.ioc_apiProvider loadClassWithId:classId successHandler:^(RKMappingResult *result) {
         [SVProgressHUD dismiss];
         successBlock(result);

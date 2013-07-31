@@ -68,7 +68,7 @@ typedef void(^LoadForumSuccessBlock)(id);
 #pragma mark Requests
 - (void)loadForumWithId:(NSString *)forumId successBlock:(LoadForumSuccessBlock)successBlock
 {
-    [SVProgressHUD showWithStatus:CCProcessingMessages.loadingForum];
+    [SVProgressHUD showWithStatus:CCProcessingMessages.loadingQuestion];
     [self.ioc_forumsApiProvider loadForumWithId:forumId successHandler:^(RKMappingResult *result) {
         [SVProgressHUD dismiss];
         successBlock(result);

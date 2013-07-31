@@ -67,7 +67,7 @@ typedef void(^LoadQuestionSuccessBlock)(id);
 #pragma mark Requests
 - (void)loadQuestionWithId:(NSString *)questionId successBlock:(LoadQuestionSuccessBlock)successBlock
 {
-    [SVProgressHUD showWithStatus:CCProcessingMessages.loadingQuestion];
+    [SVProgressHUD showWithStatus:CCProcessingMessages.loadingAnswers];
     [self.ioc_questionsApiProvider loadQuestionWithId:questionId successHandler:^(RKMappingResult *result) {
         [SVProgressHUD dismiss];
         successBlock(result);

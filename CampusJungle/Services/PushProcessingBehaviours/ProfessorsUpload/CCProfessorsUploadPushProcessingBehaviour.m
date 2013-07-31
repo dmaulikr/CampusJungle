@@ -51,7 +51,6 @@ typedef void(^LoadClassSuccessBlock)(id);
     [CCAlertHelper showWithMessage:message successButtonTitle:CCAlertsButtons.show cancelButtonTitle:CCAlertsButtons.later success:^{
         [self goUploadsWithUserInfo:userInfo];
     }];
-
 }
 
 - (void)goUploadsWithUserInfo:(NSDictionary *)userInfo
@@ -67,7 +66,7 @@ typedef void(^LoadClassSuccessBlock)(id);
 #pragma mark Requests
 - (void)loadClassWithId:(NSString *)classId successBlock:(LoadClassSuccessBlock)successBlock
 {
-    [SVProgressHUD showWithStatus:CCProcessingMessages.loadingClass];
+    [SVProgressHUD showWithStatus:CCProcessingMessages.loadingProfessorsUploads];
     [self.ioc_apiProvider loadClassWithId:classId successHandler:^(RKMappingResult *result) {
         [SVProgressHUD dismiss];
         successBlock(result);
