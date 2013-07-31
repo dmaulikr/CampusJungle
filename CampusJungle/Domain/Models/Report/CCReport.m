@@ -10,10 +10,9 @@
 
 @implementation CCReport
 
-+ (CCReport *)createWithText:(NSString *)text itemId:(NSString *)itemId itemType:(NSString *)itemType
++ (CCReport *)createWithItemId:(NSString *)itemId itemType:(NSString *)itemType;
 {
     CCReport *report = [CCReport new];
-    report.text = text;
     report.itemId = itemId;
     report.itemType = itemType;
     return report;

@@ -13,7 +13,7 @@
 
 @protocol CCReportsApiProviderProtocol <AppleGuiceInjectable>
 
-- (void)checkIfReportIsAvailableWithSuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
+- (void)checkIfAvailableReport:(CCReport *)report successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 - (void)postReport:(CCReport *)report successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 
 @end
