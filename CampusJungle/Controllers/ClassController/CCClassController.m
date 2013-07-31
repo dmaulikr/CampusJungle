@@ -149,7 +149,7 @@
     NSString *semester = [self.currentClass.semester length] > 0 ? self.currentClass.semester : @"unknown";
     self.semester.text = [NSString stringWithFormat:@"Semester: %@", semester.capitalizedString];
     [self.classImage setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,self.currentClass.classImageURL]] placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
-    self.title = self.currentClass.subject;
+    self.title = self.currentClass.className;
 }
 
 #pragma mark -

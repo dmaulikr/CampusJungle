@@ -53,6 +53,14 @@
 {
     [super viewDidLoad];
     self.title = @"Feedback";
+    [self setupRadioButtons];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target: nil action: nil];
+    [self setRightNavigationItemWithTitle:@"Done" selector:@selector(submitButtonDidPressed)];
+    [[self navigationItem] setBackBarButtonItem: newBackButton];
+}
+
+- (void)setupRadioButtons
+{
     self.engagementRadioButtonSetController = [[GSRadioButtonSetController alloc] init];
     self.speedRadioButtonSetController = [[GSRadioButtonSetController alloc] init];
     self.handoutsRadioButtonSetController = [[GSRadioButtonSetController alloc] init];
@@ -91,9 +99,7 @@
     [self setbuttonsClear:self.intrestingRadioButtonSetController.buttons];
     [self setbuttonsClear:self.handoutsRadioButtonSetController.buttons];
     [self setbuttonsClear:self.speedRadioButtonSetController.buttons];
-    
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target: nil action: nil];
-    [[self navigationItem] setBackBarButtonItem: newBackButton];
+
 }
 
 - (void)setbuttonsClear:(NSArray *)array
@@ -137,7 +143,7 @@
     
 }
 
-- (IBAction)submitButtonDidPressed
+- (void)submitButtonDidPressed
 {
     NSDictionary *params = @{
                              @"ranks" : @[
