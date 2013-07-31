@@ -7,6 +7,7 @@
 //
 
 #import "CCAppearanceConfigurator.h"
+#import "CCBaseViewController.h"
 
 @implementation CCAppearanceConfigurator
 
@@ -15,14 +16,14 @@
     [self configurateTextFields];
     [self configurateNavigationBar];
     [self configurateBarButtons];
-    [self configurateButton];
+    [self configurateButtons];
     [self configurateSegmentController];
     [self configurateProgressHuds];
 }
 
 + (void)setDefaultTextFieldsAppearance
 {
-    [[UITextField appearance] setBackground:nil];
+    [[UITextField appearance] setBackground:[UIImage imageNamed:@"clear"]];
     [[UITextField appearance] setBorderStyle:UITextBorderStyleRoundedRect];
 }
 
@@ -30,7 +31,7 @@
 {
     [[UISearchBar appearance] setTintColor:[UIColor brownColor]];
     
-    [[UITextField appearance] setBackground:[[UIImage imageNamed:@"input_field"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)]];
+    [[UITextField appearanceWhenContainedIn:[CCBaseViewController class], nil] setBackground:[[UIImage imageNamed:@"input_field"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)]];
     [[UITextField appearance] setBorderStyle:UITextBorderStyleNone];
 
 }
@@ -58,7 +59,13 @@
     
 }
 
-+ (void)configurateButton
++ (void)setDefaultButtonsAppearance
+{
+    [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateNormal];
+    [[UIButton appearance] setBackgroundImage:nil forState:UIControlStateHighlighted];
+}
+
++ (void)configurateButtons
 {
     UIImage *customButtonBackground = [[UIImage imageNamed:@"button"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 10, 20, 10)];
     

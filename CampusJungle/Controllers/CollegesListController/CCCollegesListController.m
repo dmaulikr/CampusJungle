@@ -49,4 +49,9 @@
    [self.classesOfcurrentCollegeTransaction performWithObject:[(CCEducation *)cellObject collegeID]];
 }
 
+- (BOOL)isNeedToLeftSelected
+{
+    return NO;
+}
+
 @end

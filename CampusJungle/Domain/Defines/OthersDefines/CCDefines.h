@@ -98,6 +98,8 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *sendAppInvites;
     __unsafe_unretained NSString *resendAppInvite;
     __unsafe_unretained NSString *deleteAppInvite;
+    __unsafe_unretained NSString *payUsingPayPal;
+    __unsafe_unretained NSString *payUsingInAppPurchases;
     
 } CCAPIDefines;
 
@@ -271,10 +273,23 @@ extern const struct CCAppInvitesDefines {
     __unsafe_unretained NSString *smsInviteBody;
 } CCAppInvitesDefines;
 
+extern const struct CCAppInvitesFacebookConstants {
+    __unsafe_unretained NSString *title;
+    __unsafe_unretained NSString *message;
+} CCAppInvitesFacebookConstants;
+
+extern const struct CCPushNotificationTypes {
+    __unsafe_unretained NSString *privateMessage;
+} CCPushNotificationTypes;
+
+extern const struct CCPayPalDefines {
+    __unsafe_unretained NSString *clientID;
+    __unsafe_unretained NSString *reciverEmail;
+} CCPayPalDefines;
+
 enum CCClassTabbarButtonsIdentifiers {
     CCClassTabbarButtonsIdentifierClassmate = 1,
     CCClassTabbarButtonsIdentifierGroup = 2,
     CCClassTabbarButtonsIdentifierLocations = 3,
     CCClassTabbarButtonsIdentifierForums = 4,
 };
-

@@ -9,7 +9,7 @@
 #import "CCBaseViewController.h"
 #import <TestFlightSDK/TestFlight.h>
 
-@interface CCBaseViewController ()
+@interface CCBaseViewController ()<UIAppearanceContainer>
 
 @end
 

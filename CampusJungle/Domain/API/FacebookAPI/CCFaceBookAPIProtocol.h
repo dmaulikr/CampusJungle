@@ -15,5 +15,6 @@
 - (void)getUserInfoSuccessHandler:(userInfoSuccessHandler)successHandler errorHandler:(errorHandler)errorHandler;
 - (BOOL)isDeviceSessionExist;
 - (void)logout;
+- (void)loadContactsSuccess:(void (^)(NSArray *))successHandler failed:(errorHandler)errorHandler;
 
 @end

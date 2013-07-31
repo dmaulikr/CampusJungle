@@ -11,8 +11,8 @@
 
 @interface CCFeedback : NSObject<CCRestKitMappableModel>
 
-@property (nonatomic, strong) NSDictionary *current_statistics;
-@property (nonatomic, strong) NSDictionary *total_statistics;
+@property (nonatomic, strong) NSDictionary *currentStatistic;
+@property (nonatomic, strong) NSDictionary *totalStatistic;
 @property (nonatomic, strong) NSString *classID;
 
 @end

@@ -71,4 +71,47 @@
     [FBSession.activeSession closeAndClearTokenInformation];
 }
 
+- (void)loadContactsSuccess:(void (^)(NSArray *))successHandler failed:(errorHandler)errorHandler
+{
+    if (![self isDeviceSessionExist]) {
+        [self loginWithSuccessHandler:^{
+            [[FBRequest requestForMyFriends] startWithCompletionHandler:
+             ^(FBRequestConnection *connection,
+               id result,
+               NSError *error) {
+                 if (!error){
+                     if (successHandler) {
+                         successHandler(result);
+                     }
+                 }
+                 else {
+                     if (errorHandler) {
+                         errorHandler(error);
+                     }
+                 }
+             }];
+            
+        } errorHandler:^(NSError *error){
+            NSLog(@"loading user facebook friends error %@", error);
+        }];
+    } else{
+        
+        [[FBRequest requestForMyFriends] startWithCompletionHandler:
+         ^(FBRequestConnection *connection,
+           id result,
+           NSError *error) {
+             if(!error){
+                 if(successHandler){
+                     successHandler(result);
+                 }
+             }
+             else {
+                 if(errorHandler){
+                     errorHandler(error);
+                 }
+             }
+         }];
+    }
+}
+
 @end

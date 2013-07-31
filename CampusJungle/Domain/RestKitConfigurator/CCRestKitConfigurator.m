@@ -12,6 +12,14 @@
 
 #import <objc/runtime.h>
 #import "CCRestKitMappableModel.h"
+#import "CCPaymentServiceProtocol.h"
+
+@interface CCRestKitConfigurator ()
+
+@property (nonatomic, strong) id <CCPaymentServiceProtocol> ioc_paymentService;
+
+@end
+
 
 @implementation CCRestKitConfigurator
 
@@ -31,6 +39,10 @@
     [objectManager.HTTPClient setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         if (status == AFNetworkReachabilityStatusNotReachable) {
             [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:CCAlertsMessages.noInternetConnection];
+        }
+        if (status == AFNetworkReachabilityStatusReachableViaWWAN || status == AFNetworkReachabilityStatusReachableViaWiFi)
+        {
+            [[[CCRestKitConfigurator new] ioc_paymentService] resendAllPayments];
         }
     }];
     return objectManager;

@@ -21,11 +21,13 @@
 #import "CCInboxController.h"
 #import "CCInboxTransaction.h"
 #import "CCOfferDetailsTransaction.h"
+#import "CCPaymentServiceProtocol.h"
 
 @interface CCMainTransaction()
 
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
 @property (nonatomic, strong) id <CCDropboxAPIProviderProtocol> ioc_dropboxAPIProvider;
+@property (nonatomic, strong) id <CCPaymentServiceProtocol> ioc_paymentService;
 
 @end
 
@@ -35,8 +37,9 @@
 {
     NSParameterAssert(self.window);
     
-    [self.ioc_dropboxAPIProvider createSession];
-    
+    [self.ioc_dropboxAPIProvider createSession];    
+    [self.ioc_paymentService resendAllPayments];
+
     CCSideBarController *rootController = [[CCSideBarController alloc] init];
     rootController.shouldDelegateAutorotateToVisiblePanel = NO;
     self.window.rootViewController = rootController;

@@ -12,6 +12,9 @@
 
 + (void)configurate;
 
++ (void)setDefaultButtonsAppearance;
++ (void)configurateButtons;
+
 + (void)setDefaultTextFieldsAppearance;
 + (void)configurateTextFields;
 

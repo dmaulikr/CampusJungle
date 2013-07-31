@@ -100,6 +100,8 @@ const struct CCAPIDefines CCAPIDefines = {
     .sendAppInvites = @"/api/app_invites",
     .resendAppInvite = @"/api/app_invites/%@",
     .deleteAppInvite = @"/api/app_invites/%@",
+    .payUsingPayPal = @"/api/%@",
+    .payUsingInAppPurchases = @"/api/%@",
 };
 
 const struct CCUserDefines CCUserDefines = {
@@ -267,4 +269,18 @@ const struct CCAppInvitesDefines CCAppInvitesDefines = {
     .appInviteSubject = @"Campus Jungle Invite",
     .emailInviteBody = @"",
     .smsInviteBody = @"",
+};
+
+const struct CCAppInvitesFacebookConstants CCAppInvitesFacebookConstants = {
+    .title = @"CampusJungle App Invite",
+    .message = @"Hey! Why not to start using CampusJungle App for iOS?",
+};
+
+const struct CCPushNotificationTypes CCPushNotificationTypes = {
+    .privateMessage = @"PrivateMessage",
+};
+
+const struct CCPayPalDefines CCPayPalDefines = {
+    .clientID = @"AUxTVhCEXoIo1xu4UAvWPiGXSJD0T-aKNy0A3hfKGbQ9_xpDy1n1VNSuAFgr",
+    .reciverEmail = @"v.korzun-facilitator@111min.com",
 };

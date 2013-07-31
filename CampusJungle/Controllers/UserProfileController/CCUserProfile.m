@@ -65,6 +65,9 @@
 
 @property (nonatomic, strong) CCAvatarSelectionActionSheet *avatarSelectionSheet;
 @property (nonatomic, strong) UIBarButtonItem *sideMenuBarButton;
+@property (nonatomic, strong) IBOutlet UILabel *walletLabel;
+
+- (IBAction)manageWalletButtonDidPressed;
 
 @end
 
@@ -87,6 +90,8 @@
 {
     [super viewWillAppear:animated];
     [self.mainTable reloadData];
+    float dollars = [[[self.ioc_userSession currentUser] wallet] floatValue]/100;
+    self.walletLabel.text = [NSString stringWithFormat:@"$%0.2lf",dollars];
 }
 
 - (void)configStars
@@ -153,6 +158,8 @@
         [self.avatarImageView setImageWithURL:[NSURL URLWithString:avatarURL]];
     }
     self.rateView.rate = [[[self.ioc_userSession currentUser] rank] floatValue];
+    float dollars = [[[self.ioc_userSession currentUser] wallet] floatValue]/100;
+    self.walletLabel.text = [NSString stringWithFormat:@"$%0.2lf",dollars];
 }
 
 - (void)setupNavigationBar
@@ -201,6 +208,11 @@
                                      message:CCAlertsMessages.confimAlert
                                      buttons:@[noButton, yesButton,]];
     [alert show];
+}
+
+- (IBAction)manageWalletButtonDidPressed
+{
+    [self.walletTransaction perform];
 }
 
 - (void)editProfile

@@ -10,8 +10,11 @@
 #import "CCClass.h"
 #import "CCButtonsHelper.h"
 
+static const CGFloat kArrowRotationDuration = 0.3;
+
 @interface CCFilterSectionHeader()
 
+@property (nonatomic, weak) IBOutlet UIImageView *arrowImageView;
 @property (nonatomic, weak) IBOutlet UILabel *collegeName;
 @property (nonatomic, weak) IBOutlet UIButton *backgroungButton;
 
@@ -53,6 +56,7 @@
     } else {
         [self.table deleteRowsAtIndexPaths:indexPathes withRowAnimation:UITableViewRowAnimationAutomatic];
     }
+    [self performArrowRotation];
 }
 
 - (NSArray *)prepareIndexPathes
@@ -65,5 +69,14 @@
     }
     return indexPathes;
 }
+
+- (void)performArrowRotation {
+    CGFloat rotateDegrees = (self.section.isOpen) ? 0 : -90;
+    [UIView animateWithDuration:kArrowRotationDuration animations:^{
+        CGAffineTransform transform = CGAffineTransformMakeRotation(rotateDegrees / 180.0 * M_PI);
+        [self.arrowImageView setTransform:transform];
+    }];
+}
+
 
 @end

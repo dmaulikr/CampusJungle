@@ -15,5 +15,6 @@
 @property (nonatomic, strong) id <CCTransactionWithObject> senderDetailsTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> replyTransaction;
 @property (nonatomic, strong) CCMessage *message;
+@property (nonatomic, strong) NSString *messageId;
 
 @end

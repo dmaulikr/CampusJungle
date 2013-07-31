@@ -14,4 +14,9 @@
     return [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
++ (NSString *)removeServiceSymbolsFromDeviceTokenString:(NSString *)string
+{
+    return [[string stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""];
+}
+
 @end

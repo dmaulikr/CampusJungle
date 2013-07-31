@@ -269,6 +269,15 @@
 		703DA4FE178C6A5900464DD3 /* CCLocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4FC178C6A5900464DD3 /* CCLocationsViewController.m */; };
 		703DA4FF178C6A5900464DD3 /* CCLocationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703DA4FD178C6A5900464DD3 /* CCLocationsViewController.xib */; };
 		70438E481785B7A800537712 /* CCNavigationBarViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 70438E471785B7A800537712 /* CCNavigationBarViewHelper.m */; };
+		7070444917A67F3100AC0FDE /* CCFacebookRequestParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7070444817A67F3100AC0FDE /* CCFacebookRequestParseHelper.m */; };
+		7070444F17A68E6F00AC0FDE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7070444D17A68E6000AC0FDE /* Social.framework */; };
+		7070445317A6B39300AC0FDE /* CCPushNotificationsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7070445217A6B39300AC0FDE /* CCPushNotificationsService.m */; };
+		7070445B17A6B46C00AC0FDE /* CCBadgeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7070445A17A6B46C00AC0FDE /* CCBadgeHelper.m */; };
+		7070446017A6B51C00AC0FDE /* CCPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 7070445E17A6B51C00AC0FDE /* CCPush.m */; };
+		7070446517A6BCA500AC0FDE /* CCPrivateMessageProcessingBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = 7070446417A6BCA500AC0FDE /* CCPrivateMessageProcessingBehaviour.m */; };
+		7070446917A7B9CF00AC0FDE /* CCNavigationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7070446817A7B9CF00AC0FDE /* CCNavigationHelper.m */; };
+		7070446C17A7C11800AC0FDE /* arrow_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7070446A17A7C11800AC0FDE /* arrow_button.png */; };
+		7070446D17A7C11800AC0FDE /* arrow_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7070446B17A7C11800AC0FDE /* arrow_button@2x.png */; };
 		709308141785806000E71AB0 /* CCSideMenuDataSourceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 709308101785806000E71AB0 /* CCSideMenuDataSourceHelper.m */; };
 		709308151785806000E71AB0 /* CCUIImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 709308131785806000E71AB0 /* CCUIImageHelper.m */; };
 		709308191785809C00E71AB0 /* CCViewPositioningHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 709308181785809C00E71AB0 /* CCViewPositioningHelper.m */; };
@@ -683,9 +692,20 @@
 		D3A3198C177E3C7A0004C4E8 /* sideMenuBackGround@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A3198A177E3C780004C4E8 /* sideMenuBackGround@2x.png */; };
 		D3A3198D177E3C7A0004C4E8 /* sideMenuBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A3198B177E3C790004C4E8 /* sideMenuBackGround.png */; };
 		D3B7320A17A687B900F35C4D /* CCAppInviteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7320917A687B900F35C4D /* CCAppInviteCell.m */; };
-		D3B7320C17A6885F00F35C4D /* CCAppInviteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B7320B17A6885F00F35C4D /* CCAppInviteCell.xib */; };
 		D3B7320E17A714EB00F35C4D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7320D17A714EB00F35C4D /* Security.framework */; };
 		D3B7321017A714F200F35C4D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7320F17A714F200F35C4D /* StoreKit.framework */; };
+		D3B7321F17A7F12B00F35C4D /* CCWalletController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7321D17A7F12B00F35C4D /* CCWalletController.m */; };
+		D3B7322017A7F12B00F35C4D /* CCWalletController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B7321E17A7F12B00F35C4D /* CCWalletController.xib */; };
+		D3B7322317A7F29800F35C4D /* CCWalletTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7322217A7F29800F35C4D /* CCWalletTransaction.m */; };
+		D3B7322517A80D0300F35C4D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7322417A80D0300F35C4D /* libxml2.dylib */; };
+		D3B7322F17A8F10900F35C4D /* CCStoreObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7322E17A8F10900F35C4D /* CCStoreObserver.m */; };
+		D3B7323217A902E600F35C4D /* CCPaymentAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7323117A902E600F35C4D /* CCPaymentAPIProvider.m */; };
+		D3B7323517A9160600F35C4D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7323417A9160600F35C4D /* OpenGLES.framework */; };
+		D3B7323717A9162A00F35C4D /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7323617A9162A00F35C4D /* CoreVideo.framework */; };
+		D3B7323917A9164000F35C4D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7323817A9164000F35C4D /* AVFoundation.framework */; };
+		D3B7323B17A9165A00F35C4D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7323A17A9165900F35C4D /* AudioToolbox.framework */; };
+		D3B7323D17A9167300F35C4D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7323C17A9167300F35C4D /* CoreMedia.framework */; };
+		D3B7324017A91E1900F35C4D /* CCPaymentService.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7323F17A91E1900F35C4D /* CCPaymentService.m */; };
 		D3DF8C3117900AAA00B072B7 /* CCMessageDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DF8C2F17900AAA00B072B7 /* CCMessageDetailsController.m */; };
 		D3DF8C3217900AAA00B072B7 /* CCMessageDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3DF8C3017900AAA00B072B7 /* CCMessageDetailsController.xib */; };
 /* End PBXBuildFile section */
@@ -1033,6 +1053,23 @@
 		703DA4FD178C6A5900464DD3 /* CCLocationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCLocationsViewController.xib; sourceTree = "<group>"; };
 		70438E461785B7A800537712 /* CCNavigationBarViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNavigationBarViewHelper.h; sourceTree = "<group>"; };
 		70438E471785B7A800537712 /* CCNavigationBarViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNavigationBarViewHelper.m; sourceTree = "<group>"; };
+		7070444717A67F3100AC0FDE /* CCFacebookRequestParseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFacebookRequestParseHelper.h; sourceTree = "<group>"; };
+		7070444817A67F3100AC0FDE /* CCFacebookRequestParseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFacebookRequestParseHelper.m; sourceTree = "<group>"; };
+		7070444A17A688BE00AC0FDE /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		7070444D17A68E6000AC0FDE /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		7070445117A6B39300AC0FDE /* CCPushNotificationsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPushNotificationsService.h; sourceTree = "<group>"; };
+		7070445217A6B39300AC0FDE /* CCPushNotificationsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPushNotificationsService.m; sourceTree = "<group>"; };
+		7070445917A6B46C00AC0FDE /* CCBadgeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBadgeHelper.h; sourceTree = "<group>"; };
+		7070445A17A6B46C00AC0FDE /* CCBadgeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBadgeHelper.m; sourceTree = "<group>"; };
+		7070445D17A6B51C00AC0FDE /* CCPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPush.h; sourceTree = "<group>"; };
+		7070445E17A6B51C00AC0FDE /* CCPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPush.m; sourceTree = "<group>"; };
+		7070445F17A6B51C00AC0FDE /* CCPushProcessingProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPushProcessingProtocol.h; sourceTree = "<group>"; };
+		7070446317A6BCA500AC0FDE /* CCPrivateMessageProcessingBehaviour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPrivateMessageProcessingBehaviour.h; sourceTree = "<group>"; };
+		7070446417A6BCA500AC0FDE /* CCPrivateMessageProcessingBehaviour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPrivateMessageProcessingBehaviour.m; sourceTree = "<group>"; };
+		7070446717A7B9CF00AC0FDE /* CCNavigationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNavigationHelper.h; sourceTree = "<group>"; };
+		7070446817A7B9CF00AC0FDE /* CCNavigationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNavigationHelper.m; sourceTree = "<group>"; };
+		7070446A17A7C11800AC0FDE /* arrow_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_button.png; sourceTree = "<group>"; };
+		7070446B17A7C11800AC0FDE /* arrow_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_button@2x.png"; sourceTree = "<group>"; };
 		7093080F1785806000E71AB0 /* CCSideMenuDataSourceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSideMenuDataSourceHelper.h; sourceTree = "<group>"; };
 		709308101785806000E71AB0 /* CCSideMenuDataSourceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSideMenuDataSourceHelper.m; sourceTree = "<group>"; };
 		709308121785806000E71AB0 /* CCUIImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUIImageHelper.h; sourceTree = "<group>"; };
@@ -1750,9 +1787,27 @@
 		D3A3198B177E3C790004C4E8 /* sideMenuBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sideMenuBackGround.png; sourceTree = "<group>"; };
 		D3B7320817A687B900F35C4D /* CCAppInviteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAppInviteCell.h; sourceTree = "<group>"; };
 		D3B7320917A687B900F35C4D /* CCAppInviteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAppInviteCell.m; sourceTree = "<group>"; };
-		D3B7320B17A6885F00F35C4D /* CCAppInviteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAppInviteCell.xib; sourceTree = "<group>"; };
 		D3B7320D17A714EB00F35C4D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D3B7320F17A714F200F35C4D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D3B7321C17A7F12B00F35C4D /* CCWalletController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWalletController.h; sourceTree = "<group>"; };
+		D3B7321D17A7F12B00F35C4D /* CCWalletController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWalletController.m; sourceTree = "<group>"; };
+		D3B7321E17A7F12B00F35C4D /* CCWalletController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCWalletController.xib; sourceTree = "<group>"; };
+		D3B7322117A7F29800F35C4D /* CCWalletTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWalletTransaction.h; sourceTree = "<group>"; };
+		D3B7322217A7F29800F35C4D /* CCWalletTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWalletTransaction.m; sourceTree = "<group>"; };
+		D3B7322417A80D0300F35C4D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		D3B7322D17A8F10900F35C4D /* CCStoreObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStoreObserver.h; sourceTree = "<group>"; };
+		D3B7322E17A8F10900F35C4D /* CCStoreObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStoreObserver.m; sourceTree = "<group>"; };
+		D3B7323017A902E600F35C4D /* CCPaymentAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPaymentAPIProvider.h; sourceTree = "<group>"; };
+		D3B7323117A902E600F35C4D /* CCPaymentAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPaymentAPIProvider.m; sourceTree = "<group>"; };
+		D3B7323317A9030300F35C4D /* CCPaymentAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCPaymentAPIProviderProtocol.h; sourceTree = "<group>"; };
+		D3B7323417A9160600F35C4D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		D3B7323617A9162A00F35C4D /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		D3B7323817A9164000F35C4D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D3B7323A17A9165900F35C4D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D3B7323C17A9167300F35C4D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		D3B7323E17A91E1900F35C4D /* CCPaymentService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPaymentService.h; sourceTree = "<group>"; };
+		D3B7323F17A91E1900F35C4D /* CCPaymentService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPaymentService.m; sourceTree = "<group>"; };
+		D3B7324117A91EEE00F35C4D /* CCPaymentServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCPaymentServiceProtocol.h; sourceTree = "<group>"; };
 		D3DF8C2E17900AAA00B072B7 /* CCMessageDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessageDetailsController.h; sourceTree = "<group>"; };
 		D3DF8C2F17900AAA00B072B7 /* CCMessageDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessageDetailsController.m; sourceTree = "<group>"; };
 		D3DF8C3017900AAA00B072B7 /* CCMessageDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMessageDetailsController.xib; sourceTree = "<group>"; };
@@ -1764,8 +1819,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3B7323D17A9167300F35C4D /* CoreMedia.framework in Frameworks */,
+				D3B7323B17A9165A00F35C4D /* AudioToolbox.framework in Frameworks */,
+				D3B7323917A9164000F35C4D /* AVFoundation.framework in Frameworks */,
+				D3B7323717A9162A00F35C4D /* CoreVideo.framework in Frameworks */,
+				D3B7323517A9160600F35C4D /* OpenGLES.framework in Frameworks */,
+				D3B7322517A80D0300F35C4D /* libxml2.dylib in Frameworks */,
 				D3B7321017A714F200F35C4D /* StoreKit.framework in Frameworks */,
 				D3B7320E17A714EB00F35C4D /* Security.framework in Frameworks */,
+				7070444F17A68E6F00AC0FDE /* Social.framework in Frameworks */,
 				70061CA017A270EA00848F62 /* AddressBook.framework in Frameworks */,
 				703DA4F0178C3D3C00464DD3 /* MapKit.framework in Frameworks */,
 				A7FA0E571768D746004D3403 /* libTestFlight.a in Frameworks */,
@@ -1945,6 +2007,8 @@
 				70066B4E17993C3200B7A4E7 /* announcement_button@2x.png */,
 				70066B4F17993C3200B7A4E7 /* announcement_button_active.png */,
 				70066B5017993C3200B7A4E7 /* announcement_button_active@2x.png */,
+				7070446A17A7C11800AC0FDE /* arrow_button.png */,
+				7070446B17A7C11800AC0FDE /* arrow_button@2x.png */,
 				7025634217A01EE700B48AA2 /* arrow_left.png */,
 				7025634317A01EE700B48AA2 /* arrow_left@2x.png */,
 				7025634417A01EE700B48AA2 /* arrow_right.png */,
@@ -2702,16 +2766,82 @@
 			path = NavigationBarViewHelper;
 			sourceTree = "<group>";
 		};
+		7070444617A67F2200AC0FDE /* FacebookRequestParseHelper */ = {
+			isa = PBXGroup;
+			children = (
+				7070444717A67F3100AC0FDE /* CCFacebookRequestParseHelper.h */,
+				7070444817A67F3100AC0FDE /* CCFacebookRequestParseHelper.m */,
+			);
+			path = FacebookRequestParseHelper;
+			sourceTree = "<group>";
+		};
+		7070445017A6B39300AC0FDE /* PushNotificationsService */ = {
+			isa = PBXGroup;
+			children = (
+				7070445117A6B39300AC0FDE /* CCPushNotificationsService.h */,
+				7070445217A6B39300AC0FDE /* CCPushNotificationsService.m */,
+			);
+			path = PushNotificationsService;
+			sourceTree = "<group>";
+		};
+		7070445817A6B46B00AC0FDE /* BadgeHelper */ = {
+			isa = PBXGroup;
+			children = (
+				7070445917A6B46C00AC0FDE /* CCBadgeHelper.h */,
+				7070445A17A6B46C00AC0FDE /* CCBadgeHelper.m */,
+			);
+			path = BadgeHelper;
+			sourceTree = "<group>";
+		};
+		7070445C17A6B51C00AC0FDE /* Push */ = {
+			isa = PBXGroup;
+			children = (
+				7070445D17A6B51C00AC0FDE /* CCPush.h */,
+				7070445E17A6B51C00AC0FDE /* CCPush.m */,
+				7070445F17A6B51C00AC0FDE /* CCPushProcessingProtocol.h */,
+			);
+			path = Push;
+			sourceTree = "<group>";
+		};
+		7070446117A6B99000AC0FDE /* PushProcessingBehaviours */ = {
+			isa = PBXGroup;
+			children = (
+				7070446217A6BC9600AC0FDE /* PrivateMessageProcessingBehaviour */,
+			);
+			path = PushProcessingBehaviours;
+			sourceTree = "<group>";
+		};
+		7070446217A6BC9600AC0FDE /* PrivateMessageProcessingBehaviour */ = {
+			isa = PBXGroup;
+			children = (
+				7070446317A6BCA500AC0FDE /* CCPrivateMessageProcessingBehaviour.h */,
+				7070446417A6BCA500AC0FDE /* CCPrivateMessageProcessingBehaviour.m */,
+			);
+			path = PrivateMessageProcessingBehaviour;
+			sourceTree = "<group>";
+		};
+		7070446617A7B9C200AC0FDE /* NavigationHelper */ = {
+			isa = PBXGroup;
+			children = (
+				7070446717A7B9CF00AC0FDE /* CCNavigationHelper.h */,
+				7070446817A7B9CF00AC0FDE /* CCNavigationHelper.m */,
+			);
+			path = NavigationHelper;
+			sourceTree = "<group>";
+		};
 		7093080D1785806000E71AB0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				70061C9A17A2706B00848F62 /* AddressBookHelper */,
 				70B2D0471793F879001B0C2C /* AlertHelper */,
+				7070445817A6B46B00AC0FDE /* BadgeHelper */,
 				70066B3A1799380B00B7A4E7 /* ButtonsHelper */,
 				70125457179700D60085247A /* DateFormatterHelper */,
+				7070444617A67F2200AC0FDE /* FacebookRequestParseHelper */,
 				700F9441178EE97800A6FBBA /* KeyboardHelper */,
 				703DA4F5178C5C8900464DD3 /* MapHelper */,
 				70438E451785B7A800537712 /* NavigationBarViewHelper */,
+				7070446617A7B9C200AC0FDE /* NavigationHelper */,
 				700F9431178EBC4B00A6FBBA /* PlacemarkAddressHelper */,
 				70B2D09817941336001B0C2C /* PluralizeHelper */,
 				7093080E1785806000E71AB0 /* SideMenuDataSourceHelper */,
@@ -2826,6 +2956,7 @@
 				700F9435178ED4A800A6FBBA /* UserProfileController */,
 				D37122DD17A1444300A7DF04 /* VoteResultScreenControler */,
 				D37122CF17A13FB500A7DF04 /* VoteScreenController */,
+				AA28DEA671E3A741FB280D09 /* WalletController */,
 				70A29CDC178778AB001BC8DD /* WelcomeController */,
 			);
 			path = Controllers;
@@ -3429,7 +3560,9 @@
 				70B2D04F17940245001B0C2C /* API */,
 				70A29DC617877CB4001BC8DD /* Defines */,
 				70A29DD717877CB4001BC8DD /* Models */,
+				AA28DA0AB7220DD812E6FE5B /* PaymentManager */,
 				70A29E0A17877CB5001BC8DD /* RestKitConfigurator */,
+				AA28DCE8039CA6905AB0E502 /* StoreObserver */,
 				70A29E0D17877CB6001BC8DD /* TypesDefinition */,
 				70A29E0F17877CB6001BC8DD /* UploadManager */,
 			);
@@ -3524,6 +3657,7 @@
 				70A29DF617877CB5001BC8DD /* PaginationResponse */,
 				70A29DF917877CB5001BC8DD /* Photos */,
 				D342BD04179825950034E88C /* ProfessorUpload */,
+				7070445C17A6B51C00AC0FDE /* Push */,
 				70B2D0B017942DB6001B0C2C /* Question */,
 				D394973C178EC58C00C39A7E /* Review */,
 				70A29DFC17877CB5001BC8DD /* States */,
@@ -3860,6 +3994,7 @@
 				70B2D06C17940245001B0C2C /* MarketAPIProvider */,
 				70B2D07017940245001B0C2C /* MessagesAPIProvider */,
 				70B2D07417940245001B0C2C /* NotesAPIProvider */,
+				AA28D1B9165CE7EEB54F8D91 /* PaymentAPIProvider */,
 				D342BD0A179933A50034E88C /* ProfessorUploadsAPIProvider */,
 				70B2D0B417942F01001B0C2C /* QuestionsAPIProvider */,
 				70B2D07817940245001B0C2C /* SignUpAPIProvider */,
@@ -4158,6 +4293,7 @@
 				70B2D18F17944894001B0C2C /* ViewStuffInMarketTransaction */,
 				D37122D517A1406900A7DF04 /* VoteResultsScreenTransaction */,
 				D37122D617A1406900A7DF04 /* VoteScreenTransaction */,
+				AA28DC680404C4F59AAB90C6 /* WalletTransaction */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -5250,6 +5386,11 @@
 		A784C58C173A865E005E4921 = {
 			isa = PBXGroup;
 			children = (
+				D3B7323C17A9167300F35C4D /* CoreMedia.framework */,
+				D3B7323A17A9165900F35C4D /* AudioToolbox.framework */,
+				D3B7323817A9164000F35C4D /* AVFoundation.framework */,
+				D3B7323617A9162A00F35C4D /* CoreVideo.framework */,
+				D3B7323417A9160600F35C4D /* OpenGLES.framework */,
 				D39496911785C37300C39A7E /* Default@2x.png */,
 				D394968F1785C36C00C39A7E /* Default-568h@2x.png */,
 				D394968D1785C36800C39A7E /* Default.png */,
@@ -5276,8 +5417,11 @@
 		A784C597173A865E005E4921 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3B7322417A80D0300F35C4D /* libxml2.dylib */,
 				D3B7320F17A714F200F35C4D /* StoreKit.framework */,
 				D3B7320D17A714EB00F35C4D /* Security.framework */,
+				7070444D17A68E6000AC0FDE /* Social.framework */,
+				7070444A17A688BE00AC0FDE /* Twitter.framework */,
 				70061C9E17A270DC00848F62 /* AddressBook.framework */,
 				703DA4EE178C3D3000464DD3 /* MapKit.framework */,
 				A7FA0E561768D746004D3403 /* libTestFlight.a */,
@@ -5327,6 +5471,8 @@
 			children = (
 				70061CCF17A28E9D00848F62 /* AddressBookService */,
 				D3A31969177C5B330004C4E8 /* AppearanceConfigurator */,
+				7070445017A6B39300AC0FDE /* PushNotificationsService */,
+				7070446117A6B99000AC0FDE /* PushProcessingBehaviours */,
 				D39F1C0E1753821D008E08A2 /* StandardErrorHandler */,
 				A787C77817536F8400824DEA /* UserSession */,
 				A787C77B17536F8400824DEA /* UserSessionProtocol */,
@@ -5379,6 +5525,16 @@
 			path = MHTabBarController;
 			sourceTree = "<group>";
 		};
+		AA28D1B9165CE7EEB54F8D91 /* PaymentAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7323317A9030300F35C4D /* CCPaymentAPIProviderProtocol.h */,
+				D3B7323017A902E600F35C4D /* CCPaymentAPIProvider.h */,
+				D3B7323117A902E600F35C4D /* CCPaymentAPIProvider.m */,
+			);
+			path = PaymentAPIProvider;
+			sourceTree = "<group>";
+		};
 		AA28D80E46C593F397076F50 /* InboxAppInvitesDataProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -5386,6 +5542,44 @@
 				D3751C7917A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.m */,
 			);
 			path = InboxAppInvitesDataProvider;
+			sourceTree = "<group>";
+		};
+		AA28DA0AB7220DD812E6FE5B /* PaymentManager */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7323E17A91E1900F35C4D /* CCPaymentService.h */,
+				D3B7323F17A91E1900F35C4D /* CCPaymentService.m */,
+				D3B7324117A91EEE00F35C4D /* CCPaymentServiceProtocol.h */,
+			);
+			path = PaymentManager;
+			sourceTree = "<group>";
+		};
+		AA28DC680404C4F59AAB90C6 /* WalletTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7322117A7F29800F35C4D /* CCWalletTransaction.h */,
+				D3B7322217A7F29800F35C4D /* CCWalletTransaction.m */,
+			);
+			path = WalletTransaction;
+			sourceTree = "<group>";
+		};
+		AA28DCE8039CA6905AB0E502 /* StoreObserver */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7322D17A8F10900F35C4D /* CCStoreObserver.h */,
+				D3B7322E17A8F10900F35C4D /* CCStoreObserver.m */,
+			);
+			path = StoreObserver;
+			sourceTree = "<group>";
+		};
+		AA28DEA671E3A741FB280D09 /* WalletController */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7321C17A7F12B00F35C4D /* CCWalletController.h */,
+				D3B7321D17A7F12B00F35C4D /* CCWalletController.m */,
+				D3B7321E17A7F12B00F35C4D /* CCWalletController.xib */,
+			);
+			path = WalletController;
 			sourceTree = "<group>";
 		};
 		D3039B75176880F800621CAC /* Icons */ = {
@@ -5912,7 +6106,6 @@
 			children = (
 				D3B7320817A687B900F35C4D /* CCAppInviteCell.h */,
 				D3B7320917A687B900F35C4D /* CCAppInviteCell.m */,
-				D3B7320B17A6885F00F35C4D /* CCAppInviteCell.xib */,
 			);
 			path = AppInviteCell;
 			sourceTree = "<group>";
@@ -6303,7 +6496,9 @@
 				70061CA617A2746D00848F62 /* CCAppInviteViewController.xib in Resources */,
 				70061CCA17A284EA00848F62 /* CCAddressBookRecordCell.xib in Resources */,
 				70061CDC17A29AA700848F62 /* CCAddressBookHeader.xib in Resources */,
-				D3B7320C17A6885F00F35C4D /* CCAppInviteCell.xib in Resources */,
+				7070446C17A7C11800AC0FDE /* arrow_button.png in Resources */,
+				7070446D17A7C11800AC0FDE /* arrow_button@2x.png in Resources */,
+				D3B7322017A7F12B00F35C4D /* CCWalletController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6688,6 +6883,17 @@
 				AA28DC920F53DB90D22BE7E7 /* CCWelcomeController.m in Sources */,
 				D3751C7A17A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.m in Sources */,
 				D3B7320A17A687B900F35C4D /* CCAppInviteCell.m in Sources */,
+				7070444917A67F3100AC0FDE /* CCFacebookRequestParseHelper.m in Sources */,
+				7070445317A6B39300AC0FDE /* CCPushNotificationsService.m in Sources */,
+				7070445B17A6B46C00AC0FDE /* CCBadgeHelper.m in Sources */,
+				7070446017A6B51C00AC0FDE /* CCPush.m in Sources */,
+				7070446517A6BCA500AC0FDE /* CCPrivateMessageProcessingBehaviour.m in Sources */,
+				7070446917A7B9CF00AC0FDE /* CCNavigationHelper.m in Sources */,
+				D3B7321F17A7F12B00F35C4D /* CCWalletController.m in Sources */,
+				D3B7322317A7F29800F35C4D /* CCWalletTransaction.m in Sources */,
+				D3B7322F17A8F10900F35C4D /* CCStoreObserver.m in Sources */,
+				D3B7323217A902E600F35C4D /* CCPaymentAPIProvider.m in Sources */,
+				D3B7324017A91E1900F35C4D /* CCPaymentService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6769,8 +6975,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Корзун Владислав (EB7SWK4X6M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Корзун Владислав (EB7SWK4X6M)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusJungle/CampusJungle-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CampusJungle/CampusJungle-Info.plist";
@@ -6802,11 +7008,15 @@
 					Security,
 					"-weak_framework",
 					Social,
+					"-lstdc++",
+					"-ObjC",
 					"-all_load",
+					"-lPayPalMobile",
+					"-lstdc++",
 				);
 				PRODUCT_NAME = CampusJungle;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "80D997AC-E2FC-48AA-A3EB-BB7CADE4469A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "80D997AC-E2FC-48AA-A3EB-BB7CADE4469A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -6846,7 +7056,11 @@
 					Security,
 					"-weak_framework",
 					Social,
+					"-lstdc++",
+					"-ObjC",
 					"-all_load",
+					"-lPayPalMobile",
+					"-lstdc++",
 				);
 				PRODUCT_NAME = CampusJungle;
 				WRAPPER_EXTENSION = app;

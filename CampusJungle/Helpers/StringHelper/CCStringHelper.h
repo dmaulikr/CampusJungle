@@ -11,5 +11,6 @@
 @interface CCStringHelper : NSObject
 
 + (NSString *)trimSpacesFromString:(NSString *)string;
++ (NSString *)removeServiceSymbolsFromDeviceTokenString:(NSString *)string;
 
 @end

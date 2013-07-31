@@ -18,3 +18,4 @@ pod 'MACircleProgressIndicator', '~> 1.0.0'
 pod 'SVProgressHUD-Fork'
 pod 'DYRateView'
 pod 'GSRadioButtonSetController'
+pod "PayPal-iOS-SDK"
