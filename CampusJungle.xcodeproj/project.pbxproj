@@ -372,7 +372,6 @@
 		70A29D27178778AB001BC8DD /* MHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29CD4178778AB001BC8DD /* MHTabBarController.m */; };
 		70A29D29178778AB001BC8DD /* CCUploadImagesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29CDA178778AB001BC8DD /* CCUploadImagesController.m */; };
 		70A29D2A178778AB001BC8DD /* CCUploadImagesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29CDB178778AB001BC8DD /* CCUploadImagesController.xib */; };
-		70A29D2B178778AB001BC8DD /* CCWelcomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29CDE178778AB001BC8DD /* CCWelcomeController.m */; };
 		70A29D2C178778AB001BC8DD /* CCWelcomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29CDF178778AB001BC8DD /* CCWelcomeController.xib */; };
 		70A29D8B17877B94001BC8DD /* CCBaseDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29D4E17877B94001BC8DD /* CCBaseDataProvider.m */; };
 		70A29D8C17877B94001BC8DD /* CCCitiesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29D5117877B94001BC8DD /* CCCitiesDataProvider.m */; };
@@ -608,6 +607,7 @@
 		A7D53A431758A85700FE9FCD /* MHTabBarIndicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7D53A3D1758A85700FE9FCD /* MHTabBarIndicator@2x.png */; };
 		A7FA0E551768D682004D3403 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A7FA0E541768D682004D3403 /* libz.dylib */; };
 		A7FA0E571768D746004D3403 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7FA0E561768D746004D3403 /* libTestFlight.a */; };
+		AA28DC920F53DB90D22BE7E7 /* CCWelcomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA28D9F1DF3A0CA781D3DF0A /* CCWelcomeController.m */; };
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
 		D3039B78176880F800621CAC /* pending.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B76176880F800621CAC /* pending.png */; };
 		D3039B79176880F800621CAC /* pending@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B77176880F800621CAC /* pending@2x.png */; };
@@ -669,6 +669,7 @@
 		D37122FE17A2B45900A7DF04 /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D37122FA17A2B45900A7DF04 /* check@2x.png */; };
 		D37122FF17A2B45900A7DF04 /* check_active.png in Resources */ = {isa = PBXBuildFile; fileRef = D37122FB17A2B45900A7DF04 /* check_active.png */; };
 		D371230017A2B45900A7DF04 /* check_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D37122FC17A2B45900A7DF04 /* check_active@2x.png */; };
+		D3751C7A17A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3751C7917A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.m */; };
 		D3819B571799CB4300C93005 /* CCProfessorUploadDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3819B561799CB4300C93005 /* CCProfessorUploadDataProvider.m */; };
 		D3819B5B1799CF3500C93005 /* CCProfessorUploadsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3819B5A1799CF3500C93005 /* CCProfessorUploadsCell.m */; };
 		D3819B5D1799CF8300C93005 /* CCProfessorUploadsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3819B5C1799CF8300C93005 /* CCProfessorUploadsCell.xib */; };
@@ -716,6 +717,21 @@
 		D3A31981177E226C0004C4E8 /* logoLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A3197F177E226C0004C4E8 /* logoLogin.png */; };
 		D3A3198C177E3C7A0004C4E8 /* sideMenuBackGround@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A3198A177E3C780004C4E8 /* sideMenuBackGround@2x.png */; };
 		D3A3198D177E3C7A0004C4E8 /* sideMenuBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A3198B177E3C790004C4E8 /* sideMenuBackGround.png */; };
+		D3B7320A17A687B900F35C4D /* CCAppInviteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7320917A687B900F35C4D /* CCAppInviteCell.m */; };
+		D3B7320E17A714EB00F35C4D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7320D17A714EB00F35C4D /* Security.framework */; };
+		D3B7321017A714F200F35C4D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7320F17A714F200F35C4D /* StoreKit.framework */; };
+		D3B7321F17A7F12B00F35C4D /* CCWalletController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7321D17A7F12B00F35C4D /* CCWalletController.m */; };
+		D3B7322017A7F12B00F35C4D /* CCWalletController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B7321E17A7F12B00F35C4D /* CCWalletController.xib */; };
+		D3B7322317A7F29800F35C4D /* CCWalletTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7322217A7F29800F35C4D /* CCWalletTransaction.m */; };
+		D3B7322517A80D0300F35C4D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7322417A80D0300F35C4D /* libxml2.dylib */; };
+		D3B7322F17A8F10900F35C4D /* CCStoreObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7322E17A8F10900F35C4D /* CCStoreObserver.m */; };
+		D3B7323217A902E600F35C4D /* CCPaymentAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7323117A902E600F35C4D /* CCPaymentAPIProvider.m */; };
+		D3B7323517A9160600F35C4D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7323417A9160600F35C4D /* OpenGLES.framework */; };
+		D3B7323717A9162A00F35C4D /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7323617A9162A00F35C4D /* CoreVideo.framework */; };
+		D3B7323917A9164000F35C4D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7323817A9164000F35C4D /* AVFoundation.framework */; };
+		D3B7323B17A9165A00F35C4D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7323A17A9165900F35C4D /* AudioToolbox.framework */; };
+		D3B7323D17A9167300F35C4D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7323C17A9167300F35C4D /* CoreMedia.framework */; };
+		D3B7324017A91E1900F35C4D /* CCPaymentService.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7323F17A91E1900F35C4D /* CCPaymentService.m */; };
 		D3DF8C3117900AAA00B072B7 /* CCMessageDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DF8C2F17900AAA00B072B7 /* CCMessageDetailsController.m */; };
 		D3DF8C3217900AAA00B072B7 /* CCMessageDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3DF8C3017900AAA00B072B7 /* CCMessageDetailsController.xib */; };
 /* End PBXBuildFile section */
@@ -1233,8 +1249,6 @@
 		70A29CD9178778AB001BC8DD /* CCUploadImagesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUploadImagesController.h; sourceTree = "<group>"; };
 		70A29CDA178778AB001BC8DD /* CCUploadImagesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUploadImagesController.m; sourceTree = "<group>"; };
 		70A29CDB178778AB001BC8DD /* CCUploadImagesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCUploadImagesController.xib; sourceTree = "<group>"; };
-		70A29CDD178778AB001BC8DD /* CCWelcomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWelcomeController.h; sourceTree = "<group>"; };
-		70A29CDE178778AB001BC8DD /* CCWelcomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWelcomeController.m; sourceTree = "<group>"; };
 		70A29CDF178778AB001BC8DD /* CCWelcomeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCWelcomeController.xib; sourceTree = "<group>"; };
 		70A29D4D17877B94001BC8DD /* CCBaseDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBaseDataProvider.h; sourceTree = "<group>"; };
 		70A29D4E17877B94001BC8DD /* CCBaseDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBaseDataProvider.m; sourceTree = "<group>"; };
@@ -1682,6 +1696,8 @@
 		A7D53A3D1758A85700FE9FCD /* MHTabBarIndicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MHTabBarIndicator@2x.png"; sourceTree = "<group>"; };
 		A7FA0E541768D682004D3403 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A7FA0E561768D746004D3403 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = Pods/TestFlightSDK/libTestFlight.a; sourceTree = "<group>"; };
+		AA28D2BD62E018B18ED55F0F /* CCWelcomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWelcomeController.h; sourceTree = "<group>"; };
+		AA28D9F1DF3A0CA781D3DF0A /* CCWelcomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWelcomeController.m; sourceTree = "<group>"; };
 		D3039B76176880F800621CAC /* pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pending.png; sourceTree = "<group>"; };
 		D3039B77176880F800621CAC /* pending@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pending@2x.png"; sourceTree = "<group>"; };
 		D342BCD31796AD3D0034E88C /* CCEditClassTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEditClassTransaction.h; sourceTree = "<group>"; };
@@ -1767,6 +1783,8 @@
 		D37122FA17A2B45900A7DF04 /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
 		D37122FB17A2B45900A7DF04 /* check_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check_active.png; sourceTree = "<group>"; };
 		D37122FC17A2B45900A7DF04 /* check_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check_active@2x.png"; sourceTree = "<group>"; };
+		D3751C7817A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCInboxAppInvitesDataProvider.h; sourceTree = "<group>"; };
+		D3751C7917A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCInboxAppInvitesDataProvider.m; sourceTree = "<group>"; };
 		D3819B551799CB4300C93005 /* CCProfessorUploadDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProfessorUploadDataProvider.h; sourceTree = "<group>"; };
 		D3819B561799CB4300C93005 /* CCProfessorUploadDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCProfessorUploadDataProvider.m; sourceTree = "<group>"; };
 		D3819B591799CF3500C93005 /* CCProfessorUploadsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProfessorUploadsCell.h; sourceTree = "<group>"; };
@@ -1840,6 +1858,29 @@
 		D3A3197F177E226C0004C4E8 /* logoLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoLogin.png; sourceTree = "<group>"; };
 		D3A3198A177E3C780004C4E8 /* sideMenuBackGround@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sideMenuBackGround@2x.png"; sourceTree = "<group>"; };
 		D3A3198B177E3C790004C4E8 /* sideMenuBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sideMenuBackGround.png; sourceTree = "<group>"; };
+		D3B7320817A687B900F35C4D /* CCAppInviteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAppInviteCell.h; sourceTree = "<group>"; };
+		D3B7320917A687B900F35C4D /* CCAppInviteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAppInviteCell.m; sourceTree = "<group>"; };
+		D3B7320D17A714EB00F35C4D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D3B7320F17A714F200F35C4D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D3B7321C17A7F12B00F35C4D /* CCWalletController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWalletController.h; sourceTree = "<group>"; };
+		D3B7321D17A7F12B00F35C4D /* CCWalletController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWalletController.m; sourceTree = "<group>"; };
+		D3B7321E17A7F12B00F35C4D /* CCWalletController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCWalletController.xib; sourceTree = "<group>"; };
+		D3B7322117A7F29800F35C4D /* CCWalletTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWalletTransaction.h; sourceTree = "<group>"; };
+		D3B7322217A7F29800F35C4D /* CCWalletTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWalletTransaction.m; sourceTree = "<group>"; };
+		D3B7322417A80D0300F35C4D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		D3B7322D17A8F10900F35C4D /* CCStoreObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStoreObserver.h; sourceTree = "<group>"; };
+		D3B7322E17A8F10900F35C4D /* CCStoreObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStoreObserver.m; sourceTree = "<group>"; };
+		D3B7323017A902E600F35C4D /* CCPaymentAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPaymentAPIProvider.h; sourceTree = "<group>"; };
+		D3B7323117A902E600F35C4D /* CCPaymentAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPaymentAPIProvider.m; sourceTree = "<group>"; };
+		D3B7323317A9030300F35C4D /* CCPaymentAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCPaymentAPIProviderProtocol.h; sourceTree = "<group>"; };
+		D3B7323417A9160600F35C4D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		D3B7323617A9162A00F35C4D /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		D3B7323817A9164000F35C4D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D3B7323A17A9165900F35C4D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D3B7323C17A9167300F35C4D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		D3B7323E17A91E1900F35C4D /* CCPaymentService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPaymentService.h; sourceTree = "<group>"; };
+		D3B7323F17A91E1900F35C4D /* CCPaymentService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPaymentService.m; sourceTree = "<group>"; };
+		D3B7324117A91EEE00F35C4D /* CCPaymentServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCPaymentServiceProtocol.h; sourceTree = "<group>"; };
 		D3DF8C2E17900AAA00B072B7 /* CCMessageDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessageDetailsController.h; sourceTree = "<group>"; };
 		D3DF8C2F17900AAA00B072B7 /* CCMessageDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessageDetailsController.m; sourceTree = "<group>"; };
 		D3DF8C3017900AAA00B072B7 /* CCMessageDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMessageDetailsController.xib; sourceTree = "<group>"; };
@@ -1851,6 +1892,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3B7323D17A9167300F35C4D /* CoreMedia.framework in Frameworks */,
+				D3B7323B17A9165A00F35C4D /* AudioToolbox.framework in Frameworks */,
+				D3B7323917A9164000F35C4D /* AVFoundation.framework in Frameworks */,
+				D3B7323717A9162A00F35C4D /* CoreVideo.framework in Frameworks */,
+				D3B7323517A9160600F35C4D /* OpenGLES.framework in Frameworks */,
+				D3B7322517A80D0300F35C4D /* libxml2.dylib in Frameworks */,
+				D3B7321017A714F200F35C4D /* StoreKit.framework in Frameworks */,
+				D3B7320E17A714EB00F35C4D /* Security.framework in Frameworks */,
 				7070444F17A68E6F00AC0FDE /* Social.framework in Frameworks */,
 				70061CA017A270EA00848F62 /* AddressBook.framework in Frameworks */,
 				703DA4F0178C3D3C00464DD3 /* MapKit.framework in Frameworks */,
@@ -3155,6 +3204,7 @@
 				700F9435178ED4A800A6FBBA /* UserProfileController */,
 				D37122DD17A1444300A7DF04 /* VoteResultScreenControler */,
 				D37122CF17A13FB500A7DF04 /* VoteScreenController */,
+				AA28DEA671E3A741FB280D09 /* WalletController */,
 				70A29CDC178778AB001BC8DD /* WelcomeController */,
 			);
 			path = Controllers;
@@ -3508,8 +3558,6 @@
 		70A29CDC178778AB001BC8DD /* WelcomeController */ = {
 			isa = PBXGroup;
 			children = (
-				70A29CDD178778AB001BC8DD /* CCWelcomeController.h */,
-				70A29CDE178778AB001BC8DD /* CCWelcomeController.m */,
 				70A29CDF178778AB001BC8DD /* CCWelcomeController.xib */,
 			);
 			path = WelcomeController;
@@ -3541,6 +3589,7 @@
 				70FDD653179D55E000871727 /* GroupmatesDataDrovider */,
 				70F42A78178D5A1C00E763F3 /* GroupsDataProvider */,
 				70A29D6D17877B94001BC8DD /* ImageSortingDataProvider */,
+				AA28D80E46C593F397076F50 /* InboxAppInvitesDataProvider */,
 				703DA4DE178B457200464DD3 /* LocationsDataProvider */,
 				70A29D7017877B94001BC8DD /* MarketNotesProvider */,
 				70A29D7317877B94001BC8DD /* MarketStuffDataProvider */,
@@ -3711,6 +3760,8 @@
 			children = (
 				70A29D7D17877B94001BC8DD /* CCMyStuffDataProvider.h */,
 				70A29D7E17877B94001BC8DD /* CCMyStuffDataProvider.m */,
+				AA28D9F1DF3A0CA781D3DF0A /* CCWelcomeController.m */,
+				AA28D2BD62E018B18ED55F0F /* CCWelcomeController.h */,
 			);
 			path = MyStuffDataProvider;
 			sourceTree = "<group>";
@@ -3757,7 +3808,9 @@
 				70B2D04F17940245001B0C2C /* API */,
 				70A29DC617877CB4001BC8DD /* Defines */,
 				70A29DD717877CB4001BC8DD /* Models */,
+				AA28DA0AB7220DD812E6FE5B /* PaymentManager */,
 				70A29E0A17877CB5001BC8DD /* RestKitConfigurator */,
+				AA28DCE8039CA6905AB0E502 /* StoreObserver */,
 				70A29E0D17877CB6001BC8DD /* TypesDefinition */,
 				70A29E0F17877CB6001BC8DD /* UploadManager */,
 			);
@@ -4192,6 +4245,7 @@
 				70B2D06C17940245001B0C2C /* MarketAPIProvider */,
 				70B2D07017940245001B0C2C /* MessagesAPIProvider */,
 				70B2D07417940245001B0C2C /* NotesAPIProvider */,
+				AA28D1B9165CE7EEB54F8D91 /* PaymentAPIProvider */,
 				D342BD0A179933A50034E88C /* ProfessorUploadsAPIProvider */,
 				70B2D0B417942F01001B0C2C /* QuestionsAPIProvider */,
 				7021ED2617A92BFA00D45B51 /* ReportsAPIProvider */,
@@ -4493,6 +4547,7 @@
 				70B2D18F17944894001B0C2C /* ViewStuffInMarketTransaction */,
 				D37122D517A1406900A7DF04 /* VoteResultsScreenTransaction */,
 				D37122D617A1406900A7DF04 /* VoteScreenTransaction */,
+				AA28DC680404C4F59AAB90C6 /* WalletTransaction */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -5064,6 +5119,7 @@
 				70061CC517A284A400848F62 /* AddressBookRecordCell */,
 				D38532E8179DD9F50075F870 /* AnnouncementCell */,
 				7012AC8E17955F95002DA5E9 /* AnswerCell */,
+				D3B7320717A687A300F35C4D /* AppInviteCell */,
 				70B2D1D417944E39001B0C2C /* BaseCell */,
 				70B2D1D717944E39001B0C2C /* CityCell */,
 				70B2D1DA17944E39001B0C2C /* ClassCell */,
@@ -5584,6 +5640,11 @@
 		A784C58C173A865E005E4921 = {
 			isa = PBXGroup;
 			children = (
+				D3B7323C17A9167300F35C4D /* CoreMedia.framework */,
+				D3B7323A17A9165900F35C4D /* AudioToolbox.framework */,
+				D3B7323817A9164000F35C4D /* AVFoundation.framework */,
+				D3B7323617A9162A00F35C4D /* CoreVideo.framework */,
+				D3B7323417A9160600F35C4D /* OpenGLES.framework */,
 				D39496911785C37300C39A7E /* Default@2x.png */,
 				D394968F1785C36C00C39A7E /* Default-568h@2x.png */,
 				D394968D1785C36800C39A7E /* Default.png */,
@@ -5611,6 +5672,9 @@
 		A784C597173A865E005E4921 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3B7322417A80D0300F35C4D /* libxml2.dylib */,
+				D3B7320F17A714F200F35C4D /* StoreKit.framework */,
+				D3B7320D17A714EB00F35C4D /* Security.framework */,
 				7070444D17A68E6000AC0FDE /* Social.framework */,
 				7070444A17A688BE00AC0FDE /* Twitter.framework */,
 				70061C9E17A270DC00848F62 /* AddressBook.framework */,
@@ -5715,6 +5779,63 @@
 				A7D53A3D1758A85700FE9FCD /* MHTabBarIndicator@2x.png */,
 			);
 			path = MHTabBarController;
+			sourceTree = "<group>";
+		};
+		AA28D1B9165CE7EEB54F8D91 /* PaymentAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7323317A9030300F35C4D /* CCPaymentAPIProviderProtocol.h */,
+				D3B7323017A902E600F35C4D /* CCPaymentAPIProvider.h */,
+				D3B7323117A902E600F35C4D /* CCPaymentAPIProvider.m */,
+			);
+			path = PaymentAPIProvider;
+			sourceTree = "<group>";
+		};
+		AA28D80E46C593F397076F50 /* InboxAppInvitesDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3751C7817A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.h */,
+				D3751C7917A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.m */,
+			);
+			path = InboxAppInvitesDataProvider;
+			sourceTree = "<group>";
+		};
+		AA28DA0AB7220DD812E6FE5B /* PaymentManager */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7323E17A91E1900F35C4D /* CCPaymentService.h */,
+				D3B7323F17A91E1900F35C4D /* CCPaymentService.m */,
+				D3B7324117A91EEE00F35C4D /* CCPaymentServiceProtocol.h */,
+			);
+			path = PaymentManager;
+			sourceTree = "<group>";
+		};
+		AA28DC680404C4F59AAB90C6 /* WalletTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7322117A7F29800F35C4D /* CCWalletTransaction.h */,
+				D3B7322217A7F29800F35C4D /* CCWalletTransaction.m */,
+			);
+			path = WalletTransaction;
+			sourceTree = "<group>";
+		};
+		AA28DCE8039CA6905AB0E502 /* StoreObserver */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7322D17A8F10900F35C4D /* CCStoreObserver.h */,
+				D3B7322E17A8F10900F35C4D /* CCStoreObserver.m */,
+			);
+			path = StoreObserver;
+			sourceTree = "<group>";
+		};
+		AA28DEA671E3A741FB280D09 /* WalletController */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7321C17A7F12B00F35C4D /* CCWalletController.h */,
+				D3B7321D17A7F12B00F35C4D /* CCWalletController.m */,
+				D3B7321E17A7F12B00F35C4D /* CCWalletController.xib */,
+			);
+			path = WalletController;
 			sourceTree = "<group>";
 		};
 		D3039B75176880F800621CAC /* Icons */ = {
@@ -6236,6 +6357,15 @@
 			path = AppearanceConfigurator;
 			sourceTree = "<group>";
 		};
+		D3B7320717A687A300F35C4D /* AppInviteCell */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7320817A687B900F35C4D /* CCAppInviteCell.h */,
+				D3B7320917A687B900F35C4D /* CCAppInviteCell.m */,
+			);
+			path = AppInviteCell;
+			sourceTree = "<group>";
+		};
 		D3DF8C2D17900A7200B072B7 /* MessageDetailsController */ = {
 			isa = PBXGroup;
 			children = (
@@ -6620,6 +6750,7 @@
 				70061CDC17A29AA700848F62 /* CCAddressBookHeader.xib in Resources */,
 				7070446C17A7C11800AC0FDE /* arrow_button.png in Resources */,
 				7070446D17A7C11800AC0FDE /* arrow_button@2x.png in Resources */,
+				D3B7322017A7F12B00F35C4D /* CCWalletController.xib in Resources */,
 				7021ECD117A7D78B00D45B51 /* apns.rb in Resources */,
 				7021ECDB17A7F3C000D45B51 /* groupmessage_button_active.png in Resources */,
 				7021ECDC17A7F3C000D45B51 /* groupmessage_button_active@2x.png in Resources */,
@@ -6720,7 +6851,6 @@
 				70A29D25178778AB001BC8DD /* CCStuffDetailsController.m in Sources */,
 				70A29D27178778AB001BC8DD /* MHTabBarController.m in Sources */,
 				70A29D29178778AB001BC8DD /* CCUploadImagesController.m in Sources */,
-				70A29D2B178778AB001BC8DD /* CCWelcomeController.m in Sources */,
 				70A29D8B17877B94001BC8DD /* CCBaseDataProvider.m in Sources */,
 				70A29D8C17877B94001BC8DD /* CCCitiesDataProvider.m in Sources */,
 				70A29D8D17877B94001BC8DD /* CCClassesDataProvider.m in Sources */,
@@ -7016,11 +7146,19 @@
 				70061CDA17A29A7B00848F62 /* CCAddressBookHeader.m in Sources */,
 				70061CE017A2CC4A00848F62 /* CCAppInvite.m in Sources */,
 				70061CE417A2D09E00848F62 /* CCAppInviteApiProvider.m in Sources */,
+				AA28DC920F53DB90D22BE7E7 /* CCWelcomeController.m in Sources */,
+				D3751C7A17A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.m in Sources */,
+				D3B7320A17A687B900F35C4D /* CCAppInviteCell.m in Sources */,
 				7070444917A67F3100AC0FDE /* CCFacebookRequestParseHelper.m in Sources */,
 				7070445317A6B39300AC0FDE /* CCPushNotificationsService.m in Sources */,
 				7070445B17A6B46C00AC0FDE /* CCBadgeHelper.m in Sources */,
 				7070446017A6B51C00AC0FDE /* CCPush.m in Sources */,
 				7070446917A7B9CF00AC0FDE /* CCNavigationHelper.m in Sources */,
+				D3B7321F17A7F12B00F35C4D /* CCWalletController.m in Sources */,
+				D3B7322317A7F29800F35C4D /* CCWalletTransaction.m in Sources */,
+				D3B7322F17A8F10900F35C4D /* CCStoreObserver.m in Sources */,
+				D3B7323217A902E600F35C4D /* CCPaymentAPIProvider.m in Sources */,
+				D3B7324017A91E1900F35C4D /* CCPaymentService.m in Sources */,
 				7021ECD517A7E87D00D45B51 /* CCDeviceTokenAPIProvider.m in Sources */,
 				7021ED0417A7F9EA00D45B51 /* CCPrivateMessageProcessingBehaviour.m in Sources */,
 				7021ED0817A7FA2A00D45B51 /* CCAnnouncementPushProcessingBehaviour.m in Sources */,
@@ -7119,8 +7257,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yury Grinenko (95C5U2X82L)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yury Grinenko (95C5U2X82L)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Корзун Владислав (EB7SWK4X6M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Корзун Владислав (EB7SWK4X6M)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusJungle/CampusJungle-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CampusJungle/CampusJungle-Info.plist";
@@ -7152,7 +7290,11 @@
 					Security,
 					"-weak_framework",
 					Social,
+					"-lstdc++",
+					"-ObjC",
 					"-all_load",
+					"-lPayPalMobile",
+					"-lstdc++",
 				);
 				PRODUCT_NAME = CampusJungle;
 				PROVISIONING_PROFILE = "80D997AC-E2FC-48AA-A3EB-BB7CADE4469A";
@@ -7196,7 +7338,11 @@
 					Security,
 					"-weak_framework",
 					Social,
+					"-lstdc++",
+					"-ObjC",
 					"-all_load",
+					"-lPayPalMobile",
+					"-lstdc++",
 				);
 				PRODUCT_NAME = CampusJungle;
 				WRAPPER_EXTENSION = app;

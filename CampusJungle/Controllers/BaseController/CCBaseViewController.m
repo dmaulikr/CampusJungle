@@ -10,7 +10,7 @@
 #import <TestFlightSDK/TestFlight.h>
 #import "CCReportPostingService.h"
 
-@interface CCBaseViewController ()
+@interface CCBaseViewController ()<UIAppearanceContainer>
 
 @end
 

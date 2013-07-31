@@ -20,6 +20,7 @@ PODS:
   - NSData+Base64 (1.0.0)
   - OAuthCore (0.0.1):
     - NSData+Base64
+  - PayPal-iOS-SDK (1.0.4)
   - RestKit (0.20.1):
     - RestKit/Core
   - RestKit/Core (0.20.1):
@@ -64,6 +65,7 @@ DEPENDENCIES:
   - JSONKit
   - MACircleProgressIndicator (~> 1.0.0)
   - MBProgressHUD
+  - PayPal-iOS-SDK
   - RestKit
   - SHOmniAuthTwitter
   - SVProgressHUD-Fork
@@ -94,6 +96,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: 9b55a90566fb5d07df0602f6fd9fa04510ad5d52
   NSData+Base64: 36c4e5b6479259c1a68866ccd2a8dd385c9744f7
   OAuthCore: 4164eec5e28c68f794953446e68f91054ffe570c
+  PayPal-iOS-SDK: 99ea7da171a723a31ec6a14131a3372d1fe92d3a
   RestKit: ceca63bc91172098c710c469facd2560e8a59164
   SHOmniAuth: 7e554527fb5d5bd6296439347f009a77677d088d
   SHOmniAuthTwitter: c653744abf7a1a2e888389b12d33449a973ce526

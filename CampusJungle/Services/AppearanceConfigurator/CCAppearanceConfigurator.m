@@ -7,6 +7,7 @@
 //
 
 #import "CCAppearanceConfigurator.h"
+#import "CCBaseViewController.h"
 
 @implementation CCAppearanceConfigurator
 
@@ -22,7 +23,7 @@
 
 + (void)setDefaultTextFieldsAppearance
 {
-    [[UITextField appearance] setBackground:nil];
+    [[UITextField appearance] setBackground:[UIImage imageNamed:@"clear"]];
     [[UITextField appearance] setBorderStyle:UITextBorderStyleRoundedRect];
 }
 
@@ -30,7 +31,7 @@
 {
     [[UISearchBar appearance] setTintColor:[UIColor brownColor]];
     
-    [[UITextField appearance] setBackground:[[UIImage imageNamed:@"input_field"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)]];
+    [[UITextField appearanceWhenContainedIn:[CCBaseViewController class], nil] setBackground:[[UIImage imageNamed:@"input_field"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)]];
     [[UITextField appearance] setBorderStyle:UITextBorderStyleNone];
 
 }

@@ -78,15 +78,15 @@
 
 - (void)setUpFeedBack
 {
-    self.currentEngagementScale.value = [self.feedback.current_statistics[@"question1"] floatValue];
-    self.currentIntrestingScale.value = [self.feedback.current_statistics[@"question2"] floatValue];
-    self.currentHandoutsScale.value = [self.feedback.current_statistics[@"question3"] floatValue];
-    self.currentSpeedScale.value = [self.feedback.current_statistics[@"question4"] floatValue];
+    self.currentEngagementScale.value = [self.feedback.currentStatistic[@"question1"] floatValue];
+    self.currentIntrestingScale.value = [self.feedback.currentStatistic[@"question2"] floatValue];
+    self.currentHandoutsScale.value = [self.feedback.currentStatistic[@"question3"] floatValue];
+    self.currentSpeedScale.value = [self.feedback.currentStatistic[@"question4"] floatValue];
     
-    self.totalEngagementScale.value = [self.feedback.total_statistics[@"question1"] floatValue];
-    self.totalIntrestingScale.value = [self.feedback.total_statistics[@"question2"] floatValue];
-    self.totalHandoutsScale.value = [self.feedback.total_statistics[@"question3"] floatValue];
-    self.totalSpeedScale.value = [self.feedback.total_statistics[@"question4"] floatValue];
+    self.totalEngagementScale.value = [self.feedback.totalStatistic[@"question1"] floatValue];
+    self.totalIntrestingScale.value = [self.feedback.totalStatistic[@"question2"] floatValue];
+    self.totalHandoutsScale.value = [self.feedback.totalStatistic[@"question3"] floatValue];
+    self.totalSpeedScale.value = [self.feedback.totalStatistic[@"question4"] floatValue];
 }
 
 - (IBAction)didPressRecalculateButton

@@ -60,8 +60,8 @@
 + (NSDictionary *)responseMappingDictionary
 {
     return @{
-             @"total_statistics" : @"total_statistics",
-             @"current_statistics" : @"current_statistics",
+             @"total_statistics" : @"totalStatistic",
+             @"current_statistics" : @"currentStatistic",
              @"klass_id" : @"classID"
              };
 }

@@ -13,6 +13,7 @@
 #import "CCMyNotesTransaction.h"
 #import "CCMyStuffTransaction.h"
 #import "CCSearchCollegeTransaction.h"
+#import "CCWalletTransaction.h"
 
 @implementation CCUserProfileTransaction
 
@@ -21,6 +22,9 @@
     NSParameterAssert(self.menuController);
     CCUserProfile *userProfileController = [CCUserProfile new];
 
+    CCWalletTransaction *walletTransaction = [CCWalletTransaction new];
+    userProfileController.walletTransaction = walletTransaction;
+    
     CCLogoutTransaction *logoutTransaction = [CCLogoutTransaction new];
     logoutTransaction.rootMenuController = self.menuController;
     
@@ -34,6 +38,8 @@
     userProfileController.arrayOfEducations = [NSMutableArray new];
     userProfileController.sidePanelController = self.menuController;
     UINavigationController *centralNavigation = [[UINavigationController alloc] initWithRootViewController:userProfileController];
+    
+    walletTransaction.navigation = centralNavigation;
     
     self.menuController.centerPanel = centralNavigation;
  

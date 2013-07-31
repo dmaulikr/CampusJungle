@@ -102,6 +102,8 @@ const struct CCAPIDefines CCAPIDefines = {
     .sendAppInvites = @"/api/app_invites",
     .resendAppInvite = @"/api/app_invites/%@",
     .deleteAppInvite = @"/api/app_invites/%@",
+    .payUsingPayPal = @"/api/%@",
+    .payUsingInAppPurchases = @"/api/%@",
     .linkDevice = @"/api/users/me/devices",
     .unlinkDevice = @"/api/users/me/devices",
     .loadQuestion = @"/api/questions/%@",
@@ -297,4 +299,9 @@ const struct CCPushNotificationTypes CCPushNotificationTypes = {
     .forum = @"Forum",
     .question = @"Question",
     .coupon = @"Coupon",
+};
+
+const struct CCPayPalDefines CCPayPalDefines = {
+    .clientID = @"AUxTVhCEXoIo1xu4UAvWPiGXSJD0T-aKNy0A3hfKGbQ9_xpDy1n1VNSuAFgr",
+    .reciverEmail = @"v.korzun-facilitator@111min.com",
 };
