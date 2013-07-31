@@ -24,6 +24,7 @@
 @property (nonatomic, strong) CCClassmatesToInviteInGroupDataProvider *dataProvider;
 @property (nonatomic, strong) id<CCGroupInvitesApiProviderProtocol> ioc_groupInvitesApiProvider;
 @property (nonatomic, strong) CCGroup *group;
+@property (nonatomic, assign) BOOL textViewWillBecomeFirstResponder;
 
 @end
 
@@ -111,6 +112,22 @@
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
     textView.text = [CCStringHelper trimSpacesFromString:textView.text];
+}
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
+{
+    self.textViewWillBecomeFirstResponder = YES;
+    __weak CCGroupInviteViewController *weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        sleep(1.0);
+        weakSelf.textViewWillBecomeFirstResponder = NO;
+    });
+    return YES;
+}
+
+- (BOOL)textViewShouldEndEditing:(UITextView *)textView
+{
+    return !self.textViewWillBecomeFirstResponder;
 }
 
 @end
