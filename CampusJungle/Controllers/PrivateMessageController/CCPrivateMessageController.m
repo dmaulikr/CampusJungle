@@ -33,7 +33,7 @@
 
 - (void)sendButtonDidPressed:(id)sender
 {
-    if (self.inputField.text.length > 0){
+    if (self.inputField.text.length > 0) {
         [self.ioc_messageAPIProvider sendMessage:self.inputField.text
                                           toUser:self.recipient.uid
                                   successHandler:^(id result) {

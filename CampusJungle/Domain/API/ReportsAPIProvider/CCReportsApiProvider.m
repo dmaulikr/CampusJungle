@@ -7,6 +7,7 @@
 //
 
 #import "CCReportsApiProvider.h"
+#import "CCReport.h"
 
 @implementation CCReportsApiProvider
 
@@ -15,7 +16,8 @@
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [self setAuthorizationToken];
     NSString *path = CCAPIDefines.checkAvailablityOfReport;
-    [objectManager getObject:report path:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    NSDictionary *params = @{@"item_id" : report.itemId, @"item_type" : report.itemType};
+    [objectManager getObject:nil path:path parameters:params success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         successHandler(mappingResult);
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         errorHandler(error);

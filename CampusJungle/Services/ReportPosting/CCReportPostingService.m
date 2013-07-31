@@ -47,9 +47,10 @@ typedef void(^ReportAvailableSuccessBlock)();
 
 - (void)postReportIfAvailable
 {
-    __weak CCReportPostingService *weakSelf = self;
+    CCReport *report = self.report;
+    id<CCTransactionWithObject> sendReportTransaction = self.sendReportTransaction;
     [self checkIfAvailableReportWithSuccessBlock:^{
-        [weakSelf.sendReportTransaction performWithObject:weakSelf.report];
+        [sendReportTransaction performWithObject:report];
     }];
 }
 
