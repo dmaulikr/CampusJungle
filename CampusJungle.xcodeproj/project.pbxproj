@@ -1928,6 +1928,8 @@
 		D3B7325F17AA68C900F35C4D /* CCSettingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCSettingController.xib; sourceTree = "<group>"; };
 		D3B7326217AA6A9200F35C4D /* CCSettingsTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSettingsTransaction.h; sourceTree = "<group>"; };
 		D3B7326317AA6A9200F35C4D /* CCSettingsTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSettingsTransaction.m; sourceTree = "<group>"; };
+		D3B7326B17AA8B2F00F35C4D /* CCStoreObserverProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCStoreObserverProtocol.h; sourceTree = "<group>"; };
+		D3B7326C17AA8B5000F35C4D /* CCStoreObserverDelegateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCStoreObserverDelegateProtocol.h; sourceTree = "<group>"; };
 		D3DF8C2E17900AAA00B072B7 /* CCMessageDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessageDetailsController.h; sourceTree = "<group>"; };
 		D3DF8C2F17900AAA00B072B7 /* CCMessageDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessageDetailsController.m; sourceTree = "<group>"; };
 		D3DF8C3017900AAA00B072B7 /* CCMessageDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMessageDetailsController.xib; sourceTree = "<group>"; };
@@ -5980,6 +5982,8 @@
 			children = (
 				D3B7322D17A8F10900F35C4D /* CCStoreObserver.h */,
 				D3B7322E17A8F10900F35C4D /* CCStoreObserver.m */,
+				D3B7326B17AA8B2F00F35C4D /* CCStoreObserverProtocol.h */,
+				D3B7326C17AA8B5000F35C4D /* CCStoreObserverDelegateProtocol.h */,
 			);
 			path = StoreObserver;
 			sourceTree = "<group>";

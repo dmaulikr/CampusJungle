@@ -9,13 +9,22 @@
 #import "CCStoreObserver.h"
 #import "CCPaymentServiceProtocol.h"
 
-@interface CCStoreObserver()
+@interface CCStoreObserver()<SKProductsRequestDelegate>
 
 @property (nonatomic, strong) id <CCPaymentServiceProtocol> ioc_paymentManager;
+@property (nonatomic, strong) NSArray *products;
 
 @end
 
 @implementation CCStoreObserver
+
+- (id)init
+{
+    if(self = [super init]){
+        [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
+    }
+    return self;
+}
 
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions
 {
@@ -59,5 +68,28 @@
     [self.ioc_paymentManager addInAppPurchasePayment:transactionInfo];
     [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
 }
+
+- (void)loadProducts
+{
+    if(self.products){
+        [self.delegate productsDidLoaded:self.products];
+    } else {
+        [self requestProductData];
+    }
+}
+
+- (void)requestProductData
+{
+    SKProductsRequest *request= [[SKProductsRequest alloc] initWithProductIdentifiers:
+                                 [NSSet setWithArray: @[]]];
+    request.delegate = self;
+    [request start];
+}
+- (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
+{
+    self.products = response.products;
+    [self.delegate productsDidLoaded: self.products];
+}
+
 
 @end

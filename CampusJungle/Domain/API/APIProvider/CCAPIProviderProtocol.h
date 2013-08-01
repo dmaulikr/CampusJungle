@@ -52,4 +52,6 @@
 
 - (void)loadUsers:(NSString *)query pageNumber:(NSNumber *)pageNumber successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 
+- (void)postInviter:(NSString *)inviterID successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
+
 @end

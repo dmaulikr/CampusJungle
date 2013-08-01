@@ -113,6 +113,7 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *checkAvailablityOfReport;
     __unsafe_unretained NSString *postReport;
     __unsafe_unretained NSString *users;
+    __unsafe_unretained NSString *acceptInvite;
 } CCAPIDefines;
 
 extern const struct CCUserDefines {

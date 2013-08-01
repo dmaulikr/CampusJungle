@@ -19,12 +19,12 @@
 #define secondPriceLevel 2
 #define thirdPriceLevel 3
 
-@interface CCWalletController ()<PayPalPaymentDelegate, SKProductsRequestDelegate, CCStoreObserverDelegate>
+@interface CCWalletController ()<PayPalPaymentDelegate, CCStoreObserverDelegateProtocol>
 
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
 @property (nonatomic, weak) IBOutlet UILabel *walletLabel;
 @property (nonatomic, strong) NSArray *products;
-@property (nonatomic, strong) CCStoreObserver *observer;
+@property (nonatomic, strong) id <CCStoreObserverProtocol> ioc_stroreObserver;
 @property (nonatomic, strong) id <CCPaymentServiceProtocol> ioc_paymentManager;
 @property (nonatomic, strong) SKProductsRequest *request;
 
@@ -38,33 +38,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self.ioc_stroreObserver setDelegate:self];
     self.title = @"Wallet";
     if ([SKPaymentQueue canMakePayments]) {
-        // [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        [self requestProductData];    
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [self.ioc_stroreObserver loadProducts]; 
     } else {
     
     }
-    self.observer = [CCStoreObserver new];
-    self.observer.delegate = self;
-    [[SKPaymentQueue defaultQueue] addTransactionObserver:self.observer];
-    
     float dollars = [[[self.ioc_userSession currentUser] wallet] floatValue]/100;
     self.walletLabel.text = [NSString stringWithFormat:@"$%0.2lf",dollars];
 }
 
-- (void)requestProductData
+- (void)productsDidLoaded:(NSArray *)arrayOfProducts
 {
-    SKProductsRequest *request= [[SKProductsRequest alloc] initWithProductIdentifiers:
-                                 [NSSet setWithArray: @[]]];
-    request.delegate = self;
-    self.request = request;
-    [request start];
-}
-- (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
-{
-    self.products = response.products;
+    self.products = arrayOfProducts;
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 }
 

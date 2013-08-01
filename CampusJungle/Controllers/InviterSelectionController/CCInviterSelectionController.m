@@ -9,10 +9,13 @@
 #import "CCInviterSelectionController.h"
 #import "CCUserDataProvider.h"
 #import "CCUserCell.h"
+#import "CCAPIProviderProtocol.h"
+#import "CCStandardErrorHandler.h"
 
 @interface CCInviterSelectionController ()
 
 @property (nonatomic, strong) CCUserDataProvider *dataProvider;
+@property (nonatomic, strong) id <CCAPIProviderProtocol> ioc_apiProvider;
 
 @end
 
@@ -33,9 +36,17 @@
     [self.tutorialTransaction perform];
 }
 
-- (void)didSelectedCellWithObject:(id)cellObject
+- (void)didSelectedCellWithObject:(CCUser *)cellObject
 {
-    [self.tutorialTransaction perform];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self.ioc_apiProvider postInviter:cellObject.uid successHandler:^(RKMappingResult *result) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        [self.tutorialTransaction perform];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    }];
+    
 }
 
 @end

@@ -115,6 +115,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .checkAvailablityOfReport = @"/api/reports/availablity_of_report",
     .postReport = @"/api/reports",
     .users = @"/api/users",
+    .acceptInvite = @"/api/app_invites/users/accept",
 };
 
 const struct CCUserDefines CCUserDefines = {

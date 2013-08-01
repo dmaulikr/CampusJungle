@@ -401,7 +401,17 @@
      }];
     }
     [self loadItemsWithParams:params path:CCAPIDefines.users successHandler:successHandler errorHandler:errorHandler];
+}
 
+- (void)postInviter:(NSString *)inviterID successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    [self setAuthorizationToken];
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [objectManager putObject:nil path:CCAPIDefines.acceptInvite parameters:@{@"user_id" : inviterID} success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        successHandler(nil);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        errorHandler(error);
+    }];
 }
 
 @end

@@ -116,7 +116,7 @@
         } errorHandler:^(NSError *error) {
             [CCStandardErrorHandler showErrorWithError:error];
         }];
-    }];
+    } text:@"Are you sure you want to buy it for download?"];
 }
 
 - (IBAction)buyForDownloadButtonPressed
@@ -131,20 +131,20 @@
             } errorHandler:^(NSError *error) {
                 [CCStandardErrorHandler showErrorWithError:error];
             }];
-        }];
+        } text:@"Are you sure you want to buy it for download?"];
     } else {
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error
                                            message: CCAlertsMessages.setEmailFirst];
     }
 }
 
-- (void)showConfirmWithSuccess:(successHandler)success
+- (void)showConfirmWithSuccess:(successHandler)success text:(NSString *)text
 {    
     GIAlertButton *noButton = [GIAlertButton cancelButtonWithTitle:CCAlertsButtons.noButton action:nil];
     GIAlertButton *yesButton = [GIAlertButton buttonWithTitle:CCAlertsButtons.yesButton action:success];
     
     GIAlert *alert = [GIAlert alertWithTitle:CCAlertsMessages.confirmation
-                                     message:CCAlertsMessages.confirmationMessage
+                                     message:text
                                      buttons:@[noButton, yesButton,]];
     [alert show];
 }
