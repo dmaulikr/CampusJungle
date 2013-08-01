@@ -279,6 +279,9 @@
 		7021ED3E17A94BC800D45B51 /* CCReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ED3C17A94BC800D45B51 /* CCReportViewController.m */; };
 		7021ED3F17A94BC800D45B51 /* CCReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7021ED3D17A94BC800D45B51 /* CCReportViewController.xib */; };
 		7021ED4317A9694E00D45B51 /* CCModelsTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ED4217A9694E00D45B51 /* CCModelsTypes.m */; };
+		7021ED4617AA511800D45B51 /* CCGroupInvitePushProcessingBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ED4517AA511800D45B51 /* CCGroupInvitePushProcessingBehaviour.m */; };
+		7021ED4A17AA51EC00D45B51 /* CCInboxNavigationTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ED4917AA51EC00D45B51 /* CCInboxNavigationTransaction.m */; };
+		7021ED4E17AA59DD00D45B51 /* CCMoneyOutTransactionPushProcessingBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ED4D17AA59DD00D45B51 /* CCMoneyOutTransactionPushProcessingBehaviour.m */; };
 		7022F4991786C7100055221C /* SelectionBackGround@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE2178454C200E54EFC /* SelectionBackGround@2x.png */; };
 		7022F49A1786C7110055221C /* SelectionBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE3178454C200E54EFC /* SelectionBackGround.png */; };
 		70256325179FD71100B48AA2 /* CCGroupInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70256323179FD71100B48AA2 /* CCGroupInviteViewController.m */; };
@@ -1101,6 +1104,12 @@
 		7021ED3D17A94BC800D45B51 /* CCReportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCReportViewController.xib; sourceTree = "<group>"; };
 		7021ED4117A9694E00D45B51 /* CCModelsTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCModelsTypes.h; sourceTree = "<group>"; };
 		7021ED4217A9694E00D45B51 /* CCModelsTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCModelsTypes.m; sourceTree = "<group>"; };
+		7021ED4417AA511800D45B51 /* CCGroupInvitePushProcessingBehaviour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupInvitePushProcessingBehaviour.h; sourceTree = "<group>"; };
+		7021ED4517AA511800D45B51 /* CCGroupInvitePushProcessingBehaviour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupInvitePushProcessingBehaviour.m; sourceTree = "<group>"; };
+		7021ED4817AA51EC00D45B51 /* CCInboxNavigationTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCInboxNavigationTransaction.h; sourceTree = "<group>"; };
+		7021ED4917AA51EC00D45B51 /* CCInboxNavigationTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCInboxNavigationTransaction.m; sourceTree = "<group>"; };
+		7021ED4C17AA59DD00D45B51 /* CCMoneyOutTransactionPushProcessingBehaviour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMoneyOutTransactionPushProcessingBehaviour.h; sourceTree = "<group>"; };
+		7021ED4D17AA59DD00D45B51 /* CCMoneyOutTransactionPushProcessingBehaviour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMoneyOutTransactionPushProcessingBehaviour.m; sourceTree = "<group>"; };
 		70256322179FD71100B48AA2 /* CCGroupInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupInviteViewController.h; sourceTree = "<group>"; };
 		70256323179FD71100B48AA2 /* CCGroupInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupInviteViewController.m; sourceTree = "<group>"; };
 		70256324179FD71100B48AA2 /* CCGroupInviteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupInviteViewController.xib; sourceTree = "<group>"; };
@@ -2758,6 +2767,7 @@
 				7021ED2B17A933C300D45B51 /* GroupInvite */,
 				7021ECFD17A7F9EA00D45B51 /* GroupMessage */,
 				7021ECFE17A7F9EA00D45B51 /* Location */,
+				7021ED4B17AA59C900D45B51 /* MoneyOutTransaction */,
 				7021ECFF17A7F9EA00D45B51 /* PrivateMessage */,
 				7021ED0217A7F9EA00D45B51 /* ProfessorsUpload */,
 				7021ED0317A7F9EA00D45B51 /* Question */,
@@ -2878,6 +2888,8 @@
 		7021ED2B17A933C300D45B51 /* GroupInvite */ = {
 			isa = PBXGroup;
 			children = (
+				7021ED4417AA511800D45B51 /* CCGroupInvitePushProcessingBehaviour.h */,
+				7021ED4517AA511800D45B51 /* CCGroupInvitePushProcessingBehaviour.m */,
 			);
 			path = GroupInvite;
 			sourceTree = "<group>";
@@ -2926,6 +2938,24 @@
 				7021ED4217A9694E00D45B51 /* CCModelsTypes.m */,
 			);
 			path = ModelsTypes;
+			sourceTree = "<group>";
+		};
+		7021ED4717AA51E300D45B51 /* InboxNavigationTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				7021ED4817AA51EC00D45B51 /* CCInboxNavigationTransaction.h */,
+				7021ED4917AA51EC00D45B51 /* CCInboxNavigationTransaction.m */,
+			);
+			path = InboxNavigationTransaction;
+			sourceTree = "<group>";
+		};
+		7021ED4B17AA59C900D45B51 /* MoneyOutTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				7021ED4C17AA59DD00D45B51 /* CCMoneyOutTransactionPushProcessingBehaviour.h */,
+				7021ED4D17AA59DD00D45B51 /* CCMoneyOutTransactionPushProcessingBehaviour.m */,
+			);
+			path = MoneyOutTransaction;
 			sourceTree = "<group>";
 		};
 		70256321179FD70200B48AA2 /* GroupInviteController */ = {
@@ -4521,6 +4551,7 @@
 				70FDD62A179D283900871727 /* GroupTransaction */,
 				70B2D12217944894001B0C2C /* ImagesForNotesUploadingScreenTransaction */,
 				70B2D12517944894001B0C2C /* ImagesSortingTransaction */,
+				7021ED4717AA51E300D45B51 /* InboxNavigationTransaction */,
 				70B2D12817944894001B0C2C /* InboxTransaction */,
 				70B2D12B17944894001B0C2C /* InitialUserInfoTransaction */,
 				70B2D13117944894001B0C2C /* LoginScreenTransaction */,
@@ -7190,6 +7221,9 @@
 				7021ED3817A940DC00D45B51 /* CCSendReportTransaction.m in Sources */,
 				7021ED3E17A94BC800D45B51 /* CCReportViewController.m in Sources */,
 				7021ED4317A9694E00D45B51 /* CCModelsTypes.m in Sources */,
+				7021ED4617AA511800D45B51 /* CCGroupInvitePushProcessingBehaviour.m in Sources */,
+				7021ED4A17AA51EC00D45B51 /* CCInboxNavigationTransaction.m in Sources */,
+				7021ED4E17AA59DD00D45B51 /* CCMoneyOutTransactionPushProcessingBehaviour.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7271,8 +7305,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Корзун Владислав (EB7SWK4X6M)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Корзун Владислав (EB7SWK4X6M)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yury Grinenko (95C5U2X82L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yury Grinenko (95C5U2X82L)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusJungle/CampusJungle-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CampusJungle/CampusJungle-Info.plist";

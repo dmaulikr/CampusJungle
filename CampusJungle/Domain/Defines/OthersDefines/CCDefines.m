@@ -299,6 +299,8 @@ const struct CCPushNotificationTypes CCPushNotificationTypes = {
     .forum = @"Forum",
     .question = @"Question",
     .coupon = @"Coupon",
+    .groupInvite = @"GroupInvite",
+    .moneyOutTransaction = @"MoneyOut",
 };
 
 const struct CCPayPalDefines CCPayPalDefines = {

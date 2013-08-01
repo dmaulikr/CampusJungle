@@ -98,6 +98,12 @@
     }
 }
 
+- (void)selectTabAtIndex:(NSInteger)tabIndex
+{
+    [self.mainSegmentedControl setSelectedSegmentIndex:tabIndex];
+    [self segmentedControlDidChangeValue:self.mainSegmentedControl];
+}
+
 - (void)setAppInvitesConfiguration
 {
     if (!self.appInviteDataProvider) {
