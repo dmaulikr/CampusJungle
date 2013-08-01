@@ -86,7 +86,7 @@
 
 - (IBAction)avatarButtonDidPressed
 {
-
+    [self.view endEditing:YES];
     [self.avatarSelectionSheet showWithTitle:@"Select Photo" takePhotoButtonTitle:nil takeFromGalleryButtonTitle:nil];
 }
 
@@ -111,6 +111,16 @@
 {
     self.avatar.image = avatar;
     self.isAvatarChanged = YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if(textField == self.emailField){
+        [self done];
+    } else {
+        [[self.view viewWithTag:textField.tag+1] becomeFirstResponder];
+        return YES;
+    }
+    return YES;
 }
 
 @end

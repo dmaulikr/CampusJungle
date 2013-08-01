@@ -736,6 +736,19 @@
 		D3B7323B17A9165A00F35C4D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7323A17A9165900F35C4D /* AudioToolbox.framework */; };
 		D3B7323D17A9167300F35C4D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7323C17A9167300F35C4D /* CoreMedia.framework */; };
 		D3B7324017A91E1900F35C4D /* CCPaymentService.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7323F17A91E1900F35C4D /* CCPaymentService.m */; };
+		D3B7324517A959CB00F35C4D /* CCInviterSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7324317A959CB00F35C4D /* CCInviterSelectionController.m */; };
+		D3B7324617A959CB00F35C4D /* CCInviterSelectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B7324417A959CB00F35C4D /* CCInviterSelectionController.xib */; };
+		D3B7324917A965DE00F35C4D /* CCInviterTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7324817A965DE00F35C4D /* CCInviterTransaction.m */; };
+		D3B7324C17A96B4B00F35C4D /* CCUserDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7324B17A96B4B00F35C4D /* CCUserDataProvider.m */; };
+		D3B7324F17AA3D8300F35C4D /* CCTutorialTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7324E17AA3D8300F35C4D /* CCTutorialTransaction.m */; };
+		D3B7325317AA3F2800F35C4D /* CCTutorialController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7325117AA3F2800F35C4D /* CCTutorialController.m */; };
+		D3B7325417AA3F2800F35C4D /* CCTutorialController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B7325217AA3F2800F35C4D /* CCTutorialController.xib */; };
+		D3B7325717AA44DF00F35C4D /* CCTutorialDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7325617AA44DF00F35C4D /* CCTutorialDataProvider.m */; };
+		D3B7325917AA470900F35C4D /* CCTutorialCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B7325817AA470900F35C4D /* CCTutorialCell.xib */; };
+		D3B7325C17AA472800F35C4D /* CCTutorialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7325B17AA472800F35C4D /* CCTutorialCell.m */; };
+		D3B7326017AA68C900F35C4D /* CCSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7325E17AA68C900F35C4D /* CCSettingController.m */; };
+		D3B7326117AA68C900F35C4D /* CCSettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B7325F17AA68C900F35C4D /* CCSettingController.xib */; };
+		D3B7326417AA6A9200F35C4D /* CCSettingsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7326317AA6A9200F35C4D /* CCSettingsTransaction.m */; };
 		D3DF8C3117900AAA00B072B7 /* CCMessageDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DF8C2F17900AAA00B072B7 /* CCMessageDetailsController.m */; };
 		D3DF8C3217900AAA00B072B7 /* CCMessageDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3DF8C3017900AAA00B072B7 /* CCMessageDetailsController.xib */; };
 /* End PBXBuildFile section */
@@ -1893,6 +1906,28 @@
 		D3B7323E17A91E1900F35C4D /* CCPaymentService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPaymentService.h; sourceTree = "<group>"; };
 		D3B7323F17A91E1900F35C4D /* CCPaymentService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPaymentService.m; sourceTree = "<group>"; };
 		D3B7324117A91EEE00F35C4D /* CCPaymentServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCPaymentServiceProtocol.h; sourceTree = "<group>"; };
+		D3B7324217A959CB00F35C4D /* CCInviterSelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCInviterSelectionController.h; sourceTree = "<group>"; };
+		D3B7324317A959CB00F35C4D /* CCInviterSelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCInviterSelectionController.m; sourceTree = "<group>"; };
+		D3B7324417A959CB00F35C4D /* CCInviterSelectionController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCInviterSelectionController.xib; sourceTree = "<group>"; };
+		D3B7324717A965DE00F35C4D /* CCInviterTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCInviterTransaction.h; sourceTree = "<group>"; };
+		D3B7324817A965DE00F35C4D /* CCInviterTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCInviterTransaction.m; sourceTree = "<group>"; };
+		D3B7324A17A96B4B00F35C4D /* CCUserDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUserDataProvider.h; sourceTree = "<group>"; };
+		D3B7324B17A96B4B00F35C4D /* CCUserDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUserDataProvider.m; sourceTree = "<group>"; };
+		D3B7324D17AA3D8300F35C4D /* CCTutorialTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTutorialTransaction.h; sourceTree = "<group>"; };
+		D3B7324E17AA3D8300F35C4D /* CCTutorialTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTutorialTransaction.m; sourceTree = "<group>"; };
+		D3B7325017AA3F2800F35C4D /* CCTutorialController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTutorialController.h; sourceTree = "<group>"; };
+		D3B7325117AA3F2800F35C4D /* CCTutorialController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTutorialController.m; sourceTree = "<group>"; };
+		D3B7325217AA3F2800F35C4D /* CCTutorialController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCTutorialController.xib; sourceTree = "<group>"; };
+		D3B7325517AA44DF00F35C4D /* CCTutorialDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTutorialDataProvider.h; sourceTree = "<group>"; };
+		D3B7325617AA44DF00F35C4D /* CCTutorialDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTutorialDataProvider.m; sourceTree = "<group>"; };
+		D3B7325817AA470900F35C4D /* CCTutorialCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCTutorialCell.xib; sourceTree = "<group>"; };
+		D3B7325A17AA472800F35C4D /* CCTutorialCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTutorialCell.h; sourceTree = "<group>"; };
+		D3B7325B17AA472800F35C4D /* CCTutorialCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTutorialCell.m; sourceTree = "<group>"; };
+		D3B7325D17AA68C900F35C4D /* CCSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSettingController.h; sourceTree = "<group>"; };
+		D3B7325E17AA68C900F35C4D /* CCSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSettingController.m; sourceTree = "<group>"; };
+		D3B7325F17AA68C900F35C4D /* CCSettingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCSettingController.xib; sourceTree = "<group>"; };
+		D3B7326217AA6A9200F35C4D /* CCSettingsTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSettingsTransaction.h; sourceTree = "<group>"; };
+		D3B7326317AA6A9200F35C4D /* CCSettingsTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSettingsTransaction.m; sourceTree = "<group>"; };
 		D3DF8C2E17900AAA00B072B7 /* CCMessageDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessageDetailsController.h; sourceTree = "<group>"; };
 		D3DF8C2F17900AAA00B072B7 /* CCMessageDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessageDetailsController.m; sourceTree = "<group>"; };
 		D3DF8C3017900AAA00B072B7 /* CCMessageDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMessageDetailsController.xib; sourceTree = "<group>"; };
@@ -3211,6 +3246,7 @@
 				70A29C86178778AB001BC8DD /* ImageSortingForStuffController */,
 				70A29C89178778AB001BC8DD /* InboxConroller */,
 				D342BD3117997FBB0034E88C /* InitialUserInfoController */,
+				AA28D590316087F8670247C7 /* InviterSelectionController */,
 				70A29C91178778AB001BC8DD /* ListOfNotesInMarketController */,
 				70A29C95178778AB001BC8DD /* ListOfStuffInMarketController */,
 				703DA4FA178C6A4800464DD3 /* LocationsController */,
@@ -3233,6 +3269,7 @@
 				70B2D0C017944325001B0C2C /* ReviewController */,
 				700F9456178EFA2400A6FBBA /* SelectClassmatesController */,
 				700F9457178EFA3500A6FBBA /* SelectGroupsController */,
+				AA28DDB47F3DD2DFE3C8578E /* SettingsController */,
 				70A29CBF178778AB001BC8DD /* SignUpController */,
 				70A29CBC178778AB001BC8DD /* SideBarController */,
 				70A29CC3178778AB001BC8DD /* StateSelectionController */,
@@ -3240,6 +3277,7 @@
 				70A29CCE178778AB001BC8DD /* StuffDetailsController */,
 				70A29CD2178778AB001BC8DD /* TabBarController */,
 				701254661797F7940085247A /* TimetableController */,
+				AA28DB87D1C332288D519CE4 /* TutorialController */,
 				70A29CC7178778AB001BC8DD /* TableBasedController */,
 				D342BCD61796B1380034E88C /* UpdateClassController */,
 				70A29CD8178778AB001BC8DD /* UploadImagesController */,
@@ -3247,7 +3285,6 @@
 				D37122DD17A1444300A7DF04 /* VoteResultScreenControler */,
 				D37122CF17A13FB500A7DF04 /* VoteScreenController */,
 				AA28DEA671E3A741FB280D09 /* WalletController */,
-				70A29CDC178778AB001BC8DD /* WelcomeController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -3602,7 +3639,8 @@
 			children = (
 				70A29CDF178778AB001BC8DD /* CCWelcomeController.xib */,
 			);
-			path = WelcomeController;
+			name = WelcomeController;
+			path = Controllers/WelcomeController;
 			sourceTree = "<group>";
 		};
 		70A29D4B17877B94001BC8DD /* DataProviders */ = {
@@ -3648,7 +3686,9 @@
 				D3949738178EC45000C39A7E /* ReviewsDataProvider */,
 				70A29D8517877B94001BC8DD /* StatesDataProvider */,
 				D3A2A2F11793F2D400516818 /* TimeTableDataProvider */,
+				AA28D05D92E1B29B0ABFBA7C /* TutorialDataProvider */,
 				70A29D8817877B94001BC8DD /* UploadImagesDataProvider */,
+				AA28D85BD926F350A858B95E /* UsersDataProvider */,
 			);
 			path = DataProviders;
 			sourceTree = "<group>";
@@ -4553,6 +4593,7 @@
 				70B2D12517944894001B0C2C /* ImagesSortingTransaction */,
 				7021ED4717AA51E300D45B51 /* InboxNavigationTransaction */,
 				70B2D12817944894001B0C2C /* InboxTransaction */,
+				AA28DEBCB80DB0D2BC4E22C5 /* InviterTransaction */,
 				70B2D12B17944894001B0C2C /* InitialUserInfoTransaction */,
 				70B2D13117944894001B0C2C /* LoginScreenTransaction */,
 				70B2D13417944894001B0C2C /* LoginTransaction */,
@@ -4577,14 +4618,17 @@
 				70B2D16D17944894001B0C2C /* SelectUserGroupsTransaction */,
 				70256327179FD74900B48AA2 /* SendGroupInviteTransaction */,
 				7021ED3517A940CB00D45B51 /* SendReportTransaction */,
+				AA28D0EDC6D0E2DFA64F513F /* SettingsTransaction */,
 				70B2D17017944894001B0C2C /* ShowLocationsTransaction */,
 				70B2D17317944894001B0C2C /* ShowNotesForClassTransaction */,
 				70B2D17617944894001B0C2C /* SignupTransaction */,
 				70B2D17917944894001B0C2C /* StateSelectionScreenTransaction */,
 				70B2D17C17944894001B0C2C /* StuffDetailsTransaction */,
+				70B2D12E17944894001B0C2C /* UserProfileTransaction */,
 				70B2D17F17944894001B0C2C /* SuccessSendMessageTransaction */,
 				7012546C179803500085247A /* TimetableTransaction */,
 				70B2D18217944894001B0C2C /* TransactionHelpers */,
+				AA28D70DB0EFE05BE51A67AE /* TutorialTransaction */,
 				70B2D18617944894001B0C2C /* TransactionProtocols */,
 				70B2D18917944894001B0C2C /* ViewLatestNotesTransaction */,
 				70B2D18C17944894001B0C2C /* ViewNotesTransaction */,
@@ -4836,7 +4880,6 @@
 			children = (
 				70B2D12C17944894001B0C2C /* CCInitialUserProfileTransaction.h */,
 				70B2D12D17944894001B0C2C /* CCInitialUserProfileTransaction.m */,
-				70B2D12E17944894001B0C2C /* UserProfileTransaction */,
 			);
 			path = InitialUserInfoTransaction;
 			sourceTree = "<group>";
@@ -4847,7 +4890,8 @@
 				70B2D12F17944894001B0C2C /* CCUserProfileTransaction.h */,
 				70B2D13017944894001B0C2C /* CCUserProfileTransaction.m */,
 			);
-			path = UserProfileTransaction;
+			name = UserProfileTransaction;
+			path = InitialUserInfoTransaction/UserProfileTransaction;
 			sourceTree = "<group>";
 		};
 		70B2D13117944894001B0C2C /* LoginScreenTransaction */ = {
@@ -5193,6 +5237,7 @@
 				70B2D22717944E39001B0C2C /* StuffCell */,
 				70B2D22B17944E39001B0C2C /* TableCellProtocol */,
 				D359E6101794624A00869D6C /* TimeTableCell */,
+				AA28D70E7F11EA9CECE601D9 /* TutorialCell */,
 				70B2D22D17944E39001B0C2C /* UserCell */,
 				70B2D23117944E39001B0C2C /* UserSelectionCell */,
 			);
@@ -5744,6 +5789,7 @@
 				A787C72D17536F8400824DEA /* AppDelegate */,
 				70C0FCB2178484C7005EF95E /* Categories */,
 				70A29C34178778AB001BC8DD /* Controllers */,
+				70A29CDC178778AB001BC8DD /* WelcomeController */,
 				70A29D4B17877B94001BC8DD /* DataProviders */,
 				7012540F1796F38A0085247A /* DataSources */,
 				70061CAB17A27F1200848F62 /* Delegates */,
@@ -5825,6 +5871,24 @@
 			path = MHTabBarController;
 			sourceTree = "<group>";
 		};
+		AA28D05D92E1B29B0ABFBA7C /* TutorialDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7325517AA44DF00F35C4D /* CCTutorialDataProvider.h */,
+				D3B7325617AA44DF00F35C4D /* CCTutorialDataProvider.m */,
+			);
+			path = TutorialDataProvider;
+			sourceTree = "<group>";
+		};
+		AA28D0EDC6D0E2DFA64F513F /* SettingsTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7326217AA6A9200F35C4D /* CCSettingsTransaction.h */,
+				D3B7326317AA6A9200F35C4D /* CCSettingsTransaction.m */,
+			);
+			path = SettingsTransaction;
+			sourceTree = "<group>";
+		};
 		AA28D1B9165CE7EEB54F8D91 /* PaymentAPIProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -5833,6 +5897,35 @@
 				D3B7323117A902E600F35C4D /* CCPaymentAPIProvider.m */,
 			);
 			path = PaymentAPIProvider;
+			sourceTree = "<group>";
+		};
+		AA28D590316087F8670247C7 /* InviterSelectionController */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7324217A959CB00F35C4D /* CCInviterSelectionController.h */,
+				D3B7324317A959CB00F35C4D /* CCInviterSelectionController.m */,
+				D3B7324417A959CB00F35C4D /* CCInviterSelectionController.xib */,
+			);
+			path = InviterSelectionController;
+			sourceTree = "<group>";
+		};
+		AA28D70DB0EFE05BE51A67AE /* TutorialTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7324D17AA3D8300F35C4D /* CCTutorialTransaction.h */,
+				D3B7324E17AA3D8300F35C4D /* CCTutorialTransaction.m */,
+			);
+			path = TutorialTransaction;
+			sourceTree = "<group>";
+		};
+		AA28D70E7F11EA9CECE601D9 /* TutorialCell */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7325817AA470900F35C4D /* CCTutorialCell.xib */,
+				D3B7325A17AA472800F35C4D /* CCTutorialCell.h */,
+				D3B7325B17AA472800F35C4D /* CCTutorialCell.m */,
+			);
+			path = TutorialCell;
 			sourceTree = "<group>";
 		};
 		AA28D80E46C593F397076F50 /* InboxAppInvitesDataProvider */ = {
@@ -5844,6 +5937,15 @@
 			path = InboxAppInvitesDataProvider;
 			sourceTree = "<group>";
 		};
+		AA28D85BD926F350A858B95E /* UsersDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7324A17A96B4B00F35C4D /* CCUserDataProvider.h */,
+				D3B7324B17A96B4B00F35C4D /* CCUserDataProvider.m */,
+			);
+			path = UsersDataProvider;
+			sourceTree = "<group>";
+		};
 		AA28DA0AB7220DD812E6FE5B /* PaymentManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -5852,6 +5954,16 @@
 				D3B7324117A91EEE00F35C4D /* CCPaymentServiceProtocol.h */,
 			);
 			path = PaymentManager;
+			sourceTree = "<group>";
+		};
+		AA28DB87D1C332288D519CE4 /* TutorialController */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7325017AA3F2800F35C4D /* CCTutorialController.h */,
+				D3B7325117AA3F2800F35C4D /* CCTutorialController.m */,
+				D3B7325217AA3F2800F35C4D /* CCTutorialController.xib */,
+			);
+			path = TutorialController;
 			sourceTree = "<group>";
 		};
 		AA28DC680404C4F59AAB90C6 /* WalletTransaction */ = {
@@ -5872,6 +5984,16 @@
 			path = StoreObserver;
 			sourceTree = "<group>";
 		};
+		AA28DDB47F3DD2DFE3C8578E /* SettingsController */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7325D17AA68C900F35C4D /* CCSettingController.h */,
+				D3B7325E17AA68C900F35C4D /* CCSettingController.m */,
+				D3B7325F17AA68C900F35C4D /* CCSettingController.xib */,
+			);
+			path = SettingsController;
+			sourceTree = "<group>";
+		};
 		AA28DEA671E3A741FB280D09 /* WalletController */ = {
 			isa = PBXGroup;
 			children = (
@@ -5880,6 +6002,15 @@
 				D3B7321E17A7F12B00F35C4D /* CCWalletController.xib */,
 			);
 			path = WalletController;
+			sourceTree = "<group>";
+		};
+		AA28DEBCB80DB0D2BC4E22C5 /* InviterTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7324717A965DE00F35C4D /* CCInviterTransaction.h */,
+				D3B7324817A965DE00F35C4D /* CCInviterTransaction.m */,
+			);
+			path = InviterTransaction;
 			sourceTree = "<group>";
 		};
 		D3039B75176880F800621CAC /* Icons */ = {
@@ -6808,7 +6939,11 @@
 				7021ECF217A7F40F00D45B51 /* ahead_arrow@2x.png in Resources */,
 				7021ECF517A7F42000D45B51 /* back_arrow.png in Resources */,
 				7021ECF617A7F42000D45B51 /* back_arrow@2x.png in Resources */,
+				D3B7324617A959CB00F35C4D /* CCInviterSelectionController.xib in Resources */,
+				D3B7325417AA3F2800F35C4D /* CCTutorialController.xib in Resources */,
+				D3B7325917AA470900F35C4D /* CCTutorialCell.xib in Resources */,
 				7021ED3F17A94BC800D45B51 /* CCReportViewController.xib in Resources */,
+				D3B7326117AA68C900F35C4D /* CCSettingController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7219,11 +7354,20 @@
 				7021ED2F17A938DD00D45B51 /* CCReport.m in Sources */,
 				7021ED3317A93F9400D45B51 /* CCReportPostingService.m in Sources */,
 				7021ED3817A940DC00D45B51 /* CCSendReportTransaction.m in Sources */,
+				D3B7324517A959CB00F35C4D /* CCInviterSelectionController.m in Sources */,
+				D3B7324917A965DE00F35C4D /* CCInviterTransaction.m in Sources */,
+				D3B7324C17A96B4B00F35C4D /* CCUserDataProvider.m in Sources */,
+				D3B7324F17AA3D8300F35C4D /* CCTutorialTransaction.m in Sources */,
+				D3B7325317AA3F2800F35C4D /* CCTutorialController.m in Sources */,
+				D3B7325717AA44DF00F35C4D /* CCTutorialDataProvider.m in Sources */,
+				D3B7325C17AA472800F35C4D /* CCTutorialCell.m in Sources */,
 				7021ED3E17A94BC800D45B51 /* CCReportViewController.m in Sources */,
 				7021ED4317A9694E00D45B51 /* CCModelsTypes.m in Sources */,
 				7021ED4617AA511800D45B51 /* CCGroupInvitePushProcessingBehaviour.m in Sources */,
 				7021ED4A17AA51EC00D45B51 /* CCInboxNavigationTransaction.m in Sources */,
 				7021ED4E17AA59DD00D45B51 /* CCMoneyOutTransactionPushProcessingBehaviour.m in Sources */,
+				D3B7326017AA68C900F35C4D /* CCSettingController.m in Sources */,
+				D3B7326417AA6A9200F35C4D /* CCSettingsTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

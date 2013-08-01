@@ -19,6 +19,7 @@
     [self configurateButtons];
     [self configurateSegmentController];
     [self configurateProgressHuds];
+    [self configurateSwitch];
 }
 
 + (void)setDefaultTextFieldsAppearance
@@ -93,6 +94,12 @@
                                   UITextAttributeTextColor : [UIColor colorWithRed:240./255 green:218./255 blue:161./255 alpha:1],
                             UITextAttributeTextShadowColor : [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.0],
      } forState:UIControlStateNormal];
+}
+
++ (void)configurateSwitch
+{
+    [[UISwitch appearance] setTintColor:[UIColor colorWithRed:240./255 green:218./255 blue:161./255 alpha:1]];
+    [[UISwitch appearance] setOnTintColor:[UIColor colorWithRed:0 green:170./255 blue:0 alpha:1]];
 }
 
 + (void)configurateProgressHuds

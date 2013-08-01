@@ -16,9 +16,12 @@
 @property (nonatomic, strong) CCBaseDataProvider *dataProvider;
 @property (nonatomic, strong) CCPhoto *firstPhoto;
 @property (nonatomic, strong) id <CCTransaction> closeTransaction;
+@property (nonatomic, weak) IBOutlet UICollectionView *photoBrowser;
 
 - (IBAction)didSwipeRight;
 - (IBAction)didSwipeLeft;
 - (IBAction)doneButtonDidPressed;
+
+- (void)configCollection:(UICollectionView *)collectionView WithProvider:(CCBaseDataProvider *)provider cellClass:(Class)cellCass;
 
 @end

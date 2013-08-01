@@ -10,6 +10,8 @@
 #import "CCUserProfile.h"
 #import "CCUserProfileTransaction.h"
 #import "CCInitialUserInfoController.h"
+#import "CCInviterTransaction.h"
+#import "CCTutorialTransaction.h"
 
 @implementation CCInitialUserProfileTransaction
 
@@ -18,8 +20,17 @@
     NSParameterAssert(self.loginTransaction);
     NSParameterAssert(self.navigation);
     
+    CCTutorialTransaction *tutorialTransaction = [CCTutorialTransaction new];
+    tutorialTransaction.navigation = self.navigation;
+    tutorialTransaction.loginTransaction = self.loginTransaction;
+    
+    CCInviterTransaction *inviterTransaction = [CCInviterTransaction new];
+    inviterTransaction.navigation = self.navigation;
+    inviterTransaction.tutorialTransaction = tutorialTransaction;
+    
     CCInitialUserInfoController *initialController = [CCInitialUserInfoController new];
-    initialController.loginTrnasaction = self.loginTransaction;
+    
+    initialController.loginTrnasaction = inviterTransaction;
     [self.navigation pushViewController:initialController animated:YES];
 }
 

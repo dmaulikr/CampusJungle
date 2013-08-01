@@ -114,6 +114,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .resetUnwatchedEvents = @"/api/users/me/unwatched_events/reset",
     .checkAvailablityOfReport = @"/api/reports/availablity_of_report",
     .postReport = @"/api/reports",
+    .users = @"/api/users",
 };
 
 const struct CCUserDefines CCUserDefines = {

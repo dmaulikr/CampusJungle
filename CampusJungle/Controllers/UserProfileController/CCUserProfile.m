@@ -48,6 +48,7 @@
 @property (nonatomic, weak) IBOutlet UIButton *changePassButton;
 @property (nonatomic, weak) IBOutlet UIButton *myNotesButton;
 @property (nonatomic, weak) IBOutlet UIButton *mystuffButton;
+@property (nonatomic, weak) IBOutlet UIButton *settingsButton;
 
 @property (nonatomic, weak) IBOutlet UIView *rateContainer;
 @property (nonatomic, strong) DYRateView *rateView;
@@ -69,6 +70,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *walletLabel;
 
 - (IBAction)manageWalletButtonDidPressed;
+- (IBAction)settingsButtonDidPressed;
 
 @end
 
@@ -170,6 +172,10 @@
     self.sideMenuBarButton = self.navigationItem.leftBarButtonItem;
 }
 
+- (IBAction)settingsButtonDidPressed
+{
+    [self.settingsTransaction perform];
+}
 
 - (void)setupTableView
 {
@@ -386,6 +392,7 @@
     self.mystuffButton.alpha = 0;
     self.logoutButton.alpha = 0;
     self.changePassButton.alpha = 0;
+    self.settingsButton.alpha = 0;
     
     self.firstNameTextField.alpha = 1;
     self.lastNameTextField.alpha = 1;
@@ -409,6 +416,7 @@
     self.mystuffButton.alpha = 1;
     self.logoutButton.alpha = 1;
     self.changePassButton.alpha = 1;
+    self.settingsButton.alpha = 1;
     
     self.firstNameTextField.alpha = 0;
     self.lastNameTextField.alpha = 0;
