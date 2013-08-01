@@ -746,6 +746,9 @@
 		D3B7325717AA44DF00F35C4D /* CCTutorialDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7325617AA44DF00F35C4D /* CCTutorialDataProvider.m */; };
 		D3B7325917AA470900F35C4D /* CCTutorialCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B7325817AA470900F35C4D /* CCTutorialCell.xib */; };
 		D3B7325C17AA472800F35C4D /* CCTutorialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7325B17AA472800F35C4D /* CCTutorialCell.m */; };
+		D3B7326017AA68C900F35C4D /* CCSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7325E17AA68C900F35C4D /* CCSettingController.m */; };
+		D3B7326117AA68C900F35C4D /* CCSettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B7325F17AA68C900F35C4D /* CCSettingController.xib */; };
+		D3B7326417AA6A9200F35C4D /* CCSettingsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7326317AA6A9200F35C4D /* CCSettingsTransaction.m */; };
 		D3DF8C3117900AAA00B072B7 /* CCMessageDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DF8C2F17900AAA00B072B7 /* CCMessageDetailsController.m */; };
 		D3DF8C3217900AAA00B072B7 /* CCMessageDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3DF8C3017900AAA00B072B7 /* CCMessageDetailsController.xib */; };
 /* End PBXBuildFile section */
@@ -1920,6 +1923,11 @@
 		D3B7325817AA470900F35C4D /* CCTutorialCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCTutorialCell.xib; sourceTree = "<group>"; };
 		D3B7325A17AA472800F35C4D /* CCTutorialCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTutorialCell.h; sourceTree = "<group>"; };
 		D3B7325B17AA472800F35C4D /* CCTutorialCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTutorialCell.m; sourceTree = "<group>"; };
+		D3B7325D17AA68C900F35C4D /* CCSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSettingController.h; sourceTree = "<group>"; };
+		D3B7325E17AA68C900F35C4D /* CCSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSettingController.m; sourceTree = "<group>"; };
+		D3B7325F17AA68C900F35C4D /* CCSettingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCSettingController.xib; sourceTree = "<group>"; };
+		D3B7326217AA6A9200F35C4D /* CCSettingsTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSettingsTransaction.h; sourceTree = "<group>"; };
+		D3B7326317AA6A9200F35C4D /* CCSettingsTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSettingsTransaction.m; sourceTree = "<group>"; };
 		D3DF8C2E17900AAA00B072B7 /* CCMessageDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessageDetailsController.h; sourceTree = "<group>"; };
 		D3DF8C2F17900AAA00B072B7 /* CCMessageDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessageDetailsController.m; sourceTree = "<group>"; };
 		D3DF8C3017900AAA00B072B7 /* CCMessageDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMessageDetailsController.xib; sourceTree = "<group>"; };
@@ -3261,6 +3269,7 @@
 				70B2D0C017944325001B0C2C /* ReviewController */,
 				700F9456178EFA2400A6FBBA /* SelectClassmatesController */,
 				700F9457178EFA3500A6FBBA /* SelectGroupsController */,
+				AA28DDB47F3DD2DFE3C8578E /* SettingsController */,
 				70A29CBF178778AB001BC8DD /* SignUpController */,
 				70A29CBC178778AB001BC8DD /* SideBarController */,
 				70A29CC3178778AB001BC8DD /* StateSelectionController */,
@@ -3276,7 +3285,6 @@
 				D37122DD17A1444300A7DF04 /* VoteResultScreenControler */,
 				D37122CF17A13FB500A7DF04 /* VoteScreenController */,
 				AA28DEA671E3A741FB280D09 /* WalletController */,
-				70A29CDC178778AB001BC8DD /* WelcomeController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -3631,7 +3639,8 @@
 			children = (
 				70A29CDF178778AB001BC8DD /* CCWelcomeController.xib */,
 			);
-			path = WelcomeController;
+			name = WelcomeController;
+			path = Controllers/WelcomeController;
 			sourceTree = "<group>";
 		};
 		70A29D4B17877B94001BC8DD /* DataProviders */ = {
@@ -4609,6 +4618,7 @@
 				70B2D16D17944894001B0C2C /* SelectUserGroupsTransaction */,
 				70256327179FD74900B48AA2 /* SendGroupInviteTransaction */,
 				7021ED3517A940CB00D45B51 /* SendReportTransaction */,
+				AA28D0EDC6D0E2DFA64F513F /* SettingsTransaction */,
 				70B2D17017944894001B0C2C /* ShowLocationsTransaction */,
 				70B2D17317944894001B0C2C /* ShowNotesForClassTransaction */,
 				70B2D17617944894001B0C2C /* SignupTransaction */,
@@ -5779,6 +5789,7 @@
 				A787C72D17536F8400824DEA /* AppDelegate */,
 				70C0FCB2178484C7005EF95E /* Categories */,
 				70A29C34178778AB001BC8DD /* Controllers */,
+				70A29CDC178778AB001BC8DD /* WelcomeController */,
 				70A29D4B17877B94001BC8DD /* DataProviders */,
 				7012540F1796F38A0085247A /* DataSources */,
 				70061CAB17A27F1200848F62 /* Delegates */,
@@ -5867,6 +5878,15 @@
 				D3B7325617AA44DF00F35C4D /* CCTutorialDataProvider.m */,
 			);
 			path = TutorialDataProvider;
+			sourceTree = "<group>";
+		};
+		AA28D0EDC6D0E2DFA64F513F /* SettingsTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7326217AA6A9200F35C4D /* CCSettingsTransaction.h */,
+				D3B7326317AA6A9200F35C4D /* CCSettingsTransaction.m */,
+			);
+			path = SettingsTransaction;
 			sourceTree = "<group>";
 		};
 		AA28D1B9165CE7EEB54F8D91 /* PaymentAPIProvider */ = {
@@ -5962,6 +5982,16 @@
 				D3B7322E17A8F10900F35C4D /* CCStoreObserver.m */,
 			);
 			path = StoreObserver;
+			sourceTree = "<group>";
+		};
+		AA28DDB47F3DD2DFE3C8578E /* SettingsController */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7325D17AA68C900F35C4D /* CCSettingController.h */,
+				D3B7325E17AA68C900F35C4D /* CCSettingController.m */,
+				D3B7325F17AA68C900F35C4D /* CCSettingController.xib */,
+			);
+			path = SettingsController;
 			sourceTree = "<group>";
 		};
 		AA28DEA671E3A741FB280D09 /* WalletController */ = {
@@ -6913,6 +6943,7 @@
 				D3B7325417AA3F2800F35C4D /* CCTutorialController.xib in Resources */,
 				D3B7325917AA470900F35C4D /* CCTutorialCell.xib in Resources */,
 				7021ED3F17A94BC800D45B51 /* CCReportViewController.xib in Resources */,
+				D3B7326117AA68C900F35C4D /* CCSettingController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7335,6 +7366,8 @@
 				7021ED4617AA511800D45B51 /* CCGroupInvitePushProcessingBehaviour.m in Sources */,
 				7021ED4A17AA51EC00D45B51 /* CCInboxNavigationTransaction.m in Sources */,
 				7021ED4E17AA59DD00D45B51 /* CCMoneyOutTransactionPushProcessingBehaviour.m in Sources */,
+				D3B7326017AA68C900F35C4D /* CCSettingController.m in Sources */,
+				D3B7326417AA6A9200F35C4D /* CCSettingsTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

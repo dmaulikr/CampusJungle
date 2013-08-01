@@ -14,6 +14,7 @@
 #import "CCMyStuffTransaction.h"
 #import "CCSearchCollegeTransaction.h"
 #import "CCWalletTransaction.h"
+#import "CCSettingsTransaction.h"
 
 @implementation CCUserProfileTransaction
 
@@ -43,6 +44,10 @@
     
     self.menuController.centerPanel = centralNavigation;
  
+    CCSettingsTransaction *settingsTransaction = [CCSettingsTransaction new];
+    settingsTransaction.navigation = centralNavigation;
+    userProfileController.settingsTransaction = settingsTransaction;
+    
     CCSearchCollegeTransaction *searchTransaction = [CCSearchCollegeTransaction new];
     searchTransaction.navigation = centralNavigation;
     searchTransaction.arrayOfColleges = userProfileController.arrayOfEducations;
