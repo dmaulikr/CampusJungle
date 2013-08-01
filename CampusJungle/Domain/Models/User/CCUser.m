@@ -172,6 +172,9 @@
     NSString *classmatesToInviteInGroupResponceMappingPath = [NSString stringWithFormat:CCAPIDefines.loadClassmatesToInviteInGroup,@":groupID"];
     RKResponseDescriptor *classmatesToInviteInGroupResponceDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginationClassmatesResponseMapping pathPattern:classmatesToInviteInGroupResponceMappingPath keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
+    RKResponseDescriptor *usersResponceDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginationClassmatesResponseMapping pathPattern:CCAPIDefines.users keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    [objectManager addResponseDescriptor:usersResponceDescriptor];
     [objectManager addResponseDescriptor:classmatesResponseDescriptor];
     [objectManager addResponseDescriptor:userResponceDescriptor];
     [objectManager addResponseDescriptor:groupmatesResponceDescriptor];

@@ -13,8 +13,6 @@
 
 @interface CCPhotoBrowserController () <CCCellSelectionProtocol>
 
-
-@property (nonatomic, weak) IBOutlet UICollectionView *photoBrowser;
 @property (nonatomic, weak) IBOutlet UINavigationItem *navigationBarItem;
 
 @property (nonatomic, strong) CCCommonCollectionDataSource *dataSource;
@@ -28,6 +26,11 @@
 {
     [super viewDidLoad];
     [self addRightNavBarButton];
+    [self configCollectrion];
+}
+
+- (void)configCollectrion
+{
     [self configCollection:self.photoBrowser WithProvider:self.dataProvider cellClass:[CCPhotoCell class]];
 }
 

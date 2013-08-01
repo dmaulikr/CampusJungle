@@ -50,4 +50,6 @@
 
 - (void)loadClassWithId:(NSString *)classId successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 
+- (void)loadUsers:(NSString *)query pageNumber:(NSNumber *)pageNumber successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
+
 @end

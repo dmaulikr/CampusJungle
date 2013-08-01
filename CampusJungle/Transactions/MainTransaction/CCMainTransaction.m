@@ -92,7 +92,6 @@
     sidePanel.blockOnViewDidAppear = ^{
         [__sidePanel presentViewController:navigation animated:NO completion:nil];
     };
-
 }
 
 @end

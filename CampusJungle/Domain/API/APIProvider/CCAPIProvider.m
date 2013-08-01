@@ -392,4 +392,16 @@
     }];
 }
 
+- (void)loadUsers:(NSString *)query pageNumber:(NSNumber *)page successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    NSMutableDictionary *params = @{@"page_number" : page}.mutableCopy;
+    if(query){
+    [params addEntriesFromDictionary: @{
+               @"keywords" : query
+     }];
+    }
+    [self loadItemsWithParams:params path:CCAPIDefines.users successHandler:successHandler errorHandler:errorHandler];
+
+}
+
 @end
