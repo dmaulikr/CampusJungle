@@ -79,6 +79,9 @@
     else if ([pushType isEqualToString:CCPushNotificationTypes.moneyForInvite]) {
         [pushNotification setPushProcessingBehavior:[CCMoneyForInvitePushProcessingBehaviour new]];
     }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.offer]) {
+        [pushNotification setPushProcessingBehavior:[CCOfferPushProcessingBehaviour new]];
+    }
     
     [pushNotification proccessPushNotification];
 }

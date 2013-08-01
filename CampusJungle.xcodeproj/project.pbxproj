@@ -306,6 +306,7 @@
 		703AC7AC17AAFB7800B222F3 /* CCCouponsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AC7AB17AAFB7800B222F3 /* CCCouponsTransaction.m */; };
 		703AC7B017AAFE2500B222F3 /* CCClassFeedbackPushProcessingBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AC7AF17AAFE2500B222F3 /* CCClassFeedbackPushProcessingBehaviour.m */; };
 		703AC7B417AB04C900B222F3 /* CCMoneyForInvitePushProcessingBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AC7B317AB04C900B222F3 /* CCMoneyForInvitePushProcessingBehaviour.m */; };
+		703AC7B817AB065400B222F3 /* CCOfferPushProcessingBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AC7B717AB065400B222F3 /* CCOfferPushProcessingBehaviour.m */; };
 		703DA4DD178B455600464DD3 /* CCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4DC178B455600464DD3 /* CCLocation.m */; };
 		703DA4E2178B457200464DD3 /* CCLocationsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4E0178B457200464DD3 /* CCLocationsDataProvider.m */; };
 		703DA4F0178C3D3C00464DD3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 703DA4EE178C3D3000464DD3 /* MapKit.framework */; };
@@ -1170,6 +1171,8 @@
 		703AC7AF17AAFE2500B222F3 /* CCClassFeedbackPushProcessingBehaviour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassFeedbackPushProcessingBehaviour.m; sourceTree = "<group>"; };
 		703AC7B217AB04C900B222F3 /* CCMoneyForInvitePushProcessingBehaviour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMoneyForInvitePushProcessingBehaviour.h; sourceTree = "<group>"; };
 		703AC7B317AB04C900B222F3 /* CCMoneyForInvitePushProcessingBehaviour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMoneyForInvitePushProcessingBehaviour.m; sourceTree = "<group>"; };
+		703AC7B617AB065400B222F3 /* CCOfferPushProcessingBehaviour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCOfferPushProcessingBehaviour.h; sourceTree = "<group>"; };
+		703AC7B717AB065400B222F3 /* CCOfferPushProcessingBehaviour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCOfferPushProcessingBehaviour.m; sourceTree = "<group>"; };
 		703DA4DB178B455600464DD3 /* CCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocation.h; sourceTree = "<group>"; };
 		703DA4DC178B455600464DD3 /* CCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocation.m; sourceTree = "<group>"; };
 		703DA4DF178B457200464DD3 /* CCLocationsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationsDataProvider.h; sourceTree = "<group>"; };
@@ -2845,6 +2848,7 @@
 				7021ECFE17A7F9EA00D45B51 /* Location */,
 				703AC7B117AB04B600B222F3 /* MoneyForInvite */,
 				7021ED4B17AA59C900D45B51 /* MoneyOutTransaction */,
+				703AC7B517AB063C00B222F3 /* Offer */,
 				7021ECFF17A7F9EA00D45B51 /* PrivateMessage */,
 				7021ED0217A7F9EA00D45B51 /* ProfessorsUpload */,
 				7021ED0317A7F9EA00D45B51 /* Question */,
@@ -3136,6 +3140,15 @@
 				703AC7B317AB04C900B222F3 /* CCMoneyForInvitePushProcessingBehaviour.m */,
 			);
 			path = MoneyForInvite;
+			sourceTree = "<group>";
+		};
+		703AC7B517AB063C00B222F3 /* Offer */ = {
+			isa = PBXGroup;
+			children = (
+				703AC7B617AB065400B222F3 /* CCOfferPushProcessingBehaviour.h */,
+				703AC7B717AB065400B222F3 /* CCOfferPushProcessingBehaviour.m */,
+			);
+			path = Offer;
 			sourceTree = "<group>";
 		};
 		703DA4DA178B455600464DD3 /* Location */ = {
@@ -7464,6 +7477,7 @@
 				703AC7AC17AAFB7800B222F3 /* CCCouponsTransaction.m in Sources */,
 				703AC7B017AAFE2500B222F3 /* CCClassFeedbackPushProcessingBehaviour.m in Sources */,
 				703AC7B417AB04C900B222F3 /* CCMoneyForInvitePushProcessingBehaviour.m in Sources */,
+				703AC7B817AB065400B222F3 /* CCOfferPushProcessingBehaviour.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

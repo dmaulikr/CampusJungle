@@ -305,6 +305,7 @@ const struct CCPushNotificationTypes CCPushNotificationTypes = {
     .moneyOut = @"MoneyOut",
     .classfeedback = @"ClassFeedback",
     .moneyForInvite = @"MoneyForInvite",
+    .offer = @"Offer",
 };
 
 const struct CCPayPalDefines CCPayPalDefines = {
