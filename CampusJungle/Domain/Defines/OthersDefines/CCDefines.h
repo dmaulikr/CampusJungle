@@ -302,7 +302,9 @@ extern const struct CCPushNotificationTypes {
     __unsafe_unretained NSString *question;
     __unsafe_unretained NSString *coupon;
     __unsafe_unretained NSString *groupInvite;
-    __unsafe_unretained NSString *moneyOutTransaction;
+    __unsafe_unretained NSString *moneyOut;
+    __unsafe_unretained NSString *classfeedback;
+    __unsafe_unretained NSString *moneyForInvite;
 } CCPushNotificationTypes;
 
 extern const struct CCPayPalDefines {
