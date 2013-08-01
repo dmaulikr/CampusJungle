@@ -42,11 +42,13 @@
          @"updated_at" : @"updatedDate",
          @"group_name" : @"groupName",
          @"group_description" : @"groupDescription",
-         @"user_first_name" : @"senderFirstName",
-         @"user_last_name" : @"senderLastName",
-         @"user_avatar_retina" : @"senderAvatar",
+         @"user_first_name" : @"userFirstName",
+         @"user_last_name" : @"userLastName",
+         @"user_avatar_retina" : @"userAvatar",
          @"sender_id" : @"senderId",
-         @"recipient_id" : @"recepientId"
+         @"recipient_id" : @"recepientId",
+         @"college_name" : @"collegeName",
+         @"class_name" : @"className",
     };
 }
 

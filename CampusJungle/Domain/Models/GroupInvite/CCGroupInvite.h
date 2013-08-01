@@ -19,9 +19,11 @@
 
 @property (nonatomic, strong) NSString *groupName;
 @property (nonatomic, strong) NSString *groupDescription;
+@property (nonatomic, strong) NSString *className;
+@property (nonatomic, strong) NSString *collegeName;
 
-@property (nonatomic, strong) NSString *senderFirstName;
-@property (nonatomic, strong) NSString *senderLastName;
-@property (nonatomic, strong) NSString *senderAvatar;
+@property (nonatomic, strong) NSString *userFirstName;
+@property (nonatomic, strong) NSString *userLastName;
+@property (nonatomic, strong) NSString *userAvatar;
 
 @end
