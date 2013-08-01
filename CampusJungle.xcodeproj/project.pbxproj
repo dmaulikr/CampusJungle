@@ -293,6 +293,17 @@
 		7025633B17A0058800B48AA2 /* CCGroupInviteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7025633A17A0058800B48AA2 /* CCGroupInviteCell.m */; };
 		7025633F17A0063100B48AA2 /* CCGroupInvite.m in Sources */ = {isa = PBXBuildFile; fileRef = 7025633E17A0063100B48AA2 /* CCGroupInvite.m */; };
 		7025634117A0092600B48AA2 /* CCGroupInviteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7025634017A0092500B48AA2 /* CCGroupInviteCell.xib */; };
+		703AC79717AAF51F00B222F3 /* coupon_icon_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 703AC79317AAF51F00B222F3 /* coupon_icon_active.png */; };
+		703AC79817AAF51F00B222F3 /* coupon_icon_active@2x@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 703AC79417AAF51F00B222F3 /* coupon_icon_active@2x@2x.png */; };
+		703AC79917AAF51F00B222F3 /* coupon_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 703AC79517AAF51F00B222F3 /* coupon_icon.png */; };
+		703AC79A17AAF51F00B222F3 /* coupon_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 703AC79617AAF51F00B222F3 /* coupon_icon@2x.png */; };
+		703AC79F17AAF53B00B222F3 /* report_icon_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 703AC79B17AAF53B00B222F3 /* report_icon_active.png */; };
+		703AC7A017AAF53B00B222F3 /* report_icon_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 703AC79C17AAF53B00B222F3 /* report_icon_active@2x.png */; };
+		703AC7A117AAF53B00B222F3 /* report_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 703AC79D17AAF53B00B222F3 /* report_icon.png */; };
+		703AC7A217AAF53B00B222F3 /* report_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 703AC79E17AAF53B00B222F3 /* report_icon@2x.png */; };
+		703AC7A717AAFACF00B222F3 /* CCCouponsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AC7A517AAFACF00B222F3 /* CCCouponsViewController.m */; };
+		703AC7A817AAFACF00B222F3 /* CCCouponsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703AC7A617AAFACF00B222F3 /* CCCouponsViewController.xib */; };
+		703AC7AC17AAFB7800B222F3 /* CCCouponsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AC7AB17AAFB7800B222F3 /* CCCouponsTransaction.m */; };
 		703DA4DD178B455600464DD3 /* CCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4DC178B455600464DD3 /* CCLocation.m */; };
 		703DA4E2178B457200464DD3 /* CCLocationsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4E0178B457200464DD3 /* CCLocationsDataProvider.m */; };
 		703DA4F0178C3D3C00464DD3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 703DA4EE178C3D3000464DD3 /* MapKit.framework */; };
@@ -1140,6 +1151,19 @@
 		7025633D17A0063100B48AA2 /* CCGroupInvite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupInvite.h; sourceTree = "<group>"; };
 		7025633E17A0063100B48AA2 /* CCGroupInvite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupInvite.m; sourceTree = "<group>"; };
 		7025634017A0092500B48AA2 /* CCGroupInviteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupInviteCell.xib; sourceTree = "<group>"; };
+		703AC79317AAF51F00B222F3 /* coupon_icon_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coupon_icon_active.png; sourceTree = "<group>"; };
+		703AC79417AAF51F00B222F3 /* coupon_icon_active@2x@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coupon_icon_active@2x@2x.png"; sourceTree = "<group>"; };
+		703AC79517AAF51F00B222F3 /* coupon_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coupon_icon.png; sourceTree = "<group>"; };
+		703AC79617AAF51F00B222F3 /* coupon_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coupon_icon@2x.png"; sourceTree = "<group>"; };
+		703AC79B17AAF53B00B222F3 /* report_icon_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = report_icon_active.png; sourceTree = "<group>"; };
+		703AC79C17AAF53B00B222F3 /* report_icon_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "report_icon_active@2x.png"; sourceTree = "<group>"; };
+		703AC79D17AAF53B00B222F3 /* report_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = report_icon.png; sourceTree = "<group>"; };
+		703AC79E17AAF53B00B222F3 /* report_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "report_icon@2x.png"; sourceTree = "<group>"; };
+		703AC7A417AAFACF00B222F3 /* CCCouponsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCouponsViewController.h; sourceTree = "<group>"; };
+		703AC7A517AAFACF00B222F3 /* CCCouponsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCouponsViewController.m; sourceTree = "<group>"; };
+		703AC7A617AAFACF00B222F3 /* CCCouponsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCCouponsViewController.xib; sourceTree = "<group>"; };
+		703AC7AA17AAFB7800B222F3 /* CCCouponsTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCouponsTransaction.h; sourceTree = "<group>"; };
+		703AC7AB17AAFB7800B222F3 /* CCCouponsTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCouponsTransaction.m; sourceTree = "<group>"; };
 		703DA4DB178B455600464DD3 /* CCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocation.h; sourceTree = "<group>"; };
 		703DA4DC178B455600464DD3 /* CCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocation.m; sourceTree = "<group>"; };
 		703DA4DF178B457200464DD3 /* CCLocationsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationsDataProvider.h; sourceTree = "<group>"; };
@@ -2169,6 +2193,10 @@
 				70066B7017993C3200B7A4E7 /* close_button@2x.png */,
 				70066B7117993C3200B7A4E7 /* close_button_active.png */,
 				70066B7217993C3200B7A4E7 /* close_button_active@2x.png */,
+				703AC79317AAF51F00B222F3 /* coupon_icon_active.png */,
+				703AC79417AAF51F00B222F3 /* coupon_icon_active@2x@2x.png */,
+				703AC79517AAF51F00B222F3 /* coupon_icon.png */,
+				703AC79617AAF51F00B222F3 /* coupon_icon@2x.png */,
 				70066B7317993C3200B7A4E7 /* edit_button.png */,
 				70066B7417993C3200B7A4E7 /* edit_button@2x.png */,
 				70066B7517993C3200B7A4E7 /* edit_class_button.png */,
@@ -2237,6 +2265,10 @@
 				70066BA817993C3200B7A4E7 /* prof_upload_button_active@2x.png */,
 				70066BA917993C3200B7A4E7 /* remove_icon.png */,
 				70066BAA17993C3200B7A4E7 /* remove_icon@2x.png */,
+				703AC79B17AAF53B00B222F3 /* report_icon_active.png */,
+				703AC79C17AAF53B00B222F3 /* report_icon_active@2x.png */,
+				703AC79D17AAF53B00B222F3 /* report_icon.png */,
+				703AC79E17AAF53B00B222F3 /* report_icon@2x.png */,
 				70066BAB17993C3200B7A4E7 /* segment_bar_left.png */,
 				70066BAC17993C3200B7A4E7 /* segment_bar_left@2x.png */,
 				70066BAD17993C3200B7A4E7 /* segment_bar_left_active.png */,
@@ -3061,6 +3093,25 @@
 			path = GroupInvite;
 			sourceTree = "<group>";
 		};
+		703AC7A317AAFAB400B222F3 /* CouponsController */ = {
+			isa = PBXGroup;
+			children = (
+				703AC7A417AAFACF00B222F3 /* CCCouponsViewController.h */,
+				703AC7A517AAFACF00B222F3 /* CCCouponsViewController.m */,
+				703AC7A617AAFACF00B222F3 /* CCCouponsViewController.xib */,
+			);
+			path = CouponsController;
+			sourceTree = "<group>";
+		};
+		703AC7A917AAFB6400B222F3 /* CouponsTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				703AC7AA17AAFB7800B222F3 /* CCCouponsTransaction.h */,
+				703AC7AB17AAFB7800B222F3 /* CCCouponsTransaction.m */,
+			);
+			path = CouponsTransaction;
+			sourceTree = "<group>";
+		};
 		703DA4DA178B455600464DD3 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -3232,6 +3283,7 @@
 				70A29C4C178778AB001BC8DD /* CollegeSelectionController */,
 				70A29C50178778AB001BC8DD /* CollegesListController */,
 				701254411796F5DD0085247A /* CommentsController */,
+				703AC7A317AAFAB400B222F3 /* CouponsController */,
 				70A29C54178778AB001BC8DD /* CreateClassController */,
 				70A29C58178778AB001BC8DD /* CreateNoteController */,
 				70A29C73178778AB001BC8DD /* DropboxImagesSelectionController */,
@@ -4579,6 +4631,7 @@
 				70B2D10417944894001B0C2C /* CloseBrowserTransaction */,
 				70B2D10717944894001B0C2C /* CollegeSelectionTransaction */,
 				7012544D1796F9590085247A /* CommentsTransaction */,
+				703AC7A917AAFB6400B222F3 /* CouponsTransaction */,
 				70B2D10A17944894001B0C2C /* CreateNotesTransaction */,
 				70B2D10D17944894001B0C2C /* CreateStuffTransaction */,
 				70B2D11017944894001B0C2C /* DropboxFileSelectionTransaction */,
@@ -6948,6 +7001,15 @@
 				D3B7325917AA470900F35C4D /* CCTutorialCell.xib in Resources */,
 				7021ED3F17A94BC800D45B51 /* CCReportViewController.xib in Resources */,
 				D3B7326117AA68C900F35C4D /* CCSettingController.xib in Resources */,
+				703AC79717AAF51F00B222F3 /* coupon_icon_active.png in Resources */,
+				703AC79817AAF51F00B222F3 /* coupon_icon_active@2x@2x.png in Resources */,
+				703AC79917AAF51F00B222F3 /* coupon_icon.png in Resources */,
+				703AC79A17AAF51F00B222F3 /* coupon_icon@2x.png in Resources */,
+				703AC79F17AAF53B00B222F3 /* report_icon_active.png in Resources */,
+				703AC7A017AAF53B00B222F3 /* report_icon_active@2x.png in Resources */,
+				703AC7A117AAF53B00B222F3 /* report_icon.png in Resources */,
+				703AC7A217AAF53B00B222F3 /* report_icon@2x.png in Resources */,
+				703AC7A817AAFACF00B222F3 /* CCCouponsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7372,6 +7434,8 @@
 				7021ED4E17AA59DD00D45B51 /* CCMoneyOutTransactionPushProcessingBehaviour.m in Sources */,
 				D3B7326017AA68C900F35C4D /* CCSettingController.m in Sources */,
 				D3B7326417AA6A9200F35C4D /* CCSettingsTransaction.m in Sources */,
+				703AC7A717AAFACF00B222F3 /* CCCouponsViewController.m in Sources */,
+				703AC7AC17AAFB7800B222F3 /* CCCouponsTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
