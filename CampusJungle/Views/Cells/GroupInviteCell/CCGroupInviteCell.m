@@ -12,8 +12,8 @@
 #import "CCDateFormatterHelper.h"
 #import "CCViewPositioningHelper.h"
 
-static const NSInteger kMinCellHeight = 176;
-static const NSInteger kTextlabelOriginY = 88;
+static const NSInteger kMinCellHeight = 230;
+static const NSInteger kTextlabelOriginY = 141;
 static const NSInteger kDefaultTextLabelWidth = 245;
 static const NSInteger kBottomSpace = 60;
 
@@ -23,6 +23,8 @@ static const NSInteger kBottomSpace = 60;
 @property (nonatomic, weak) IBOutlet UILabel *inviteTextLabel;
 @property (nonatomic, weak) IBOutlet UILabel *groupNameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *userNameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *classNameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *collegeNameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *updatedDateLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *leftArrowImageView;
 @property (nonatomic, weak) IBOutlet UIImageView *rightArrowImageView;
@@ -55,9 +57,11 @@ static const NSInteger kBottomSpace = 60;
 
 - (void)fillLabels
 {
-    [self.userNameLabel setText:[NSString stringWithFormat:@"%@ %@", self.groupInvite.senderFirstName, self.groupInvite.senderLastName]];
+    [self.userNameLabel setText:[NSString stringWithFormat:@"%@ %@", self.groupInvite.userFirstName, self.groupInvite.userLastName]];
     [self.updatedDateLabel setText:[self.ioc_dateFormatterHelper formatedDateStringFromDate:self.groupInvite.updatedDate]];
     [self.groupNameLabel setText:self.groupInvite.groupName];
+    [self.classNameLabel setText:self.groupInvite.className];
+    [self.collegeNameLabel setText:self.groupInvite.collegeName];
     [self.inviteTextLabel setText:self.groupInvite.text];
     [self.inviteTextLabel sizeToFit];
 }
@@ -79,6 +83,8 @@ static const NSInteger kBottomSpace = 60;
     
     [self.senderButtonsView setHidden:!isUserSender];
     [self.recepientButtonsView setHidden:isUserSender];
+    
+    [self.userNameLabel setText:[NSString stringWithFormat:@"%@: %@", isUserSender ? @"To" : @"From", self.userNameLabel.text]];
     
     CGFloat originX = isUserSender ? 10 : [CCViewPositioningHelper rightSideOfView:self.leftArrowImageView] + 10;
     [CCViewPositioningHelper setOriginX:originX toView:self.inviteBodyView];
