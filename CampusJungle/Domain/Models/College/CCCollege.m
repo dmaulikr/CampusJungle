@@ -11,9 +11,9 @@
 
 @implementation CCCollege
 
-- (NSString *)modelId
+- (NSString *)modelType
 {
-    return self.collegeID;
+    return CCModelsTypes.college;
 }
 
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager

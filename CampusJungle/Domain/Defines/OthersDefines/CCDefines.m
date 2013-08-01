@@ -280,8 +280,8 @@ const struct CCSearchBarPlaceholders CCSearchBarPlaceholders = {
 
 const struct CCAppInvitesDefines CCAppInvitesDefines = {
     .appInviteSubject = @"Campus Jungle Invite",
-    .emailInviteBody = @"",
-    .smsInviteBody = @"",
+    .emailInviteBody = @"Hey! Why not to start using CampusJungle App for iOS?",
+    .smsInviteBody = @"Hey! Why not to start using CampusJungle App for iOS?",
 };
 
 const struct CCAppInvitesFacebookConstants CCAppInvitesFacebookConstants = {
@@ -300,6 +300,8 @@ const struct CCPushNotificationTypes CCPushNotificationTypes = {
     .forum = @"Forum",
     .question = @"Question",
     .coupon = @"Coupon",
+    .groupInvite = @"GroupInvite",
+    .moneyOutTransaction = @"MoneyOut",
 };
 
 const struct CCPayPalDefines CCPayPalDefines = {

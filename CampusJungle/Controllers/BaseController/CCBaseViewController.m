@@ -8,6 +8,7 @@
 
 #import "CCBaseViewController.h"
 #import <TestFlightSDK/TestFlight.h>
+#import "CCReportPostingService.h"
 
 @interface CCBaseViewController ()<UIAppearanceContainer>
 
@@ -68,6 +69,11 @@
                                                                              target:self
                                                                              action:selector];
     [self.navigationItem setLeftBarButtonItem:leftBarButtonItem animated:YES];
+}
+
+- (void)postReportOnContent:(id<CCModelTypeProtocol>)content
+{
+    [CCReportPostingService postReportOnContent:content];
 }
 
 

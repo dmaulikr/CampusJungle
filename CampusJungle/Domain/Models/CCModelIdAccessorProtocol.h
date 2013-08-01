@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol CCModelIdAccessorProtocol <NSObject>
+@protocol CCModelTypeProtocol <NSObject>
 
 @required
-- (NSString *)modelId;
+- (NSString *)modelType;
 
 @end

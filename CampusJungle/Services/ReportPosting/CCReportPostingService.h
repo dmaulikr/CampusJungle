@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCModelIdAccessorProtocol.h"
 
 @interface CCReportPostingService : NSObject
 
-+ (void)postReportWithText:(NSString *)text onContent:(id)item;
++ (void)postReportOnContent:(id<CCModelTypeProtocol>)item;
 
 @end

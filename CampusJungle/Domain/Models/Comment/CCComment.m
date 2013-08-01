@@ -11,9 +11,9 @@
 
 @implementation CCComment
 
-- (NSString *)modelId
+- (NSString *)modelType
 {
-    return self.commentId;
+    return CCModelsTypes.comment;
 }
 
 + (CCComment *)commentWithText:(NSString *)text

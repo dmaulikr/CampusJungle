@@ -87,4 +87,5 @@ const struct CCValidationMessages CCValidationMessages = {
     .emptyMessageText = @"Message can't be blank",
     .emptyTopic = @"Please enter topic",
     .noUsersSelected = @"Select some users first",
+    .emptyReportText = @"Report text can't be blank",
 };

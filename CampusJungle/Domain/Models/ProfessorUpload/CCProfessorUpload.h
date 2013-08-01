@@ -11,7 +11,7 @@
 #import "CCRestKitMappableModel.h"
 #import "CCModelIdAccessorProtocol.h"
 
-@interface CCProfessorUpload : NSObject<CCRestKitMappableModel, CCModelIdAccessorProtocol>
+@interface CCProfessorUpload : NSObject<CCRestKitMappableModel, CCModelTypeProtocol>
 
 @property (nonatomic, strong) NSString *uploadId;
 @property (nonatomic, strong) NSString *name;

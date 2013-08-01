@@ -14,4 +14,6 @@
 @property (nonatomic, strong) id <CCTransactionWithObject> offerDetailsTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> messageDetailsTransaction;
 
+- (void)selectTabAtIndex:(NSInteger)tabIndex;
+
 @end

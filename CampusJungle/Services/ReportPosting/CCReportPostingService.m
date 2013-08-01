@@ -11,8 +11,11 @@
 #import "CCTransactionWithObject.h"
 #import "CCSendReportTransaction.h"
 #import "CCNavigationHelper.h"
+#import "CCStandardErrorHandler.h"
 
 #import "CCReport.h"
+
+typedef void(^ReportAvailableSuccessBlock)();
 
 @interface CCReportPostingService ()
 
@@ -35,15 +38,31 @@
     return self;
 }
 
-+ (void)postReportWithText:(NSString *)text onContent:(id)item
++ (void)postReportOnContent:(id<CCModelTypeProtocol>)item
 {
-    CCReport *report = [CCReport createWithText:text itemId:@"" itemType:NSStringFromClass([item class])];
+    CCReport *report = [CCReport createWithItemId:[item modelType] itemType:NSStringFromClass([item class])];
     CCReportPostingService *reportService = [[CCReportPostingService alloc] initWithReport:report];
+    [reportService postReportIfAvailable];
 }
 
-- (void)postReportIfAvailable:(CCReport *)report
+- (void)postReportIfAvailable
 {
-    
+    CCReport *report = self.report;
+    id<CCTransactionWithObject> sendReportTransaction = self.sendReportTransaction;
+    [self checkIfAvailableReportWithSuccessBlock:^{
+        [sendReportTransaction performWithObject:report];
+    }];
+}
+
+#pragma mark -
+#pragma mark Requests
+- (void)checkIfAvailableReportWithSuccessBlock:(ReportAvailableSuccessBlock)successBlock
+{
+    [self.ioc_reportsApiProvider checkIfAvailableReport:self.report successHandler:^(id result) {
+        successBlock();
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
 }
 
 @end

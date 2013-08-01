@@ -11,9 +11,9 @@
 
 @implementation CCCity
 
-- (NSString *)modelId
+- (NSString *)modelType
 {
-    return self.cityID;
+    return CCModelsTypes.city;
 }
 
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager

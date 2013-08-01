@@ -16,3 +16,5 @@
 #import "CCPrivateMessageProcessingBehaviour.h"
 #import "CCProfessorsUploadPushProcessingBehaviour.h"
 #import "CCQuestionPushProcessingBehaviour.h"
+#import "CCGroupInvitePushProcessingBehaviour.h"
+#import "CCMoneyOutTransactionPushProcessingBehaviour.h"

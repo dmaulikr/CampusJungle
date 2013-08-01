@@ -10,7 +10,7 @@
 #import "CCRestKitMappableModel.h"
 #import "CCModelIdAccessorProtocol.h"
 
-@interface CCGroup : NSObject <CCRestKitMappableModel, CCModelIdAccessorProtocol>
+@interface CCGroup : NSObject <CCRestKitMappableModel, CCModelTypeProtocol>
 
 @property (nonatomic, strong) NSString *groupId;
 @property (nonatomic, strong) NSString *classId;

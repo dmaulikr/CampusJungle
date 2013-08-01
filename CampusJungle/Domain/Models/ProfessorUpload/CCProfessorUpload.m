@@ -11,9 +11,9 @@
 
 @implementation CCProfessorUpload
 
-- (NSString *)modelId
+- (NSString *)modelType
 {
-    return self.uploadId;
+    return CCModelsTypes.professorsUpload;
 }
 
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager

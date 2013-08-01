@@ -10,9 +10,9 @@
 
 @implementation CCClass
 
-- (NSString *)modelId
+- (NSString *)modelType
 {
-    return self.classID;
+    return CCModelsTypes.classModel;
 }
 
 - (NSString *)name

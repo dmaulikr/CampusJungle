@@ -67,6 +67,13 @@
     else if ([pushType isEqualToString:CCPushNotificationTypes.coupon]) {
         [pushNotification setPushProcessingBehavior:[CCCouponPushProcessingBehaviour new]];
     }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.groupInvite]) {
+        [pushNotification setPushProcessingBehavior:[CCGroupInvitePushProcessingBehaviour new]];
+    }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.moneyOutTransaction]) {
+        [pushNotification setPushProcessingBehavior:[CCMoneyOutTransactionPushProcessingBehaviour new]];
+    }
+
     
     [pushNotification proccessPushNotification];
 }

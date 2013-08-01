@@ -10,7 +10,7 @@
 #import "CCRestKitMappableModel.h"
 #import "CCModelIdAccessorProtocol.h"
 
-@interface CCForum : NSObject <CCRestKitMappableModel, CCModelIdAccessorProtocol>
+@interface CCForum : NSObject <CCRestKitMappableModel, CCModelTypeProtocol>
 
 @property (nonatomic, strong) NSString *forumId;
 @property (nonatomic, strong) NSString *ownerId;

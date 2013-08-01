@@ -11,9 +11,9 @@
 
 @implementation CCAnswer
 
-- (NSString *)modelId
+- (NSString *)modelType
 {
-    return self.answerId;
+    return CCModelsTypes.answer;
 }
 
 + (CCAnswer *)answerWithText:(NSString *)text

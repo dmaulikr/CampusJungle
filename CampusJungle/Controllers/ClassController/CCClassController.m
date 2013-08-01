@@ -60,6 +60,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [self loadInfo];
     [self setupButtons];
     [self setupTableView];

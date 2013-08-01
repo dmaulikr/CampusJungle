@@ -11,9 +11,9 @@
 
 @implementation CCQuestion
 
-- (NSString *)modelId
+- (NSString *)modelType
 {
-    return self.questionId;
+    return CCModelsTypes.question;
 }
 
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager

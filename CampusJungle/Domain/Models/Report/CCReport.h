@@ -15,6 +15,6 @@
 @property (nonatomic, strong) NSString *itemId;
 @property (nonatomic, strong) NSString *itemType;
 
-+ (CCReport *)createWithText:(NSString *)text itemId:(NSString *)itemId itemType:(NSString *)itemType;
++ (CCReport *)createWithItemId:(NSString *)itemId itemType:(NSString *)itemType;
 
 @end

@@ -15,9 +15,9 @@
 
 @implementation CCLocation
 
-- (NSString *)modelId
+- (NSString *)modelType
 {
-    return self.locationId;
+    return CCModelsTypes.location;
 }
 
 + (CCLocation *)createUsingLocation:(CLLocation *)clLocation

@@ -276,6 +276,12 @@
 		7021ED2F17A938DD00D45B51 /* CCReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ED2E17A938DD00D45B51 /* CCReport.m */; };
 		7021ED3317A93F9400D45B51 /* CCReportPostingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ED3217A93F9400D45B51 /* CCReportPostingService.m */; };
 		7021ED3817A940DC00D45B51 /* CCSendReportTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ED3717A940DC00D45B51 /* CCSendReportTransaction.m */; };
+		7021ED3E17A94BC800D45B51 /* CCReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ED3C17A94BC800D45B51 /* CCReportViewController.m */; };
+		7021ED3F17A94BC800D45B51 /* CCReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7021ED3D17A94BC800D45B51 /* CCReportViewController.xib */; };
+		7021ED4317A9694E00D45B51 /* CCModelsTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ED4217A9694E00D45B51 /* CCModelsTypes.m */; };
+		7021ED4617AA511800D45B51 /* CCGroupInvitePushProcessingBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ED4517AA511800D45B51 /* CCGroupInvitePushProcessingBehaviour.m */; };
+		7021ED4A17AA51EC00D45B51 /* CCInboxNavigationTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ED4917AA51EC00D45B51 /* CCInboxNavigationTransaction.m */; };
+		7021ED4E17AA59DD00D45B51 /* CCMoneyOutTransactionPushProcessingBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ED4D17AA59DD00D45B51 /* CCMoneyOutTransactionPushProcessingBehaviour.m */; };
 		7022F4991786C7100055221C /* SelectionBackGround@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE2178454C200E54EFC /* SelectionBackGround@2x.png */; };
 		7022F49A1786C7110055221C /* SelectionBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE3178454C200E54EFC /* SelectionBackGround.png */; };
 		70256325179FD71100B48AA2 /* CCGroupInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70256323179FD71100B48AA2 /* CCGroupInviteViewController.m */; };
@@ -1103,6 +1109,17 @@
 		7021ED3617A940DC00D45B51 /* CCSendReportTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSendReportTransaction.h; sourceTree = "<group>"; };
 		7021ED3717A940DC00D45B51 /* CCSendReportTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSendReportTransaction.m; sourceTree = "<group>"; };
 		7021ED3917A942BB00D45B51 /* CCModelIdAccessorProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCModelIdAccessorProtocol.h; sourceTree = "<group>"; };
+		7021ED3B17A94BC800D45B51 /* CCReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCReportViewController.h; sourceTree = "<group>"; };
+		7021ED3C17A94BC800D45B51 /* CCReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCReportViewController.m; sourceTree = "<group>"; };
+		7021ED3D17A94BC800D45B51 /* CCReportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCReportViewController.xib; sourceTree = "<group>"; };
+		7021ED4117A9694E00D45B51 /* CCModelsTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCModelsTypes.h; sourceTree = "<group>"; };
+		7021ED4217A9694E00D45B51 /* CCModelsTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCModelsTypes.m; sourceTree = "<group>"; };
+		7021ED4417AA511800D45B51 /* CCGroupInvitePushProcessingBehaviour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupInvitePushProcessingBehaviour.h; sourceTree = "<group>"; };
+		7021ED4517AA511800D45B51 /* CCGroupInvitePushProcessingBehaviour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupInvitePushProcessingBehaviour.m; sourceTree = "<group>"; };
+		7021ED4817AA51EC00D45B51 /* CCInboxNavigationTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCInboxNavigationTransaction.h; sourceTree = "<group>"; };
+		7021ED4917AA51EC00D45B51 /* CCInboxNavigationTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCInboxNavigationTransaction.m; sourceTree = "<group>"; };
+		7021ED4C17AA59DD00D45B51 /* CCMoneyOutTransactionPushProcessingBehaviour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMoneyOutTransactionPushProcessingBehaviour.h; sourceTree = "<group>"; };
+		7021ED4D17AA59DD00D45B51 /* CCMoneyOutTransactionPushProcessingBehaviour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMoneyOutTransactionPushProcessingBehaviour.m; sourceTree = "<group>"; };
 		70256322179FD71100B48AA2 /* CCGroupInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupInviteViewController.h; sourceTree = "<group>"; };
 		70256323179FD71100B48AA2 /* CCGroupInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupInviteViewController.m; sourceTree = "<group>"; };
 		70256324179FD71100B48AA2 /* CCGroupInviteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupInviteViewController.xib; sourceTree = "<group>"; };
@@ -2777,6 +2794,7 @@
 				7021ED2B17A933C300D45B51 /* GroupInvite */,
 				7021ECFD17A7F9EA00D45B51 /* GroupMessage */,
 				7021ECFE17A7F9EA00D45B51 /* Location */,
+				7021ED4B17AA59C900D45B51 /* MoneyOutTransaction */,
 				7021ECFF17A7F9EA00D45B51 /* PrivateMessage */,
 				7021ED0217A7F9EA00D45B51 /* ProfessorsUpload */,
 				7021ED0317A7F9EA00D45B51 /* Question */,
@@ -2897,6 +2915,8 @@
 		7021ED2B17A933C300D45B51 /* GroupInvite */ = {
 			isa = PBXGroup;
 			children = (
+				7021ED4417AA511800D45B51 /* CCGroupInvitePushProcessingBehaviour.h */,
+				7021ED4517AA511800D45B51 /* CCGroupInvitePushProcessingBehaviour.m */,
 			);
 			path = GroupInvite;
 			sourceTree = "<group>";
@@ -2926,6 +2946,43 @@
 				7021ED3717A940DC00D45B51 /* CCSendReportTransaction.m */,
 			);
 			path = SendReportTransaction;
+			sourceTree = "<group>";
+		};
+		7021ED3A17A94BAF00D45B51 /* ReportController */ = {
+			isa = PBXGroup;
+			children = (
+				7021ED3B17A94BC800D45B51 /* CCReportViewController.h */,
+				7021ED3C17A94BC800D45B51 /* CCReportViewController.m */,
+				7021ED3D17A94BC800D45B51 /* CCReportViewController.xib */,
+			);
+			path = ReportController;
+			sourceTree = "<group>";
+		};
+		7021ED4017A9693D00D45B51 /* ModelsTypes */ = {
+			isa = PBXGroup;
+			children = (
+				7021ED4117A9694E00D45B51 /* CCModelsTypes.h */,
+				7021ED4217A9694E00D45B51 /* CCModelsTypes.m */,
+			);
+			path = ModelsTypes;
+			sourceTree = "<group>";
+		};
+		7021ED4717AA51E300D45B51 /* InboxNavigationTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				7021ED4817AA51EC00D45B51 /* CCInboxNavigationTransaction.h */,
+				7021ED4917AA51EC00D45B51 /* CCInboxNavigationTransaction.m */,
+			);
+			path = InboxNavigationTransaction;
+			sourceTree = "<group>";
+		};
+		7021ED4B17AA59C900D45B51 /* MoneyOutTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				7021ED4C17AA59DD00D45B51 /* CCMoneyOutTransactionPushProcessingBehaviour.h */,
+				7021ED4D17AA59DD00D45B51 /* CCMoneyOutTransactionPushProcessingBehaviour.m */,
+			);
+			path = MoneyOutTransaction;
 			sourceTree = "<group>";
 		};
 		70256321179FD70200B48AA2 /* GroupInviteController */ = {
@@ -3200,6 +3257,7 @@
 				D3949714178D51A000C39A7E /* PrivateMessageController */,
 				D342BCEB17980FF80034E88C /* ProfessorUploadsController */,
 				70B2D0C61794432B001B0C2C /* QuestionsController */,
+				7021ED3A17A94BAF00D45B51 /* ReportController */,
 				70B2D0C017944325001B0C2C /* ReviewController */,
 				700F9456178EFA2400A6FBBA /* SelectClassmatesController */,
 				700F9457178EFA3500A6FBBA /* SelectGroupsController */,
@@ -3838,6 +3896,7 @@
 				70A29DC717877CB4001BC8DD /* AlertDefines */,
 				70A29DCA17877CB4001BC8DD /* CCConstantsDefines.h */,
 				70A29DCB17877CB4001BC8DD /* MenuDefines */,
+				7021ED4017A9693D00D45B51 /* ModelsTypes */,
 				70A29DCE17877CB4001BC8DD /* NotificationsDefines */,
 				70A29DD117877CB4001BC8DD /* OthersDefines */,
 				70FDD66B179E93B200871727 /* ProcessingMessages */,
@@ -4523,6 +4582,7 @@
 				70FDD62A179D283900871727 /* GroupTransaction */,
 				70B2D12217944894001B0C2C /* ImagesForNotesUploadingScreenTransaction */,
 				70B2D12517944894001B0C2C /* ImagesSortingTransaction */,
+				7021ED4717AA51E300D45B51 /* InboxNavigationTransaction */,
 				70B2D12817944894001B0C2C /* InboxTransaction */,
 				AA28DEBCB80DB0D2BC4E22C5 /* InviterTransaction */,
 				70B2D12B17944894001B0C2C /* InitialUserInfoTransaction */,
@@ -6852,6 +6912,7 @@
 				D3B7324617A959CB00F35C4D /* CCInviterSelectionController.xib in Resources */,
 				D3B7325417AA3F2800F35C4D /* CCTutorialController.xib in Resources */,
 				D3B7325917AA470900F35C4D /* CCTutorialCell.xib in Resources */,
+				7021ED3F17A94BC800D45B51 /* CCReportViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7269,6 +7330,11 @@
 				D3B7325317AA3F2800F35C4D /* CCTutorialController.m in Sources */,
 				D3B7325717AA44DF00F35C4D /* CCTutorialDataProvider.m in Sources */,
 				D3B7325C17AA472800F35C4D /* CCTutorialCell.m in Sources */,
+				7021ED3E17A94BC800D45B51 /* CCReportViewController.m in Sources */,
+				7021ED4317A9694E00D45B51 /* CCModelsTypes.m in Sources */,
+				7021ED4617AA511800D45B51 /* CCGroupInvitePushProcessingBehaviour.m in Sources */,
+				7021ED4A17AA51EC00D45B51 /* CCInboxNavigationTransaction.m in Sources */,
+				7021ED4E17AA59DD00D45B51 /* CCMoneyOutTransactionPushProcessingBehaviour.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7350,8 +7416,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Корзун Владислав (EB7SWK4X6M)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Корзун Владислав (EB7SWK4X6M)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yury Grinenko (95C5U2X82L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yury Grinenko (95C5U2X82L)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusJungle/CampusJungle-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CampusJungle/CampusJungle-Info.plist";

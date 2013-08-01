@@ -7,6 +7,8 @@
 //
 
 #import "CCSendReportTransaction.h"
+#import "CCReportViewController.h"
+#import "CCBackTransaction.h"
 
 @implementation CCSendReportTransaction
 
@@ -14,6 +16,14 @@
 {
     NSParameterAssert(self.navigation);
     NSParameterAssert(object);
+    
+    CCBackTransaction *backTransaction = [CCBackTransaction new];
+    backTransaction.navigation = self.navigation;
+    
+    CCReportViewController *reportController = [CCReportViewController new];
+    reportController.backTransaction = backTransaction;
+    [reportController setReport:object];
+    [self.navigation pushViewController:reportController animated:YES];
 }
 
 @end

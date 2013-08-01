@@ -11,9 +11,9 @@
 
 @implementation CCMessage
 
-- (NSString *)modelId
+- (NSString *)modelType
 {
-    return self.messageID;
+    return CCModelsTypes.message;
 }
 
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager

@@ -10,7 +10,7 @@
 #import "CCRestKitMappableModel.h"
 #import "CCModelIdAccessorProtocol.h"
 
-@interface CCAnswer : NSObject <CCRestKitMappableModel, CCModelIdAccessorProtocol>
+@interface CCAnswer : NSObject <CCRestKitMappableModel, CCModelTypeProtocol>
 
 @property (nonatomic, strong) NSString *answerId;
 @property (nonatomic, strong) NSString *questionId;

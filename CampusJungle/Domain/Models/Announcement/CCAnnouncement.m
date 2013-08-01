@@ -11,9 +11,9 @@
 
 @implementation CCAnnouncement
 
-- (NSString *)modelId
+- (NSString *)modelType
 {
-    return self.announcementID;
+    return CCModelsTypes.announcement;
 }
 
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager
