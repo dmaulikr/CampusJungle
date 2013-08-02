@@ -307,6 +307,11 @@
 		703AC7B017AAFE2500B222F3 /* CCClassFeedbackPushProcessingBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AC7AF17AAFE2500B222F3 /* CCClassFeedbackPushProcessingBehaviour.m */; };
 		703AC7B417AB04C900B222F3 /* CCMoneyForInvitePushProcessingBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AC7B317AB04C900B222F3 /* CCMoneyForInvitePushProcessingBehaviour.m */; };
 		703AC7B817AB065400B222F3 /* CCOfferPushProcessingBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AC7B717AB065400B222F3 /* CCOfferPushProcessingBehaviour.m */; };
+		703AC7BC17AC035B00B222F3 /* CCAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AC7BB17AC035B00B222F3 /* CCAd.m */; };
+		703AC7C017AC087600B222F3 /* CCAdsApiProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AC7BF17AC087600B222F3 /* CCAdsApiProvider.m */; };
+		703AC7CF17AC107D00B222F3 /* CCAdsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AC7CE17AC107D00B222F3 /* CCAdsDataProvider.m */; };
+		703AC7D317AC124600B222F3 /* CCAdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AC7D217AC124600B222F3 /* CCAdCell.m */; };
+		703AC7D517AC125800B222F3 /* CCAdCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703AC7D417AC125800B222F3 /* CCAdCell.xib */; };
 		703DA4DD178B455600464DD3 /* CCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4DC178B455600464DD3 /* CCLocation.m */; };
 		703DA4E2178B457200464DD3 /* CCLocationsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4E0178B457200464DD3 /* CCLocationsDataProvider.m */; };
 		703DA4F0178C3D3C00464DD3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 703DA4EE178C3D3000464DD3 /* MapKit.framework */; };
@@ -1178,6 +1183,16 @@
 		703AC7B317AB04C900B222F3 /* CCMoneyForInvitePushProcessingBehaviour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMoneyForInvitePushProcessingBehaviour.m; sourceTree = "<group>"; };
 		703AC7B617AB065400B222F3 /* CCOfferPushProcessingBehaviour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCOfferPushProcessingBehaviour.h; sourceTree = "<group>"; };
 		703AC7B717AB065400B222F3 /* CCOfferPushProcessingBehaviour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCOfferPushProcessingBehaviour.m; sourceTree = "<group>"; };
+		703AC7BA17AC035B00B222F3 /* CCAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAd.h; sourceTree = "<group>"; };
+		703AC7BB17AC035B00B222F3 /* CCAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAd.m; sourceTree = "<group>"; };
+		703AC7BE17AC087600B222F3 /* CCAdsApiProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAdsApiProvider.h; sourceTree = "<group>"; };
+		703AC7BF17AC087600B222F3 /* CCAdsApiProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAdsApiProvider.m; sourceTree = "<group>"; };
+		703AC7C117AC089400B222F3 /* CCAdsApiProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCAdsApiProviderProtocol.h; sourceTree = "<group>"; };
+		703AC7CD17AC107D00B222F3 /* CCAdsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAdsDataProvider.h; sourceTree = "<group>"; };
+		703AC7CE17AC107D00B222F3 /* CCAdsDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAdsDataProvider.m; sourceTree = "<group>"; };
+		703AC7D117AC124600B222F3 /* CCAdCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAdCell.h; sourceTree = "<group>"; };
+		703AC7D217AC124600B222F3 /* CCAdCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAdCell.m; sourceTree = "<group>"; };
+		703AC7D417AC125800B222F3 /* CCAdCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAdCell.xib; sourceTree = "<group>"; };
 		703DA4DB178B455600464DD3 /* CCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocation.h; sourceTree = "<group>"; };
 		703DA4DC178B455600464DD3 /* CCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocation.m; sourceTree = "<group>"; };
 		703DA4DF178B457200464DD3 /* CCLocationsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationsDataProvider.h; sourceTree = "<group>"; };
@@ -3169,6 +3184,44 @@
 			path = Offer;
 			sourceTree = "<group>";
 		};
+		703AC7B917AC035100B222F3 /* Ad */ = {
+			isa = PBXGroup;
+			children = (
+				703AC7BA17AC035B00B222F3 /* CCAd.h */,
+				703AC7BB17AC035B00B222F3 /* CCAd.m */,
+			);
+			path = Ad;
+			sourceTree = "<group>";
+		};
+		703AC7BD17AC086B00B222F3 /* AdsAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				703AC7BE17AC087600B222F3 /* CCAdsApiProvider.h */,
+				703AC7BF17AC087600B222F3 /* CCAdsApiProvider.m */,
+				703AC7C117AC089400B222F3 /* CCAdsApiProviderProtocol.h */,
+			);
+			path = AdsAPIProvider;
+			sourceTree = "<group>";
+		};
+		703AC7CC17AC106E00B222F3 /* AdsDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				703AC7CD17AC107D00B222F3 /* CCAdsDataProvider.h */,
+				703AC7CE17AC107D00B222F3 /* CCAdsDataProvider.m */,
+			);
+			path = AdsDataProvider;
+			sourceTree = "<group>";
+		};
+		703AC7D017AC123100B222F3 /* AdCell */ = {
+			isa = PBXGroup;
+			children = (
+				703AC7D117AC124600B222F3 /* CCAdCell.h */,
+				703AC7D217AC124600B222F3 /* CCAdCell.m */,
+				703AC7D417AC125800B222F3 /* CCAdCell.xib */,
+			);
+			path = AdCell;
+			sourceTree = "<group>";
+		};
 		703DA4DA178B455600464DD3 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -3757,6 +3810,7 @@
 		70A29D4B17877B94001BC8DD /* DataProviders */ = {
 			isa = PBXGroup;
 			children = (
+				703AC7CC17AC106E00B222F3 /* AdsDataProvider */,
 				D38532E4179DD3AB0075F870 /* AnnouncementDataProvider */,
 				7012AC8617955E1E002DA5E9 /* AnswersDataProvider */,
 				70061CD317A293C100848F62 /* AppInviteDataProvider */,
@@ -4075,6 +4129,7 @@
 			children = (
 				7021ED3917A942BB00D45B51 /* CCModelIdAccessorProtocol.h */,
 				70B2D0B917943886001B0C2C /* CCRestKitMappableModel.h */,
+				703AC7B917AC035100B222F3 /* Ad */,
 				70061C9617A26FDD00848F62 /* AddressBookRecord */,
 				D38532E0179D67CF0075F870 /* Announcement */,
 				7012AC7317954DAB002DA5E9 /* Answer */,
@@ -4415,6 +4470,7 @@
 		70B2D04F17940245001B0C2C /* API */ = {
 			isa = PBXGroup;
 			children = (
+				703AC7BD17AC086B00B222F3 /* AdsAPIProvider */,
 				D38532DB179D67150075F870 /* AnnouncementAPIProvider */,
 				7012AC771795507E002DA5E9 /* AnswersAPIProvider */,
 				70B2D05017940245001B0C2C /* APIProvider */,
@@ -5310,6 +5366,7 @@
 		70B2D1D317944E39001B0C2C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				703AC7D017AC123100B222F3 /* AdCell */,
 				70061CC517A284A400848F62 /* AddressBookRecordCell */,
 				D38532E8179DD9F50075F870 /* AnnouncementCell */,
 				7012AC8E17955F95002DA5E9 /* AnswerCell */,
@@ -7118,6 +7175,7 @@
 				703AC7A217AAF53B00B222F3 /* report_icon@2x.png in Resources */,
 				703AC7A817AAFACF00B222F3 /* CCCouponsViewController.xib in Resources */,
 				D3AEE3E817AC16BE00D83FB5 /* GIInputAlert.xib in Resources */,
+				703AC7D517AC125800B222F3 /* CCAdCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7547,6 +7605,10 @@
 				703AC7B017AAFE2500B222F3 /* CCClassFeedbackPushProcessingBehaviour.m in Sources */,
 				703AC7B417AB04C900B222F3 /* CCMoneyForInvitePushProcessingBehaviour.m in Sources */,
 				703AC7B817AB065400B222F3 /* CCOfferPushProcessingBehaviour.m in Sources */,
+				703AC7BC17AC035B00B222F3 /* CCAd.m in Sources */,
+				703AC7C017AC087600B222F3 /* CCAdsApiProvider.m in Sources */,
+				703AC7CF17AC107D00B222F3 /* CCAdsDataProvider.m in Sources */,
+				703AC7D317AC124600B222F3 /* CCAdCell.m in Sources */,
 				D3B7327F17ABD57500F35C4D /* CCClearButton.m in Sources */,
 				D3B7328317AC001000F35C4D /* CCSettings.m in Sources */,
 				D3AEE3E117AC0D6300D83FB5 /* CCSettingsAPIProvider.m in Sources */,

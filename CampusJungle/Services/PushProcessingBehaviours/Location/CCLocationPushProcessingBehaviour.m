@@ -10,6 +10,7 @@
 #import "CCShowLocationsTransaction.h"
 #import "CCTransactionWithObject.h"
 #import "CCAPIProvider.h"
+#import "CCGroupsApiProviderProtocol.h"
 #import "CCNavigationHelper.h"
 #import "CCStandardErrorHandler.h"
 #import "CCAlertHelper.h"
@@ -20,6 +21,7 @@ typedef void(^LoadClassSuccessBlock)(id);
 
 @property (nonatomic, strong) id<CCTransactionWithObject> locationTransaction;
 @property (nonatomic ,strong) id<CCAPIProviderProtocol> ioc_apiProvider;
+@property (nonatomic, strong) id<CCGroupsApiProviderProtocol> ioc_groupsApiProvider;
 
 @end
 
@@ -57,10 +59,18 @@ typedef void(^LoadClassSuccessBlock)(id);
 - (void)goLocationsWithUserInfo:(NSDictionary *)userInfo
 {
     __weak CCLocationPushProcessingBehaviour *weakSelf = self;
-    NSString *classId = [userInfo objectForKey:@"class_id"];
-    [self loadClassWithId:classId successBlock:^(id classObject) {
-        [weakSelf.locationTransaction performWithObject:@{@"class" : classObject}];
-    }];
+    NSString *placeType = [userInfo objectForKey:@"place_type"];
+    NSString *placeId = [userInfo objectForKey:@"place_id"];
+    if ([placeType isEqualToString:@"Group"]) {
+        [self loadGroupWithId:placeId successBlock:^(id group) {
+            [weakSelf.locationTransaction performWithObject:@{@"group" : group}];
+        }];
+    }
+    else {
+        [self loadClassWithId:placeId successBlock:^(id classObject) {
+            [weakSelf.locationTransaction performWithObject:@{@"class" : classObject}];
+        }];
+    }
 }
 
 #pragma mark -
@@ -69,6 +79,18 @@ typedef void(^LoadClassSuccessBlock)(id);
 {
     [SVProgressHUD showWithStatus:CCProcessingMessages.loadingLocations];
     [self.ioc_apiProvider loadClassWithId:classId successHandler:^(RKMappingResult *result) {
+        [SVProgressHUD dismiss];
+        successBlock(result);
+    } errorHandler:^(NSError *error) {
+        [SVProgressHUD dismiss];
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
+}
+
+- (void)loadGroupWithId:(NSString *)groupId successBlock:(LoadClassSuccessBlock)successBlock
+{
+    [SVProgressHUD showWithStatus:CCProcessingMessages.loadingLocations];
+    [self.ioc_groupsApiProvider loadGroupWithId:groupId successHandler:^(RKMappingResult *result) {
         [SVProgressHUD dismiss];
         successBlock(result);
     } errorHandler:^(NSError *error) {

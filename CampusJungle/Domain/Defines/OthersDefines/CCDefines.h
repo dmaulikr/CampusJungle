@@ -114,8 +114,11 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *postReport;
     __unsafe_unretained NSString *users;
     __unsafe_unretained NSString *acceptInvite;
+    __unsafe_unretained NSString *loadGroup;
+    __unsafe_unretained NSString *loadAds;
     __unsafe_unretained NSString *getSettings;
     __unsafe_unretained NSString *setSettings;
+
 } CCAPIDefines;
 
 extern const struct CCUserDefines {

@@ -57,10 +57,17 @@
                                                                                                   pathPattern:updatePathPattern
                                                                                                       keyPath:@"group"
                                                                                                   statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    NSString *loadGroupPathPattern = [NSString stringWithFormat:CCAPIDefines.loadGroup, @":groupID"];
+    RKResponseDescriptor *loadGroupResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:groupsResponseMapping
+                                                                                                  pathPattern:loadGroupPathPattern
+                                                                                                      keyPath:@"group"
+                                                                                                  statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
 
     
     [objectManager addResponseDescriptor:classGroupsResponseDescriptor];
     [objectManager addResponseDescriptor:groupUpdateResponseDescriptor];
+    [objectManager addResponseDescriptor:loadGroupResponseDescriptor];
 }
 
 + (void)configureGroupRequest:(RKObjectManager *)objectManager

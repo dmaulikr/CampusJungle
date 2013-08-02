@@ -47,7 +47,8 @@ const struct CCAlertsMessages CCAlertsMessages = {
     .unableToSendEmail = @"Your device isn't able to send email. Check your settings",
     .unableToSendSms = @"Your device isn't able to send sms. Check your settings",
     .unableToImportContacts = @"There is no ability to get your address book. Check privacy settings of your device",
-    .sendFacebookInviteError = @"Some error occured during sending invite. Please try again"
+    .sendFacebookInviteError = @"Some error occured during sending invite. Please try again",
+    .currentLocationError = @"Can't detect current location. Please try again",
 };
 
 const struct CCAlertsButtons CCAlertsButtons = {

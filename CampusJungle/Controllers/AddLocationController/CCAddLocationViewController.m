@@ -264,7 +264,7 @@
 #pragma mark CLLocationManagerDelegate
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    [CCStandardErrorHandler showErrorWithError:error];
+    [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCAlertsMessages.currentLocationError];
     [self.locationManager stopUpdatingLocation];
     [self setRightNavigationBarButtonEnabled:YES];
 }

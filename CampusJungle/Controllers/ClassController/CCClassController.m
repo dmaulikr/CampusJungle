@@ -97,7 +97,6 @@
 
 - (IBAction)classFeedBackButtonDidPressed
 {
-    
     if(self.currentClass.isProfessor.boolValue){
         [self.voteResultTransaction performWithObject:self.currentClass];
     } else {

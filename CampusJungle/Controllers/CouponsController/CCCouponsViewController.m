@@ -8,10 +8,13 @@
 
 #import "CCCouponsViewController.h"
 #import "CCClass.h"
+#import "CCAdsDataProvider.h"
+#import "CCAdCell.h"
 
 @interface CCCouponsViewController ()
 
 @property (nonatomic, strong) CCClass *classObject;
+@property (nonatomic, strong) CCAdsDataProvider *dataProvider;
 
 @end
 
@@ -22,6 +25,13 @@
     [super viewDidLoad];
 
     [self setTitle:@"Coupons"];
+}
+
+- (void)configCollectrion
+{
+//    self.dataProvider = [CCAdsDataProvider new];
+//    [self.dataProvider setClassId:self.classObject.classID];
+//    [self configCollection:self.photoBrowser WithProvider:self.dataProvider cellClass:[CCAdCell class]];
 }
 
 @end
