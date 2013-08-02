@@ -307,6 +307,7 @@
 		703AC7B017AAFE2500B222F3 /* CCClassFeedbackPushProcessingBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AC7AF17AAFE2500B222F3 /* CCClassFeedbackPushProcessingBehaviour.m */; };
 		703AC7B417AB04C900B222F3 /* CCMoneyForInvitePushProcessingBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AC7B317AB04C900B222F3 /* CCMoneyForInvitePushProcessingBehaviour.m */; };
 		703AC7B817AB065400B222F3 /* CCOfferPushProcessingBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AC7B717AB065400B222F3 /* CCOfferPushProcessingBehaviour.m */; };
+		703AC7BC17AC035B00B222F3 /* CCAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AC7BB17AC035B00B222F3 /* CCAd.m */; };
 		703DA4DD178B455600464DD3 /* CCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4DC178B455600464DD3 /* CCLocation.m */; };
 		703DA4E2178B457200464DD3 /* CCLocationsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4E0178B457200464DD3 /* CCLocationsDataProvider.m */; };
 		703DA4F0178C3D3C00464DD3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 703DA4EE178C3D3000464DD3 /* MapKit.framework */; };
@@ -1173,6 +1174,8 @@
 		703AC7B317AB04C900B222F3 /* CCMoneyForInvitePushProcessingBehaviour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMoneyForInvitePushProcessingBehaviour.m; sourceTree = "<group>"; };
 		703AC7B617AB065400B222F3 /* CCOfferPushProcessingBehaviour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCOfferPushProcessingBehaviour.h; sourceTree = "<group>"; };
 		703AC7B717AB065400B222F3 /* CCOfferPushProcessingBehaviour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCOfferPushProcessingBehaviour.m; sourceTree = "<group>"; };
+		703AC7BA17AC035B00B222F3 /* CCAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAd.h; sourceTree = "<group>"; };
+		703AC7BB17AC035B00B222F3 /* CCAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAd.m; sourceTree = "<group>"; };
 		703DA4DB178B455600464DD3 /* CCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocation.h; sourceTree = "<group>"; };
 		703DA4DC178B455600464DD3 /* CCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocation.m; sourceTree = "<group>"; };
 		703DA4DF178B457200464DD3 /* CCLocationsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationsDataProvider.h; sourceTree = "<group>"; };
@@ -3151,6 +3154,15 @@
 			path = Offer;
 			sourceTree = "<group>";
 		};
+		703AC7B917AC035100B222F3 /* Ad */ = {
+			isa = PBXGroup;
+			children = (
+				703AC7BA17AC035B00B222F3 /* CCAd.h */,
+				703AC7BB17AC035B00B222F3 /* CCAd.m */,
+			);
+			path = Ad;
+			sourceTree = "<group>";
+		};
 		703DA4DA178B455600464DD3 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -4057,6 +4069,7 @@
 			children = (
 				7021ED3917A942BB00D45B51 /* CCModelIdAccessorProtocol.h */,
 				70B2D0B917943886001B0C2C /* CCRestKitMappableModel.h */,
+				703AC7B917AC035100B222F3 /* Ad */,
 				70061C9617A26FDD00848F62 /* AddressBookRecord */,
 				D38532E0179D67CF0075F870 /* Announcement */,
 				7012AC7317954DAB002DA5E9 /* Answer */,
@@ -7478,6 +7491,7 @@
 				703AC7B017AAFE2500B222F3 /* CCClassFeedbackPushProcessingBehaviour.m in Sources */,
 				703AC7B417AB04C900B222F3 /* CCMoneyForInvitePushProcessingBehaviour.m in Sources */,
 				703AC7B817AB065400B222F3 /* CCOfferPushProcessingBehaviour.m in Sources */,
+				703AC7BC17AC035B00B222F3 /* CCAd.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
