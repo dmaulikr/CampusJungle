@@ -13,8 +13,8 @@
 #import "CCUserSessionProtocol.h"
 
 static const NSInteger kDescriptionLabelDefaultWidth = 250;
-static const NSInteger kDescriptionLabelOriginY = 51;
-static const NSInteger kMinCellHeight = 85;
+static const NSInteger kDescriptionLabelOriginY = 71;
+static const NSInteger kMinCellHeight = 105;
 
 @interface CCLocationCell ()
 
@@ -76,7 +76,7 @@ static const NSInteger kMinCellHeight = 85;
 + (CGFloat)heightForCellWithObject:(id)object
 {
     CCLocation *location = object;
-    UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:13];
+    UIFont *font = [UIFont fontWithName:@"Avenir-Medium" size:15];
     CGSize requiredSize = [location.description sizeWithFont:font constrainedToSize:CGSizeMake(kDescriptionLabelDefaultWidth, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
     return MAX(kMinCellHeight, kDescriptionLabelOriginY + requiredSize.height);
 }

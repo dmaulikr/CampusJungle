@@ -9,6 +9,7 @@
 #import "CCAppearanceConfigurator.h"
 #import "CCBaseViewController.h"
 #import "CCDefaultButtonContainer.h"
+#import "CCClearButton.h"
 
 @implementation CCAppearanceConfigurator
 
@@ -21,6 +22,13 @@
     [self configurateSegmentController];
     [self configurateProgressHuds];
     [self configurateSwitch];
+    [self configurateClearButtons];
+}
+
++ (void)configurateClearButtons
+{
+    [[CCClearButton appearance] setBackgroundImage:nil forState:UIControlStateNormal];
+    [[CCClearButton appearance] setBackgroundImage:nil forState:UIControlStateHighlighted];
 }
 
 + (void)setDefaultTextFieldsAppearance

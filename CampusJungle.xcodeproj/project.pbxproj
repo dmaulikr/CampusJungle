@@ -764,6 +764,7 @@
 		D3B7326117AA68C900F35C4D /* CCSettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B7325F17AA68C900F35C4D /* CCSettingController.xib */; };
 		D3B7326417AA6A9200F35C4D /* CCSettingsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7326317AA6A9200F35C4D /* CCSettingsTransaction.m */; };
 		D3B7327017AA999300F35C4D /* CCDefaultButtonContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7326F17AA999300F35C4D /* CCDefaultButtonContainer.m */; };
+		D3B7327F17ABD57500F35C4D /* CCClearButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7327E17ABD57500F35C4D /* CCClearButton.m */; };
 		D3DF8C3117900AAA00B072B7 /* CCMessageDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DF8C2F17900AAA00B072B7 /* CCMessageDetailsController.m */; };
 		D3DF8C3217900AAA00B072B7 /* CCMessageDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3DF8C3017900AAA00B072B7 /* CCMessageDetailsController.xib */; };
 /* End PBXBuildFile section */
@@ -1967,6 +1968,8 @@
 		D3B7326E17AA999300F35C4D /* CCDefaultButtonContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDefaultButtonContainer.h; sourceTree = "<group>"; };
 		D3B7326F17AA999300F35C4D /* CCDefaultButtonContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDefaultButtonContainer.m; sourceTree = "<group>"; };
 		D3B7327117AAAA9B00F35C4D /* CCReportDelegateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCReportDelegateProtocol.h; sourceTree = "<group>"; };
+		D3B7327D17ABD57500F35C4D /* CCClearButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClearButton.h; sourceTree = "<group>"; };
+		D3B7327E17ABD57500F35C4D /* CCClearButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClearButton.m; sourceTree = "<group>"; };
 		D3DF8C2E17900AAA00B072B7 /* CCMessageDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessageDetailsController.h; sourceTree = "<group>"; };
 		D3DF8C2F17900AAA00B072B7 /* CCMessageDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessageDetailsController.m; sourceTree = "<group>"; };
 		D3DF8C3017900AAA00B072B7 /* CCMessageDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMessageDetailsController.xib; sourceTree = "<group>"; };
@@ -2389,6 +2392,7 @@
 		700F9445178EECA700A6FBBA /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				D3B7327C17ABD56300F35C4D /* ClearButtons */,
 				700F9446178EECC600A6FBBA /* ShareItemButton */,
 			);
 			path = Buttons;
@@ -6652,6 +6656,15 @@
 			path = DefaultButtonContainer;
 			sourceTree = "<group>";
 		};
+		D3B7327C17ABD56300F35C4D /* ClearButtons */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7327D17ABD57500F35C4D /* CCClearButton.h */,
+				D3B7327E17ABD57500F35C4D /* CCClearButton.m */,
+			);
+			path = ClearButtons;
+			sourceTree = "<group>";
+		};
 		D3DF8C2D17900A7200B072B7 /* MessageDetailsController */ = {
 			isa = PBXGroup;
 			children = (
@@ -7494,6 +7507,7 @@
 				703AC7B017AAFE2500B222F3 /* CCClassFeedbackPushProcessingBehaviour.m in Sources */,
 				703AC7B417AB04C900B222F3 /* CCMoneyForInvitePushProcessingBehaviour.m in Sources */,
 				703AC7B817AB065400B222F3 /* CCOfferPushProcessingBehaviour.m in Sources */,
+				D3B7327F17ABD57500F35C4D /* CCClearButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -46,6 +46,8 @@ static const NSInteger kDividerHeight = 1;
     [self.reportButton setTitle:@"Report this" forState:UIControlStateNormal];
     self.reportButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Oblique" size:20];
     [self.reportButton setTitleColor:[UIColor colorWithRed:130./255 green:65./255 blue:0 alpha:1] forState:UIControlStateNormal];
+    [self.reportButton setTitleColor:[UIColor colorWithRed:31./255 green:163./255 blue:0 alpha:1] forState:UIControlStateHighlighted];
+    
     [self.reportButton addTarget:self action:@selector(reportButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [CCButtonsHelper removeBackgroundImageInButton:self.reportButton];
 }
