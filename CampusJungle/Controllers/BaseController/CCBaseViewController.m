@@ -48,11 +48,7 @@
             [button setTitleColor:[UIColor colorWithRed:240./255 green:218./255 blue:161./255 alpha:1] forState:UIControlStateNormal];
         }
         else {
-           // if(![button isKindOfClass:[UITableView class]]){
                 [self setButtonsTextColorInView:button];
-           // } else {
-                
-          //  }
         }
     }
 }

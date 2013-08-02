@@ -16,7 +16,7 @@
 static const NSInteger kMinCellHeight = 90;
 static const NSInteger kDefaultTextLabelWidth = 286;
 static const NSInteger kTextLabelOriginY = 61;
-static const NSInteger kBottomSpacing = 5;
+static const NSInteger kBottomSpacing = 25;
 
 @interface CCMessageCell()
 
@@ -54,6 +54,7 @@ static const NSInteger kBottomSpacing = 5;
 
 - (void)setCellObject:(CCMessage *)cellObject
 {
+    _cellObject = cellObject;
     self.message = cellObject;
     [self fillLabels];
     [self setupDeleteButtonVisibility];

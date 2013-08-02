@@ -16,7 +16,7 @@
 #import "CCStuffUploadInfo.h"
 #import "CCStuff.h"
 
-static const NSInteger kCellHeight = 112;
+static const NSInteger kCellHeight = 132;
 
 @interface CCStuffCell() <CCUploadIndicatorDelegateProtocol>
 
