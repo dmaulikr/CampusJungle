@@ -749,6 +749,7 @@
 		D3B7326017AA68C900F35C4D /* CCSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7325E17AA68C900F35C4D /* CCSettingController.m */; };
 		D3B7326117AA68C900F35C4D /* CCSettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B7325F17AA68C900F35C4D /* CCSettingController.xib */; };
 		D3B7326417AA6A9200F35C4D /* CCSettingsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7326317AA6A9200F35C4D /* CCSettingsTransaction.m */; };
+		D3B7327017AA999300F35C4D /* CCDefaultButtonContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7326F17AA999300F35C4D /* CCDefaultButtonContainer.m */; };
 		D3DF8C3117900AAA00B072B7 /* CCMessageDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DF8C2F17900AAA00B072B7 /* CCMessageDetailsController.m */; };
 		D3DF8C3217900AAA00B072B7 /* CCMessageDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3DF8C3017900AAA00B072B7 /* CCMessageDetailsController.xib */; };
 /* End PBXBuildFile section */
@@ -1930,6 +1931,9 @@
 		D3B7326317AA6A9200F35C4D /* CCSettingsTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSettingsTransaction.m; sourceTree = "<group>"; };
 		D3B7326B17AA8B2F00F35C4D /* CCStoreObserverProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCStoreObserverProtocol.h; sourceTree = "<group>"; };
 		D3B7326C17AA8B5000F35C4D /* CCStoreObserverDelegateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCStoreObserverDelegateProtocol.h; sourceTree = "<group>"; };
+		D3B7326E17AA999300F35C4D /* CCDefaultButtonContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDefaultButtonContainer.h; sourceTree = "<group>"; };
+		D3B7326F17AA999300F35C4D /* CCDefaultButtonContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDefaultButtonContainer.m; sourceTree = "<group>"; };
+		D3B7327117AAAA9B00F35C4D /* CCReportDelegateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCReportDelegateProtocol.h; sourceTree = "<group>"; };
 		D3DF8C2E17900AAA00B072B7 /* CCMessageDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessageDetailsController.h; sourceTree = "<group>"; };
 		D3DF8C2F17900AAA00B072B7 /* CCMessageDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessageDetailsController.m; sourceTree = "<group>"; };
 		D3DF8C3017900AAA00B072B7 /* CCMessageDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMessageDetailsController.xib; sourceTree = "<group>"; };
@@ -4190,6 +4194,7 @@
 				70A29E3F17877D2B001BC8DD /* AlertViews */,
 				700F9445178EECA700A6FBBA /* Buttons */,
 				70B2D1D317944E39001B0C2C /* Cells */,
+				D3B7326D17AA997C00F35C4D /* DefaultButtonContainer */,
 				7012AC9417957C03002DA5E9 /* Headers */,
 				70A29E9617877D2B001BC8DD /* Pickers */,
 				D37122F217A2705E00A7DF04 /* ScaleView */,
@@ -5251,6 +5256,7 @@
 			children = (
 				70B2D1D517944E39001B0C2C /* CCBaseCell.h */,
 				70B2D1D617944E39001B0C2C /* CCBaseCell.m */,
+				D3B7327117AAAA9B00F35C4D /* CCReportDelegateProtocol.h */,
 			);
 			path = BaseCell;
 			sourceTree = "<group>";
@@ -6545,6 +6551,15 @@
 			path = AppInviteCell;
 			sourceTree = "<group>";
 		};
+		D3B7326D17AA997C00F35C4D /* DefaultButtonContainer */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7326E17AA999300F35C4D /* CCDefaultButtonContainer.h */,
+				D3B7326F17AA999300F35C4D /* CCDefaultButtonContainer.m */,
+			);
+			path = DefaultButtonContainer;
+			sourceTree = "<group>";
+		};
 		D3DF8C2D17900A7200B072B7 /* MessageDetailsController */ = {
 			isa = PBXGroup;
 			children = (
@@ -7372,6 +7387,7 @@
 				7021ED4E17AA59DD00D45B51 /* CCMoneyOutTransactionPushProcessingBehaviour.m in Sources */,
 				D3B7326017AA68C900F35C4D /* CCSettingController.m in Sources */,
 				D3B7326417AA6A9200F35C4D /* CCSettingsTransaction.m in Sources */,
+				D3B7327017AA999300F35C4D /* CCDefaultButtonContainer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

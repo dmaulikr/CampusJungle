@@ -14,7 +14,7 @@
 #import "CCNoteUploadInfo.h"
 #import "CCUploadIndicatorDelegateProtocol.h"
 
-static const NSInteger kCellHeight = 130;
+static const NSInteger kCellHeight = 145;
 
 @interface CCNoteCell()<CCUploadIndicatorDelegateProtocol>
 

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CCAPIProviderProtocol.h"
+#import "CCReportDelegateProtocol.h"
 
 @interface CCBaseDataProvider : NSObject
 
@@ -19,6 +20,8 @@
 
 @property (nonatomic, assign) BOOL isEverythingLoaded;
 @property (nonatomic, strong) id<CCAPIProviderProtocol> ioc_apiProvider;
+
+@property (nonatomic, weak) id <CCReportDelegateProtocol> reportDelegate;
 
 @property (nonatomic, strong) NSString *searchQuery;
 

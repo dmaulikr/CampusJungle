@@ -12,5 +12,5 @@
 
 @required
 - (NSString *)modelType;
-
+- (NSString *)modelID;
 @end

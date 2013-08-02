@@ -20,6 +20,11 @@
     return CCModelsTypes.location;
 }
 
+- (NSString *)modelID
+{
+    return self.locationId;
+}
+
 + (CCLocation *)createUsingLocation:(CLLocation *)clLocation
 {
     return [self createWithCoordinates:clLocation.coordinate];

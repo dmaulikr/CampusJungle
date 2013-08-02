@@ -17,6 +17,7 @@
 
 @interface CCAnnouncementCell : CCBaseCell
 
+@property (nonatomic, strong) CCAnnouncement * cellObject;
 - (void)setCellObject:(CCAnnouncement *)announcement;
 - (void)setDelegate:(id<CCAnnouncementCellDelegate>)delegate;
 

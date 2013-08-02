@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CCButtonsHelper.h"
+#import "CCReportDelegateProtocol.h"
 #define defaultCellHeight 44.0
 
 @interface CCBaseCell : UITableViewCell
@@ -17,5 +18,9 @@
 - (void)addBottomDivider;
 - (void)setSelectionColor;
 + (CGFloat)heightForCellWithObject:(id)object;
+
+@property (nonatomic, weak) IBOutlet UIView *reportButtonContainer;
+@property (nonatomic, strong) UIButton *reportButton;
+@property (nonatomic, weak) id <CCReportDelegateProtocol> reportDelegate;
 
 @end

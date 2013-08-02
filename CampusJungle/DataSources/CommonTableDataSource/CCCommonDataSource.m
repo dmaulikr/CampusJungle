@@ -33,6 +33,10 @@
     if ([cell respondsToSelector:@selector(setDelegate:)]) {
         [cell performSelector:@selector(setDelegate:) withObject:self.delegate];
     }
+    if ([cell respondsToSelector:@selector(setReportDelegate:)]) {
+        [cell performSelector:@selector(setReportDelegate:) withObject:self.dataProvider.reportDelegate];
+    }
+    
     return (UITableViewCell *)cell;
 }
 

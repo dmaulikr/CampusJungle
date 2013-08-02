@@ -16,6 +16,11 @@
     return CCModelsTypes.group;
 }
 
+- (NSString *)modelID
+{
+    return self.groupId;
+}
+
 + (CCGroup *)createWithName:(NSString *)name description:(NSString *)description
 {
     CCGroup *group = [CCGroup new];

@@ -83,6 +83,7 @@
     } else {
         dataSource = [CCCommonDataSource new];
     }
+    provider.reportDelegate = self;
     dataSource.currentCellReuseIdentifier = reuseIdentifier;
     [dataSource.registeredCellClasses setObject:cellCass forKey:reuseIdentifier];
     dataSource.dataProvider = provider;

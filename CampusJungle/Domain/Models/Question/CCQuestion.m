@@ -16,6 +16,11 @@
     return CCModelsTypes.question;
 }
 
+- (NSString *)modelID
+{
+    return self.questionId;
+}
+
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager
 {
     [self configureQuestionsResponse:objectManager];
