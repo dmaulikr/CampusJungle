@@ -60,6 +60,7 @@ static const CGFloat kMinCellHeight = 113;
 
 - (void)setCellObject:(CCAnswer *)answer
 {
+    _cellObject = answer;
     self.answer = answer;
     [self fillLabels];
     [self setupLikeButton];
@@ -88,6 +89,7 @@ static const CGFloat kMinCellHeight = 113;
     if ([self.ioc_userSessionProvider.currentUser.uid isEqualToString:self.answer.ownerId]) {
         isHidden = NO;
     }
+    [self.reportButtonContainer setHidden:!isHidden];
     [self.deleteAnswerButton setHidden:isHidden];
 }
 
