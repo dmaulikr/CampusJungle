@@ -441,8 +441,6 @@
 		70A29E9D17877D2B001BC8DD /* GIAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29E4217877D2B001BC8DD /* GIAlert.m */; };
 		70A29E9E17877D2B001BC8DD /* GIAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29E4317877D2B001BC8DD /* GIAlert.xib */; };
 		70A29E9F17877D2B001BC8DD /* GIAlertButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29E4617877D2B001BC8DD /* GIAlertButton.m */; };
-		70A29EA017877D2B001BC8DD /* GIInputAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29E4917877D2B001BC8DD /* GIInputAlert.m */; };
-		70A29EA117877D2B001BC8DD /* GIInputAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A29E4A17877D2B001BC8DD /* GIInputAlert.xib */; };
 		70A29EC317877D2C001BC8DD /* CCTwitterPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A29E9917877D2B001BC8DD /* CCTwitterPicker.m */; };
 		70B2D04A1793F887001B0C2C /* CCAlertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0491793F887001B0C2C /* CCAlertHelper.m */; };
 		70B2D04E1794016F001B0C2C /* CCForum.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D04D1794016F001B0C2C /* CCForum.m */; };
@@ -736,6 +734,9 @@
 		D3A3198C177E3C7A0004C4E8 /* sideMenuBackGround@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A3198A177E3C780004C4E8 /* sideMenuBackGround@2x.png */; };
 		D3A3198D177E3C7A0004C4E8 /* sideMenuBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A3198B177E3C790004C4E8 /* sideMenuBackGround.png */; };
 		D3AEE3E117AC0D6300D83FB5 /* CCSettingsAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3AEE3E017AC0D6300D83FB5 /* CCSettingsAPIProvider.m */; };
+		D3AEE3E717AC16BE00D83FB5 /* GIInputAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = D3AEE3E517AC16BE00D83FB5 /* GIInputAlert.m */; };
+		D3AEE3E817AC16BE00D83FB5 /* GIInputAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3AEE3E617AC16BE00D83FB5 /* GIInputAlert.xib */; };
+		D3AEE3EC17AC16E300D83FB5 /* GIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3AEE3EB17AC16E300D83FB5 /* GIAlertView.m */; };
 		D3B7320A17A687B900F35C4D /* CCAppInviteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7320917A687B900F35C4D /* CCAppInviteCell.m */; };
 		D3B7320E17A714EB00F35C4D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7320D17A714EB00F35C4D /* Security.framework */; };
 		D3B7321017A714F200F35C4D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7320F17A714F200F35C4D /* StoreKit.framework */; };
@@ -1416,9 +1417,6 @@
 		70A29E4317877D2B001BC8DD /* GIAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GIAlert.xib; sourceTree = "<group>"; };
 		70A29E4517877D2B001BC8DD /* GIAlertButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIAlertButton.h; sourceTree = "<group>"; };
 		70A29E4617877D2B001BC8DD /* GIAlertButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIAlertButton.m; sourceTree = "<group>"; };
-		70A29E4817877D2B001BC8DD /* GIInputAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIInputAlert.h; sourceTree = "<group>"; };
-		70A29E4917877D2B001BC8DD /* GIInputAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIInputAlert.m; sourceTree = "<group>"; };
-		70A29E4A17877D2B001BC8DD /* GIInputAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GIInputAlert.xib; sourceTree = "<group>"; };
 		70A29E9817877D2B001BC8DD /* CCTwitterPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTwitterPicker.h; sourceTree = "<group>"; };
 		70A29E9917877D2B001BC8DD /* CCTwitterPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTwitterPicker.m; sourceTree = "<group>"; };
 		70B2D0481793F887001B0C2C /* CCAlertHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAlertHelper.h; sourceTree = "<group>"; };
@@ -1923,6 +1921,11 @@
 		D3AEE3DF17AC0D6300D83FB5 /* CCSettingsAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSettingsAPIProvider.h; sourceTree = "<group>"; };
 		D3AEE3E017AC0D6300D83FB5 /* CCSettingsAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSettingsAPIProvider.m; sourceTree = "<group>"; };
 		D3AEE3E217AC0D8200D83FB5 /* CCSettingsAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCSettingsAPIProviderProtocol.h; sourceTree = "<group>"; };
+		D3AEE3E417AC16BE00D83FB5 /* GIInputAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIInputAlert.h; sourceTree = "<group>"; };
+		D3AEE3E517AC16BE00D83FB5 /* GIInputAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIInputAlert.m; sourceTree = "<group>"; };
+		D3AEE3E617AC16BE00D83FB5 /* GIInputAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GIInputAlert.xib; sourceTree = "<group>"; };
+		D3AEE3EA17AC16E300D83FB5 /* GIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIAlertView.h; sourceTree = "<group>"; };
+		D3AEE3EB17AC16E300D83FB5 /* GIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIAlertView.m; sourceTree = "<group>"; };
 		D3B7320817A687B900F35C4D /* CCAppInviteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAppInviteCell.h; sourceTree = "<group>"; };
 		D3B7320917A687B900F35C4D /* CCAppInviteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAppInviteCell.m; sourceTree = "<group>"; };
 		D3B7320D17A714EB00F35C4D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -4349,7 +4352,8 @@
 			children = (
 				70A29E4017877D2B001BC8DD /* Alert */,
 				70A29E4417877D2B001BC8DD /* AlertButton */,
-				70A29E4717877D2B001BC8DD /* AlertView */,
+				D3AEE3E317AC16BE00D83FB5 /* InputAlert */,
+				D3AEE3E917AC16CF00D83FB5 /* AlertView */,
 			);
 			path = AlertViews;
 			sourceTree = "<group>";
@@ -4371,16 +4375,6 @@
 				70A29E4617877D2B001BC8DD /* GIAlertButton.m */,
 			);
 			path = AlertButton;
-			sourceTree = "<group>";
-		};
-		70A29E4717877D2B001BC8DD /* AlertView */ = {
-			isa = PBXGroup;
-			children = (
-				70A29E4817877D2B001BC8DD /* GIInputAlert.h */,
-				70A29E4917877D2B001BC8DD /* GIInputAlert.m */,
-				70A29E4A17877D2B001BC8DD /* GIInputAlert.xib */,
-			);
-			path = AlertView;
 			sourceTree = "<group>";
 		};
 		70A29E9617877D2B001BC8DD /* Pickers */ = {
@@ -6657,6 +6651,25 @@
 			path = SettingsAPIProvider;
 			sourceTree = "<group>";
 		};
+		D3AEE3E317AC16BE00D83FB5 /* InputAlert */ = {
+			isa = PBXGroup;
+			children = (
+				D3AEE3E417AC16BE00D83FB5 /* GIInputAlert.h */,
+				D3AEE3E517AC16BE00D83FB5 /* GIInputAlert.m */,
+				D3AEE3E617AC16BE00D83FB5 /* GIInputAlert.xib */,
+			);
+			path = InputAlert;
+			sourceTree = "<group>";
+		};
+		D3AEE3E917AC16CF00D83FB5 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				D3AEE3EA17AC16E300D83FB5 /* GIAlertView.h */,
+				D3AEE3EB17AC16E300D83FB5 /* GIAlertView.m */,
+			);
+			path = AlertView;
+			sourceTree = "<group>";
+		};
 		D3B7320717A687A300F35C4D /* AppInviteCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -6833,7 +6846,6 @@
 				70A29D2A178778AB001BC8DD /* CCUploadImagesController.xib in Resources */,
 				70A29D2C178778AB001BC8DD /* CCWelcomeController.xib in Resources */,
 				70A29E9E17877D2B001BC8DD /* GIAlert.xib in Resources */,
-				70A29EA117877D2B001BC8DD /* GIInputAlert.xib in Resources */,
 				D39496D9178AEEE900C39A7E /* searchFieldBackground.png in Resources */,
 				D39496DA178AEEE900C39A7E /* searchFieldBackground@2x.png in Resources */,
 				D39496E0178B193A00C39A7E /* CCOfferControllerViewController.xib in Resources */,
@@ -7105,6 +7117,7 @@
 				703AC7A117AAF53B00B222F3 /* report_icon.png in Resources */,
 				703AC7A217AAF53B00B222F3 /* report_icon@2x.png in Resources */,
 				703AC7A817AAFACF00B222F3 /* CCCouponsViewController.xib in Resources */,
+				D3AEE3E817AC16BE00D83FB5 /* GIInputAlert.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7240,7 +7253,6 @@
 				70A29E9C17877D2B001BC8DD /* CCAvatarSelectionActionSheet.m in Sources */,
 				70A29E9D17877D2B001BC8DD /* GIAlert.m in Sources */,
 				70A29E9F17877D2B001BC8DD /* GIAlertButton.m in Sources */,
-				70A29EA017877D2B001BC8DD /* GIInputAlert.m in Sources */,
 				70A29EC317877D2C001BC8DD /* CCTwitterPicker.m in Sources */,
 				D39496DF178B193A00C39A7E /* CCOfferControllerViewController.m in Sources */,
 				D39496E8178B252700C39A7E /* CCOffer.m in Sources */,
@@ -7538,6 +7550,8 @@
 				D3B7327F17ABD57500F35C4D /* CCClearButton.m in Sources */,
 				D3B7328317AC001000F35C4D /* CCSettings.m in Sources */,
 				D3AEE3E117AC0D6300D83FB5 /* CCSettingsAPIProvider.m in Sources */,
+				D3AEE3E717AC16BE00D83FB5 /* GIInputAlert.m in Sources */,
+				D3AEE3EC17AC16E300D83FB5 /* GIAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

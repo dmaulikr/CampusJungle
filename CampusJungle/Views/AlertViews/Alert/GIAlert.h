@@ -20,5 +20,8 @@
 
 +(GIAlert*)alertWithTitle:(NSString*)title message:(NSString*)message buttons:(NSArray*)arrayOfButtons;
 
+
 - (void)show;
+- (void)remove;
+
 @end

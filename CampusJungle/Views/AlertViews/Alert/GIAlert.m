@@ -9,6 +9,7 @@
 #import "GIAlert.h"
 #import "CCKeyboardHelper.h"
 #import "CCViewPositioningHelper.h"
+#import "GIAlertView.h"
 
 #define AnimationDuration 0.3
 #define hoizontalInsets 5
@@ -30,19 +31,30 @@
 
 - (void)show
 {
-    UIView *parentView = [UIApplication sharedApplication].keyWindow;
+    UIWindow *parentView = [UIApplication sharedApplication].keyWindow;
+    [self destroyAllOthersAlertInParentWindow:parentView];
     [parentView endEditing:YES];
     self.blockedView = [[UIView alloc] initWithFrame:parentView.frame];
     [parentView addSubview:self.blockedView];
     [parentView addSubview:self.view];
     [self prepareButtons];
     [self setupSizesInView:parentView];
-    
+    [(GIAlertView *)self.view setAlertController:self];
     self.titleLabel.text = self.alertTitle;
     self.message.text = self.alertMesage;
     
     self.backgroundImage.image = [UIImage imageNamed:@"alert_dialog_shape.png"];
     [self showAnimated];
+}
+
+- (void)destroyAllOthersAlertInParentWindow:(UIWindow *)parentWindow
+{
+    for(UIView *view in parentWindow.subviews){
+        if([view isKindOfClass:[GIAlertView class]]){
+            GIAlertView *alertView = (GIAlertView *)view;
+            [alertView.alertController remove];
+        }
+    }
 }
 
 - (void)showAnimated
