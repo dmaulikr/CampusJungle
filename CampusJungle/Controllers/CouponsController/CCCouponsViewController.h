@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CCBaseViewController.h"
+#import "CCPhotoBrowserController.h"
 
 @class CCClass;
 
-@interface CCCouponsViewController : CCBaseViewController
+@interface CCCouponsViewController : CCPhotoBrowserController
 
 - (void)setClassObject:(CCClass *)classObject;
 

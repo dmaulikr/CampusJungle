@@ -36,6 +36,5 @@
 @property (nonatomic, strong) id<CCTransactionWithObject> couponsTransaction;
 
 - (id)initWithClass:(CCClass *)classObject;
-- (IBAction)classMarketButtonDidPressed;
 
 @end
