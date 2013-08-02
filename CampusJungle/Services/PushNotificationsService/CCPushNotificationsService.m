@@ -70,10 +70,18 @@
     else if ([pushType isEqualToString:CCPushNotificationTypes.groupInvite]) {
         [pushNotification setPushProcessingBehavior:[CCGroupInvitePushProcessingBehaviour new]];
     }
-    else if ([pushType isEqualToString:CCPushNotificationTypes.moneyOutTransaction]) {
+    else if ([pushType isEqualToString:CCPushNotificationTypes.moneyOut]) {
         [pushNotification setPushProcessingBehavior:[CCMoneyOutTransactionPushProcessingBehaviour new]];
     }
-
+    else if ([pushType isEqualToString:CCPushNotificationTypes.classfeedback]) {
+        [pushNotification setPushProcessingBehavior:[CCClassFeedbackPushProcessingBehaviour new]];
+    }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.moneyForInvite]) {
+        [pushNotification setPushProcessingBehavior:[CCMoneyForInvitePushProcessingBehaviour new]];
+    }
+    else if ([pushType isEqualToString:CCPushNotificationTypes.offer]) {
+        [pushNotification setPushProcessingBehavior:[CCOfferPushProcessingBehaviour new]];
+    }
     
     [pushNotification proccessPushNotification];
 }

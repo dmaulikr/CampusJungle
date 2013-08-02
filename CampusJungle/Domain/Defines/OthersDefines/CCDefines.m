@@ -302,7 +302,10 @@ const struct CCPushNotificationTypes CCPushNotificationTypes = {
     .question = @"Question",
     .coupon = @"Coupon",
     .groupInvite = @"GroupInvite",
-    .moneyOutTransaction = @"MoneyOut",
+    .moneyOut = @"MoneyOut",
+    .classfeedback = @"ClassFeedback",
+    .moneyForInvite = @"MoneyForInvite",
+    .offer = @"Offer",
 };
 
 const struct CCPayPalDefines CCPayPalDefines = {

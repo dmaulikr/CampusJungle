@@ -20,4 +20,6 @@ const struct CCProcessingMessages CCProcessingMessages = {
     .loadingAnnouncements = @"Loading announcements details...",
     .loadingLocations = @"Loading locations details...",
     .loadingProfessorsUploads = @"Loading professors uploads details...",
+    .loadingCoupons = @"Loading coupons details...",
+    .loadingVoteDetails = @"Loading vote details...",
 };

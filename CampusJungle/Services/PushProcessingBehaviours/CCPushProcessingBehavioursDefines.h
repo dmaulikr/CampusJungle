@@ -18,3 +18,6 @@
 #import "CCQuestionPushProcessingBehaviour.h"
 #import "CCGroupInvitePushProcessingBehaviour.h"
 #import "CCMoneyOutTransactionPushProcessingBehaviour.h"
+#import "CCClassFeedbackPushProcessingBehaviour.h"
+#import "CCMoneyForInvitePushProcessingBehaviour.h"
+#import "CCOfferPushProcessingBehaviour.h"

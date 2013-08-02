@@ -24,6 +24,7 @@
 #import "CCVoteScreenTransaction.h"
 #import "CCBackToControllerTransaction.h"
 #import "CCAppInviteTransaction.h"
+#import "CCCouponsTransaction.h"
 
 @implementation CCClassTransaction
 
@@ -96,6 +97,9 @@
     CCAppInviteTransaction *appInviteTransaction = [CCAppInviteTransaction new];
     appInviteTransaction.navigation = centralNavigation;
     
+    CCCouponsTransaction *couponsTransaction = [CCCouponsTransaction new];
+    couponsTransaction.navigation = centralNavigation;
+    
     classController.otherUserProfileTransaction = otherUserProfileTransaction;
     classController.newsFeedTransaction = self.newsFeedTransaction;
     classController.locationTransaction = showLocationsTransaction;
@@ -106,6 +110,7 @@
     classController.groupDetailsTransaction = groupDetailsTransaction;
     classController.addGroupTransaction = addGroupTransaction;
     classController.sendInviteTransaction = appInviteTransaction;
+    classController.couponsTransaction = couponsTransaction;
     
     [self.menuController setCenterPanel:centralNavigation];
 }

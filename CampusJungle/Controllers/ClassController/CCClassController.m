@@ -34,15 +34,14 @@
 @property (nonatomic, weak) IBOutlet UIButton *announcementButton;
 @property (nonatomic, weak) IBOutlet UIButton *marketButton;
 @property (nonatomic, weak) IBOutlet UIButton *timetableButton;
+@property (nonatomic, weak) IBOutlet UIButton *couponsButton;
+@property (nonatomic, weak) IBOutlet UIButton *reportButton;
 
 @property (nonatomic, strong) CCClassTableController *classContentTable;
 @property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_classesApiProvider;
 @property (nonatomic, strong) id <CCVotesAPIProviderProtocol> ioc_votesApiProvider;
 
 @property (nonatomic, strong) CCClass *currentClass;
-
-
-- (IBAction)classFeedBackButtonDidPressed;
 
 @end
 
@@ -83,6 +82,8 @@
     [CCButtonsHelper removeBackgroundImageInButton:self.marketButton];
     [CCButtonsHelper removeBackgroundImageInButton:self.profUploadsButton];
     [CCButtonsHelper removeBackgroundImageInButton:self.feedbackButton];
+    [CCButtonsHelper removeBackgroundImageInButton:self.couponsButton];
+    [CCButtonsHelper removeBackgroundImageInButton:self.reportButton];
 }
 
 - (void)setupTableView
@@ -252,6 +253,16 @@
 - (IBAction)announcementButtonDidPressed
 {
     [self.announcementTransaction performWithObject:self.currentClass];
+}
+
+- (IBAction)reportButtonDidPressed:(id)sender
+{
+    [self postReportOnContent:self.currentClass];
+}
+
+- (IBAction)couponsButtonDidPressed:(id)sender
+{
+    [self.couponsTransaction performWithObject:self.currentClass];
 }
 
 @end
