@@ -43,6 +43,7 @@
         if (status == AFNetworkReachabilityStatusReachableViaWWAN || status == AFNetworkReachabilityStatusReachableViaWiFi)
         {
             [[[CCRestKitConfigurator new] ioc_paymentService] resendAllPayments];
+            [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadSideMenu object:nil];
         }
     }];
     return objectManager;
