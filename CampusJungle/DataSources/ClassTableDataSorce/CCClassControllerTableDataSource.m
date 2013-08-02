@@ -25,10 +25,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     id <CCTableCellProtocol> cell = [tableView dequeueReusableCellWithIdentifier:self.currentCellReuseIdentifier];
+    
     [cell setCellObject:self.dataProvider.arrayOfItems[indexPath.row]];
     if ([cell respondsToSelector:@selector(setDelegate:)]) {
         [cell performSelector:@selector(setDelegate:) withObject:self.delegate];
     }
+    if ([cell respondsToSelector:@selector(setReportDelegate:)]) {
+        [cell performSelector:@selector(setReportDelegate:) withObject:self.dataProvider.reportDelegate];
+    }
+    
     return (UITableViewCell *)cell;
 }
 

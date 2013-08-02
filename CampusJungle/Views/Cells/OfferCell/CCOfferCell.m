@@ -48,7 +48,7 @@
     UIFont *font = [UIFont systemFontOfSize:17];
     CGSize requiredSize = [review.text sizeWithFont:font constrainedToSize:CGSizeMake(300, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
     
-    return MAX(44, requiredSize.height + 50);
+    return MAX(44, requiredSize.height + 70);
 }
 
 

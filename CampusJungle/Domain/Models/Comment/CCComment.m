@@ -16,6 +16,11 @@
     return CCModelsTypes.comment;
 }
 
+- (NSString *)modelID
+{
+    return self.commentId;
+}
+
 + (CCComment *)commentWithText:(NSString *)text
 {
     CCComment *comment = [CCComment new];

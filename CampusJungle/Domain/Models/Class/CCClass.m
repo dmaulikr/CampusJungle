@@ -15,6 +15,11 @@
     return CCModelsTypes.classModel;
 }
 
+- (NSString *)modelID
+{
+    return self.classID;
+}
+
 - (NSString *)name
 {
     return self.subject;

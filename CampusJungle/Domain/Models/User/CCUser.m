@@ -17,6 +17,11 @@
 
 @implementation CCUser
 
+- (NSString *)modelID
+{
+    return self.uid;
+}
+
 - (NSString *)modelType
 {
     return CCModelsTypes.user;

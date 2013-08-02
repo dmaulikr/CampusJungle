@@ -14,7 +14,7 @@
 
 static const NSInteger kTextLabelOriginY = 55;
 static const NSInteger kDefaultTextLabelWidth = 286;
-static const NSInteger kBottomSpace = 5;
+static const NSInteger kBottomSpace = 25;
 static const CGFloat kMinCellHeight = 90;
 
 @interface CCCommentCell ()
@@ -41,6 +41,7 @@ static const CGFloat kMinCellHeight = 90;
 
 - (void)layoutSubviews
 {
+    [super layoutSubviews];
     [CCButtonsHelper removeBackgroundImageInButton:self.deleteCommentButton];
 }
 
@@ -51,6 +52,7 @@ static const CGFloat kMinCellHeight = 90;
 
 - (void)setCellObject:(CCComment *)comment
 {
+    _cellObject = comment;
     self.comment = comment;
     [self fillLabels];
     [self setDeleteButtonVisibility];

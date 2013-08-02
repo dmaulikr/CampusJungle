@@ -17,7 +17,7 @@
 @end
 
 @interface CCMessageCell : CCBaseCell
-
+@property (nonatomic, strong) CCMessage *cellObject;
 - (void)setCellObject:(CCMessage *)cellObject;
 - (void)setDelegate:(id<CCMessageCellDelegate>)delegate;
 

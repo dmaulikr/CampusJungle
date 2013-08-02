@@ -17,6 +17,11 @@
     return CCModelsTypes.note;
 }
 
+- (NSString *)modelID
+{
+    return self.noteID;
+}
+
 - (NSString *)description
 {
     return self.name;

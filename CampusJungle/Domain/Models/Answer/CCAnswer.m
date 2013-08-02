@@ -11,6 +11,11 @@
 
 @implementation CCAnswer
 
+- (NSString *)modelID
+{
+    return self.answerId;
+}
+
 - (NSString *)modelType
 {
     return CCModelsTypes.answer;

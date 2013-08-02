@@ -11,6 +11,7 @@ static const NSInteger kDividerHeight = 1;
 
 #import "CCBaseCell.h"
 #import "CCViewPositioningHelper.h"
+#import "CCButtonsHelper.h"
 
 @implementation CCBaseCell
 
@@ -32,6 +33,30 @@ static const NSInteger kDividerHeight = 1;
 {
     [super awakeFromNib];
     [self addBottomDivider];
+    if(self.reportButtonContainer){
+        [self addReportButton];
+    }
+}
+
+- (void)addReportButton
+{
+    self.reportButton = [[UIButton alloc] initWithFrame:self.reportButtonContainer.bounds];
+    [self.reportButtonContainer addSubview:self.reportButton];
+    self.reportButtonContainer.backgroundColor = [UIColor clearColor];
+    [self.reportButton setTitle:@"Report this" forState:UIControlStateNormal];
+    self.reportButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Oblique" size:20];
+    [self.reportButton setTitleColor:[UIColor colorWithRed:130./255 green:65./255 blue:0 alpha:1] forState:UIControlStateNormal];
+    [self.reportButton setTitleColor:[UIColor colorWithRed:31./255 green:163./255 blue:0 alpha:1] forState:UIControlStateHighlighted];
+    
+    [self.reportButton addTarget:self action:@selector(reportButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [CCButtonsHelper removeBackgroundImageInButton:self.reportButton];
+}
+
+- (void)reportButtonPressed
+{
+    if ([self respondsToSelector:@selector(cellObject)]){
+        [self.reportDelegate postReportOnContent:[self valueForKey:@"cellObject"]];
+    }
 }
 
 - (void)addBottomDivider

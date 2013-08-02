@@ -16,7 +16,7 @@
 
 static const NSInteger kTextLabelOriginY = 77;
 static const NSInteger kDefaultTextLabelWidth = 272;
-static const NSInteger kBottomSpace = 5;
+static const NSInteger kBottomSpace = 20;
 static const NSInteger kAttachmentViewHeight = 34;
 static const CGFloat kMinCellHeight = 63;
 

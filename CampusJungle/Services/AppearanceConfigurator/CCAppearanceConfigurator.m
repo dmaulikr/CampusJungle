@@ -8,6 +8,8 @@
 
 #import "CCAppearanceConfigurator.h"
 #import "CCBaseViewController.h"
+#import "CCDefaultButtonContainer.h"
+#import "CCClearButton.h"
 
 @implementation CCAppearanceConfigurator
 
@@ -20,6 +22,13 @@
     [self configurateSegmentController];
     [self configurateProgressHuds];
     [self configurateSwitch];
+    [self configurateClearButtons];
+}
+
++ (void)configurateClearButtons
+{
+    [[CCClearButton appearance] setBackgroundImage:nil forState:UIControlStateNormal];
+    [[CCClearButton appearance] setBackgroundImage:nil forState:UIControlStateHighlighted];
 }
 
 + (void)setDefaultTextFieldsAppearance
@@ -70,15 +79,19 @@
 {
     UIImage *customButtonBackground = [[UIImage imageNamed:@"button"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 10, 20, 10)];
     
-    UIImage *customButtonActiveBackground = [UIImage imageNamed:@"button_active"];
+    UIImage *customButtonActiveBackground = [[UIImage imageNamed:@"button_active"] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 10, 20, 10)];
     
     [[UIButton appearance] setBackgroundImage:customButtonBackground forState:UIControlStateNormal];
     
     [[UIButton appearance] setBackgroundImage:customButtonActiveBackground forState:UIControlStateHighlighted];
     
-    [[UILabel appearanceWhenContainedIn:[UIButton class], nil] setFont:[UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:17]];
+    [[UILabel appearanceWhenContainedIn:[UIButton class], nil] setFont:[UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:16]];
     
     [[UILabel appearanceWhenContainedIn:[UIButton class], nil] setTextColor:[UIColor yellowColor]];
+    
+    [[UIButton appearanceWhenContainedIn:[CCDefaultButtonContainer class], nil] setBackgroundImage:nil forState:UIControlStateNormal];
+    [[UIButton appearanceWhenContainedIn:[CCDefaultButtonContainer class], nil] setBackgroundImage:nil forState:UIControlStateHighlighted];
+    [[UILabel appearanceWhenContainedIn:[CCDefaultButtonContainer class], nil] setFont:[UIFont fontWithName:@"Avenir-Oblique" size:16]];
 }
 
 + (void)configurateSegmentController

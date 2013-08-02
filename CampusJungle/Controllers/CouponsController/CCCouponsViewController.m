@@ -29,9 +29,9 @@
 
 - (void)configCollectrion
 {
-    self.dataProvider = [CCAdsDataProvider new];
-    [self.dataProvider setClassId:self.classObject.classID];
-    [self configCollection:self.photoBrowser WithProvider:self.dataProvider cellClass:[CCAdCell class]];
+//    self.dataProvider = [CCAdsDataProvider new];
+//    [self.dataProvider setClassId:self.classObject.classID];
+//    [self configCollection:self.photoBrowser WithProvider:self.dataProvider cellClass:[CCAdCell class]];
 }
 
 @end

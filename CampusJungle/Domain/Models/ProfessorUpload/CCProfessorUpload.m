@@ -16,6 +16,11 @@
     return CCModelsTypes.professorsUpload;
 }
 
+- (NSString *)modelID
+{
+    return self.uploadId;
+}
+
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager
 {
     [self configureProfessorsUploadResponse:objectManager];

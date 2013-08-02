@@ -16,6 +16,11 @@
     return self.reviewID;
 }
 
+- (NSString *)modelID
+{
+    return self.reviewID;
+}
+
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager
 {
     [self configureReviewResponse:objectManager];

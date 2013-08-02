@@ -118,6 +118,8 @@ const struct CCAPIDefines CCAPIDefines = {
     .acceptInvite = @"/api/app_invites/users/accept",
     .loadGroup = @"/api/groups/%@",
     .loadAds = @"/api/classes/%@/ads",
+    .getSettings = @"/api/users/me/notification_settings",
+    .setSettings = @"/api/users/me/notification_settings",
 };
 
 const struct CCUserDefines CCUserDefines = {

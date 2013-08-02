@@ -14,7 +14,7 @@
 
 static const NSInteger kTextLabelOriginY = 80;
 static const NSInteger kDefaultTextLabelWidth = 286;
-static const NSInteger kBottomSpace = 15;
+static const NSInteger kBottomSpace = 40;
 static const CGFloat kMinCellHeight = 118;
 
 @interface CCAnnouncementCell ()
@@ -37,6 +37,7 @@ static const CGFloat kMinCellHeight = 118;
 
 - (void)setCellObject:(CCAnnouncement *)announcement
 {
+    _cellObject = announcement;
     self.announcement = announcement;
     [self fillLabels];
     [self setDeleteButtonVisibility];

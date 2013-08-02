@@ -13,7 +13,7 @@
 static const NSInteger kMinCellHeight = 44;
 static const NSInteger kDefaultTextLabelWidth = 293;
 static const NSInteger kTextLabelOriginY = 10;
-static const NSInteger kBottomSpace = 5;
+static const NSInteger kBottomSpace = 25;
 
 @interface CCCollegeSelectionCell()
 

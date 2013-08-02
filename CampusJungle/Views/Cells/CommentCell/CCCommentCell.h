@@ -18,7 +18,7 @@
 @end
 
 @interface CCCommentCell : CCBaseCell
-
+@property (nonatomic, strong) CCComment *cellObject;
 - (void)setCellObject:(CCComment *)comment;
 - (void)setDelegate:(id<CCCommentCellDelegate>)delegate;
 

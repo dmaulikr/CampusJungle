@@ -15,7 +15,7 @@
 static const NSInteger kDefaultTextLabelWidth = 286;
 static const NSInteger kMinCellHeight = 75;
 static const NSInteger kTextLabelOriginY = 44;
-static const NSInteger kBottomSpace = 10;
+static const NSInteger kBottomSpace = 30;
 
 @interface CCReviewCell()
 

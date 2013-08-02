@@ -740,6 +740,7 @@
 		D3A31981177E226C0004C4E8 /* logoLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A3197F177E226C0004C4E8 /* logoLogin.png */; };
 		D3A3198C177E3C7A0004C4E8 /* sideMenuBackGround@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A3198A177E3C780004C4E8 /* sideMenuBackGround@2x.png */; };
 		D3A3198D177E3C7A0004C4E8 /* sideMenuBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A3198B177E3C790004C4E8 /* sideMenuBackGround.png */; };
+		D3AEE3E117AC0D6300D83FB5 /* CCSettingsAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3AEE3E017AC0D6300D83FB5 /* CCSettingsAPIProvider.m */; };
 		D3B7320A17A687B900F35C4D /* CCAppInviteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7320917A687B900F35C4D /* CCAppInviteCell.m */; };
 		D3B7320E17A714EB00F35C4D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7320D17A714EB00F35C4D /* Security.framework */; };
 		D3B7321017A714F200F35C4D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7320F17A714F200F35C4D /* StoreKit.framework */; };
@@ -768,6 +769,9 @@
 		D3B7326017AA68C900F35C4D /* CCSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7325E17AA68C900F35C4D /* CCSettingController.m */; };
 		D3B7326117AA68C900F35C4D /* CCSettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B7325F17AA68C900F35C4D /* CCSettingController.xib */; };
 		D3B7326417AA6A9200F35C4D /* CCSettingsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7326317AA6A9200F35C4D /* CCSettingsTransaction.m */; };
+		D3B7327017AA999300F35C4D /* CCDefaultButtonContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7326F17AA999300F35C4D /* CCDefaultButtonContainer.m */; };
+		D3B7327F17ABD57500F35C4D /* CCClearButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7327E17ABD57500F35C4D /* CCClearButton.m */; };
+		D3B7328317AC001000F35C4D /* CCSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7328217AC001000F35C4D /* CCSettings.m */; };
 		D3DF8C3117900AAA00B072B7 /* CCMessageDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DF8C2F17900AAA00B072B7 /* CCMessageDetailsController.m */; };
 		D3DF8C3217900AAA00B072B7 /* CCMessageDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3DF8C3017900AAA00B072B7 /* CCMessageDetailsController.xib */; };
 /* End PBXBuildFile section */
@@ -1931,6 +1935,9 @@
 		D3A3197F177E226C0004C4E8 /* logoLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoLogin.png; sourceTree = "<group>"; };
 		D3A3198A177E3C780004C4E8 /* sideMenuBackGround@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sideMenuBackGround@2x.png"; sourceTree = "<group>"; };
 		D3A3198B177E3C790004C4E8 /* sideMenuBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sideMenuBackGround.png; sourceTree = "<group>"; };
+		D3AEE3DF17AC0D6300D83FB5 /* CCSettingsAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSettingsAPIProvider.h; sourceTree = "<group>"; };
+		D3AEE3E017AC0D6300D83FB5 /* CCSettingsAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSettingsAPIProvider.m; sourceTree = "<group>"; };
+		D3AEE3E217AC0D8200D83FB5 /* CCSettingsAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCSettingsAPIProviderProtocol.h; sourceTree = "<group>"; };
 		D3B7320817A687B900F35C4D /* CCAppInviteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAppInviteCell.h; sourceTree = "<group>"; };
 		D3B7320917A687B900F35C4D /* CCAppInviteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAppInviteCell.m; sourceTree = "<group>"; };
 		D3B7320D17A714EB00F35C4D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -1978,6 +1985,13 @@
 		D3B7326317AA6A9200F35C4D /* CCSettingsTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSettingsTransaction.m; sourceTree = "<group>"; };
 		D3B7326B17AA8B2F00F35C4D /* CCStoreObserverProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCStoreObserverProtocol.h; sourceTree = "<group>"; };
 		D3B7326C17AA8B5000F35C4D /* CCStoreObserverDelegateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCStoreObserverDelegateProtocol.h; sourceTree = "<group>"; };
+		D3B7326E17AA999300F35C4D /* CCDefaultButtonContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDefaultButtonContainer.h; sourceTree = "<group>"; };
+		D3B7326F17AA999300F35C4D /* CCDefaultButtonContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDefaultButtonContainer.m; sourceTree = "<group>"; };
+		D3B7327117AAAA9B00F35C4D /* CCReportDelegateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCReportDelegateProtocol.h; sourceTree = "<group>"; };
+		D3B7327D17ABD57500F35C4D /* CCClearButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClearButton.h; sourceTree = "<group>"; };
+		D3B7327E17ABD57500F35C4D /* CCClearButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClearButton.m; sourceTree = "<group>"; };
+		D3B7328117AC001000F35C4D /* CCSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSettings.h; sourceTree = "<group>"; };
+		D3B7328217AC001000F35C4D /* CCSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSettings.m; sourceTree = "<group>"; };
 		D3DF8C2E17900AAA00B072B7 /* CCMessageDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessageDetailsController.h; sourceTree = "<group>"; };
 		D3DF8C2F17900AAA00B072B7 /* CCMessageDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessageDetailsController.m; sourceTree = "<group>"; };
 		D3DF8C3017900AAA00B072B7 /* CCMessageDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMessageDetailsController.xib; sourceTree = "<group>"; };
@@ -2400,6 +2414,7 @@
 		700F9445178EECA700A6FBBA /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				D3B7327C17ABD56300F35C4D /* ClearButtons */,
 				700F9446178EECC600A6FBBA /* ShareItemButton */,
 			);
 			path = Buttons;
@@ -4141,6 +4156,7 @@
 				70B2D0B017942DB6001B0C2C /* Question */,
 				7021ED2C17A938CB00D45B51 /* Report */,
 				D394973C178EC58C00C39A7E /* Review */,
+				D3B7328017AC000100F35C4D /* Settings */,
 				70A29DFC17877CB5001BC8DD /* States */,
 				70A29DFF17877CB5001BC8DD /* Stuff */,
 				70A29E0217877CB5001BC8DD /* StuffUploadInfo */,
@@ -4336,6 +4352,7 @@
 				70A29E3F17877D2B001BC8DD /* AlertViews */,
 				700F9445178EECA700A6FBBA /* Buttons */,
 				70B2D1D317944E39001B0C2C /* Cells */,
+				D3B7326D17AA997C00F35C4D /* DefaultButtonContainer */,
 				7012AC9417957C03002DA5E9 /* Headers */,
 				70A29E9617877D2B001BC8DD /* Pickers */,
 				D37122F217A2705E00A7DF04 /* ScaleView */,
@@ -4481,6 +4498,7 @@
 				D342BD0A179933A50034E88C /* ProfessorUploadsAPIProvider */,
 				70B2D0B417942F01001B0C2C /* QuestionsAPIProvider */,
 				7021ED2617A92BFA00D45B51 /* ReportsAPIProvider */,
+				D3AEE3DE17AC0D5000D83FB5 /* SettingsAPIProvider */,
 				70B2D07817940245001B0C2C /* SignUpAPIProvider */,
 				70B2D07C17940245001B0C2C /* StuffAPIProvider */,
 				7021ED2117A91B0B00D45B51 /* UnwatchedEventsAPIProvider */,
@@ -5400,6 +5418,7 @@
 			children = (
 				70B2D1D517944E39001B0C2C /* CCBaseCell.h */,
 				70B2D1D617944E39001B0C2C /* CCBaseCell.m */,
+				D3B7327117AAAA9B00F35C4D /* CCReportDelegateProtocol.h */,
 			);
 			path = BaseCell;
 			sourceTree = "<group>";
@@ -6685,6 +6704,16 @@
 			path = AppearanceConfigurator;
 			sourceTree = "<group>";
 		};
+		D3AEE3DE17AC0D5000D83FB5 /* SettingsAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3AEE3DF17AC0D6300D83FB5 /* CCSettingsAPIProvider.h */,
+				D3AEE3E017AC0D6300D83FB5 /* CCSettingsAPIProvider.m */,
+				D3AEE3E217AC0D8200D83FB5 /* CCSettingsAPIProviderProtocol.h */,
+			);
+			path = SettingsAPIProvider;
+			sourceTree = "<group>";
+		};
 		D3B7320717A687A300F35C4D /* AppInviteCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -6692,6 +6721,33 @@
 				D3B7320917A687B900F35C4D /* CCAppInviteCell.m */,
 			);
 			path = AppInviteCell;
+			sourceTree = "<group>";
+		};
+		D3B7326D17AA997C00F35C4D /* DefaultButtonContainer */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7326E17AA999300F35C4D /* CCDefaultButtonContainer.h */,
+				D3B7326F17AA999300F35C4D /* CCDefaultButtonContainer.m */,
+			);
+			path = DefaultButtonContainer;
+			sourceTree = "<group>";
+		};
+		D3B7327C17ABD56300F35C4D /* ClearButtons */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7327D17ABD57500F35C4D /* CCClearButton.h */,
+				D3B7327E17ABD57500F35C4D /* CCClearButton.m */,
+			);
+			path = ClearButtons;
+			sourceTree = "<group>";
+		};
+		D3B7328017AC000100F35C4D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D3B7328117AC001000F35C4D /* CCSettings.h */,
+				D3B7328217AC001000F35C4D /* CCSettings.m */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		D3DF8C2D17900A7200B072B7 /* MessageDetailsController */ = {
@@ -7531,15 +7587,22 @@
 				7021ED4E17AA59DD00D45B51 /* CCMoneyOutTransactionPushProcessingBehaviour.m in Sources */,
 				D3B7326017AA68C900F35C4D /* CCSettingController.m in Sources */,
 				D3B7326417AA6A9200F35C4D /* CCSettingsTransaction.m in Sources */,
+				D3B7327017AA999300F35C4D /* CCDefaultButtonContainer.m in Sources */,
 				703AC7A717AAFACF00B222F3 /* CCCouponsViewController.m in Sources */,
 				703AC7AC17AAFB7800B222F3 /* CCCouponsTransaction.m in Sources */,
 				703AC7B017AAFE2500B222F3 /* CCClassFeedbackPushProcessingBehaviour.m in Sources */,
 				703AC7B417AB04C900B222F3 /* CCMoneyForInvitePushProcessingBehaviour.m in Sources */,
 				703AC7B817AB065400B222F3 /* CCOfferPushProcessingBehaviour.m in Sources */,
+
 				703AC7BC17AC035B00B222F3 /* CCAd.m in Sources */,
 				703AC7C017AC087600B222F3 /* CCAdsApiProvider.m in Sources */,
 				703AC7CF17AC107D00B222F3 /* CCAdsDataProvider.m in Sources */,
 				703AC7D317AC124600B222F3 /* CCAdCell.m in Sources */,
+
+				D3B7327F17ABD57500F35C4D /* CCClearButton.m in Sources */,
+				D3B7328317AC001000F35C4D /* CCSettings.m in Sources */,
+				D3AEE3E117AC0D6300D83FB5 /* CCSettingsAPIProvider.m in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

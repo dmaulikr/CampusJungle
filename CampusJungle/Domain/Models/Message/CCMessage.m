@@ -16,6 +16,11 @@
     return CCModelsTypes.message;
 }
 
+- (NSString *)modelID
+{
+    return self.messageID;
+}
+
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager
 {
     [self configureMessageResponse:objectManager];

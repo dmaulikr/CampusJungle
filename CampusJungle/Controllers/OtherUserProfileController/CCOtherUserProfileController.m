@@ -21,6 +21,7 @@
 @property (nonatomic, strong) DYRateView *rateView;
 
 - (IBAction)sendMessage;
+- (IBAction)reportButtonPressed;
 
 @end
 
@@ -62,6 +63,11 @@
 - (void)didSelectedCellWithObject:(id)cellObject
 {
     [self.classTransaction performWithObject:cellObject];
+}
+
+- (IBAction)reportButtonPressed
+{
+    [self postReportOnContent:self.currentUser];
 }
 
 @end

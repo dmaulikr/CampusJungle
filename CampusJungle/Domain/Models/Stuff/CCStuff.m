@@ -19,6 +19,11 @@
     return CCModelsTypes.stuff;
 }
 
+- (NSString *)modelID
+{
+    return self.stuffID;
+}
+
 - (NSString *)description
 {
     return self.name;
