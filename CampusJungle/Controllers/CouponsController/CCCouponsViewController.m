@@ -10,11 +10,18 @@
 #import "CCClass.h"
 #import "CCAdsDataProvider.h"
 #import "CCAdCell.h"
+#import "CCViewPositioningHelper.h"
+#import "CCAdsDataSource.h"
+#import "CCSideMenuHelper.h"
 
-@interface CCCouponsViewController ()
+@interface CCCouponsViewController () <CCCellSelectionProtocol, UIGestureRecognizerDelegate>
+
+@property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 
 @property (nonatomic, strong) CCClass *classObject;
 @property (nonatomic, strong) CCAdsDataProvider *dataProvider;
+@property (nonatomic, strong) CCAdsDataSource *dataSource;
+@property (nonatomic) BOOL isInAction;
 
 @end
 
@@ -24,14 +31,77 @@
 {
     [super viewDidLoad];
 
+    [self configCollectionView];
     [self setTitle:@"Coupons"];
 }
 
-- (void)configCollectrion
+- (void)viewWillAppear:(BOOL)animated
 {
-//    self.dataProvider = [CCAdsDataProvider new];
-//    [self.dataProvider setClassId:self.classObject.classID];
-//    [self configCollection:self.photoBrowser WithProvider:self.dataProvider cellClass:[CCAdCell class]];
+    [super viewWillAppear:animated];
+    [CCSideMenuHelper setSideMenuGestureEnabled:NO];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [CCSideMenuHelper setSideMenuGestureEnabled:YES];
+}
+
+- (void)configCollectionView
+{
+    self.dataProvider = [CCAdsDataProvider new];
+    [self.dataProvider setClassId:self.classObject.classID];
+    
+    self.dataSource = [CCAdsDataSource new];
+    [self.collectionView registerClass:[CCAdCell class] forCellWithReuseIdentifier:CCTableDefines.collectionCellIdentifier];
+    
+    self.dataSource.dataProvider = self.dataProvider;
+    self.dataSource.dataProvider.targetTable = (UITableView *)self.collectionView;
+    self.collectionView.dataSource = self.dataSource;
+    self.collectionView.delegate = self.dataSource;
+    
+    self.dataSource.delegate = self;
+    [self.dataProvider loadItems];
+}
+
+#pragma mark -
+#pragma mark Actions
+- (void)didSelectedCellWithObject:(id)cellObject
+{
+    
+}
+
+- (IBAction)didSwipeRight
+{
+    if (!self.isInAction && self.collectionView.contentOffset.x > 0) {
+        [self.collectionView setContentOffset:CGPointMake(self.collectionView.contentOffset.x -self.view.frame.size.width, 0) animated:YES];
+        self.isInAction = YES;
+        double delayInSeconds = 0.4;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            self.isInAction = NO;
+        });
+    }
+}
+
+- (IBAction)didSwipeLeft
+{
+    if (!self.isInAction && self.collectionView.contentOffset.x + self.view.frame.size.width < self.collectionView.contentSize.width) {
+        [self.collectionView setContentOffset:CGPointMake(self.collectionView.contentOffset.x + self.view.frame.size.width, 0) animated:YES];
+        self .isInAction = YES;
+        double delayInSeconds = 0.4;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            self.isInAction = NO;
+        });
+    }
+}
+
+#pragma mark -
+#pragma mark UIGestureRecognizerDelegate
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer;
+{
+    return YES;
 }
 
 @end

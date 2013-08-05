@@ -21,6 +21,7 @@
 @interface CCNoteDetailsController ()
 
 @property (nonatomic, weak) IBOutlet UILabel *noteName;
+@property (nonatomic, weak) IBOutlet UILabel *noteDescription;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbnail;
 
 @property (nonatomic, weak) IBOutlet UIButton *fullAccessButton;
@@ -54,7 +55,8 @@
 
 - (void)setUpNotesInfo
 {
-    self.noteName.text = self.note.noteDescription;
+    self.noteName.text = self.note.name;
+    self.noteDescription.text = self.note.noteDescription;
     if(self.note.thumbnailRetina.length){
         NSURL *urlToThumbnail = [NSURL URLWithString:[CCAPIDefines.baseURL stringByAppendingString:self.note.thumbnailRetina]];
         [self.thumbnail setImageWithURL:urlToThumbnail];
