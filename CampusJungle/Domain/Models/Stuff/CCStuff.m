@@ -24,11 +24,6 @@
     return self.stuffID;
 }
 
-- (NSString *)description
-{
-    return self.name;
-}
-
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager
 {
     [self configureStuffCreationRequest:objectManager];
@@ -86,7 +81,7 @@
       @"owner_id" : @"ownerID",
       @"college_id" : @"collegeID",
       @"class_id" : @"classID",
-      @"description" : @"stuffDescription",
+      @"description" : @"description",
       @"price" : @"price",
       @"tags" : @"tags",
       @"thumbnail" : @"thumbnail",
@@ -99,7 +94,7 @@
     return @{
       @"collegeID" : @"class_id",
       @"name" : @"name",
-      @"stuffDescription" : @"description",
+      @"description" : @"description",
       @"price" : @"price",
       @"arrayOfURLs" :@"images",
     };

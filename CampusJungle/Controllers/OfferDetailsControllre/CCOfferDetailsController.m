@@ -91,7 +91,7 @@
 
 - (void)loadStuffInfo
 {
-    self.stuffNameLabel.text = self.stuff.stuffDescription;
+    self.stuffNameLabel.text = self.stuff.description;
 }
 
 - (void)loadSenderInfo
