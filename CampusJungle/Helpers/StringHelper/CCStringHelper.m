@@ -10,7 +10,8 @@
 
 @implementation CCStringHelper
 
-+ (NSString *)trimSpacesFromString:(NSString *)string {
++ (NSString *)trimSpacesFromString:(NSString *)string
+{
     return [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
