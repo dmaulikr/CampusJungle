@@ -17,6 +17,10 @@
 #import "CCReviewsDataProvider.h"
 #import "CCReviewCell.h"
 #import "CCAlertHelper.h"
+#import "CCViewPositioningHelper.h"
+
+#define headerFullHeight 410
+#define headerSmallSize 350
 
 @interface CCNoteDetailsController ()
 
@@ -30,6 +34,7 @@
 
 @property (nonatomic, weak) IBOutlet UIButton *resendLinkButton;
 @property (nonatomic, weak) IBOutlet UIButton *removeNoteButton;
+@property (nonatomic, weak) IBOutlet UIView *tableHeader;
 @property (nonatomic, strong) CCReviewsDataProvider *reviewsDataProvider;
 
 @property (nonatomic, strong) id <CCNotesAPIProviderProtolcol> ioc_notesAPIProvider;
@@ -77,6 +82,13 @@
     if (![self.note.ownerID isEqualToString:self.ioc_userSession.currentUser.uid]){
         [self.removeNoteButton setHidden:YES];
     }
+    
+    if(self.resendLinkButton.hidden && self.removeNoteButton.hidden){
+        [CCViewPositioningHelper setHeight:headerSmallSize toView:self.tableHeader];
+    } else {
+        [CCViewPositioningHelper setHeight:headerFullHeight toView:self.tableHeader];
+    }
+    self.mainTable.tableHeaderView = self.tableHeader;
 
     NSString *viewOnlyTitle = [NSString stringWithFormat:@"Buy for view:%@",self.note.price];
 
