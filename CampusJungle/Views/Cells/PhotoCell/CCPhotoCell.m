@@ -21,7 +21,7 @@
 - (id)initWithFrame:(CGRect)frame
 {
     if(self = [super initWithFrame:frame]){
-        self = [[[NSBundle mainBundle] loadNibNamed:@"CCPhotoCell"
+        self = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class])
                                               owner:self
                                             options:nil] objectAtIndex:0];
     }
