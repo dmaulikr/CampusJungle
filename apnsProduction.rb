@@ -3,12 +3,12 @@ require "openssl"
 require 'socket'
 require "json"
 
-cert = File.read("apns.pem")
+cert = File.read("production.pem")
 ctx = OpenSSL::SSL::SSLContext.new
 ctx.key = OpenSSL::PKey::RSA.new(cert, '1111') #set passphrase here, if any
 ctx.cert = OpenSSL::X509::Certificate.new(cert)
 
-sock = TCPSocket.new('gateway.sandbox.push.apple.com', 2195) #development gateway
+sock = TCPSocket.new('gateway.push.apple.com', 2195) #development gateway
 ssl = OpenSSL::SSL::SSLSocket.new(sock, ctx)
 ssl.connect
 

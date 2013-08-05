@@ -55,7 +55,7 @@
     self.title = @"Feedback";
     [self setupRadioButtons];
     UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target: nil action: nil];
-    [self setRightNavigationItemWithTitle:@"Done" selector:@selector(submitButtonDidPressed)];
+    
     [[self navigationItem] setBackBarButtonItem: newBackButton];
 }
 
@@ -116,7 +116,7 @@
           didSelectButtonAtIndex:(NSUInteger)selectedIndex
 {
     if([self isRearyToSubmit]){
-        self.submitButton.enabled = YES;
+        [self setRightNavigationItemWithTitle:@"Done" selector:@selector(submitButtonDidPressed)];
     }
 }
 

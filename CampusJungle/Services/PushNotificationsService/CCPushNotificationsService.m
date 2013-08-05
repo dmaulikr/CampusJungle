@@ -149,9 +149,4 @@
     }
 }
 
-+ (void)resetPushesCounterWithType:(NSString *)type
-{
-    // TODO
-}
-
 @end
