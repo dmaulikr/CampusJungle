@@ -116,7 +116,7 @@
         } errorHandler:^(NSError *error) {
             [CCStandardErrorHandler showErrorWithError:error];
         }];
-    } text:@"Are you sure you want to buy it for download?"];
+    } text:@"Are you sure you want to buy it for view?"];
 }
 
 - (IBAction)buyForDownloadButtonPressed
@@ -125,7 +125,7 @@
         [self showConfirmWithSuccess:^{
             [self.ioc_marketAPIProvider performPurchase:self.note.noteID fullAccess:YES     successHandler:^(RKMappingResult *result) {
                 self.note.fullAccess = @"true";
-                [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.success
+                [CCStandardErrorHandler showErrorWithTitle:nil
                                                    message:CCAlertsMessages.checkYourMail];
                 [self setUpNotesInfo];
             } errorHandler:^(NSError *error) {

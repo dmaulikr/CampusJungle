@@ -11,14 +11,16 @@
 #import "CCStandardErrorHandler.h"
 #import "CCAPIProviderProtocol.h"
 
+#define minimalTextLenght 3
 
-@interface CCReviewController ()
+@interface CCReviewController ()<UITextViewDelegate>
 
 @property (nonatomic, strong) DYRateView *rateView;
 @property (nonatomic, weak) IBOutlet UIImageView *textFieldBackground;
 @property (nonatomic, weak) IBOutlet UITextView *textFiled;
 @property (nonatomic, weak) IBOutlet UIView *rateViewContainer;
 @property (nonatomic, strong) id <CCAPIProviderProtocol> ioc_apiProvider;
+@property (nonatomic, weak) IBOutlet UIButton *submitButton;
 
 - (IBAction)rate;
 
@@ -33,7 +35,7 @@
     self.textFieldBackground.image = [[UIImage imageNamed:@"text_box"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
     self.tapRecognizer.enabled = YES;
     self.title = @"Review";
-    [(TPKeyboardAvoidingTableView *)self.view setScrollEnabled:NO];
+
 }
 
 - (void)configStars
@@ -76,8 +78,26 @@
     if( [text rangeOfCharacterFromSet:[NSCharacterSet newlineCharacterSet]].location == NSNotFound ) {
         return YES;
     }
-    [self rate];
+    [self.view endEditing:YES];
     return NO;
+}
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+    if(textView.text.length >= minimalTextLenght){
+        self.submitButton.enabled = YES;
+    } else {
+        self.submitButton.enabled = NO;
+    }
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    if(textView.text.length >= minimalTextLenght){
+        self.submitButton.enabled = YES;
+    } else {
+        self.submitButton.enabled = NO;
+    }
 }
 
 @end

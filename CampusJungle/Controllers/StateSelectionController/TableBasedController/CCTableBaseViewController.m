@@ -150,4 +150,10 @@
     });
 }
 
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [self.view endEditing:YES];
+    [self.dataSource.dataProvider loadItems];
+}
+
 @end

@@ -53,7 +53,7 @@
     if ([text rangeOfCharacterFromSet:[NSCharacterSet newlineCharacterSet]].location == NSNotFound ) {
         return YES;
     }
-    [textView resignFirstResponder];
+    [self.view endEditing:YES];
     return NO;
 }
 
