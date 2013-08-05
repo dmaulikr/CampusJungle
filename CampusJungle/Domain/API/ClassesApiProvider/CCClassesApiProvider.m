@@ -90,7 +90,7 @@
                         path:path
                   parameters:nil
                      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                          successHandler([mappingResult array]);
+                          successHandler(mappingResult.firstObject);
                      } failure:^(RKObjectRequestOperation *operation, NSError *error) {
                              errorHandler(error);
                      }];

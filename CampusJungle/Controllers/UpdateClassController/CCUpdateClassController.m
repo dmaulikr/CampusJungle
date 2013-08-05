@@ -29,7 +29,7 @@
     [super viewDidLoad];
     [self.tableDataProvider.arrayOfLessons addObjectsFromArray:[self formatAllTimesToRequairedFormatFromArray:self.currentClass.timetable]];
     [self.tableDataProvider loadItems];
-    self.classNameTextField.text = self.currentClass.className;
+    self.classNameTextField.text = self.currentClass.name;
     self.professorTextField.text = self.currentClass.professor;
     self.subjectTextField.text = self.currentClass.subject;
     self.semesterTextField.text = self.currentClass.semester;

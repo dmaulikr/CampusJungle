@@ -63,7 +63,7 @@
     __weak CCClassesOfCollegeController *weakSelf = self;
     [self.ioc_apiClassesProvider joinClass:[(CCClass *)cellObject classID] SuccessHandler:^(id response) {
         [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadSideMenu object:nil];
-        [weakSelf.classAddedTransaction performWithObject:cellObject];
+        [weakSelf.classAddedTransaction performWithObject:response];
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
     }];

@@ -68,7 +68,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self setTitle:self.currentClass.className];
+    [self setTitle:self.currentClass.name];
 }
 
 - (void)setupButtons
@@ -93,27 +93,6 @@
     self.classContentTable.classID = self.currentClass.classID;
     self.classContentTable.delegate = self;
     [self.view addSubview:self.classContentTable.view];
-}
-
-- (IBAction)classFeedBackButtonDidPressed
-{
-    if(self.currentClass.isProfessor.boolValue){
-        [self.voteResultTransaction performWithObject:self.currentClass];
-    } else {
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        [self.ioc_votesApiProvider checkVoitingAvailabilityForClassWithID:self.currentClass.classID successHandler:^(RKMappingResult *response) {
-            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-            if([response.firstObject[@"availability"] boolValue]){
-                [self.voteScreenTransaction performWithObject:self.currentClass];
-
-            } else {
-                [self.voteResultTransaction performWithObject:self.currentClass]; 
-            }
-        } errorHandler:^(NSError *error) {
-            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-            [CCStandardErrorHandler showErrorWithError:error];
-        }];
-    }
 }
 
 - (void)setUpLeaveButton
@@ -142,7 +121,7 @@
 
 - (void)loadInfo
 {
-    [self setTitle:self.currentClass.className];
+    [self setTitle:self.currentClass.name];
     self.professor.text = [NSString stringWithFormat:@"Prof. %@", self.currentClass.professor];
     
     NSString *classId = [self.currentClass.callNumber length] > 0 ? self.currentClass.callNumber : @"unknown";
@@ -150,7 +129,7 @@
     NSString *semester = [self.currentClass.semester length] > 0 ? self.currentClass.semester : @"unknown";
     self.semester.text = [NSString stringWithFormat:@"Semester: %@", semester.capitalizedString];
     [self.classImage setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,self.currentClass.classImageURL]] placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
-    self.title = self.currentClass.className;
+    self.title = self.currentClass.name;
 }
 
 #pragma mark -
@@ -191,6 +170,48 @@
 {
     NSDictionary *paramsDictionary = @{@"class" : self.currentClass, @"controller" : self};
     [self.timetableTransaction performWithObject:paramsDictionary];
+}
+
+- (IBAction)professorUploadsButtonDidPressed
+{
+    [self.professorUploadsTransaction performWithObject:self.currentClass];
+}
+
+- (IBAction)announcementButtonDidPressed
+{
+    [self.announcementTransaction performWithObject:self.currentClass];
+}
+
+- (IBAction)reportButtonDidPressed:(id)sender
+{
+    [self postReportOnContent:self.currentClass];
+}
+
+- (IBAction)couponsButtonDidPressed:(id)sender
+{
+    [self.couponsTransaction performWithObject:self.currentClass];
+}
+
+- (IBAction)classFeedBackButtonDidPressed
+{
+    if (self.currentClass.isProfessor.boolValue){
+        [self.voteResultTransaction performWithObject:self.currentClass];
+    }
+    else {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [self.ioc_votesApiProvider checkVoitingAvailabilityForClassWithID:self.currentClass.classID successHandler:^(RKMappingResult *response) {
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            if([response.firstObject[@"availability"] boolValue]){
+                [self.voteScreenTransaction performWithObject:self.currentClass];
+                
+            } else {
+                [self.voteResultTransaction performWithObject:self.currentClass];
+            }
+        } errorHandler:^(NSError *error) {
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
+    }
 }
 
 #pragma mark -
@@ -242,26 +263,6 @@
 - (void)sendInvite
 {
     [self.sendInviteTransaction performWithObject:self.currentClass];
-}
-
-- (IBAction)professorUploadsButtonDidPressed
-{
-    [self.professorUploadsTransaction performWithObject:self.currentClass];
-}
-
-- (IBAction)announcementButtonDidPressed
-{
-    [self.announcementTransaction performWithObject:self.currentClass];
-}
-
-- (IBAction)reportButtonDidPressed:(id)sender
-{
-    [self postReportOnContent:self.currentClass];
-}
-
-- (IBAction)couponsButtonDidPressed:(id)sender
-{
-    [self.couponsTransaction performWithObject:self.currentClass];
 }
 
 @end

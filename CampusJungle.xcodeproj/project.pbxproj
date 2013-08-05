@@ -7638,13 +7638,10 @@
 				D3B7327F17ABD57500F35C4D /* CCClearButton.m in Sources */,
 				D3B7328317AC001000F35C4D /* CCSettings.m in Sources */,
 				D3AEE3E117AC0D6300D83FB5 /* CCSettingsAPIProvider.m in Sources */,
-
 				7022736F17AFB6AF00917C7F /* CCAdsDataSource.m in Sources */,
 				7022737317AFC65200917C7F /* CCSideMenuHelper.m in Sources */,
-
 				D3AEE3E717AC16BE00D83FB5 /* GIInputAlert.m in Sources */,
 				D3AEE3EC17AC16E300D83FB5 /* GIAlertView.m in Sources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7675,6 +7672,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -7690,6 +7688,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
