@@ -93,6 +93,7 @@
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<int key="IBUIContentMode">3</int>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<string key="IBPlaceholder">Search Inviter</string>
 										<object class="IBUITextInputTraits" key="IBTextInputTraits">
 											<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										</object>

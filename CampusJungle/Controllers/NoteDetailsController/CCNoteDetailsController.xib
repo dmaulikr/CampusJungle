@@ -300,7 +300,7 @@
 									</object>
 									<object class="IBUILabel" id="814633433">
 										<reference key="NSNextResponder" ref="249652355"/>
-										<int key="NSvFlags">292</int>
+										<int key="NSvFlags">268</int>
 										<string key="NSFrame">{{18, 370}, {281, 21}}</string>
 										<reference key="NSSuperview" ref="249652355"/>
 										<reference key="NSWindow"/>
@@ -353,7 +353,6 @@
 								<string key="NSFrame">{{0, 537}, {321, 11}}</string>
 								<reference key="NSSuperview" ref="497898232"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="503538041"/>
 								<reference key="IBUISimulatedDestinationMetrics" ref="968833986"/>
@@ -484,6 +483,14 @@
 						<reference key="destination" ref="838608182"/>
 					</object>
 					<int key="connectionID">57</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">tableHeader</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="249652355"/>
+					</object>
+					<int key="connectionID">68</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -686,7 +693,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">67</int>
+			<int key="maxID">68</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -737,10 +744,12 @@
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="fullAccessButton">UIButton</string>
+						<string key="noteDescription">UILabel</string>
 						<string key="noteName">UILabel</string>
 						<string key="pdfButton">UIButton</string>
 						<string key="removeNoteButton">UIButton</string>
 						<string key="resendLinkButton">UIButton</string>
+						<string key="tableHeader">UIView</string>
 						<string key="thumbnail">UIImageView</string>
 						<string key="viewOnlyAccessButton">UIButton</string>
 					</dictionary>
@@ -748,6 +757,10 @@
 						<object class="IBToOneOutletInfo" key="fullAccessButton">
 							<string key="name">fullAccessButton</string>
 							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="noteDescription">
+							<string key="name">noteDescription</string>
+							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="noteName">
 							<string key="name">noteName</string>
@@ -764,6 +777,10 @@
 						<object class="IBToOneOutletInfo" key="resendLinkButton">
 							<string key="name">resendLinkButton</string>
 							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="tableHeader">
+							<string key="name">tableHeader</string>
+							<string key="candidateClassName">UIView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="thumbnail">
 							<string key="name">thumbnail</string>
