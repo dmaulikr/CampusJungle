@@ -414,4 +414,15 @@
     }];
 }
 
+- (void)changePasswordWithParams:(NSDictionary *)params successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    [self setAuthorizationToken];
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [objectManager putObject:nil path:CCAPIDefines.changePassword parameters:params success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        successHandler(mappingResult);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        errorHandler(error);
+    }];
+}
+
 @end

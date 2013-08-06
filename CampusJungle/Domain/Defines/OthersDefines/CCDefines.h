@@ -118,6 +118,7 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *loadAds;
     __unsafe_unretained NSString *getSettings;
     __unsafe_unretained NSString *setSettings;
+    __unsafe_unretained NSString *changePassword;
 
 } CCAPIDefines;
 

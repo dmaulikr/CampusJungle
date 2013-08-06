@@ -120,6 +120,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .loadAds = @"/api/classes/%@/ads",
     .getSettings = @"/api/users/me/notification_settings",
     .setSettings = @"/api/users/me/notification_settings",
+    .changePassword = @"/api/users/me/change_password",
 };
 
 const struct CCUserDefines CCUserDefines = {

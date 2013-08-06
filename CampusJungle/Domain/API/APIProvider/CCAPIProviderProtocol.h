@@ -54,4 +54,6 @@
 
 - (void)postInviter:(NSString *)inviterID successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 
+- (void)changePasswordWithParams:(NSDictionary *)params successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
+
 @end

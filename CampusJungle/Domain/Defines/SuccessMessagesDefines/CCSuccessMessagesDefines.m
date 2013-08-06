@@ -40,4 +40,5 @@ const struct CCSuccessMessages CCSuccessMessages = {
     .appInviteSent = @"Invites was successfully sent",
     .sendFacebookInvite = @"You've successfully sent invites to your friends",
     .sentReport = @"You've successfully sent a report",
+    .passwordChanged = @"You've successfully changed password",
 };
