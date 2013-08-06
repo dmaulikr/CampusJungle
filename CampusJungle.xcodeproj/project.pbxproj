@@ -327,6 +327,7 @@
 		703DA4FE178C6A5900464DD3 /* CCLocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4FC178C6A5900464DD3 /* CCLocationsViewController.m */; };
 		703DA4FF178C6A5900464DD3 /* CCLocationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703DA4FD178C6A5900464DD3 /* CCLocationsViewController.xib */; };
 		70438E481785B7A800537712 /* CCNavigationBarViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 70438E471785B7A800537712 /* CCNavigationBarViewHelper.m */; };
+		7064612E17B192EB001801AF /* MBProgressHUD+Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 7064612D17B192EB001801AF /* MBProgressHUD+Status.m */; };
 		7070444917A67F3100AC0FDE /* CCFacebookRequestParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7070444817A67F3100AC0FDE /* CCFacebookRequestParseHelper.m */; };
 		7070444F17A68E6F00AC0FDE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7070444D17A68E6000AC0FDE /* Social.framework */; };
 		7070445317A6B39300AC0FDE /* CCPushNotificationsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7070445217A6B39300AC0FDE /* CCPushNotificationsService.m */; };
@@ -1227,6 +1228,8 @@
 		703DA4FD178C6A5900464DD3 /* CCLocationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCLocationsViewController.xib; sourceTree = "<group>"; };
 		70438E461785B7A800537712 /* CCNavigationBarViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNavigationBarViewHelper.h; sourceTree = "<group>"; };
 		70438E471785B7A800537712 /* CCNavigationBarViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNavigationBarViewHelper.m; sourceTree = "<group>"; };
+		7064612C17B192EB001801AF /* MBProgressHUD+Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Status.h"; sourceTree = "<group>"; };
+		7064612D17B192EB001801AF /* MBProgressHUD+Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Status.m"; sourceTree = "<group>"; };
 		7070444717A67F3100AC0FDE /* CCFacebookRequestParseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFacebookRequestParseHelper.h; sourceTree = "<group>"; };
 		7070444817A67F3100AC0FDE /* CCFacebookRequestParseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFacebookRequestParseHelper.m; sourceTree = "<group>"; };
 		7070444A17A688BE00AC0FDE /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -3334,6 +3337,15 @@
 				70438E471785B7A800537712 /* CCNavigationBarViewHelper.m */,
 			);
 			path = NavigationBarViewHelper;
+			sourceTree = "<group>";
+		};
+		7064612B17B192A2001801AF /* ProgressHud */ = {
+			isa = PBXGroup;
+			children = (
+				7064612C17B192EB001801AF /* MBProgressHUD+Status.h */,
+				7064612D17B192EB001801AF /* MBProgressHUD+Status.m */,
+			);
+			path = ProgressHud;
 			sourceTree = "<group>";
 		};
 		7070444617A67F2200AC0FDE /* FacebookRequestParseHelper */ = {
@@ -5766,6 +5778,7 @@
 			isa = PBXGroup;
 			children = (
 				70FDD673179ECE7F00871727 /* DateFormatterCategory */,
+				7064612B17B192A2001801AF /* ProgressHud */,
 				70C0FCB3178484D0005EF95E /* TextFieldCategory */,
 			);
 			path = Categories;
@@ -7684,6 +7697,7 @@
 				70334A1B17B11B56001D1B57 /* CCChangePasswordViewController.m in Sources */,
 				70334A2117B11E77001D1B57 /* CCMessageDetailsTransaction.m in Sources */,
 				70334A2417B11EC0001D1B57 /* CCChangePasswordTransaction.m in Sources */,
+				7064612E17B192EB001801AF /* MBProgressHUD+Status.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7714,8 +7728,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yury Grinenko (95C5U2X82L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yury Grinenko (95C5U2X82L)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -7730,8 +7744,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "80D997AC-E2FC-48AA-A3EB-BB7CADE4469A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "80D997AC-E2FC-48AA-A3EB-BB7CADE4469A";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -7768,8 +7782,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yury Grinenko (95C5U2X82L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yury Grinenko (95C5U2X82L)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusJungle/CampusJungle-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CampusJungle/CampusJungle-Info.plist";
@@ -7808,8 +7822,8 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = CampusJungle;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "80D997AC-E2FC-48AA-A3EB-BB7CADE4469A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "80D997AC-E2FC-48AA-A3EB-BB7CADE4469A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;

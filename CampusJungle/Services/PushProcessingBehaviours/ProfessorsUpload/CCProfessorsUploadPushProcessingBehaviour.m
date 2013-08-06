@@ -14,26 +14,17 @@
 #import "CCNavigationHelper.h"
 #import "CCAPIProviderProtocol.h"
 
+#import "MBProgressHUD+Status.h"
+
 typedef void(^LoadClassSuccessBlock)(id);
 
 @interface CCProfessorsUploadPushProcessingBehaviour ()
 
-@property (nonatomic, strong) id<CCTransactionWithObject> uploadsTransaction;
 @property (nonatomic, strong) id<CCAPIProviderProtocol> ioc_apiProvider;
 
 @end
 
 @implementation CCProfessorsUploadPushProcessingBehaviour
-
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        self.uploadsTransaction = [CCProfessorUploadsTransaction new];
-        [(CCProfessorUploadsTransaction *)self.uploadsTransaction setNavigation:[CCNavigationHelper activeNavigationController]];
-    }
-    return self;
-}
 
 - (void)processWhenAppNotRunningWithUserInfo:(NSDictionary *)userInfo
 {
@@ -55,10 +46,11 @@ typedef void(^LoadClassSuccessBlock)(id);
 
 - (void)goUploadsWithUserInfo:(NSDictionary *)userInfo
 {
-    __weak CCProfessorsUploadPushProcessingBehaviour *weakSelf = self;
     NSString *classId = [userInfo objectForKey:@"class_id"];
     [self loadClassWithId:classId successBlock:^(id classObject) {
-        [weakSelf.uploadsTransaction performWithObject:classObject];
+        CCProfessorUploadsTransaction *uploadsTransaction = [CCProfessorUploadsTransaction new];
+        uploadsTransaction.navigation = [CCNavigationHelper activeNavigationController];
+        [uploadsTransaction performWithObject:classObject];
     }];
 }
 
@@ -66,12 +58,12 @@ typedef void(^LoadClassSuccessBlock)(id);
 #pragma mark Requests
 - (void)loadClassWithId:(NSString *)classId successBlock:(LoadClassSuccessBlock)successBlock
 {
-    [SVProgressHUD showWithStatus:CCProcessingMessages.loadingProfessorsUploads];
+    [MBProgressHUD showInKeyWindowWithStatus:CCProcessingMessages.loadingProfessorsUploads];
     [self.ioc_apiProvider loadClassWithId:classId successHandler:^(RKMappingResult *result) {
-        [SVProgressHUD dismiss];
+        [MBProgressHUD hideInKeyWindow];
         successBlock(result);
     } errorHandler:^(NSError *error) {
-        [SVProgressHUD dismiss];
+        [MBProgressHUD hideInKeyWindow];
         [CCStandardErrorHandler showErrorWithError:error];
     }];
 }
