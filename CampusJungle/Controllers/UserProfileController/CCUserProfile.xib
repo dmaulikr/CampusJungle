@@ -45,6 +45,7 @@
 						<string key="NSFrameSize">{320, 548}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor" id="878642311">
 							<int key="NSColorSpace">3</int>
@@ -158,6 +159,7 @@
 						<string key="NSFrame">{{167, 111}, {144, 44}}</string>
 						<reference key="NSSuperview" ref="915259009"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -601,6 +603,7 @@
 						<string key="NSFrame">{{203, 160}, {110, 32}}</string>
 						<reference key="NSSuperview" ref="845167541"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -618,7 +621,7 @@
 						<reference key="IBUIFont" ref="916526191"/>
 					</object>
 				</array>
-				<string key="NSFrameSize">{320, 191}</string>
+				<string key="NSFrameSize">{320, 204}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="699619108"/>
@@ -1175,7 +1178,6 @@
 					<string key="superclassName">CCTableBaseViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="avatarDidPressed">id</string>
-						<string key="changePasswordButtonDidPressed:">id</string>
 						<string key="logout">id</string>
 						<string key="manageWalletButtonDidPressed">id</string>
 						<string key="myMyBooksButtonDidPressed">id</string>
@@ -1186,10 +1188,6 @@
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="avatarDidPressed">
 							<string key="name">avatarDidPressed</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="changePasswordButtonDidPressed:">
-							<string key="name">changePasswordButtonDidPressed:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="logout">
