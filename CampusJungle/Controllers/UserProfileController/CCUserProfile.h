@@ -21,6 +21,7 @@
 @property (nonatomic, strong) NSMutableArray *arrayOfEducations;
 @property (nonatomic, strong) id <CCTransaction> walletTransaction;
 @property (nonatomic, strong) id <CCTransaction> settingsTransaction;
+@property (nonatomic, strong) id <CCTransaction> myBooksTransaction;
 
 - (IBAction)logout;
 - (IBAction)avatarDidPressed;

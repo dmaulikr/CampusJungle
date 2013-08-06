@@ -35,6 +35,7 @@
 @property (nonatomic, weak) IBOutlet UIView *tableFooterView;
 @property (nonatomic, weak) IBOutlet UIView *tableHeaderView;
 @property (nonatomic, weak) IBOutlet UIButton *avatarButton;
+@property (nonatomic, weak) IBOutlet UIButton *myBooksButton;
 
 @property (nonatomic, weak) IBOutlet UIButton *addCollegeButton;
 
@@ -71,6 +72,7 @@
 
 - (IBAction)manageWalletButtonDidPressed;
 - (IBAction)settingsButtonDidPressed;
+- (IBAction)myMyBooksButtonDidPressed;
 
 @end
 
@@ -315,6 +317,11 @@
     [self.myStuffTransaction perform];
 }
 
+- (IBAction)myMyBooksButtonDidPressed
+{
+    [self.myBooksTransaction perform];
+}
+
 #pragma mark -
 #pragma mark Validation Methods
 - (BOOL)isFieldsValid
@@ -390,6 +397,7 @@
     
     self.myNotesButton.alpha = 0;
     self.mystuffButton.alpha = 0;
+    self.myBooksButton.alpha = 0;
     self.logoutButton.alpha = 0;
     self.changePassButton.alpha = 0;
     self.settingsButton.alpha = 0;
@@ -414,6 +422,7 @@
     
     self.myNotesButton.alpha = 1;
     self.mystuffButton.alpha = 1;
+     self.myBooksButton.alpha = 1;
     self.logoutButton.alpha = 1;
     self.changePassButton.alpha = 1;
     self.settingsButton.alpha = 1;
