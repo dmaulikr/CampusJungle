@@ -227,6 +227,11 @@
     [alert show];
 }
 
+- (IBAction)changePasswordButtonDidPressed:(id)sender
+{
+    [self.changePasswordTransaction perform];
+}
+
 - (IBAction)manageWalletButtonDidPressed
 {
     [self.walletTransaction perform];

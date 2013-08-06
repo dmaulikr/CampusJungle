@@ -13,26 +13,17 @@
 #import "CCAlertHelper.h"
 #import "CCStandardErrorHandler.h"
 
+#import "MBProgressHUD+Status.h"
+
 typedef void(^LoadClassSuccessBlock)(id);
 
 @interface CCClassFeedbackPushProcessingBehaviour ()
 
-@property (nonatomic, strong) id<CCTransactionWithObject> voteTransaction;
 @property (nonatomic, strong) id<CCAPIProviderProtocol> ioc_apiProvider;
 
 @end
 
 @implementation CCClassFeedbackPushProcessingBehaviour
-
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        self.voteTransaction = [CCVoteScreenTransaction new];
-        [(CCVoteScreenTransaction *)self.voteTransaction setNavigation:[CCNavigationHelper activeNavigationController]];
-    }
-    return self;
-}
 
 - (void)processWhenAppNotRunningWithUserInfo:(NSDictionary *)userInfo
 {
@@ -54,10 +45,11 @@ typedef void(^LoadClassSuccessBlock)(id);
 
 - (void)goCouponsWithUserInfo:(NSDictionary *)userInfo
 {
-    __weak CCClassFeedbackPushProcessingBehaviour *weakSelf = self;
     NSString *classId = [userInfo objectForKey:@"class_id"];
     [self loadClassWithId:classId successBlock:^(id classObject) {
-        [weakSelf.voteTransaction performWithObject:classObject];
+        CCVoteScreenTransaction *voteTransaction = [CCVoteScreenTransaction new];
+        voteTransaction.navigation = [CCNavigationHelper activeNavigationController];
+        [voteTransaction performWithObject:classObject];
     }];
 }
 
@@ -65,12 +57,12 @@ typedef void(^LoadClassSuccessBlock)(id);
 #pragma mark Requests
 - (void)loadClassWithId:(NSString *)classId successBlock:(LoadClassSuccessBlock)successBlock
 {
-    [SVProgressHUD showWithStatus:CCProcessingMessages.loadingVoteDetails];
+    [MBProgressHUD showInKeyWindowWithStatus:CCProcessingMessages.loadingVoteDetails];
     [self.ioc_apiProvider loadClassWithId:classId successHandler:^(RKMappingResult *result) {
-        [SVProgressHUD dismiss];
+        [MBProgressHUD hideInKeyWindow];
         successBlock(result);
     } errorHandler:^(NSError *error) {
-        [SVProgressHUD dismiss];
+        [MBProgressHUD hideInKeyWindow];
         [CCStandardErrorHandler showErrorWithError:error];
     }];
 }

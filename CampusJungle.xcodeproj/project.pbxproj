@@ -297,6 +297,10 @@
 		7025633B17A0058800B48AA2 /* CCGroupInviteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7025633A17A0058800B48AA2 /* CCGroupInviteCell.m */; };
 		7025633F17A0063100B48AA2 /* CCGroupInvite.m in Sources */ = {isa = PBXBuildFile; fileRef = 7025633E17A0063100B48AA2 /* CCGroupInvite.m */; };
 		7025634117A0092600B48AA2 /* CCGroupInviteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7025634017A0092500B48AA2 /* CCGroupInviteCell.xib */; };
+		70334A1B17B11B56001D1B57 /* CCChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70334A1917B11B56001D1B57 /* CCChangePasswordViewController.m */; };
+		70334A1C17B11B56001D1B57 /* CCChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70334A1A17B11B56001D1B57 /* CCChangePasswordViewController.xib */; };
+		70334A2117B11E77001D1B57 /* CCMessageDetailsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70334A2017B11E77001D1B57 /* CCMessageDetailsTransaction.m */; };
+		70334A2417B11EC0001D1B57 /* CCChangePasswordTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70334A2317B11EC0001D1B57 /* CCChangePasswordTransaction.m */; };
 		703AC79717AAF51F00B222F3 /* coupon_icon_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 703AC79317AAF51F00B222F3 /* coupon_icon_active.png */; };
 		703AC79817AAF51F00B222F3 /* coupon_icon_active@2x@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 703AC79417AAF51F00B222F3 /* coupon_icon_active@2x@2x.png */; };
 		703AC79917AAF51F00B222F3 /* coupon_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 703AC79517AAF51F00B222F3 /* coupon_icon.png */; };
@@ -323,6 +327,7 @@
 		703DA4FE178C6A5900464DD3 /* CCLocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703DA4FC178C6A5900464DD3 /* CCLocationsViewController.m */; };
 		703DA4FF178C6A5900464DD3 /* CCLocationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703DA4FD178C6A5900464DD3 /* CCLocationsViewController.xib */; };
 		70438E481785B7A800537712 /* CCNavigationBarViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 70438E471785B7A800537712 /* CCNavigationBarViewHelper.m */; };
+		7064612E17B192EB001801AF /* MBProgressHUD+Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 7064612D17B192EB001801AF /* MBProgressHUD+Status.m */; };
 		7070444917A67F3100AC0FDE /* CCFacebookRequestParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7070444817A67F3100AC0FDE /* CCFacebookRequestParseHelper.m */; };
 		7070444F17A68E6F00AC0FDE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7070444D17A68E6000AC0FDE /* Social.framework */; };
 		7070445317A6B39300AC0FDE /* CCPushNotificationsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7070445217A6B39300AC0FDE /* CCPushNotificationsService.m */; };
@@ -487,7 +492,6 @@
 		70B2D19917944895001B0C2C /* CCBackToStuffTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0EE17944894001B0C2C /* CCBackToStuffTransaction.m */; };
 		70B2D19A17944895001B0C2C /* CCBackToUserProfileTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0F117944894001B0C2C /* CCBackToUserProfileTransaction.m */; };
 		70B2D19B17944895001B0C2C /* CCBackTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0F417944894001B0C2C /* CCBackTransaction.m */; };
-		70B2D19C17944895001B0C2C /* CCMessageDetailsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0F717944894001B0C2C /* CCMessageDetailsTransaction.m */; };
 		70B2D19D17944895001B0C2C /* CCCitySelectionTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0FA17944894001B0C2C /* CCCitySelectionTransaction.m */; };
 		70B2D19E17944895001B0C2C /* CCClassAddedTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D0FD17944894001B0C2C /* CCClassAddedTransaction.m */; };
 		70B2D19F17944895001B0C2C /* CCClassesOfCollegeTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B2D10017944894001B0C2C /* CCClassesOfCollegeTransaction.m */; };
@@ -1191,6 +1195,13 @@
 		7025633D17A0063100B48AA2 /* CCGroupInvite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupInvite.h; sourceTree = "<group>"; };
 		7025633E17A0063100B48AA2 /* CCGroupInvite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupInvite.m; sourceTree = "<group>"; };
 		7025634017A0092500B48AA2 /* CCGroupInviteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupInviteCell.xib; sourceTree = "<group>"; };
+		70334A1817B11B56001D1B57 /* CCChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCChangePasswordViewController.h; sourceTree = "<group>"; };
+		70334A1917B11B56001D1B57 /* CCChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCChangePasswordViewController.m; sourceTree = "<group>"; };
+		70334A1A17B11B56001D1B57 /* CCChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCChangePasswordViewController.xib; sourceTree = "<group>"; };
+		70334A1F17B11E77001D1B57 /* CCMessageDetailsTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessageDetailsTransaction.h; sourceTree = "<group>"; };
+		70334A2017B11E77001D1B57 /* CCMessageDetailsTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessageDetailsTransaction.m; sourceTree = "<group>"; };
+		70334A2217B11EC0001D1B57 /* CCChangePasswordTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCChangePasswordTransaction.h; sourceTree = "<group>"; };
+		70334A2317B11EC0001D1B57 /* CCChangePasswordTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCChangePasswordTransaction.m; sourceTree = "<group>"; };
 		703AC79317AAF51F00B222F3 /* coupon_icon_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coupon_icon_active.png; sourceTree = "<group>"; };
 		703AC79417AAF51F00B222F3 /* coupon_icon_active@2x@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coupon_icon_active@2x@2x.png"; sourceTree = "<group>"; };
 		703AC79517AAF51F00B222F3 /* coupon_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coupon_icon.png; sourceTree = "<group>"; };
@@ -1233,6 +1244,8 @@
 		703DA4FD178C6A5900464DD3 /* CCLocationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCLocationsViewController.xib; sourceTree = "<group>"; };
 		70438E461785B7A800537712 /* CCNavigationBarViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNavigationBarViewHelper.h; sourceTree = "<group>"; };
 		70438E471785B7A800537712 /* CCNavigationBarViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNavigationBarViewHelper.m; sourceTree = "<group>"; };
+		7064612C17B192EB001801AF /* MBProgressHUD+Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Status.h"; sourceTree = "<group>"; };
+		7064612D17B192EB001801AF /* MBProgressHUD+Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Status.m"; sourceTree = "<group>"; };
 		7070444717A67F3100AC0FDE /* CCFacebookRequestParseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCFacebookRequestParseHelper.h; sourceTree = "<group>"; };
 		7070444817A67F3100AC0FDE /* CCFacebookRequestParseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCFacebookRequestParseHelper.m; sourceTree = "<group>"; };
 		7070444A17A688BE00AC0FDE /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -1544,8 +1557,6 @@
 		70B2D0F117944894001B0C2C /* CCBackToUserProfileTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBackToUserProfileTransaction.m; sourceTree = "<group>"; };
 		70B2D0F317944894001B0C2C /* CCBackTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBackTransaction.h; sourceTree = "<group>"; };
 		70B2D0F417944894001B0C2C /* CCBackTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBackTransaction.m; sourceTree = "<group>"; };
-		70B2D0F617944894001B0C2C /* CCMessageDetailsTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessageDetailsTransaction.h; sourceTree = "<group>"; };
-		70B2D0F717944894001B0C2C /* CCMessageDetailsTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessageDetailsTransaction.m; sourceTree = "<group>"; };
 		70B2D0F917944894001B0C2C /* CCCitySelectionTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCitySelectionTransaction.h; sourceTree = "<group>"; };
 		70B2D0FA17944894001B0C2C /* CCCitySelectionTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCitySelectionTransaction.m; sourceTree = "<group>"; };
 		70B2D0FC17944894001B0C2C /* CCClassAddedTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassAddedTransaction.h; sourceTree = "<group>"; };
@@ -3214,6 +3225,34 @@
 			path = GroupInvite;
 			sourceTree = "<group>";
 		};
+		70334A1717B11B3E001D1B57 /* ChangePasswordController */ = {
+			isa = PBXGroup;
+			children = (
+				70334A1817B11B56001D1B57 /* CCChangePasswordViewController.h */,
+				70334A1917B11B56001D1B57 /* CCChangePasswordViewController.m */,
+				70334A1A17B11B56001D1B57 /* CCChangePasswordViewController.xib */,
+			);
+			path = ChangePasswordController;
+			sourceTree = "<group>";
+		};
+		70334A1D17B11E64001D1B57 /* ChangePasswordTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				70334A2217B11EC0001D1B57 /* CCChangePasswordTransaction.h */,
+				70334A2317B11EC0001D1B57 /* CCChangePasswordTransaction.m */,
+			);
+			path = ChangePasswordTransaction;
+			sourceTree = "<group>";
+		};
+		70334A1E17B11E77001D1B57 /* MessageDetailsTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				70334A1F17B11E77001D1B57 /* CCMessageDetailsTransaction.h */,
+				70334A2017B11E77001D1B57 /* CCMessageDetailsTransaction.m */,
+			);
+			path = MessageDetailsTransaction;
+			sourceTree = "<group>";
+		};
 		703AC7A317AAFAB400B222F3 /* CouponsController */ = {
 			isa = PBXGroup;
 			children = (
@@ -3346,6 +3385,15 @@
 			path = NavigationBarViewHelper;
 			sourceTree = "<group>";
 		};
+		7064612B17B192A2001801AF /* ProgressHud */ = {
+			isa = PBXGroup;
+			children = (
+				7064612C17B192EB001801AF /* MBProgressHUD+Status.h */,
+				7064612D17B192EB001801AF /* MBProgressHUD+Status.m */,
+			);
+			path = ProgressHud;
+			sourceTree = "<group>";
+		};
 		7070444617A67F2200AC0FDE /* FacebookRequestParseHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -3464,6 +3512,7 @@
 				70A29C35178778AB001BC8DD /* BaseController */,
 				D35CDF2517B15EAA0033CD28 /* BooksOffersController */,
 				D35CDEF517B118CE0033CD28 /* BookDetailsController */,
+				70334A1717B11B3E001D1B57 /* ChangePasswordController */,
 				70A29C39178778AB001BC8DD /* CitySelectionController */,
 				70A29C3D178778AB001BC8DD /* ClassController */,
 				70A29C45178778AB001BC8DD /* ClassesOfCollegeController */,
@@ -4819,6 +4868,7 @@
 				D35CDF1D17B141B70033CD28 /* BookDetailsTransaction */,
 				D383D7A317B1A3290005C0F8 /* BookOfferTransaction */,
 				70B2D0F517944894001B0C2C /* CCMessageDetailsTransaction */,
+				70334A1D17B11E64001D1B57 /* ChangePasswordTransaction */,
 				70B2D0F817944894001B0C2C /* CitySelectionTransaction */,
 				70B2D0FB17944894001B0C2C /* ClassAddedTransaction */,
 				70B2D0FE17944894001B0C2C /* ClassesOfCurrentCollegeTransaction */,
@@ -4852,6 +4902,7 @@
 				70B2D13A17944894001B0C2C /* MainTransaction */,
 				70B2D13D17944894001B0C2C /* MarketTransaction */,
 				D35CDF0D17B130410033CD28 /* MyBooksTransaction */,
+				70334A1E17B11E77001D1B57 /* MessageDetailsTransaction */,
 				70B2D14017944894001B0C2C /* MyNotes */,
 				70B2D14317944894001B0C2C /* MyStuffTransaction */,
 				70B2D14917944894001B0C2C /* NoteDetailTransaction */,
@@ -4972,15 +5023,6 @@
 				70B2D0F417944894001B0C2C /* CCBackTransaction.m */,
 			);
 			path = BackTransaction;
-			sourceTree = "<group>";
-		};
-		70B2D0F517944894001B0C2C /* CCMessageDetailsTransaction */ = {
-			isa = PBXGroup;
-			children = (
-				70B2D0F617944894001B0C2C /* CCMessageDetailsTransaction.h */,
-				70B2D0F717944894001B0C2C /* CCMessageDetailsTransaction.m */,
-			);
-			path = CCMessageDetailsTransaction;
 			sourceTree = "<group>";
 		};
 		70B2D0F817944894001B0C2C /* CitySelectionTransaction */ = {
@@ -5796,6 +5838,7 @@
 			isa = PBXGroup;
 			children = (
 				70FDD673179ECE7F00871727 /* DateFormatterCategory */,
+				7064612B17B192A2001801AF /* ProgressHud */,
 				70C0FCB3178484D0005EF95E /* TextFieldCategory */,
 			);
 			path = Categories;
@@ -7393,6 +7436,7 @@
 				D35CDEFC17B119710033CD28 /* CCAddBookViewController.xib in Resources */,
 				D35CDF0617B120D80033CD28 /* CCBookDetailsController.xib in Resources */,
 				D35CDF0B17B12C410033CD28 /* CCMyBooksListController.xib in Resources */,
+				70334A1C17B11B56001D1B57 /* CCChangePasswordViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7587,7 +7631,6 @@
 				70B2D19917944895001B0C2C /* CCBackToStuffTransaction.m in Sources */,
 				70B2D19A17944895001B0C2C /* CCBackToUserProfileTransaction.m in Sources */,
 				70B2D19B17944895001B0C2C /* CCBackTransaction.m in Sources */,
-				70B2D19C17944895001B0C2C /* CCMessageDetailsTransaction.m in Sources */,
 				70B2D19D17944895001B0C2C /* CCCitySelectionTransaction.m in Sources */,
 				70B2D19E17944895001B0C2C /* CCClassAddedTransaction.m in Sources */,
 				70B2D19F17944895001B0C2C /* CCClassesOfCollegeTransaction.m in Sources */,
@@ -7847,6 +7890,10 @@
 				D35CDF2417B1586E0033CD28 /* CCMarketBooksDataProvider.m in Sources */,
 				D35CDF2817B15F030033CD28 /* CCBooksOfferController.m in Sources */,
 				D383D7A617B1A33E0005C0F8 /* CCBookOfferTransaction.m in Sources */,
+				70334A1B17B11B56001D1B57 /* CCChangePasswordViewController.m in Sources */,
+				70334A2117B11E77001D1B57 /* CCMessageDetailsTransaction.m in Sources */,
+				70334A2417B11EC0001D1B57 /* CCChangePasswordTransaction.m in Sources */,
+				7064612E17B192EB001801AF /* MBProgressHUD+Status.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7877,8 +7924,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yury Grinenko (95C5U2X82L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yury Grinenko (95C5U2X82L)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -7893,8 +7940,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "80D997AC-E2FC-48AA-A3EB-BB7CADE4469A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "80D997AC-E2FC-48AA-A3EB-BB7CADE4469A";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -7931,8 +7978,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yury Grinenko (95C5U2X82L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yury Grinenko (95C5U2X82L)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusJungle/CampusJungle-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CampusJungle/CampusJungle-Info.plist";
@@ -7971,8 +8018,8 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = CampusJungle;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "80D997AC-E2FC-48AA-A3EB-BB7CADE4469A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "80D997AC-E2FC-48AA-A3EB-BB7CADE4469A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;

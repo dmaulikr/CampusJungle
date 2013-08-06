@@ -16,26 +16,17 @@
 #import "CCForumsApiProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
 
+#import "MBProgressHUD+Status.h"
+
 typedef void(^LoadForumSuccessBlock)(id);
 
 @interface CCQuestionPushProcessingBehaviour ()
 
-@property (nonatomic, strong) id<CCTransactionWithObject> questionsTransaction;
 @property (nonatomic, strong) id<CCForumsApiProviderProtocol> ioc_forumsApiProvider;
 
 @end
 
 @implementation CCQuestionPushProcessingBehaviour
-
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        self.questionsTransaction = [CCForumDetailsTransaction new];
-        [(CCForumDetailsTransaction *)self.questionsTransaction setNavigation:[CCNavigationHelper activeNavigationController]];
-    }
-    return self;
-}
 
 - (void)processWhenAppNotRunningWithUserInfo:(NSDictionary *)userInfo
 {
@@ -57,10 +48,11 @@ typedef void(^LoadForumSuccessBlock)(id);
 
 - (void)goQuestionsWithUserInfo:(NSDictionary *)userInfo
 {
-    __weak CCQuestionPushProcessingBehaviour *weakSelf = self;
     NSString *forumId = [userInfo objectForKey:@"forum_id"];
     [self loadForumWithId:forumId successBlock:^(id forum) {
-        [weakSelf.questionsTransaction performWithObject:forum];
+        CCForumDetailsTransaction *questionsTransaction = [CCForumDetailsTransaction new];
+        questionsTransaction.navigation = [CCNavigationHelper activeNavigationController];
+        [questionsTransaction performWithObject:forum];
     }];
 }
 
@@ -68,12 +60,12 @@ typedef void(^LoadForumSuccessBlock)(id);
 #pragma mark Requests
 - (void)loadForumWithId:(NSString *)forumId successBlock:(LoadForumSuccessBlock)successBlock
 {
-    [SVProgressHUD showWithStatus:CCProcessingMessages.loadingQuestion];
+    [MBProgressHUD showInKeyWindowWithStatus:CCProcessingMessages.loadingQuestion];
     [self.ioc_forumsApiProvider loadForumWithId:forumId successHandler:^(RKMappingResult *result) {
-        [SVProgressHUD dismiss];
+        [MBProgressHUD hideInKeyWindow];
         successBlock(result);
     } errorHandler:^(NSError *error) {
-        [SVProgressHUD dismiss];
+        [MBProgressHUD hideInKeyWindow];
         [CCStandardErrorHandler showErrorWithError:error];
     }];
 }

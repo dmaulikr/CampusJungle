@@ -90,4 +90,5 @@ const struct CCValidationMessages CCValidationMessages = {
     .emptyTopic = @"Please enter topic",
     .noUsersSelected = @"Select some users first",
     .emptyReportText = @"Report text can't be blank",
+    .passwordAndConfirmationDoNotMatched = @"New password and password confirmation don't match",
 };

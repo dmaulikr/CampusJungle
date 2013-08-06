@@ -14,26 +14,17 @@
 #import "CCAlertHelper.h"
 #import "CCNavigationHelper.h"
 
+#import "MBProgressHUD+Status.h"
+
 typedef void(^LoadForumSuccessBlock)(id);
 
 @interface CCForumPushProcessingBehaviour ()
 
-@property (nonatomic, strong) id<CCTransactionWithObject> forumDetailsTransaction;
 @property (nonatomic, strong) id<CCForumsApiProviderProtocol> ioc_forumsApiProvider;
 
 @end
 
 @implementation CCForumPushProcessingBehaviour
-
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        self.forumDetailsTransaction = [CCForumDetailsTransaction new];
-        [(CCForumDetailsTransaction *)self.forumDetailsTransaction setNavigation:[CCNavigationHelper activeNavigationController]];
-    }
-    return self;
-}
 
 - (void)processWhenAppNotRunningWithUserInfo:(NSDictionary *)userInfo
 {
@@ -42,7 +33,7 @@ typedef void(^LoadForumSuccessBlock)(id);
 
 - (void)processWhenAppInBackgroundWithUserInfo:(NSDictionary *)userInfo
 {
-    [self goForumDetailsWithUserInfo:userInfo];    
+    [self goForumDetailsWithUserInfo:userInfo];
 }
 
 - (void)processWhenAppActiveWithUserInfo:(NSDictionary *)userInfo
@@ -55,10 +46,11 @@ typedef void(^LoadForumSuccessBlock)(id);
 
 - (void)goForumDetailsWithUserInfo:(NSDictionary *)userInfo
 {
-    __weak CCForumPushProcessingBehaviour *weakSelf = self;
     NSString *forumId = [userInfo objectForKey:@"forum_id"];
     [self loadForumWithId:forumId successBlock:^(id forum) {
-        [weakSelf.forumDetailsTransaction performWithObject:forum];
+        CCForumDetailsTransaction *transaction = [CCForumDetailsTransaction new];
+        transaction.navigation = [CCNavigationHelper activeNavigationController];
+        [transaction performWithObject:forum];
     }];
 }
 
@@ -66,12 +58,12 @@ typedef void(^LoadForumSuccessBlock)(id);
 #pragma mark Requests
 - (void)loadForumWithId:(NSString *)forumId successBlock:(LoadForumSuccessBlock)successBlock
 {
-    [SVProgressHUD showWithStatus:CCProcessingMessages.loadingForum];
+    [MBProgressHUD showInKeyWindowWithStatus:CCProcessingMessages.loadingForum];
     [self.ioc_forumsApiProvider loadForumWithId:forumId successHandler:^(RKMappingResult *result) {
-        [SVProgressHUD dismiss];
+        [MBProgressHUD hideInKeyWindow];
         successBlock(result);
     } errorHandler:^(NSError *error) {
-        [SVProgressHUD dismiss];
+        [MBProgressHUD hideInKeyWindow];
         [CCStandardErrorHandler showErrorWithError:error];
     }];
 }

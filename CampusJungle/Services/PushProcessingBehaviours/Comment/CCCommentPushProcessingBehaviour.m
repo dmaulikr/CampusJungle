@@ -14,26 +14,17 @@
 #import "CCAlertHelper.h"
 #import "CCNavigationHelper.h"
 
+#import "MBProgressHUD+Status.h"
+
 typedef void(^LoadCommentSuccessBlock)(id);
 
 @interface CCCommentPushProcessingBehaviour ()
 
 @property (nonatomic, strong) id<CCAnswersApiProviderProtocol> ioc_answersApiProvider;
-@property (nonatomic, strong) id<CCTransactionWithObject> commentsTransaction;
 
 @end
 
 @implementation CCCommentPushProcessingBehaviour
-
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        self.commentsTransaction = [CCCommentsTransaction new];
-        [(CCCommentsTransaction *)self.commentsTransaction setNavigation:[CCNavigationHelper activeNavigationController]];
-    }
-    return self;
-}
 
 - (void)processWhenAppNotRunningWithUserInfo:(NSDictionary *)userInfo
 {
@@ -56,9 +47,10 @@ typedef void(^LoadCommentSuccessBlock)(id);
 - (void)goCommentsWithUserInfo:(NSDictionary *)userInfo
 {
     NSString *answerId = [userInfo objectForKey:@"answer_id"];
-    __weak CCCommentPushProcessingBehaviour *weakSelf = self;
     [self loadAnswerWithId:answerId successBlock:^(id answer) {
-        [weakSelf.commentsTransaction performWithObject:answer];
+        CCCommentsTransaction *commentsTransaction = [CCCommentsTransaction new];
+        commentsTransaction.navigation = [CCNavigationHelper activeNavigationController];
+        [commentsTransaction performWithObject:answer];
     }];
 }
 
@@ -66,12 +58,12 @@ typedef void(^LoadCommentSuccessBlock)(id);
 #pragma mark Requests
 - (void)loadAnswerWithId:(NSString *)answerId successBlock:(LoadCommentSuccessBlock)successBlock
 {
-    [SVProgressHUD showWithStatus:CCProcessingMessages.loadingComments];
+    [MBProgressHUD showInKeyWindowWithStatus:CCProcessingMessages.loadingComments];
     [self.ioc_answersApiProvider loadAnswerWithId:answerId successHandler:^(RKMappingResult *result) {
-        [SVProgressHUD dismiss];
+        [MBProgressHUD hideInKeyWindow];
         successBlock(result);
     } errorHandler:^(NSError *error) {
-        [SVProgressHUD dismiss];
+        [MBProgressHUD hideInKeyWindow];
         [CCStandardErrorHandler showErrorWithError:error];
     }];
 }
