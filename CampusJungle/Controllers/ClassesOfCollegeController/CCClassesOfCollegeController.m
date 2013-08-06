@@ -9,7 +9,7 @@
 #import "CCClassesOfCollegeController.h"
 #import "CCClassesApiProviderProtocol.h"
 #import "CCClassesDataProvider.h"
-#import "CCOrdinaryCell.h"
+#import "CCClassCell.h"
 #import "CCStandardErrorHandler.h"
 #import "CCNavigationBarViewHelper.h"
 #import "CCClass.h"
@@ -45,7 +45,7 @@
 {
     self.dataProvider = [CCClassesDataProvider new];
     self.dataProvider.collegeId = self.collegeID;
-    [self configTableWithProvider:self.dataProvider cellClass:[CCOrdinaryCell class]];
+    [self configTableWithProvider:self.dataProvider cellClass:[CCClassCell class]];
 }
 
 - (void)addButton
