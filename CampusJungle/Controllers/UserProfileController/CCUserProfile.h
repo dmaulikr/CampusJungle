@@ -16,6 +16,7 @@
 @property (nonatomic, weak) JASidePanelController *sidePanelController;
 @property (nonatomic, strong) NSMutableArray *arrayOfEducations;
 
+
 @property (nonatomic, strong) id<CCTransaction> logoutTransaction;
 @property (nonatomic, strong) id<CCTransaction> addColegeTransaction;
 @property (nonatomic, strong) id<CCTransaction> myNotesTransaction;
@@ -23,6 +24,7 @@
 @property (nonatomic, strong) id<CCTransaction> walletTransaction;
 @property (nonatomic, strong) id<CCTransaction> settingsTransaction;
 @property (nonatomic, strong) id<CCTransaction> changePasswordTransaction;
+@property (nonatomic, strong) id<CCTransaction> myBooksTransaction;
 
 - (IBAction)logout;
 - (IBAction)avatarDidPressed;

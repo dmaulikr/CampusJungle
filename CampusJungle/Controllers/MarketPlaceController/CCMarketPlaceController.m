@@ -24,10 +24,13 @@
 @property (nonatomic, weak) IBOutlet UICollectionView *topNotesCollectionView;
 @property (nonatomic, weak) IBOutlet UICollectionView *latestNotesCollectionView;
 @property (nonatomic, weak) IBOutlet UICollectionView *latestStuffCollectionView;
+@property (nonatomic, weak) IBOutlet UICollectionView *latestBooksCollectionView;
 
 @property (nonatomic, strong) CCMarketNotesProvider *marketLatestNotesProvider;
 @property (nonatomic, strong) CCMarketNotesProvider *marketTopNotesProvider;
 @property (nonatomic, strong) CCMarketStuffDataProvider *marketStuffDataProvider;
+@property (nonatomic, strong) CCBaseDataProvider *marketBooksDataProvider;
+
 @property (nonatomic, strong) NSMutableArray *arrayOfDataSources;
 @property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_classesAPIProvider;
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSessionProtocol;
@@ -52,11 +55,17 @@
     self.marketStuffDataProvider = [CCMarketStuffDataProvider new];
     self.marketStuffDataProvider.order = CCMarketFilterConstants.orderTop;
     
+    CCMarketNotesProvider *booksProvider = [CCMarketNotesProvider new];
+    self.marketBooksDataProvider = booksProvider;
+    booksProvider.order = CCMarketFilterConstants.orderLatest;
+    
     [self configCollection:self.latestStuffCollectionView WithProvider:self.marketStuffDataProvider cellClass:[CCNotesCollectionCell class]];
     
     [self configCollection:self.topNotesCollectionView WithProvider:self.marketTopNotesProvider cellClass:[CCNotesCollectionCell class]];
     
     [self configCollection:self.latestNotesCollectionView WithProvider:self.marketLatestNotesProvider cellClass:[CCNotesCollectionCell class]];
+    
+    [self configCollection:self.latestBooksCollectionView WithProvider:self.marketBooksDataProvider cellClass:[CCNotesCollectionCell class]];
     
     [self.ioc_userSessionProtocol loadUserEducationsSuccessHandler:^(id educations){
         [self loadFilters];
@@ -80,6 +89,8 @@
     [self.marketTopNotesProvider loadItems];
     self.marketStuffDataProvider.filters = self.filters;
     [self.marketStuffDataProvider loadItems];
+    [(CCMarketNotesProvider *)self.marketBooksDataProvider setFilters:self.filters];
+    [self.marketBooksDataProvider loadItems];
 }
 
 - (void)applyFilters
@@ -137,10 +148,12 @@
     self.marketLatestNotesProvider.targetTable = (UITableView *)self.latestNotesCollectionView;
     self.marketTopNotesProvider.targetTable = (UITableView *)self.topNotesCollectionView;
     self.marketStuffDataProvider.targetTable = (UITableView *)self.latestStuffCollectionView;
+    self.marketBooksDataProvider.targetTable = (UITableView *)self.latestBooksCollectionView;
     
     self.marketTopNotesProvider.searchQuery = nil;
     self.marketLatestNotesProvider.searchQuery = nil;
     self.marketStuffDataProvider.searchQuery = nil;
+    self.marketBooksDataProvider.searchQuery = nil;
     
     [self update];
 }
