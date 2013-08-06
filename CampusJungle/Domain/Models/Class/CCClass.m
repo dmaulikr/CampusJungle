@@ -20,14 +20,9 @@
     return self.classID;
 }
 
-- (NSString *)name
-{
-    return self.subject;
-}
-
 - (NSString *)description
 {
-    return self.className;
+    return self.name;
 }
 
 + (void)configureMappingWithManager:(RKObjectManager *)objectManager
@@ -78,7 +73,7 @@
                                                                                                        statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     RKResponseDescriptor *responseAddClassDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:classResponseMapping
                                                                                                pathPattern:joinClass
-                                                                                                   keyPath:@"classes"
+                                                                                                   keyPath:@"class"
                                                                                                statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
     NSString *commonClassesPathPattern = [NSString stringWithFormat:CCAPIDefines.getCommonClasses,@":userID"];
@@ -136,7 +131,7 @@
       @"id":@"classID",
       @"college_name" : @"collegeName",
       @"college_id" : @"collegeID",
-      @"name" : @"className",
+      @"name" : @"name",
       @"image" : @"classImageURL",
       @"is_current_user_professor" : @"isProfessor",
       };
@@ -150,7 +145,7 @@
       @"subject" : @"subject",
       @"semester" : @"semester",
       @"callNumber":@"call_number",
-      @"className" : @"name"
+      @"name" : @"name"
       };
 }
 

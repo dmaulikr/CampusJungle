@@ -33,7 +33,7 @@
 
 - (void)fillWithObject:(id)object
 {
-    [self.titleLabel setText:((CCClass *)object).className];
+    [self.titleLabel setText:((CCClass *)object).name];
 }
 
 @end

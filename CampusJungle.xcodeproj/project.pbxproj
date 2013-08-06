@@ -284,6 +284,8 @@
 		7021ED4E17AA59DD00D45B51 /* CCMoneyOutTransactionPushProcessingBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021ED4D17AA59DD00D45B51 /* CCMoneyOutTransactionPushProcessingBehaviour.m */; };
 		7022736F17AFB6AF00917C7F /* CCAdsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7022736E17AFB6AF00917C7F /* CCAdsDataSource.m */; };
 		7022737317AFC65200917C7F /* CCSideMenuHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7022737217AFC65200917C7F /* CCSideMenuHelper.m */; };
+		7022737617B0F46C00917C7F /* CCClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7022737517B0F46C00917C7F /* CCClassCell.m */; };
+		7022737817B0F4E600917C7F /* CCClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7022737717B0F4E600917C7F /* CCClassCell.xib */; };
 		7022F4991786C7100055221C /* SelectionBackGround@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE2178454C200E54EFC /* SelectionBackGround@2x.png */; };
 		7022F49A1786C7110055221C /* SelectionBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = D347BBE3178454C200E54EFC /* SelectionBackGround.png */; };
 		70256325179FD71100B48AA2 /* CCGroupInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70256323179FD71100B48AA2 /* CCGroupInviteViewController.m */; };
@@ -1153,6 +1155,9 @@
 		7022736E17AFB6AF00917C7F /* CCAdsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAdsDataSource.m; sourceTree = "<group>"; };
 		7022737117AFC65200917C7F /* CCSideMenuHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSideMenuHelper.h; sourceTree = "<group>"; };
 		7022737217AFC65200917C7F /* CCSideMenuHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSideMenuHelper.m; sourceTree = "<group>"; };
+		7022737417B0F46C00917C7F /* CCClassCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCClassCell.h; sourceTree = "<group>"; };
+		7022737517B0F46C00917C7F /* CCClassCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCClassCell.m; sourceTree = "<group>"; };
+		7022737717B0F4E600917C7F /* CCClassCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCClassCell.xib; sourceTree = "<group>"; };
 		70256322179FD71100B48AA2 /* CCGroupInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGroupInviteViewController.h; sourceTree = "<group>"; };
 		70256323179FD71100B48AA2 /* CCGroupInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGroupInviteViewController.m; sourceTree = "<group>"; };
 		70256324179FD71100B48AA2 /* CCGroupInviteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCGroupInviteViewController.xib; sourceTree = "<group>"; };
@@ -5456,6 +5461,9 @@
 		70B2D1DA17944E39001B0C2C /* ClassCell */ = {
 			isa = PBXGroup;
 			children = (
+				7022737417B0F46C00917C7F /* CCClassCell.h */,
+				7022737517B0F46C00917C7F /* CCClassCell.m */,
+				7022737717B0F4E600917C7F /* CCClassCell.xib */,
 			);
 			path = ClassCell;
 			sourceTree = "<group>";
@@ -7202,6 +7210,7 @@
 				703AC7A817AAFACF00B222F3 /* CCCouponsViewController.xib in Resources */,
 				D3AEE3E817AC16BE00D83FB5 /* GIInputAlert.xib in Resources */,
 				703AC7D517AC125800B222F3 /* CCAdCell.xib in Resources */,
+				7022737817B0F4E600917C7F /* CCClassCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7638,13 +7647,11 @@
 				D3B7327F17ABD57500F35C4D /* CCClearButton.m in Sources */,
 				D3B7328317AC001000F35C4D /* CCSettings.m in Sources */,
 				D3AEE3E117AC0D6300D83FB5 /* CCSettingsAPIProvider.m in Sources */,
-
 				7022736F17AFB6AF00917C7F /* CCAdsDataSource.m in Sources */,
 				7022737317AFC65200917C7F /* CCSideMenuHelper.m in Sources */,
-
 				D3AEE3E717AC16BE00D83FB5 /* GIInputAlert.m in Sources */,
 				D3AEE3EC17AC16E300D83FB5 /* GIAlertView.m in Sources */,
-
+				7022737617B0F46C00917C7F /* CCClassCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

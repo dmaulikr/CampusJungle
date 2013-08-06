@@ -130,7 +130,7 @@
 - (CCClass *)prepareClass
 {
     CCClass *class = [CCClass new];
-    class.className = self.classNameTextField.text;
+    class.name = self.classNameTextField.text;
     class.collegeID = self.collegeId;
     class.professor = self.professorTextField.text;
     class.subject = self.subjectTextField.text;
