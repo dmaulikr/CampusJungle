@@ -17,6 +17,7 @@
         self.uploadingStuff = [NSMutableArray new];
         self.uploadingQuestions = [NSMutableArray new];
         self.uploadingProfessorUploads = [NSMutableArray new];
+        self.uploadingBooks = [NSMutableArray new];
     }
     return self;
 }

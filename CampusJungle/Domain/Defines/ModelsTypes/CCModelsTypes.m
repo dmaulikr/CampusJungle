@@ -27,4 +27,5 @@ const struct CCModelsTypes CCModelsTypes = {
     .stuff = @"Stuff",
     .user = @"User",
     .comment = @"Comment",
+    .book = @"Book",
 };

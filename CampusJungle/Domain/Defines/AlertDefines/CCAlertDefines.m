@@ -43,6 +43,7 @@ const struct CCAlertsMessages CCAlertsMessages = {
     .deleteMessage = @"Are you sure you want to delete message?",
     .deleteNote = @"Are you sure you want to delete note?",
     .deleteStuff = @"Are you sure you want to delete stuff?",
+    .deleteBook = @"Are you sure you want to delete book?",
     .emailSendingError = @"An error occured during sending email. Please try again",
     .unableToSendEmail = @"Your device isn't able to send email. Check your settings",
     .unableToSendSms = @"Your device isn't able to send sms. Check your settings",

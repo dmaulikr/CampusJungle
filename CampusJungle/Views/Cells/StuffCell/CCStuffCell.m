@@ -15,6 +15,7 @@
 #import "CCUploadIndicatorDelegateProtocol.h"
 #import "CCStuffUploadInfo.h"
 #import "CCStuff.h"
+#import "CCBookUploadInfo.h"
 
 static const NSInteger kCellHeight = 132;
 
@@ -38,7 +39,7 @@ static const NSInteger kCellHeight = 132;
 
 - (void)setCellObject:(id)cellObject
 {
-    if ([cellObject isKindOfClass:[CCStuffUploadInfo class]]) {
+    if ([cellObject isKindOfClass:[CCStuffUploadInfo class]] || [cellObject isKindOfClass:[CCBookUploadInfo class]]) {
         [self setUpUploadingIndicatorWithObject:cellObject];
     }
     else {
@@ -75,7 +76,7 @@ static const NSInteger kCellHeight = 132;
 - (void)setUpUploadingIndicatorWithObject:(CCNoteUploadInfo *)object
 {
     self.indicator.color = [UIColor brownColor];
-    if ([_cellObject  isKindOfClass:[CCStuffUploadInfo class]]) {
+    if ([_cellObject  isKindOfClass:[CCStuffUploadInfo class]] || [_cellObject isKindOfClass:[CCBookUploadInfo class]]) {
         [(CCStuffUploadInfo *)_cellObject setDelegate:nil];
     }
     object.delegate = self;

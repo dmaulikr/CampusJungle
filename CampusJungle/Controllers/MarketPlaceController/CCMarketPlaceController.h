@@ -16,6 +16,7 @@
 @property (nonatomic, strong) id <CCTransactionWithObject> fullListOfNotesTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> fullListOfStuffTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> stuffDetailsTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> bookDetailsTransaction;
 
 @property (nonatomic, strong) NSDictionary *filters;
 

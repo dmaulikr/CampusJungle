@@ -25,4 +25,5 @@ extern const struct CCModelsTypes {
     __unsafe_unretained NSString *review;
     __unsafe_unretained NSString *stuff;
     __unsafe_unretained NSString *user;
+    __unsafe_unretained NSString *book;
 } CCModelsTypes;

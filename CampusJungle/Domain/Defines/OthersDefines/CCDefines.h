@@ -118,6 +118,12 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *loadAds;
     __unsafe_unretained NSString *getSettings;
     __unsafe_unretained NSString *setSettings;
+    __unsafe_unretained NSString *loadMyBooks;
+    __unsafe_unretained NSString *bookInMarket;
+    __unsafe_unretained NSString *createBook;
+    __unsafe_unretained NSString *getBook;
+    __unsafe_unretained NSString *deleteBook;
+    __unsafe_unretained NSString *makeBookOffer;
 
 } CCAPIDefines;
 

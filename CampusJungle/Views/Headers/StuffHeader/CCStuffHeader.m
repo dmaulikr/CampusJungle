@@ -10,6 +10,7 @@
 #import "CCStuff.h"
 #import "CCUserSessionProtocol.h"
 #import "CCViewPositioningHelper.h"
+#import "CCBook.h"
 
 @interface CCStuffHeader ()
 
@@ -19,6 +20,8 @@
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic, weak) IBOutlet UIButton *offerButton;
 @property (nonatomic, weak) IBOutlet UIButton *deleteStuffButton;
+@property (nonatomic, weak) IBOutlet UILabel *isbnLabel;
+@property (nonatomic, weak) IBOutlet UILabel *descriptionTitle;
 
 @property (nonatomic, strong) id<CCUserSessionProtocol> ioc_userSession;
 @property (nonatomic, strong) CCStuff *stuff;
@@ -46,6 +49,11 @@
 {
     [self.nameLabel setText:self.stuff.name];
     [self.priceLabel setText:[NSString stringWithFormat:@"Price: %@", self.stuff.price]];
+    if([self.stuff isKindOfClass:[CCBook class]]){
+        self.isbnLabel.text = [NSString stringWithFormat:@"ISBN : %@",[(CCBook *)self.stuff isbn]];
+        [CCViewPositioningHelper setOriginY:self.descriptionLabel.frame.origin.y + 20 toView:self.descriptionLabel];
+        [CCViewPositioningHelper setOriginY:self.descriptionTitle.frame.origin.y + 20 toView:self.descriptionTitle];
+    }
     [self.descriptionLabel setText:self.stuff.description];
     [self.descriptionLabel sizeToFit];
     [self fixLayout];
@@ -64,6 +72,9 @@
 
 - (void)setupButtons
 {
+     if([self.stuff isKindOfClass:[CCBook class]]){
+         [self.deleteStuffButton setTitle:@"Delete Book" forState:UIControlStateNormal];
+     }
     if ([self isMyStuff]) {
         [self.offerButton setHidden:YES];
     }

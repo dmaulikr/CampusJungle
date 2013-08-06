@@ -656,6 +656,21 @@
 		D359E60B1794383A00869D6C /* star_icon_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D359E6071794383A00869D6C /* star_icon_active@2x.png */; };
 		D359E6141794624B00869D6C /* CCTimeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D359E6121794624B00869D6C /* CCTimeTableCell.m */; };
 		D359E6151794624B00869D6C /* CCTimeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D359E6131794624B00869D6C /* CCTimeTableCell.xib */; };
+		D35CDEF017B108470033CD28 /* CCBook.m in Sources */ = {isa = PBXBuildFile; fileRef = D35CDEEF17B108470033CD28 /* CCBook.m */; };
+		D35CDEF417B1099E0033CD28 /* CCBookUploadInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D35CDEF317B1099E0033CD28 /* CCBookUploadInfo.m */; };
+		D35CDEFB17B119710033CD28 /* CCAddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D35CDEF917B119710033CD28 /* CCAddBookViewController.m */; };
+		D35CDEFC17B119710033CD28 /* CCAddBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D35CDEFA17B119710033CD28 /* CCAddBookViewController.xib */; };
+		D35CDF0017B11AFA0033CD28 /* CCBooksAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D35CDEFF17B11AFA0033CD28 /* CCBooksAPIProvider.m */; };
+		D35CDF0517B120D80033CD28 /* CCBookDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D35CDF0317B120D80033CD28 /* CCBookDetailsController.m */; };
+		D35CDF0617B120D80033CD28 /* CCBookDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D35CDF0417B120D80033CD28 /* CCBookDetailsController.xib */; };
+		D35CDF0A17B12C410033CD28 /* CCMyBooksListController.m in Sources */ = {isa = PBXBuildFile; fileRef = D35CDF0817B12C410033CD28 /* CCMyBooksListController.m */; };
+		D35CDF0B17B12C410033CD28 /* CCMyBooksListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D35CDF0917B12C410033CD28 /* CCMyBooksListController.xib */; };
+		D35CDF1317B1308D0033CD28 /* CCMyBooksTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D35CDF1217B1308D0033CD28 /* CCMyBooksTransaction.m */; };
+		D35CDF1817B136C30033CD28 /* CCMyBooksDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D35CDF1717B136C30033CD28 /* CCMyBooksDataProvider.m */; };
+		D35CDF1C17B13BD80033CD28 /* CCCreateBookTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D35CDF1B17B13BD80033CD28 /* CCCreateBookTransaction.m */; };
+		D35CDF2017B141DD0033CD28 /* CCBookDetalsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D35CDF1F17B141DD0033CD28 /* CCBookDetalsTransaction.m */; };
+		D35CDF2417B1586E0033CD28 /* CCMarketBooksDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D35CDF2317B1586E0033CD28 /* CCMarketBooksDataProvider.m */; };
+		D35CDF2817B15F030033CD28 /* CCBooksOfferController.m in Sources */ = {isa = PBXBuildFile; fileRef = D35CDF2717B15F030033CD28 /* CCBooksOfferController.m */; };
 		D3614636175E1D3000907414 /* DropboxSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = D3614635175E1D3000907414 /* DropboxSDK */; };
 		D36146C6176314A100907414 /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146B2176314A100907414 /* folder.png */; };
 		D36146C7176314A100907414 /* folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36146B3176314A100907414 /* folder@2x.png */; };
@@ -698,6 +713,7 @@
 		D3819B571799CB4300C93005 /* CCProfessorUploadDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3819B561799CB4300C93005 /* CCProfessorUploadDataProvider.m */; };
 		D3819B5B1799CF3500C93005 /* CCProfessorUploadsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3819B5A1799CF3500C93005 /* CCProfessorUploadsCell.m */; };
 		D3819B5D1799CF8300C93005 /* CCProfessorUploadsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3819B5C1799CF8300C93005 /* CCProfessorUploadsCell.xib */; };
+		D383D7A617B1A33E0005C0F8 /* CCBookOfferTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D383D7A517B1A33E0005C0F8 /* CCBookOfferTransaction.m */; };
 		D38532CB179D3A3D0075F870 /* CCAnnouncementsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D38532C9179D3A3D0075F870 /* CCAnnouncementsController.m */; };
 		D38532CC179D3A3D0075F870 /* CCAnnouncementsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38532CA179D3A3D0075F870 /* CCAnnouncementsController.xib */; };
 		D38532D0179D3CA30075F870 /* CCAnnouncementTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D38532CF179D3CA30075F870 /* CCAnnouncementTransaction.m */; };
@@ -1821,6 +1837,34 @@
 		D359E6111794624B00869D6C /* CCTimeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTimeTableCell.h; sourceTree = "<group>"; };
 		D359E6121794624B00869D6C /* CCTimeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTimeTableCell.m; sourceTree = "<group>"; };
 		D359E6131794624B00869D6C /* CCTimeTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCTimeTableCell.xib; sourceTree = "<group>"; };
+		D35CDEEE17B108470033CD28 /* CCBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBook.h; sourceTree = "<group>"; };
+		D35CDEEF17B108470033CD28 /* CCBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBook.m; sourceTree = "<group>"; };
+		D35CDEF217B1099E0033CD28 /* CCBookUploadInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBookUploadInfo.h; sourceTree = "<group>"; };
+		D35CDEF317B1099E0033CD28 /* CCBookUploadInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBookUploadInfo.m; sourceTree = "<group>"; };
+		D35CDEF817B119710033CD28 /* CCAddBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAddBookViewController.h; sourceTree = "<group>"; };
+		D35CDEF917B119710033CD28 /* CCAddBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAddBookViewController.m; sourceTree = "<group>"; };
+		D35CDEFA17B119710033CD28 /* CCAddBookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAddBookViewController.xib; sourceTree = "<group>"; };
+		D35CDEFE17B11AFA0033CD28 /* CCBooksAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBooksAPIProvider.h; sourceTree = "<group>"; };
+		D35CDEFF17B11AFA0033CD28 /* CCBooksAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBooksAPIProvider.m; sourceTree = "<group>"; };
+		D35CDF0117B11B170033CD28 /* CCBooksAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCBooksAPIProviderProtocol.h; sourceTree = "<group>"; };
+		D35CDF0217B120D80033CD28 /* CCBookDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBookDetailsController.h; sourceTree = "<group>"; };
+		D35CDF0317B120D80033CD28 /* CCBookDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBookDetailsController.m; sourceTree = "<group>"; };
+		D35CDF0417B120D80033CD28 /* CCBookDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCBookDetailsController.xib; sourceTree = "<group>"; };
+		D35CDF0717B12C410033CD28 /* CCMyBooksListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMyBooksListController.h; sourceTree = "<group>"; };
+		D35CDF0817B12C410033CD28 /* CCMyBooksListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMyBooksListController.m; sourceTree = "<group>"; };
+		D35CDF0917B12C410033CD28 /* CCMyBooksListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMyBooksListController.xib; sourceTree = "<group>"; };
+		D35CDF1117B1308D0033CD28 /* CCMyBooksTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMyBooksTransaction.h; sourceTree = "<group>"; };
+		D35CDF1217B1308D0033CD28 /* CCMyBooksTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMyBooksTransaction.m; sourceTree = "<group>"; };
+		D35CDF1617B136C30033CD28 /* CCMyBooksDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMyBooksDataProvider.h; sourceTree = "<group>"; };
+		D35CDF1717B136C30033CD28 /* CCMyBooksDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMyBooksDataProvider.m; sourceTree = "<group>"; };
+		D35CDF1A17B13BD80033CD28 /* CCCreateBookTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCreateBookTransaction.h; sourceTree = "<group>"; };
+		D35CDF1B17B13BD80033CD28 /* CCCreateBookTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCreateBookTransaction.m; sourceTree = "<group>"; };
+		D35CDF1E17B141DD0033CD28 /* CCBookDetalsTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBookDetalsTransaction.h; sourceTree = "<group>"; };
+		D35CDF1F17B141DD0033CD28 /* CCBookDetalsTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBookDetalsTransaction.m; sourceTree = "<group>"; };
+		D35CDF2217B1586E0033CD28 /* CCMarketBooksDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMarketBooksDataProvider.h; sourceTree = "<group>"; };
+		D35CDF2317B1586E0033CD28 /* CCMarketBooksDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMarketBooksDataProvider.m; sourceTree = "<group>"; };
+		D35CDF2617B15F030033CD28 /* CCBooksOfferController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBooksOfferController.h; sourceTree = "<group>"; };
+		D35CDF2717B15F030033CD28 /* CCBooksOfferController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBooksOfferController.m; sourceTree = "<group>"; };
 		D3614635175E1D3000907414 /* DropboxSDK */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = DropboxSDK; path = "Pods/Dropbox-iOS-SDK/dropbox-ios-sdk-1.3.4/DropboxSDK.framework/DropboxSDK"; sourceTree = "<group>"; };
 		D36146B2176314A100907414 /* folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder.png; sourceTree = "<group>"; };
 		D36146B3176314A100907414 /* folder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder@2x.png"; sourceTree = "<group>"; };
@@ -1876,6 +1920,8 @@
 		D3819B591799CF3500C93005 /* CCProfessorUploadsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProfessorUploadsCell.h; sourceTree = "<group>"; };
 		D3819B5A1799CF3500C93005 /* CCProfessorUploadsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCProfessorUploadsCell.m; sourceTree = "<group>"; };
 		D3819B5C1799CF8300C93005 /* CCProfessorUploadsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCProfessorUploadsCell.xib; sourceTree = "<group>"; };
+		D383D7A417B1A33E0005C0F8 /* CCBookOfferTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBookOfferTransaction.h; sourceTree = "<group>"; };
+		D383D7A517B1A33E0005C0F8 /* CCBookOfferTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBookOfferTransaction.m; sourceTree = "<group>"; };
 		D38532C8179D3A3D0075F870 /* CCAnnouncementsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnnouncementsController.h; sourceTree = "<group>"; };
 		D38532C9179D3A3D0075F870 /* CCAnnouncementsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAnnouncementsController.m; sourceTree = "<group>"; };
 		D38532CA179D3A3D0075F870 /* CCAnnouncementsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAnnouncementsController.xib; sourceTree = "<group>"; };
@@ -3405,6 +3451,7 @@
 			children = (
 				D38532D1179D4FE50075F870 /* AddAnnouncementController */,
 				701253F41796CF4D0085247A /* AddAnswerController */,
+				D35CDEF617B118EA0033CD28 /* AddBookController */,
 				7012545C1797E3AF0085247A /* AddCommentController */,
 				70B2D0A217941A01001B0C2C /* AddForumController */,
 				70FDD62E179D2AB400871727 /* AddGroupController */,
@@ -3415,6 +3462,8 @@
 				7012AC7C179558B5002DA5E9 /* AnswersController */,
 				70061CA117A2745000848F62 /* AppInviteController */,
 				70A29C35178778AB001BC8DD /* BaseController */,
+				D35CDF2517B15EAA0033CD28 /* BooksOffersController */,
+				D35CDEF517B118CE0033CD28 /* BookDetailsController */,
 				70A29C39178778AB001BC8DD /* CitySelectionController */,
 				70A29C3D178778AB001BC8DD /* ClassController */,
 				70A29C45178778AB001BC8DD /* ClassesOfCollegeController */,
@@ -3449,6 +3498,7 @@
 				70A29C9C178778AB001BC8DD /* MarketPlaceController */,
 				70A29CA0178778AB001BC8DD /* MenuController */,
 				D3DF8C2D17900A7200B072B7 /* MessageDetailsController */,
+				D35CDEF717B1190A0033CD28 /* MyBooksListController */,
 				70A29CA4178778AB001BC8DD /* MyNotesController */,
 				70A29CA8178778AB001BC8DD /* MyStuffController */,
 				70A29CAC178778AB001BC8DD /* NoteDetailsController */,
@@ -3480,6 +3530,7 @@
 				D37122DD17A1444300A7DF04 /* VoteResultScreenControler */,
 				D37122CF17A13FB500A7DF04 /* VoteScreenController */,
 				AA28DEA671E3A741FB280D09 /* WalletController */,
+				70A29CDC178778AB001BC8DD /* WelcomeController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -3834,8 +3885,7 @@
 			children = (
 				70A29CDF178778AB001BC8DD /* CCWelcomeController.xib */,
 			);
-			name = WelcomeController;
-			path = Controllers/WelcomeController;
+			path = WelcomeController;
 			sourceTree = "<group>";
 		};
 		70A29D4B17877B94001BC8DD /* DataProviders */ = {
@@ -3867,9 +3917,11 @@
 				70A29D6D17877B94001BC8DD /* ImageSortingDataProvider */,
 				AA28D80E46C593F397076F50 /* InboxAppInvitesDataProvider */,
 				703DA4DE178B457200464DD3 /* LocationsDataProvider */,
+				D35CDF2117B158590033CD28 /* MarketBooksDataProvider */,
 				70A29D7017877B94001BC8DD /* MarketNotesProvider */,
 				70A29D7317877B94001BC8DD /* MarketStuffDataProvider */,
 				D3949726178D618A00C39A7E /* MessagesDataProvider */,
+				D35CDF1517B136AB0033CD28 /* MyBooksDataProvider */,
 				70A29D7617877B94001BC8DD /* MyClassesDataProvider */,
 				70A29D7917877B94001BC8DD /* MyNotesDataProvider */,
 				70A29D7C17877B94001BC8DD /* MyStuffDataProvider */,
@@ -4167,6 +4219,8 @@
 				70061CDD17A2CC3900848F62 /* AppInvite */,
 				70A29DD817877CB4001BC8DD /* Authorization */,
 				70A29DDB17877CB5001BC8DD /* AuthorizationResponse */,
+				D35CDEED17B1080C0033CD28 /* Book */,
+				D35CDEF117B1098C0033CD28 /* BookUploadInfo */,
 				70A29DDE17877CB5001BC8DD /* City */,
 				70A29DE117877CB5001BC8DD /* Class */,
 				70A29DE417877CB5001BC8DD /* College */,
@@ -4506,6 +4560,7 @@
 				7012AC771795507E002DA5E9 /* AnswersAPIProvider */,
 				70B2D05017940245001B0C2C /* APIProvider */,
 				70061CE117A2D08200848F62 /* AppInviteAPIProvider */,
+				D35CDEFD17B11AE80033CD28 /* BooksAPIProvider */,
 				70B2D05417940245001B0C2C /* ClassesApiProvider */,
 				701254021796E8940085247A /* CommentsAPIProvider */,
 				7021ECD217A7E87000D45B51 /* DeviceTokenAPIProvider */,
@@ -4761,6 +4816,8 @@
 				70B2D0EC17944894001B0C2C /* BackToStuffTransaction */,
 				70B2D0EF17944894001B0C2C /* BackToUserProfileTransaction */,
 				70B2D0F217944894001B0C2C /* BackTransaction */,
+				D35CDF1D17B141B70033CD28 /* BookDetailsTransaction */,
+				D383D7A317B1A3290005C0F8 /* BookOfferTransaction */,
 				70B2D0F517944894001B0C2C /* CCMessageDetailsTransaction */,
 				70B2D0F817944894001B0C2C /* CitySelectionTransaction */,
 				70B2D0FB17944894001B0C2C /* ClassAddedTransaction */,
@@ -4770,6 +4827,7 @@
 				70B2D10717944894001B0C2C /* CollegeSelectionTransaction */,
 				7012544D1796F9590085247A /* CommentsTransaction */,
 				703AC7A917AAFB6400B222F3 /* CouponsTransaction */,
+				D35CDF1917B13BC10033CD28 /* CreateBookTransaction */,
 				70B2D10A17944894001B0C2C /* CreateNotesTransaction */,
 				70B2D10D17944894001B0C2C /* CreateStuffTransaction */,
 				70B2D11017944894001B0C2C /* DropboxFileSelectionTransaction */,
@@ -4793,6 +4851,7 @@
 				70B2D13717944894001B0C2C /* LogoutTransaction */,
 				70B2D13A17944894001B0C2C /* MainTransaction */,
 				70B2D13D17944894001B0C2C /* MarketTransaction */,
+				D35CDF0D17B130410033CD28 /* MyBooksTransaction */,
 				70B2D14017944894001B0C2C /* MyNotes */,
 				70B2D14317944894001B0C2C /* MyStuffTransaction */,
 				70B2D14917944894001B0C2C /* NoteDetailTransaction */,
@@ -5987,7 +6046,6 @@
 				A787C72D17536F8400824DEA /* AppDelegate */,
 				70C0FCB2178484C7005EF95E /* Categories */,
 				70A29C34178778AB001BC8DD /* Controllers */,
-				70A29CDC178778AB001BC8DD /* WelcomeController */,
 				70A29D4B17877B94001BC8DD /* DataProviders */,
 				7012540F1796F38A0085247A /* DataSources */,
 				70061CAB17A27F1200848F62 /* Delegates */,
@@ -6349,6 +6407,118 @@
 			path = TimeTableCell;
 			sourceTree = "<group>";
 		};
+		D35CDEED17B1080C0033CD28 /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				D35CDEEE17B108470033CD28 /* CCBook.h */,
+				D35CDEEF17B108470033CD28 /* CCBook.m */,
+			);
+			path = Book;
+			sourceTree = "<group>";
+		};
+		D35CDEF117B1098C0033CD28 /* BookUploadInfo */ = {
+			isa = PBXGroup;
+			children = (
+				D35CDEF217B1099E0033CD28 /* CCBookUploadInfo.h */,
+				D35CDEF317B1099E0033CD28 /* CCBookUploadInfo.m */,
+			);
+			path = BookUploadInfo;
+			sourceTree = "<group>";
+		};
+		D35CDEF517B118CE0033CD28 /* BookDetailsController */ = {
+			isa = PBXGroup;
+			children = (
+				D35CDF0217B120D80033CD28 /* CCBookDetailsController.h */,
+				D35CDF0317B120D80033CD28 /* CCBookDetailsController.m */,
+				D35CDF0417B120D80033CD28 /* CCBookDetailsController.xib */,
+			);
+			path = BookDetailsController;
+			sourceTree = "<group>";
+		};
+		D35CDEF617B118EA0033CD28 /* AddBookController */ = {
+			isa = PBXGroup;
+			children = (
+				D35CDEF817B119710033CD28 /* CCAddBookViewController.h */,
+				D35CDEF917B119710033CD28 /* CCAddBookViewController.m */,
+				D35CDEFA17B119710033CD28 /* CCAddBookViewController.xib */,
+			);
+			path = AddBookController;
+			sourceTree = "<group>";
+		};
+		D35CDEF717B1190A0033CD28 /* MyBooksListController */ = {
+			isa = PBXGroup;
+			children = (
+				D35CDF0717B12C410033CD28 /* CCMyBooksListController.h */,
+				D35CDF0817B12C410033CD28 /* CCMyBooksListController.m */,
+				D35CDF0917B12C410033CD28 /* CCMyBooksListController.xib */,
+			);
+			path = MyBooksListController;
+			sourceTree = "<group>";
+		};
+		D35CDEFD17B11AE80033CD28 /* BooksAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D35CDEFE17B11AFA0033CD28 /* CCBooksAPIProvider.h */,
+				D35CDF0117B11B170033CD28 /* CCBooksAPIProviderProtocol.h */,
+				D35CDEFF17B11AFA0033CD28 /* CCBooksAPIProvider.m */,
+			);
+			path = BooksAPIProvider;
+			sourceTree = "<group>";
+		};
+		D35CDF0D17B130410033CD28 /* MyBooksTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D35CDF1117B1308D0033CD28 /* CCMyBooksTransaction.h */,
+				D35CDF1217B1308D0033CD28 /* CCMyBooksTransaction.m */,
+			);
+			path = MyBooksTransaction;
+			sourceTree = "<group>";
+		};
+		D35CDF1517B136AB0033CD28 /* MyBooksDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D35CDF1617B136C30033CD28 /* CCMyBooksDataProvider.h */,
+				D35CDF1717B136C30033CD28 /* CCMyBooksDataProvider.m */,
+			);
+			path = MyBooksDataProvider;
+			sourceTree = "<group>";
+		};
+		D35CDF1917B13BC10033CD28 /* CreateBookTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D35CDF1A17B13BD80033CD28 /* CCCreateBookTransaction.h */,
+				D35CDF1B17B13BD80033CD28 /* CCCreateBookTransaction.m */,
+			);
+			path = CreateBookTransaction;
+			sourceTree = "<group>";
+		};
+		D35CDF1D17B141B70033CD28 /* BookDetailsTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D35CDF1E17B141DD0033CD28 /* CCBookDetalsTransaction.h */,
+				D35CDF1F17B141DD0033CD28 /* CCBookDetalsTransaction.m */,
+			);
+			path = BookDetailsTransaction;
+			sourceTree = "<group>";
+		};
+		D35CDF2117B158590033CD28 /* MarketBooksDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D35CDF2217B1586E0033CD28 /* CCMarketBooksDataProvider.h */,
+				D35CDF2317B1586E0033CD28 /* CCMarketBooksDataProvider.m */,
+			);
+			path = MarketBooksDataProvider;
+			sourceTree = "<group>";
+		};
+		D35CDF2517B15EAA0033CD28 /* BooksOffersController */ = {
+			isa = PBXGroup;
+			children = (
+				D35CDF2617B15F030033CD28 /* CCBooksOfferController.h */,
+				D35CDF2717B15F030033CD28 /* CCBooksOfferController.m */,
+			);
+			path = BooksOffersController;
+			sourceTree = "<group>";
+		};
 		D36146B1176314A100907414 /* DropboxIcons */ = {
 			isa = PBXGroup;
 			children = (
@@ -6489,6 +6659,15 @@
 				D3819B5C1799CF8300C93005 /* CCProfessorUploadsCell.xib */,
 			);
 			path = ProfessorUploadsCell;
+			sourceTree = "<group>";
+		};
+		D383D7A317B1A3290005C0F8 /* BookOfferTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D383D7A417B1A33E0005C0F8 /* CCBookOfferTransaction.h */,
+				D383D7A517B1A33E0005C0F8 /* CCBookOfferTransaction.m */,
+			);
+			path = BookOfferTransaction;
 			sourceTree = "<group>";
 		};
 		D38532C7179D3A180075F870 /* AnnouncementsController */ = {
@@ -7211,6 +7390,9 @@
 				D3AEE3E817AC16BE00D83FB5 /* GIInputAlert.xib in Resources */,
 				703AC7D517AC125800B222F3 /* CCAdCell.xib in Resources */,
 				7022737817B0F4E600917C7F /* CCClassCell.xib in Resources */,
+				D35CDEFC17B119710033CD28 /* CCAddBookViewController.xib in Resources */,
+				D35CDF0617B120D80033CD28 /* CCBookDetailsController.xib in Resources */,
+				D35CDF0B17B12C410033CD28 /* CCMyBooksListController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7652,6 +7834,19 @@
 				D3AEE3E717AC16BE00D83FB5 /* GIInputAlert.m in Sources */,
 				D3AEE3EC17AC16E300D83FB5 /* GIAlertView.m in Sources */,
 				7022737617B0F46C00917C7F /* CCClassCell.m in Sources */,
+				D35CDEF017B108470033CD28 /* CCBook.m in Sources */,
+				D35CDEF417B1099E0033CD28 /* CCBookUploadInfo.m in Sources */,
+				D35CDEFB17B119710033CD28 /* CCAddBookViewController.m in Sources */,
+				D35CDF0017B11AFA0033CD28 /* CCBooksAPIProvider.m in Sources */,
+				D35CDF0517B120D80033CD28 /* CCBookDetailsController.m in Sources */,
+				D35CDF0A17B12C410033CD28 /* CCMyBooksListController.m in Sources */,
+				D35CDF1317B1308D0033CD28 /* CCMyBooksTransaction.m in Sources */,
+				D35CDF1817B136C30033CD28 /* CCMyBooksDataProvider.m in Sources */,
+				D35CDF1C17B13BD80033CD28 /* CCCreateBookTransaction.m in Sources */,
+				D35CDF2017B141DD0033CD28 /* CCBookDetalsTransaction.m in Sources */,
+				D35CDF2417B1586E0033CD28 /* CCMarketBooksDataProvider.m in Sources */,
+				D35CDF2817B15F030033CD28 /* CCBooksOfferController.m in Sources */,
+				D383D7A617B1A33E0005C0F8 /* CCBookOfferTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

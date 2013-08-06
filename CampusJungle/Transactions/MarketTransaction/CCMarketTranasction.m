@@ -14,6 +14,7 @@
 #import "CCViewMarketStuffListTransaction.h"
 #import "CCStuffDetailsTransaction.h"
 #import "CCStuffDetailsTransaction.h"
+#import "CCBookDetalsTransaction.h"
 
 @implementation CCMarketTranasction
 
@@ -27,6 +28,10 @@
     CCSelectFiltersTranaction *selectFilterTransaction = [CCSelectFiltersTranaction new];
     selectFilterTransaction.navigation = centralNavigation;
     marketController.filtersScreenTransaction = selectFilterTransaction;
+    
+    CCBookDetalsTransaction *bookDetails = [CCBookDetalsTransaction new];
+    bookDetails.navigation = centralNavigation;
+    marketController.bookDetailsTransaction = bookDetails;
     
     CCNoteDetailTransaction *noteDetails = [CCNoteDetailTransaction new];
     noteDetails.navigation = centralNavigation;

@@ -8,6 +8,7 @@
 
 #import "CCMarketPlaceController.h"
 #import "CCMarketNotesProvider.h"
+#import "CCMarketBooksDataProvider.h"
 #import "CCDefines.h"
 #import "CCCommonCollectionDataSource.h"
 #import "CCNotesCollectionCell.h"
@@ -18,6 +19,7 @@
 #import "CCMarketStuffDataProvider.h"
 #import "CCEducation.h"
 #import "CCNote.h"
+#import "CCStuff.h"
 
 @interface CCMarketPlaceController ()<CCCellSelectionProtocol>
 
@@ -29,7 +31,7 @@
 @property (nonatomic, strong) CCMarketNotesProvider *marketLatestNotesProvider;
 @property (nonatomic, strong) CCMarketNotesProvider *marketTopNotesProvider;
 @property (nonatomic, strong) CCMarketStuffDataProvider *marketStuffDataProvider;
-@property (nonatomic, strong) CCBaseDataProvider *marketBooksDataProvider;
+@property (nonatomic, strong) CCMarketBooksDataProvider *marketBooksDataProvider;
 
 @property (nonatomic, strong) NSMutableArray *arrayOfDataSources;
 @property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_classesAPIProvider;
@@ -55,9 +57,8 @@
     self.marketStuffDataProvider = [CCMarketStuffDataProvider new];
     self.marketStuffDataProvider.order = CCMarketFilterConstants.orderTop;
     
-    CCMarketNotesProvider *booksProvider = [CCMarketNotesProvider new];
-    self.marketBooksDataProvider = booksProvider;
-    booksProvider.order = CCMarketFilterConstants.orderLatest;
+    self.marketBooksDataProvider = [CCMarketBooksDataProvider new];
+    self.marketBooksDataProvider.order = CCMarketFilterConstants.orderLatest;
     
     [self configCollection:self.latestStuffCollectionView WithProvider:self.marketStuffDataProvider cellClass:[CCNotesCollectionCell class]];
     
@@ -117,8 +118,10 @@
 {
     if([cellObject isKindOfClass:[CCNote class]]){
         [self.noteDetailsTransaction performWithObject:cellObject];
-    } else {
+    } else if ([cellObject isKindOfClass:[CCStuff class]]){
         [self.stuffDetailsTransaction performWithObject:cellObject];
+    } else {
+        [self.bookDetailsTransaction performWithObject:cellObject];
     }
 }
 
