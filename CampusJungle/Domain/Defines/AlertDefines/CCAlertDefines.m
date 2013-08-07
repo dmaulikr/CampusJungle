@@ -64,6 +64,7 @@ const struct CCAlertsTitles CCAlertsTitles = {
     .requestError = @"Request failed",
     .defaultError = @"Error",
     .logOut = @"Log Out",
+    .pushNotification = @"Push Notification",
 };
 
 const struct CCValidationMessages CCValidationMessages = {

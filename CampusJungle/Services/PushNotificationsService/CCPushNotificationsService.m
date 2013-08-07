@@ -84,6 +84,10 @@
     }
     
     [pushNotification proccessPushNotification];
+
+    if ([self isApplicationActive]) {
+        [self resetAllPushesCounters];
+    }
 }
 
 + (BOOL)isApplicationActive

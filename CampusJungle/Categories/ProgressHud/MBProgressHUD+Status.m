@@ -13,7 +13,7 @@
 + (void)showInKeyWindowWithStatus:(NSString *)status
 {
     MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:[UIApplication sharedApplication].keyWindow];
-    [hud setLabelText:CCProcessingMessages.loadingForum];
+    [hud setLabelText:status];
     [[UIApplication sharedApplication].keyWindow addSubview:hud];
     [hud show:YES];
 }

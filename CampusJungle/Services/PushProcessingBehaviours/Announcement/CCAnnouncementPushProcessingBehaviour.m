@@ -38,7 +38,7 @@ typedef void(^LoadClassSuccessBlock)(id);
 - (void)processWhenAppActiveWithUserInfo:(NSDictionary *)userInfo
 {
     NSString *message = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"];
-    [CCAlertHelper showWithMessage:message successButtonTitle:CCAlertsButtons.show cancelButtonTitle:CCAlertsButtons.later success:^{
+    [CCAlertHelper showWithTitle:CCAlertsTitles.pushNotification message:message successButtonTitle:CCAlertsButtons.show cancelButtonTitle:CCAlertsButtons.later success:^{
         [self goAnnouncementsWithUserInfo:userInfo];
     }];
 }

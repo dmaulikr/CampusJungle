@@ -75,7 +75,7 @@
     self.settings.forumsNotifications = @(self.forumsButton.selected);
     self.settings.classesNotifications = @(self.classesButton.selected);
     [self.ioc_settingAPIProvider uploadSettings:self.settings successHandler:^(id result) {
-        [SVProgressHUD showSuccessWithStatus:@"Successfuly Updated!"];
+        [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.settingsUpdated duration:CCProgressHudsConstants.loaderDuration];
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
     }];

@@ -13,6 +13,6 @@
 
 + (void)showConfirmWithSuccess:(successHandler)success;
 + (void)showWithMessage:(NSString *)message success:(successHandler)success;
-+ (void)showWithMessage:(NSString *)message successButtonTitle:(NSString *)successButtonTitle cancelButtonTitle:(NSString *)cancelButtonTitle success:(successHandler)success;
++ (void)showWithTitle:(NSString *)title message:(NSString *)message successButtonTitle:(NSString *)successButtonTitle cancelButtonTitle:(NSString *)cancelButtonTitle success:(successHandler)success;
 
 @end

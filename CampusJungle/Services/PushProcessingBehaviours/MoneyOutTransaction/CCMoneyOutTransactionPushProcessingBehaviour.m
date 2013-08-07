@@ -29,7 +29,7 @@
 - (void)showAlertWithUserInfo:(NSDictionary *)userInfo
 {
     NSString *message = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"];
-    [CCAlertHelper showWithMessage:message success:nil];
+    [CCAlertHelper showWithTitle:CCAlertsTitles.pushNotification message:message successButtonTitle:@"Ok" cancelButtonTitle:nil success:nil];
 }
 
 @end
