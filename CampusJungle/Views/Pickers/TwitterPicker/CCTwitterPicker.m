@@ -38,8 +38,9 @@
             startLaoding();
         }];
         
+        __weak UIActionSheet *weakActionSheet = actionSheet;
         [actionSheet setDestructiveButtonWithTitle:@"Cancel" handler:^{
-           [actionSheet cancelBlock];
+           [weakActionSheet cancelBlock];
         }];
         
         [actionSheet showInView:view];

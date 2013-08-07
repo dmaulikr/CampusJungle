@@ -26,9 +26,4 @@
 @property (nonatomic, strong) id<CCTransaction> changePasswordTransaction;
 @property (nonatomic, strong) id<CCTransaction> myBooksTransaction;
 
-- (IBAction)logout;
-- (IBAction)avatarDidPressed;
-- (IBAction)myNotesButtonDidPressed;
-- (IBAction)myStuffButtonDidPreessed;
-
 @end

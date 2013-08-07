@@ -114,7 +114,9 @@
             [self loading:NO];
         }];
     } errorHandler:^(NSError *error) {
-        [CCStandardErrorHandler showErrorWithError:error];
+        if (error.code > 0) {
+            [CCStandardErrorHandler showErrorWithError:error];
+        }
         [self loading:NO];
     }];
 }
