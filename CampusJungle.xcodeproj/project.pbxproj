@@ -4867,7 +4867,6 @@
 				70B2D0F217944894001B0C2C /* BackTransaction */,
 				D35CDF1D17B141B70033CD28 /* BookDetailsTransaction */,
 				D383D7A317B1A3290005C0F8 /* BookOfferTransaction */,
-				70B2D0F517944894001B0C2C /* CCMessageDetailsTransaction */,
 				70334A1D17B11E64001D1B57 /* ChangePasswordTransaction */,
 				70B2D0F817944894001B0C2C /* CitySelectionTransaction */,
 				70B2D0FB17944894001B0C2C /* ClassAddedTransaction */,
@@ -7958,8 +7957,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: M2 Interactive Group, Inc.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: M2 Interactive Group, Inc.";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -7967,8 +7966,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "DC3D19E0-F4A4-456F-876D-F2E4CCB3AAA6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DC3D19E0-F4A4-456F-876D-F2E4CCB3AAA6";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -8028,8 +8027,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: M2 Interactive Group, Inc.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: M2 Interactive Group, Inc.";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusJungle/CampusJungle-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CampusJungle/CampusJungle-Info.plist";
@@ -8068,8 +8067,8 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = CampusJungle;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "DC3D19E0-F4A4-456F-876D-F2E4CCB3AAA6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DC3D19E0-F4A4-456F-876D-F2E4CCB3AAA6";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

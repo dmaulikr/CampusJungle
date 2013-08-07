@@ -16,5 +16,6 @@
 @property (nonatomic, strong) id <CCTransactionWithObject> senderDetailsTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> stuffDetailsTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> answerTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> bookDetailsTransaction;
 
 @end
