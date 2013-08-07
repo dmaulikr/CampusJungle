@@ -8,7 +8,7 @@
 
 #import "CCImageCell.h"
 
-static const NSInteger kCellHeight = 272;
+static const NSInteger kCellHeight = 279;
 
 @interface CCImageCell()
 
