@@ -118,18 +118,23 @@ typedef enum {
 
 - (void)sendFacebookRequest
 {
-    [FBWebDialogs presentRequestsDialogModallyWithSession:FBSession.activeSession message:CCAppInvitesFacebookConstants.message title:CCAppInvitesFacebookConstants.title parameters:nil handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
-         if (error) {
+    NSMutableDictionary *params =
+    [NSMutableDictionary dictionaryWithObjectsAndKeys:
+     CCAppInvitesFacebookConstants.name, @"name",
+     CCAppInvitesFacebookConstants.caption, @"caption",
+     CCAppInvitesFacebookConstants.description, @"description",
+     CCAppInvitesFacebookConstants.link, @"link",
+     [NSString stringWithFormat:@"%@/media/app_icon.png", CCAPIDefines.baseURL], @"picture",
+     nil];
+
+    [FBWebDialogs presentFeedDialogModallyWithSession:FBSession.activeSession parameters:params handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
+        if (error) {
              [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCAlertsMessages.sendFacebookInviteError];
-         } else {
-             if (result != FBWebDialogResultDialogNotCompleted) {
-                 NSDictionary *urlParams = [CCFacebookRequestParseHelper parseURLParams:[resultURL query]];
-                 if ([urlParams valueForKey:@"request"]) {
-                     [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.sendFacebookInvite duration:CCProgressHudsConstants.loaderDuration];
-                 }
-             }
-         }
-     }];
+        }
+        else if (result != FBWebDialogResultDialogNotCompleted) {
+            [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.sendFacebookInvite duration:CCProgressHudsConstants.loaderDuration];
+        }
+    }];
 }
 
 - (void)sendTwitterInvites

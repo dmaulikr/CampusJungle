@@ -297,8 +297,10 @@ const struct CCAppInvitesDefines CCAppInvitesDefines = {
 };
 
 const struct CCAppInvitesFacebookConstants CCAppInvitesFacebookConstants = {
-    .title = @"CampusJungle App Invite",
-    .message = @"Hey! Why not to start using CampusJungle App for iOS?",
+    .name = @"CampusJungle for iOS",
+    .caption = @"Great New App",
+    .description = @"CampusJungle is a great new app! Check it out.",
+    .link = @"",
 };
 
 const struct CCPushNotificationTypes CCPushNotificationTypes = {
