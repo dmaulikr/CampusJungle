@@ -12,7 +12,7 @@
 
 @interface CCApplyFiltersTransaction : NSObject<CCTransactionWithObject>
 
-@property (nonatomic, strong) UINavigationController *navigation;
+@property (nonatomic, weak) UINavigationController *navigation;
 @property (nonatomic, strong) CCMarketPlaceController *marketPlace;
 
 @end

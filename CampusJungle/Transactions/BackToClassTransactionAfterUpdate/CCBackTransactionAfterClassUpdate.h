@@ -18,7 +18,7 @@
 
 @interface CCBackTransactionAfterClassUpdate : NSObject<CCTransactionWithObject>
 
-@property (nonatomic, strong) UINavigationController *navigation;
+@property (nonatomic, weak) UINavigationController *navigation;
 @property (nonatomic, weak) id<CCClassUpdateProtocol> previousController;
 
 @end

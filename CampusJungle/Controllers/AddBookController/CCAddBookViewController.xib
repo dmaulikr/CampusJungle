@@ -41,7 +41,7 @@
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="IBUIScrollView" id="366494770">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">293</int>
+						<int key="NSvFlags">309</int>
 						<array class="NSMutableArray" key="NSSubviews">
 							<object class="IBUIButton" id="413950961">
 								<reference key="NSNextResponder" ref="366494770"/>

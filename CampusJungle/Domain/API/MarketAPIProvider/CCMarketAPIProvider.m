@@ -16,6 +16,7 @@
     NSMutableDictionary *params = [@{
                              @"filters" : filters,
                              @"order" : order,
+                            @"page_number" : pageNumber,
                              } mutableCopy];
     if(query){
         [params setValue:query forKey:@"keywords"];
@@ -28,6 +29,7 @@
     NSMutableDictionary *params = [@{
                                    @"filters" : filters,
                                    @"order" : order,
+                                   @"page_number" : pageNumber,
                                    } mutableCopy];
     if(query){
         [params setValue:query forKey:@"keywords"];
@@ -40,6 +42,7 @@
     NSMutableDictionary *params = [@{
                                    @"filters" : filters,
                                    @"order" : order,
+                                   @"page_number" : pageNumber,
                                    } mutableCopy];
     if(query){
         [params setValue:query forKey:@"keywords"];

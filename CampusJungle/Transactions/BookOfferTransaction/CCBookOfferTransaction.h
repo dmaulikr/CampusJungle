@@ -11,6 +11,6 @@
 
 @interface CCBookOfferTransaction : NSObject<CCTransactionWithObject>
 
-@property (nonatomic, strong) UINavigationController *navigation;
+@property (nonatomic, weak) UINavigationController *navigation;
 
 @end

@@ -13,7 +13,7 @@
 
 @interface CCEditClassTransaction : NSObject <CCTransactionWithObject>
 
-@property (nonatomic, strong) UINavigationController *navigation;
+@property (nonatomic, weak) UINavigationController *navigation;
 @property (nonatomic, weak) id<CCClassUpdateProtocol> classDataController;
 
 @end

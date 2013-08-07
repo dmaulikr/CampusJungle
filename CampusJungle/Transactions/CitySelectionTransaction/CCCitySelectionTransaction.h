@@ -11,7 +11,7 @@
 
 @interface CCCitySelectionTransaction : NSObject<CCTransactionWithObject>
 
-@property (nonatomic, strong) UINavigationController* navigation;
+@property (nonatomic, weak) UINavigationController* navigation;
 @property (nonatomic, strong)NSMutableArray *arrayOfColleges;
 
 @end

@@ -12,7 +12,7 @@
 
 @interface CCVoteScreenTransaction : NSObject<CCTransactionWithObject>
 
-@property (nonatomic, strong) UINavigationController *navigation;
+@property (nonatomic, weak) UINavigationController *navigation;
 @property (nonatomic, strong) id <CCTransaction> backToClassTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> voteResultTransaction;
 

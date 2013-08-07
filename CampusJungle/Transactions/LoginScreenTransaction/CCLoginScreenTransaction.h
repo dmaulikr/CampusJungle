@@ -11,6 +11,6 @@
 @interface CCLoginScreenTransaction : NSObject <CCTransaction>
 
 @property (nonatomic, strong) id <CCTransaction> loginTransaction;
-@property (nonatomic, strong) UINavigationController *navigation;
+@property (nonatomic, weak) UINavigationController *navigation;
 
 @end

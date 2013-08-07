@@ -14,7 +14,7 @@
 @interface CCImagesSortingTransaction : NSObject<CCTransactionWithObject>
 
 @property (nonatomic, strong) id <CCTransaction> backToListTransaction;
-@property (nonatomic, strong) UINavigationController *navigation;
+@property (nonatomic, weak) UINavigationController *navigation;
 @property (nonatomic, strong) Class sortingControllerClass;
 @property (nonatomic, copy) DropboxUploadingBlock uploadingBlock;
 
