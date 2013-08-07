@@ -120,6 +120,12 @@ const struct CCAPIDefines CCAPIDefines = {
     .loadAds = @"/api/classes/%@/ads",
     .getSettings = @"/api/users/me/notification_settings",
     .setSettings = @"/api/users/me/notification_settings",
+    .loadMyBooks = @"/api/users/me/books",
+    .bookInMarket = @"/api/market/books",
+    .createBook = @"/api/colleges/%@/books",
+    .getBook = @"/api/books/%@",
+    .deleteBook = @"/api/users/me/books/%@",
+    .makeBookOffer = @"/api/books/%@/offer",
     .changePassword = @"/api/users/me/change_password",
 };
 

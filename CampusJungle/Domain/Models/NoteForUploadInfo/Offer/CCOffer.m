@@ -53,6 +53,7 @@
     return @{
              @"id" : @"offerID",
              @"stuff_id" : @"stuffID",
+             @"book_id" : @"bookID",
              @"text" : @"text",
              @"sender_id" : @"senderID",
              @"receiver_id" : @"receiverID",

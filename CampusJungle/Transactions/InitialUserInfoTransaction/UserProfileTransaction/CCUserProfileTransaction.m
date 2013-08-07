@@ -15,6 +15,7 @@
 #import "CCSearchCollegeTransaction.h"
 #import "CCWalletTransaction.h"
 #import "CCSettingsTransaction.h"
+#import "CCMyBooksTransaction.h"
 #import "CCChangePasswordTransaction.h"
 
 @implementation CCUserProfileTransaction
@@ -24,6 +25,9 @@
     NSParameterAssert(self.menuController);
     CCUserProfile *userProfileController = [CCUserProfile new];
 
+    CCMyBooksTransaction *myBooksTransaction = [CCMyBooksTransaction new];
+    userProfileController.myBooksTransaction = myBooksTransaction;
+    
     CCWalletTransaction *walletTransaction = [CCWalletTransaction new];
     userProfileController.walletTransaction = walletTransaction;
     
@@ -42,7 +46,7 @@
     UINavigationController *centralNavigation = [[UINavigationController alloc] initWithRootViewController:userProfileController];
     
     walletTransaction.navigation = centralNavigation;
-    
+    myBooksTransaction.navigation = centralNavigation;
     self.menuController.centerPanel = centralNavigation;
  
     CCSettingsTransaction *settingsTransaction = [CCSettingsTransaction new];

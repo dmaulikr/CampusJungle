@@ -12,7 +12,9 @@
 #import "CCStandardErrorHandler.h"
 #import "CCButtonsHelper.h"
 #import "CCStuff.h"
+#import "CCBook.h"
 #import "CCUser.h"
+#import "CCBooksAPIProviderProtocol.h"
 
 @interface CCOfferDetailsController ()
 
@@ -22,10 +24,11 @@
 @property (nonatomic, weak) IBOutlet UILabel *stuffNameLabel;
 @property (nonatomic, weak) IBOutlet UIButton *stuffDetailsButton;
 @property (nonatomic, weak) IBOutlet UIButton *senderDetailsButton;
-
+@property (nonatomic, strong) id <CCBooksAPIProviderProtocol> ioc_booksAPIProvider;
 @property (nonatomic, strong) id <CCStuffAPIProviderProtocol> ioc_stuffAPIProvider;
 @property (nonatomic ,strong) id <CCAPIProviderProtocol> ioc_APIProvider;
 @property (nonatomic, strong) CCStuff *stuff;
+@property (nonatomic, strong) CCBook *book;
 @property (nonatomic, strong) CCUser *sender;
 
 - (IBAction)senderButtonDidPressed;
@@ -55,15 +58,26 @@
 - (void)loadInfo
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [self.ioc_stuffAPIProvider getStuffWithID:self.offer.stuffID
-                               successHandler:^(RKMappingResult *result) {
-                                   [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-                                   self.stuff = result.firstObject;
-                               }
-                                 errorHandler:^(NSError *error) {
-                                     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-                                     [CCStandardErrorHandler showErrorWithError:error];
-                                 }];
+    if(self.offer.stuffID){
+        [self.ioc_stuffAPIProvider getStuffWithID:self.offer.stuffID
+                                   successHandler:^(RKMappingResult *result) {
+                                       [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                       self.stuff = result.firstObject;
+                                   }
+                                     errorHandler:^(NSError *error) {
+                                         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                         [CCStandardErrorHandler showErrorWithError:error];
+                                     }];
+    } else {
+        [self.ioc_booksAPIProvider getBookWithID:self.offer.bookID
+                                  successHandler:^(RKMappingResult *result) {
+                            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                            self.book = result.firstObject;
+        } errorHandler:^(NSError *error) {
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
+    }
+    
     [self.ioc_APIProvider getUserWithID:self.offer.senderID
                          successHandler:^(RKMappingResult *result) {
                              self.sender = result.firstObject;
@@ -78,10 +92,21 @@
     [self loadStuffInfo];
 }
 
+- (void)setBook:(CCBook *)book
+{
+    _book = book;
+    [self loadBookInfo];
+}
+
 - (void)setSender:(CCUser *)sender
 {
     _sender = sender;
     [self loadSenderInfo];
+}
+
+- (void)loadBookInfo
+{
+    self.stuffNameLabel.text = self.book.description;
 }
 
 - (void)loadOfferInfo
@@ -108,7 +133,12 @@
 
 - (IBAction)stuffDidPerssed
 {
-    [self.stuffDetailsTransaction performWithObject:self.stuff];
+    if(self.stuff){
+        [self.stuffDetailsTransaction performWithObject:self.stuff];
+    } else {
+        [self.bookDetailsTransaction performWithObject:self.book];
+    }
+        
 }
 
 - (IBAction)answerButtonDidPressed

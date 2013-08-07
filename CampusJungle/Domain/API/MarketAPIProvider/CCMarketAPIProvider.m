@@ -23,6 +23,18 @@
     [self loadItemsWithParams:params path:CCAPIDefines.notesInMarket successHandler:successHandler errorHandler:errorHandler];
 }
 
+- (void)loadBooksNumberOfPage:(NSNumber *)pageNumber filters:(NSDictionary *)filters order:(NSString *)order query:(NSString *)query successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    NSMutableDictionary *params = [@{
+                                   @"filters" : filters,
+                                   @"order" : order,
+                                   } mutableCopy];
+    if(query){
+        [params setValue:query forKey:@"keywords"];
+    }
+    [self loadItemsWithParams:params path:CCAPIDefines.bookInMarket successHandler:successHandler errorHandler:errorHandler];
+}
+
 - (void)loadStuffNumberOfPage:(NSNumber *)pageNumber filters:(NSDictionary *)filters order:(NSString *)order query:(NSString *)query successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
 {
     NSMutableDictionary *params = [@{

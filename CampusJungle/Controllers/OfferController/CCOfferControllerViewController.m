@@ -13,8 +13,8 @@
 @interface CCOfferControllerViewController ()<UITextViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UIImageView *backgroundImage;
-@property (nonatomic, weak) IBOutlet UITextView *inputField;
-@property (nonatomic, weak) id <CCStuffAPIProviderProtocol> ioc_stuffAPIProvider;
+
+@property (nonatomic, strong) id <CCStuffAPIProviderProtocol> ioc_stuffAPIProvider;
 
 - (IBAction)sendButtonDidPress;
 
@@ -28,22 +28,26 @@
     self.backgroundImage.image = [[UIImage imageNamed:@"text_box"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
     self.tapRecognizer.enabled = YES;
     self.title = @"Offer";
-
 }
 
 - (IBAction)sendButtonDidPress
 {
     if(self.inputField.text.length){
-        [self.ioc_stuffAPIProvider makeAnOffer:self.inputField.text
-                                 toStuffWithID:self.currentStuff.stuffID
-                                successHandler:^(id result) {
-                                    [self.backToStuffTransaction perform];
-                                } errorHandler:^(NSError *error) {
-                                    [CCStandardErrorHandler showErrorWithError:error];
-                                }];
+        [self sendOffer];
     } else {
         [CCStandardErrorHandler showErrorWithTitle:nil message:@"Offer can not be empty"];
     }
+}
+
+- (void)sendOffer
+{
+    [self.ioc_stuffAPIProvider makeAnOffer:self.inputField.text
+                             toStuffWithID:self.currentStuff.stuffID
+                            successHandler:^(id result) {
+                                [self.backToStuffTransaction perform];
+                            } errorHandler:^(NSError *error) {
+                                [CCStandardErrorHandler showErrorWithError:error];
+                            }];
 }
 
 - (BOOL)textView:(UITextView *)txtView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {

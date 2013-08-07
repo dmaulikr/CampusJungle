@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSMutableArray *uploadingStuff;
 @property (nonatomic, strong) NSMutableArray *uploadingQuestions;
 @property (nonatomic, strong) NSMutableArray *uploadingProfessorUploads;
+@property (nonatomic, strong) NSMutableArray *uploadingBooks;
 
 @property (nonatomic, weak) CCBaseDataProvider *currentDataProvider;
 

@@ -11,6 +11,7 @@
 #import "CCOtherUserProfileTransaction.h"
 #import "CCStuffDetailsTransaction.h"
 #import "CCPrivateMessageTransaction.h"
+#import "CCBookDetalsTransaction.h"
 
 @implementation CCOfferDetailsTransaction
 
@@ -26,6 +27,10 @@
     CCStuffDetailsTransaction *stuffDetailsTransaction = [CCStuffDetailsTransaction new];
     stuffDetailsTransaction.navigation = self.navigation;
     offerDetails.stuffDetailsTransaction = stuffDetailsTransaction;
+    
+    CCBookDetalsTransaction *bookDetailsTransaction = [CCBookDetalsTransaction new];
+    bookDetailsTransaction.navigation = self.navigation;
+    offerDetails.bookDetailsTransaction = bookDetailsTransaction;
     
     offerDetails.offer = object;
     

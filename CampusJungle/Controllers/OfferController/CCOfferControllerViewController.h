@@ -14,5 +14,6 @@
 
 @property (nonatomic, strong) CCStuff *currentStuff;
 @property (nonatomic, strong) id <CCTransaction> backToStuffTransaction;
+@property (nonatomic, weak) IBOutlet UITextView *inputField;
 
 @end
