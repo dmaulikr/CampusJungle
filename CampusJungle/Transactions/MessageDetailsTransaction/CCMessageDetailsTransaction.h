@@ -11,6 +11,6 @@
 
 @interface CCMessageDetailsTransaction : NSObject <CCTransactionWithObject>
 
-@property (nonatomic, strong) UINavigationController *navigation;
+@property (nonatomic, weak) UINavigationController *navigation;
 
 @end

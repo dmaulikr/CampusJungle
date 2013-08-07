@@ -11,7 +11,7 @@
 
 @interface CCSignUpTransaction : NSObject<CCTransaction>
 
-@property (nonatomic, strong) UINavigationController *navigation;
+@property (nonatomic, weak) UINavigationController *navigation;
 
 @property (nonatomic, strong) id <CCTransaction> initialUserProfileTransaction;
 
