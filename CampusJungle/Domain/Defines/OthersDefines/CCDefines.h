@@ -298,8 +298,10 @@ extern const struct CCAppInvitesDefines {
 } CCAppInvitesDefines;
 
 extern const struct CCAppInvitesFacebookConstants {
-    __unsafe_unretained NSString *title;
-    __unsafe_unretained NSString *message;
+    __unsafe_unretained NSString *name;
+    __unsafe_unretained NSString *caption;
+    __unsafe_unretained NSString *description;
+    __unsafe_unretained NSString *link;
 } CCAppInvitesFacebookConstants;
 
 extern const struct CCPushNotificationTypes {
