@@ -146,7 +146,6 @@ const struct CCUserDefines CCUserDefines = {
     .currentUser = @"current_user",
     .minimumPasswordLength = 3,
     .isFacebookLinked = @"is_facebook_linked"
-
 };
 
 const struct CCUserSignUpKeys CCUserSignUpKeys = {
