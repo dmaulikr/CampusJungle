@@ -14,7 +14,7 @@
 
 @property (nonatomic, weak) IBOutlet UIImageView *backgroundImage;
 
-@property (nonatomic, weak) id <CCStuffAPIProviderProtocol> ioc_stuffAPIProvider;
+@property (nonatomic, strong) id <CCStuffAPIProviderProtocol> ioc_stuffAPIProvider;
 
 - (IBAction)sendButtonDidPress;
 
