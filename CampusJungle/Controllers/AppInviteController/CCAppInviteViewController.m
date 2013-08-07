@@ -127,13 +127,18 @@ typedef enum {
      [NSString stringWithFormat:@"%@/media/app_icon.png", CCAPIDefines.baseURL], @"picture",
      nil];
 
+    [CCAppearanceConfigurator setDefaultButtonsAppearance];
     [FBWebDialogs presentFeedDialogModallyWithSession:FBSession.activeSession parameters:params handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
         if (error) {
              [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCAlertsMessages.sendFacebookInviteError];
         }
         else if (result != FBWebDialogResultDialogNotCompleted) {
-            [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.sendFacebookInvite duration:CCProgressHudsConstants.loaderDuration];
+            NSDictionary *urlParams = [CCFacebookRequestParseHelper parseURLParams:[resultURL query]];
+            if ([[urlParams allKeys] count] > 0) {
+                [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.sendFacebookInvite duration:CCProgressHudsConstants.loaderDuration];
+            }
         }
+        [CCAppearanceConfigurator configurateButtons];
     }];
 }
 
