@@ -15,4 +15,6 @@
 
 - (void)successPaymentWithInAppPurchase:(NSDictionary *)paymentInfo userID:(NSString *)userID successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 
+- (void)makeCashOutRequestWithAmount:(NSString *)amount onEmail:(NSString *)email successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
+
 @end

@@ -127,6 +127,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .deleteBook = @"/api/users/me/books/%@",
     .makeBookOffer = @"/api/books/%@/offer",
     .changePassword = @"/api/users/me/change_password",
+    .cashOutRequest = @"/api/",
 };
 
 const struct CCUserDefines CCUserDefines = {
@@ -146,7 +147,6 @@ const struct CCUserDefines CCUserDefines = {
     .currentUser = @"current_user",
     .minimumPasswordLength = 3,
     .isFacebookLinked = @"is_facebook_linked"
-
 };
 
 const struct CCUserSignUpKeys CCUserSignUpKeys = {

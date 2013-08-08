@@ -195,11 +195,17 @@
       @"avatar_retina" : @"avatar",
       @"token" : @"token",
       @"wallet" : @"wallet",
+      @"bonus_wallet" : @"bonusWallet",
       @"status" : @"status",
       @"id" : @"uid",
       @"rank" : @"rank",
       @"is_fb_linked" :@"isFacebookLinked"
       };
+}
+
+- (double)totalWallet
+{
+    return (self.bonusWallet.doubleValue + self.wallet.doubleValue)/100;
 }
 
 @end

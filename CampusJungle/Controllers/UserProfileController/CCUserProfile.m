@@ -95,8 +95,7 @@
 {
     [super viewWillAppear:animated];
     [self.mainTable reloadData];
-    float dollars = [[[self.ioc_userSession currentUser] wallet] floatValue]/100;
-    self.walletLabel.text = [NSString stringWithFormat:@"$%0.2lf",dollars];
+    self.walletLabel.text = [NSString stringWithFormat:@"$%0.2lf",[[self.ioc_userSession currentUser] totalWallet]];
 }
 
 - (void)configStars
@@ -125,7 +124,7 @@
 
 - (void)setupButtons
 {
-    if ([[[self.ioc_userSession currentUser] isFacebookLinked] isEqualToString:@"true"]){
+    if (![self isFacebookButtonNeeaded]){
         [self.facebookButton setHidden:YES];
     }
     self.facebookButton.alpha = 0;
@@ -133,6 +132,16 @@
     [self setButtonsTextColorInView:self.tableFooterView];
     [self setButtonsTextColorInView:self.tableHeaderView];
     [CCButtonsHelper removeBackgroundImageInButton:self.avatarButton];
+}
+
+- (BOOL)isFacebookButtonNeeaded
+{
+    CCUser *user = [self.ioc_userSession currentUser];
+    if(user.lastName.isEmpty) return YES;
+    if(user.firstName.isEmpty) return YES;
+    if(user.avatar.isEmpty) return YES;
+    if(user.email.isEmpty) return YES;
+    return NO;
 }
 
 - (void)setupImageViews
@@ -163,8 +172,7 @@
         [self.avatarImageView setImageWithURL:[NSURL URLWithString:avatarURL]];
     }
     self.rateView.rate = [[[self.ioc_userSession currentUser] rank] floatValue];
-    float dollars = [[[self.ioc_userSession currentUser] wallet] floatValue]/100;
-    self.walletLabel.text = [NSString stringWithFormat:@"$%0.2lf",dollars];
+    self.walletLabel.text = [NSString stringWithFormat:@"$%0.2lf",[[self.ioc_userSession currentUser] totalWallet]];
 }
 
 - (void)setupNavigationBar
@@ -474,7 +482,7 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self.ioc_loginAPIProvider linkWithFacebookSuccessHandler:^(id object){
         NSDictionary *facebookUserInfo = object;
-        self.ioc_userSession.currentUser.isFacebookLinked = @"true";
+        self.ioc_userSession.currentUser.isFacebookLinked = @YES;
         
         if (![self.emailTextField.text isMinLength:1]){
             self.emailTextField.text = facebookUserInfo[CCFacebookKeys.email];
@@ -485,11 +493,10 @@
         if (![self.lastNameLabel.text isMaxLength:1]){
             self.lastNameTextField.text = facebookUserInfo[CCFacebookKeys.lastName];
         }
-        if ([self.ioc_userSession.currentUser.avatar isEqualToString:CCAPIDefines.emptyAvatarPath]){
+        if (self.ioc_userSession.currentUser.avatar.isEmpty){
             self.facebookAvatarPath = [NSString stringWithFormat:CCUserDefines.facebookAvatarLinkTemplate,facebookUserInfo[CCLinkUserKeys.uid]];
             [self.avatarImageView setImageWithURL:[NSURL URLWithString:self.facebookAvatarPath]];
         }
-        
         [self.ioc_userSession saveUser];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self.facebookButton setHidden:YES];

@@ -13,6 +13,7 @@
 #import "NSString+CJStringValidator.h"
 #import "CCAvatarSelectionActionSheet.h"
 #import "NSString+CCValidationHelper.h"
+#import "CCLoginAPIProviderProtocol.h"
 
 @interface CCInitialUserInfoController ()<CCAvatarSelectionProtocol>
 
@@ -26,6 +27,8 @@
 @property (nonatomic) BOOL isAvatarChanged;
 @property (nonatomic, strong) id <CCAPIProviderProtocol> ioc_apiProvider;
 @property (nonatomic, strong) CCAvatarSelectionActionSheet *avatarSelectionSheet;
+@property (nonatomic, weak) IBOutlet UIButton *facebookButton;
+@property (nonatomic, strong) id <CCLoginAPIProviderProtocol> ioc_loginAPIProvider;
 
 - (IBAction)avatarButtonDidPressed;
 
@@ -42,6 +45,9 @@
     self.avatarSelectionSheet = [CCAvatarSelectionActionSheet new];
     self.avatarSelectionSheet.delegate = self;
     self.title = @"User Info";
+    if(![self isFacebookButtonNeeaded]){
+        self.facebookButton.hidden = YES;
+    }
 }
 
 - (void)setUpInfo
@@ -107,6 +113,16 @@
     return YES;
 }
 
+- (BOOL)isFacebookButtonNeeaded
+{
+    CCUser *user = [self.ioc_userSession currentUser];
+    if(user.lastName.isEmpty) return YES;
+    if(user.firstName.isEmpty) return YES;
+    if(user.avatar.isEmpty) return YES;
+    if(user.email.isEmpty) return YES;
+    return NO;
+}
+
 - (void)didSelectAvatar:(UIImage *)avatar
 {
     self.avatar.image = avatar;
@@ -122,5 +138,34 @@
     }
     return YES;
 }
+
+- (IBAction)facebookButtonDidPressed
+{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self.ioc_loginAPIProvider linkWithFacebookSuccessHandler:^(id object){
+        NSDictionary *facebookUserInfo = object;
+        self.ioc_userSession.currentUser.isFacebookLinked = @YES;
+        
+        if (![self.emailField.text isMinLength:1]){
+            self.emailField.text = facebookUserInfo[CCFacebookKeys.email];
+        }
+        if (![self.firstNameFiled.text isMinLength:1]){
+            self.firstNameFiled.text = facebookUserInfo[CCFacebookKeys.firstName];
+        }
+        if (![self.lastNameField.text isMaxLength:1]){
+            self.lastNameField.text = facebookUserInfo[CCFacebookKeys.lastName];
+        }
+        [self.avatar setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:CCUserDefines.facebookAvatarLinkTemplate,facebookUserInfo[CCLinkUserKeys.uid]]]];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        [self.facebookButton setHidden:YES];
+        self.isAvatarChanged = YES;
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    } facebookSessionCreate:^{
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    }];
+}
+
 
 @end

@@ -35,73 +35,51 @@
 {
     NSMutableArray *payments = [self getPayPalPaymentsArray];
     [payments addObject:newPayment];
-    [self.ioc_PaymentAPIProvider successPaymentWithPayPal:newPayment
-                                                   userID:[[self.ioc_userSession currentUser] uid]
-                                           successHandler:^(id result){
-                                               NSMutableArray *payments = [self getPayPalPaymentsArray];
-                                               for(NSDictionary *payment in payments){
-                                                   if([payment[@"proof_of_payment"][@"adaptive_payment"][@"pay_key"] isEqualToString:newPayment[@"proof_of_payment"][@"adaptive_payment"][@"pay_key"]]){
-                                                       [payments removeObject:payment];
-                                                   }
-                                               }
-                                               [self setPayPalArray:payments];
-                                           }
-                                             errorHandler:^(NSError *error){
-                                             
-                                             }];
     [self setPayPalArray:payments];
+    [self sendAllPaypalPayments];
 }
 
 - (void)addInAppPurchasePayment:(NSDictionary *)newPayment
 {
     NSMutableArray *payments = [self getInAppPurchaseArray];
     [payments addObject:newPayment];
-    [self.ioc_PaymentAPIProvider successPaymentWithInAppPurchase:newPayment
-                                                   userID:[[self.ioc_userSession currentUser] uid]
-                                           successHandler:^(id result){
-                                               NSMutableArray *payments = [self getInAppPurchaseArray];
-                                               for(NSDictionary *payment in payments){
-                                                   if([payment[@"transactionIdentifier"] isEqualToString:newPayment[@"transactionIdentifier"]]){
-                                                       [payments removeObject:payment];
-                                                   }
-                                               }
-                                               [self setInAppPurchaseArray:payments];
-                                           }
-                                             errorHandler:^(NSError *error){
-                                                 
-                                             }];
-    [self setPayPalArray:payments];
+    [self setInAppPurchaseArray:payments];
+    [self sendAllInAppPurchasePayments];
 }
 
-- (void)resendAllPayments
+- (void)sendAllPaypalPayments
+{
+    for(NSDictionary *savedPayment in [self getPayPalPaymentsArray]){
+        [self.ioc_PaymentAPIProvider successPaymentWithPayPal:savedPayment
+                                                       userID:[[self.ioc_userSession currentUser] uid]
+                                               successHandler:^(id result){
+                                                   NSMutableArray *payments = [self getPayPalPaymentsArray];
+                                                   for(NSDictionary *payment in payments){
+                                                       if([self isPayPalPayment:payment equalTo:savedPayment]){
+                                                           [payments removeObject:payment];
+                                                       }
+                                                   }
+                                                   [self setPayPalArray:payments];
+                                               }
+                                                 errorHandler:^(NSError *error){
+                                                     
+                                                 }];
+    }
+}
+
+- (void)sendAllInAppPurchasePayments
 {
     for(NSDictionary *savedPayment in [self getInAppPurchaseArray]){
         [self.ioc_PaymentAPIProvider successPaymentWithInAppPurchase:savedPayment
-                                                   userID:[[self.ioc_userSession currentUser] uid]
-                                           successHandler:^(id result){
-                                               NSMutableArray *payments = [self getInAppPurchaseArray];
-                                               for(NSDictionary *payment in payments){
-                                                   if([payment[@"transactionIdentifier"] isEqualToString:savedPayment[@"transactionIdentifier"]]){
-                                                       [payments removeObject:payment];
-                                                   }
-                                               }
-                                               [self setInAppPurchaseArray:payments];
-                                           }
-                                             errorHandler:^(NSError *error){
-                                                 
-                                             }];
-    }
-    for(NSDictionary *savedPayment in [self getInAppPurchaseArray]){
-        [self.ioc_PaymentAPIProvider successPaymentWithPayPal:savedPayment
                                                               userID:[[self.ioc_userSession currentUser] uid]
                                                       successHandler:^(id result){
-                                                          NSMutableArray *payments = [self getPayPalPaymentsArray];
+                                                          NSMutableArray *payments = [self getInAppPurchaseArray];
                                                           for(NSDictionary *payment in payments){
-                                                              if([payment[@"proof_of_payment"][@"adaptive_payment"][@"pay_key"] isEqualToString:savedPayment[@"proof_of_payment"][@"adaptive_payment"][@"pay_key"]]){
+                                                              if([self isInAppPurchasePayment:payment equalTo:savedPayment]){
                                                                   [payments removeObject:payment];
                                                               }
                                                           }
-                                                          [self setPayPalArray:payments];
+                                                          [self setInAppPurchaseArray:payments];
                                                       }
                                                         errorHandler:^(NSError *error){
                                                             
@@ -109,25 +87,55 @@
     }
 }
 
-- (NSMutableArray *)getPayPalPaymentsArray
+- (void)resendAllPayments
 {
-    return [[self.userDefaults arrayForKey:PayPalPayments] mutableCopy];
+    [self sendAllInAppPurchasePayments];
+    [self sendAllPaypalPayments];
 }
 
-- (void)setPayPalArray:(NSArray *)array
+- (BOOL)isPayPalPayment:(NSDictionary *)firstPayment equalTo:(NSDictionary *)secondPayment
 {
-    [self.userDefaults setObject:array forKey:PayPalPayments];
-    [self.userDefaults synchronize];
+    return [firstPayment[@"proof_of_payment"][@"adaptive_payment"][@"pay_key"] isEqualToString:secondPayment[@"proof_of_payment"][@"adaptive_payment"][@"pay_key"]];
+}
+
+- (BOOL)isInAppPurchasePayment:(NSDictionary *)firstPayment equalTo:(NSDictionary *)secondPayment
+{
+    return [firstPayment[@"transactionIdentifier"] isEqualToString:secondPayment[@"transactionIdentifier"]];
+}
+
+- (NSMutableArray *)getPayPalPaymentsArray
+{
+    return [self getArrayWithKey:PayPalPayments];
 }
 
 - (NSMutableArray *)getInAppPurchaseArray
 {
-    return [[self.userDefaults arrayForKey:InAppPurchasePayments] mutableCopy];
+    return [self getArrayWithKey:InAppPurchasePayments];
+}
+
+- (NSMutableArray *)getArrayWithKey:(NSString *)key
+{
+    NSArray *arrayOfPayments = [self.userDefaults arrayForKey:key];
+    if (arrayOfPayments){
+        return [arrayOfPayments mutableCopy];
+    } else {
+        return [NSMutableArray new];
+    }
+}
+
+- (void)setPayPalArray:(NSArray *)array
+{
+    [self setArray:array withKey:PayPalPayments];
 }
 
 - (void)setInAppPurchaseArray:(NSArray *)array
 {
-    [self.userDefaults setObject:array forKey:InAppPurchasePayments];
+    [self setArray:array withKey:InAppPurchasePayments];
+}
+
+- (void)setArray:(NSArray *)array withKey:(NSString *)key
+{
+    [self.userDefaults setObject:array forKey:PayPalPayments];
     [self.userDefaults synchronize];
 }
 
