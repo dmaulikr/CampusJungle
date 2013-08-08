@@ -19,9 +19,12 @@
 @property (nonatomic, strong) NSString *uid;
 @property (nonatomic, strong) NSString *rank;
 @property (nonatomic, strong) NSString *wallet;
+@property (nonatomic, strong) NSString *bonusWallet;
 @property (nonatomic, strong) NSArray *authentications;
 @property (nonatomic, strong) NSNumber *isFacebookLinked;
 @property (nonatomic, strong) NSArray *educations;
 @property (nonatomic, assign) BOOL isSelected;
+
+- (double)totalWallet;
 
 @end

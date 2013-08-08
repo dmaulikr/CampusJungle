@@ -95,8 +95,7 @@
 {
     [super viewWillAppear:animated];
     [self.mainTable reloadData];
-    float dollars = [[[self.ioc_userSession currentUser] wallet] floatValue]/100;
-    self.walletLabel.text = [NSString stringWithFormat:@"$%0.2lf",dollars];
+    self.walletLabel.text = [NSString stringWithFormat:@"$%0.2lf",[[self.ioc_userSession currentUser] totalWallet]];
 }
 
 - (void)configStars
@@ -173,8 +172,7 @@
         [self.avatarImageView setImageWithURL:[NSURL URLWithString:avatarURL]];
     }
     self.rateView.rate = [[[self.ioc_userSession currentUser] rank] floatValue];
-    float dollars = [[[self.ioc_userSession currentUser] wallet] floatValue]/100;
-    self.walletLabel.text = [NSString stringWithFormat:@"$%0.2lf",dollars];
+    self.walletLabel.text = [NSString stringWithFormat:@"$%0.2lf",[[self.ioc_userSession currentUser] totalWallet]];
 }
 
 - (void)setupNavigationBar

@@ -14,22 +14,30 @@
 #import <StoreKit/StoreKit.h>
 #import "CCStoreObserver.h"
 #import "CCPaymentServiceProtocol.h"
+#import "NSString+CCValidationHelper.h"
 
 #define firstPriceLevel 1
 #define secondPriceLevel 2
 #define thirdPriceLevel 3
 
+#define minimalAmoumt 10000.
+
 @interface CCWalletController ()<PayPalPaymentDelegate, CCStoreObserverDelegateProtocol>
 
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
 @property (nonatomic, weak) IBOutlet UILabel *walletLabel;
+@property (nonatomic, weak) IBOutlet UILabel *bonusWalletLabel;
 @property (nonatomic, strong) NSArray *products;
 @property (nonatomic, strong) id <CCStoreObserverProtocol> ioc_stroreObserver;
 @property (nonatomic, strong) id <CCPaymentServiceProtocol> ioc_paymentManager;
 @property (nonatomic, strong) SKProductsRequest *request;
+@property (nonatomic, weak) IBOutlet UITextField *payPalEmailField;
+@property (nonatomic, weak) IBOutlet UITextField *amountField;
 
 - (IBAction)payPalButtonPressed:(UIButton *)sender;
 - (IBAction)inAppPurcaseButtonDidPressed:(UIButton *)sender;
+
+- (IBAction)requestMoneyButtonPressed;
 
 @end
 
@@ -47,7 +55,10 @@
     
     }
     float dollars = [[[self.ioc_userSession currentUser] wallet] floatValue]/100;
-    self.walletLabel.text = [NSString stringWithFormat:@"$%0.2lf",dollars];
+    float bonusDolars = [[[self.ioc_userSession currentUser] bonusWallet] floatValue]/100;
+    self.walletLabel.text = [NSString stringWithFormat:@"%0.2lf",dollars];
+    self.bonusWalletLabel.text = [NSString stringWithFormat:@"%0.2lf",bonusDolars];
+    self.tapRecognizer.enabled = YES;
 }
 
 - (void)productsDidLoaded:(NSArray *)arrayOfProducts
@@ -155,8 +166,31 @@
 
 - (void)paymentFailed
 {
-    
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+}
+
+- (IBAction)requestMoneyButtonPressed
+{
+    if([self validateFields]){
+        
+    }
+}
+
+- (BOOL)validateFields
+{
+    if(!self.payPalEmailField.text.isValidEmail){
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:CCAlertsMessages.emailNotValid];
+        return NO;
+    }
+    if(self.amountField.text.length == 0){
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:@"Amount field can not be blank"];
+        return NO;
+    }
+    if(self.amountField.text.floatValue < minimalAmoumt){
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:@"Minimal amount that can be derived is 10 000"];
+        return NO;
+    }
+    return YES;
 }
 
 @end
