@@ -9,6 +9,7 @@
 #import "CCViewMarketStuffListTransaction.h"
 #import "CCListOfStuffInMarketController.h"
 #import "CCStuffDetailsTransaction.h"
+#import "CCBookDetalsTransaction.h"
 
 @implementation CCViewMarketStuffListTransaction
 
@@ -22,6 +23,10 @@
     
     CCStuffDetailsTransaction *stuffDetail = [CCStuffDetailsTransaction new];
     stuffDetail.navigation = self.navigation;
+    
+    CCBookDetalsTransaction *bookDetailsTransaction = [CCBookDetalsTransaction new];
+    bookDetailsTransaction.navigation = self.navigation;
+    listOfNotesController.bookDetails = bookDetailsTransaction;
     
     listOfNotesController.stuffDetails = stuffDetail;
     [self.navigation pushViewController:listOfNotesController animated:YES];

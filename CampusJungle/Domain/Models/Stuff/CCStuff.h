@@ -23,4 +23,6 @@
 @property (nonatomic, strong) NSString *ownerID;
 @property (nonatomic, strong) NSArray *tags;
 
+- (NSNumber *)priceInDolars;
+
 @end

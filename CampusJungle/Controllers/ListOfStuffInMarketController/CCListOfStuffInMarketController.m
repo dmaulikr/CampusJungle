@@ -9,6 +9,7 @@
 #import "CCListOfStuffInMarketController.h"
 #import "CCOrdinaryCell.h"
 #import "CCStuffCell.h"
+#import "CCMarketBooksDataProvider.h"
 
 @interface CCListOfStuffInMarketController ()
 
@@ -25,13 +26,28 @@
 {
     [super viewDidLoad];
     [self configTableWithProvider:self.tableProvider cellClass:[CCStuffCell class]];
-    self.title = @"Stuff";
-    self.searchBar.placeholder = @"Search Stuff";
+
+    if([self.tableProvider isKindOfClass:[CCMarketBooksDataProvider class]]){
+        self.title = @"Books";
+        self.searchBar.placeholder = @"Search Book";
+    } else {
+        self.title = @"Stuff";
+        self.searchBar.placeholder = @"Search Stuff";
+    }
 }
 
 - (void)didSelectedCellWithObject:(id)cellObject
 {
-    [self.stuffDetails performWithObject:cellObject];
+    if([self.tableProvider isKindOfClass:[CCMarketBooksDataProvider class]]){
+        [self.bookDetails performWithObject:cellObject];
+    } else {
+        [self.stuffDetails performWithObject:cellObject];
+    }
+}
+
+- (BOOL)isNeedToLeftSelected
+{
+    return NO;
 }
 
 

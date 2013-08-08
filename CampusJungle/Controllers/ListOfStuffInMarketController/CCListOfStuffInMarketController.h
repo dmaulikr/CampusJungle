@@ -14,5 +14,6 @@
 
 @property (nonatomic, strong) CCBaseDataProvider *tableProvider;
 @property (nonatomic, strong) id <CCTransactionWithObject> stuffDetails;
+@property (nonatomic, strong) id <CCTransactionWithObject> bookDetails;
 
 @end

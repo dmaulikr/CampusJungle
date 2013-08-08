@@ -101,4 +101,9 @@
              };
 }
 
+- (NSNumber *)priceInDolars
+{
+    return @(self.price.doubleValue/100);
+}
+
 @end

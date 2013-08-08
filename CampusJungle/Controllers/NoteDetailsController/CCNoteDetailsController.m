@@ -90,17 +90,17 @@
     }
     self.mainTable.tableHeaderView = self.tableHeader;
 
-    NSString *viewOnlyTitle = [NSString stringWithFormat:@"Buy for view:%0.2lf",self.note.price.doubleValue];
+    NSString *viewOnlyTitle = [NSString stringWithFormat:@"Buy for view: %0.2lf",self.note.priceInDolars.doubleValue];
 
     [self.viewOnlyAccessButton setTitle:viewOnlyTitle forState:UIControlStateNormal];
 
-    NSNumber *fullPrice = self.note.fullPrice;
+    NSNumber *fullPrice = self.note.fullPriceInDolars;
     
     if(self.note.fullAccess){
-        fullPrice = @(fullPrice.doubleValue - self.note.price.doubleValue);
+        fullPrice = @(fullPrice.doubleValue - self.note.priceInDolars.doubleValue);
     }
     
-    NSString *fullAccessTitle = [NSString stringWithFormat:@"Buy for download:%0.2lf",fullPrice.doubleValue];
+    NSString *fullAccessTitle = [NSString stringWithFormat:@"Buy for download: %0.2lf",fullPrice.doubleValue];
     [self.fullAccessButton setTitle:fullAccessTitle forState:UIControlStateNormal];
 }
 

@@ -29,4 +29,7 @@
 
 + (NSDictionary *)noteLinkMappingDictionary;
 
+- (NSNumber *)priceInDolars;
+- (NSNumber *)fullPriceInDolars;
+
 @end

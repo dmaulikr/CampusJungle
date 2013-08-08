@@ -58,7 +58,7 @@ static const NSInteger kCellHeight = 132;
     
     [self.descriptionLabel setText:stuff.description];
     [self.nameLabel setText:stuff.name];
-    [self.priceLabel setText:[NSString stringWithFormat:@"Price: %@", stuff.price]];
+    [self.priceLabel setText:[NSString stringWithFormat:@"Price: $%0.2lf", stuff.priceInDolars.doubleValue]];
 }
 
 - (void)fillImageView

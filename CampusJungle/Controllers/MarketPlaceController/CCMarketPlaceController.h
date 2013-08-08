@@ -23,6 +23,7 @@
 - (IBAction)viewAllTopNotesPressed;
 - (IBAction)viewAllLatestNotesPressed;
 - (IBAction)viewAllStuffButtonPressed;
+- (IBAction)viewAllBooksButtonPressed;
 
 - (void)update;
 

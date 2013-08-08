@@ -139,12 +139,12 @@
     };
 }
 
-- (NSNumber *)price
+- (NSNumber *)priceInDolars
 {
     return @(_price.doubleValue/100);
 }
 
-- (NSNumber *)fullPrice
+- (NSNumber *)fullPriceInDolars
 {
     return @(_fullPrice.doubleValue/100);
 }
