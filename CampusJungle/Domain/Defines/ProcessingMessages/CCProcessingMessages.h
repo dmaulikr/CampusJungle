@@ -20,4 +20,5 @@ extern const struct CCProcessingMessages {
     __unsafe_unretained NSString *loadingProfessorsUploads;
     __unsafe_unretained NSString *loadingCoupons;
     __unsafe_unretained NSString *loadingVoteDetails;
+    __unsafe_unretained NSString *postingMessage;
 } CCProcessingMessages;

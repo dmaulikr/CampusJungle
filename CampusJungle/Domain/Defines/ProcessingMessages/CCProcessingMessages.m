@@ -22,4 +22,5 @@ const struct CCProcessingMessages CCProcessingMessages = {
     .loadingProfessorsUploads = @"Loading professors uploads details...",
     .loadingCoupons = @"Loading coupons details...",
     .loadingVoteDetails = @"Loading vote details...",
+    .postingMessage = @"Posting message...",
 };

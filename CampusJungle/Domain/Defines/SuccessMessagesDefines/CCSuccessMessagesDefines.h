@@ -37,7 +37,7 @@ extern const struct CCSuccessMessages {
     __unsafe_unretained NSString *deleteBook;
     __unsafe_unretained NSString *emailDraftSaved;
     __unsafe_unretained NSString *appInviteSent;
-    __unsafe_unretained NSString *sendFacebookInvite;
+    __unsafe_unretained NSString *sendSocialInvite;
     __unsafe_unretained NSString *sentReport;
     __unsafe_unretained NSString *passwordChanged;
     __unsafe_unretained NSString *settingsUpdated;

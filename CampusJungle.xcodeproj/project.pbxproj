@@ -713,7 +713,6 @@
 		D37122FE17A2B45900A7DF04 /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D37122FA17A2B45900A7DF04 /* check@2x.png */; };
 		D37122FF17A2B45900A7DF04 /* check_active.png in Resources */ = {isa = PBXBuildFile; fileRef = D37122FB17A2B45900A7DF04 /* check_active.png */; };
 		D371230017A2B45900A7DF04 /* check_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D37122FC17A2B45900A7DF04 /* check_active@2x.png */; };
-		D3751C7A17A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3751C7917A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.m */; };
 		D3819B571799CB4300C93005 /* CCProfessorUploadDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3819B561799CB4300C93005 /* CCProfessorUploadDataProvider.m */; };
 		D3819B5B1799CF3500C93005 /* CCProfessorUploadsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3819B5A1799CF3500C93005 /* CCProfessorUploadsCell.m */; };
 		D3819B5D1799CF8300C93005 /* CCProfessorUploadsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3819B5C1799CF8300C93005 /* CCProfessorUploadsCell.xib */; };
@@ -1924,8 +1923,6 @@
 		D37122FA17A2B45900A7DF04 /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
 		D37122FB17A2B45900A7DF04 /* check_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check_active.png; sourceTree = "<group>"; };
 		D37122FC17A2B45900A7DF04 /* check_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check_active@2x.png"; sourceTree = "<group>"; };
-		D3751C7817A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCInboxAppInvitesDataProvider.h; sourceTree = "<group>"; };
-		D3751C7917A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCInboxAppInvitesDataProvider.m; sourceTree = "<group>"; };
 		D3819B551799CB4300C93005 /* CCProfessorUploadDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProfessorUploadDataProvider.h; sourceTree = "<group>"; };
 		D3819B561799CB4300C93005 /* CCProfessorUploadDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCProfessorUploadDataProvider.m; sourceTree = "<group>"; };
 		D3819B591799CF3500C93005 /* CCProfessorUploadsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProfessorUploadsCell.h; sourceTree = "<group>"; };
@@ -3964,7 +3961,6 @@
 				70FDD653179D55E000871727 /* GroupmatesDataDrovider */,
 				70F42A78178D5A1C00E763F3 /* GroupsDataProvider */,
 				70A29D6D17877B94001BC8DD /* ImageSortingDataProvider */,
-				AA28D80E46C593F397076F50 /* InboxAppInvitesDataProvider */,
 				703DA4DE178B457200464DD3 /* LocationsDataProvider */,
 				D35CDF2117B158590033CD28 /* MarketBooksDataProvider */,
 				70A29D7017877B94001BC8DD /* MarketNotesProvider */,
@@ -6226,15 +6222,6 @@
 			path = TutorialCell;
 			sourceTree = "<group>";
 		};
-		AA28D80E46C593F397076F50 /* InboxAppInvitesDataProvider */ = {
-			isa = PBXGroup;
-			children = (
-				D3751C7817A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.h */,
-				D3751C7917A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.m */,
-			);
-			path = InboxAppInvitesDataProvider;
-			sourceTree = "<group>";
-		};
 		AA28D85BD926F350A858B95E /* UsersDataProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -7816,7 +7803,6 @@
 				70061CE017A2CC4A00848F62 /* CCAppInvite.m in Sources */,
 				70061CE417A2D09E00848F62 /* CCAppInviteApiProvider.m in Sources */,
 				AA28DC920F53DB90D22BE7E7 /* CCWelcomeController.m in Sources */,
-				D3751C7A17A67FD100C58FE3 /* CCInboxAppInvitesDataProvider.m in Sources */,
 				D3B7320A17A687B900F35C4D /* CCAppInviteCell.m in Sources */,
 				7070444917A67F3100AC0FDE /* CCFacebookRequestParseHelper.m in Sources */,
 				7070445317A6B39300AC0FDE /* CCPushNotificationsService.m in Sources */,
@@ -7977,8 +7963,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusJungle/CampusJungle-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CampusJungle/CampusJungle-Info.plist";
@@ -8027,8 +8013,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Dimalex LLC (27UPT6KC6U)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Dimalex LLC (27UPT6KC6U)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: M2 Interactive Group, Inc.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: M2 Interactive Group, Inc.";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusJungle/CampusJungle-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CampusJungle/CampusJungle-Info.plist";
@@ -8067,8 +8053,8 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = CampusJungle;
-				PROVISIONING_PROFILE = "E1CC89DA-1615-4A34-A7E2-8E8B8B9E5FE7";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E1CC89DA-1615-4A34-A7E2-8E8B8B9E5FE7";
+				PROVISIONING_PROFILE = "DC3D19E0-F4A4-456F-876D-F2E4CCB3AAA6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DC3D19E0-F4A4-456F-876D-F2E4CCB3AAA6";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

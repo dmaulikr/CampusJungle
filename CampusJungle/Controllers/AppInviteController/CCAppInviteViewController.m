@@ -135,7 +135,7 @@ typedef enum {
         else if (result != FBWebDialogResultDialogNotCompleted) {
             NSDictionary *urlParams = [CCFacebookRequestParseHelper parseURLParams:[resultURL query]];
             if ([[urlParams allKeys] count] > 0) {
-                [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.sendFacebookInvite duration:CCProgressHudsConstants.loaderDuration];
+                [self sendSocialInvite];
             }
         }
         [CCAppearanceConfigurator configurateButtons];
@@ -148,6 +148,14 @@ typedef enum {
     {
         [CCAppearanceConfigurator setDefaultButtonsAppearance];
         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        __weak SLComposeViewController *weakTweetSheet = tweetSheet;
+        [tweetSheet setCompletionHandler:^(SLComposeViewControllerResult result){
+            [weakTweetSheet dismissViewControllerAnimated:YES completion:^{
+                if (result == SLComposeViewControllerResultDone) {
+                    [self sendSocialInvite];
+                }
+            }];
+        }];
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }
 }
@@ -179,7 +187,7 @@ typedef enum {
     };
     self.mailComposerDelegate = [[CCMailComposerDelegate alloc] initWithSuccessBlock:^{
         completionBlock();
-        [self sendInvitesToRecords:[weakSelf.dataProvider checkedRecords]];
+        [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.appInviteSent duration:CCProgressHudsConstants.loaderDuration];
     } errorBlock:^{
         completionBlock();
     } cancelBlock:^{
@@ -206,7 +214,7 @@ typedef enum {
     MFMessageComposeViewController *messageViewController = [[MFMessageComposeViewController alloc] init];
     self.messageComposerDelegate = [[CCMessageComposerDelegate alloc] initWithSuccessBlock:^{
         completionBlock();
-        [self sendInvitesToRecords:[weakSelf.dataProvider checkedRecords]];
+        [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.appInviteSent duration:CCProgressHudsConstants.loaderDuration];
     } errorBlock:^{
         completionBlock();
     } cancelBlock:^{
@@ -218,11 +226,6 @@ typedef enum {
     
     [CCAppearanceConfigurator setDefaultTextFieldsAppearance];
     [self presentViewController:messageViewController animated:YES completion:nil];
-}
-
-- (void)sendFacebookInvitesToUsers:(NSArray *)users
-{
-    
 }
 
 - (BOOL)checkSelectedItems
@@ -250,20 +253,16 @@ typedef enum {
 
 #pragma mark -
 #pragma mark Requests
-- (void)sendInvitesToRecords:(NSArray *)recordsArray
+- (void)sendSocialInvite
 {
-    NSMutableArray *appInvitesArray = [NSMutableArray array];
-    for (CCAddressBookRecord *record in recordsArray) {
-        CCAppInvite *appInvite = [CCAppInvite createWithAddressBookRecord:record];
-        [appInvitesArray addObject:appInvite];
-    }
-    __weak CCAppInviteViewController *weakSelf = self;
-    [self.ioc_appInvitesApiProvider sendAppInvites:appInvitesArray successHandler:^(RKMappingResult *result) {
-        [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.appInviteSent duration:CCProgressHudsConstants.loaderDuration];
-        [weakSelf.backTransaction perform];
+    [SVProgressHUD showWithStatus:CCProcessingMessages.postingMessage];
+    [self.ioc_appInvitesApiProvider sendAppInviteWithSuccessHandler:^(RKMappingResult *result) {
+        [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.sendSocialInvite duration:CCProgressHudsConstants.loaderDuration];
     } errorHandler:^(NSError *error) {
+        [SVProgressHUD dismiss];
         [CCStandardErrorHandler showErrorWithError:error];
     }];
 }
+
 
 @end
