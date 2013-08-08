@@ -33,4 +33,11 @@
     [alert show];
 }
 
++ (void)showNotificationWithTitle:(NSString *)title message:(NSString *)message
+{
+    GIAlertButton *alertButton = [GIAlertButton buttonWithTitle:CCAlertsButtons.okButton action:nil];
+    GIAlert *alert = [GIAlert alertWithTitle:title message:message buttons:@[alertButton]];
+    [alert show];
+}
+
 @end

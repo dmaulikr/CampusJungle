@@ -24,11 +24,9 @@
 #import "CCMessagesDataProvider.h"
 #import "CCOffersDataProvider.h"
 #import "CCGroupInvitesDataProvider.h"
-#import "CCInboxAppInvitesDataProvider.h"
 
 #define MessagesState 0
 #define GroupInvitesState 1
-#define AppInviteState 3
 #define OffersState 2
 
 @interface CCInboxController () <CCMessageCellDelegate, CCGroupInviteCellDelegate>
@@ -40,7 +38,6 @@
 @property (nonatomic, strong) CCMessagesDataProvider *messagesDataProvider;
 @property (nonatomic, strong) CCOffersDataProvider *offersDataProvider;
 @property (nonatomic, strong) CCGroupInvitesDataProvider *groupInvitesDataProvider;
-@property (nonatomic, strong) CCInboxAppInvitesDataProvider *appInviteDataProvider;
 
 @property (nonatomic) NSInteger currentState;
 
@@ -91,10 +88,6 @@
             [self setOfferConfiguration];
             break;
         }
-        case AppInviteState:{
-            [self setAppInvitesConfiguration];
-            break;
-        }
     }
 }
 
@@ -102,14 +95,6 @@
 {
     [self.mainSegmentedControl setSelectedSegmentIndex:tabIndex];
     [self segmentedControlDidChangeValue:self.mainSegmentedControl];
-}
-
-- (void)setAppInvitesConfiguration
-{
-    if (!self.appInviteDataProvider) {
-        self.appInviteDataProvider = [CCInboxAppInvitesDataProvider new];
-    }
-    [self configTableWithProvider:self.appInviteDataProvider cellClass:[CCOrdinaryCell class]];
 }
 
 - (void)setGroupsInvitesConfiguration

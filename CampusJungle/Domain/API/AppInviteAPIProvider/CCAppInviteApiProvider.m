@@ -11,52 +11,12 @@
 
 @implementation CCAppInviteApiProvider
 
-- (void)loadAppInvitesWithPageNumber:(NSInteger)pageNumber successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
-{
-    NSMutableDictionary *params = [NSMutableDictionary new];
-    
-    [params setObject:@(pageNumber) forKey:@"page_number"];
-    
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];
-    [self setAuthorizationToken];
-    NSString *path = CCAPIDefines.loadAppInvites;
-    [objectManager getObjectsAtPath:path parameters:params success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        successHandler(mappingResult.firstObject);
-    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        errorHandler(error);
-    }];
-}
-
-- (void)sendAppInvites:(NSArray *)array successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+- (void)sendAppInviteWithSuccessHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [self setAuthorizationToken];
     NSString *path = CCAPIDefines.sendAppInvites;
-    [objectManager postObject:array path:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        successHandler(mappingResult.firstObject);
-    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        errorHandler(error);
-    }];
-}
-
-- (void)resendAppInvite:(CCAppInvite *)appInvite successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
-{
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];
-    [self setAuthorizationToken];
-    NSString *path = [NSString stringWithFormat:CCAPIDefines.resendAppInvite, appInvite.appInviteid];
-    [objectManager putObject:appInvite path:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        successHandler(mappingResult);
-    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        errorHandler(error);
-    }];
-}
-
-- (void)deleteAppInvite:(CCAppInvite *)appInvite successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
-{
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];
-    [self setAuthorizationToken];
-    NSString *path = [NSString stringWithFormat:CCAPIDefines.deleteAppInvite, appInvite.appInviteid];
-    [objectManager deleteObject:nil path:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    [objectManager postObject:nil path:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         successHandler(mappingResult);
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         errorHandler(error);
