@@ -127,6 +127,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .deleteBook = @"/api/users/me/books/%@",
     .makeBookOffer = @"/api/books/%@/offer",
     .changePassword = @"/api/users/me/change_password",
+    .cashOutRequest = @"/api/",
 };
 
 const struct CCUserDefines CCUserDefines = {

@@ -15,6 +15,7 @@
 #import "CCStoreObserver.h"
 #import "CCPaymentServiceProtocol.h"
 #import "NSString+CCValidationHelper.h"
+#import "CCPaymentAPIProviderProtocol.h"
 
 #define firstPriceLevel 1
 #define secondPriceLevel 2
@@ -33,6 +34,7 @@
 @property (nonatomic, strong) SKProductsRequest *request;
 @property (nonatomic, weak) IBOutlet UITextField *payPalEmailField;
 @property (nonatomic, weak) IBOutlet UITextField *amountField;
+@property (nonatomic, strong) id <CCPaymentAPIProviderProtocol> ioc_paymentAPIProvider;
 
 - (IBAction)payPalButtonPressed:(UIButton *)sender;
 - (IBAction)inAppPurcaseButtonDidPressed:(UIButton *)sender;
@@ -172,7 +174,14 @@
 - (IBAction)requestMoneyButtonPressed
 {
     if([self validateFields]){
-        
+        [self.ioc_paymentAPIProvider makeCashOutRequestWithAmount:self.amountField.text
+                                                          onEmail:self.payPalEmailField.text
+                                                   successHandler:^(id result){
+            [SVProgressHUD showSuccessWithStatus:@"Request created"];
+        }
+                                                     errorHandler:^(NSError *error){
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
     }
 }
 

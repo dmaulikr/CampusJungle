@@ -25,6 +25,26 @@
     }];
 }
 
+- (void)makeCashOutRequestWithAmount:(NSString *)amount onEmail:(NSString *)email successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    NSDictionary *params = @{
+                             @"amount" : amount,
+                             @"email" : email,
+                             };
+    [self setAuthorizationToken];
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+   
+    [objectManager postObject:nil
+                         path:CCAPIDefines.cashOutRequest
+                   parameters:params success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        successHandler(mappingResult.firstObject);
+    }
+                      failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        errorHandler(error);
+    }];
+}
+
+
 - (void)successPaymentWithInAppPurchase:(NSDictionary *)paymentInfo userID:(NSString *)userID successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
 {
     [self setAuthorizationToken];
@@ -39,7 +59,7 @@
     NSMutableURLRequest *request =
     [objectManager multipartFormRequestWithObject:nil
                                            method:RKRequestMethodPUT
-                                             path:CCAPIDefines.updateUser
+                                             path:path
                                        parameters:params
                         constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
      {
