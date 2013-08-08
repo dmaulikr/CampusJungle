@@ -21,7 +21,7 @@
 #define secondPriceLevel 2
 #define thirdPriceLevel 3
 
-#define minimalAmoumt 10000.
+#define minimalAmoumt 1000.
 
 @interface CCWalletController ()<PayPalPaymentDelegate, CCStoreObserverDelegateProtocol>
 
@@ -196,7 +196,7 @@
         return NO;
     }
     if(self.amountField.text.floatValue < minimalAmoumt){
-        [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:@"Minimal amount that can be derived is 10 000"];
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:@"Minimal amount that can be derived is 1 000"];
         return NO;
     }
     return YES;

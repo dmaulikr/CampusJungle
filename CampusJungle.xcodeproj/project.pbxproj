@@ -640,6 +640,7 @@
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
 		D3039B78176880F800621CAC /* pending.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B76176880F800621CAC /* pending.png */; };
 		D3039B79176880F800621CAC /* pending@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B77176880F800621CAC /* pending@2x.png */; };
+		D340A3DC17B3E01B006758B3 /* NSString+CountString.m in Sources */ = {isa = PBXBuildFile; fileRef = D340A3DB17B3E01B006758B3 /* NSString+CountString.m */; };
 		D342BCD51796AD3D0034E88C /* CCEditClassTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BCD41796AD3D0034E88C /* CCEditClassTransaction.m */; };
 		D342BCD91796B1640034E88C /* CCUpdateClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BCD81796B1640034E88C /* CCUpdateClassController.m */; };
 		D342BCDD1796C2890034E88C /* CCBackTransactionAfterClassUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BCDC1796C2890034E88C /* CCBackTransactionAfterClassUpdate.m */; };
@@ -1813,6 +1814,8 @@
 		AA28D9F1DF3A0CA781D3DF0A /* CCWelcomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWelcomeController.m; sourceTree = "<group>"; };
 		D3039B76176880F800621CAC /* pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pending.png; sourceTree = "<group>"; };
 		D3039B77176880F800621CAC /* pending@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pending@2x.png"; sourceTree = "<group>"; };
+		D340A3DA17B3E01B006758B3 /* NSString+CountString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CountString.h"; sourceTree = "<group>"; };
+		D340A3DB17B3E01B006758B3 /* NSString+CountString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CountString.m"; sourceTree = "<group>"; };
 		D342BCD31796AD3D0034E88C /* CCEditClassTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEditClassTransaction.h; sourceTree = "<group>"; };
 		D342BCD41796AD3D0034E88C /* CCEditClassTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEditClassTransaction.m; sourceTree = "<group>"; };
 		D342BCD71796B1640034E88C /* CCUpdateClassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUpdateClassController.h; sourceTree = "<group>"; };
@@ -3447,6 +3450,7 @@
 				70B2D0471793F879001B0C2C /* AlertHelper */,
 				7070445817A6B46B00AC0FDE /* BadgeHelper */,
 				70066B3A1799380B00B7A4E7 /* ButtonsHelper */,
+				D340A3D917B3E00E006758B3 /* CountString */,
 				70125457179700D60085247A /* DateFormatterHelper */,
 				7070444617A67F2200AC0FDE /* FacebookRequestParseHelper */,
 				700F9441178EE97800A6FBBA /* KeyboardHelper */,
@@ -6323,6 +6327,15 @@
 			path = Icons;
 			sourceTree = "<group>";
 		};
+		D340A3D917B3E00E006758B3 /* CountString */ = {
+			isa = PBXGroup;
+			children = (
+				D340A3DA17B3E01B006758B3 /* NSString+CountString.h */,
+				D340A3DB17B3E01B006758B3 /* NSString+CountString.m */,
+			);
+			path = CountString;
+			sourceTree = "<group>";
+		};
 		D342BCD21796ACF60034E88C /* EditClassTransaction */ = {
 			isa = PBXGroup;
 			children = (
@@ -7893,6 +7906,7 @@
 				70334A2117B11E77001D1B57 /* CCMessageDetailsTransaction.m in Sources */,
 				70334A2417B11EC0001D1B57 /* CCChangePasswordTransaction.m in Sources */,
 				7064612E17B192EB001801AF /* MBProgressHUD+Status.m in Sources */,
+				D340A3DC17B3E01B006758B3 /* NSString+CountString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
