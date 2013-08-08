@@ -49,7 +49,7 @@
 {
     [self.nameLabel setText:self.stuff.name];
     [self.priceLabel setText:[NSString stringWithFormat:@"Price: $%0.2lf", self.stuff.priceInDolars.doubleValue]];
-    if([self.stuff isKindOfClass:[CCBook class]]){
+    if([self.stuff isKindOfClass:[CCBook class]] && [(CCBook *)self.stuff isbn]){
         self.isbnLabel.text = [NSString stringWithFormat:@"ISBN : %@",[(CCBook *)self.stuff isbn]];
         [CCViewPositioningHelper setOriginY:self.descriptionLabel.frame.origin.y + 20 toView:self.descriptionLabel];
         [CCViewPositioningHelper setOriginY:self.descriptionTitle.frame.origin.y + 20 toView:self.descriptionTitle];
