@@ -14,5 +14,6 @@
 
 @property (nonatomic, strong) CCBaseDataProvider *notesProvider;
 @property (nonatomic, strong) id <CCTransactionWithObject> noteDetilsTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> filterTransaction;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "CCListOfNotesInMarketController.h"
 #import "CCNoteCell.h"
+#import "CCMarketNotesProvider.h"
 
 @interface CCListOfNotesInMarketController ()
 
@@ -20,6 +21,14 @@
     [super viewDidLoad];
     [self configTableWithProvider:self.notesProvider cellClass:[CCNoteCell class]];
     self.title = @"Notes";
+    if(self.filterTransaction){
+        [self setRightNavigationItemWithTitle:@"Filter" selector:@selector(filters)];
+    }
+}
+
+- (void)filters
+{    
+    [self.filterTransaction performWithObject:self.dataSource.dataProvider];
 }
 
 - (void)didSelectedCellWithObject:(id)cellObject
@@ -30,6 +39,11 @@
 - (BOOL)isNeedToLeftSelected
 {
     return NO;
+}
+
+- (void)update
+{
+    [self.dataSource.dataProvider loadItems];
 }
 
 @end

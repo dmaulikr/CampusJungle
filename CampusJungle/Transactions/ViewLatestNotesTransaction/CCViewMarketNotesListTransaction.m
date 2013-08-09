@@ -9,6 +9,7 @@
 #import "CCViewMarketNotesListTransaction.h"
 #import "CCNoteDetailTransaction.h"
 #import "CCListOfNotesInMarketController.h"
+#import "CCSelectFiltersTranaction.h"
 
 @implementation CCViewMarketNotesListTransaction
 
@@ -23,6 +24,10 @@
     CCListOfNotesInMarketController *listOfNotesController = [CCListOfNotesInMarketController new];
     listOfNotesController.noteDetilsTransaction = noteDetailTransaction;
     listOfNotesController.notesProvider = object;
+    
+    CCSelectFiltersTranaction *selectFilterTransaction = [CCSelectFiltersTranaction new];
+    selectFilterTransaction.navigation = self.navigation;
+    listOfNotesController.filterTransaction = selectFilterTransaction;
     
     [self.navigation pushViewController:listOfNotesController animated:YES];
 }

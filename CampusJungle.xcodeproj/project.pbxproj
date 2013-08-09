@@ -641,6 +641,9 @@
 		D3039B78176880F800621CAC /* pending.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B76176880F800621CAC /* pending.png */; };
 		D3039B79176880F800621CAC /* pending@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B77176880F800621CAC /* pending@2x.png */; };
 		D340A3DC17B3E01B006758B3 /* NSString+CountString.m in Sources */ = {isa = PBXBuildFile; fileRef = D340A3DB17B3E01B006758B3 /* NSString+CountString.m */; };
+		D340A3E217B51625006758B3 /* CCStuffMarketTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D340A3E117B51625006758B3 /* CCStuffMarketTransaction.m */; };
+		D340A3E517B52A3C006758B3 /* CCBookMarketTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D340A3E417B52A3C006758B3 /* CCBookMarketTransaction.m */; };
+		D340A3E817B52ED2006758B3 /* CCNotesMarketTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D340A3E717B52ED2006758B3 /* CCNotesMarketTransaction.m */; };
 		D342BCD51796AD3D0034E88C /* CCEditClassTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BCD41796AD3D0034E88C /* CCEditClassTransaction.m */; };
 		D342BCD91796B1640034E88C /* CCUpdateClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BCD81796B1640034E88C /* CCUpdateClassController.m */; };
 		D342BCDD1796C2890034E88C /* CCBackTransactionAfterClassUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BCDC1796C2890034E88C /* CCBackTransactionAfterClassUpdate.m */; };
@@ -1815,6 +1818,12 @@
 		D3039B77176880F800621CAC /* pending@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pending@2x.png"; sourceTree = "<group>"; };
 		D340A3DA17B3E01B006758B3 /* NSString+CountString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CountString.h"; sourceTree = "<group>"; };
 		D340A3DB17B3E01B006758B3 /* NSString+CountString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CountString.m"; sourceTree = "<group>"; };
+		D340A3E017B51625006758B3 /* CCStuffMarketTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStuffMarketTransaction.h; sourceTree = "<group>"; };
+		D340A3E117B51625006758B3 /* CCStuffMarketTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCStuffMarketTransaction.m; sourceTree = "<group>"; };
+		D340A3E317B52A3C006758B3 /* CCBookMarketTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBookMarketTransaction.h; sourceTree = "<group>"; };
+		D340A3E417B52A3C006758B3 /* CCBookMarketTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBookMarketTransaction.m; sourceTree = "<group>"; };
+		D340A3E617B52ED2006758B3 /* CCNotesMarketTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNotesMarketTransaction.h; sourceTree = "<group>"; };
+		D340A3E717B52ED2006758B3 /* CCNotesMarketTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNotesMarketTransaction.m; sourceTree = "<group>"; };
 		D342BCD31796AD3D0034E88C /* CCEditClassTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEditClassTransaction.h; sourceTree = "<group>"; };
 		D342BCD41796AD3D0034E88C /* CCEditClassTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEditClassTransaction.m; sourceTree = "<group>"; };
 		D342BCD71796B1640034E88C /* CCUpdateClassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUpdateClassController.h; sourceTree = "<group>"; };
@@ -4866,6 +4875,7 @@
 				70B2D0EF17944894001B0C2C /* BackToUserProfileTransaction */,
 				70B2D0F217944894001B0C2C /* BackTransaction */,
 				D35CDF1D17B141B70033CD28 /* BookDetailsTransaction */,
+				D340A3DD17B51537006758B3 /* BooksMarketTransaction */,
 				D383D7A317B1A3290005C0F8 /* BookOfferTransaction */,
 				70334A1D17B11E64001D1B57 /* ChangePasswordTransaction */,
 				70B2D0F817944894001B0C2C /* CitySelectionTransaction */,
@@ -4906,6 +4916,7 @@
 				70B2D14317944894001B0C2C /* MyStuffTransaction */,
 				70B2D14917944894001B0C2C /* NoteDetailTransaction */,
 				70B2D14C17944894001B0C2C /* NotesBackToListTransaction */,
+				D340A3DE17B51571006758B3 /* NotesMarketTransaction */,
 				70B2D14F17944894001B0C2C /* OfferDetailsController */,
 				70B2D15217944894001B0C2C /* PhotoBrowserTransaction */,
 				70B2D15817944894001B0C2C /* PrivateMessageTransaction */,
@@ -4926,6 +4937,7 @@
 				70B2D17617944894001B0C2C /* SignupTransaction */,
 				70B2D17917944894001B0C2C /* StateSelectionScreenTransaction */,
 				70B2D17C17944894001B0C2C /* StuffDetailsTransaction */,
+				D340A3DF17B51590006758B3 /* StuffMarketTransaction */,
 				70B2D12E17944894001B0C2C /* UserProfileTransaction */,
 				70B2D17F17944894001B0C2C /* SuccessSendMessageTransaction */,
 				7012546C179803500085247A /* TimetableTransaction */,
@@ -6321,6 +6333,33 @@
 				D340A3DB17B3E01B006758B3 /* NSString+CountString.m */,
 			);
 			path = CountString;
+			sourceTree = "<group>";
+		};
+		D340A3DD17B51537006758B3 /* BooksMarketTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D340A3E317B52A3C006758B3 /* CCBookMarketTransaction.h */,
+				D340A3E417B52A3C006758B3 /* CCBookMarketTransaction.m */,
+			);
+			path = BooksMarketTransaction;
+			sourceTree = "<group>";
+		};
+		D340A3DE17B51571006758B3 /* NotesMarketTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D340A3E617B52ED2006758B3 /* CCNotesMarketTransaction.h */,
+				D340A3E717B52ED2006758B3 /* CCNotesMarketTransaction.m */,
+			);
+			path = NotesMarketTransaction;
+			sourceTree = "<group>";
+		};
+		D340A3DF17B51590006758B3 /* StuffMarketTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D340A3E017B51625006758B3 /* CCStuffMarketTransaction.h */,
+				D340A3E117B51625006758B3 /* CCStuffMarketTransaction.m */,
+			);
+			path = StuffMarketTransaction;
 			sourceTree = "<group>";
 		};
 		D342BCD21796ACF60034E88C /* EditClassTransaction */ = {
@@ -7893,6 +7932,9 @@
 				70334A2417B11EC0001D1B57 /* CCChangePasswordTransaction.m in Sources */,
 				7064612E17B192EB001801AF /* MBProgressHUD+Status.m in Sources */,
 				D340A3DC17B3E01B006758B3 /* NSString+CountString.m in Sources */,
+				D340A3E217B51625006758B3 /* CCStuffMarketTransaction.m in Sources */,
+				D340A3E517B52A3C006758B3 /* CCBookMarketTransaction.m in Sources */,
+				D340A3E817B52ED2006758B3 /* CCNotesMarketTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
