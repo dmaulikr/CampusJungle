@@ -176,4 +176,9 @@
     [self.fullListOfStuffTransaction performWithObject:self.marketStuffDataProvider];
 }
 
+- (IBAction)viewAllBooksButtonPressed
+{
+    [self.fullListOfStuffTransaction performWithObject:self.marketBooksDataProvider];
+}
+
 @end

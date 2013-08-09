@@ -17,6 +17,7 @@
 #import "CCActionSheetPickerCollegesDelegate.h"
 #import "ActionSheetCustomPicker.h"
 #import "NSString+CJStringValidator.h"
+#import "NSString+CountString.h"
 
 @interface CCAddBookViewController ()<CCCellSelectionProtocol, CCAvatarSelectionProtocol>
 
@@ -183,6 +184,10 @@
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.descriptionCantBeBlank];
         return NO;
     }
+    if ([self.priceField.text countOccurencesOfString:@"."] > 1){
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.priceHaveToBeDecemal];
+        return NO;
+    }
     if ([self.priceField.text isEmpty]){
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.priceCantBeBlank];
         return NO;
@@ -197,7 +202,7 @@
     uploadInfo.collegeName = self.collegeSelectionButton.titleLabel.text;
     uploadInfo.thumbnail = self.thumbImage.image;
     uploadInfo.name = self.nameField.text;
-    uploadInfo.price = [NSNumber numberWithInteger: self.priceField.text.integerValue];
+    uploadInfo.price = [NSNumber numberWithInteger: (self.priceField.text.doubleValue * 100)];
     uploadInfo.collegeID = self.selectedCollege.collegeID;
     uploadInfo.isbn = self.isbnField.text;
     return uploadInfo;

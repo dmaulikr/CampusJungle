@@ -32,4 +32,9 @@
     }
 }
 
+- (void)update
+{
+    [self loadItems];
+}
+
 @end

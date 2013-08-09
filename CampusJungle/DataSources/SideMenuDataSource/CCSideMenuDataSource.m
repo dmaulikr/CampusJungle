@@ -132,6 +132,8 @@
     return [[CCSideMenuSectionHeader alloc] initWithText:sectionHeaderText collegeId:[self collegeIdForSectionAtIndex:section] delegate:self.delegate];
 }
 
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     id objectForCell = [self objectForCellAtIndexPath:indexPath];
@@ -139,12 +141,14 @@
         NSString *cellTitle = (NSString *)objectForCell;
         if ([cellTitle isEqualToString:CCSideMenuTitles.newsFeed]) {
             [self.delegate showNewsFeed];
+        } else if ([cellTitle isEqualToString:CCSideMenuTitles.notesSale]) {
+            [self.delegate showNotesMarket];
+        } else if ([cellTitle isEqualToString:CCSideMenuTitles.booksSale]) {
+            [self.delegate showBooksMarket];
+        } else if ([cellTitle isEqualToString:CCSideMenuTitles.collegeMarket]) {
+            [self.delegate showCollegeMarket];
         }
-        else {
-            [self.delegate showMarketPlace];
-        }
-    }
-    else {
+    } else {
         [self.delegate showDetailsOfClass:objectForCell];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

@@ -18,7 +18,7 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *userNameLabel;
 @property (nonatomic, weak) IBOutlet UIButton *userProfileButton;
-
+@property (nonatomic, weak) IBOutlet UIImageView *avatar;
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userProfile;
 @property (nonatomic, strong) id <CCClassesApiProviderProtocol> ioc_classesAPI;
 @property (nonatomic, strong) CCSideMenuDataSource *dataSource;
@@ -66,7 +66,9 @@
 
 - (void)setupLabels
 {
-    self.userNameLabel.text = [NSString stringWithFormat:@"%@ %@",[[self.ioc_userProfile currentUser] firstName], [[self.ioc_userProfile currentUser] lastName]];
+    self.userNameLabel.text = @"My Profile";
+    NSString *avatarURL = [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,[[self.ioc_userProfile currentUser] avatar]];
+    [self.avatar setImageWithURL:[NSURL URLWithString:avatarURL] placeholderImage:[UIImage imageNamed:@"avatar_placeholder"]];
 }
 
 - (void)setupButtons
@@ -115,6 +117,21 @@
 - (void)addClassToCollegeWithId:(NSString *)collegeId
 {
     [self.classesOfCollegeTransaction performWithObject:collegeId];
+}
+
+- (void)showNotesMarket
+{
+    [self.notesTransaction perform];
+}
+
+- (void)showBooksMarket
+{
+    [self.booksTransaction perform];
+}
+
+- (void)showCollegeMarket
+{
+    [self.collegeMarketTransaction perform];
 }
 
 @end

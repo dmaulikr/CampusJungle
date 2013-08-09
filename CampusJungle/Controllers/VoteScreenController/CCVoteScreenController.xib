@@ -557,7 +557,7 @@
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">Pour</string>
+								<string key="IBUIText">Poor</string>
 								<object class="NSColor" key="IBUITextColor" id="818840387">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC41MDk4MDM5MjE2IDAuMjU0OTAxOTYwOCAwAA</bytes>
@@ -653,7 +653,7 @@
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">Pour</string>
+								<string key="IBUIText">Poor</string>
 								<object class="NSColor" key="IBUITextColor" id="692447356">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC41MDk4MDM5MjE2IDAuMjU0OTAxOTYwOCAwAA</bytes>
@@ -740,7 +740,7 @@
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">Pour</string>
+								<string key="IBUIText">Poor</string>
 								<object class="NSColor" key="IBUITextColor" id="957065124">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC41MDk4MDM5MjE2IDAuMjU0OTAxOTYwOCAwAA</bytes>

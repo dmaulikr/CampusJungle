@@ -74,6 +74,8 @@ extern const struct CCValidationMessages {
     __unsafe_unretained NSString *firstNameCantBeBlank;
     __unsafe_unretained NSString *lastNameCantBeBlank;
     __unsafe_unretained NSString *priceCantBeBlank;
+    __unsafe_unretained NSString *priceHaveToBeDecemal;
+    __unsafe_unretained NSString *fullPriceHaveToBeDecemal;
     __unsafe_unretained NSString *fullPriceCantBeBlank;
     __unsafe_unretained NSString *fullPriceCantBeLowerThenPriceForReview;
     __unsafe_unretained NSString *descriptionCantBeBlank;

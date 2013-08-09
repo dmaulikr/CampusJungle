@@ -21,4 +21,14 @@
     return self.noteDescription;
 }
 
+- (NSNumber *)priceInDolars
+{
+    return @(self.price.doubleValue/100);
+}
+
+- (NSNumber *)fullPriceInDolars
+{
+    return @(self.fullPrice.doubleValue/100);
+}
+
 @end

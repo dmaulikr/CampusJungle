@@ -8,6 +8,7 @@
 
 #import "CCBaseViewController.h"
 #import "CCTransactionWithObject.h"
+#import "CCUserSessionProtocol.h"
 
 @interface CCMarketPlaceController : CCBaseViewController
 
@@ -18,11 +19,13 @@
 @property (nonatomic, strong) id <CCTransactionWithObject> stuffDetailsTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> bookDetailsTransaction;
 
+
 @property (nonatomic, strong) NSDictionary *filters;
 
 - (IBAction)viewAllTopNotesPressed;
 - (IBAction)viewAllLatestNotesPressed;
 - (IBAction)viewAllStuffButtonPressed;
+- (IBAction)viewAllBooksButtonPressed;
 
 - (void)update;
 

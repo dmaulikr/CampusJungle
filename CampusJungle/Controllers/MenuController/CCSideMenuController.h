@@ -17,5 +17,8 @@
 @property (nonatomic, strong) id <CCTransactionWithObject> classTransaction;
 @property (nonatomic, strong) id <CCTransaction> marketTransaction;
 @property (nonatomic, strong) id <CCTransaction> inboxTransaction;
+@property (nonatomic, strong) id <CCTransaction> notesTransaction;
+@property (nonatomic, strong) id <CCTransaction> booksTransaction;
+@property (nonatomic, strong) id <CCTransaction> collegeMarketTransaction;
 
 @end

@@ -21,6 +21,7 @@
 #import "CCAvatarSelectionActionSheet.h"
 #import "CCNotesAPIProviderProtolcol.h"
 #import "CCUploadProcessManagerProtocol.h"
+#import "NSString+CountString.h"
 
 @interface CCCreateNoteViewController ()<CCCellSelectionProtocol,CCAvatarSelectionProtocol>
 
@@ -185,12 +186,20 @@
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.priceCantBeBlank];
         return NO;
     }
+    if ([self.priceField.text countOccurencesOfString:@"."] > 1){
+         [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.priceHaveToBeDecemal];
+        return NO;
+    }
+    if ([self.fullAccessPriceField.text countOccurencesOfString:@"."] > 1){
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.fullPriceHaveToBeDecemal];
+        return NO;
+    }
     if ([self.fullAccessPriceField.text isEmpty]){
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.fullPriceCantBeBlank];
         return NO;
     }
     
-    if (self.fullAccessPriceField.text.integerValue < self.priceField.text.integerValue){
+    if (self.fullAccessPriceField.text.doubleValue < self.priceField.text.doubleValue){
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.fullPriceCantBeLowerThenPriceForReview];
         return NO;
     }
@@ -238,8 +247,8 @@
 {
     CCNoteUploadInfo *noteInfo = [CCNoteUploadInfo new];
     noteInfo.noteDescription = self.descriptionField.text;
-    noteInfo.price = [NSNumber numberWithInteger:self.priceField.text.integerValue];
-    noteInfo.fullPrice = [NSNumber numberWithInteger:self.fullAccessPriceField.text.integerValue];
+    noteInfo.price = [NSNumber numberWithInteger:(self.priceField.text.doubleValue * 100)];
+    noteInfo.fullPrice = [NSNumber numberWithInteger:(self.fullAccessPriceField.text.doubleValue * 100)];
     noteInfo.collegeID = self.selectedCollege.collegeID;
     noteInfo.classID = [NSNumber numberWithInteger: self.selectedClass.classID.integerValue];
     noteInfo.thumbnail = self.thumbView.image;

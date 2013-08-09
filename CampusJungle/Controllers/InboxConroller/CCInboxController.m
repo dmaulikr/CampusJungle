@@ -50,7 +50,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Inbox";
+    self.title = @"Notifications";
     CCMessagesDataProvider *messagesDataProvider = [CCMessagesDataProvider new];
     messagesDataProvider.filters = @{
                                      @"personal" : @"YES",

@@ -23,6 +23,9 @@
 #import "CCOfferDetailsTransaction.h"
 #import "CCPaymentServiceProtocol.h"
 #import "CCPushNotificationsService.h"
+#import "CCStuffMarketTransaction.h"
+#import "CCBookMarketTransaction.h"
+#import "CCNotesMarketTransaction.h"
 
 @interface CCMainTransaction()
 
@@ -40,13 +43,25 @@
     
     [self.ioc_dropboxAPIProvider createSession];    
     [self.ioc_paymentService resendAllPayments];
-
+    
     CCSideBarController *rootController = [[CCSideBarController alloc] init];
     rootController.shouldDelegateAutorotateToVisiblePanel = NO;
     self.window.rootViewController = rootController;
     CCSideMenuController *leftController = [[CCSideMenuController alloc] init];
 	rootController.leftPanel = leftController;
     rootController.panningLimitedToTopViewController = NO;
+    
+    CCStuffMarketTransaction *stuffTransaction = [CCStuffMarketTransaction new];
+    stuffTransaction.menuController = rootController;
+    leftController.collegeMarketTransaction = stuffTransaction;
+    
+    CCBookMarketTransaction *bookTransaction = [CCBookMarketTransaction new];
+    bookTransaction.menuController = rootController;
+    leftController.booksTransaction = bookTransaction;
+    
+    CCNotesMarketTransaction *notesMarketTransaction = [CCNotesMarketTransaction new];
+    notesMarketTransaction.menuController = rootController;
+    leftController.notesTransaction = notesMarketTransaction;
     
     [self.ioc_userSession setCurrentUser: [self.ioc_userSession loadSavedUser]];
     
@@ -77,6 +92,7 @@
     
     if ([self.ioc_userSession currentUser]) {
         [CCPushNotificationsService registerForRemoteNotifications];
+        
     }
     else {
         [self showWelcomeScreenIn:rootController];

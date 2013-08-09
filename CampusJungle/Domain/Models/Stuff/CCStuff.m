@@ -100,4 +100,9 @@
     };
 }
 
+- (NSNumber *)priceInDolars
+{
+    return @(_price.doubleValue/100);
+}
+
 @end

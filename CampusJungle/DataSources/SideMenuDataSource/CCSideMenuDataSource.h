@@ -14,6 +14,9 @@
 - (void)showMarketPlace;
 - (void)showDetailsOfClass:(CCClass *)classObject;
 - (void)addClassToCollegeWithId:(NSString *)collegeId;
+- (void)showNotesMarket;
+- (void)showBooksMarket;
+- (void)showCollegeMarket;
 
 @end
 

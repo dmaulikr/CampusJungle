@@ -139,4 +139,14 @@
     };
 }
 
+- (NSNumber *)priceInDolars
+{
+    return @(_price.doubleValue/100);
+}
+
+- (NSNumber *)fullPriceInDolars
+{
+    return @(_fullPrice.doubleValue/100);
+}
+
 @end

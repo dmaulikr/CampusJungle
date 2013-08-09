@@ -15,7 +15,7 @@
     NSParameterAssert(self.navigation);
     
     [self.navigation popViewControllerAnimated:YES];
-    [SVProgressHUD showSuccessWithStatus:@"Message successfuly send" duration:CCProgressHudsConstants.loaderDuration];
+    [SVProgressHUD showSuccessWithStatus:@"Message successfuly sent" duration:CCProgressHudsConstants.loaderDuration];
 }
 
 @end
