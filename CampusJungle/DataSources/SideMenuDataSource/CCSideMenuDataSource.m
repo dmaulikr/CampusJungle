@@ -14,7 +14,7 @@
 #import "CCSideMenuClassCell.h"
 #import "CCSideMenuItemCell.h"
 #import "CCSideMenuSectionHeader.h"
-
+#import "CCMenuSeparator.h"
 #import "CCSideMenuDataSourceHelper.h"
 
 #define CELLS_CLASSES @[[CCSideMenuItemCell class], [CCSideMenuClassCell class]]
@@ -132,7 +132,21 @@
     return [[CCSideMenuSectionHeader alloc] initWithText:sectionHeaderText collegeId:[self collegeIdForSectionAtIndex:section] delegate:self.delegate];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return 42.;
+    }
+    return 0;
+}
 
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return [CCMenuSeparator new];
+    }
+    return nil;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

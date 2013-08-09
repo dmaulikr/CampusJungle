@@ -644,6 +644,8 @@
 		D340A3E217B51625006758B3 /* CCStuffMarketTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D340A3E117B51625006758B3 /* CCStuffMarketTransaction.m */; };
 		D340A3E517B52A3C006758B3 /* CCBookMarketTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D340A3E417B52A3C006758B3 /* CCBookMarketTransaction.m */; };
 		D340A3E817B52ED2006758B3 /* CCNotesMarketTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D340A3E717B52ED2006758B3 /* CCNotesMarketTransaction.m */; };
+		D340A3F017B540C0006758B3 /* CCMenuSeparator.m in Sources */ = {isa = PBXBuildFile; fileRef = D340A3EF17B540C0006758B3 /* CCMenuSeparator.m */; };
+		D340A3F217B54111006758B3 /* CCMenuSeparator.xib in Resources */ = {isa = PBXBuildFile; fileRef = D340A3F117B54111006758B3 /* CCMenuSeparator.xib */; };
 		D342BCD51796AD3D0034E88C /* CCEditClassTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BCD41796AD3D0034E88C /* CCEditClassTransaction.m */; };
 		D342BCD91796B1640034E88C /* CCUpdateClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BCD81796B1640034E88C /* CCUpdateClassController.m */; };
 		D342BCDD1796C2890034E88C /* CCBackTransactionAfterClassUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BCDC1796C2890034E88C /* CCBackTransactionAfterClassUpdate.m */; };
@@ -1824,6 +1826,9 @@
 		D340A3E417B52A3C006758B3 /* CCBookMarketTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBookMarketTransaction.m; sourceTree = "<group>"; };
 		D340A3E617B52ED2006758B3 /* CCNotesMarketTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNotesMarketTransaction.h; sourceTree = "<group>"; };
 		D340A3E717B52ED2006758B3 /* CCNotesMarketTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNotesMarketTransaction.m; sourceTree = "<group>"; };
+		D340A3EE17B540C0006758B3 /* CCMenuSeparator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMenuSeparator.h; sourceTree = "<group>"; };
+		D340A3EF17B540C0006758B3 /* CCMenuSeparator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMenuSeparator.m; sourceTree = "<group>"; };
+		D340A3F117B54111006758B3 /* CCMenuSeparator.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMenuSeparator.xib; sourceTree = "<group>"; };
 		D342BCD31796AD3D0034E88C /* CCEditClassTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCEditClassTransaction.h; sourceTree = "<group>"; };
 		D342BCD41796AD3D0034E88C /* CCEditClassTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCEditClassTransaction.m; sourceTree = "<group>"; };
 		D342BCD71796B1640034E88C /* CCUpdateClassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUpdateClassController.h; sourceTree = "<group>"; };
@@ -4500,6 +4505,7 @@
 				70B2D1D317944E39001B0C2C /* Cells */,
 				D3B7326D17AA997C00F35C4D /* DefaultButtonContainer */,
 				7012AC9417957C03002DA5E9 /* Headers */,
+				D340A3ED17B540A5006758B3 /* MenuSeparator */,
 				70A29E9617877D2B001BC8DD /* Pickers */,
 				D37122F217A2705E00A7DF04 /* ScaleView */,
 			);
@@ -6362,6 +6368,16 @@
 			path = StuffMarketTransaction;
 			sourceTree = "<group>";
 		};
+		D340A3ED17B540A5006758B3 /* MenuSeparator */ = {
+			isa = PBXGroup;
+			children = (
+				D340A3EE17B540C0006758B3 /* CCMenuSeparator.h */,
+				D340A3EF17B540C0006758B3 /* CCMenuSeparator.m */,
+				D340A3F117B54111006758B3 /* CCMenuSeparator.xib */,
+			);
+			path = MenuSeparator;
+			sourceTree = "<group>";
+		};
 		D342BCD21796ACF60034E88C /* EditClassTransaction */ = {
 			isa = PBXGroup;
 			children = (
@@ -7475,6 +7491,7 @@
 				D35CDF0617B120D80033CD28 /* CCBookDetailsController.xib in Resources */,
 				D35CDF0B17B12C410033CD28 /* CCMyBooksListController.xib in Resources */,
 				70334A1C17B11B56001D1B57 /* CCChangePasswordViewController.xib in Resources */,
+				D340A3F217B54111006758B3 /* CCMenuSeparator.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7935,6 +7952,7 @@
 				D340A3E217B51625006758B3 /* CCStuffMarketTransaction.m in Sources */,
 				D340A3E517B52A3C006758B3 /* CCBookMarketTransaction.m in Sources */,
 				D340A3E817B52ED2006758B3 /* CCNotesMarketTransaction.m in Sources */,
+				D340A3F017B540C0006758B3 /* CCMenuSeparator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
