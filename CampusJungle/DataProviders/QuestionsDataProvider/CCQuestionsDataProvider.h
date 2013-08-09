@@ -11,7 +11,9 @@
 
 @interface CCQuestionsDataProvider : CCPaginationDataProvider
 
-@property (nonatomic, strong) NSString *forumId;
+@property (nonatomic, strong) NSString *classId;
+@property (nonatomic, strong) NSString *groupId;
+
 @property (nonatomic, weak) id delegate;
 
 @end

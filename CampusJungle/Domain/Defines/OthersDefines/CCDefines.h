@@ -193,7 +193,7 @@ extern const struct CCTableDefines {
     __unsafe_unretained NSString *tableHeaderIdentifier;
     __unsafe_unretained NSString *classmatesCellIdentifier;
     __unsafe_unretained NSString *locationsCellIdentifier;
-    __unsafe_unretained NSString *forumsCellIdentifier;
+    __unsafe_unretained NSString *questionsCellIdentifier;
     __unsafe_unretained NSString *groupsCellIdentifier;
     __unsafe_unretained NSString *messageCellIdentifier;
 } CCTableDefines;
@@ -251,7 +251,7 @@ extern const struct CCClassTabbarButtonsTitles {
     __unsafe_unretained NSString *groupmates;
     __unsafe_unretained NSString *groups;
     __unsafe_unretained NSString *locations;
-    __unsafe_unretained NSString *forums;
+    __unsafe_unretained NSString *questions;
     __unsafe_unretained NSString *groupMessages;
 } CCClassTabbarButtonsTitles;
 
@@ -281,7 +281,7 @@ extern const struct CCShareItemActionSheetDefines {
 
 extern const struct CCSearchBarPlaceholders {
     __unsafe_unretained NSString *searchGroupmates;
-    __unsafe_unretained NSString *searchForums;
+    __unsafe_unretained NSString *searchQuestions;
     __unsafe_unretained NSString *searchLocations;
     __unsafe_unretained NSString *searchMessages;
     __unsafe_unretained NSString *searchClassmates;
@@ -309,7 +309,6 @@ extern const struct CCPushNotificationTypes {
     __unsafe_unretained NSString *professorUpload;
     __unsafe_unretained NSString *announcement;
     __unsafe_unretained NSString *location;
-    __unsafe_unretained NSString *forum;
     __unsafe_unretained NSString *question;
     __unsafe_unretained NSString *coupon;
     __unsafe_unretained NSString *groupInvite;
@@ -328,5 +327,5 @@ enum CCClassTabbarButtonsIdentifiers {
     CCClassTabbarButtonsIdentifierClassmate = 1,
     CCClassTabbarButtonsIdentifierGroup = 2,
     CCClassTabbarButtonsIdentifierLocations = 3,
-    CCClassTabbarButtonsIdentifierForums = 4,
+    CCClassTabbarButtonsIdentifierQuestions = 4,
 };

@@ -10,8 +10,6 @@ extern const struct CCSuccessMessages {
     __unsafe_unretained NSString *joinClass;
     __unsafe_unretained NSString *addedLocation;
     __unsafe_unretained NSString *deleteLocation;
-    __unsafe_unretained NSString *deleteForum;
-    __unsafe_unretained NSString *addedForum;
     __unsafe_unretained NSString *deleteQuestion;
     __unsafe_unretained NSString *deleteUploads;
     __unsafe_unretained NSString *deleteAnswer;

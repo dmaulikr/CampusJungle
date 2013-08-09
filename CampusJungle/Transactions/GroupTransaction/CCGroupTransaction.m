@@ -12,13 +12,14 @@
 #import "CCShowLocationsTransaction.h"
 #import "CCAddLocationTransaction.h"
 #import "CCOtherUserProfileTransaction.h"
-#import "CCAddForumTransaction.h"
-#import "CCForumDetailsTransaction.h"
+#import "CCAddQuestionTransaction.h"
+#import "CCAnswersTransaction.h"
 #import "CCBackTransaction.h"
 #import "CCGroupMessageTransaction.h"
 #import "CCEditGroupTransaction.h"
 #import "CCMessageDetailsTransaction.h"
 #import "CCSendGroupInviteTransaction.h"
+#import "CCViewPDFTransaction.h"
 
 @implementation CCGroupTransaction
 
@@ -39,11 +40,11 @@
     CCOtherUserProfileTransaction *otherUserProfileTransaction = [CCOtherUserProfileTransaction new];
     otherUserProfileTransaction.navigation = self.navigation;
     
-    CCAddForumTransaction *addForumTransaction = [CCAddForumTransaction new];
-    addForumTransaction.navigation = self.navigation;
+    CCAddQuestionTransaction *addQuestionTransaction = [CCAddQuestionTransaction new];
+    addQuestionTransaction.navigation = self.navigation;
     
-    CCForumDetailsTransaction *forumDetailsTransaction = [CCForumDetailsTransaction new];
-    forumDetailsTransaction.navigation = self.navigation;
+    CCAnswersTransaction *questionDetailsTransaction = [CCAnswersTransaction new];
+    questionDetailsTransaction.navigation = self.navigation;
     
     CCBackTransaction *backTransaction = [CCBackTransaction new];
     backTransaction.navigation = self.navigation;
@@ -61,17 +62,21 @@
     CCSendGroupInviteTransaction *sendGroupInviteTransaction = [CCSendGroupInviteTransaction new];
     sendGroupInviteTransaction.navigation = self.navigation;
     
+    CCViewPDFTransaction *viewPdfTransaction = [CCViewPDFTransaction new];
+    viewPdfTransaction.navigation = self.navigation;
+    
     CCGroupViewController *groupController = [CCGroupViewController new];
     groupController.locationTransaction = locationsTransaction;
     groupController.addLocationTransaction = addLocationTransaction;
     groupController.otherUserProfileTransaction = otherUserProfileTransaction;
-    groupController.forumDetailsTransaction = forumDetailsTransaction;
-    groupController.addForumTransaction = addForumTransaction;
+    groupController.questionDetailsTransaction = questionDetailsTransaction;
+    groupController.addQuestionTransaction = addQuestionTransaction;
     groupController.backTransaction = backTransaction;
     groupController.groupMessageTransaction = groupMessageTransaction;
     groupController.editGroupTransaction = editGroupTransaction;
     groupController.messageDetailsTransaction = messageDetailsTransaction;
     groupController.sendGroupInviteTransaction = sendGroupInviteTransaction;
+    groupController.viewPdfAttachmentTransaction = viewPdfTransaction;
     
     [groupController setGroup:group];
     [self.navigation pushViewController:groupController animated:YES];

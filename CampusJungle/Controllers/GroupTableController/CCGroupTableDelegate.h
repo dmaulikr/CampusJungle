@@ -8,17 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-@class CCUser, CCLocation, CCForum, CCMessage;
+@class CCUser, CCLocation, CCQuestion, CCMessage;
 
 @protocol CCGroupTableDelegate <NSObject>
 
 - (void)showProfileOfUser:(CCUser *)user;
 - (void)showLocation:(CCLocation *)location onMapWithLocations:(NSArray *)locationsArray;
-- (void)showDetailsOfForum:(CCForum *)forum;
+- (void)showDetailsOfQuestion:(CCQuestion *)question;
 - (void)showDetailsOfGroupMessage:(CCMessage *)message;
 - (void)addLocation;
-- (void)addForum;
+- (void)addQuestion;
 - (void)addGroupmates;
 - (void)sendGroupMessage;
+- (void)viewAttachmentOfQuestion:(CCQuestion *)question;
 
 @end

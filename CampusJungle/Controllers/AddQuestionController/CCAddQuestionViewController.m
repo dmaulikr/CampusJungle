@@ -7,13 +7,15 @@
 //
 
 #import "CCAddQuestionViewController.h"
-#import "CCForum.h"
 #import "CCQuestion.h"
 #import "CCStringHelper.h"
 #import "CCStandardErrorHandler.h"
 #import "CCQuestionsApiProviderProtocol.h"
 #import "CCUploadProcessManagerProtocol.h"
 #import "CCUserSessionProtocol.h"
+
+#import "CCGroup.h"
+#import "CCClass.h"
 
 @interface CCAddQuestionViewController () <UITextViewDelegate>
 
@@ -22,7 +24,9 @@
 @property (nonatomic, strong) id <CCQuestionsApiProviderProtocol> ioc_questionAPIProvider;
 @property (nonatomic, strong) id <CCUploadProcessManagerProtocol> ioc_uploadManager;
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
-@property (nonatomic, strong) CCForum *forum;
+
+@property (nonatomic, strong) CCClass *classObject;
+@property (nonatomic, strong) CCGroup *group;
 
 @property (nonatomic, weak) IBOutlet UIButton *imageDropboxButton;
 @property (nonatomic, weak) IBOutlet UIButton *pdfDropboxButton;
@@ -75,7 +79,8 @@
 {
     CCQuestion *question = [CCQuestion new];
     question.text = self.questionTextView.text;
-    question.forumId = self.forum.forumId;
+    question.classId = self.classObject.classID;
+    question.groupId = self.group.groupId;
     CCUser *currentUser = [self.ioc_userSession currentUser];
     question.ownerAvatar = currentUser.avatar;
     question.ownerFirstName = currentUser.firstName;
@@ -86,7 +91,7 @@
 
 - (void)uploadQuestionWithImages:(CCQuestion *)question
 {
-    __weak id weakSelf = self;
+    __weak CCAddQuestionViewController *weakSelf = self;
     id <CCUploadProcessManagerProtocol> uploadManager = self.ioc_uploadManager;
     [[uploadManager uploadingQuestions] addObject:question];
     [self.ioc_questionAPIProvider postUploadInfoWithImages:question
@@ -98,7 +103,8 @@
                                                     [uploadManager reloadDelegate];
                                                     [CCStandardErrorHandler showErrorWithError:error];
                                                 } progress:^(double finished) {
-                                                    [[weakSelf backToListTransaction] perform];
+                                                    [weakSelf.backToListTransaction perform];
+                                                    weakSelf.backToListTransaction = nil;
                                                     question.uploadProgress = [NSNumber numberWithDouble:finished];
                                                 }];
 

@@ -18,12 +18,13 @@
 @property(nonatomic, strong) id <CCTransactionWithObject> otherUserProfileTransaction;
 @property(nonatomic, strong) id <CCTransactionWithObject> locationTransaction;
 @property(nonatomic, strong) id <CCTransactionWithObject> addLocationTransaction;
-@property(nonatomic, strong) id <CCTransactionWithObject> addForumTransaction;
-@property(nonatomic, strong) id <CCTransactionWithObject> forumDetailsTransaction;
+@property(nonatomic, strong) id <CCTransactionWithObject> addQuestionTransaction;
+@property(nonatomic, strong) id <CCTransactionWithObject> questionDetailsTransaction;
 @property(nonatomic, strong) id <CCTransactionWithObject> editGroupTransaction;
 @property(nonatomic, strong) id <CCTransactionWithObject> groupMessageTransaction;
 @property(nonatomic, strong) id <CCTransactionWithObject> messageDetailsTransaction;
 @property(nonatomic, strong) id <CCTransactionWithObject> sendGroupInviteTransaction;
+@property(nonatomic, strong) id <CCTransactionWithObject> viewPdfAttachmentTransaction;
 @property(nonatomic, strong) id <CCTransaction> backTransaction;
 
 - (void)setGroup:(CCGroup *)group;

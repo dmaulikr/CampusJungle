@@ -21,6 +21,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+    NSLog(@"DEALLOCED");
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.dataProvider.arrayOfItems.count;

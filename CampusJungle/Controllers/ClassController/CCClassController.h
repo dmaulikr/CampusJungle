@@ -21,8 +21,8 @@
 @property (nonatomic, strong) id<CCTransactionWithObject> otherUserProfileTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> locationTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> addLocationTransaction;
-@property (nonatomic, strong) id<CCTransactionWithObject> addForumTransaction;
-@property (nonatomic, strong) id<CCTransactionWithObject> forumDetailsTransaction;
+@property (nonatomic, strong) id<CCTransactionWithObject> addQuestionTransaction;
+@property (nonatomic, strong) id<CCTransactionWithObject> questionDetailsTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> editClassTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> groupDetailsTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> addGroupTransaction;
@@ -34,6 +34,7 @@
 @property (nonatomic, strong) id<CCTransactionWithObject> voteResultTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> sendInviteTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> couponsTransaction;
+@property(nonatomic, strong) id <CCTransactionWithObject> viewPdfAttachmentTransaction;
 
 - (id)initWithClass:(CCClass *)classObject;
 

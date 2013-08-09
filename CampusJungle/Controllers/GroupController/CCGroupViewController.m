@@ -12,6 +12,7 @@
 #import "CCAlertHelper.h"
 #import "CCStandardErrorHandler.h"
 #import "CCViewPositioningHelper.h"
+#import "CCQuestion.h"
 
 #import "CCGroupTableController.h"
 #import "CCGroupsApiProviderProtocol.h"
@@ -120,37 +121,50 @@
 
 #pragma mark -
 #pragma mark CCGroupTableDelegate
-- (void)showProfileOfUser:(CCUser *)user {
+- (void)showProfileOfUser:(CCUser *)user
+{
     [self.otherUserProfileTransaction performWithObject:user];
 }
 
-- (void)showLocation:(CCLocation *)location onMapWithLocations:(NSArray *)locationsArray {
+- (void)showLocation:(CCLocation *)location onMapWithLocations:(NSArray *)locationsArray
+{
     NSString *searchString = ([self.groupTableController.searchBar.text length] > 0) ? self.groupTableController.searchBar.text : @"";
     [self.locationTransaction performWithObject:@{@"location" : location, @"array" : locationsArray, @"group" : self.group, @"searchString" : searchString}];
 }
 
-- (void)showDetailsOfForum:(CCForum *)forum {
-    [self.forumDetailsTransaction performWithObject:forum];
+- (void)showDetailsOfQuestion:(CCQuestion *)question
+{
+    [self.questionDetailsTransaction performWithObject:question];
 }
 
-- (void)showDetailsOfGroupMessage:(CCMessage *)message {
+- (void)showDetailsOfGroupMessage:(CCMessage *)message
+{
     [self.messageDetailsTransaction performWithObject:message];
 }
 
-- (void)addLocation {
+- (void)addLocation
+{
     [self.addLocationTransaction performWithObject:self.group];
 }
 
-- (void)addForum {
-    [self.addForumTransaction performWithObject:self.group];
+- (void)addQuestion
+{
+    [self.addQuestionTransaction performWithObject:self.group];
 }
 
-- (void)addGroupmates {
+- (void)addGroupmates
+{
     [self.sendGroupInviteTransaction performWithObject:self.group];
 }
 
-- (void)sendGroupMessage {
+- (void)sendGroupMessage
+{
     [self.groupMessageTransaction performWithObject:self.group];
+}
+
+- (void)viewAttachmentOfQuestion:(CCQuestion *)question
+{
+    [self.viewPdfAttachmentTransaction performWithObject:question.attachment];
 }
 
 #pragma mark -

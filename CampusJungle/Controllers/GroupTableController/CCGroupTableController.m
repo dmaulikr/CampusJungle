@@ -20,23 +20,23 @@
 
 #import "CCGroupmatesDataProvider.h"
 #import "CCLocationsDataProvider.h"
-#import "CCForumsDataProvider.h"
+#import "CCQuestionsDataProvider.h"
 #import "CCMessagesDataProvider.h"
 
 #import "CCUserCell.h"
 #import "CCLocationCell.h"
-#import "CCForumCell.h"
+#import "CCQuestionCell.h"
 #import "CCMessageCell.h"
 
 #import "CCStandardErrorHandler.h"
 #import "CCLocationsApiProviderProtocol.h"
-#import "CCForumsApiProviderProtocol.h"
+#import "CCQuestionsApiProviderProtocol.h"
 #import "CCMessageAPIProviderProtocol.h"
 
 static const NSInteger kTabbarHeight = 52;
 static const NSInteger kNavBarHeight = 44;
 
-@interface CCGroupTableController () <CCGroupTabbarDelegate, CCLocationDataProviderDelegate, CCLocationCellDelegate, CCForumCellDelegate, CCMessageCellDelegate>
+@interface CCGroupTableController () <CCGroupTabbarDelegate, CCLocationDataProviderDelegate, CCLocationCellDelegate, CCQuestionCellDelegate, CCMessageCellDelegate>
 
 @property (nonatomic, weak) IBOutlet UIView *sectionHeaderView;
 @property (nonatomic, weak) IBOutlet UIButton *addButton;
@@ -47,12 +47,12 @@ static const NSInteger kNavBarHeight = 44;
 @property (nonatomic, strong) CCGroupTabbarViewController *groupTabbarController;
 @property (nonatomic, strong) CCGroupmatesDataProvider *groupmatesProvider;
 @property (nonatomic, strong) CCLocationsDataProvider *locationsProvider;
-@property (nonatomic, strong) CCForumsDataProvider *forumsProvider;
+@property (nonatomic, strong) CCQuestionsDataProvider *questionsProvider;
 @property (nonatomic, strong) CCMessagesDataProvider *messagesProvider;
 @property (nonatomic, strong) CCBaseDataProvider *activeDataProvider;
 
 @property (nonatomic, strong) id<CCLocationsApiProviderProtocol> ioc_locationsApiProvider;
-@property (nonatomic, strong) id<CCForumsApiProviderProtocol> ioc_forumsApiProvider;
+@property (nonatomic, strong) id<CCQuestionsApiProviderProtocol> ioc_questionsApiProvider;
 @property (nonatomic, strong) id<CCMessageAPIProviderProtocol> ioc_messagesApiProvider;
 
 @property (nonatomic, strong) NSMutableArray *locationsArray;
@@ -116,18 +116,18 @@ static const NSInteger kNavBarHeight = 44;
     self.activeDataProvider = self.groupmatesProvider;
 }
 
-- (void)setForumsConfiguration
+- (void)setQuestionsConfiguration
 {
-    self.sectionName.text = CCClassTabbarButtonsTitles.forums;
-    self.searchBar.placeholder = CCSearchBarPlaceholders.searchForums;
-    if (!self.forumsProvider) {
-        self.forumsProvider = [CCForumsDataProvider new];
-        self.forumsProvider.groupId = self.group.groupId;
-        self.forumsProvider.cellReuseIdentifier = CCTableDefines.forumsCellIdentifier;
+    self.sectionName.text = CCClassTabbarButtonsTitles.questions;
+    self.searchBar.placeholder = CCSearchBarPlaceholders.searchQuestions;
+    if (!self.questionsProvider) {
+        self.questionsProvider = [CCQuestionsDataProvider new];
+        self.questionsProvider.groupId = self.group.groupId;
+        self.questionsProvider.cellReuseIdentifier = CCTableDefines.questionsCellIdentifier;
     }
-    [self fillSearchBarFromDataProvider:self.forumsProvider];
-    [self configTableWithProvider:self.forumsProvider cellClass:[CCForumCell class] cellReuseIdentifier:CCTableDefines.forumsCellIdentifier];
-    self.activeDataProvider = self.forumsProvider;
+    [self fillSearchBarFromDataProvider:self.questionsProvider];
+    [self configTableWithProvider:self.questionsProvider cellClass:[CCQuestionCell class] cellReuseIdentifier:CCTableDefines.questionsCellIdentifier];
+    self.activeDataProvider = self.questionsProvider;
 }
 
 - (void)setLocationConfiguration
@@ -195,8 +195,8 @@ static const NSInteger kNavBarHeight = 44;
         case CCClassTabbarButtonsIdentifierLocations:
             [self setLocationConfiguration];
             break;
-        case CCClassTabbarButtonsIdentifierForums:
-            [self setForumsConfiguration];
+        case CCClassTabbarButtonsIdentifierQuestions:
+            [self setQuestionsConfiguration];
             break;
         case CCClassTabbarButtonsIdentifierGroup:
             [self setGroupMessagesConfiguration];
@@ -238,18 +238,32 @@ static const NSInteger kNavBarHeight = 44;
 }
 
 #pragma mark -
-#pragma mark CCForumCellDelegate
-- (void)deleteForum:(CCForum *)forum
+#pragma mark CCQuestionCellDelegate
+- (void)deleteQuestion:(CCQuestion *)question
 {
     __weak CCGroupTableController *weakSelf = self;
     [CCAlertHelper showConfirmWithSuccess:^{
-        [weakSelf.ioc_forumsApiProvider deleteForum:forum successHandler:^(RKMappingResult *object) {
-            [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteForum duration:CCProgressHudsConstants.loaderDuration];
-            [weakSelf.forumsProvider deleteItem:forum];
+        [self.ioc_questionsApiProvider deleteQuestion:question successHandler:^(RKMappingResult *object) {
+            [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.deleteQuestion duration:CCProgressHudsConstants.loaderDuration];
+            [weakSelf.questionsProvider deleteItem:question];
         } errorHandler:^(NSError *error) {
             [CCStandardErrorHandler showErrorWithError:error];
         }];
     }];
+}
+
+- (void)emailAttachmentOfQuestion:(CCQuestion *)question
+{
+    [self.ioc_questionsApiProvider emailAttachmentOfQuestion:question successHandler:^(id object) {
+        [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.questionAttachmentEmailed duration:CCProgressHudsConstants.loaderDuration];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
+}
+
+- (void)viewAttachmentOfQuestion:(CCQuestion *)question
+{
+    [self.delegate viewAttachmentOfQuestion:question];
 }
 
 #pragma mark -
@@ -284,8 +298,8 @@ static const NSInteger kNavBarHeight = 44;
         case CCClassTabbarButtonsIdentifierLocations:
             [self.delegate showLocation:cellObject onMapWithLocations:self.locationsArray];
             break;
-        case CCClassTabbarButtonsIdentifierForums:
-            [self.delegate showDetailsOfForum:cellObject];
+        case CCClassTabbarButtonsIdentifierQuestions:
+            [self.delegate showDetailsOfQuestion:cellObject];
             break;
         case CCClassTabbarButtonsIdentifierGroup:
             [self.delegate showDetailsOfGroupMessage:cellObject];
@@ -303,8 +317,8 @@ static const NSInteger kNavBarHeight = 44;
         case CCClassTabbarButtonsIdentifierLocations:
             [self.delegate addLocation];
             break;
-        case CCClassTabbarButtonsIdentifierForums:
-            [self.delegate addForum];
+        case CCClassTabbarButtonsIdentifierQuestions:
+            [self.delegate addQuestion];
             break;
         case CCClassTabbarButtonsIdentifierGroup:
             [self.delegate sendGroupMessage];

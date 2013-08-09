@@ -201,7 +201,7 @@ const struct CCTableDefines CCTableDefines = {
     .collectionCellIdentifier = @"CollectionCellIdentifier",
     .classmatesCellIdentifier = @"ClassmateCellIdentifier",
     .locationsCellIdentifier = @"LocationCellIdentifier",
-    .forumsCellIdentifier = @"ForumCellIdentifier",
+    .questionsCellIdentifier = @"QuestionCellIdentifier",
     .groupsCellIdentifier = @"GroupCellIdentifier",
     .messageCellIdentifier = @"MessageCellIdentifier",
 };
@@ -245,7 +245,7 @@ const struct CCClassTabbarButtonsTitles CCClassTabbarButtonsTitles = {
     .groupmates = @"Groupmates",
     .groups = @"Groups",
     .locations = @"Locations",
-    .forums = @"Forums",
+    .questions = @"Questions",
     .groupMessages = @"Group Messages",
 };
 
@@ -279,7 +279,7 @@ const struct CCShareItemActionSheetDefines CCShareItemActionSheetDefines = {
 
 const struct CCSearchBarPlaceholders CCSearchBarPlaceholders = {
     .searchGroupmates = @"Search Groupmates",
-    .searchForums = @"Search Forums",
+    .searchQuestions = @"Search Questions",
     .searchLocations = @"Search Locations",
     .searchMessages = @"Search Messages",
     .searchClassmates = @"Search Classmates",
@@ -307,7 +307,6 @@ const struct CCPushNotificationTypes CCPushNotificationTypes = {
     .professorUpload = @"ProfessorsUpload",
     .announcement = @"Announcement",
     .location = @"Location",
-    .forum = @"Forum",
     .question = @"Question",
     .coupon = @"Coupon",
     .groupInvite = @"GroupInvite",
