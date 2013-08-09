@@ -13,5 +13,8 @@ const struct CCSideMenuTitles CCSideMenuTitles = {
     .classesScreen = @"Classes",
     .dropbox = @"Dropbox",
     .marketPlace = @"Market Place",
-    .newsFeed = @"News Feed",
+    .newsFeed = @"Notifications",
+    .booksSale = @"Books for Sale",
+    .notesSale = @"Notes for Sale",
+    .collegeMarket = @"College Market",
 };
