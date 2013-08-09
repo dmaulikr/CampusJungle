@@ -8,21 +8,20 @@
 
 #import "CCQuestionPushProcessingBehaviour.h"
 #import "CCTransactionWithObject.h"
-#import "CCForumDetailsTransaction.h"
+#import "CCAnswersTransaction.h"
 #import "CCNavigationHelper.h"
 #import "CCAlertHelper.h"
-#import "CCForum.h"
 
-#import "CCForumsApiProviderProtocol.h"
+#import "CCQuestionsApiProviderProtocol.h"
 #import "CCStandardErrorHandler.h"
 
 #import "MBProgressHUD+Status.h"
 
-typedef void(^LoadForumSuccessBlock)(id);
+typedef void(^LoadQuestionSuccessBlock)(id);
 
 @interface CCQuestionPushProcessingBehaviour ()
 
-@property (nonatomic, strong) id<CCForumsApiProviderProtocol> ioc_forumsApiProvider;
+@property (nonatomic, strong) id<CCQuestionsApiProviderProtocol> ioc_questionsApiProvider;
 
 @end
 
@@ -30,38 +29,38 @@ typedef void(^LoadForumSuccessBlock)(id);
 
 - (void)processWhenAppNotRunningWithUserInfo:(NSDictionary *)userInfo
 {
-    [self goQuestionsWithUserInfo:userInfo];
+    [self goQuestionDetailsWithUserInfo:userInfo];
 }
 
 - (void)processWhenAppInBackgroundWithUserInfo:(NSDictionary *)userInfo
 {
-    [self goQuestionsWithUserInfo:userInfo];
+    [self goQuestionDetailsWithUserInfo:userInfo];
 }
 
 - (void)processWhenAppActiveWithUserInfo:(NSDictionary *)userInfo
 {
     NSString *message = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"];
     [CCAlertHelper showWithTitle:CCAlertsTitles.pushNotification message:message successButtonTitle:CCAlertsButtons.show cancelButtonTitle:CCAlertsButtons.later success:^{
-        [self goQuestionsWithUserInfo:userInfo];
+        [self goQuestionDetailsWithUserInfo:userInfo];
     }];
 }
 
-- (void)goQuestionsWithUserInfo:(NSDictionary *)userInfo
+- (void)goQuestionDetailsWithUserInfo:(NSDictionary *)userInfo
 {
-    NSString *forumId = [userInfo objectForKey:@"forum_id"];
-    [self loadForumWithId:forumId successBlock:^(id forum) {
-        CCForumDetailsTransaction *questionsTransaction = [CCForumDetailsTransaction new];
-        questionsTransaction.navigation = [CCNavigationHelper activeNavigationController];
-        [questionsTransaction performWithObject:forum];
+    NSString *questionId = [userInfo objectForKey:@"question_id"];
+    [self loadQuestionWithId:questionId successBlock:^(id question) {
+        CCAnswersTransaction *questionDetailsTransaction = [CCAnswersTransaction new];
+        questionDetailsTransaction.navigation = [CCNavigationHelper activeNavigationController];
+        [questionDetailsTransaction performWithObject:question];
     }];
 }
 
 #pragma mark -
 #pragma mark Requests
-- (void)loadForumWithId:(NSString *)forumId successBlock:(LoadForumSuccessBlock)successBlock
+- (void)loadQuestionWithId:(NSString *)questionId successBlock:(LoadQuestionSuccessBlock)successBlock
 {
     [MBProgressHUD showInKeyWindowWithStatus:CCProcessingMessages.loadingQuestion];
-    [self.ioc_forumsApiProvider loadForumWithId:forumId successHandler:^(RKMappingResult *result) {
+    [self.ioc_questionsApiProvider loadQuestionWithId:questionId successHandler:^(RKMappingResult *result) {
         [MBProgressHUD hideInKeyWindow];
         successBlock(result);
     } errorHandler:^(NSError *error) {

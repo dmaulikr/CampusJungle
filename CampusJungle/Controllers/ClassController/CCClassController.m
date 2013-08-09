@@ -11,6 +11,7 @@
 #import "CCLocation.h"
 #import "CCGroup.h"
 #import "CCUserCell.h"
+#import "CCQuestion.h"
 #import "CCClassTableController.h"
 #import "GIAlert.h"
 #import "CCClassesApiProviderProtocol.h"
@@ -234,9 +235,9 @@
     [self.locationTransaction performWithObject:@{@"location" : location, @"array" : locationsArray, @"class" : self.currentClass, @"searchString" : searchString}];
 }
 
-- (void)showDetailsOfForum:(CCForum *)forum
+- (void)showDetailsOfQuestion:(CCQuestion *)question
 {
-    [self.forumDetailsTransaction performWithObject:forum];
+    [self.questionDetailsTransaction performWithObject:question];
 }
 
 - (void)showDetailsOfGroup:(CCGroup *)group
@@ -250,9 +251,9 @@
     [self.addLocationTransaction performWithObject:self.currentClass];
 }
 
-- (void)addForum
+- (void)addQuestion
 {
-    [self.addForumTransaction performWithObject:self.currentClass];
+    [self.addQuestionTransaction performWithObject:self.currentClass];
 }
 
 - (void)addGroup
@@ -263,6 +264,11 @@
 - (void)sendInvite
 {
     [self.sendInviteTransaction performWithObject:self.currentClass];
+}
+
+- (void)viewAttachmentOfQuestion:(CCQuestion *)question
+{
+    [self.viewPdfAttachmentTransaction performWithObject:question.attachment];
 }
 
 @end

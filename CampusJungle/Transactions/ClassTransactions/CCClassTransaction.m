@@ -12,8 +12,6 @@
 #import "CCOtherUserProfileTransaction.h"
 #import "CCShowLocationsTransaction.h"
 #import "CCAddLocationTransaction.h"
-#import "CCAddForumTransaction.h"
-#import "CCForumDetailsTransaction.h"
 #import "CCEditClassTransaction.h"
 #import "CCProfessorUploadsTransaction.h"
 #import "CCTimetableTransaction.h"
@@ -25,6 +23,9 @@
 #import "CCBackToControllerTransaction.h"
 #import "CCAppInviteTransaction.h"
 #import "CCCouponsTransaction.h"
+#import "CCAddQuestionTransaction.h"
+#import "CCAnswersTransaction.h"
+#import "CCViewPDFTransaction.h"
 
 @implementation CCClassTransaction
 
@@ -79,11 +80,11 @@
     CCAddLocationTransaction *addLocationTransaction = [CCAddLocationTransaction new];
     addLocationTransaction.navigation = centralNavigation;
     
-    CCAddForumTransaction *addForumTransaction = [CCAddForumTransaction new];
-    addForumTransaction.navigation = centralNavigation;
+    CCAddQuestionTransaction *addQuestionTransaction = [CCAddQuestionTransaction new];
+    addQuestionTransaction.navigation = centralNavigation;
     
-    CCForumDetailsTransaction *forumDetailsTransaction = [CCForumDetailsTransaction new];
-    forumDetailsTransaction.navigation = centralNavigation;
+    CCAnswersTransaction *questionDetailsTransaction = [CCAnswersTransaction new];
+    questionDetailsTransaction.navigation = centralNavigation;
     
     CCTimetableTransaction *timetableTransaction = [CCTimetableTransaction new];
     timetableTransaction.navigation = centralNavigation;
@@ -100,17 +101,21 @@
     CCCouponsTransaction *couponsTransaction = [CCCouponsTransaction new];
     couponsTransaction.navigation = centralNavigation;
     
+    CCViewPDFTransaction *viewPdfTransaction = [CCViewPDFTransaction new];
+    viewPdfTransaction.navigation = centralNavigation;
+    
     classController.otherUserProfileTransaction = otherUserProfileTransaction;
     classController.newsFeedTransaction = self.newsFeedTransaction;
     classController.locationTransaction = showLocationsTransaction;
     classController.addLocationTransaction = addLocationTransaction;
-    classController.addForumTransaction = addForumTransaction;
-    classController.forumDetailsTransaction = forumDetailsTransaction;
+    classController.addQuestionTransaction = addQuestionTransaction;
+    classController.questionDetailsTransaction = questionDetailsTransaction;
     classController.timetableTransaction = timetableTransaction;
     classController.groupDetailsTransaction = groupDetailsTransaction;
     classController.addGroupTransaction = addGroupTransaction;
     classController.sendInviteTransaction = appInviteTransaction;
     classController.couponsTransaction = couponsTransaction;
+    classController.viewPdfAttachmentTransaction = viewPdfTransaction;
     
     [self.menuController setCenterPanel:centralNavigation];
 }

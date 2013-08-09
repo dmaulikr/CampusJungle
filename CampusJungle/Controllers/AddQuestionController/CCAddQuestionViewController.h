@@ -11,7 +11,7 @@
 #import "CCTransactionWithObject.h"
 #import "CCTransaction.h"
 
-@class CCForum;
+@class CCClass, CCGroup;
 
 @interface CCAddQuestionViewController : CCBaseViewController
 
@@ -21,6 +21,7 @@
 @property (nonatomic, strong) id <CCTransaction> backToListTransaction;
 @property (nonatomic, strong) id <CCTransaction> backToSelfController;
 
-- (void)setForum:(CCForum *)forum;
+- (void)setClassObject:(CCClass *)classObject;
+- (void)setGroup:(CCGroup *)group;
 
 @end

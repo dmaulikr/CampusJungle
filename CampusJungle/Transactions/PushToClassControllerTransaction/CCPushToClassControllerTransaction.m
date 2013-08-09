@@ -12,8 +12,8 @@
 #import "CCOtherUserProfileTransaction.h"
 #import "CCShowLocationsTransaction.h"
 #import "CCAddLocationTransaction.h"
-#import "CCAddForumTransaction.h"
-#import "CCForumDetailsTransaction.h"
+#import "CCAddQuestionTransaction.h"
+#import "CCAnswersTransaction.h"
 #import "CCEditClassTransaction.h"
 #import "CCProfessorUploadsTransaction.h"
 #import "CCTimetableTransaction.h"
@@ -25,6 +25,7 @@
 #import "CCBackToControllerTransaction.h"
 #import "CCAppInviteTransaction.h"
 #import "CCCouponsTransaction.h"
+#import "CCViewPDFTransaction.h"
 
 @implementation CCPushToClassControllerTransaction
 
@@ -80,11 +81,11 @@
     CCOtherUserProfileTransaction *otherUserProfileTransaction = [CCOtherUserProfileTransaction new];
     otherUserProfileTransaction.navigation = self.navigation;
     
-    CCAddForumTransaction *addForumTransaction = [CCAddForumTransaction new];
-    addForumTransaction.navigation = self.navigation;
+    CCAddQuestionTransaction *addQuestionTransaction = [CCAddQuestionTransaction new];
+    addQuestionTransaction.navigation = self.navigation;
     
-    CCForumDetailsTransaction *forumDetailsTransaction = [CCForumDetailsTransaction new];
-    forumDetailsTransaction.navigation = self.navigation;
+    CCAnswersTransaction *questionDetailsTransaction = [CCAnswersTransaction new];
+    questionDetailsTransaction.navigation = self.navigation;
     
     CCTimetableTransaction *timetableTransaction = [CCTimetableTransaction new];
     timetableTransaction.navigation = self.navigation;
@@ -101,17 +102,21 @@
     CCCouponsTransaction *couponsTransaction = [CCCouponsTransaction new];
     couponsTransaction.navigation = self.navigation;
     
+    CCViewPDFTransaction *viewPdfTransaction = [CCViewPDFTransaction new];
+    viewPdfTransaction.navigation = self.navigation;
+    
     classController.otherUserProfileTransaction = otherUserProfileTransaction;
     classController.newsFeedTransaction = self.inboxTransaction;
     classController.locationTransaction = locationsTransactions;
     classController.addLocationTransaction = addLocationTransaction;
-    classController.addForumTransaction = addForumTransaction;
-    classController.forumDetailsTransaction = forumDetailsTransaction;
+    classController.addQuestionTransaction = addQuestionTransaction;
+    classController.questionDetailsTransaction = questionDetailsTransaction;
     classController.timetableTransaction = timetableTransaction;
     classController.groupDetailsTransaction = groupDetailsTransaction;
     classController.addGroupTransaction = addGroupTransaction;
     classController.sendInviteTransaction = appInviteTransaction;
     classController.couponsTransaction = couponsTransaction;
+    classController.viewPdfAttachmentTransaction = viewPdfTransaction;
     
     UIViewController *viewController = [[self.navigation viewControllers] lastObject];
     [self.navigation setViewControllers:@[viewController]];

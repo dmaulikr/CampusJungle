@@ -10,7 +10,6 @@
 #import "CCAnswerPushProcessingBehaviour.h"
 #import "CCCommentPushProcessingBehaviour.h"
 #import "CCCouponPushProcessingBehaviour.h"
-#import "CCForumPushProcessingBehaviour.h"
 #import "CCGroupMessagePushProcessingBehaviour.h"
 #import "CCLocationPushProcessingBehaviour.h"
 #import "CCPrivateMessageProcessingBehaviour.h"

@@ -14,7 +14,6 @@ extern const struct CCModelsTypes {
     __unsafe_unretained NSString *classModel;
     __unsafe_unretained NSString *college;
     __unsafe_unretained NSString *comment;
-    __unsafe_unretained NSString *forum;
     __unsafe_unretained NSString *group;
     __unsafe_unretained NSString *location;
     __unsafe_unretained NSString *message;

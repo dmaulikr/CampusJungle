@@ -113,7 +113,7 @@ static const CGFloat kMinCellHeight = 133;
 
 - (void)setAttachmentViewVisibility
 {
-    if ([self.question.attachment length] > 0 && ![self.question uploadProgress]) {
+    if ([self.question.uploadProgress floatValue] == 1.0 || [self.question.attachment length] > 0) {
         [self.attachmentView setHidden:NO];
         [CCViewPositioningHelper setOriginY:[CCViewPositioningHelper bottomOfView:self.attachmentView] + 5 toView:self.answersNumberLabel];
     }

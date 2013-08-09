@@ -31,23 +31,23 @@
 
 - (void)processWhenAppNotRunningWithUserInfo:(NSDictionary *)userInfo
 {
-    [self goForumDetailsWithUserInfo:userInfo];
+    [self goGroupInvitesWithUserInfo:userInfo];
 }
 
 - (void)processWhenAppInBackgroundWithUserInfo:(NSDictionary *)userInfo
 {
-    [self goForumDetailsWithUserInfo:userInfo];
+    [self goGroupInvitesWithUserInfo:userInfo];
 }
 
 - (void)processWhenAppActiveWithUserInfo:(NSDictionary *)userInfo
 {
     NSString *message = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"];
     [CCAlertHelper showWithTitle:CCAlertsTitles.pushNotification message:message successButtonTitle:CCAlertsButtons.show cancelButtonTitle:CCAlertsButtons.later success:^{
-        [self goForumDetailsWithUserInfo:userInfo];
+        [self goGroupInvitesWithUserInfo:userInfo];
     }];
 }
 
-- (void)goForumDetailsWithUserInfo:(NSDictionary *)userInfo
+- (void)goGroupInvitesWithUserInfo:(NSDictionary *)userInfo
 {
     [self.inboxTransaction performWithObject:@{@"selectedTabIndex" : @(1)}];
 }

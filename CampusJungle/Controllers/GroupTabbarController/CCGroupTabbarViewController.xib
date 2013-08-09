@@ -151,13 +151,14 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="462008650"/>
-						<object class="NSCustomResource" key="IBUISelectedImage">
+						<object class="NSCustomResource" key="IBUIHighlightedImage" id="605695058">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">forums_icon_active.png</string>
+							<string key="NSResourceName">question_button_active.png</string>
 						</object>
+						<reference key="IBUISelectedImage" ref="605695058"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">forums_icon.png</string>
+							<string key="NSResourceName">question_button.png</string>
 						</object>
 						<reference key="IBUISelectedBackgroundImage" ref="980741542"/>
 						<reference key="IBUIFontDescription" ref="131053900"/>
@@ -231,14 +232,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">forumsButton</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="458833961"/>
-					</object>
-					<int key="connectionID">34</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">locationButton</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="171517628"/>
@@ -260,6 +253,14 @@
 						<reference key="destination" ref="200618656"/>
 					</object>
 					<int key="connectionID">42</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">questionsButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="458833961"/>
+					</object>
+					<int key="connectionID">47</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -347,7 +348,7 @@
 						<reference key="object" ref="458833961"/>
 						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="721334604"/>
-						<string key="objectName">Forums</string>
+						<string key="objectName">Questions</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">9</int>
@@ -376,7 +377,7 @@
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="2" key="6.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="7.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<real value="2" key="7.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<real value="0.0" key="7.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="2" key="9.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 			</dictionary>
@@ -384,7 +385,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">46</int>
+			<int key="maxID">47</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -392,16 +393,12 @@
 					<string key="className">CCGroupTabbarViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="forumsButton">UIButton</string>
 						<string key="groupmatesButton">UIButton</string>
 						<string key="locationButton">UIButton</string>
 						<string key="messagesButton">UIButton</string>
+						<string key="questionsButton">UIButton</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="forumsButton">
-							<string key="name">forumsButton</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="groupmatesButton">
 							<string key="name">groupmatesButton</string>
 							<string key="candidateClassName">UIButton</string>
@@ -412,6 +409,10 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="messagesButton">
 							<string key="name">messagesButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="questionsButton">
+							<string key="name">questionsButton</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
 					</dictionary>
@@ -427,14 +428,14 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="forums_icon.png">{37, 43}</string>
-			<string key="forums_icon_active.png">{37, 43}</string>
-			<string key="groupmates_button.png">{75, 52}</string>
-			<string key="groupmates_button_active.png">{72, 49}</string>
-			<string key="groupmessage_button.png">{75, 52}</string>
-			<string key="groupmessage_button_active.png">{72, 49}</string>
+			<string key="groupmates_button.png">{84, 48}</string>
+			<string key="groupmates_button_active.png">{84, 48}</string>
+			<string key="groupmessage_button.png">{84, 48}</string>
+			<string key="groupmessage_button_active.png">{84, 48}</string>
 			<string key="locations_icon.png">{48, 43}</string>
 			<string key="locations_icon_active.png">{48, 43}</string>
+			<string key="question_button.png">{85, 48}</string>
+			<string key="question_button_active.png">{72, 49}</string>
 			<string key="tab_bar_background.png">{323, 52}</string>
 			<string key="tab_bar_button_background.png">{72, 49}</string>
 		</dictionary>

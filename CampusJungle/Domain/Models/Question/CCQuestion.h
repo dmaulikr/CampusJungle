@@ -14,7 +14,8 @@
 @interface CCQuestion : NSObject <CCRestKitMappableModel, CCModelTypeProtocol>
 
 @property (nonatomic, strong) NSString *questionId;
-@property (nonatomic, strong) NSString *forumId;
+@property (nonatomic, strong) NSString *classId;
+@property (nonatomic, strong) NSString *groupId;
 @property (nonatomic, strong) NSString *ownerId;
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSString *attachment;

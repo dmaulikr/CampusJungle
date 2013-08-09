@@ -13,6 +13,10 @@
 #import "CCImagesUploadingScreenTransaction.h"
 #import "CCUploadImagesController.h"
 #import "CCBackToControllerTransaction.h"
+#import "CCBackTransaction.h"
+
+#import "CCClass.h"
+#import "CCGroup.h"
 
 @implementation CCAddQuestionTransaction
 
@@ -31,6 +35,9 @@
     CCSelectPdfFromDropboxTransaction *dropboxPDFTransaction = [CCSelectPdfFromDropboxTransaction new];
     dropboxPDFTransaction.navigation = self.navigation;
     
+    CCBackTransaction *backTransaction = [CCBackTransaction new];
+    backTransaction.navigation = self.navigation;
+    
     CCAddQuestionViewController *addQuestionController = [CCAddQuestionViewController new];
     
     CCBackToControllerTransaction *backToUploadTransaction = [CCBackToControllerTransaction new];
@@ -44,8 +51,15 @@
     addQuestionController.imagesDropboxUploadTransaction = dropboxImagesTransaction;
     addQuestionController.imagesUploadTransaction = imagesUploadTransaction;
     addQuestionController.pdfDropboxUploadTransaction = dropboxPDFTransaction;
-    addQuestionController.backToListTransaction = self.backToListTransaction;
-    [addQuestionController setForum:object];
+    addQuestionController.backToListTransaction = backTransaction;
+    
+    if ([object isKindOfClass:[CCClass class]]) {
+        [addQuestionController setClassObject:object];
+    }
+    else {
+        [addQuestionController setGroup:object];
+    }
+    
     [self.navigation pushViewController:addQuestionController animated:YES];
 }
 

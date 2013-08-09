@@ -15,7 +15,6 @@ const struct CCModelsTypes CCModelsTypes = {
     .city = @"City",
     .classModel = @"Klass",
     .college = @"College",
-    .forum = @"Forum",
     .group = @"Group",
     .location = @"Location",
     .message = @"Message",

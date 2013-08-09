@@ -58,9 +58,6 @@
     else if ([pushType isEqualToString:CCPushNotificationTypes.location]) {
         [pushNotification setPushProcessingBehavior:[CCLocationPushProcessingBehaviour new]];
     }
-    else if ([pushType isEqualToString:CCPushNotificationTypes.forum]) {
-        [pushNotification setPushProcessingBehavior:[CCForumPushProcessingBehaviour new]];
-    }
     else if ([pushType isEqualToString:CCPushNotificationTypes.question]) {
         [pushNotification setPushProcessingBehavior:[CCQuestionPushProcessingBehaviour new]];
     }

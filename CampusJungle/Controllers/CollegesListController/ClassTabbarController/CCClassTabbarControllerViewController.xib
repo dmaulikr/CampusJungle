@@ -164,6 +164,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{240, 0}, {80, 52}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -177,13 +178,14 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="161386226"/>
-						<object class="NSCustomResource" key="IBUISelectedImage">
+						<object class="NSCustomResource" key="IBUIHighlightedImage" id="783047790">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">forums_icon_active.png</string>
+							<string key="NSResourceName">question_button_active.png</string>
 						</object>
+						<reference key="IBUISelectedImage" ref="783047790"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">forums_icon.png</string>
+							<string key="NSResourceName">question_button.png</string>
 						</object>
 						<reference key="IBUISelectedBackgroundImage" ref="365809332"/>
 						<reference key="IBUIFontDescription" ref="863331273"/>
@@ -224,14 +226,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">forumsButton</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="883524446"/>
-					</object>
-					<int key="connectionID">99</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">groupsButton</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="782609573"/>
@@ -245,6 +239,14 @@
 						<reference key="destination" ref="828173597"/>
 					</object>
 					<int key="connectionID">101</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">questionsButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="883524446"/>
+					</object>
+					<int key="connectionID">111</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -369,7 +371,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">110</int>
+			<int key="maxID">111</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
@@ -379,12 +381,12 @@
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="classmates_icon.png">{57, 40}</string>
 			<string key="classmates_icon_active.png">{57, 40}</string>
-			<string key="forums_icon.png">{37, 43}</string>
-			<string key="forums_icon_active.png">{37, 43}</string>
 			<string key="groups_icon.png">{72, 49}</string>
 			<string key="groups_icon_active.png">{75, 52}</string>
 			<string key="locations_icon.png">{48, 43}</string>
 			<string key="locations_icon_active.png">{48, 43}</string>
+			<string key="question_button.png">{85, 48}</string>
+			<string key="question_button_active.png">{72, 49}</string>
 			<string key="tab_bar_background.png">{323, 52}</string>
 			<string key="tab_bar_button_background.png">{72, 49}</string>
 		</dictionary>
