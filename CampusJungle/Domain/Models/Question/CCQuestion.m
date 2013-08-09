@@ -39,13 +39,21 @@
                                                                                                          withMapping:questionsMapping];
     [paginationQuestionsResponseMapping addPropertyMapping:relationShipResponseQuestionsMapping];
     
-    NSString *pathPattern = [NSString stringWithFormat:CCAPIDefines.loadQuestions, @":forumID"];
-    RKResponseDescriptor *responseQuestionsDescriptor =
+    NSString *classPathPattern = [NSString stringWithFormat:CCAPIDefines.loadClassQuestions, @":classID"];
+    RKResponseDescriptor *responseClassQuestionsDescriptor =
     [RKResponseDescriptor responseDescriptorWithMapping:paginationQuestionsResponseMapping
-                                            pathPattern:pathPattern
+                                            pathPattern:classPathPattern
                                                 keyPath:nil
                                             statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
 
+    NSString *groupPathPattern = [NSString stringWithFormat:CCAPIDefines.loadGroupQuestions, @":groupID"];
+    RKResponseDescriptor *responseGroupQuestionsDescriptor =
+    [RKResponseDescriptor responseDescriptorWithMapping:paginationQuestionsResponseMapping
+                                            pathPattern:groupPathPattern
+                                                keyPath:nil
+                                            statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+
+    
     NSString *loadQuestionPathPattern = [NSString stringWithFormat:CCAPIDefines.loadQuestion, @":questionId"];
     RKResponseDescriptor *loadQuestionDescriptor =
     [RKResponseDescriptor responseDescriptorWithMapping:questionsMapping
@@ -54,7 +62,8 @@
                                             statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
 
     
-    [objectManager addResponseDescriptor:responseQuestionsDescriptor];
+    [objectManager addResponseDescriptor:responseClassQuestionsDescriptor];
+    [objectManager addResponseDescriptor:responseGroupQuestionsDescriptor];
     [objectManager addResponseDescriptor:loadQuestionDescriptor];
 }
 
@@ -70,7 +79,8 @@
 {
     return @{
              @"id" : @"questionId",
-             @"forum_id" : @"forumId",
+             @"class_id" : @"classId",
+             @"group_id" : @"groupId",
              @"text" : @"text",
              @"owner_id" : @"ownerId",
              @"attachment" : @"attachment",

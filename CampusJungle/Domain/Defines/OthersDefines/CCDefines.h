@@ -51,14 +51,10 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *postReview;
     __unsafe_unretained NSString *loadReviews;
     __unsafe_unretained NSString *loadGroups;
-    __unsafe_unretained NSString *loadForum;
-    __unsafe_unretained NSString *loadClassForums;
-    __unsafe_unretained NSString *loadGroupForums;
-    __unsafe_unretained NSString *postInClassForum;
-    __unsafe_unretained NSString *postInGroupForum;
-    __unsafe_unretained NSString *deleteForum;
-    __unsafe_unretained NSString *loadQuestions;
-    __unsafe_unretained NSString *postQuestion;
+    __unsafe_unretained NSString *loadClassQuestions;
+    __unsafe_unretained NSString *loadGroupQuestions;
+    __unsafe_unretained NSString *postClassQuestion;
+    __unsafe_unretained NSString *postGroupQuestion;
     __unsafe_unretained NSString *emailQuestionAttachment;
     __unsafe_unretained NSString *deleteQuestion;
     __unsafe_unretained NSString *loadAnswers;
