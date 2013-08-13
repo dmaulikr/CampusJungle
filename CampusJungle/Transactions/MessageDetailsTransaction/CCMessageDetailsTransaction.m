@@ -10,6 +10,7 @@
 #import "CCMessageDetailsController.h"
 #import "CCPrivateMessageTransaction.h"
 #import "CCOtherUserProfileTransaction.h"
+#import "CCChatController.h"
 
 @implementation CCMessageDetailsTransaction
 
@@ -19,6 +20,8 @@
     CCMessageDetailsController *messageDetailsController = [CCMessageDetailsController new];
     messageDetailsController.message = object;
     
+    CCChatController *chatController = [CCChatController new];
+    
     CCOtherUserProfileTransaction *otherUserProfileTransaction = [CCOtherUserProfileTransaction new];
     otherUserProfileTransaction.navigation = self.navigation;
     messageDetailsController.senderDetailsTransaction = otherUserProfileTransaction;
@@ -27,7 +30,8 @@
     privateMessageTransaction.navigation = self.navigation;
     messageDetailsController.replyTransaction = privateMessageTransaction;
     
-    [self.navigation pushViewController:messageDetailsController animated:YES];
+    //[self.navigation pushViewController:messageDetailsController animated:YES];
+    [self.navigation pushViewController:chatController animated:YES];
 }
 
 @end
