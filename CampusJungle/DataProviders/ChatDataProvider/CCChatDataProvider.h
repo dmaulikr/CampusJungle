@@ -10,4 +10,6 @@
 
 @interface CCChatDataProvider : CCPaginationDataProvider
 
+@property (nonatomic, strong) NSString *chatID;
+
 @end

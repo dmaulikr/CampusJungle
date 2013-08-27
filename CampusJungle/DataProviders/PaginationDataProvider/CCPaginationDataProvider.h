@@ -16,6 +16,8 @@
 
 @property (nonatomic) long currentPage;
 @property (nonatomic) BOOL isCurrentlyLoad;
+@property (nonatomic, copy) successHandler beforeLoadingFilter;
+@property (nonatomic, copy) successHandler afterLoadingFilter;
 
 - (void)loadItemsForPageNumber:(long)numberOfPage successHandler:(successWithObject)successHandler;
 - (BOOL)checkIsComplete;

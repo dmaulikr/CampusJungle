@@ -7,7 +7,26 @@
 //
 
 #import "CCChatDataProvider.h"
+#import "CCDialogsAPIProviderProtocol.h"
+
+@interface CCChatDataProvider()
+
+@property (nonatomic, strong) id <CCDialogsAPIProviderProtocol> ioc_DialogsAPIProvider;
+
+@end
 
 @implementation CCChatDataProvider
+
+- (void)loadItemsForPageNumber:(long)numberOfPage successHandler:(successWithObject)successHandler
+{
+    [self.ioc_DialogsAPIProvider loadMessagesForDialogWithID:self.chatID
+                                           DialogsPageNumber:(int)numberOfPage
+                                              successHandler:^(RKMappingResult *result) {
+                                                  successHandler(result.firstObject);
+                                              }
+                                                errorHandler:^(NSError *error) {
+                                                    [self showErrorWhileLoading:error];
+                                                }];
+}
 
 @end

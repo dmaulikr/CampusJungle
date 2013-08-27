@@ -298,7 +298,7 @@
 		7025634117A0092600B48AA2 /* CCGroupInviteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7025634017A0092500B48AA2 /* CCGroupInviteCell.xib */; };
 		70334A1B17B11B56001D1B57 /* CCChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70334A1917B11B56001D1B57 /* CCChangePasswordViewController.m */; };
 		70334A1C17B11B56001D1B57 /* CCChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70334A1A17B11B56001D1B57 /* CCChangePasswordViewController.xib */; };
-		70334A2117B11E77001D1B57 /* CCMessageDetailsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70334A2017B11E77001D1B57 /* CCMessageDetailsTransaction.m */; };
+		70334A2117B11E77001D1B57 /* CCChatTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70334A2017B11E77001D1B57 /* CCChatTransaction.m */; };
 		70334A2417B11EC0001D1B57 /* CCChangePasswordTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 70334A2317B11EC0001D1B57 /* CCChangePasswordTransaction.m */; };
 		703AC79717AAF51F00B222F3 /* coupon_icon_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 703AC79317AAF51F00B222F3 /* coupon_icon_active.png */; };
 		703AC79817AAF51F00B222F3 /* coupon_icon_active@2x@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 703AC79417AAF51F00B222F3 /* coupon_icon_active@2x@2x.png */; };
@@ -836,6 +836,11 @@
 		D3B7328317AC001000F35C4D /* CCSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B7328217AC001000F35C4D /* CCSettings.m */; };
 		D3CF598417BA52F000F49751 /* CCChatDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D3CF598317BA52F000F49751 /* CCChatDataSource.m */; };
 		D3CF598817BA536800F49751 /* CCChatDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3CF598717BA536800F49751 /* CCChatDataProvider.m */; };
+		D3CF598C17BE1F9C00F49751 /* CCDialogsAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3CF598B17BE1F9C00F49751 /* CCDialogsAPIProvider.m */; };
+		D3CF599117BE235300F49751 /* CCDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = D3CF599017BE235300F49751 /* CCDialog.m */; };
+		D3CF599517BE481E00F49751 /* CCDialogsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D3CF599417BE481E00F49751 /* CCDialogsDataProvider.m */; };
+		D3CF599A17BE4CE900F49751 /* CCDialogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3CF599817BE4CE900F49751 /* CCDialogCell.m */; };
+		D3CF599B17BE4CE900F49751 /* CCDialogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3CF599917BE4CE900F49751 /* CCDialogCell.xib */; };
 		D3DF8C3117900AAA00B072B7 /* CCMessageDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DF8C2F17900AAA00B072B7 /* CCMessageDetailsController.m */; };
 		D3DF8C3217900AAA00B072B7 /* CCMessageDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3DF8C3017900AAA00B072B7 /* CCMessageDetailsController.xib */; };
 /* End PBXBuildFile section */
@@ -1235,8 +1240,8 @@
 		70334A1817B11B56001D1B57 /* CCChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCChangePasswordViewController.h; sourceTree = "<group>"; };
 		70334A1917B11B56001D1B57 /* CCChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCChangePasswordViewController.m; sourceTree = "<group>"; };
 		70334A1A17B11B56001D1B57 /* CCChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCChangePasswordViewController.xib; sourceTree = "<group>"; };
-		70334A1F17B11E77001D1B57 /* CCMessageDetailsTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessageDetailsTransaction.h; sourceTree = "<group>"; };
-		70334A2017B11E77001D1B57 /* CCMessageDetailsTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessageDetailsTransaction.m; sourceTree = "<group>"; };
+		70334A1F17B11E77001D1B57 /* CCChatTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCChatTransaction.h; sourceTree = "<group>"; };
+		70334A2017B11E77001D1B57 /* CCChatTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCChatTransaction.m; sourceTree = "<group>"; };
 		70334A2217B11EC0001D1B57 /* CCChangePasswordTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCChangePasswordTransaction.h; sourceTree = "<group>"; };
 		70334A2317B11EC0001D1B57 /* CCChangePasswordTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCChangePasswordTransaction.m; sourceTree = "<group>"; };
 		703AC79317AAF51F00B222F3 /* coupon_icon_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coupon_icon_active.png; sourceTree = "<group>"; };
@@ -2143,6 +2148,16 @@
 		D3CF598317BA52F000F49751 /* CCChatDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCChatDataSource.m; sourceTree = "<group>"; };
 		D3CF598617BA536800F49751 /* CCChatDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCChatDataProvider.h; sourceTree = "<group>"; };
 		D3CF598717BA536800F49751 /* CCChatDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCChatDataProvider.m; sourceTree = "<group>"; };
+		D3CF598A17BE1F9C00F49751 /* CCDialogsAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDialogsAPIProvider.h; sourceTree = "<group>"; };
+		D3CF598B17BE1F9C00F49751 /* CCDialogsAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDialogsAPIProvider.m; sourceTree = "<group>"; };
+		D3CF598D17BE1FBC00F49751 /* CCDialogsAPIProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCDialogsAPIProviderProtocol.h; sourceTree = "<group>"; };
+		D3CF598F17BE235300F49751 /* CCDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDialog.h; sourceTree = "<group>"; };
+		D3CF599017BE235300F49751 /* CCDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDialog.m; sourceTree = "<group>"; };
+		D3CF599317BE481E00F49751 /* CCDialogsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDialogsDataProvider.h; sourceTree = "<group>"; };
+		D3CF599417BE481E00F49751 /* CCDialogsDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDialogsDataProvider.m; sourceTree = "<group>"; };
+		D3CF599717BE4CE900F49751 /* CCDialogCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDialogCell.h; sourceTree = "<group>"; };
+		D3CF599817BE4CE900F49751 /* CCDialogCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDialogCell.m; sourceTree = "<group>"; };
+		D3CF599917BE4CE900F49751 /* CCDialogCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCDialogCell.xib; sourceTree = "<group>"; };
 		D3DF8C2E17900AAA00B072B7 /* CCMessageDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMessageDetailsController.h; sourceTree = "<group>"; };
 		D3DF8C2F17900AAA00B072B7 /* CCMessageDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMessageDetailsController.m; sourceTree = "<group>"; };
 		D3DF8C3017900AAA00B072B7 /* CCMessageDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCMessageDetailsController.xib; sourceTree = "<group>"; };
@@ -3322,8 +3337,8 @@
 		70334A1E17B11E77001D1B57 /* MessageDetailsTransaction */ = {
 			isa = PBXGroup;
 			children = (
-				70334A1F17B11E77001D1B57 /* CCMessageDetailsTransaction.h */,
-				70334A2017B11E77001D1B57 /* CCMessageDetailsTransaction.m */,
+				70334A1F17B11E77001D1B57 /* CCChatTransaction.h */,
+				70334A2017B11E77001D1B57 /* CCChatTransaction.m */,
 			);
 			path = MessageDetailsTransaction;
 			sourceTree = "<group>";
@@ -4030,6 +4045,7 @@
 				70A29D5B17877B94001BC8DD /* CollegeSellectionDataProvider */,
 				D37122C717A121E700A7DF04 /* CommonClassesDataProvider */,
 				7012543D1796F3BA0085247A /* CommentsDataProvider */,
+				D3CF599217BE480400F49751 /* DialogsDataProvider */,
 				70A29D5E17877B94001BC8DD /* DropboxDataProvider */,
 				70A29D6117877B94001BC8DD /* DropboxImageDataProvider */,
 				70A29D6417877B94001BC8DD /* DropboxPDFDataProvider */,
@@ -4349,6 +4365,7 @@
 				70A29DE417877CB5001BC8DD /* College */,
 				701253FE1796E6CF0085247A /* Comment */,
 				70A29DE717877CB5001BC8DD /* DropboxFileInfo */,
+				D3CF598E17BE234700F49751 /* Dialog */,
 				70A29DEA17877CB5001BC8DD /* Education */,
 				D37122EA17A25AC100A7DF04 /* Feedback */,
 				70A29DED17877CB5001BC8DD /* FilterSection */,
@@ -4678,6 +4695,7 @@
 				70B2D05417940245001B0C2C /* ClassesApiProvider */,
 				701254021796E8940085247A /* CommentsAPIProvider */,
 				7021ECD217A7E87000D45B51 /* DeviceTokenAPIProvider */,
+				D3CF598917BE1F8800F49751 /* DialogsAPIProvider */,
 				70B2D05817940245001B0C2C /* DropboxAPIProvider */,
 				70B2D05C17940245001B0C2C /* FacebookAPI */,
 				7025632B179FE3E400B48AA2 /* GroupInvitesAPIProvider */,
@@ -5525,6 +5543,7 @@
 				70B2D1DB17944E39001B0C2C /* CollegeSelectionCell */,
 				701254511796FA3A0085247A /* CommentCell */,
 				70125470179807F50085247A /* DailyTimetableCell */,
+				D3CF599617BE4C9D00F49751 /* DialogCell */,
 				70B2D1DF17944E39001B0C2C /* DropboxCell */,
 				70B2D1E317944E39001B0C2C /* EducationCell */,
 				70B2D1EB17944E39001B0C2C /* GroupCell */,
@@ -7139,6 +7158,44 @@
 			path = ChatDataProvider;
 			sourceTree = "<group>";
 		};
+		D3CF598917BE1F8800F49751 /* DialogsAPIProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3CF598A17BE1F9C00F49751 /* CCDialogsAPIProvider.h */,
+				D3CF598B17BE1F9C00F49751 /* CCDialogsAPIProvider.m */,
+				D3CF598D17BE1FBC00F49751 /* CCDialogsAPIProviderProtocol.h */,
+			);
+			path = DialogsAPIProvider;
+			sourceTree = "<group>";
+		};
+		D3CF598E17BE234700F49751 /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				D3CF598F17BE235300F49751 /* CCDialog.h */,
+				D3CF599017BE235300F49751 /* CCDialog.m */,
+			);
+			path = Dialog;
+			sourceTree = "<group>";
+		};
+		D3CF599217BE480400F49751 /* DialogsDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				D3CF599317BE481E00F49751 /* CCDialogsDataProvider.h */,
+				D3CF599417BE481E00F49751 /* CCDialogsDataProvider.m */,
+			);
+			path = DialogsDataProvider;
+			sourceTree = "<group>";
+		};
+		D3CF599617BE4C9D00F49751 /* DialogCell */ = {
+			isa = PBXGroup;
+			children = (
+				D3CF599717BE4CE900F49751 /* CCDialogCell.h */,
+				D3CF599817BE4CE900F49751 /* CCDialogCell.m */,
+				D3CF599917BE4CE900F49751 /* CCDialogCell.xib */,
+			);
+			path = DialogCell;
+			sourceTree = "<group>";
+		};
 		D3DF8C2D17900A7200B072B7 /* MessageDetailsController */ = {
 			isa = PBXGroup;
 			children = (
@@ -7593,6 +7650,7 @@
 				D340A4F817B91AF5006758B3 /* messageBubbleHighlighted@2x.png in Resources */,
 				D340A4F917B91AF5006758B3 /* messageBubbleTyping.png in Resources */,
 				D340A4FA17B91AF5006758B3 /* messageBubbleTyping@2x.png in Resources */,
+				D3CF599B17BE4CE900F49751 /* CCDialogCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8037,7 +8095,7 @@
 				D35CDF2817B15F030033CD28 /* CCBooksOfferController.m in Sources */,
 				D383D7A617B1A33E0005C0F8 /* CCBookOfferTransaction.m in Sources */,
 				70334A1B17B11B56001D1B57 /* CCChangePasswordViewController.m in Sources */,
-				70334A2117B11E77001D1B57 /* CCMessageDetailsTransaction.m in Sources */,
+				70334A2117B11E77001D1B57 /* CCChatTransaction.m in Sources */,
 				70334A2417B11EC0001D1B57 /* CCChangePasswordTransaction.m in Sources */,
 				7064612E17B192EB001801AF /* MBProgressHUD+Status.m in Sources */,
 				D340A3DC17B3E01B006758B3 /* NSString+CountString.m in Sources */,
@@ -8053,6 +8111,10 @@
 				D340A4D817B91AF5006758B3 /* AMBubbleTableViewController.m in Sources */,
 				D3CF598417BA52F000F49751 /* CCChatDataSource.m in Sources */,
 				D3CF598817BA536800F49751 /* CCChatDataProvider.m in Sources */,
+				D3CF598C17BE1F9C00F49751 /* CCDialogsAPIProvider.m in Sources */,
+				D3CF599117BE235300F49751 /* CCDialog.m in Sources */,
+				D3CF599517BE481E00F49751 /* CCDialogsDataProvider.m in Sources */,
+				D3CF599A17BE4CE900F49751 /* CCDialogCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8083,8 +8145,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Lisa  Backus (H2M3C2JC38)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Lisa  Backus (H2M3C2JC38)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -8099,8 +8161,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "983F4FAB-5189-41B1-8DDE-2B7970797F01";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "983F4FAB-5189-41B1-8DDE-2B7970797F01";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -8117,8 +8179,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Dimalex LLC (27UPT6KC6U)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Dimalex LLC (27UPT6KC6U)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Lisa  Backus (H2M3C2JC38)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Lisa  Backus (H2M3C2JC38)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -8126,8 +8188,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "E1CC89DA-1615-4A34-A7E2-8E8B8B9E5FE7";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E1CC89DA-1615-4A34-A7E2-8E8B8B9E5FE7";
+				PROVISIONING_PROFILE = "983F4FAB-5189-41B1-8DDE-2B7970797F01";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "983F4FAB-5189-41B1-8DDE-2B7970797F01";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -8137,8 +8199,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Lisa  Backus (H2M3C2JC38)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Lisa  Backus (H2M3C2JC38)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusJungle/CampusJungle-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CampusJungle/CampusJungle-Info.plist";
@@ -8177,8 +8239,8 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = CampusJungle;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "983F4FAB-5189-41B1-8DDE-2B7970797F01";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "983F4FAB-5189-41B1-8DDE-2B7970797F01";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -8187,8 +8249,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: M2 Interactive Group, Inc.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: M2 Interactive Group, Inc.";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Lisa  Backus (H2M3C2JC38)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Lisa  Backus (H2M3C2JC38)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusJungle/CampusJungle-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CampusJungle/CampusJungle-Info.plist";
@@ -8227,8 +8289,8 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = CampusJungle;
-				PROVISIONING_PROFILE = "DC3D19E0-F4A4-456F-876D-F2E4CCB3AAA6";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DC3D19E0-F4A4-456F-876D-F2E4CCB3AAA6";
+				PROVISIONING_PROFILE = "983F4FAB-5189-41B1-8DDE-2B7970797F01";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "983F4FAB-5189-41B1-8DDE-2B7970797F01";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

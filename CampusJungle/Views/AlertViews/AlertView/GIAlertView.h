@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "GIAlert.h"
 
-@interface GIAlertView : UIView
+@interface GIAlertView : UIView<UIAppearanceContainer>
 
 @property (nonatomic, weak) GIAlert *alertController;
 

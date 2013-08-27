@@ -10,6 +10,7 @@
 #import "CCBaseViewController.h"
 #import "CCDefaultButtonContainer.h"
 #import "CCClearButton.h"
+#import "GIAlert.h"
 
 @implementation CCAppearanceConfigurator
 

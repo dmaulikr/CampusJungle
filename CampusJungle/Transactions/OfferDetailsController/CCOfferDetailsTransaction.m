@@ -12,6 +12,7 @@
 #import "CCStuffDetailsTransaction.h"
 #import "CCPrivateMessageTransaction.h"
 #import "CCBookDetalsTransaction.h"
+#import "CCChatTransaction.h"
 
 @implementation CCOfferDetailsTransaction
 
@@ -34,7 +35,7 @@
     
     offerDetails.offer = object;
     
-    CCPrivateMessageTransaction *privateMessageTransaction = [CCPrivateMessageTransaction new];
+    CCChatTransaction *privateMessageTransaction = [CCChatTransaction new];
     privateMessageTransaction.navigation = self.navigation;
     offerDetails.answerTransaction = privateMessageTransaction;
     

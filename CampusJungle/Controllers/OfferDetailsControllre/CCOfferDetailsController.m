@@ -15,6 +15,7 @@
 #import "CCBook.h"
 #import "CCUser.h"
 #import "CCBooksAPIProviderProtocol.h"
+#import "CCDialogsAPIProviderProtocol.h"
 
 @interface CCOfferDetailsController ()
 
@@ -24,6 +25,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *stuffNameLabel;
 @property (nonatomic, weak) IBOutlet UIButton *stuffDetailsButton;
 @property (nonatomic, weak) IBOutlet UIButton *senderDetailsButton;
+@property (nonatomic, strong) id <CCDialogsAPIProviderProtocol> ioc_dialogAPIProvider;
 @property (nonatomic, strong) id <CCBooksAPIProviderProtocol> ioc_booksAPIProvider;
 @property (nonatomic, strong) id <CCStuffAPIProviderProtocol> ioc_stuffAPIProvider;
 @property (nonatomic ,strong) id <CCAPIProviderProtocol> ioc_APIProvider;
@@ -143,7 +145,12 @@
 
 - (IBAction)answerButtonDidPressed
 {
-    [self.answerTransaction  performWithObject:self.sender];
+    [self.ioc_dialogAPIProvider loadDialogWithUser:self.sender.uid SuccessHandler:^(id result) {
+        [self.answerTransaction performWithObject:result];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
+   
 }
 
 @end

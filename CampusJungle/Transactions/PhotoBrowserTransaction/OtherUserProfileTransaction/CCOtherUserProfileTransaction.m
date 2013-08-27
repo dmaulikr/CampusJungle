@@ -11,6 +11,7 @@
 #import "CCPrivateMessageTransaction.h"
 #import "CCInboxTransaction.h"
 #import "CCPushToClassControllerTransaction.h"
+#import "CCChatTransaction.h"
 
 @implementation CCOtherUserProfileTransaction
 
@@ -29,6 +30,11 @@
     inboxTransaction.menuController = (JASidePanelController *)[[[[UIApplication sharedApplication] delegate] window] rootViewController];
     
     CCPushToClassControllerTransaction *pushToClassTransaction = [CCPushToClassControllerTransaction new];
+    
+    CCChatTransaction *chatTranasaction = [CCChatTransaction new];
+    chatTranasaction.navigation = self.navigation;
+    otherUserProfileController.chatTransaction = chatTranasaction;
+    
     pushToClassTransaction.inboxTransaction = inboxTransaction;
     pushToClassTransaction.navigation = self.navigation;
     otherUserProfileController.classTransaction = pushToClassTransaction;

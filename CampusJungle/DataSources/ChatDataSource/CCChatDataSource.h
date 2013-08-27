@@ -13,5 +13,6 @@
 @interface CCChatDataSource : NSObject<AMBubbleTableDataSource>
 
 @property (nonatomic, strong) CCChatDataProvider *chatDataProvider;
+@property (nonatomic, strong) NSArray *formatedArrayOfMessages;
 
 @end

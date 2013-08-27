@@ -51,7 +51,10 @@
 	[self.labelTimestamp setFont:self.options[AMOptionsTimestampShortFont]];
 }
 
-\
+- (void)avatarDidPresed
+{
+
+}
 
 - (void)setupView:(NSDictionary*)params
 {
@@ -63,7 +66,7 @@
     
     UITapGestureRecognizer *tapRecoginizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(avatarDidPresed)];
     [self.imageAvatar addGestureRecognizer:tapRecoginizer];
-    
+    self.labelTimestamp.text = @"";
 	[self.labelTimestamp setText:params[@"date"]];
 	
 	CGSize sizeTime = CGSizeZero;

@@ -17,7 +17,7 @@
 #import "CCBackTransaction.h"
 #import "CCGroupMessageTransaction.h"
 #import "CCEditGroupTransaction.h"
-#import "CCMessageDetailsTransaction.h"
+#import "CCChatTransaction.h"
 #import "CCSendGroupInviteTransaction.h"
 #import "CCViewPDFTransaction.h"
 
@@ -56,7 +56,7 @@
     editGroupTransaction.navigation = self.navigation;
     editGroupTransaction.classController = classController;
     
-    CCMessageDetailsTransaction *messageDetailsTransaction = [CCMessageDetailsTransaction new];
+    CCChatTransaction *messageDetailsTransaction = [CCChatTransaction new];
     messageDetailsTransaction.navigation = self.navigation;
     
     CCSendGroupInviteTransaction *sendGroupInviteTransaction = [CCSendGroupInviteTransaction new];

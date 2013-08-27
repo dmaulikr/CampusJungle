@@ -6,31 +6,26 @@
 //  Copyright (c) 2013 111minutes. All rights reserved.
 //
 
-#import "CCMessageDetailsTransaction.h"
+#import "CCChatTransaction.h"
 #import "CCMessageDetailsController.h"
 #import "CCPrivateMessageTransaction.h"
 #import "CCOtherUserProfileTransaction.h"
 #import "CCChatController.h"
 
-@implementation CCMessageDetailsTransaction
+@implementation CCChatTransaction
 
 - (void)performWithObject:(id)object
 {
     NSParameterAssert(self.navigation);
-    CCMessageDetailsController *messageDetailsController = [CCMessageDetailsController new];
-    messageDetailsController.message = object;
-    
+
     CCChatController *chatController = [CCChatController new];
+    chatController.dialog = object;
+    
     
     CCOtherUserProfileTransaction *otherUserProfileTransaction = [CCOtherUserProfileTransaction new];
     otherUserProfileTransaction.navigation = self.navigation;
-    messageDetailsController.senderDetailsTransaction = otherUserProfileTransaction;
+    chatController.otherUserProfileTransaction = otherUserProfileTransaction;
     
-    CCPrivateMessageTransaction *privateMessageTransaction = [CCPrivateMessageTransaction new];
-    privateMessageTransaction.navigation = self.navigation;
-    messageDetailsController.replyTransaction = privateMessageTransaction;
-    
-    //[self.navigation pushViewController:messageDetailsController animated:YES];
     [self.navigation pushViewController:chatController animated:YES];
 }
 

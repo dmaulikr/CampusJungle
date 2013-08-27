@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CCTransactionWithObject.h"
 
-@interface CCMessageDetailsTransaction : NSObject <CCTransactionWithObject>
+@interface CCChatTransaction : NSObject <CCTransactionWithObject>
 
 @property (nonatomic, weak) UINavigationController *navigation;
 

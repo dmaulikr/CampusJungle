@@ -39,14 +39,16 @@
     
     [paginationMessageResponseMapping addPropertyMapping:relationShipResponseMessageMapping];
     
-    RKResponseDescriptor *responseInboxPaginationMessages = [RKResponseDescriptor responseDescriptorWithMapping:paginationMessageResponseMapping pathPattern:CCAPIDefines.loadMyMessages keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    RKResponseDescriptor *responseInboxPaginationMessages = [RKResponseDescriptor responseDescriptorWithMapping:paginationMessageResponseMapping pathPattern:CCAPIDefines.messagesForDialog keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
     RKResponseDescriptor *responseOnCreateMessage = [RKResponseDescriptor responseDescriptorWithMapping:messageMapping pathPattern:CCAPIDefines.postMessage keyPath:@"message" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
 
     NSString *showMessagePath = [NSString stringWithFormat:CCAPIDefines.getMessage, @":messageId"];
     RKResponseDescriptor *responseOnShowMessage = [RKResponseDescriptor responseDescriptorWithMapping:messageMapping pathPattern:showMessagePath keyPath:@"message" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    NSString *messageForDialogPathPattern = [NSString stringWithFormat:CCAPIDefines.messagesForDialog, @":messageID"];
+    RKResponseDescriptor *messageInDialogeDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:paginationMessageResponseMapping pathPattern:messageForDialogPathPattern keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
-    
+    [objectManager addResponseDescriptor:messageInDialogeDescriptor];
     [objectManager addResponseDescriptor:responseInboxPaginationMessages];
     [objectManager addResponseDescriptor:responseOnCreateMessage];
     [objectManager addResponseDescriptor:responseOnShowMessage];
@@ -64,6 +66,7 @@
              @"user_first_name" : @"userFirstName",
              @"user_last_name" : @"userLastName",
              @"user_avatar_retina" : @"userAvatar",
+             @"dialog_id" : @"dialogID",
              };
 }
 

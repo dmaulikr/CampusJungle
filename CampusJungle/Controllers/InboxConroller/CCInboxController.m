@@ -20,10 +20,13 @@
 #import "CCOfferCell.h"
 #import "CCGroupInviteCell.h"
 #import "CCOrdinaryCell.h"
+#import "CCDialogCell.h"
 
 #import "CCMessagesDataProvider.h"
 #import "CCOffersDataProvider.h"
 #import "CCGroupInvitesDataProvider.h"
+
+#import "CCDialogsDataProvider.h"
 
 #define MessagesState 0
 #define GroupInvitesState 1
@@ -38,6 +41,7 @@
 @property (nonatomic, strong) CCMessagesDataProvider *messagesDataProvider;
 @property (nonatomic, strong) CCOffersDataProvider *offersDataProvider;
 @property (nonatomic, strong) CCGroupInvitesDataProvider *groupInvitesDataProvider;
+@property (nonatomic, strong) CCDialogsDataProvider *dialogDataProvider;
 
 @property (nonatomic) NSInteger currentState;
 
@@ -56,11 +60,20 @@
                                      @"personal" : @"YES",
                                      @"direction" : @"received"
                                      };
+    self.dialogDataProvider = [CCDialogsDataProvider new];
     if ([self.ioc_userSession currentUser]){
-        [self configTableWithProvider:messagesDataProvider cellClass:[CCMessageCell class] cellReuseIdentifier:NSStringFromClass([CCMessageCell class])];
+        [self configTableWithProvider:self.dialogDataProvider cellClass:[CCDialogCell class] cellReuseIdentifier:NSStringFromClass([CCMessageCell class])];
     }
     
+   
+    
     self.mainTable.tableFooterView = [UIView new];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.dialogDataProvider loadItems];
 }
 
 - (void)didSelectedCellWithObject:(id)cellObject
@@ -68,7 +81,7 @@
     if ([cellObject isKindOfClass:[CCOffer class]]) {
         [self.offerDetailsTransaction performWithObject:cellObject];
     }
-    else if ([cellObject isKindOfClass:[CCMessage class]]) {
+    else if ([cellObject isKindOfClass:[CCDialog class]]) {
         [self.messageDetailsTransaction performWithObject:cellObject];
     }
 }
@@ -111,7 +124,7 @@
         self.messagesDataProvider = [CCMessagesDataProvider new];
         self.messagesDataProvider.filters = @{@"personal" : @"YES", @"direction" : @"received"};
     }
-    [self configTableWithProvider:self.messagesDataProvider cellClass:[CCMessageCell class] cellReuseIdentifier:NSStringFromClass([CCMessageCell class])];
+    [self configTableWithProvider:self.dialogDataProvider cellClass:[CCDialogCell class] cellReuseIdentifier:NSStringFromClass([CCMessageCell class])];
 }
 
 - (void)setOfferConfiguration

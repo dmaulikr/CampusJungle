@@ -16,5 +16,6 @@
 @property (nonatomic, strong) CCUser *currentUser;
 @property (nonatomic, strong) id <CCTransactionWithObject> sendMessageTransaction;
 @property (nonatomic, strong) id <CCTransactionWithObject> classTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> chatTransaction;
 
 @end

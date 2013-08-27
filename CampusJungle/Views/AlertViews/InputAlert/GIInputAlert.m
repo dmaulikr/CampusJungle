@@ -32,6 +32,8 @@
         self.firstField.transform = CGAffineTransformMakeTranslation(0, self.firstField.bounds.size.height/2);
         self.firstField.returnKeyType = UIReturnKeyDone;
     }
+    [self.firstField setBackground:[[UIImage imageNamed:@"input_field"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)]];
+    [self.secondField setBackground:[[UIImage imageNamed:@"input_field"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)]];
 }
 
 - (void)setupSizesInView:(UIView *)view

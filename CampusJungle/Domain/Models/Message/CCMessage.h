@@ -22,6 +22,9 @@
 @property (nonatomic, strong) NSString *userFirstName;
 @property (nonatomic, strong) NSString *userLastName;
 @property (nonatomic, strong) NSString *userAvatar;
+@property (nonatomic, strong) NSString *dialogID;
+
++ (NSDictionary *)responseMappingDictionary;
 
 @end
 

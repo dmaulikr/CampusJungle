@@ -24,6 +24,7 @@
     if(self.filterTransaction){
         [self setRightNavigationItemWithTitle:@"Filter" selector:@selector(filters)];
     }
+    
 }
 
 - (void)filters

@@ -13,7 +13,9 @@
 
 @property (nonatomic, assign) id<AMBubbleTableDataSource> dataSource;
 @property (nonatomic, assign) id<AMBubbleTableDelegate> delegate;
+@property (nonatomic, strong) UITableView*	tableView;
 
+- (void)reloadTableScrollingToBottomWitoutAnimation;
 - (void)reloadTableScrollingToBottom:(BOOL)scroll;
 - (void)setBubbleTableOptions:(NSDictionary *)options;
 - (void)setTableStyle:(AMBubbleTableStyle)style;

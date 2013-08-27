@@ -124,6 +124,10 @@ const struct CCAPIDefines CCAPIDefines = {
     .makeBookOffer = @"/api/books/%@/offer",
     .changePassword = @"/api/users/me/change_password",
     .cashOutRequest = @"/api/",
+    .myDialogs = @"/api/dialogs",
+    .dialogForUserWithID = @"/api/dialogs/user/%@",
+    .messagesForDialog = @"/api/dialogs/%@",
+    .dialogWithId = @"/api/dialogs/dialog/%@",
 };
 
 const struct CCUserDefines CCUserDefines = {

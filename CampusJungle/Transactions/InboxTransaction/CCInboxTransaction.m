@@ -9,7 +9,7 @@
 #import "CCInboxTransaction.h"
 #import "CCInboxController.h"
 #import "CCOfferDetailsTransaction.h"
-#import "CCMessageDetailsTransaction.h"
+#import "CCChatTransaction.h"
 
 @implementation CCInboxTransaction
 
@@ -24,7 +24,7 @@
     offerDetails.navigation = centralNavigation;
     inboxController.offerDetailsTransaction = offerDetails;
     
-    CCMessageDetailsTransaction *messageDetailsTransaction = [CCMessageDetailsTransaction new];
+    CCChatTransaction *messageDetailsTransaction = [CCChatTransaction new];
     messageDetailsTransaction.navigation = centralNavigation;
     inboxController.messageDetailsTransaction = messageDetailsTransaction;
     

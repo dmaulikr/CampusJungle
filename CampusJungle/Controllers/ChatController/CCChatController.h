@@ -7,7 +7,14 @@
 //
 
 #import "AMBubbleTableViewController.h"
+#import "CCDialog.h"
+#import "CCTransactionWithObject.h"
 
 @interface CCChatController : AMBubbleTableViewController
+
+@property (nonatomic, strong) CCDialog *dialog;
+@property (nonatomic, strong) id <CCTransactionWithObject> otherUserProfileTransaction;
+
+- (void)loadNewMessages;
 
 @end

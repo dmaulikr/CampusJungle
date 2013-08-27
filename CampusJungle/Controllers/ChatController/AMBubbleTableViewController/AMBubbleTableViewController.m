@@ -14,15 +14,16 @@
 #define kButtonWidth 78.0f
 
 
-@interface AMBubbleTableViewController () <UITableViewDataSource, UITableViewDelegate, UITextViewDelegate>
+@interface AMBubbleTableViewController () <BubbleCellDelegate, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate>
 
 @property (strong, nonatomic) NSMutableDictionary*	options;
-@property (nonatomic, strong) UITableView*	tableView;
+
 @property (nonatomic, strong) UIImageView*	imageInput;
 @property (nonatomic, strong) UITextView*	textView;
 @property (nonatomic, strong) UIImageView*	imageInputBack;
 @property (nonatomic, strong) UIButton*		buttonSend;
-@property (nonatomic, strong) NSDateFormatter* dateFormatter;
+@property (nonatomic, strong) NSDateFormatter *shortDateFormatter;
+@property (nonatomic, strong) NSDateFormatter *longDateFormater;
 @property (nonatomic, assign) float			previousTextFieldHeight;
 
 @end
@@ -32,7 +33,16 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-	[self setupView];
+	[self setupView]; 
+    [self.tableView registerClass:[AMBubbleTableCell class] forCellReuseIdentifier:@"Cell"];
+    self.shortDateFormatter = [[NSDateFormatter alloc] init];
+    [self.shortDateFormatter setLocale:[NSLocale currentLocale]];
+    [self.shortDateFormatter setDateFormat:@"HH:mm"];
+    
+    self.longDateFormater = [[NSDateFormatter alloc] init];
+    [self.longDateFormater setLocale:[NSLocale currentLocale]];
+    [self.longDateFormater setDateStyle:NSDateFormatterMediumStyle];	
+    [self.longDateFormater setTimeStyle:NSDateFormatterShortStyle];
 }
 
 - (void)setBubbleTableOptions:(NSDictionary *)options
@@ -187,42 +197,33 @@
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	AMBubbleCellType type = [self.dataSource cellTypeForRowAtIndexPath:indexPath];
-	NSString* cellID = [NSString stringWithFormat:@"cell_%d", type];
-	NSString* text = [self.dataSource textForRowAtIndexPath:indexPath];
+	
 	NSDate* date = [self.dataSource timestampForRowAtIndexPath:indexPath];
-	AMBubbleTableCell* cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-	
-	UIImage* avatar;
-	UIColor* color;
-	
-	if ([self.dataSource respondsToSelector:@selector(usernameColorForRowAtIndexPath:)]) {
-		color = [self.dataSource usernameColorForRowAtIndexPath:indexPath];
-	}
-	if ([self.dataSource respondsToSelector:@selector(avatarForRowAtIndexPath:)]) {
-		avatar = [self.dataSource avatarForRowAtIndexPath:indexPath];
-	}
+	AMBubbleTableCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+	cell.delegate = self;
+    cell.index = indexPath.row;
 
-	
-	if (cell == nil) {
-		cell = [[AMBubbleTableCell alloc] initWithOptions:self.options
-										  reuseIdentifier:cellID];
-	}
-		
 	NSString* stringDate;
 	if (type == AMBubbleCellTimestamp) {
-		[self.dateFormatter setDateStyle:NSDateFormatterMediumStyle];	// Jan 1, 2000
-		[self.dateFormatter setTimeStyle:NSDateFormatterShortStyle];	// 1:23 PM
-		stringDate = [self.dateFormatter stringFromDate:date];
+		stringDate = [self.longDateFormater stringFromDate:date];
 		[cell setupCellWithType:type
 					  withWidth:self.tableView.frame.size.width
 					  andParams:@{ @"date": stringDate }];
 	} else {
-		[self.dateFormatter setDateFormat:@"HH:mm"];					// 13:23
+        UIImage* avatar;
+        UIColor* color;
+        if ([self.dataSource respondsToSelector:@selector(usernameColorForRowAtIndexPath:)]) {
+            color = [self.dataSource usernameColorForRowAtIndexPath:indexPath];
+        }
+        if ([self.dataSource respondsToSelector:@selector(avatarForRowAtIndexPath:)]) {
+            avatar = [self.dataSource avatarForRowAtIndexPath:indexPath];
+        }
 		NSString* username;
 		if ([self.dataSource respondsToSelector:@selector(usernameForRowAtIndexPath:)]) {
 			username = [self.dataSource usernameForRowAtIndexPath:indexPath];
 		}
-		stringDate = [self.dateFormatter stringFromDate:date];
+        NSString* text = [self.dataSource textForRowAtIndexPath:indexPath];
+		stringDate = [self.shortDateFormatter stringFromDate:date];
 		[cell setupCellWithType:type
 					  withWidth:self.tableView.frame.size.width
 					  andParams:@{
@@ -417,18 +418,19 @@
 	}
 }
 
-- (NSDateFormatter*)dateFormatter
+- (void)reloadTableScrollingToBottomWitoutAnimation
 {
-	if (_dateFormatter == nil) {
-		_dateFormatter = [[NSDateFormatter alloc] init];
-		[_dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:[[NSLocale currentLocale] localeIdentifier]]];
-	}
-	return _dateFormatter;
+	[self.tableView reloadData];
+    [self scrollToBottomAnimated:NO];
 }
+
+
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
 	[self.tableView reloadData];
 }
+
+
 
 @end

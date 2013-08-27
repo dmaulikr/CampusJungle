@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "GIAlertButton.h"
 
-@interface GIAlert : UIViewController<ObjectRemovingProtocol>
+@interface GIAlert : UIViewController<ObjectRemovingProtocol,UIAppearanceContainer>
 @property (nonatomic,strong) IBOutlet UILabel* titleLabel;
 @property (nonatomic,strong) IBOutlet UITextView* message;
 @property (nonatomic,strong) IBOutlet UIImageView* backgroundImage;

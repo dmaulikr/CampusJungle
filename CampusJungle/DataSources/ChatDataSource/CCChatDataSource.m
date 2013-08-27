@@ -12,7 +12,7 @@
 
 @interface CCChatDataSource()
 
-@property (nonatomic, strong) NSArray *formatedArrayOfMessages;
+
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
 
 @end
@@ -31,7 +31,7 @@
     if([currentMessage isKindOfClass:[NSDate class]]){
         return AMBubbleCellTimestamp;
     }
-    if(currentMessage.receiverID == [[self.ioc_userSession currentUser] uid]){
+    if(currentMessage.receiverID.intValue != [[[self.ioc_userSession currentUser] uid] intValue]){
         return AMBubbleCellSent;
     } else {
         return AMBubbleCellReceived;
@@ -40,22 +40,38 @@
 
 - (NSString *)textForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [(CCMessage *)self.formatedArrayOfMessages[indexPath.row] text];
+    CCMessage *currentMessage = self.formatedArrayOfMessages[indexPath.row];
+    if([currentMessage isKindOfClass:[NSDate class]]){
+        return @"";
+    }
+    return currentMessage.text;
 }
 
 - (NSDate *)timestampForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [(CCMessage *)self.formatedArrayOfMessages[indexPath.row] createdAt];
+    CCMessage *currentMessage = self.formatedArrayOfMessages[indexPath.row];
+    if([currentMessage isKindOfClass:[NSDate class]]){
+        return (NSDate *)currentMessage;
+    }
+    return currentMessage.createdAt;
 }
 
 - (NSString *)avatarForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,[(CCMessage *)self.formatedArrayOfMessages[indexPath.row] userAvatar]];
+    CCMessage *currentMessage = self.formatedArrayOfMessages[indexPath.row];
+    if([currentMessage isKindOfClass:[NSDate class]]){
+        return nil;
+    }
+    return [NSString stringWithFormat:@"%@%@",CCAPIDefines.baseURL,currentMessage.userAvatar];
 }
 
 - (NSString*)usernameForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [NSString stringWithFormat:@"%@%@",[(CCMessage *)self.formatedArrayOfMessages[indexPath.row] userFirstName],[(CCMessage *)self.formatedArrayOfMessages[indexPath.row] userLastName]];
+    CCMessage *currentMessage = self.formatedArrayOfMessages[indexPath.row];
+    if([currentMessage isKindOfClass:[NSDate class]]){
+        return nil;
+    }
+    return [NSString stringWithFormat:@"%@ %@",currentMessage.userFirstName,currentMessage.userLastName];
 }
 
 - (UIColor*)usernameColorForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -65,14 +81,16 @@
 
 - (void)formateMessagesFromDataProvider
 {
-    NSMutableArray *rawMessages = self.chatDataProvider.arrayOfItems.mutableCopy;
+    NSMutableArray *rawMessages = self.chatDataProvider.arrayOfItems.reverseObjectEnumerator.allObjects.mutableCopy;
     NSInteger numberOfMessages = rawMessages.count;
     for (int i = numberOfMessages - 1; i > 1; i--){
         if(![self isSameDayWithDate1:[(CCMessage *)rawMessages[i] createdAt] date2:[(CCMessage *)rawMessages[i - 1] createdAt]]){
             [rawMessages insertObject:[(CCMessage *)rawMessages[i] createdAt] atIndex:i];
         }
     }
-    [rawMessages insertObject:[(CCMessage *)rawMessages[0] createdAt] atIndex:0];
+    if(rawMessages.count){
+        [rawMessages insertObject:[(CCMessage *)rawMessages[0] createdAt] atIndex:0];
+    }
     self.formatedArrayOfMessages = rawMessages;
 }
 
@@ -87,5 +105,7 @@
     [comp1 month] == [comp2 month] &&
     [comp1 year]  == [comp2 year];
 }
+
+
 
 @end

@@ -15,22 +15,26 @@
 
 @interface AMBubbleTableCell ()
 
-@property (nonatomic, weak)   NSDictionary* options;
+@property (nonatomic, strong)   NSDictionary* options;
 @property (nonatomic, strong) UILabel*		labelText;
 @property (nonatomic, strong) UIImageView*	imageBackground;
 @property (nonatomic, strong) UILabel*		labelUsername;
 @property (nonatomic, strong) UIView<AMBubbleAccessory>*		bubbleAccessory;
 
+
 @end
 
 @implementation AMBubbleTableCell
 
-- (id)initWithOptions:(NSDictionary*)options reuseIdentifier:(NSString *)reuseIdentifier
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
+    NSMutableDictionary *options = [[AMBubbleGlobals defaultOptions] mutableCopy];
+    [options addEntriesFromDictionary:[AMBubbleGlobals defaultStyleSquare]];
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     if (self) {
 		self.options = options;
-		self.backgroundColor = [UIColor clearColor];
+		self.backgroundColor = [UIColor whiteColor];
 		self.selectionStyle = UITableViewCellSelectionStyleNone;
 		self.accessoryType = UITableViewCellAccessoryNone;
 		self.labelText = [[UILabel alloc] init];
@@ -41,38 +45,43 @@
 		[self.contentView addSubview:self.imageBackground];
 		[self.imageBackground addSubview:self.labelText];
 		[self.imageBackground addSubview:self.labelUsername];
-		[self.contentView addSubview:self.bubbleAccessory];
+		
+        [self.contentView addSubview:self.bubbleAccessory];
+        
+        UITapGestureRecognizer *tapRecoginizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(avatarDidPresed:)];
+        [self addGestureRecognizer:tapRecoginizer];
+        
+        UIFont* textFont = self.options[AMOptionsBubbleTextFont];
+        [self.labelText setBackgroundColor:[UIColor clearColor]];
+        [self.labelText setFont:textFont];
+        [self.labelText setNumberOfLines:0];
+        [self.labelText setTextColor:self.options[AMOptionsBubbleTextColor]];
     }
     return self;
 }
 
 - (void)avatarDidPresed:(UIGestureRecognizer *)recognizer
 {
-    
+    if([self.delegate respondsToSelector:@selector(didSelectCellWithInxex:)]){
+        [self.delegate didSelectCellWithInxex:self.index];
+    }
 }
 
 - (void)setupCellWithType:(AMBubbleCellType)type withWidth:(float)width andParams:(NSDictionary*)params
 {
-    UITapGestureRecognizer *tapRecoginizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(avatarDidPresed:)];
-    [self addGestureRecognizer:tapRecoginizer];
-	UIFont* textFont = self.options[AMOptionsBubbleTextFont];
-		
-	// Configure the cell to show the message in a bubble. Layout message cell & its subviews.
+    UIFont* textFont = self.options[AMOptionsBubbleTextFont];
+
 	CGSize sizeText = [params[@"text"] sizeWithFont:textFont
 								  constrainedToSize:CGSizeMake(kMessageTextWidth, CGFLOAT_MAX)
 									  lineBreakMode:NSLineBreakByWordWrapping];
-	
-	
-	[self.labelText setBackgroundColor:[UIColor clearColor]];
-	[self.labelText setFont:textFont];
-	[self.labelText setNumberOfLines:0];
-	[self.labelText setTextColor:self.options[AMOptionsBubbleTextColor]];
-	
-	[self.bubbleAccessory setupView:params];
-	
-	// Right Bubble
-	if (type == AMBubbleCellSent) {
+   self.labelUsername.text = @"";
+    [self.bubbleAccessory setupView:params];
 
+	if (type == AMBubbleCellSent) {
+        [self.labelText setTextAlignment:NSTextAlignmentLeft];
+        [self.labelText setTextColor:self.options[AMOptionsBubbleTextColor]];
+        [self.labelText setFont:textFont];
+        [self.imageBackground addSubview:self.labelText];
 		[self.bubbleAccessory setFrame:CGRectMake(width - self.bubbleAccessory.frame.size.width - 2,
 												  2,
 												  self.bubbleAccessory.frame.size.width,
@@ -108,7 +117,10 @@
 	}
 	
 	if (type == AMBubbleCellReceived) {
-		
+        [self.labelText setTextAlignment:NSTextAlignmentLeft];
+        [self.labelText setTextColor:self.options[AMOptionsBubbleTextColor]];
+        [self.labelText setFont:textFont];
+		[self.imageBackground addSubview:self.labelText];
 		[self.bubbleAccessory setFrame:CGRectMake(2,
 												  2,
 												  self.bubbleAccessory.frame.size.width,
@@ -155,13 +167,12 @@
 	}
 	
 	if (type == AMBubbleCellTimestamp) {
-		
 		[self.bubbleAccessory setFrame:CGRectZero];
-		
+		[self addSubview: self.labelText];
 		self.labelText.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
 		[self.labelText setTextAlignment:NSTextAlignmentCenter];
         [self.labelText setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin];
-		[self.labelText setFont:self.options[AMOptionsTimestampFont]];
+		[self.labelText setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:13]];
 		[self.labelText setTextColor:[UIColor colorWithRed:100.0f/255.0f green:120.0f/255.0f blue:150.0f/255.0f alpha:1]];
 		[self.labelText setText:params[@"text"]];
 		[self.imageBackground setFrame:CGRectZero];
@@ -182,7 +193,6 @@
 	}
 	
 	[self.imageBackground setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin];
-	
 	[self.labelText setFrame:textFrame];
 	[self.labelText setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin];
 	[self.labelText setText:text];

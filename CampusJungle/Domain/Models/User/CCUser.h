@@ -26,5 +26,5 @@
 @property (nonatomic, assign) BOOL isSelected;
 
 - (double)totalWallet;
-
++ (NSDictionary *) responseMappingDictionary;
 @end

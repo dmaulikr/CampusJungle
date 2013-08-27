@@ -11,6 +11,8 @@
 #import "CCUIImageHelper.h"
 #import "CCCommonClassesDataProvider.h"
 #import "CCOrdinaryCell.h"
+#import "CCDialogsAPIProviderProtocol.h"
+#import "CCStandardErrorHandler.h"
 
 @interface CCOtherUserProfileController ()
 
@@ -19,6 +21,8 @@
 @property (nonatomic, strong) IBOutlet UILabel *lastNameLabel;
 @property (nonatomic, weak) IBOutlet UIView *rateContainer;
 @property (nonatomic, strong) DYRateView *rateView;
+@property (nonatomic, strong) id <CCDialogsAPIProviderProtocol> ioc_dialogAPIProvider;
+
 
 - (IBAction)sendMessage;
 - (IBAction)reportButtonPressed;
@@ -52,7 +56,12 @@
 
 - (IBAction)sendMessage
 {
-    [self.sendMessageTransaction performWithObject:self.currentUser];
+    [self.ioc_dialogAPIProvider loadDialogWithUser:self.currentUser.uid SuccessHandler:^(id result) {
+        [self.chatTransaction performWithObject:result];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
+    //[self.sendMessageTransaction performWithObject:self.currentUser];
 }
 
 - (BOOL)isNeedToLeftSelected

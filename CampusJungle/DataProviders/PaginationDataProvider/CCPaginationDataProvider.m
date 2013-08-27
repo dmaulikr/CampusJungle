@@ -14,6 +14,9 @@
 
 - (void)loadItems
 {
+    if(self.beforeLoadingFilter){
+        self.beforeLoadingFilter();
+    }
     self.currentPage = firstPage;
     self.isCurrentlyLoad = YES;
     __weak CCPaginationDataProvider *weakSelf = self;
@@ -28,6 +31,9 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.tableViewDidReloadData object:nil];
         
         weakSelf.isCurrentlyLoad = NO;
+        if(self.afterLoadingFilter){
+            self.afterLoadingFilter();
+        }
     }];
     self.currentPage++;
 }
