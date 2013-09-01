@@ -425,4 +425,22 @@
     }];
 }
 
+- (void)requestMoneyOnEmail:(NSString *)email amount:(NSString *)amount successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    [self setAuthorizationToken];
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [objectManager postObject:nil
+                         path:CCAPIDefines.requestMoney
+                   parameters:@{
+                                    @"email" : email,
+                                    @"amount" : amount,
+                                }
+                      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                                                            successHandler(nil);
+                                                                             }
+                      failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                                                                errorHandler(error);
+                                                                             }];
+}
+
 @end

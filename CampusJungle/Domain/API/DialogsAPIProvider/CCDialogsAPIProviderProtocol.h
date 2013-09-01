@@ -16,4 +16,6 @@
 
 - (void)loadDialogWithID:(NSString *)dialogID SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
 
+- (void)loadDialogForGroupWithID:(NSString *)groupID SuccessHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler;
+
 @end

@@ -18,6 +18,7 @@
 #import "CCViewMarketNotesListTransaction.h"
 #import "CCMarketNotesProvider.h"
 #import "CCSelectFiltersTranaction.h"
+#import "CCCreateNotesTransaction.h"
 
 @implementation CCNotesMarketTransaction
 

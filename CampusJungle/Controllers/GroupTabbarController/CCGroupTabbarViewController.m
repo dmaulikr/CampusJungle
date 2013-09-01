@@ -25,7 +25,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.buttons = @[self.groupmatesButton, self.locationButton, self.questionsButton, self.messagesButton];
+    self.buttons = @[self.groupmatesButton, self.locationButton, self.questionsButton];
     self.groupmatesButton.tag = CCClassTabbarButtonsIdentifierClassmate;
     self.locationButton.tag = CCClassTabbarButtonsIdentifierLocations;
     self.questionsButton.tag = CCClassTabbarButtonsIdentifierQuestions;

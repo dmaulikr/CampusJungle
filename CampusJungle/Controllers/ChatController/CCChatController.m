@@ -72,16 +72,28 @@
 
 - (void)didSendText:(NSString*)text
 {
-    [self.ioc_messageAPIProvider sendMessage:text
-                                      toUser:self.dialog.interlocutor.uid
-                                    dialogID:self.dialog.dialogID
-                              successHandler:^(RKMappingResult *result) {
-                                  self.isFirstLoading = YES;
-                                  [self.chatDataSource.chatDataProvider loadItems];
-                                }
-                                errorHandler:^(NSError *error) {
-                                    [CCStandardErrorHandler showErrorWithError:error];
-                                }];
+    if(!self.dialog.groupID){
+        [self.ioc_messageAPIProvider sendMessage:text
+                                          toUser:self.dialog.interlocutor.uid
+                                        dialogID:self.dialog.dialogID
+                                  successHandler:^(RKMappingResult *result) {
+                                      self.isFirstLoading = YES;
+                                      [self.chatDataSource.chatDataProvider loadItems];
+                                  }
+                                    errorHandler:^(NSError *error) {
+                                        [CCStandardErrorHandler showErrorWithError:error];
+                                    }];
+    } else {
+        [self.ioc_messageAPIProvider sendMessage:text
+                                   ToGroupWithId:self.dialog.groupID
+                                        dialogID:self.dialog.dialogID
+                                  successHandler:^(RKMappingResult *result) {
+                                      self.isFirstLoading = YES;
+                                      [self.chatDataSource.chatDataProvider loadItems];
+                                  } errorHandler:^(NSError *error) {
+                                      [CCStandardErrorHandler showErrorWithError:error];
+                                  }];
+    }
     
 	[super reloadTableScrollingToBottom:NO];
 }
@@ -98,14 +110,13 @@
         [self.chatDataSource.chatDataProvider loadMoreItems];
     }
     self.contentSizeBeforeLoading = self.tableView.contentSize.height;
-    
 }
 
 - (void)didSelectCellWithInxex:(NSInteger)index
 {
     CCMessage * currentObject = self.chatDataSource.formatedArrayOfMessages[index];
     if(![currentObject isKindOfClass: [CCMessage class]]) return;
-    if(currentObject.receiverID.intValue == [[[self.ioc_userSession currentUser] uid] intValue]){
+    if(currentObject.senderID.intValue != [[[self.ioc_userSession currentUser] uid] intValue]){
         [self.ioc_apiProvider getUserWithID:currentObject.senderID
                              successHandler:^(RKMappingResult *result) {
             [self.otherUserProfileTransaction performWithObject:result.firstObject];

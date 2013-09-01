@@ -56,4 +56,6 @@
 
 - (void)changePasswordWithParams:(NSDictionary *)params successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 
+- (void)requestMoneyOnEmail:(NSString *)email amount:(NSString *)amount successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
+
 @end

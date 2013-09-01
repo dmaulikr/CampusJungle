@@ -25,6 +25,7 @@
 @property(nonatomic, strong) id <CCTransactionWithObject> messageDetailsTransaction;
 @property(nonatomic, strong) id <CCTransactionWithObject> sendGroupInviteTransaction;
 @property(nonatomic, strong) id <CCTransactionWithObject> viewPdfAttachmentTransaction;
+@property(nonatomic, strong) id <CCTransactionWithObject> groupChatTransaction;
 @property(nonatomic, strong) id <CCTransaction> backTransaction;
 
 - (void)setGroup:(CCGroup *)group;

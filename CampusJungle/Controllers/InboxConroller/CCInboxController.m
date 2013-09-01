@@ -73,7 +73,9 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self.dialogDataProvider loadItems];
+    if ([self.ioc_userSession currentUser]){
+        [self.dialogDataProvider loadItems];
+    }
 }
 
 - (void)didSelectedCellWithObject:(id)cellObject

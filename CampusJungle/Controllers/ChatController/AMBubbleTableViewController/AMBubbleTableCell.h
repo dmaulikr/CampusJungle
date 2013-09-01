@@ -17,9 +17,9 @@
 @interface AMBubbleTableCell : UITableViewCell
 
 @property (nonatomic) NSInteger index;
+
 - (id)initWithOptions:(NSDictionary*)options reuseIdentifier:(NSString *)reuseIdentifier;
 - (void)setupCellWithType:(AMBubbleCellType)type withWidth:(float)width andParams:(NSDictionary*)params;
-
 
 @property (nonatomic, weak) id <BubbleCellDelegate> delegate;
 

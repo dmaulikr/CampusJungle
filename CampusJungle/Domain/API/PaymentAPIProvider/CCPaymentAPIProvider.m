@@ -35,7 +35,7 @@
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
    
     [objectManager postObject:nil
-                         path:CCAPIDefines.cashOutRequest
+                         path:CCAPIDefines.requestMoney
                    parameters:params success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         successHandler(mappingResult.firstObject);
     }

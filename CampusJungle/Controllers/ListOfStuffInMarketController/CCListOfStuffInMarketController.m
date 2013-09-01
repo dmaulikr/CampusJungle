@@ -10,17 +10,13 @@
 #import "CCOrdinaryCell.h"
 #import "CCStuffCell.h"
 #import "CCMarketBooksDataProvider.h"
+#import "CCNavigationBarViewHelper.h"
 
 @interface CCListOfStuffInMarketController ()
 
 @end
 
 @implementation CCListOfStuffInMarketController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    return  [super initWithNibName:@"CCListOfNotesInMarketController" bundle:nibBundleOrNil];
-}
 
 - (void)viewDidLoad
 {
@@ -33,6 +29,16 @@
     } else {
         self.title = @"Stuff";
         self.searchBar.placeholder = @"Search Stuff";
+    }
+    self.navigationItem.rightBarButtonItem = [CCNavigationBarViewHelper plusButtonWithTarget:self action:@selector(plus)];
+}
+
+- (void)plus
+{
+    if([self.tableProvider isKindOfClass:[CCMarketBooksDataProvider class]]){
+        [self.createBookTransaction perform];
+    } else {
+        [self.createStuffTransaction perform];
     }
 }
 
@@ -48,6 +54,12 @@
 - (BOOL)isNeedToLeftSelected
 {
     return NO;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.tableProvider loadItems];
 }
 
 

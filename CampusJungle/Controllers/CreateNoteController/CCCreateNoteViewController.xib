@@ -104,7 +104,7 @@
 								<int key="NSvFlags">293</int>
 								<string key="NSFrame">{{14, 179}, {286, 30}}</string>
 								<reference key="NSSuperview" ref="191373211"/>
-								<reference key="NSNextKeyView" ref="672671560"/>
+								<reference key="NSNextKeyView" ref="486023234"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -136,32 +136,6 @@
 									<double key="NSSize">14</double>
 									<int key="NSfFlags">16</int>
 								</object>
-							</object>
-							<object class="IBUITextField" id="672671560">
-								<reference key="NSNextResponder" ref="191373211"/>
-								<int key="NSvFlags">293</int>
-								<string key="NSFrame">{{14, 217}, {135, 30}}</string>
-								<reference key="NSSuperview" ref="191373211"/>
-								<reference key="NSNextKeyView" ref="486023234"/>
-								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<bool key="IBUIOpaque">NO</bool>
-								<bool key="IBUIClipsSubviews">YES</bool>
-								<int key="IBUITag">2</int>
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<int key="IBUIContentVerticalAlignment">0</int>
-								<string key="IBUIText"/>
-								<int key="IBUIBorderStyle">3</int>
-								<string key="IBUIPlaceholder">Price</string>
-								<reference key="IBUITextColor" ref="282817283"/>
-								<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
-								<float key="IBUIMinimumFontSize">17</float>
-								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
-									<int key="IBUIKeyboardType">8</int>
-									<int key="IBUIReturnKeyType">4</int>
-									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								</object>
-								<reference key="IBUIFontDescription" ref="763106703"/>
-								<reference key="IBUIFont" ref="713239705"/>
 							</object>
 							<object class="IBUIButton" id="482997582">
 								<reference key="NSNextResponder" ref="191373211"/>
@@ -219,18 +193,18 @@
 							<object class="IBUITextField" id="486023234">
 								<reference key="NSNextResponder" ref="191373211"/>
 								<int key="NSvFlags">293</int>
-								<string key="NSFrame">{{163, 217}, {137, 30}}</string>
+								<string key="NSFrame">{{14, 217}, {137, 30}}</string>
 								<reference key="NSSuperview" ref="191373211"/>
 								<reference key="NSNextKeyView" ref="466380157"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
-								<int key="IBUITag">3</int>
+								<int key="IBUITag">2</int>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentVerticalAlignment">0</int>
 								<string key="IBUIText"/>
 								<int key="IBUIBorderStyle">3</int>
-								<string key="IBUIPlaceholder">Full access price</string>
+								<string key="IBUIPlaceholder">Price</string>
 								<reference key="IBUITextColor" ref="282817283"/>
 								<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 								<float key="IBUIMinimumFontSize">17</float>
@@ -425,14 +399,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">priceField</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="672671560"/>
-					</object>
-					<int key="connectionID">39</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">fullAccessPriceField</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="486023234"/>
@@ -512,14 +478,6 @@
 						<reference key="destination" ref="372490531"/>
 					</object>
 					<int key="connectionID">102</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">delegate</string>
-						<reference key="source" ref="672671560"/>
-						<reference key="destination" ref="372490531"/>
-					</object>
-					<int key="connectionID">103</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -609,7 +567,6 @@
 							<reference ref="543434818"/>
 							<reference ref="466380157"/>
 							<reference ref="486023234"/>
-							<reference ref="672671560"/>
 							<reference ref="482997582"/>
 							<reference ref="952569665"/>
 							<reference ref="659763287"/>
@@ -640,12 +597,6 @@
 						<int key="objectID">51</int>
 						<reference key="object" ref="486023234"/>
 						<reference key="parent" ref="191373211"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">30</int>
-						<reference key="object" ref="672671560"/>
-						<reference key="parent" ref="191373211"/>
-						<string key="objectName">Price Field</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">49</int>
@@ -696,7 +647,6 @@
 				<string key="101.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="111.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="22.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="30.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="43.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="45.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

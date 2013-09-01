@@ -45,7 +45,6 @@
 						<string key="NSFrameSize">{320, 548}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor" id="878642311">
 							<int key="NSColorSpace">3</int>
@@ -159,7 +158,6 @@
 						<string key="NSFrame">{{167, 111}, {144, 44}}</string>
 						<reference key="NSSuperview" ref="915259009"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -522,6 +520,7 @@
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="472585328"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<int key="IBUIContentMode">1</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
@@ -603,7 +602,6 @@
 						<string key="NSFrame">{{203, 160}, {110, 32}}</string>
 						<reference key="NSSuperview" ref="845167541"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -1177,37 +1175,17 @@
 					<string key="className">CCUserProfile</string>
 					<string key="superclassName">CCTableBaseViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="avatarDidPressed">id</string>
-						<string key="logout">id</string>
 						<string key="manageWalletButtonDidPressed">id</string>
 						<string key="myMyBooksButtonDidPressed">id</string>
-						<string key="myNotesButtonDidPressed">id</string>
-						<string key="myStuffButtonDidPreessed">id</string>
 						<string key="settingsButtonDidPressed">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="avatarDidPressed">
-							<string key="name">avatarDidPressed</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="logout">
-							<string key="name">logout</string>
-							<string key="candidateClassName">id</string>
-						</object>
 						<object class="IBActionInfo" key="manageWalletButtonDidPressed">
 							<string key="name">manageWalletButtonDidPressed</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="myMyBooksButtonDidPressed">
 							<string key="name">myMyBooksButtonDidPressed</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="myNotesButtonDidPressed">
-							<string key="name">myNotesButtonDidPressed</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="myStuffButtonDidPreessed">
-							<string key="name">myStuffButtonDidPreessed</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="settingsButtonDidPressed">

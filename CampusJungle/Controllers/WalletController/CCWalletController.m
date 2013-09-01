@@ -21,7 +21,7 @@
 #define secondPriceLevel 2
 #define thirdPriceLevel 3
 
-#define minimalAmoumt 1000.
+#define minimalAmoumt 10.
 
 @interface CCWalletController ()<PayPalPaymentDelegate, CCStoreObserverDelegateProtocol>
 
@@ -174,7 +174,7 @@
 - (IBAction)requestMoneyButtonPressed
 {
     if([self validateFields]){
-        [self.ioc_paymentAPIProvider makeCashOutRequestWithAmount:self.amountField.text
+        [self.ioc_paymentAPIProvider makeCashOutRequestWithAmount:[@(self.amountField.text.floatValue * 100) stringValue]
                                                           onEmail:self.payPalEmailField.text
                                                    successHandler:^(id result){
             [SVProgressHUD showSuccessWithStatus:@"Request created"];
@@ -196,7 +196,7 @@
         return NO;
     }
     if(self.amountField.text.floatValue < minimalAmoumt){
-        [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:@"Minimal amount that can be derived is 1 000"];
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsMessages.error message:@"Minimal amount that can be derived is 1 0"];
         return NO;
     }
     return YES;

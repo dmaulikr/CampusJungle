@@ -10,6 +10,6 @@
 
 @interface AMBubbleAccessoryView : UIView<AMBubbleAccessory>
 
-
+@property (nonatomic, strong)  NSDictionary* options;
 
 @end

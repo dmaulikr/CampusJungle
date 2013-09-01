@@ -632,6 +632,7 @@
 		AF3066E8570844AE8EC2A396 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA3BC22A4CB480B8934991C /* libPods.a */; };
 		D3039B78176880F800621CAC /* pending.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B76176880F800621CAC /* pending.png */; };
 		D3039B79176880F800621CAC /* pending@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3039B77176880F800621CAC /* pending@2x.png */; };
+		D33DE0B817D3DC2A0094E31D /* CCListOfStuffInMarketController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D33DE0B717D3DC2A0094E31D /* CCListOfStuffInMarketController.xib */; };
 		D340A3DC17B3E01B006758B3 /* NSString+CountString.m in Sources */ = {isa = PBXBuildFile; fileRef = D340A3DB17B3E01B006758B3 /* NSString+CountString.m */; };
 		D340A3E217B51625006758B3 /* CCStuffMarketTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D340A3E117B51625006758B3 /* CCStuffMarketTransaction.m */; };
 		D340A3E517B52A3C006758B3 /* CCBookMarketTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D340A3E417B52A3C006758B3 /* CCBookMarketTransaction.m */; };
@@ -1839,6 +1840,7 @@
 		AA28D9F1DF3A0CA781D3DF0A /* CCWelcomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWelcomeController.m; sourceTree = "<group>"; };
 		D3039B76176880F800621CAC /* pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pending.png; sourceTree = "<group>"; };
 		D3039B77176880F800621CAC /* pending@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pending@2x.png"; sourceTree = "<group>"; };
+		D33DE0B717D3DC2A0094E31D /* CCListOfStuffInMarketController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCListOfStuffInMarketController.xib; sourceTree = "<group>"; };
 		D340A3DA17B3E01B006758B3 /* NSString+CountString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CountString.h"; sourceTree = "<group>"; };
 		D340A3DB17B3E01B006758B3 /* NSString+CountString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CountString.m"; sourceTree = "<group>"; };
 		D340A3E017B51625006758B3 /* CCStuffMarketTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCStuffMarketTransaction.h; sourceTree = "<group>"; };
@@ -3844,6 +3846,7 @@
 		70A29C95178778AB001BC8DD /* ListOfStuffInMarketController */ = {
 			isa = PBXGroup;
 			children = (
+				D33DE0B717D3DC2A0094E31D /* CCListOfStuffInMarketController.xib */,
 				70A29C96178778AB001BC8DD /* CCListOfStuffInMarketController.h */,
 				70A29C97178778AB001BC8DD /* CCListOfStuffInMarketController.m */,
 			);
@@ -7651,6 +7654,7 @@
 				D340A4F917B91AF5006758B3 /* messageBubbleTyping.png in Resources */,
 				D340A4FA17B91AF5006758B3 /* messageBubbleTyping@2x.png in Resources */,
 				D3CF599B17BE4CE900F49751 /* CCDialogCell.xib in Resources */,
+				D33DE0B817D3DC2A0094E31D /* CCListOfStuffInMarketController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8145,8 +8149,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Lisa  Backus (H2M3C2JC38)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Lisa  Backus (H2M3C2JC38)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Lisa  Backus (7ACUB3PD94)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lisa  Backus (7ACUB3PD94)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -8161,8 +8165,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "983F4FAB-5189-41B1-8DDE-2B7970797F01";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "983F4FAB-5189-41B1-8DDE-2B7970797F01";
+				PROVISIONING_PROFILE = "91633875-3510-4281-83E3-B47F7F6BE29D";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "91633875-3510-4281-83E3-B47F7F6BE29D";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -8179,8 +8183,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Lisa  Backus (H2M3C2JC38)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Lisa  Backus (H2M3C2JC38)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -8188,8 +8192,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "983F4FAB-5189-41B1-8DDE-2B7970797F01";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "983F4FAB-5189-41B1-8DDE-2B7970797F01";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -8199,8 +8203,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Lisa  Backus (H2M3C2JC38)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Lisa  Backus (H2M3C2JC38)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Lisa  Backus (7ACUB3PD94)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lisa  Backus (7ACUB3PD94)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusJungle/CampusJungle-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CampusJungle/CampusJungle-Info.plist";
@@ -8239,8 +8243,8 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = CampusJungle;
-				PROVISIONING_PROFILE = "983F4FAB-5189-41B1-8DDE-2B7970797F01";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "983F4FAB-5189-41B1-8DDE-2B7970797F01";
+				PROVISIONING_PROFILE = "91633875-3510-4281-83E3-B47F7F6BE29D";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "91633875-3510-4281-83E3-B47F7F6BE29D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -8249,8 +8253,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9BB59B0DCE10407AB5B88568 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Lisa  Backus (H2M3C2JC38)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Lisa  Backus (H2M3C2JC38)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CampusJungle/CampusJungle-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CampusJungle/CampusJungle-Info.plist";
@@ -8289,8 +8293,8 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = CampusJungle;
-				PROVISIONING_PROFILE = "983F4FAB-5189-41B1-8DDE-2B7970797F01";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "983F4FAB-5189-41B1-8DDE-2B7970797F01";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -13,11 +13,13 @@
 #import "CCStandardErrorHandler.h"
 #import "CCViewPositioningHelper.h"
 #import "CCQuestion.h"
+#import "CCDialog.h"
 
 #import "CCGroupTableController.h"
 #import "CCGroupsApiProviderProtocol.h"
 #import "CCUserSessionProtocol.h"
 #import "CCEditGroupViewController.h"
+#import "CCDialogsAPIProviderProtocol.h"
 
 @interface CCGroupViewController () <CCGroupTableDelegate, CCEditGroupDelegate>
 
@@ -30,8 +32,11 @@
 @property(nonatomic, strong) CCGroupTableController *groupTableController;
 @property(nonatomic, strong) id <CCGroupsApiProviderProtocol> ioc_groupsApiProvider;
 @property(nonatomic, strong) id <CCUserSessionProtocol> ioc_userSessionProvider;
+@property(nonatomic, strong) id <CCDialogsAPIProviderProtocol> ioc_dialogAPIPovider;
 
 @property(nonatomic, strong) CCGroup *group;
+
+- (IBAction)chatButtonDidPressed;
 
 @end
 
@@ -89,7 +94,8 @@
 
 - (void)setupTableHeaderView {
     [self.subjectLabel sizeToFit];
-    [CCViewPositioningHelper setHeight:[CCViewPositioningHelper bottomOfView:self.subjectLabel] + 15 toView:self.headerView];
+    [self setButtonsTextColorInView:self.headerView];
+    [CCViewPositioningHelper setHeight:[CCViewPositioningHelper bottomOfView:self.subjectLabel] + 70 toView:self.headerView];
 }
 
 - (void)setupTableView {
@@ -174,6 +180,15 @@
     self.group.description = group.description;
     self.group.image = group.image;
     [self loadInfo];
+}
+
+- (IBAction)chatButtonDidPressed
+{
+    [self.ioc_dialogAPIPovider loadDialogForGroupWithID:self.group.groupId SuccessHandler:^(CCDialog  *result) {
+        [self.groupChatTransaction performWithObject:result];
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
 }
 
 @end

@@ -54,8 +54,7 @@ static const NSInteger kCellHeight = 145;
     CCNote *note = self.cellObject;
     [self.nameLabel setText:note.name];
     [self.descriptionLabel setText:note.noteDescription];
-    [self.viewPriceLabel setText:[NSString stringWithFormat:@"View-Only Price: %0.2lf", note.priceInDolars.doubleValue]];
-    [self.fullPriceLabel setText:[NSString stringWithFormat:@"Full Access Price: %0.2lf", note.fullPriceInDolars.doubleValue]];
+    [self.fullPriceLabel setText:[NSString stringWithFormat:@"Access Price: %0.2lf", note.fullPriceInDolars.doubleValue]];
 }
 
 - (void)setupImageView

@@ -10,6 +10,8 @@
 #import "CCNoteDetailTransaction.h"
 #import "CCListOfNotesInMarketController.h"
 #import "CCSelectFiltersTranaction.h"
+#import "CCCreateNotesTransaction.h"
+#import "CCBackToControllerTransaction.h"
 
 @implementation CCViewMarketNotesListTransaction
 
@@ -28,6 +30,16 @@
     CCSelectFiltersTranaction *selectFilterTransaction = [CCSelectFiltersTranaction new];
     selectFilterTransaction.navigation = self.navigation;
     listOfNotesController.filterTransaction = selectFilterTransaction;
+    
+    CCCreateNotesTransaction *createNoteTransaction = [CCCreateNotesTransaction new];
+    createNoteTransaction.navigation = self.navigation;
+    listOfNotesController.addNewNoteTransaction = createNoteTransaction;
+    
+    CCBackToControllerTransaction *backToListOfNotes = [CCBackToControllerTransaction new];
+    backToListOfNotes.navigation = self.navigation;
+    backToListOfNotes.targetController = listOfNotesController;
+    
+    createNoteTransaction.backToListTransaction = backToListOfNotes;
     
     [self.navigation pushViewController:listOfNotesController animated:YES];
 }

@@ -27,6 +27,24 @@
     }];
 }
 
+- (void)sendMessage:(NSString *)message ToGroupWithId:(NSString *)groupID dialogID:(NSString *)dialogID successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
+{
+    [self setAuthorizationToken];
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    NSDictionary *params = @{
+                             @"receiver_id" : groupID,
+                             @"receiver_type" : @"Group",
+                             @"text" : message,
+                             @"dialog_id" : dialogID
+                             };
+
+    [objectManager postObject:nil path:CCAPIDefines.postMessage parameters:params success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        successHandler(mappingResult);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        errorHandler(error);
+    }];
+}
+
 - (void)sendMessage:(NSString *)message toGroup:(NSString *)groupId successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
 {
     [self setAuthorizationToken];

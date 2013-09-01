@@ -31,8 +31,9 @@
     if([currentMessage isKindOfClass:[NSDate class]]){
         return AMBubbleCellTimestamp;
     }
-    if(currentMessage.receiverID.intValue != [[[self.ioc_userSession currentUser] uid] intValue]){
+    if(currentMessage.senderID.intValue == [[[self.ioc_userSession currentUser] uid] intValue]){
         return AMBubbleCellSent;
+        
     } else {
         return AMBubbleCellReceived;
     }

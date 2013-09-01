@@ -182,14 +182,6 @@
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.descriptionCantBeBlank];
         return NO;
     }
-    if ([self.priceField.text isEmpty]){
-        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.priceCantBeBlank];
-        return NO;
-    }
-    if ([self.priceField.text countOccurencesOfString:@"."] > 1){
-         [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.priceHaveToBeDecemal];
-        return NO;
-    }
     if ([self.fullAccessPriceField.text countOccurencesOfString:@"."] > 1){
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.fullPriceHaveToBeDecemal];
         return NO;
@@ -198,12 +190,6 @@
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.fullPriceCantBeBlank];
         return NO;
     }
-    
-    if (self.fullAccessPriceField.text.doubleValue < self.priceField.text.doubleValue){
-        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.fullPriceCantBeLowerThenPriceForReview];
-        return NO;
-    }
-    
     return YES;
 }
 
@@ -247,7 +233,7 @@
 {
     CCNoteUploadInfo *noteInfo = [CCNoteUploadInfo new];
     noteInfo.noteDescription = self.descriptionField.text;
-    noteInfo.price = [NSNumber numberWithInteger:(self.priceField.text.doubleValue * 100)];
+    noteInfo.price = @0;
     noteInfo.fullPrice = [NSNumber numberWithInteger:(self.fullAccessPriceField.text.doubleValue * 100)];
     noteInfo.collegeID = self.selectedCollege.collegeID;
     noteInfo.classID = [NSNumber numberWithInteger: self.selectedClass.classID.integerValue];

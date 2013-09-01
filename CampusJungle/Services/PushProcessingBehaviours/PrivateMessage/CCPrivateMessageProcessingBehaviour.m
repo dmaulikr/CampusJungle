@@ -47,7 +47,8 @@ typedef void(^LoadMessageSuccessBlock)(id);
             [CCAlertHelper showWithTitle:CCAlertsTitles.pushNotification
                                  message:[[userInfo objectForKey:@"aps"] objectForKey:@"alert"]
                       successButtonTitle:CCAlertsButtons.show
-                       cancelButtonTitle:CCAlertsButtons.later success:^{
+                       cancelButtonTitle:CCAlertsButtons.later
+                                 success:^{
                            CCChatTransaction *messageDetailsTransaction = [CCChatTransaction new];
                            messageDetailsTransaction.navigation = [CCNavigationHelper activeNavigationController];
                            [messageDetailsTransaction performWithObject:dialog];

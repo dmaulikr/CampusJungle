@@ -16,5 +16,5 @@
 - (void)deleteMessageWithId:(NSString *)messageId successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 - (void)loadMyMessagesWithParams:(NSDictionary *)params successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 - (void)loadMessageWithId:(NSString *)messageId successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
-
+- (void)sendMessage:(NSString *)message ToGroupWithId:(NSString *)groupID dialogID:(NSString *)dialogID successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler;
 @end

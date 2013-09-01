@@ -54,7 +54,10 @@
     RKResponseDescriptor *responseOnRequestDialog = [RKResponseDescriptor responseDescriptorWithMapping:dialogMapper pathPattern:pathPattern keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     NSString *dialogByIdresponcePattern = [NSString stringWithFormat:CCAPIDefines.dialogWithId,@":dialogID"];
     RKResponseDescriptor *responseOnDialogByID = [RKResponseDescriptor responseDescriptorWithMapping:dialogMapper pathPattern:dialogByIdresponcePattern keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    NSString *dialogInGroupPathPattern = [NSString stringWithFormat:CCAPIDefines.dialogForGroupWithID,@":dialogID"];
+    RKResponseDescriptor *responseOnDialogInGroup = [RKResponseDescriptor responseDescriptorWithMapping:dialogMapper pathPattern:dialogInGroupPathPattern keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
+    [objectManager addResponseDescriptor:responseOnDialogInGroup];
     [objectManager addResponseDescriptor:responseOnDialogByID];
     [objectManager addResponseDescriptor:responseInboxPaginationDialogs];
     [objectManager addResponseDescriptor:responseOnRequestDialog];
@@ -66,6 +69,7 @@
              @"id" : @"dialogID",
              @"speaker1_id" : @"user1",
              @"speaker2_id" : @"user2",
+             @"group_id" : @"groupID",
              };
 }
 

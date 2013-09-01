@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) NSString *user1;
 @property (nonatomic, strong) NSString *user2;
+@property (nonatomic, strong) NSString *groupID;
 @property (nonatomic, strong) NSString *dialogID;
 @property (nonatomic, strong) CCMessage *lastMessage;
 @property (nonatomic, strong) CCUser *interlocutor;

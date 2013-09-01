@@ -34,14 +34,17 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.111min.CampusGungle</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb457359627683193</string>
+				<string>com.111min.CampusGungle</string>
 			</array>
 		</dict>
 		<dict>
 			<key>CFBundleURLName</key>
-			<string>com.111minutes.campusjungle</string>
+			<string>com.111min.CampusGungle</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>campusjungle</string>

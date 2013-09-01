@@ -15,12 +15,11 @@
 
 @interface AMBubbleTableCell ()
 
-@property (nonatomic, strong)   NSDictionary* options;
+@property (nonatomic, strong) NSDictionary* options;
 @property (nonatomic, strong) UILabel*		labelText;
 @property (nonatomic, strong) UIImageView*	imageBackground;
 @property (nonatomic, strong) UILabel*		labelUsername;
-@property (nonatomic, strong) UIView<AMBubbleAccessory>*		bubbleAccessory;
-
+@property (nonatomic, strong) AMBubbleAccessoryView *bubbleAccessory;
 
 @end
 
@@ -29,36 +28,64 @@
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    NSMutableDictionary *options = [[AMBubbleGlobals defaultOptions] mutableCopy];
-    [options addEntriesFromDictionary:[AMBubbleGlobals defaultStyleSquare]];
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     if (self) {
-		self.options = options;
-		self.backgroundColor = [UIColor whiteColor];
-		self.selectionStyle = UITableViewCellSelectionStyleNone;
-		self.accessoryType = UITableViewCellAccessoryNone;
-		self.labelText = [[UILabel alloc] init];
-		self.imageBackground = [[UIImageView alloc] init];
-		self.labelUsername = [[UILabel alloc] init];
-		self.bubbleAccessory = [[NSClassFromString(options[AMOptionsAccessoryClass]) alloc] init];
-		[self.bubbleAccessory setOptions:options];
-		[self.contentView addSubview:self.imageBackground];
-		[self.imageBackground addSubview:self.labelText];
-		[self.imageBackground addSubview:self.labelUsername];
-		
-        [self.contentView addSubview:self.bubbleAccessory];
-        
-        UITapGestureRecognizer *tapRecoginizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(avatarDidPresed:)];
-        [self addGestureRecognizer:tapRecoginizer];
-        
-        UIFont* textFont = self.options[AMOptionsBubbleTextFont];
-        [self.labelText setBackgroundColor:[UIColor clearColor]];
-        [self.labelText setFont:textFont];
-        [self.labelText setNumberOfLines:0];
-        [self.labelText setTextColor:self.options[AMOptionsBubbleTextColor]];
+		[self setupOptions];
+		[self setUpBackground];
+		[self setUpAccessory];
+        [self setUpGestures];
+        [self setUpLabelAtributes];
+        [self addSubviews];
     }
     return self;
 }
+
+- (void)setupOptions
+{
+    NSMutableDictionary *options = [[AMBubbleGlobals defaultOptions] mutableCopy];
+    [options addEntriesFromDictionary:[AMBubbleGlobals defaultStyleSquare]];
+    self.options = options;
+}
+
+- (void)setUpBackground
+{
+    self.backgroundColor = [UIColor whiteColor];
+    self.imageBackground = [[UIImageView alloc] init];
+}
+
+- (void)setUpGestures
+{
+    UITapGestureRecognizer *tapRecoginizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(avatarDidPresed:)];
+    [self addGestureRecognizer:tapRecoginizer];
+}
+
+- (void)setUpLabelAtributes
+{
+    self.labelText = [UILabel new];
+    self.labelUsername = [UILabel new];
+    [self.imageBackground addSubview:self.labelText];
+    [self.imageBackground addSubview:self.labelUsername];
+    UIFont* textFont = self.options[AMOptionsBubbleTextFont];
+    [self.labelText setBackgroundColor:[UIColor clearColor]];
+    [self.labelText setFont:textFont];
+    [self.labelText setNumberOfLines:0];
+    [self.labelText setTextColor:self.options[AMOptionsBubbleTextColor]];
+}
+
+- (void)addSubviews
+{
+    [self.contentView addSubview:self.imageBackground];
+    [self.contentView addSubview:self.bubbleAccessory];
+}
+
+- (void)setUpAccessory
+{
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.accessoryType = UITableViewCellAccessoryNone;
+    self.bubbleAccessory = [AMBubbleAccessoryView new];
+    self.bubbleAccessory.options = self.options;
+}
+
 
 - (void)avatarDidPresed:(UIGestureRecognizer *)recognizer
 {

@@ -11,7 +11,7 @@
 
 @interface AMBubbleAccessoryView ()
 
-@property (nonatomic, weak)   NSDictionary* options;
+
 @property (nonatomic, strong) UILabel*		labelTimestamp;
 @property (nonatomic, strong) UIImageView*	imageCheck;
 @property (nonatomic, strong) UIImageView*	imageAvatar;
@@ -33,6 +33,7 @@
 		
 		self.imageAvatar.layer.cornerRadius = 5.0;
 		self.imageAvatar.layer.masksToBounds = YES;
+        self.imageAvatar.contentMode = UIViewContentModeScaleAspectFit;
 		self.imageAvatar.layer.borderColor = [UIColor lightGrayColor].CGColor;
 		self.imageAvatar.layer.borderWidth = 1.0;
 
@@ -40,15 +41,11 @@
 
 		self.labelTimestamp.shadowColor = [UIColor whiteColor];
 		self.labelTimestamp.shadowOffset = CGSizeMake(0, 1.0);
+        self.labelTimestamp.textAlignment = NSTextAlignmentCenter;
+        [self.labelTimestamp setFont:[UIFont fontWithName:@"HelveticaNeue" size:10]];
 		
     }
     return self;
-}
-
-- (void)setOptions:(NSDictionary *)options
-{
-	_options = options;
-	[self.labelTimestamp setFont:self.options[AMOptionsTimestampShortFont]];
 }
 
 - (void)avatarDidPresed
@@ -58,8 +55,6 @@
 
 - (void)setupView:(NSDictionary*)params
 {
-
-	// Avatar available
 	if ([params[@"avatar"] isKindOfClass:[NSString class]]) {
 		[self.imageAvatar setImageWithURL:[NSURL URLWithString: params[@"avatar"]]];
 	}

@@ -20,6 +20,7 @@
 #import "CCChatTransaction.h"
 #import "CCSendGroupInviteTransaction.h"
 #import "CCViewPDFTransaction.h"
+#import "CCChatTransaction.h"
 
 @implementation CCGroupTransaction
 
@@ -65,6 +66,9 @@
     CCViewPDFTransaction *viewPdfTransaction = [CCViewPDFTransaction new];
     viewPdfTransaction.navigation = self.navigation;
     
+    CCChatTransaction *chatTransaction = [CCChatTransaction new];
+    chatTransaction.navigation = self.navigation;
+    
     CCGroupViewController *groupController = [CCGroupViewController new];
     groupController.locationTransaction = locationsTransaction;
     groupController.addLocationTransaction = addLocationTransaction;
@@ -77,6 +81,7 @@
     groupController.messageDetailsTransaction = messageDetailsTransaction;
     groupController.sendGroupInviteTransaction = sendGroupInviteTransaction;
     groupController.viewPdfAttachmentTransaction = viewPdfTransaction;
+    groupController.groupChatTransaction = chatTransaction;
     
     [groupController setGroup:group];
     [self.navigation pushViewController:groupController animated:YES];

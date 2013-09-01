@@ -18,6 +18,7 @@
 #import "CCReviewCell.h"
 #import "CCAlertHelper.h"
 #import "CCViewPositioningHelper.h"
+#import "CCNavigationBarViewHelper.h"
 
 #define headerFullHeight 410
 #define headerSmallSize 350
@@ -100,7 +101,7 @@
         fullPrice = @(fullPrice.doubleValue - self.note.priceInDolars.doubleValue);
     }
     
-    NSString *fullAccessTitle = [NSString stringWithFormat:@"Buy for download: %0.2lf",fullPrice.doubleValue];
+    NSString *fullAccessTitle = [NSString stringWithFormat:@"Buy : %0.2lf",fullPrice.doubleValue];
     [self.fullAccessButton setTitle:fullAccessTitle forState:UIControlStateNormal];
 }
 
