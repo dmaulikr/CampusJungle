@@ -26,6 +26,7 @@
 #import "CCStuffMarketTransaction.h"
 #import "CCBookMarketTransaction.h"
 #import "CCNotesMarketTransaction.h"
+#import "CCEarnTransaction.h"
 
 @interface CCMainTransaction()
 
@@ -68,6 +69,10 @@
     CCUserProfileTransaction *userProfileTransaction = [CCUserProfileTransaction new];
     userProfileTransaction.menuController = rootController;
     leftController.userProfileTransaction = userProfileTransaction;
+    
+    CCEarnTransaction *earnTransaction = [CCEarnTransaction new];
+    earnTransaction.menuController = rootController;
+    leftController.earnTransaction = earnTransaction;
     
     CCClassesOfCollegeTransaction *classesOfCollegeTransaction = [CCClassesOfCollegeTransaction new];
     classesOfCollegeTransaction.menuController = rootController;

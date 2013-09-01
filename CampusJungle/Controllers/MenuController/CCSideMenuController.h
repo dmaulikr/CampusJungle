@@ -20,5 +20,6 @@
 @property (nonatomic, strong) id <CCTransaction> notesTransaction;
 @property (nonatomic, strong) id <CCTransaction> booksTransaction;
 @property (nonatomic, strong) id <CCTransaction> collegeMarketTransaction;
+@property (nonatomic, strong) id <CCTransaction> earnTransaction;
 
 @end

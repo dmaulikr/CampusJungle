@@ -17,6 +17,7 @@
 - (void)showNotesMarket;
 - (void)showBooksMarket;
 - (void)showCollegeMarket;
+- (void)earn;
 
 @end
 

@@ -15,4 +15,5 @@ extern const struct CCSideMenuTitles {
     __unsafe_unretained NSString *booksSale;
     __unsafe_unretained NSString *notesSale;
     __unsafe_unretained NSString *collegeMarket;
+    __unsafe_unretained NSString *earn;
 } CCSideMenuTitles;

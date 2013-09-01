@@ -109,6 +109,11 @@
     [self.marketTransaction perform];
 }
 
+- (void)earn
+{
+    [self.earnTransaction perform];
+}
+
 - (void)showDetailsOfClass:(CCClass *)classObject
 {
     [self.classTransaction performWithObject:classObject];

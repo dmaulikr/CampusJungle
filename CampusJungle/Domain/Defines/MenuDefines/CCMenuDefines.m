@@ -17,4 +17,5 @@ const struct CCSideMenuTitles CCSideMenuTitles = {
     .booksSale = @"Books for Sale",
     .notesSale = @"Notes for Sale",
     .collegeMarket = @"College Market",
+    .earn = @"Earn",
 };

@@ -20,7 +20,7 @@
 + (NSDictionary *)fakeFirstMenuSectionDictionary
 {
     return @{@"name" : @"",
-             @"items" : @[CCSideMenuTitles.newsFeed, CCSideMenuTitles.booksSale,CCSideMenuTitles.notesSale,CCSideMenuTitles.collegeMarket]};
+             @"items" : @[CCSideMenuTitles.newsFeed,CCSideMenuTitles.earn, CCSideMenuTitles.booksSale,CCSideMenuTitles.notesSale,CCSideMenuTitles.collegeMarket]};
 }
 
 + (NSArray *)sectionsArrayWithEducationsArray:(NSArray *)educationsArray

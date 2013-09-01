@@ -155,6 +155,8 @@
         NSString *cellTitle = (NSString *)objectForCell;
         if ([cellTitle isEqualToString:CCSideMenuTitles.newsFeed]) {
             [self.delegate showNewsFeed];
+        } else if ([cellTitle isEqualToString:CCSideMenuTitles.earn]){
+            [self.delegate earn];
         } else if ([cellTitle isEqualToString:CCSideMenuTitles.notesSale]) {
             [self.delegate showNotesMarket];
         } else if ([cellTitle isEqualToString:CCSideMenuTitles.booksSale]) {
