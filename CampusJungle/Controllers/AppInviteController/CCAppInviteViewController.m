@@ -41,9 +41,11 @@ typedef enum {
 
 @property (nonatomic, strong) CCMailComposerDelegate *mailComposerDelegate;
 @property (nonatomic, strong) CCMessageComposerDelegate *messageComposerDelegate;
+@property (nonatomic, strong) id messageDelegate;
 
 @property (nonatomic, strong) id<CCAppInviteApiProviderProtocol> ioc_appInvitesApiProvider;
 @property (nonatomic, strong) id<CCFaceBookAPIProtocol> ioc_facebookApiProvider;
+@property (nonatomic, strong) MFMessageComposeViewController *messageViewController;
 
 @end
 
@@ -208,11 +210,11 @@ typedef enum {
     __weak CCAppInviteViewController *weakSelf = self;
     void(^completionBlock)(void) = ^{
         [CCAppearanceConfigurator configurateTextFields];
-        [weakSelf dismissViewControllerAnimated:YES completion:nil];
+        [self dismissViewControllerAnimated:YES completion:nil];
     };
 
-    MFMessageComposeViewController *messageViewController = [[MFMessageComposeViewController alloc] init];
-    self.messageComposerDelegate = [[CCMessageComposerDelegate alloc] initWithSuccessBlock:^{
+    self.messageViewController = [[MFMessageComposeViewController alloc] init];
+    self.messageDelegate = [[CCMessageComposerDelegate alloc] initWithSuccessBlock:^{
         completionBlock();
         [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.appInviteSent duration:CCProgressHudsConstants.loaderDuration];
     } errorBlock:^{
@@ -220,12 +222,12 @@ typedef enum {
     } cancelBlock:^{
         completionBlock();
     }];
-    
-    [messageViewController setBody:CCAppInvitesDefines.smsInviteBody];
-    [messageViewController setRecipients:credentials];
-    
+    //self.messageComposerDelegate = self.messageDelegate;
+    [self.messageViewController setBody:CCAppInvitesDefines.smsInviteBody];
+    [self.messageViewController setRecipients:credentials];
+    self.messageViewController.delegate = self.messageDelegate;
     [CCAppearanceConfigurator setDefaultTextFieldsAppearance];
-    [self presentViewController:messageViewController animated:YES completion:nil];
+    [self presentViewController:self.messageViewController animated:YES completion:nil];
 }
 
 - (BOOL)checkSelectedItems

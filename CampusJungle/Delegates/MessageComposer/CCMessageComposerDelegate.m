@@ -8,7 +8,7 @@
 
 #import "CCMessageComposerDelegate.h"
 
-@interface CCMessageComposerDelegate ()
+@interface CCMessageComposerDelegate ()<MFMessageComposeViewControllerDelegate>
 
 @property (nonatomic, copy) MessageComposerSuccessBlock successBlock;
 @property (nonatomic, copy) MessageComposerErrorBlock errorBlock;
