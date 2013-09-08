@@ -86,6 +86,7 @@
       @"tags" : @"tags",
       @"thumbnail" : @"thumbnail",
       @"thumbnail_retina" : @"thumbnailRetina",
+      @"category" : @"category",
     };
 }
 
@@ -93,6 +94,7 @@
 {
     return @{
       @"collegeID" : @"class_id",
+      @"category" : @"category",
       @"name" : @"name",
       @"description" : @"description",
       @"price" : @"price",

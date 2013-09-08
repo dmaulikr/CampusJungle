@@ -24,6 +24,7 @@
 @property (nonatomic, strong) NSNumber *isFacebookLinked;
 @property (nonatomic, strong) NSArray *educations;
 @property (nonatomic, assign) BOOL isSelected;
+@property (nonatomic, assign) NSNumber *alowedMarket;
 
 - (double)totalWallet;
 + (NSDictionary *) responseMappingDictionary;

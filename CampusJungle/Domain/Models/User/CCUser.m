@@ -199,7 +199,8 @@
       @"status" : @"status",
       @"id" : @"uid",
       @"rank" : @"rank",
-      @"is_fb_linked" :@"isFacebookLinked"
+      @"is_fb_linked" :@"isFacebookLinked",
+      @"allowed_market" : @"alowedMarket"
       };
 }
 

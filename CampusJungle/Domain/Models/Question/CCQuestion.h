@@ -21,6 +21,7 @@
 @property (nonatomic, strong) NSString *attachment;
 @property (nonatomic, strong) NSDate *createdDate;
 @property (nonatomic, assign) NSInteger answersCount;
+@property (nonatomic, strong) NSString *subject;
 
 @property (nonatomic, strong) NSString *ownerFirstName;
 @property (nonatomic, strong) NSString *ownerLastName;

@@ -69,4 +69,9 @@
     }];
 }
 
+- (void)didSelectedCellWithObject:(id)cellObject
+{
+    [self.announcementDetailsTransaction performWithObject:cellObject];
+}
+
 @end

@@ -14,5 +14,6 @@
 
 @property (nonatomic, strong) CCClass *currentClass;
 @property (nonatomic, strong) id <CCTransactionWithObject> addAnnouncementTransaction;
+@property (nonatomic, strong) id <CCTransactionWithObject> announcementDetailsTransaction;
 
 @end

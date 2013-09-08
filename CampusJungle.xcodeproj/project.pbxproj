@@ -694,6 +694,9 @@
 		D342BD0D179933CA0034E88C /* CCProfessorUploadsAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BD0C179933CA0034E88C /* CCProfessorUploadsAPIProvider.m */; };
 		D342BD351799801D0034E88C /* CCInitialUserInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = D342BD331799801D0034E88C /* CCInitialUserInfoController.m */; };
 		D342BD361799801D0034E88C /* CCInitialUserInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D342BD341799801D0034E88C /* CCInitialUserInfoController.xib */; };
+		D357133A17DB383D00E511EE /* CCAnoncementsDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D357133817DB383D00E511EE /* CCAnoncementsDetailsController.m */; };
+		D357133B17DB383D00E511EE /* CCAnoncementsDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D357133917DB383D00E511EE /* CCAnoncementsDetailsController.xib */; };
+		D357134217DB3AA600E511EE /* CCAnnouncementDetailsTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D357134117DB3AA600E511EE /* CCAnnouncementDetailsTransaction.m */; };
 		D359E6081794383A00869D6C /* star_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D359E6041794383A00869D6C /* star_icon.png */; };
 		D359E6091794383A00869D6C /* star_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D359E6051794383A00869D6C /* star_icon@2x.png */; };
 		D359E60A1794383A00869D6C /* star_icon_active.png in Resources */ = {isa = PBXBuildFile; fileRef = D359E6061794383A00869D6C /* star_icon_active.png */; };
@@ -1929,6 +1932,11 @@
 		D342BD341799801D0034E88C /* CCInitialUserInfoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCInitialUserInfoController.xib; sourceTree = "<group>"; };
 		D347BBE2178454C200E54EFC /* SelectionBackGround@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SelectionBackGround@2x.png"; sourceTree = "<group>"; };
 		D347BBE3178454C200E54EFC /* SelectionBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SelectionBackGround.png; sourceTree = "<group>"; };
+		D357133717DB383D00E511EE /* CCAnoncementsDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnoncementsDetailsController.h; sourceTree = "<group>"; };
+		D357133817DB383D00E511EE /* CCAnoncementsDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAnoncementsDetailsController.m; sourceTree = "<group>"; };
+		D357133917DB383D00E511EE /* CCAnoncementsDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCAnoncementsDetailsController.xib; sourceTree = "<group>"; };
+		D357134017DB3AA600E511EE /* CCAnnouncementDetailsTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnnouncementDetailsTransaction.h; sourceTree = "<group>"; };
+		D357134117DB3AA600E511EE /* CCAnnouncementDetailsTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAnnouncementDetailsTransaction.m; sourceTree = "<group>"; };
 		D359E6041794383A00869D6C /* star_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_icon.png; sourceTree = "<group>"; };
 		D359E6051794383A00869D6C /* star_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_icon@2x.png"; sourceTree = "<group>"; };
 		D359E6061794383A00869D6C /* star_icon_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_icon_active.png; sourceTree = "<group>"; };
@@ -3601,6 +3609,7 @@
 				700F9427178EA06000A6FBBA /* AddLocationController */,
 				D342BCFA179817270034E88C /* AddProfessorUploadController */,
 				70B2D0D01794483A001B0C2C /* AddQuestionController */,
+				D357133617DB380B00E511EE /* AnoncementDetilsController */,
 				D38532C7179D3A180075F870 /* AnnouncementsController */,
 				7012AC7C179558B5002DA5E9 /* AnswersController */,
 				70061CA117A2745000848F62 /* AppInviteController */,
@@ -4913,6 +4922,7 @@
 				D342BD001798192D0034E88C /* AddProfessorUploadsTransaction */,
 				70B2D1CF179448A9001B0C2C /* AddQuestionTransaction */,
 				D38532CD179D3C840075F870 /* AnnouncementTransaction */,
+				D357133C17DB3A6A00E511EE /* AnnouncementDetailsTransaction */,
 				7012AC8217955A41002DA5E9 /* AnswersTransaction */,
 				70061CA717A276A200848F62 /* AppInviteTransaction */,
 				70B2D0E317944894001B0C2C /* ApplyFiltersTransaction */,
@@ -6566,6 +6576,25 @@
 			path = InitialUserInfoScreen;
 			sourceTree = "<group>";
 		};
+		D357133617DB380B00E511EE /* AnoncementDetilsController */ = {
+			isa = PBXGroup;
+			children = (
+				D357133717DB383D00E511EE /* CCAnoncementsDetailsController.h */,
+				D357133817DB383D00E511EE /* CCAnoncementsDetailsController.m */,
+				D357133917DB383D00E511EE /* CCAnoncementsDetailsController.xib */,
+			);
+			path = AnoncementDetilsController;
+			sourceTree = "<group>";
+		};
+		D357133C17DB3A6A00E511EE /* AnnouncementDetailsTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				D357134017DB3AA600E511EE /* CCAnnouncementDetailsTransaction.h */,
+				D357134117DB3AA600E511EE /* CCAnnouncementDetailsTransaction.m */,
+			);
+			path = AnnouncementDetailsTransaction;
+			sourceTree = "<group>";
+		};
 		D359E6031794383A00869D6C /* Stars */ = {
 			isa = PBXGroup;
 			children = (
@@ -7668,6 +7697,7 @@
 				D340A4FA17B91AF5006758B3 /* messageBubbleTyping@2x.png in Resources */,
 				D3CF599B17BE4CE900F49751 /* CCDialogCell.xib in Resources */,
 				D33DE0B817D3DC2A0094E31D /* CCListOfStuffInMarketController.xib in Resources */,
+				D357133B17DB383D00E511EE /* CCAnoncementsDetailsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8133,6 +8163,8 @@
 				D3CF599517BE481E00F49751 /* CCDialogsDataProvider.m in Sources */,
 				D3CF599A17BE4CE900F49751 /* CCDialogCell.m in Sources */,
 				D33DE0BC17D3E57A0094E31D /* CCEarnTransaction.m in Sources */,
+				D357133A17DB383D00E511EE /* CCAnoncementsDetailsController.m in Sources */,
+				D357134217DB3AA600E511EE /* CCAnnouncementDetailsTransaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

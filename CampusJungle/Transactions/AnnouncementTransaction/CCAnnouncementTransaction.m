@@ -9,6 +9,7 @@
 #import "CCAnnouncementTransaction.h"
 #import "CCAnnouncementsController.h"
 #import "CCAddAnnouncementTransaction.h"
+#import "CCAnnouncementDetailsTransaction.h"
 
 @implementation CCAnnouncementTransaction
 
@@ -17,6 +18,10 @@
     NSParameterAssert(self.navigation);
     CCAnnouncementsController *announcementsController = [CCAnnouncementsController new];
     announcementsController.currentClass = object;
+    
+    CCAnnouncementDetailsTransaction *announcementDetailsTransaction = [CCAnnouncementDetailsTransaction new];
+    announcementDetailsTransaction.navigation = self.navigation;
+    announcementsController.announcementDetailsTransaction = announcementDetailsTransaction;
     
     CCAddAnnouncementTransaction *addAnnnouncementTransaction = [CCAddAnnouncementTransaction new];
     addAnnnouncementTransaction.navigation = self.navigation;

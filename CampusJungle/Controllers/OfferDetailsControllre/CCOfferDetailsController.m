@@ -108,7 +108,7 @@
 
 - (void)loadBookInfo
 {
-    self.stuffNameLabel.text = self.book.description;
+    self.stuffNameLabel.text = self.book.name;
 }
 
 - (void)loadOfferInfo

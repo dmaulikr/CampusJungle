@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSArray *arrayOfImages;
 @property (nonatomic, strong) NSArray *arrayOfURLs;
 @property (nonatomic, strong) NSString *thumbnailRetina;
+@property (nonatomic, strong) NSString *category;
 
 @property (nonatomic, strong) NSNumber *uploadProgress;
 @property (nonatomic, weak) id<CCUploadIndicatorDelegateProtocol> delegate;

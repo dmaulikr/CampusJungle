@@ -89,6 +89,7 @@
              @"owner_first_name" : @"ownerFirstName",
              @"owner_last_name" : @"ownerLastName",
              @"owner_avatar" : @"ownerAvatar",
+             @"subject" : @"subject"
              };
 }
 
@@ -98,6 +99,7 @@
              @"text" : @"text",
              @"arrayOfImageUrls" : @"images_urls",
              @"pdfUrl" : @"pdf_url",
+             @"subject" : @"subject",
              };
 }
 

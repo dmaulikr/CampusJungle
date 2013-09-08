@@ -61,7 +61,6 @@
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
     }];
-    //[self.sendMessageTransaction performWithObject:self.currentUser];
 }
 
 - (BOOL)isNeedToLeftSelected

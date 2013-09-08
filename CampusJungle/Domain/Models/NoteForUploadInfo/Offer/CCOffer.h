@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSString *senderID;
 @property (nonatomic, strong) NSString *stuffID;
 @property (nonatomic, strong) NSString *bookID;
+@property (nonatomic, strong) NSString *itemName;
 @property (nonatomic, strong) NSString *offerID;
 @property (nonatomic, strong) NSString *userFirstName;
 @property (nonatomic, strong) NSString *userLastName;

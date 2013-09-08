@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSArray *photos;
 @property (nonatomic, strong) NSString *ownerID;
 @property (nonatomic, strong) NSArray *tags;
+@property (nonatomic, strong) NSString *category;
 
 - (NSNumber *)priceInDolars;
 

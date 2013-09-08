@@ -205,6 +205,7 @@
     uploadInfo.name = self.nameField.text;
     uploadInfo.price = [NSNumber numberWithInteger:(self.priceField.text.doubleValue * 100)];
     uploadInfo.collegeID = self.selectedCollege.collegeID;
+    uploadInfo.category = @"Random";
     return uploadInfo;
 }
 
