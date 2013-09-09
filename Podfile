@@ -1,6 +1,7 @@
 platform :ios, "6.0"
 
-pod "RestKit"
+pod "SSToolkit"
+pod "RestKit", "0.20.3"
 pod 'Facebook-iOS-SDK'
 pod 'AppleGuice', :podspec => "https://raw.github.com/korzun1993/AppleGuice/master/AppleGuice.podspec"
 pod "CJStringValidator"

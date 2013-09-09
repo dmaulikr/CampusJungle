@@ -22,13 +22,14 @@
 @interface CCAddBookViewController ()<CCCellSelectionProtocol, CCAvatarSelectionProtocol>
 
 @property (nonatomic, strong) IBOutlet UIImageView *thumbImage;
-@property (nonatomic, strong) IBOutlet UITextField *decriptionField;
+@property (nonatomic, strong) IBOutlet SSTextView *decriptionField;
 @property (nonatomic, strong) IBOutlet UITextField *priceField;
 @property (nonatomic, strong) IBOutlet UIButton *collegeSelectionButton;
 @property (nonatomic, strong) IBOutlet UITextField *nameField;
 @property (nonatomic, strong) IBOutlet UITextField *isbnField;
 @property (nonatomic, strong) id <CCBooksAPIProviderProtocol> ioc_BookAPIProvider;
 @property (nonatomic, strong) NSArray *arrayOfColleges;
+@property (nonatomic, weak) IBOutlet UIImageView *textViewBackgroundImageView;
 
 @property (nonatomic, strong) CCAvatarSelectionActionSheet *thumbSelection;
 @property (nonatomic, strong) NSArray *arrayOfURLs;
@@ -53,8 +54,15 @@
     self.thumbSelection = [CCAvatarSelectionActionSheet new];
     self.thumbSelection.delegate = self;
     self.tapRecognizer.enabled = YES;
+    self.decriptionField.placeholder = @"Description";
     [self loadColleges];
     self.title = @"New Book";
+    [self setupImageViews];
+}
+
+- (void)setupImageViews
+{
+    [self.textViewBackgroundImageView setImage:[[UIImage imageNamed:@"text_box"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)]];
 }
 
 - (void)setSelectedCollege:(CCCollege *)selectedCollege

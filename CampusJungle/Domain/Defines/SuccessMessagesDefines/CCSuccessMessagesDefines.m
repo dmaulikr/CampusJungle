@@ -16,6 +16,7 @@ const struct CCSuccessMessages CCSuccessMessages = {
     .deleteUploads = @"Uploads was successfully removed",
     .deleteAnswer = @"Answer was successfully removed",
     .questionAttachmentEmailed = @"Check your email for question attachment",
+    .answerAttachmentEmailed = @"Check your email for answer attachment",
     .uploadsAttachmentEmailed = @"Check your email for uploads attachment",
     .addedAnswer = @"You've successfully added answer",
     .deleteComment = @"Comment was successfully removed",

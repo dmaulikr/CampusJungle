@@ -14,6 +14,7 @@ extern const struct CCSuccessMessages {
     __unsafe_unretained NSString *deleteUploads;
     __unsafe_unretained NSString *deleteAnswer;
     __unsafe_unretained NSString *questionAttachmentEmailed;
+    __unsafe_unretained NSString *answerAttachmentEmailed;
     __unsafe_unretained NSString *uploadsAttachmentEmailed;
     __unsafe_unretained NSString *addedAnswer;
     __unsafe_unretained NSString *deleteComment;

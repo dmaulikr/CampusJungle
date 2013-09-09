@@ -27,6 +27,14 @@
 @property (nonatomic, strong) CCQuestion *question;
 @property (nonatomic, strong) id<CCAnswersApiProviderProtocol> ioc_answerApiProvider;
 
+@property (nonatomic, strong) NSString *pdfURL;
+@property (nonatomic, strong) NSArray *arrayOfURLs;
+@property (nonatomic, strong) NSArray *arrayOfImages;
+
+@property (nonatomic, weak) IBOutlet UIButton *imageDropboxButton;
+@property (nonatomic, weak) IBOutlet UIButton *pdfDropboxButton;
+@property (nonatomic, weak) IBOutlet UIButton *imageButton;
+
 @end
 
 @implementation CCAddAnswerViewController
@@ -68,6 +76,9 @@
     if ([self validateInputData]) {
         CCAnswer *answer = [CCAnswer answerWithText:self.answerTextView.text];
         answer.questionId = self.question.questionId;
+        answer.arrayOfImages = self.arrayOfImages;
+        answer.arrayOfImageUrls = self.arrayOfURLs;
+        answer.pdfUrl = self.pdfURL;
         [self addAnswer:answer];
     }
 }
@@ -99,18 +110,77 @@
     textView.text = [CCStringHelper trimSpacesFromString:textView.text];
 }
 
+- (IBAction)uploadPhotosButtonDidPressed:(id)sender
+{
+    if ([self validateInputData]) {
+        [self.imagesUploadTransaction performWithObject:^(NSArray *arrayOfImages){
+            self.arrayOfImages = arrayOfImages;
+            [self.backToSelfController perform];
+            [self unableUploadButtons];
+        }];
+    }
+}
+
+- (IBAction)uploadImagesFromDropboxButtonDidPressed:(id)sender
+{
+    if ([self validateInputData]) {
+        [self.imagesDropboxUploadTransaction performWithObject:^(NSArray *arrayOfUrls){
+            self.arrayOfURLs = arrayOfUrls;
+            [self.backToSelfController perform];
+            [self unableUploadButtons];
+        }];
+    }
+}
+
+- (IBAction)uploadPdfFromDropboxButtonDidPressed:(id)sender
+{
+    if([self validateInputData]){
+        [self.pdfDropboxUploadTransaction performWithObject:^(NSArray *arrayOfUrls){
+            self.pdfURL = arrayOfUrls.lastObject;
+            [self.backToSelfController perform];
+            [self unableUploadButtons];
+        }];
+    }
+}
+
+- (void)unableUploadButtons
+{
+    self.imageButton.enabled = NO;
+    self.imageDropboxButton.enabled = NO;
+    self.pdfDropboxButton.enabled = NO;
+}
+
 #pragma mark -
 #pragma mark Requests
 - (void)addAnswer:(CCAnswer *)answer
 {
+    if(!answer.arrayOfImages){
+        __weak CCAddAnswerViewController *weakSelf = self;
+        [self.ioc_answerApiProvider postAnswer:answer successHandler:^(RKMappingResult *object) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadAnswers object:nil];
+            [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.addedAnswer duration:CCProgressHudsConstants.loaderDuration];
+            [weakSelf.backTransaction perform];
+        } errorHandler:^(NSError *error) {
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
+    } else {
+        [self uploadAnswerWithImages:answer];
+    }
+}
+
+- (void)uploadAnswerWithImages:(CCAnswer *)answer
+{
     __weak CCAddAnswerViewController *weakSelf = self;
-    [self.ioc_answerApiProvider postAnswer:answer successHandler:^(RKMappingResult *object) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadAnswers object:nil];
-        [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.addedAnswer duration:CCProgressHudsConstants.loaderDuration];
-        [weakSelf.backTransaction perform];
-    } errorHandler:^(NSError *error) {
-        [CCStandardErrorHandler showErrorWithError:error];
-    }];
+    [self.ioc_answerApiProvider postUploadInfoWithImages:answer
+                                                withImages:self.arrayOfImages successHandler:^(id result) {
+                                                    
+                                                } errorHandler:^(NSError *error) {
+                                                    [CCStandardErrorHandler showErrorWithError:error];
+                                                } progress:^(double finished) {
+                                                    [weakSelf.backTransaction perform];
+                                                    weakSelf.backTransaction = nil;
+                                                }];
+
 }
 
 @end

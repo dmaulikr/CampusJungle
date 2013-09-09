@@ -27,6 +27,8 @@ static const CGFloat kMinCellHeight = 113;
 @property (nonatomic, weak) IBOutlet UILabel *likesNumberLabel;
 @property (nonatomic, weak) IBOutlet UIButton *likeButton;
 @property (nonatomic, weak) IBOutlet UILabel *commentsCountLabel;
+@property (nonatomic, weak) IBOutlet UIButton *emailAttachmentButton;
+@property (nonatomic, weak) IBOutlet UIButton *viewAttachmentButton;
 
 @property (nonatomic, strong) id<CCUserSessionProtocol> ioc_userSessionProvider;
 @property (nonatomic, strong) id<CCDateFormatterProtocol> ioc_dateFormatterHelper;
@@ -44,13 +46,32 @@ static const CGFloat kMinCellHeight = 113;
     
     [self.deleteAnswerButton addTarget:self action:@selector(deleteAnswerButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.likeButton addTarget:self action:@selector(likeAnswerButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.emailAttachmentButton addTarget:self action:@selector(emailAttachmentButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.viewAttachmentButton addTarget:self action:@selector(viewAttachmentButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
 }
+
+- (void)emailAttachmentButtonDidPressed:(id)sender
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(emailAttachmentOfAnswer:)]) {
+        [self.delegate emailAttachmentOfAnswer:self.answer];
+    }
+}
+
+- (void)viewAttachmentButtonDidPressed:(id)sender
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(viewAttachmentOfAnswer:)]) {
+        [self.delegate viewAttachmentOfAnswer:self.answer];
+    }
+}
+
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     [CCButtonsHelper removeBackgroundImageInButton:self.deleteAnswerButton];
     [CCButtonsHelper removeBackgroundImageInButton:self.likeButton];
+    [CCButtonsHelper removeBackgroundImageInButton:self.emailAttachmentButton];
+    [CCButtonsHelper removeBackgroundImageInButton:self.viewAttachmentButton];
 }
 
 - (void)prepareForReuse
@@ -65,6 +86,18 @@ static const CGFloat kMinCellHeight = 113;
     [self fillLabels];
     [self setupLikeButton];
     [self setDeleteButtonVisibility];
+    [self setAttachmentButtonsVisibility];
+}
+
+- (void)setAttachmentButtonsVisibility
+{
+    if(self.answer.attachment.length){
+        self.emailAttachmentButton.hidden = NO;
+        self.viewAttachmentButton.hidden = NO;
+    } else {
+        self.emailAttachmentButton.hidden = YES;
+        self.viewAttachmentButton.hidden = YES;
+    }
 }
 
 - (void)fillLabels
@@ -95,9 +128,13 @@ static const CGFloat kMinCellHeight = 113;
 
 + (CGFloat)heightForCellWithObject:(CCAnswer *)answer
 {
+    float attachmentHeight = 0;
+    if(answer.attachment.length) {
+        attachmentHeight = 40;
+    }
     UIFont *font = [UIFont fontWithName:@"Avenir-MediumOblique" size:15];
     CGSize requiredSize = [answer.text sizeWithFont:font constrainedToSize:CGSizeMake(kDefaultTextLabelWidth, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
-    return MAX(kMinCellHeight, kTextLabelOriginY + requiredSize.height + kBottomSpace);
+    return MAX(kMinCellHeight + attachmentHeight, kTextLabelOriginY+ attachmentHeight + requiredSize.height + kBottomSpace);
 }
 
 - (void)invertAnswerLikeStatus

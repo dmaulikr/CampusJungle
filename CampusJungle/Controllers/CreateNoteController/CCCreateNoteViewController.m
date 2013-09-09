@@ -27,13 +27,13 @@
 
 @property (nonatomic, weak) IBOutlet UITextField *priceField;
 @property (nonatomic, weak) IBOutlet UITextField *fullAccessPriceField;
-@property (nonatomic, weak) IBOutlet UITextField *descriptionField;
+@property (nonatomic, weak) IBOutlet SSTextView *descriptionField;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbView;
 @property (nonatomic, weak) IBOutlet UIButton *collegeSelectionButton;
 @property (nonatomic, weak) IBOutlet UIButton *classesSelectionButton;
 @property (nonatomic, weak) IBOutlet UITextField *nameTextField;
 @property (nonatomic, strong) CCAvatarSelectionActionSheet *thumbSelectionSheet;
-
+@property (nonatomic, weak) IBOutlet UIImageView *textViewBackgroundImageView;
 @property (nonatomic, strong) CCCollege *selectedCollege;
 @property (nonatomic, strong) CCClass *selectedClass;
 
@@ -69,7 +69,13 @@
     [self loadClasses];
     [self configAvatarSelectionSheet];
     self.tapRecognizer.enabled = YES;
+    self.descriptionField.placeholder = @"Description";
+    [self setupImageViews];
+}
 
+- (void)setupImageViews
+{
+    [self.textViewBackgroundImageView setImage:[[UIImage imageNamed:@"text_box"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)]];
 }
 
 - (void)showDoneButton

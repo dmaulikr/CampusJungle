@@ -18,6 +18,7 @@
 
 #import "CCAlertHelper.h"
 #import "CCStandardErrorHandler.h"
+#import "CCAnswer.h"
 
 @interface CCAnswersViewController () <CCAnswerCellDelegate>
 
@@ -26,6 +27,7 @@
 @property (nonatomic, strong) CCBaseReverseDataSource *dataSource;
 @property (nonatomic, strong) id<CCAnswersApiProviderProtocol> ioc_answersApiProvider;
 @property (nonatomic, strong) CCQuestionHeaderView *tableHeaderView;
+
 
 @end
 
@@ -120,8 +122,23 @@
 
 - (void)likeAnswer:(CCAnswer *)answer successBlock:(RequestSuccessBlock)successBlock
 {
+
     [self.ioc_answersApiProvider likeAnswer:answer successHandler:^(RKMappingResult *result) {
         successBlock();
+    } errorHandler:^(NSError *error) {
+        [CCStandardErrorHandler showErrorWithError:error];
+    }];
+}
+
+- (void)viewAttachmentOfAnswer:(CCAnswer *)answer
+{
+    [self.viewAttacmentTransaction performWithObject:answer.attachment];
+}
+
+- (void)emailAttachmentOfAnswer:(CCAnswer *)answer
+{
+    [self.ioc_answersApiProvider emailAttachmentOfAnswer:answer successHandler:^(id result) {
+        [SVProgressHUD showSuccessWithStatus:CCSuccessMessages.answerAttachmentEmailed duration:CCProgressHudsConstants.loaderDuration];
     } errorHandler:^(NSError *error) {
         [CCStandardErrorHandler showErrorWithError:error];
     }];

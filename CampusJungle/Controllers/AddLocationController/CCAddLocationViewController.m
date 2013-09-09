@@ -28,10 +28,10 @@
 
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 @property (nonatomic, weak) IBOutlet UITextField *nameTextField;
-@property (nonatomic, weak) IBOutlet UITextField *descriptionTextField;
+@property (nonatomic, weak) IBOutlet SSTextView *descriptionTextField;
 @property (nonatomic, weak) IBOutlet UITextField *addressTextField;
 @property (nonatomic, weak) IBOutlet UIButton *detectUserLocationButton;
-
+@property (nonatomic, weak) IBOutlet UIImageView *textViewBackgroundImageView;
 @property (nonatomic, strong) id<CCLocationsApiProviderProtocol> ioc_locationsApiProvider;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) CCBaseActionSheet *shareItemActionSheet;
@@ -45,7 +45,8 @@
     [super viewDidLoad];
     [self setupMapView];
     [self setupButtons];
-    
+    self.descriptionTextField.placeholder = @"Description";
+    [self setupImageViews];
     [self setRightNavigationItemWithTitle:@"Add" selector:@selector(addButtonDidPressed:)];
     [self setTitle:@"Add Location"];
 }
@@ -67,6 +68,11 @@
     self.locationManager = [CLLocationManager new];
     [self.locationManager setDelegate:self];
     [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+}
+
+- (void)setupImageViews
+{
+    [self.textViewBackgroundImageView setImage:[[UIImage imageNamed:@"text_box"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)]];
 }
 
 #pragma mark -

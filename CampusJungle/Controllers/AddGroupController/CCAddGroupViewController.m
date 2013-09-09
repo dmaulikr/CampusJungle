@@ -16,8 +16,8 @@
 @interface CCAddGroupViewController () <UITextFieldDelegate>
 
 @property (nonatomic, weak) IBOutlet UITextField *nameTextField;
-@property (nonatomic, weak) IBOutlet UITextField *descriptionTextField;
-
+@property (nonatomic, weak) IBOutlet SSTextView *descriptionTextField;
+@property (nonatomic, weak) IBOutlet UIImageView *textViewBackgroundImageView;
 @property (nonatomic, strong) CCClass *classObject;
 @property (nonatomic, strong) id<CCGroupsApiProviderProtocol> ioc_groupsApiProvider;
 
@@ -31,6 +31,13 @@
     
     [self setTitle:@"Add Group"];
     [self setRightNavigationItemWithTitle:@"Add" selector:@selector(addGroupButtonDidPressed:)];
+    self.descriptionTextField.placeholder = @"Description";
+    [self setupImageViews];
+}
+
+- (void)setupImageViews
+{
+    [self.textViewBackgroundImageView setImage:[[UIImage imageNamed:@"text_box"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)]];
 }
 
 #pragma mark -

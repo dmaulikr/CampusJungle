@@ -25,12 +25,14 @@
 @interface CCStuffCreationController () <CCAvatarSelectionProtocol, CCCellSelectionProtocol>
 
 @property (nonatomic, strong) IBOutlet UIImageView *thumbImage;
-@property (nonatomic, strong) IBOutlet UITextField *decriptionField;
+@property (nonatomic, strong) IBOutlet SSTextView *decriptionField;
 @property (nonatomic, strong) IBOutlet UITextField *priceField;
 @property (nonatomic, strong) IBOutlet UIButton *collegeSelectionButton;
 @property (nonatomic, strong) IBOutlet UITextField *nameField;
+@property (nonatomic, weak) IBOutlet UITextField *categoryField;
 @property (nonatomic, strong) id <CCStuffAPIProviderProtocol> ioc_stuffAPIProvider;
 @property (nonatomic, strong) NSArray *arrayOfColleges;
+@property (nonatomic, weak) IBOutlet UIImageView *textViewBackgroundImageView;
 
 @property (nonatomic, strong) CCAvatarSelectionActionSheet *thumbSelection;
 @property (nonatomic, strong) NSArray *arrayOfURLs;
@@ -56,6 +58,13 @@
     self.tapRecognizer.enabled = YES;
     [self loadColleges];
     self.title = @"New Stuff";
+    [self setupImageViews];
+    self.decriptionField.placeholder = @"Description";
+}
+
+- (void)setupImageViews
+{
+    [self.textViewBackgroundImageView setImage:[[UIImage imageNamed:@"text_box"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)]];
 }
 
 - (void)setSelectedCollege:(CCCollege *)selectedCollege
@@ -177,6 +186,9 @@
 
 - (BOOL)isFieldsValid
 {
+    if ([self.categoryField.text isEmpty]){
+        [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:@"Price can't be blank"];
+    }
     if(self.nameField.text.isEmpty){
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.emptyName];
         return NO;
@@ -193,6 +205,7 @@
         [CCStandardErrorHandler showErrorWithTitle:CCAlertsTitles.defaultError message:CCValidationMessages.priceCantBeBlank];
         return NO;
     }
+
     return YES;
 }
 
@@ -205,7 +218,7 @@
     uploadInfo.name = self.nameField.text;
     uploadInfo.price = [NSNumber numberWithInteger:(self.priceField.text.doubleValue * 100)];
     uploadInfo.collegeID = self.selectedCollege.collegeID;
-    uploadInfo.category = @"Random";
+    uploadInfo.category = self.categoryField.text;
     return uploadInfo;
 }
 

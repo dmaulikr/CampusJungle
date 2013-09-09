@@ -1,8 +1,8 @@
 PODS:
   - ActionSheetPicker (0.0.2)
-  - AFNetworking (1.2.1)
+  - AFNetworking (1.3.2)
   - AFOAuth1Client (0.2.1):
-    - AFNetworking (>= 1.0)
+    - AFNetworking (~> 1.3)
   - AppleGuice (0.0.1)
   - BlocksKit (1.8.2):
     - libffi
@@ -21,21 +21,21 @@ PODS:
   - OAuthCore (0.0.1):
     - NSData+Base64
   - PayPal-iOS-SDK (1.0.4)
-  - RestKit (0.20.1):
+  - RestKit (0.20.3):
     - RestKit/Core
-  - RestKit/Core (0.20.1):
+  - RestKit/Core (0.20.3):
     - RestKit/CoreData
     - RestKit/Network
     - RestKit/ObjectMapping
-  - RestKit/CoreData (0.20.1)
-  - RestKit/Network (0.20.1):
-    - AFNetworking (~> 1.2.0)
+  - RestKit/CoreData (0.20.3)
+  - RestKit/Network (0.20.3):
+    - AFNetworking (~> 1.3.0)
     - RestKit/ObjectMapping
     - RestKit/Support
     - SOCKit
-  - RestKit/ObjectMapping (0.20.1)
-  - RestKit/Support (0.20.1):
-    - TransitionKit (= 1.1.0)
+  - RestKit/ObjectMapping (0.20.3)
+  - RestKit/Support (0.20.3):
+    - TransitionKit (= 1.1.1)
   - SHOmniAuth (0.1.1):
     - LUKeychainAccess
   - SHOmniAuthTwitter (0.2.3):
@@ -43,10 +43,11 @@ PODS:
     - SHOmniAuth (~> 0.1.0)
     - TWReverseAuth (~> 0.1.0)
   - SOCKit (1.1)
+  - SSToolkit (1.0.4)
   - SVProgressHUD-Fork (0.6.5)
   - TestFlightSDK (1.3.0-beta.5)
   - TPKeyboardAvoiding (0.0.1)
-  - TransitionKit (1.1.0)
+  - TransitionKit (1.1.1)
   - TWReverseAuth (0.1.0):
     - LUKeychainAccess (~> 1.0.1)
     - OAuthCore (~> 0.0.1)
@@ -66,8 +67,9 @@ DEPENDENCIES:
   - MACircleProgressIndicator (~> 1.0.0)
   - MBProgressHUD
   - PayPal-iOS-SDK
-  - RestKit
+  - RestKit (= 0.20.3)
   - SHOmniAuthTwitter
+  - SSToolkit
   - SVProgressHUD-Fork
   - TestFlightSDK
   - TPKeyboardAvoiding
@@ -79,8 +81,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   ActionSheetPicker: 16e212011d5c2e92b3e38609a58b93919b4056aa
-  AFNetworking: a44069e3c9c89867544f6639482f155c7e5f9b41
-  AFOAuth1Client: 643eee4f1becc38dcd9afb30bc067a4d9b60699c
+  AFNetworking: 7f9bcd7c287a75476cd5c61e82fd3380e93e4c54
+  AFOAuth1Client: dcde161501da2c20e6822ee26ce2b4f73f04818d
   AppleGuice: abd580ba08042c5de8f6aab168417f453a9e0100
   BlocksKit: 7396526b0816734103f6133fbb1a520c8b04e80c
   CJStringValidator: f6b1226a0d995dd36af145595ba7c2c18437a9b9
@@ -97,15 +99,16 @@ SPEC CHECKSUMS:
   NSData+Base64: 36c4e5b6479259c1a68866ccd2a8dd385c9744f7
   OAuthCore: 4164eec5e28c68f794953446e68f91054ffe570c
   PayPal-iOS-SDK: 99ea7da171a723a31ec6a14131a3372d1fe92d3a
-  RestKit: ceca63bc91172098c710c469facd2560e8a59164
+  RestKit: 1f181c180105a92f11ec4f6cd7de37625e516d83
   SHOmniAuth: 7e554527fb5d5bd6296439347f009a77677d088d
   SHOmniAuthTwitter: c653744abf7a1a2e888389b12d33449a973ce526
   SOCKit: 2f3bc4d07910de12dcc202815e07db68a3802581
+  SSToolkit: 689acaedac79c2079e492e528a55bcb5db9d98c4
   SVProgressHUD-Fork: d18cc33c8d6966400ffba70f81d95c8feeb92de8
   TestFlightSDK: 6c97c15d0fb4735bac761ec563ba7dfe11541cbf
   TPKeyboardAvoiding: 7289409b17dc2193a3f324672283c542f17c1bb1
-  TransitionKit: ce931c4651134181e30f32295ed608834791a4af
+  TransitionKit: d0e3344aac92991395d4c2e72d9c5a8ceeb12910
   TWReverseAuth: c0244d8d66ffdadf98137f86aaf649b3cbc97a76
   UIAlertView-Blocks: 7689ad7dd941417e7a7da81507482bc6f4f15bcd
 
-COCOAPODS: 0.18.1
+COCOAPODS: 0.23.0

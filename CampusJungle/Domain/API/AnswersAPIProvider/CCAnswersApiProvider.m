@@ -45,6 +45,19 @@ static const NSInteger kItemsPerPage = 10;
     }];
 }
 
+- (void)postUploadInfoWithImages:(CCAnswer *)answer withImages:(NSArray *)images successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler progress:(progressBlock)progressBlock
+{
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.postAnswer, answer.questionId];
+    
+    [self postInfoWithObject:answer
+                   thumbnail:nil
+                      images:images
+                      onPath:path
+              successHandler:successHandler
+                errorHandler:errorHandler
+                    progress:progressBlock];
+}
+
 - (void)deleteAnswer:(CCAnswer *)answer successHandler:(successHandlerWithRKResult)successHandler errorHandler:(errorHandler)errorHandler
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
@@ -79,6 +92,22 @@ static const NSInteger kItemsPerPage = 10;
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         errorHandler(error);
     }];
+}
+
+- (void)emailAttachmentOfAnswer:(CCAnswer *)answer successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    [self setAuthorizationToken];
+    NSString *path = [NSString stringWithFormat:CCAPIDefines.answerAttachmentSendUsingEmail,answer.answerId];
+    [objectManager getObject:nil
+                        path:path
+                  parameters:nil
+                     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                         successHandler(mappingResult.firstObject);
+                     }
+                     failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                         errorHandler(error);
+                     }];
 }
 
 @end

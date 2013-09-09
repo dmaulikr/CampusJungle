@@ -51,11 +51,18 @@
     [self.priceLabel setText:[NSString stringWithFormat:@"Price: $%0.2lf", self.stuff.priceInDolars.doubleValue]];
     if([self.stuff isKindOfClass:[CCBook class]] && [(CCBook *)self.stuff isbn]){
         self.isbnLabel.text = [NSString stringWithFormat:@"ISBN : %@",[(CCBook *)self.stuff isbn]];
-        [CCViewPositioningHelper setOriginY:self.descriptionLabel.frame.origin.y + 20 toView:self.descriptionLabel];
-        [CCViewPositioningHelper setOriginY:self.descriptionTitle.frame.origin.y + 20 toView:self.descriptionTitle];
+
+    } else {
+        self.isbnLabel.text = [NSString stringWithFormat:@"Category : %@",[self.stuff category]];
     }
+    [CCViewPositioningHelper setOriginY:self.descriptionLabel.frame.origin.y + 20 toView:self.descriptionLabel];
+    [CCViewPositioningHelper setOriginY:self.descriptionTitle.frame.origin.y + 20 toView:self.descriptionTitle];
     [self.descriptionLabel setText:self.stuff.description];
-    [self.descriptionLabel sizeToFit];
+    
+    UIFont *font = [UIFont fontWithName:@"Avenir-Medium" size:17];
+
+    CGSize requiredSize = [self.stuff.description sizeWithFont:font constrainedToSize:CGSizeMake(286, font.lineHeight * 20) lineBreakMode:NSLineBreakByWordWrapping];
+    [CCViewPositioningHelper setHeight:requiredSize.height toView:self.descriptionLabel];
     [self fixLayout];
 }
 

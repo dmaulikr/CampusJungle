@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CCRestKitMappableModel.h"
 #import "CCModelIdAccessorProtocol.h"
+#import "CCUploadIndicatorDelegateProtocol.h"
 
 @interface CCAnswer : NSObject <CCRestKitMappableModel, CCModelTypeProtocol>
 
@@ -22,6 +23,14 @@
 @property (nonatomic, assign) NSInteger commentsCount;
 @property (nonatomic, assign) NSInteger likesCount;
 @property (nonatomic, assign) BOOL isLiked;
+
+@property (nonatomic, strong) NSString *attachment;
+
+@property (nonatomic, strong) NSNumber *uploadProgress;
+@property (nonatomic, strong) NSArray *arrayOfImageUrls;
+@property (nonatomic, strong) NSArray *arrayOfImages;
+@property (nonatomic, strong) NSString *pdfUrl;
+@property (nonatomic, weak) id<CCUploadIndicatorDelegateProtocol> delegate;
 
 + (CCAnswer *)answerWithText:(NSString *)text;
 

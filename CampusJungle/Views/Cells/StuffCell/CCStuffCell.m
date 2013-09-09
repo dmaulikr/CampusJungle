@@ -16,8 +16,9 @@
 #import "CCStuffUploadInfo.h"
 #import "CCStuff.h"
 #import "CCBookUploadInfo.h"
+#import "CCBook.h"
 
-static const NSInteger kCellHeight = 132;
+static const NSInteger kCellHeight = 150;
 
 @interface CCStuffCell() <CCUploadIndicatorDelegateProtocol>
 
@@ -26,6 +27,7 @@ static const NSInteger kCellHeight = 132;
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbImage;
 @property (nonatomic, weak) IBOutlet MACircleProgressIndicator *indicator;
+@property (nonatomic, weak) IBOutlet UILabel *categoryField;
 
 @end
 
@@ -59,6 +61,11 @@ static const NSInteger kCellHeight = 132;
     [self.descriptionLabel setText:stuff.description];
     [self.nameLabel setText:stuff.name];
     [self.priceLabel setText:[NSString stringWithFormat:@"Price: $%0.2lf", stuff.priceInDolars.doubleValue]];
+    if([stuff isKindOfClass:[CCStuff class]] || [stuff isKindOfClass:[CCStuffUploadInfo class]]){
+        self.categoryField.text = [NSString stringWithFormat:@"Category: %@",stuff.category];
+    } else {
+        self.categoryField.text = [NSString stringWithFormat:@"ISBN: %@",[(CCBook *)stuff isbn]];
+    }
 }
 
 - (void)fillImageView

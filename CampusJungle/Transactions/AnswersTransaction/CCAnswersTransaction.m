@@ -10,6 +10,7 @@
 #import "CCAnswersViewController.h"
 #import "CCAddAnswerTransaction.h"
 #import "CCCommentsTransaction.h"
+#import "CCViewPDFTransaction.h"
 
 @implementation CCAnswersTransaction
 
@@ -21,6 +22,9 @@
     CCAddAnswerTransaction *addAnswerTransaction = [CCAddAnswerTransaction new];
     addAnswerTransaction.navigation = self.navigation;
     
+    CCViewPDFTransaction *viewPDFTransaction = [CCViewPDFTransaction new];
+    viewPDFTransaction.navigation = self.navigation;
+    
     CCCommentsTransaction *commentsTransaction = [CCCommentsTransaction new];
     commentsTransaction.navigation = self.navigation;
     
@@ -28,6 +32,8 @@
     [answersController setQuestion:object];
     answersController.addAnswerTransaction = addAnswerTransaction;
     answersController.showCommentsTransaction = commentsTransaction;
+    answersController.viewAttacmentTransaction = viewPDFTransaction;
+    
     [self.navigation pushViewController:answersController animated:YES];
 }
 

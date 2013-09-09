@@ -9,6 +9,11 @@
 #import "CCAddAnswerTransaction.h"
 #import "CCBackTransaction.h"
 #import "CCAddAnswerViewController.h"
+#import "CCImagesUploadingScreenTransaction.h"
+#import "CCUploadImagesController.h"
+#import "CCDropboxImagesSelectionTransaction.h"
+#import "CCSelectPdfFromDropboxTransaction.h"
+#import "CCBackToControllerTransaction.h"
 
 @implementation CCAddAnswerTransaction
 
@@ -23,6 +28,25 @@
     CCAddAnswerViewController *addAnswerController = [CCAddAnswerViewController new];
     [addAnswerController setQuestion:object];
     addAnswerController.backTransaction = backTransaction;
+    
+    CCImagesUploadingScreenTransaction *imagesUploadTransaction = [CCImagesUploadingScreenTransaction new];
+    imagesUploadTransaction.uploadImagesControllerClass = [CCUploadImagesController class];
+    imagesUploadTransaction.naviation = self.navigation;
+    
+    CCDropboxImagesSelectionTransaction *dropboxImagesTransaction = [CCDropboxImagesSelectionTransaction new];
+    dropboxImagesTransaction.navigation = self.navigation;
+    
+    CCSelectPdfFromDropboxTransaction *dropboxPDFTransaction = [CCSelectPdfFromDropboxTransaction new];
+    dropboxPDFTransaction.navigation = self.navigation;
+    
+    CCBackToControllerTransaction *backToUploadTransaction = [CCBackToControllerTransaction new];
+    backToUploadTransaction.navigation = self.navigation;
+    backToUploadTransaction.targetController = addAnswerController;
+    
+    addAnswerController.backToSelfController = backToUploadTransaction;
+    addAnswerController.imagesUploadTransaction = imagesUploadTransaction;
+    addAnswerController.imagesDropboxUploadTransaction = dropboxImagesTransaction;
+    addAnswerController.pdfDropboxUploadTransaction = dropboxPDFTransaction;
     
     [self.navigation pushViewController:addAnswerController animated:YES];
 }

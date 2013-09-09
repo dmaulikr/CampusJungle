@@ -128,6 +128,7 @@ extern const struct CCAPIDefines {
     __unsafe_unretained NSString *dialogWithId;
     __unsafe_unretained NSString *dialogForGroupWithID;
     __unsafe_unretained NSString *requestMoney;
+    __unsafe_unretained NSString *answerAttachmentSendUsingEmail;
 
 } CCAPIDefines;
 

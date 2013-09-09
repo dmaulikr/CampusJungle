@@ -191,10 +191,9 @@
 					<object class="IBUILabel" id="228123539">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{17, 166}, {286, 30}}</string>
+						<string key="NSFrame">{{17, 166}, {286, 33}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -208,9 +207,11 @@
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
+						<int key="IBUINumberOfLines">0</int>
 						<reference key="IBUIFontDescription" ref="652070375"/>
 						<reference key="IBUIFont" ref="550862430"/>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+						<double key="preferredMaxLayoutWidth">286</double>
 					</object>
 					<object class="IBUIImageView" id="12344730">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -456,6 +457,20 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">CCStuffHeader</string>
 					<string key="superclassName">UICollectionReusableView</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="deleteButtonDidPressed:">id</string>
+						<string key="makeOfferButtonDidPressed:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="deleteButtonDidPressed:">
+							<string key="name">deleteButtonDidPressed:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="makeOfferButtonDidPressed:">
+							<string key="name">makeOfferButtonDidPressed:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="deleteStuffButton">UIButton</string>
 						<string key="descriptionLabel">UILabel</string>

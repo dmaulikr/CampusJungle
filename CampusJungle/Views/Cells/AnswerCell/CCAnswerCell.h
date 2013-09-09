@@ -16,6 +16,8 @@ typedef void(^RequestSuccessBlock)();
 
 - (void)deleteAnswer:(CCAnswer *)answer;
 - (void)likeAnswer:(CCAnswer *)answer successBlock:(RequestSuccessBlock)successBlock;
+- (void)emailAttachmentOfAnswer:(CCAnswer *)answer;
+- (void)viewAttachmentOfAnswer:(CCAnswer *)answer;
 
 @end
 

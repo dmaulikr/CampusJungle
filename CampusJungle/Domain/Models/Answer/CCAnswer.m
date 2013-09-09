@@ -81,6 +81,7 @@
              @"question_id" : @"questionId",
              @"text" : @"text",
              @"owner_id" : @"ownerId",
+             @"attachment" : @"attachment",
              @"owner_first_name" : @"ownerFirstName",
              @"owner_last_name" : @"ownerLastName",
              @"comments_count" : @"commentsCount",
@@ -93,7 +94,10 @@
 + (NSDictionary *)requestMappingDictionary
 {
     return @{
-             @"text" : @"text"
+             @"text" : @"text",
+             
+             @"arrayOfImageUrls" : @"images_urls",
+             @"pdfUrl" : @"pdf_url",
              };
 }
 

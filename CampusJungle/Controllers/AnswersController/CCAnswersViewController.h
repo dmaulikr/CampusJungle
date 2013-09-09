@@ -16,6 +16,7 @@
 
 @property (nonatomic, strong) id<CCTransactionWithObject> addAnswerTransaction;
 @property (nonatomic, strong) id<CCTransactionWithObject> showCommentsTransaction;
+@property (nonatomic, strong) id<CCTransactionWithObject> viewAttacmentTransaction;
 
 - (void)setQuestion:(CCQuestion *)question;
 

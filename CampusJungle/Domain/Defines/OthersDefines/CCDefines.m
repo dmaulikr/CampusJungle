@@ -9,8 +9,8 @@
 #import "CCDefines.h"
 
 const struct CCAPIDefines CCAPIDefines = {
-    .baseURL = @"http://collegeconnect.111projects.com",
-    //.baseURL = @"http://169.254.200.48:3000",
+    //.baseURL = @"http://collegeconnect.111projects.com",
+    .baseURL = @"http://0.0.0.0:3000",
     .signUp = @"/api/users/sign_up",
     .authorization = @"/api/authentications",
     .login = @"/api/users/login",
@@ -131,6 +131,7 @@ const struct CCAPIDefines CCAPIDefines = {
     .dialogWithId = @"/api/dialogs/dialog/%@",
     .dialogForGroupWithID = @"/api/dialog/group/%@",
     .requestMoney = @"/api/users/me/cashout_requests",
+    .answerAttachmentSendUsingEmail = @"/api/answer/%@/email_attachment",
 };
 
 const struct CCUserDefines CCUserDefines = {
