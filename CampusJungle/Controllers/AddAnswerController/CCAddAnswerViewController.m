@@ -52,7 +52,7 @@
 
 - (void)setupHeaderView
 {
-    CCQuestionHeaderView *headerView = [[CCQuestionHeaderView alloc] initWithQuestionText:self.question.text bottomDividerVisibile:NO];
+    CCQuestionHeaderView *headerView = [[CCQuestionHeaderView alloc] initWithQuestionText:self.question.text subject:self.question.subject bottomDividerVisibile:NO];
     [self.questionHeaderView setBounds:headerView.bounds];
     [self.questionHeaderView addSubview:headerView];
     [CCViewPositioningHelper setOriginY:0 toView:self.questionHeaderView];

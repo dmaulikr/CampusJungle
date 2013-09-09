@@ -10,6 +10,6 @@
 
 @interface CCQuestionHeaderView : UIView
 
-- (id)initWithQuestionText:(NSString *)questionText bottomDividerVisibile:(BOOL)isVisible;
+- (id)initWithQuestionText:(NSString *)questionText subject:(NSString *)subject bottomDividerVisibile:(BOOL)isVisible;
 
 @end

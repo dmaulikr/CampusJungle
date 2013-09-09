@@ -21,6 +21,7 @@
 
 @property (nonatomic, weak) IBOutlet UITextView *questionTextView;
 @property (nonatomic, weak) IBOutlet UIImageView *textViewBackgroundImageView;
+@property (nonatomic, weak) IBOutlet UITextField *textField;
 @property (nonatomic, strong) id <CCQuestionsApiProviderProtocol> ioc_questionAPIProvider;
 @property (nonatomic, strong) id <CCUploadProcessManagerProtocol> ioc_uploadManager;
 @property (nonatomic, strong) id <CCUserSessionProtocol> ioc_userSession;
@@ -86,6 +87,7 @@
     question.ownerFirstName = currentUser.firstName;
     question.ownerLastName = currentUser.lastName;
     question.createdDate = [NSDate date];
+    question.subject = self.textField.text;
     return question;
 }
 

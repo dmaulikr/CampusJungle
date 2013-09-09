@@ -99,7 +99,7 @@ static const NSInteger kItemsPerPage = 10;
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     [self setAuthorizationToken];
     NSString *path = [NSString stringWithFormat:CCAPIDefines.answerAttachmentSendUsingEmail,answer.answerId];
-    [objectManager getObject:nil
+    [objectManager putObject:nil
                         path:path
                   parameters:nil
                      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {

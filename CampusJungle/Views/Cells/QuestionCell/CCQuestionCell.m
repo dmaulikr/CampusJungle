@@ -16,11 +16,11 @@
 
 #import "CCDateFormatterProtocol.h"
 
-static const NSInteger kTextLabelOriginY = 77;
+static const NSInteger kTextLabelOriginY = 107;
 static const NSInteger kDefaultTextLabelWidth = 272;
 static const NSInteger kBottomSpace = 30;
 static const NSInteger kAttachmentViewHeight = 34;
-static const CGFloat kMinCellHeight = 133;
+static const CGFloat kMinCellHeight = 163;
 
 @interface CCQuestionCell ()<CCUploadIndicatorDelegateProtocol>
 
@@ -30,6 +30,7 @@ static const CGFloat kMinCellHeight = 133;
 @property (nonatomic, weak) IBOutlet UILabel *questionTextLabel;
 @property (nonatomic, weak) IBOutlet UILabel *answersNumberLabel;
 @property (nonatomic, weak) IBOutlet UIButton *deleteQuestionButton;
+@property (nonatomic, weak) IBOutlet UILabel *subjectLabel;
 
 @property (nonatomic, weak) IBOutlet UIView *attachmentView;
 @property (nonatomic, weak) IBOutlet UIButton *emailAttachmentButton;
@@ -94,6 +95,7 @@ static const CGFloat kMinCellHeight = 133;
     [self.questionTextLabel sizeToFit];
     [CCViewPositioningHelper setOriginY:[CCViewPositioningHelper bottomOfView:self.questionTextLabel] toView:self.attachmentView];
     [CCViewPositioningHelper setOriginY:[CCViewPositioningHelper bottomOfView:self.attachmentView] + 5 toView:self.answersNumberLabel];
+    self.subjectLabel.text = self.question.subject;
 }
 
 - (void)fillImageView

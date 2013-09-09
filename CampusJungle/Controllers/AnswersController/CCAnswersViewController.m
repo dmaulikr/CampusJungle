@@ -50,7 +50,7 @@
 
 - (void)setupTableView
 {
-    self.tableHeaderView = [[CCQuestionHeaderView alloc] initWithQuestionText:self.question.text bottomDividerVisibile:YES];
+    self.tableHeaderView = [[CCQuestionHeaderView alloc] initWithQuestionText:self.question.text subject:self.question.subject bottomDividerVisibile:YES];
     self.mainTable.tableHeaderView = self.tableHeaderView;
     
     self.dataSource = [CCBaseReverseDataSource new];
