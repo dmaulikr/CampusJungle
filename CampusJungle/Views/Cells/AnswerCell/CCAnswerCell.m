@@ -29,6 +29,7 @@ static const CGFloat kMinCellHeight = 113;
 @property (nonatomic, weak) IBOutlet UILabel *commentsCountLabel;
 @property (nonatomic, weak) IBOutlet UIButton *emailAttachmentButton;
 @property (nonatomic, weak) IBOutlet UIButton *viewAttachmentButton;
+@property (nonatomic, weak) IBOutlet UIImageView *cellBG;
 
 @property (nonatomic, strong) id<CCUserSessionProtocol> ioc_userSessionProvider;
 @property (nonatomic, strong) id<CCDateFormatterProtocol> ioc_dateFormatterHelper;
@@ -63,6 +64,7 @@ static const CGFloat kMinCellHeight = 113;
         [self.delegate viewAttachmentOfAnswer:self.answer];
     }
 }
+
 
 
 - (void)layoutSubviews
@@ -100,8 +102,17 @@ static const CGFloat kMinCellHeight = 113;
     }
 }
 
+- (void)addBottomDivider
+{
+    self.bottomDivider = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height - 1, self.bounds.size.width - 2 * 0, 1)];
+    [self.bottomDivider setBackgroundColor:BASE_DIVIDER_COLOR];
+    [self.bottomDivider setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin];
+    [self addSubview:self.bottomDivider];
+}
+
 - (void)fillLabels
 {
+    self.cellBG.hidden = self.isEven;
     [self.userNameLabel setText:[NSString stringWithFormat:@"%@ %@", self.answer.ownerFirstName, self.answer.ownerLastName]];
     [self.createdDateLabel setText:[self.ioc_dateFormatterHelper formatedDateStringFromDate:self.answer.createdDate]];
     [self.answerTextLabel setText:self.answer.text];

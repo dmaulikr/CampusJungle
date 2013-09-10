@@ -12,4 +12,7 @@
 
 @property (nonatomic, strong) id cellObject;
 
+@optional
+@property (nonatomic) BOOL isEven;
+
 @end

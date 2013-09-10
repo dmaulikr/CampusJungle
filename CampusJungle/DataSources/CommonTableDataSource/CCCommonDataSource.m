@@ -41,6 +41,9 @@
     if ([cell respondsToSelector:@selector(setReportDelegate:)]) {
         [cell performSelector:@selector(setReportDelegate:) withObject:self.dataProvider.reportDelegate];
     }
+    if([cell respondsToSelector:@selector(setIsEven:)]){
+        cell.isEven = indexPath.row % 2;
+    }
     
     return (UITableViewCell *)cell;
 }

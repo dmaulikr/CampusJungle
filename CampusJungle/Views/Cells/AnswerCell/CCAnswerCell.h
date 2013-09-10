@@ -23,6 +23,7 @@ typedef void(^RequestSuccessBlock)();
 
 @interface CCAnswerCell : CCBaseCell
 
+@property (nonatomic) BOOL isEven;
 @property (nonatomic, strong) CCAnswer *cellObject;
 - (void)setCellObject:(CCAnswer *)answer;
 - (void)setDelegate:(id<CCAnswerCellDelegate>)delegate;
