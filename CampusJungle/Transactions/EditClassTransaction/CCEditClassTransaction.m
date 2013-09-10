@@ -9,6 +9,7 @@
 #import "CCEditClassTransaction.h"
 #import "CCUpdateClassController.h"
 #import "CCBackTransactionAfterClassUpdate.h"
+#import "CCClassAddedTransaction.h"
 
 @implementation CCEditClassTransaction
 
@@ -22,6 +23,10 @@
     CCBackTransactionAfterClassUpdate *backTransaction = [CCBackTransactionAfterClassUpdate new];
     backTransaction.navigation = self.navigation;
     backTransaction.previousController = self.classDataController;
+    
+    CCClassAddedTransaction *classAddedTransaction = [CCClassAddedTransaction new];
+    classAddedTransaction.navigation = self.navigation;
+    updateClassController.classAddedTransaction = classAddedTransaction;
     
     updateClassController.backTransaction = backTransaction;
     updateClassController.currentClass = object;

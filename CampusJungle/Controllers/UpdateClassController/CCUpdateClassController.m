@@ -8,6 +8,7 @@
 
 #import "CCUpdateClassController.h"
 #import "CCStandardErrorHandler.h"
+#import "GIAlert.h"
 #import "CCClassesApiProviderProtocol.h"
 
 @interface CCUpdateClassController ()
@@ -58,12 +59,25 @@
     CCClass *class = [self prepareClass];
     class.classID = self.currentClass.classID;
     __weak CCUpdateClassController *weakSelf = self;
-    [self.ioc_apiClassesProvider updateClass:class successHandler:^(CCClass *newClass) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadSideMenu object:nil];
-        [weakSelf.backTransaction performWithObject:newClass];
-    } errorHandler:^(NSError *error) {
-         [CCStandardErrorHandler showErrorWithError:error];
-    }];
+    
+    GIAlertButton *alertButton = [GIAlertButton buttonWithTitle:@"Create" action:nil];
+    alertButton.actionOnClick = ^{
+        self.collegeId = self.currentClass.collegeID;
+        [super createClass:sender];
+    };
+    
+    GIAlertButton *alertButton2 = [GIAlertButton buttonWithTitle:@"Update" action:nil];
+    alertButton2.actionOnClick = ^{
+        [self.ioc_apiClassesProvider updateClass:class successHandler:^(CCClass *newClass) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadSideMenu object:nil];
+            [weakSelf.backTransaction performWithObject:newClass];
+        } errorHandler:^(NSError *error) {
+            [CCStandardErrorHandler showErrorWithError:error];
+        }];
+    };
+    
+    GIAlert *alert = [GIAlert alertWithTitle:@"" message:@"Update current class or create new one?" buttons:@[alertButton,alertButton2]];
+    [alert show];
 }
 
 @end

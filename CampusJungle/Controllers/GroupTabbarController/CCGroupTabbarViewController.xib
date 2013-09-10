@@ -121,11 +121,11 @@
 						<reference key="IBUINormalTitleShadowColor" ref="462008650"/>
 						<object class="NSCustomResource" key="IBUISelectedImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">locations_icon_active.png</string>
+							<string key="NSResourceName">group_meet_up_button_active.png</string>
 						</object>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">locations_icon.png</string>
+							<string key="NSResourceName">group_meet_up_button.png</string>
 						</object>
 						<reference key="IBUISelectedBackgroundImage" ref="980741542"/>
 						<reference key="IBUIFontDescription" ref="131053900"/>
@@ -309,7 +309,7 @@
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<real value="2" key="6.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<real value="0.0" key="6.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="7.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="0.0" key="7.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -326,17 +326,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">CCGroupTabbarViewController</string>
 					<string key="superclassName">UIViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">didSelectButton:</string>
-						<string key="NS.object.0">UIButton</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">didSelectButton:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">didSelectButton:</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="groupmatesButton">UIButton</string>
 						<string key="locationButton">UIButton</string>
@@ -373,10 +362,10 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="group_meet_up_button.png">{72, 49}</string>
+			<string key="group_meet_up_button_active.png">{72, 49}</string>
 			<string key="groupmates_button.png">{84, 48}</string>
 			<string key="groupmates_button_active.png">{84, 48}</string>
-			<string key="locations_icon.png">{48, 43}</string>
-			<string key="locations_icon_active.png">{48, 43}</string>
 			<string key="question_button.png">{85, 48}</string>
 			<string key="question_button_active.png">{72, 49}</string>
 			<string key="tab_bar_background.png">{323, 52}</string>

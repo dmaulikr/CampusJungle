@@ -149,11 +149,11 @@
 						<reference key="IBUINormalTitleShadowColor" ref="161386226"/>
 						<object class="NSCustomResource" key="IBUISelectedImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">locations_icon_active.png</string>
+							<string key="NSResourceName">meet_up_button_active.png</string>
 						</object>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">locations_icon.png</string>
+							<string key="NSResourceName">meet_up_button.png</string>
 						</object>
 						<reference key="IBUISelectedBackgroundImage" ref="365809332"/>
 						<reference key="IBUIFontDescription" ref="863331273"/>
@@ -359,7 +359,7 @@
 				<string key="1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="103.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="14.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<real value="2" key="14.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<real value="0.0" key="14.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="21.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="2" key="21.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -383,8 +383,8 @@
 			<string key="classmates_icon_active.png">{57, 40}</string>
 			<string key="groups_icon.png">{72, 49}</string>
 			<string key="groups_icon_active.png">{75, 52}</string>
-			<string key="locations_icon.png">{48, 43}</string>
-			<string key="locations_icon_active.png">{48, 43}</string>
+			<string key="meet_up_button.png">{72, 49}</string>
+			<string key="meet_up_button_active.png">{72, 49}</string>
 			<string key="question_button.png">{85, 48}</string>
 			<string key="question_button_active.png">{72, 49}</string>
 			<string key="tab_bar_background.png">{323, 52}</string>

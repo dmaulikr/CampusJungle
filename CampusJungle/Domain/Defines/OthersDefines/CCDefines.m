@@ -9,8 +9,8 @@
 #import "CCDefines.h"
 
 const struct CCAPIDefines CCAPIDefines = {
-    .baseURL = @"http://collegeconnect.111projects.com",
-    //.baseURL = @"http://0.0.0.0:3000",
+    //.baseURL = @"http://collegeconnect.111projects.com",
+    .baseURL = @"http://0.0.0.0:3000",
     .signUp = @"/api/users/sign_up",
     .authorization = @"/api/authentications",
     .login = @"/api/users/login",

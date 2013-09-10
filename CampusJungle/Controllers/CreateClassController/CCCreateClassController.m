@@ -33,7 +33,7 @@
 @property (nonatomic, strong) CCAvatarSelectionActionSheet *thumbSelectionSheet;
 @property (nonatomic, weak) IBOutlet UIButton *thumbButton;
 @property (nonatomic, strong) NSArray *textFieldsArray;
-@property (nonatomic, strong) NSString *collegeId;
+
 @property (nonatomic, strong) id<CCClassesApiProviderProtocol> ioc_apiClassesProvider;
 
 - (IBAction)thumbDidPressed;
@@ -140,7 +140,7 @@
     if(self.isAvatarUpdated){
         class.thumb = self.thumbView.image;
     }
-    
+    NSLog(@"%@",class.timetable);
     [(NSMutableArray *)class.timetable removeObjectAtIndex:0];
     return class;
 }
