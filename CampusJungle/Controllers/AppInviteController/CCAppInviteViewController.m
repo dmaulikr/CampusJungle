@@ -222,10 +222,9 @@ typedef enum {
     } cancelBlock:^{
         completionBlock();
     }];
-    //self.messageComposerDelegate = self.messageDelegate;
     [self.messageViewController setBody:CCAppInvitesDefines.smsInviteBody];
     [self.messageViewController setRecipients:credentials];
-    self.messageViewController.delegate = self.messageDelegate;
+    self.messageViewController.messageComposeDelegate = self.messageDelegate;
     [CCAppearanceConfigurator setDefaultTextFieldsAppearance];
     [self presentViewController:self.messageViewController animated:YES completion:nil];
 }

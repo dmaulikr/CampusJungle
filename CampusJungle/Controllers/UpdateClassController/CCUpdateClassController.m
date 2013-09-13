@@ -59,25 +59,60 @@
     CCClass *class = [self prepareClass];
     class.classID = self.currentClass.classID;
     __weak CCUpdateClassController *weakSelf = self;
+    if(![self.classNameTextField.text isEqualToString:self.currentClass.name] || ![self.classIdTextField.text isEqualToString:self.currentClass.callNumber]){
+        
+        GIAlertButton *alertButton = [GIAlertButton buttonWithTitle:@"Create" action:nil];
+        alertButton.actionOnClick = ^{
+            self.collegeId = self.currentClass.collegeID;
+            
+            [self.ioc_apiClassesProvider createClass:[self fixTimeTableForClass:[self prepareClass]] successHandler:^(id newClass) {
+                [self joinClass:(CCClass*)newClass];
+            } errorHandler:^(NSError *error) {
+                [self.ioc_apiClassesProvider createClass:[self fixTimeTableForClass:[self prepareClass]] successHandler:^(id newClass) {
+                    [self joinClass:(CCClass*)newClass];
+                } errorHandler:^(NSError *error) {
+                    [CCStandardErrorHandler showErrorWithError:error];
+                }];
+            }];
+
+        };
     
-    GIAlertButton *alertButton = [GIAlertButton buttonWithTitle:@"Create" action:nil];
-    alertButton.actionOnClick = ^{
-        self.collegeId = self.currentClass.collegeID;
-        [super createClass:sender];
-    };
+        GIAlertButton *alertButton2 = [GIAlertButton buttonWithTitle:@"Update" action:nil];
+        alertButton2.actionOnClick = ^{
+            [self.ioc_apiClassesProvider updateClass:class successHandler:^(CCClass *newClass) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.    reloadSideMenu object:nil];
+                [weakSelf.backTransaction performWithObject:newClass];
+            } errorHandler:^(NSError *error) {
+            [CCStandardErrorHandler showErrorWithError:error];
+            }];
+        };
     
-    GIAlertButton *alertButton2 = [GIAlertButton buttonWithTitle:@"Update" action:nil];
-    alertButton2.actionOnClick = ^{
+        GIAlert *alert = [GIAlert alertWithTitle:@"" message:@"Update current class or create new one?" buttons:@[alertButton,alertButton2]];
+        [alert show];
+    } else {
+    
         [self.ioc_apiClassesProvider updateClass:class successHandler:^(CCClass *newClass) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.reloadSideMenu object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:CCNotificationsNames.    reloadSideMenu object:nil];
             [weakSelf.backTransaction performWithObject:newClass];
         } errorHandler:^(NSError *error) {
             [CCStandardErrorHandler showErrorWithError:error];
         }];
-    };
-    
-    GIAlert *alert = [GIAlert alertWithTitle:@"" message:@"Update current class or create new one?" buttons:@[alertButton,alertButton2]];
-    [alert show];
+    }
+}
+
+- (CCClass *)fixTimeTableForClass:(CCClass *)class
+{
+    NSMutableArray *timeTable = [NSMutableArray new];
+    for(NSDictionary *time in class.timetable){
+        NSMutableDictionary *fixedTime = time.mutableCopy;
+        [fixedTime removeObjectForKey:@"klass_id"];
+        [fixedTime removeObjectForKey:@"id"];
+        [fixedTime removeObjectForKey:@"updated_at"];
+        [fixedTime removeObjectForKey:@"created_at"];
+        [timeTable addObject:fixedTime];
+    }
+    class.timetable = timeTable;
+    return class;
 }
 
 @end

@@ -65,7 +65,11 @@ static const CGFloat kMinCellHeight = 113;
     }
 }
 
-
+- (void)setIsEven:(BOOL)isEven
+{
+    _isEven = isEven;
+    
+}
 
 - (void)layoutSubviews
 {

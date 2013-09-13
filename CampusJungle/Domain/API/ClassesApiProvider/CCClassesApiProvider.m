@@ -12,7 +12,8 @@
 @implementation CCClassesApiProvider
 
 - (void)createClass:(CCClass *)class successHandler:(successWithObject)successHandler errorHandler:(errorHandler)errorHandler
-{  
+{
+    NSLog(@"%@",class.timetable);
     [self postInfoWithObject:class
                    thumbnail:class.thumb
                       images:nil

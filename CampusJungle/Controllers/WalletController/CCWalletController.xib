@@ -48,7 +48,7 @@
 								<string key="NSFrame">{{20, 20}, {89, 26}}</string>
 								<reference key="NSSuperview" ref="254979920"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="293256237"/>
+								<reference key="NSNextKeyView" ref="538429300"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -81,7 +81,7 @@
 								<string key="NSFrame">{{49, 45}, {26, 26}}</string>
 								<reference key="NSSuperview" ref="254979920"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="887904410"/>
+								<reference key="NSNextKeyView" ref="293256237"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -138,7 +138,7 @@
 								<string key="NSFrame">{{106, 20}, {204, 26}}</string>
 								<reference key="NSSuperview" ref="254979920"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="538429300"/>
+								<reference key="NSNextKeyView" ref="887904410"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -225,7 +225,7 @@
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">Withdrawing money</string>
+								<string key="IBUIText">Cash Out Your Current Money</string>
 								<object class="NSColor" key="IBUITextColor">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC41MDk4MDM5MjE2IDAuMjU0OTAxOTYwOCAwAA</bytes>
@@ -477,7 +477,7 @@
 							<object class="IBUILabel" id="364918277">
 								<reference key="NSNextResponder" ref="254979920"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{14, 353}, {234, 43}}</string>
+								<string key="NSFrame">{{5, 350}, {306, 43}}</string>
 								<reference key="NSSuperview" ref="254979920"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="879858055"/>
@@ -487,7 +487,7 @@
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">Money from the bonus wallet can not be derived</string>
+								<string key="IBUIText">Money from bonus wallet can only be used for in app purchases and cannot be cashed out</string>
 								<object class="NSColor" key="IBUITextColor">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC41MDk4MDM5MjE2IDAuMjU0OTAxOTYwOCAwAA</bytes>
@@ -495,10 +495,17 @@
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">0</int>
 								<int key="IBUINumberOfLines">2</int>
-								<reference key="IBUIFontDescription" ref="369669116"/>
-								<reference key="IBUIFont" ref="556012341"/>
+								<object class="IBUIFontDescription" key="IBUIFontDescription">
+									<int key="type">1</int>
+									<double key="pointSize">13</double>
+								</object>
+								<object class="NSFont" key="IBUIFont">
+									<string key="NSName">Helvetica</string>
+									<double key="NSSize">13</double>
+									<int key="NSfFlags">16</int>
+								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
-								<double key="preferredMaxLayoutWidth">234</double>
+								<double key="preferredMaxLayoutWidth">306</double>
 							</object>
 							<object class="IBUITextField" id="879858055">
 								<reference key="NSNextResponder" ref="254979920"/>

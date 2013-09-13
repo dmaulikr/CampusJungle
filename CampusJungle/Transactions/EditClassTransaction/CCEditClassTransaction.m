@@ -10,6 +10,7 @@
 #import "CCUpdateClassController.h"
 #import "CCBackTransactionAfterClassUpdate.h"
 #import "CCClassAddedTransaction.h"
+#import "CCInboxTransaction.h"
 
 @implementation CCEditClassTransaction
 
@@ -27,6 +28,9 @@
     CCClassAddedTransaction *classAddedTransaction = [CCClassAddedTransaction new];
     classAddedTransaction.navigation = self.navigation;
     updateClassController.classAddedTransaction = classAddedTransaction;
+    CCInboxTransaction *inboxTransaction = [CCInboxTransaction new];
+    inboxTransaction.menuController = [[UIApplication sharedApplication] keyWindow].rootViewController;
+    classAddedTransaction.inboxTransaction = inboxTransaction;
     
     updateClassController.backTransaction = backTransaction;
     updateClassController.currentClass = object;

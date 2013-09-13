@@ -17,8 +17,6 @@
     return CCModelsTypes.appInvite;
 }
 
-
-
 + (CCAppInvite *)createWithAddressBookRecord:(CCAddressBookRecord *)record
 {
     CCAppInvite *appInvite = [CCAppInvite new];

@@ -28,6 +28,8 @@
     return self;
 }
 
+
+
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
     switch(result) {
         case MessageComposeResultSent:
@@ -48,6 +50,12 @@
         default:
             break;
     }
+}
+
+- (void)dealloc
+{
+
+
 }
 
 @end

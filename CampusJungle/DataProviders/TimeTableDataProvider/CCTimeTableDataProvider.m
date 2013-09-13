@@ -14,7 +14,7 @@
 {
     if(self = [super init]){
         self.arrayOfLessons = [NSMutableArray new];
-        [self.arrayOfLessons addObject:@{@"timetable" : @"Add New Lesson"}];
+        [self.arrayOfLessons addObject:@{@"timetable" : @"Add Class Times"}];
     }
     return self;
 }

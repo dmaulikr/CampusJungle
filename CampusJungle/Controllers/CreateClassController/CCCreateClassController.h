@@ -24,9 +24,12 @@
 @property (nonatomic, strong) CCTimeTableDataProvider *tableDataProvider;
 @property (nonatomic) BOOL isAvatarUpdated;
 @property (nonatomic, strong) NSString *collegeId;
+
+
 - (IBAction)createClass:(id)sender;
 - (id)initWithCollegeID:(NSString *)collegeId;
 - (BOOL)isFormValid;
 - (CCClass *)prepareClass;
+- (void)joinClass:(CCClass *)class;
 
 @end
